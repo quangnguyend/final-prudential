@@ -284,13 +284,13 @@
 }
 
 #health_question1 .ibrain.done .icon:before {
-  background: url('../img/health-question5-done.png') no-repeat;
+  background: url('../img/health-question5.png') no-repeat;
   -webkit-background-size: 100%;
   background-size: 100%;
 }
 
 #health_question1 .ibrain.notdone .icon:before {
-  background: url('../img/health-question5-notdone.png') no-repeat;
+  background: url('../img/health-question5.png') no-repeat;
   -webkit-background-size: 100%;
   background-size: 100%;
 }
@@ -425,6 +425,39 @@
   border-width: 1px
 }
 
+#health_question1 .icon.completed::after{
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: 0px;
+  width: 53px;
+  height: 53px;
+  background: url(../img/completed-sign.png) no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+#health_question1 .icon.not-complete:after{
+  content: '';
+  position: absolute;
+  top: 7px;
+  right: 0px;
+  width: 53px;
+  height: 53px;
+  background: url('../img/not-complete-sign.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+#health_question1 .icon.un-touched:after{
+  content: '';
+  position: absolute;
+  top: 7px;
+  right: 0px;
+  width: 53px;
+  height: 53px;
+  background: url('../img/un-touched-sign.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
 
 .button-red{
   background: #d0021b;
