@@ -5,5 +5,5 @@ function step1Ctrl ($scope, $rootScope, $stateParams, UserService, DataService) 
 
   var vm = this
   vm.isPrudential = $stateParams.isPru
-  console.log('sss', vm.isPrudential)
+  // console.log('sss', vm.isPrudential)
 }
