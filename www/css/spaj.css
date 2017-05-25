@@ -142,8 +142,8 @@
 #health_question1 .item {
   border: none;
   padding: 40px 0 0;
-  opacity: 0.4;
-  pointer-events: none;
+  /*opacity: 0.4;
+  pointer-events: none;*/
 }
 
 #health_question1 .item:nth-child(1), #health_question1 .item._active {
@@ -186,6 +186,73 @@
   white-space: normal;
   align-self: center;
   font-size: 16px
+}
+
+#health_question1 .item_description {
+  white-space: normal;
+  text-align: center
+}
+
+#health_question1 .grey-box {
+  background: #5B6770;
+}
+
+#health_question1 .grey-box ul {
+  padding: 30px;
+  margin: 0px;
+}
+
+#health_question1 .button-done {
+  background: transparent;
+  border-top: 1px solid #6e7880;
+  color: #FFF
+}
+
+#health_question1 .grey-box .item {
+  background: transparent;
+  padding-left: 60px;
+  color: #FFF;
+  padding-top: 0px;
+  min-height: 40px;
+  white-space: normal;
+}
+
+#health_question1 .item .icon {
+  content: '';
+  width: 111px;
+  height: 64px;
+  background: url('../img/health-question0.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  margin: 0 auto;
+  position: relative
+}
+
+#health_question1 .icon:before {
+  content: '';
+  width: 111px;
+  height: 64px;
+  position: absolute;
+  top: 0px;
+  left: 0px
+}
+
+#health_question1 .ibrain .icon:before {
+  background: url('../img/health-question5.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .ibrain.done .icon:before {
+  background: url('../img/health-question5-done.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .ibrain.notdone .icon:before {
+  background: url('../img/health-question5-notdone.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
 }
 
 
@@ -235,11 +302,11 @@
 
 #policy_beneficiary table td .gender div {
   font-weight: bold;
-  margin: 0px 30px; 
+  margin: 0px 30px;
 }
 
-#policy_beneficiary table td .gender div label{
-  font-weight: bold; 
+#policy_beneficiary table td .gender div label {
+  font-weight: bold;
 }
 
 #policy_beneficiary table td.birthdate-column i.icon {
@@ -262,11 +329,14 @@
   margin: 0px 20px 0px 10px;
 }
 
+
 /* Css PH Info */
+
 #policy_info_ph_info {
   padding-bottom: 50px;
 }
-#policy_info_ph_info, #policy_info_ph_info h2, #policy_info_ph_info .button, #policy_info_ph_info .input-label, #policy_info_ph_info input[type="text"], #policy_info_ph_info input[type="date"], #policy_info_ph_info .form_select{
+
+#policy_info_ph_info, #policy_info_ph_info h2, #policy_info_ph_info .button, #policy_info_ph_info .input-label, #policy_info_ph_info input[type="text"], #policy_info_ph_info input[type="date"], #policy_info_ph_info .form_select {
   font-family: "Roboto", "Frutiger-Regular", "Helvetica Neue", "Segoe UI", sans-serif !important;
 }
 
@@ -282,7 +352,7 @@
   color: #49545D;
 }
 
-#policy_info_ph_info input[type="date"]{
+#policy_info_ph_info input[type="date"] {
   width: 94%;
 }
 
@@ -347,7 +417,7 @@
   padding-bottom: 4px;
 }
 
-#policy_info_ph_info .indent_label{
+#policy_info_ph_info .indent_label {
   margin-top: 25px;
 }
 
@@ -361,75 +431,99 @@
   border-radius: 0px;
   border-color: #da291c;
 }
-#policy_info_ph_info .checkbox, #policy_info_ph_info .no_padding .row{
+
+#policy_info_ph_info .checkbox, #policy_info_ph_info .no_padding .row {
   padding-left: 0;
 }
+
 #policy_info_ph_info .no_padding .row {
   padding-right: 0;
 }
+
 #policy_info_ph_info .item-checkbox .checkbox {
   left: 0;
 }
+
 #policy_info_ph_info .item-checkbox {
   padding-left: 52px;
 }
 
-#policy_info_ph_info .cust-checkbox .checkbox input:checked:before,
-#policy_info_ph_info .cust-checkbox .checkbox input:checked + .checkbox-icon:before{background: #da291c;border-color: #da291c;}
-#policy_info_ph_info .cust-checkbox .desc{display: block;font-size: 14px;margin-top: 15px;}
-#policy_info_ph_info .button-block.full_width_button .button, #policy_info_ph_info .left_input_date.input_full_width input[type="date"]{
+#policy_info_ph_info .cust-checkbox .checkbox input:checked:before, #policy_info_ph_info .cust-checkbox .checkbox input:checked + .checkbox-icon:before {
+  background: #da291c;
+  border-color: #da291c;
+}
+
+#policy_info_ph_info .cust-checkbox .desc {
+  display: block;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+#policy_info_ph_info .button-block.full_width_button .button, #policy_info_ph_info .left_input_date.input_full_width input[type="date"] {
   width: 100%;
 }
+
 #policy_info_ph_info .indent_row {
   padding-top: 16px;
   padding-bottom: 16px;
 }
+
 #policy_info_ph_info .add_icon {
   color: #da291c;
   cursor: pointer;
 }
+
 #policy_info_ph_info .add_icon, #policy_info_ph_info .add_icon label {
   cursor: pointer;
 }
-#policy_info_ph_info .add_icon i{
+
+#policy_info_ph_info .add_icon i {
   font-size: 32px;
   top: -1px;
   font-weight: bold;
   display: inline;
   position: relative;
 }
+
 #policy_info_ph_info .add_icon label {
   display: block;
   float: left;
   margin-top: 7px;
 }
 
-#policy_info_ph_info hr{
+#policy_info_ph_info hr {
   border: 1px solid #efecec;
 }
-#policy_info_ph_info .agree_text{
+
+#policy_info_ph_info .agree_text {
   display: block;
   white-space: normal;
   margin-left: 50px;
 }
+
 #policy_info_ph_info .custom_checkbox {
   display: block;
 }
-#policy_info_ph_info .custom_checkbox .item-checkbox{
+
+#policy_info_ph_info .custom_checkbox .item-checkbox {
   padding-left: 35px;
   float: left;
 }
+
 #policy_info_ph_info .input_red {
   color: #cb2033;
 }
+
 #policy_info_ph_info .item-stacked-label {
   margin-bottom: 15px;
 }
-#policy_info_ph_info .left_input_date input[type="date"]{
+
+#policy_info_ph_info .left_input_date input[type="date"] {
   float: left;
   width: 68%;
   margin-right: 15px;
 }
+
 #policy_info_ph_info .form_select {
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
@@ -438,7 +532,8 @@
   background: url('../img/icon-arrow.png') no-repeat 100% 50% #ffffff;
   background-size: 15px 13px;
 }
-#policy_info_ph_info .form_select.reset_threecol{
+
+#policy_info_ph_info .form_select.reset_threecol {
   margin-top: 0px;
   padding: 6px 0px 7px;
   background: url(../img/icon-arrow.png) no-repeat 90% 50% #ffffff;
@@ -447,47 +542,67 @@
   font-size: 18px;
 }
 
+
 /* Terms & Conditions */
-#terms_conditions p, #terms_conditions h2{
+
+#terms_conditions p, #terms_conditions h2 {
   font-family: "Roboto", "Frutiger-Regular", "Helvetica Neue", "Segoe UI", sans-serif !important;
 }
+
 #terms_conditions {
   padding-bottom: 100px;
 }
+
 #terms_conditions .terms_space {
   height: 1px;
   margin-top: 11px;
   margin-bottom: 20px;
 }
+
 #terms_conditions .terms_block {
   padding: 25px;
 }
+
 #terms_conditions h2 {
   font-weight: 400;
   width: 100%;
 }
-#terms_conditions .terms_block h2{
+
+#terms_conditions .terms_block h2 {
   font-size: 17px;
   text-transform: uppercase;
   margin-bottom: 22px;
 }
+
 #terms_conditions .terms_padding_box {
   padding: 0 30px;
 }
+
 #terms_conditions .terms_check {
   float: right;
 }
+
 #terms_conditions .terms_check .item {
   border-width: 0;
   margin-top: 36px;
   margin-bottom: 35px;
 }
-#terms_conditions .cust-checkbox .checkbox input:checked:before,
-#terms_conditions .cust-checkbox .checkbox input:checked + .checkbox-icon:before{background: #da291c;border-color: #da291c;}
-#terms_conditions .cust-checkbox .desc{display: block;font-size: 14px;margin-top: 15px;}
-#terms_conditions .button-block.full_width_button .button:first-child{
+
+#terms_conditions .cust-checkbox .checkbox input:checked:before, #terms_conditions .cust-checkbox .checkbox input:checked + .checkbox-icon:before {
+  background: #da291c;
+  border-color: #da291c;
+}
+
+#terms_conditions .cust-checkbox .desc {
+  display: block;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+#terms_conditions .button-block.full_width_button .button:first-child {
   margin-right: 0
 }
+
 #terms_conditions .checkbox input:before, #terms_conditions .checkbox-icon:before {
   border-radius: 0px;
   background: #eee
@@ -498,19 +613,22 @@
   border-radius: 0px;
   border-color: #da291c;
 }
-#terms_conditions .checkbox, #terms_conditions .no_padding .row{
+
+#terms_conditions .checkbox, #terms_conditions .no_padding .row {
   padding-left: 0;
 }
+
 #terms_conditions .no_padding .row {
   padding-right: 0;
 }
+
 #terms_conditions .item-checkbox .checkbox {
   left: 0;
 }
+
 #terms_conditions .item-checkbox {
   padding-left: 52px;
 }
-
 
 
 /* Active Insurance Policies */
