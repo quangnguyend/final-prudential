@@ -52,11 +52,9 @@
             </div>
             <div class="col col-50">
               <div class="row">
-                <div class="col">
-                  <button class="button smoker-btn" ng-class="{selected: question3}" ng-click="question3 = true">Yes</button>
-                </div>
-                <div class="col">
-                  <button class="button smoker-btn" ng-class="{selected: !question3}" ng-click="question3 = false">No</button>
+                <div class="button-bar">
+                  <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.darah">Ya</a>
+                  <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.darah">Tidak</a>
                 </div>
               </div>
             </div>
@@ -67,11 +65,9 @@
             </div>
             <div class="col col-50">
               <div class="row">
-                <div class="col">
-                  <button class="button smoker-btn" ng-class="{selected: question4}" ng-click="question4 = true">Yes</button>
-                </div>
-                <div class="col">
-                  <button class="button smoker-btn" ng-class="{selected: !question4}" ng-click="question4 = false">No</button>
+                <div class="button-bar">
+                  <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.ipeningkatan">Ya</a>
+                  <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.ipeningkatan">Tidak</a>
                 </div>
               </div>
             </div>
@@ -82,11 +78,9 @@
             </div>
             <div class="col col-50">
               <div class="row">
-                <div class="col">
-                  <button class="button smoker-btn" ng-class="{selected: question5}" ng-click="question5 = true">Yes</button>
-                </div>
-                <div class="col">
-                  <button class="button smoker-btn" ng-class="{selected: !question5}" ng-click="question5 = false">No</button>
+                <div class="button-bar">
+                  <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.ijantung">Ya</a>
+                  <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.jantung">Tidak</a>
                 </div>
               </div>
             </div>
@@ -97,11 +91,9 @@
             </div>
             <div class="col col-50">
               <div class="row">
-                <div class="col">
-                  <button class="button smoker-btn" ng-class="{selected: question6}" ng-click="question6 = true">Yes</button>
-                </div>
-                <div class="col">
-                  <button class="button smoker-btn" ng-class="{selected: !question6}" ng-click="question6 = false">No</button>
+                <div class="button-bar">
+                  <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.ikelainan">Ya</a>
+                  <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.ikelainan">Tidak</a>
                 </div>
               </div>
             </div>
@@ -112,11 +104,9 @@
             </div>
             <div class="col col-50">
               <div class="row">
-                <div class="col">
-                  <button class="button smoker-btn" ng-class="{selected: question8}" ng-click="question8 = true">Yes</button>
-                </div>
-                <div class="col">
-                  <button class="button smoker-btn" ng-class="{selected: !question8}" ng-click="question8 = false">No</button>
+                <div class="button-bar">
+                  <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.istroke">Ya</a>
+                  <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.istroke">Tidak</a>
                 </div>
               </div>
             </div>
@@ -127,11 +117,9 @@
             </div>
             <div class="col col-50">
               <div class="row">
-                <div class="col">
-                  <button class="button smoker-btn" ng-class="{selected: question7}" ng-click="question7 = true">Yes</button>
-                </div>
-                <div class="col">
-                  <button class="button smoker-btn" ng-class="{selected: !question7}" ng-click="question7 = false">No</button>
+                <div class="button-bar">
+                  <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.idemam">Ya</a>
+                  <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.idemam">Tidak</a>
                 </div>
               </div>
             </div>
@@ -142,11 +130,9 @@
             </div>
             <div class="col col-50">
               <div class="row">
-                <div class="col">
-                  <button class="button smoker-btn" ng-class="{selected: question7}" ng-click="question7 = true">Yes</button>
-                </div>
-                <div class="col">
-                  <button class="button smoker-btn" ng-class="{selected: !question7}" ng-click="question7 = false">No</button>
+                <div class="button-bar">
+                  <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.inyeri">Ya</a>
+                  <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.inyeri">Tidak</a>
                 </div>
               </div>
             </div>
@@ -157,11 +143,9 @@
             </div>
             <div class="col col-50">
               <div class="row">
-                <div class="col">
-                  <button class="button smoker-btn" ng-class="{selected: question7}" ng-click="question7 = true">Yes</button>
-                </div>
-                <div class="col">
-                  <button class="button smoker-btn" ng-class="{selected: !question7}" ng-click="question7 = false">No</button>
+                <div class="button-bar">
+                  <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.inodule">Ya</a>
+                  <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.inodule">Tidak</a>
                 </div>
               </div>
             </div>
@@ -176,10 +160,35 @@
           <p class="item_description">Sakit kepala*, Pusing*, Migrain*,Vertigo*, Epilepsi (atau ayan)**, Gangguan Kesadaran, Kelainan Psikologis atau
             Kejiwaan*/Mental, Gangguan/Kelainan/Penyakit Otak atau Saraf</p>
           <div class="button-bar">
-            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.brain">Ya</a>
-            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.brain">Tidak</a>
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.ibrain">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.ibrain">Tidak</a>
           </div>
-          <div class='grey-box' ng-show="spaj.brain=='Ya'">
+
+
+        </div>
+        <!--end-item brain-->
+        <div class="item ihocmon">
+          <div class="icon"></div>
+          <h1 class="text-center">Kondisi Hormon atau Autoimun</h1>
+          <p class="item_description">Kencing Manis/Diabetes, Kelenjar Gondok* atau Gangguan Endokrin / Hormon, Systemic Lupus Erythematosus (SLE), Anti-cardiolipin
+            antibodies (ACA) atau Auto Immune Diseases (Penyakit Sistem Kekebalan Lainnya)</p>
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.ihocmon">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.ihocmon">Tidak</a>
+          </div>
+
+        </div>
+        <!--end-item ihocmon-->
+        <div class="item ieye">
+          <div class="icon"></div>
+          <h1 class="text-center">Kondisi mata</h1>
+          <p class="item_description">Rabun jauh dengan menggunakan kacamata/softlens (lensa kontak) melebihi -6,0 pada satu atau kedua mata, Katarak
+            atau kelainan mata lainnya</p>
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.ieye">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.ieye">Tidak</a>
+          </div>
+          <div class='grey-box' ng-show="spaj.ieye=='Ya'">
             <ul>
               <li class="item item-checkbox">
                 Rabun jauh dengan menggunakan kacamata softlens (lensa kontak) melebihi -6,0 pada satu atau kedua mata
@@ -194,14 +203,203 @@
               </label>
               </li>
             </ul>
-
             <button class="button button-full button-done">Done</button>
-
           </div>
 
-          <button class="button next" ng-class="{'button-dark': spaj.height&&spaj.weight}" ng-disabled="!spaj.height || !spaj.weight"
-            ng-click="health1NextStep('health1_step2')">Berikutnya</button>
         </div>
+        <!--end-item ieye-->
+
+        <div class="item iear">
+          <div class="icon"></div>
+          <h1 class="text-center">Telinga, Hidung & Kondisi Tenggorokan</h1>
+          <p class="item_description">Telinga, Hidung, Tenggorokan (THT), Sinus, Gangguan Berbicara.</p>
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.iear">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.iear">Tidak</a>
+          </div>
+        </div>
+        <!--end-item iear-->
+
+        <div class="item irespiratory">
+          <div class="icon"></div>
+          <h1 class="text-center">Kondisi Pernafasan</h1>
+          <p class="item_description">Gangguan Pernafasan*, Batuk Berkepanjangan*, Sesak Nafas*, Bronkitis, Asma*, Tuberkulosis (TBC)*, Sesak Nafas yang
+            disebabkan karena kelainan/penyakit jantung</p>
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.irespiratory">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.irespiratory">Tidak</a>
+          </div>
+        </div>
+        <!--end-item irespiratory-->
+        <div class="item iheart">
+          <div class="icon"></div>
+          <h1 class="text-center">Kondisi Jantung, Pembuluh Darah atau Darah</h1>
+          <p class="item_description">Wasir (Haemorrhoid), Varises atau Kelainan Pembuluh Darah lainnya. Kelainan Darah* (seperti Thalassemia / Hemofilia
+            / Leukemia / Anemia atau Kelainan Darah Lainnya), Menerima transfusi darah</p>
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.iheart">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.iheart">Tidak</a>
+          </div>
+        </div>
+        <!--end-item iheart-->
+        <div class="item idigestive">
+          <div class="icon"></div>
+          <h1 class="text-center">Kondisi Sistem Saluran Pencernaan</h1>
+          <p class="item_description">Maag*/Gastritis*, Usus* / Hernia / Pankreas / Organ Pencernaan lainnya</p>
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.idigestive">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.idigestive">Tidak</a>
+          </div>
+        </div>
+        <!--end-item idigestive-->
+
+        <div class="item ikidney">
+          <div class="icon"></div>
+          <h1 class="text-center">Kondisi Hati, Ginjal & Saluran Kemih</h1>
+          <p class="item_description">Hepatitis A, Hepatitis B, Hepatitis C, Penyakit/Gangguan Hati (Selain Hepatitis) atau Kandung Empedu, Ginjal, Saluran
+            Kemih (termasuk Batu), Cuci Darah</p>
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.ikidney">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.ikidney">Tidak</a>
+          </div>
+        </div>
+        <!--end-item ikidney-->
+        <div class="item iface">
+          <div class="icon"></div>
+          <h1 class="text-center">Kulit, Kelamin & Alergi</h1>
+          <p class="item_description">Alergi / Penyakit Kulit atau Kelamin</p>
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.iface">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.iface">Tidak</a>
+          </div>
+        </div>
+        <!--end-item iface-->
+
+        <div class="item ibone">
+          <div class="icon"></div>
+          <h1 class="text-center">Kondisi Tulang, Sendi & Otot</h1>
+          <p class="item_description">Gangguan Persendian*/ Rematik*/Kelainan pada Otot*/Sendi* atau Tulang*/ Gangguan Tulang Belakang*/ Polio*/Multiple
+            Sclerosis/Asam Urat</p>
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.ibone">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.ibone">Tidak</a>
+          </div>
+        </div>
+        <!--end-item ibone-->
+
+        <div class="item itumors">
+          <div class="icon"></div>
+          <h1 class="text-center">Tumor & Pertumbuhan</h1>
+          <p class="item_description">Pernahkah Anda mengalami Benjolan / Tumor / Kista / Kanker / Nodul / Pembengkakan / Pertumbuhan / Pembesaran lainnya</p>
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.itumors">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.itumors">Tidak</a>
+          </div>
+        </div>
+        <!--end-item itumors-->
+
+        <div class="item iill">
+          <div class="icon"></div>
+          <h1 class="text-center">Penyakit Infeksi, Penyakit Menular Seksual & AIDS</h1>
+          <p class="item_description">Penyakit Infeksi seperti Malaria, Penyakit Menular Seksual, AIDS atau kondisi yang berkaitan dengan AIDS (Demam
+            / kelelahan / Diare Kronis / penurunan berat badan / Pembesaran Kelenjar Getah Bening / luka di kulit berulang
+            dan berkepanjangan yang tidak diketahui penyebabnya)</p>
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.iill">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.iill">Tidak</a>
+          </div>
+        </div>
+        <!--end-item iill-->
+        <div class="item iinjury">
+          <div class="icon"></div>
+          <h1 class="text-center">Kecelakaan Pribadi / Cedera jangka panjang</h1>
+          <p class="item_description">Kecelakaan / Cidera Berat Berkepanjangan / Kelumpuhan / Kelainan Syaraf lainnya, Bila kecelakaan menyangkut alat
+            gerak, bagaimana fungsi alat gerak tersebut saat ini? </p>
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.iinjury">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.iinjury">Tidak</a>
+          </div>
+        </div>
+        <!--end-item iinjury-->
+        <div class="item idisease">
+          <div class="icon"></div>
+          <h1 class="text-center">Penyakit lain yang belum disebutkan?</h1>
+
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.idisease">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.idisease">Tidak</a>
+          </div>
+        </div>
+        <!--end-item idisease-->
+        <div class="item idisorder">
+          <div class="icon"></div>
+          <h1 class="text-center">Apakah Calon Tertanggung mempunyai keluhan/kelainan/gangguan pada Payudara atau Prostat?</h1>
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.idisorder">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.idisorder">Tidak</a>
+          </div>
+        </div>
+        <!--end-item idisorder -->
+        <div class="item iabnormality">
+          <div class="icon"></div>
+          <h1 class="text-center">Apakah Anda memiliki kelainan pada, Payudara*, Kandungan*, Indung Telur/Ovarium*</h1>
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.iabnormality">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.iabnormality">Tidak</a>
+          </div>
+        </div>
+        <!--end-item iabnormality-->
+        <div class="item ipapsmear">
+          <div class="icon"></div>
+          <h1 class="text-center">Apakah Anda pernah melakukan papsmear dengan hasil abnormal</h1>
+
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.ipapsmear">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.ipapsmear">Tidak</a>
+          </div>
+        </div>
+        <!--end-item ipapsmear-->
+        <div class="item ipregnant">
+          <div class="icon"></div>
+          <h1 class="text-center">Apakah saat ini Anda sedang hamil?</h1>
+
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.ipregnant">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.ipregnant">Tidak</a>
+          </div>
+        </div>
+        <!--end-item ipregnant-->
+        <div class="item isurgery ">
+          <div class="icon"></div>
+          <h1 class="text-center">Apakah Calon Tertanggung pernah melahirkan dengan cara operasi/Sectio Caesaria karena alasan kesehatan?</h1>
+
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.isurgery">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.isurgery">Tidak</a>
+          </div>
+        </div>
+        <!--end-item isurgery -->
+        <div class="item icomplication">
+          <div class="icon"></div>
+          <h1 class="text-center">Apakah Calon Tertanggung pernah mengalami kesulitan/komplikasi pada saat hamil atau melahirkan?</h1>
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.icomplication">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.icomplication">Tidak</a>
+          </div>
+        </div>
+        <!--end-item icomplication-->
+        <div class="item ilostweight">
+          <div class="icon"></div>
+          <h1 class="text-center">Berat Badan waktu Lahir kurang dari atau sama dengan 2500 gram?</h1>
+
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.ilostweight">Ya</a>
+            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.ilostweight">Tidak</a>
+          </div>
+        </div>
+        <!--end-item ilostweight-->
+
+
       </div>
     </form>
   </ion-content>
