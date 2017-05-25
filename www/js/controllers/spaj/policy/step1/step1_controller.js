@@ -4,9 +4,14 @@ function step1Ctrl ($state, $scope, $rootScope, $stateParams, UserService, DataS
   $rootScope.showMenu = true
 
   var vm = this
-  vm.isPrudential = $stateParams.isPru
+  vm.isPrudential = 1
 
-  if (vm.isPrudential = 1) {
-    $state.go('app.main')
+  gotoPhPage()
+
+  function gotoPhPage () {
+    vm.isPrudential = $stateParams.isPru
+    if (vm.isPrudential === 1) {
+      $state.go('app.main')
+    }
   }
 }
