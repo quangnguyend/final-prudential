@@ -43,7 +43,7 @@ angular.module('prudential', ['ionic', 'prudential.controllers', 'prudential.ser
       })
       .state('app.step1', {
         cache: false,
-        url: '/step1/:isPru',
+        url: '/step1',
         views: {
           'menuContent': {
             controller: 'Step1Ctrl',
