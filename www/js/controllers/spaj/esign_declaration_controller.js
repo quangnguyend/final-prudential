@@ -16,8 +16,17 @@ function eSignDeclarationCtrl(
       $scope[model] = -$scope[model];
     }
   };
+  $scope.numberOfAdditional = ["one", "two"];
+
+  //list id of canvas DOM for esignature, default will have 2 ids
+  var listEsignature = [
+    "agent-signature-canvas",
+    "policyholder-signature-canvas"
+  ];
+
   function signatureHandler(idCanvas) {
     var canvas = document.getElementById(idCanvas);
+    if (!canvas) return;
     var signaturePad = new SignaturePad(canvas);
     // When zoomed out to less than 100%, for some very strange reason,
     // some browsers report devicePixelRatio as less than 1
@@ -29,11 +38,22 @@ function eSignDeclarationCtrl(
     return signaturePad;
   }
 
-  var agentSignature = signatureHandler("agent-signature-canvas");
-  var policyholderSignature = signatureHandler("policyholder-signature-canvas");
-  var mainlifeSignature = signatureHandler("mainlife-signature-canvas");
-  var parentSignature = signatureHandler("parent-signature-canvas");
+  $scope.numberOfAdditional.forEach(function(item, index) {
+    listEsignature.push("mainlife-signature-canvas-" + index);
+    listEsignature.push("parent-signature-canvas-" + index);
+  });
 
+  //it's problem when signatureHandler func read getElementById value, need make sure
+  //for all of DOM (these DOM were created by ng-repeat) was mounted
+  angular.element(document).ready(function() {
+    var esignature = [];
+    esignature = listEsignature.map(function(item) {
+      return {
+        id: item,
+        esignatureObj: signatureHandler(item)
+      };
+    });
+  });
   /* TODO: Clear signature
   agentSignature.clear()
   Save signature to base64

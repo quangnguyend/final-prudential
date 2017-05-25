@@ -363,24 +363,21 @@
                             <canvas class='signature-pad' id='policyholder-signature-canvas'></canvas>
                         </div>
                     </div>
-                    <div class='item ibox '>
-                        <span class="input-label">Tertanggung Utama</span>
-                        <div class="ibox-content">
-                            <canvas class='signature-pad' id='mainlife-signature-canvas'></canvas>
+                    <div ng-repeat="(index, i) in numberOfAdditional">
+                        <div class='item ibox '>
+                            <span class="input-label">Tertanggung Utama {{index + 1}}</span>
+                            <div class="ibox-content">
+                                <canvas class='signature-pad' id='mainlife-signature-canvas-{{index}}'></canvas>
+                            </div>
+                        </div>
+                        <div class='item ibox '>
+                            <span class="input-label">Orang tua (bila tertanggung berusia dibawah 21 thn) {{index + 1}}</span>
+                            <div class="ibox-content">
+                                <canvas class='signature-pad' id='parent-signature-canvas-{{index}}'></canvas>
+                            </div>
                         </div>
                     </div>
-                    <div class='item ibox '>
-                        <span class="input-label">Orang tua (bila tertanggung berusia dibawah 21 thn)</span>
-                        <div class="ibox-content">
-                            <canvas class='signature-pad' id='parent-signature-canvas'></canvas>
-                        </div>
-                    </div>
-
                 </div>
-
-
-
-
             </form>
         </div>
 
@@ -391,4 +388,4 @@
 </ion-view>
 <div ng-show="true" class="bar bar-footer bar-assertive">
     <a ng-click="vm.viewStep1('active ')" title="Continue" class="btn">Next<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
-</div>
+    </divu
