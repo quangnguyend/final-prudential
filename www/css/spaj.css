@@ -156,6 +156,7 @@
   margin-bottom: 25px
 }
 
+#health_question1 input[type=number],
 #health_question1 input[type=text] {
   font-size: 20px;
   width: 100%
