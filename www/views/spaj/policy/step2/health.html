@@ -180,7 +180,8 @@
         </div>
         <!--end-item ihocmon-->
         <div class="item ieye">
-          <div class="icon" ng-class="{'completed': vm.healthData.ieye || vm.healthData.ieye}"></div>
+          <div class="icon" ng-class="{'completed': vm.eyePopupTouched && vm.checkPropertiesNotNull(vm.eyePopupData), 
+          'not-complete': vm.eyePopupTouched && !vm.checkPropertiesNotNull(vm.eyePopupData)}"></div>
           <h1 class="text-center">Kondisi mata</h1>
           <p class="item_description">Rabun jauh dengan menggunakan kacamata/softlens (lensa kontak) melebihi -6,0 pada satu atau kedua mata, Katarak
             atau kelainan mata lainnya</p>

@@ -1,41 +1,31 @@
-function step2Ctrl ($state, $scope, $rootScope, $stateParams, UserService, DataService) {
+function step2Ctrl($state, $scope, $rootScope, $stateParams, $ionicPopup, UserService, DataService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
 
   var vm = this
-
-  vm.healthData = {
-    weight: null,
-    height: null,
-    smoke_condition: {
-      is_smoking: false,
-      sticks_cigarettes_per_day: null
-    },
-    medicin_condition: {
-      is_using: false,
-      type_of_medicine: null
-    },
-    another_health_conditions: {
-      high_blood_pressure: false,
-      increased_cholesterol: false,
-      congenital_abnormalities: false,
-      abnormalities_of_heart_and_blood_vessels: false,
-      stroke: false,
-      rheuma: false,
-      chest_pain: false,
-      nodule_and_tumor: false
-    },
-    has_brain_related_illness: null,
-    has_hormone_or_autoimmune: false,
-    eye_condition: {
-      is_using_contact_lens: false,
-      has_eye_related_illness: false
+  vm.healthData = {}
+  vm.eyePopupTouched = false
+  vm.eyePopupData = {
+    name: null,
+    when: null,
+    last_care_date: null,
+    hospoital_name: null,
+    hospital_address: null,
+    medicine: null
+  }
+  vm.checkPropertiesNotNull = function (obj) {
+    if(obj === null || obj === "" ){return false}
+    for (var key in obj) {
+      if (obj[key] === null || obj[key] === "")
+        return false;
     }
+    return true;
   }
 
   $scope.showPopup = function () {
     // custom popup
+    $scope.popupData = vm.eyePopupData;
     var eyePopup = $ionicPopup.show({
       templateUrl: 'views/spaj/policy/step2/popup-eye.html',
       title: 'Detail Kondisi Mata',
@@ -54,7 +44,8 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, UserService, DataS
           text: '<i class="icon ion-android-close"></i>',
           type: 'btn-popup-close',
           onTap: function (e) {
-            eyePopup.close();
+            // eyePopup.close();
+            return $scope.popupData;
           }
         },
         {
@@ -62,12 +53,18 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, UserService, DataS
           type: 'button-assertive btn-popup-save',
           onTap: function (e) {
             console.log('save clicked!');
+            return $scope.popupData;
           }
         }
       ]
     });
     eyePopup.then(function (res) {
-      console.log('Tapped!', res);
+      vm.eyePopupData = res
+      vm.eyePopupTouched = true
+      console.log(vm.eyePopupData)
     });
   }
+
+  
 }
+
