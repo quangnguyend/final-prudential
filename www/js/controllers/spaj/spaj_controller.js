@@ -12,40 +12,6 @@ function spajCtrl ($scope, $rootScope, $ionicPopup, UserService, DataService, $i
   //   STEP2_TAB_3 = "Tambahan_2";
 
   // // data of policy page
-  // vm.pageList = [
-  //   {
-  //     step: "1",
-  //     defaultTab: STEP1_TAB_1,
-  //     title: "Policy Holder Information",
-  //     template: "templates/spaj/policy/step1.html",
-  //     valid: false
-  //   },
-  //   {
-  //     step: "2",
-  //     defaultTab: STEP2_TAB_1,
-  //     title: "Health Questions",
-  //     template: "templates/spaj/policy/step2.html",
-  //     valid: false
-  //   },
-  //   {
-  //     step: '3',
-  //     title: 'Prospective Beneficiaries',
-  //     template: '',
-  //     valid: false
-  //   },
-  //   {
-  //     step: '4',
-  //     title: 'Health Questions',
-  //     template: '',
-  //     valid: false
-  //   },
-  //   {
-  //     step: '5',
-  //     title: 'Document Upload',
-  //     template: 'templates/spaj/policy/step5/beneficiaries.html',
-  //     valid: false
-  //   }
-  // ]
 
   // vm.dataBeneficiary = [
   //   { name: '', birthday: null, relationship: null, share: '', gender: '' }

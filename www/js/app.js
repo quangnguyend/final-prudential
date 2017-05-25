@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('prudential', ['ionic', 'prudential.controllers', 'prudential.services', 'ngAnimate', 'ui.router', 'ngCordova'])
+angular.module('prudential', ['ionic', 'prudential.controllers', 'prudential.services', 'prudential.components', 'ngAnimate', 'ui.router', 'ngCordova'])
 
   .run(function ($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function () {
@@ -69,6 +69,17 @@ angular.module('prudential', ['ionic', 'prudential.controllers', 'prudential.ser
           'menuContent': {
             templateUrl: 'views/spaj/policy/step1/ph_not_main.html',
             controller: 'PhNotMainCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.step2', {
+        cache: false,
+        url: '/step2',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/policy/step2/health.html',
+            controller: 'Step2Ctrl',
             controllerAs: 'vm'
           }
         }

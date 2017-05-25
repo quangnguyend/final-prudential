@@ -44,11 +44,14 @@ angular.module('prudential.controllers', [])
 
     setTimeout($scope.sync, 1800000)
   })
+  .controller('StepProcessCtr', stepProcessCtr)
   .controller('SpajStartCtrl', spajStartCtrl)
 
   .controller('Step1Ctrl', step1Ctrl)
   .controller('PhMainCtrl', phMainCtrl)
   .controller('PhNotMainCtrl', phNotMainCtrl)
+
+  .controller('Step2Ctrl', step2Ctrl)
 
   .directive('dataService', dataService)
   .directive('groupedRadio', groupedRadio)

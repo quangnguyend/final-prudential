@@ -10,7 +10,7 @@ function step1Ctrl ($state, $scope, $rootScope, $stateParams, UserService, DataS
 
   function gotoPhPage () {
     vm.isPrudential = $stateParams.isPru
-    if (vm.isPrudential === 1) {
+    if (vm.isPrudential === '1') {
       $state.go('app.main')
     }
   }
