@@ -1,0 +1,481 @@
+<div ng-show="vm.step1==='info'" id="policy_info_ph_info">
+  <form>
+    <div class="list list-inset no-lines">
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <div class="input-label">Nama Lengkap <span class="input_red">(*)</span></div>
+            </label>
+          </div>
+          <div class="row">
+            <input type="text" placeholder="Enter">
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <div class="input-label">Yempat dan Tanggal lahir<span class="input_red">(*)</div></span>
+            </label>
+          </div>
+          <div class="row">
+            <div class="col-40">
+              <select class="form_select" ng-model='agent.occupation'>
+                <option selected value>Select</option>
+                <option>Blue</option>
+                <option>Green</option>
+                <option>Red</option>
+              </select>
+            </div>
+            <div class="col-20"></div>
+            <div class="col-50 left_input_date">
+              <input type="date" placeholder="Enter">
+              <span class="icon-calendar">
+                <i class="icon ion-android-calendar"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <div class="input-label">Jenis Kelamin<span class="input_red">(*)</span></div>
+            </label>
+          </div>
+          <div class="row">
+            <div class="row indent_row">
+              <div class="col-50">
+                <input name='radio' class='custom_radio' type="radio" id='pira'/>
+                <label class='' for="pira">Pira</label>
+              </div>
+              <div class="col-50">
+                <input name='radio' class='custom_radio' type="radio" id='wanita'/>
+                <label class='' for="wanita">Wanita</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <div class="input-label">Status Pernikahan <span class="input_red">(*)</span></div>
+            </label>
+          </div>
+          <div class="row">
+            <select class="form_select" ng-model='agent.occupation'>
+              <option selected value>Select</option>
+              <option>Blue</option>
+              <option>Green</option>
+              <option>Red</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <div class="input-label">Agama<span class="input_red">(*)</span></div>
+            </label>
+          </div>
+          <div class="row">
+            <select class="form_select" ng-model='agent.occupation'>
+              <option selected value>Select</option>
+              <option>Blue</option>
+              <option>Green</option>
+              <option>Red</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <div class="input-label">Negara Kelahiran <span class="input_red">(*)</span></div>
+            </label>
+          </div>
+          <div class="row">
+            <select class="form_select" ng-model='agent.occupation'>
+              <option selected value>Select</option>
+              <option>Blue</option>
+              <option>Green</option>
+              <option>Red</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <div class="input-label">Kewarganegaraan <span class="input_red">(*)</span></div>
+            </label>
+          </div>
+          <div class="row">
+            <select class="form_select" ng-model='agent.occupation'>
+              <option selected value>Select</option>
+              <option>Blue</option>
+              <option>Green</option>
+              <option>Red</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <div class="input-label">No Identitas <span class="input_red">(*)</span></div>
+            </label>
+          </div>
+          <div class="row">
+            <input type="text" placeholder="Enter">
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <div class="input-label">Kadaluwarsa</div>
+            </label>
+          </div>
+          <div class="row">
+            <div class="row indent_row">
+              <div class="col-50">
+                <input id='seumurHidup' class='custom_radio' type="radio" name='kadaluwarasa'/>
+                <label class='' for="seumurHidup">Seumur hidup</label>
+              </div>
+              <div class="col-50">
+                <input id='tidak' class='custom_radio' type="radio" name='kadaluwarasa'/>
+                <label class='' for="tidak">Tidak</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <div class="input-label">Kadaluwarsa Identitas</div>
+            </label>
+          </div>
+          <div class="row left_input_date input_full_width">
+            <input type="date" placeholder="Enter">
+            <span class="icon-calendar">
+              <i class="icon ion-android-calendar"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <span class="input-label">Status Pajak <span class="input_red">(*)</span></span>
+            </label>
+          </div>
+          <div class="row">
+            <div class="col-33">
+              <ion-checkbox>Wajib Pajak Indonesia</ion-checkbox>
+            </div>
+            <div class="col-33">
+              <ion-checkbox>Pembayar pajak AS</ion-checkbox>
+            </div>
+            <div class="col-33">
+              <ion-checkbox>Lainya</ion-checkbox>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <div class="input-label">No NPWP <span class="input_red">(*)</span></div>
+            </label>
+          </div>
+          <div class="row">
+            <input type="text" placeholder="Enter">
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <div class="input-label">Nama Perusahaan Tempat Bekerja</div>
+            </label>
+          </div>
+          <div class="row">
+            <input type="text" placeholder="Enter">
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <div class="input-label">Alamat Kantor</div>
+            </label>
+          </div>
+          <div class="row">
+            <input type="text" placeholder="Enter">
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <div class="input-label">Alamat Tempat Tinggal <span class="input_red">(*)</span></div>
+            </label>
+          </div>
+          <div class="row">
+            <div class="row indent_row">
+              <div class="col-50">
+                <input name='alamattempattinggal' id='alamatIndonesia' class='custom_radio' type="radio"/>
+                <label for="alamatIndonesia">Indonesia</label>
+              </div>
+              <div class="col-50">
+                <input name='alamattempattinggal' id='alamatDiluarIndonesia' class='custom_radio' type="radio"/>
+                <label for="alamatDiluarIndonesia">Diluar Indonesia</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <div class="input-label">Alamat <span class="input_red">(*)</span></div>
+            </label>
+          </div>
+          <div class="row">
+            <input type="text" placeholder="Enter">
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <div class="input-label">Kode Pos</div>
+            </label>
+          </div>
+          <div class="row">
+            <input type="text" placeholder="Enter">
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <div class="col-50">
+              <div class="row">
+                <label class="item-stacked-label">
+                  <div class="input-label">Provinsi <span class="input_red">(*)</span></div>
+                </label>
+              </div>
+              <div class="row">
+                <input type="text" placeholder="Enter">
+              </div>
+            </div>
+            <div class="col-50">
+              <div class="row">
+                <label class="item-stacked-label">
+                  <div class="input-label">Kabupaten / Kota <span class="input_red">(*)</span></div>
+                </label>
+              </div>
+              <div class="row">
+                <input type="text" placeholder="Enter">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <div class="col-50">
+              <div class="row">
+                <label class="item-stacked-label">
+                  <div class="input-label">Kecamata</div>
+                </label>
+              </div>
+              <div class="row">
+                <input type="text" placeholder="Enter">
+              </div>
+            </div>
+            <div class="col-50">
+              <div class="row">
+                <label class="item-stacked-label">
+                  <div class="input-label">Kelurahan</div>
+                </label>
+              </div>
+              <div class="row">
+                <input type="text" placeholder="Enter">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <div class="col-33">
+              <div class="row">
+                <label class="item-stacked-label">
+                  <div class="input-label">RT</div>
+                </label>
+              </div>
+              <div class="row">
+                <input type="text" placeholder="Enter">
+              </div>
+            </div>
+            <div class="col-33">
+              <div class="row">
+                <label class="item-stacked-label">
+                  <div class="input-label">RW</div>
+                </label>
+              </div>
+              <div class="row">
+                <input type="text" placeholder="Enter">
+              </div>
+            </div>
+            <div class="col-33">
+              <div class="row">
+                <label class="item-stacked-label">
+                  <div class="input-label">KM</div>
+                </label>
+              </div>
+              <div class="row">
+                <input type="text" placeholder="Enter">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <div class="col-33">
+              <div class="row">
+                <label class="item-stacked-label">
+                  <div class="input-label">No.Tel.Rumah <span class="input_red">(*)</span></div>
+                </label>
+              </div>
+              <div class="row">
+                <div class="col-20">
+                  <select class="form_select reset_threecol" ng-model='agent.occupation'>
+                    <option selected value>+62</option>
+                    <option>+61</option>
+                    <option>+60</option>
+                    <option>+59</option>
+                  </select>
+                </div>
+                <div class="col-80"><input type="text" placeholder="XXX  XXXXXXXX"></div>
+              </div>
+            </div>
+            <div class="col-33">
+              <div class="row">
+                <label class="item-stacked-label">
+                  <div class="input-label">No.Tel.Kantor</div>
+                </label>
+              </div>
+              <div class="row">
+                <div class="col-20">
+                  <select class="form_select reset_threecol" ng-model='agent.occupation'>
+                    <option selected value>+62</option>
+                    <option>+61</option>
+                    <option>+60</option>
+                    <option>+59</option>
+                  </select>
+                </div>
+                <div class="col-80"><input type="text" placeholder="XXX  XXXXXXXX"></div>
+              </div>
+            </div>
+            <div class="col-33">
+              <div class="row">
+                <label class="item-stacked-label">
+                  <div class="input-label">No. HP /GSM <span class="input_red">(*)</span></div>
+                </label>
+              </div>
+              <div class="row">
+                <div class="col-20">
+                  <select class="form_select reset_threecol" ng-model='agent.occupation'>
+                    <option selected value>+62</option>
+                    <option>+61</option>
+                    <option>+60</option>
+                    <option>+59</option>
+                  </select>
+                </div>
+                <div class="col-80"><input type="text" placeholder="XXX  XXXXXXXX"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <di class="row-no-padding">
+          <div class="row">
+            <div class="button-block add_icon">
+              <a class="button" grouped-red-radio="'Male'" ng-model="agent.gender"><i class="icon ion-ios-plus-empty"></i> <span>Tampah Kontak</span></a>
+            </div>
+          </div>
+        </di>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <div class="input-label">Alamat Surat Menyurat <span class="input_red">(*)</span></div>
+            </label>
+          </div>
+          <div class="row">
+            <div class="row indent_row">
+              <div class="col-33">
+                <input name='alamatSuratMenyurat' id='alamatTempatTingal' class='custom_radio' type="radio"/>
+                <label class='' for="alamatTempatTingal">Alamat Tempat Tingal</label>
+              </div>
+              <div class="col-33">
+                <input name='alamatSuratMenyurat' id='alamatKantor' class='custom_radio' type="radio"/>
+                <label class='' for="alamatKantor">Alamat Kantor</label>
+              </div>
+              <div class="col-33">
+                <input name='alamatSuratMenyurat' id='alamatLain' class='custom_radio' type="radio"/>
+                <label class='' for="alamatLain">Alamat Lain</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <div class="input-label">Email</div>
+            </label>
+          </div>
+          <div class="row">
+            <input type="text" placeholder="Enter">
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div ng-show="vm.step1==='active'" ng-include="'templates/spaj/policy/step1/active_insurance.html'"></div>
+
+<div ng-show="true" class="bar bar-footer bar-assertive">
+  <a  ng-click="vm.viewStep1('active')" title="Continue" class="btn">Next<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
+</div>

@@ -1,0 +1,48 @@
+<div id='policy_beneficiary'>
+  <div class="" ng-repeat="(index, row) in vm.dataBeneficiary">
+    <table style="width:100%">
+      <tr>
+        <th class='blur-text'>{{index+1}}</th>
+        <th>Nama</th>
+        <th>Hubungan</th>
+        <th>Tanggal Lahir</th>
+        <th>%</th>
+      </tr>
+      <tr>
+        <td class='index-column' width='15px'></td>
+        <td class='name-column'><input type='input' placeholder="Enter" ng-model="row.name" /></td>
+        <td class='relationship-column'>
+          <select ng-model='row.relationship' class='blur-text'>
+            <option  value="" disabled selected>Select</option>
+            <option ng-repeat='value in vm.relationshipData' value='{{value}}'>{{value}}</option>
+          </select>
+        </td>
+        <td class="birthdate-column row row-top blur-text"><input class='blur-text' type='date' ng-model="row.birthday" /><i class="icon ion-calendar"></i></td>
+        <td class='share-column' width='10%'><input type='input' placeholder="%" ng-model="row.share" /></td>
+      </tr>
+      <tr>
+        <td colspan="5">
+          <span class="error-message">! Silakan memasukkan angka kelipatan 5 contoh: 5,10,15..100 </span>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td colspan="4">
+          <div class="row gender">
+            <span>Gender</span>
+            <div>
+              <input type='radio' id='gender-male-{{index}}' name='gender-{{index}}' value='male' ng-click="vm.policy.beneficiary.setGender(index, 'male')"
+              />
+              <label for='gender-male-{{index}}'>Pria</label>
+            </div>
+            <div>
+              <input type='radio' id='gender-female-{{index}}' name='gender-{{index}}' value='female' ng-click="vm.policy.beneficiary.setGender(index, 'female')" />
+              <label for='gender-female-{{index}}'>Wanita</label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <button class="button button-stable button-block float-right col-95" ng-click="vm.policy.beneficiary.addRow()">+ Tambah Penerima Manfaat Asuransi</button>
+</div>

@@ -1,0 +1,180 @@
+<div ng-show="vm.step2==='Utama'" id="health_question1">
+<form >
+  <div class="list list-inset no-lines">
+
+    <div class='item' id="health1_step1">
+      <h1 class='text-center'>Tinggi dan berat badan saya</h1>
+      <div class="row">
+        <div class="col col-50">
+          <input type="text" placeholder="155.5" ng-model='spaj.height'>
+          <span class="item-note">cm</span>
+        </div>
+        <div class="col col-50">
+          <input type="text" placeholder="Berat" ng-model='spaj.weight'>
+          <span class="item-note">kg</span>
+        </div>
+      </div>
+      <button 
+        class="button next" 
+        ng-class="{'button-dark': spaj.height&&spaj.weight}" 
+        ng-disabled="!spaj.height || !spaj.weight" 
+        ng-click="health1NextStep('health1_step2')">Berikutnya</button>
+    </div>
+    <div class='item' id="health1_step2" ng-class="{'_active': health1Steps[1]}">
+      <h1 class='text-center'>Apakah Anda merokok ?<br><small>( 12 bulan terakhir )</small></h1>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.smoker">Ya</a>
+        <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.smoker">Tidak</a>
+      </div>
+      <h1 class='text-center'>Sebutkan jumlah batang per hari</h1>
+      <div class="row">
+        <input type="text" placeholder="Enter"  ng-model='spaj.sticks_cigarettes'/>
+      </div>
+      <button class="button next" 
+       ng-disabled="!spaj.sticks_cigarettes || !spaj.smoker" 
+       ng-class="{'button-dark': spaj.sticks_cigarettes&&spaj.smoker}" 
+       ng-click="health1NextStep('health1_step3')"
+      >Berikutnya</button>
+    </div>
+    <div class='item' id="health1_step3"  ng-class="{'_active': health1Steps[2]}">
+      <h1 class='text-center'>Apakah Anda menggunakan obat-obatan tertentu?</h1>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="'Ya'" ng-model="spaj.medication">Ya</a>
+        <a class="button col col-50" grouped-radio="'Tidak'" ng-model="spaj.medication">Tidak</a>
+      </div>
+      <h1 class='text-center'>Sebutkan jenis dan alasan penggunaannya</h1>
+      <div class="row">
+        <input type="text" placeholder="Enter"   ng-model="spaj.medication_detail"/>
+      </div>
+      <button class="button next" 
+       ng-disabled="!spaj.medication || !spaj.medication_detail" 
+       ng-class="{'button-dark': spaj.medication_detail&&spaj.medication_detail}" 
+       ng-click="health1NextStep('health1_step4')">Berikutnya</button>
+    </div>
+    <div class='item' id="health1_step4"  ng-class="{'_active': health1Steps[3]}">
+      <h1 class='text-center'>Apakah Anda menderita kondisi berikut?</h1>
+      <div class="row">
+        <div class="col col-50">
+          Tekanan darah tinggi
+        </div>
+        <div class="col col-50">
+          <div class="row">
+            <div class="col">
+              <button class="button smoker-btn" ng-class="{selected: question3}" ng-click="question3 = true">Yes</button>
+            </div>
+            <div class="col">
+              <button class="button smoker-btn" ng-class="{selected: !question3}" ng-click="question3 = false">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-50">
+          Peningkatan Kolesterol
+        </div>
+        <div class="col col-50">
+          <div class="row">
+            <div class="col">
+              <button class="button smoker-btn" ng-class="{selected: question4}" ng-click="question4 = true">Yes</button>
+            </div>
+            <div class="col">
+              <button class="button smoker-btn" ng-class="{selected: !question4}" ng-click="question4 = false">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-50">
+          Kelainan Jantung Bawaan** Kelainan Bawaan Lainnya
+        </div>
+        <div class="col col-50">
+          <div class="row">
+            <div class="col">
+              <button class="button smoker-btn" ng-class="{selected: question5}" ng-click="question5 = true">Yes</button>
+            </div>
+            <div class="col">
+              <button class="button smoker-btn" ng-class="{selected: !question5}" ng-click="question5 = false">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-50">
+          Kelainan Jantung & Pembuluh Darah
+        </div>
+        <div class="col col-50">
+          <div class="row">
+            <div class="col">
+              <button class="button smoker-btn" ng-class="{selected: question6}" ng-click="question6 = true">Yes</button>
+            </div>
+            <div class="col">
+              <button class="button smoker-btn" ng-class="{selected: !question6}" ng-click="question6 = false">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-50">
+          Stroke
+        </div>
+        <div class="col col-50">
+          <div class="row">
+            <div class="col">
+              <button class="button smoker-btn" ng-class="{selected: question8}" ng-click="question8 = true">Yes</button>
+            </div>
+            <div class="col">
+              <button class="button smoker-btn" ng-class="{selected: !question8}" ng-click="question8 = false">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-50">
+          Demam Rheuma / Penyakit Jantung Rematik
+        </div>
+        <div class="col col-50">
+          <div class="row">
+            <div class="col">
+              <button class="button smoker-btn" ng-class="{selected: question7}" ng-click="question7 = true">Yes</button>
+            </div>
+            <div class="col">
+              <button class="button smoker-btn" ng-class="{selected: !question7}" ng-click="question7 = false">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-50">
+          Nyeri Dada
+        </div>
+        <div class="col col-50">
+          <div class="row">
+            <div class="col">
+              <button class="button smoker-btn" ng-class="{selected: question7}" ng-click="question7 = true">Yes</button>
+            </div>
+            <div class="col">
+              <button class="button smoker-btn" ng-class="{selected: !question7}" ng-click="question7 = false">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-50">
+          Nodule/Tumor/ Kista/
+Pembengkakan/Pertumbuhan/pembesaran lainnya (kanker/non-kanker) 
+        </div>
+        <div class="col col-50">
+          <div class="row">
+            <div class="col">
+              <button class="button smoker-btn" ng-class="{selected: question7}" ng-click="question7 = true">Yes</button>
+            </div>
+            <div class="col">
+              <button class="button smoker-btn" ng-class="{selected: !question7}" ng-click="question7 = false">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--end item -->
+    </div>
+  </div>
+</form>

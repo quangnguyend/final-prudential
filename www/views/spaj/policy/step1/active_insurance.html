@@ -1,0 +1,68 @@
+<div id="" class="wrapper has-bottom-bar active-insurance-page">
+  <form>
+    <h4 class="text-center">Apakah Calon Tertanggung juga sebagai Tertanggung pada Polis lain di Prudential dan/atau Perusahaan Asuransi Jiwa lain?</h4>
+    <div class="clearfix">
+      <div class="float-left col-5">&nbsp;</div>
+      <div class="float-left col-95">
+        <div class="row">
+          <div class="col col-padding">
+            <button id="active-insurance-yes" class="button button-stable button-active button-block btn-insurance" ng-click="vm.policy.changeActiveStatus(1, 'active-insurance-yes')"><span>Ya</span></button>
+          </div>
+          <div class="col col-padding">
+            <button id="active-insurance-no" class="button button-stable button-block btn-insurance" ng-click="vm.policy.changeActiveStatus(0, 'active-insurance-no')"><span>Tidak</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="m-gap-30">
+      <ul>
+        <li class="clearfix m-gap-30" ng-repeat="item in vm.policy.insurancePolicies">
+          <div class="float-left col-5 col-padding"><span class="row-number">{{$index + 1}}</span></div>
+          <div class="float-left col-95">
+            <div class="row row-no-padding">
+              <div class="col col-33 col-padding">
+                <label>Tipe Asuransi</label>
+                <select class=" form-input" ng-model="item.type_of_insurance">
+                  <option value="">Please Select</option>
+                  <option ng-repeat="type in vm.policy.typeOfInsurance" value="{{type.value}}">{{type.name}}</option>
+                </select>
+              </div>
+              <div class="col col-33 col-padding">
+                <label>Perusahaan</label>
+                <input type="text" class="form-input" placeholder="Enter" ng-model="item.insurance_company">
+              </div>
+              <div class="col col-33 col-padding">
+                <label>Uang Pertanggungan</label>
+                <div class="row row-no-padding">
+                  <div class="col col-75">
+                    <input type="text" class="form-input" placeholder="Enter" ng-model="item.sum_assured">
+                  </div>
+                  <div class="col  col-25">
+                    <select class=" form-input" ng-model="item.currency">
+                      <option ng-repeat="currency in vm.policy.currencyUnits" value="{{currency.value}}" selected>{{currency.name}}</option>
+                    </select>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="m-gap-20 col-padding">
+              Apakah itu polis Substandard?
+              <span class="input-inline m-gap-left-30">
+                <input ng-model="item.substandard_policy" value="1" class='custom_radio' type="radio" name="" id="radio_yes"/>
+                <label class='' for="radio_yes">Ya</label>
+              </span>
+              <span class="input-inline m-gap-left-30">
+                <input ng-model="item.substandard_policy" value="0" class='custom_radio' type="radio" name="" id="radio_no"/>
+                <label class='' for="radio_no">Tidak</label>
+              </span>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+      <div class="m-gap-30"><button class="button button-stable button-block float-right col-95" ng-click="vm.policy.addPolicy()" >  <i class="ion-ios-plus-empty"></i> <span class="txt-add-policy"> Tambah Polis</span></button></div>
+      <div class="clearfix"></div>
+    </div>
+  </form>
+</div>

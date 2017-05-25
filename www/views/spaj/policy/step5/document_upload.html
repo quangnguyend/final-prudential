@@ -1,0 +1,40 @@
+<div class="wrapper has-bottom-bar upload-document-page">
+  <form>
+    <h4>Your Necessary Documents</h4>
+    <div class="m-gap-30">
+      <ul>
+        <li class="heading-row">
+          <div class="float-left col-5 col-padding"></div>
+          <div class="float-left col-95">
+            <div class="row row-no-padding">
+              <div class="col col-33 padding-5 col-padding"></div>
+              <div class="col col-33 padding-5 col-padding">Select Document Type</div>
+              <div class="col col-33 padding-5 col-padding"></div>
+            </div>
+          </div>
+        </li>
+        <li class="clearfix" ng-repeat="item in vm.policy.documents">
+          <div class="float-left col-5 col-padding"><span class="row-number">{{$index + 1}}</span></div>
+          <div class="float-left col-95">
+            <div class="row row-no-padding">
+              <div class="col col-33 col-padding"><span class="upload-document-name">{{item.document_name}}</span></div>
+              <div class="col col-33 col-padding">
+                <select class=" form-input" ng-model="item.document_type">
+                  <option value="">Please Select</option>
+                  <option ng-repeat="type in vm.policy.documentType" value="{{type.value}}">{{type.name}}</option>
+                </select>
+              </div>
+              <div class="col col-33 col-padding">
+                <div class="document-upload-file">
+                  <input type="file" ng-model="item.document_image" ng-model-instant onchange="angular.element(this).scope().uploadFiles(this.files, this.item)">
+                  <button class="button button-stable btn-upload-img">Upload image</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+  </form>
+</div>

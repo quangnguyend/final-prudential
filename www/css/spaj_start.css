@@ -1,0 +1,97 @@
+#spaj-start .checkbox input:checked:before,
+#spaj-start .checkbox input:checked + .checkbox-icon:before{
+    background: #DA291C;
+    border-color: #DA291C;
+}
+
+#spaj-start .checkbox input:before,
+#spaj-start .checkbox-icon:before {
+    border-radius: 4px;
+}
+
+#spaj-start .item{
+    border: none;
+}
+
+#spaj-start .item.gray-block{
+    border-top: solid 1px #EFECEC;
+    border-bottom: solid 1px #EFECEC;
+    background: #F7F5F5;
+}
+
+#spaj-start .value-btn {
+  background: #F7F5F5;
+  opacity: 1.00;
+  border-radius: 2px;
+  width: 100%;
+  font-size: 17px;
+  line-height: 100%;
+  letter-spacing: -0.408px;
+  color: rgba(73, 84, 93, 0.5);
+  opacity: 1.00;
+}
+
+#spaj-start .value-btn.selected{
+  background-color: #5B6770;
+  color: #F7F5F5;
+}
+
+#spaj-start .mini-center-container {
+    text-align: left;
+    margin: 0 auto;
+}
+
+#spaj-start .mini-center-container .policy-checkbox{
+    display: inline-block;
+    border: none;
+    background: #F7F5F5;
+}
+
+#spaj-start .description {
+    white-space: initial;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+#spaj-start .other-policy-input {
+    padding-left: 15px;
+}
+
+#spaj-start .mini-center-container.radio-block div{
+    padding: 16px!important;
+}
+
+#spaj-start .before-proceed-3 {
+    background-color: #5B6770;
+    margin: 10px;
+    margin-top: -5px;
+}
+
+#spaj-start .before-proceed-3 span{
+    color: #EFECEC;
+    opacity: 1;
+    margin-bottom: 5px;
+}
+
+#spaj-start .before-proceed-3 input{
+    padding-left: 24px;
+    color: #EFECEC;
+}
+
+#spaj-start .mt-30{
+    margin-top: 30px;
+}
+
+#spaj-start .pb-0{
+    padding-bottom: 0
+}
+
+#spaj-start .container {
+    margin-bottom: 80px;
+}
+
+@media screen and (min-width: 568px) {
+    #spaj-start .mini-center-container{
+        width: 50%;
+    }
+}

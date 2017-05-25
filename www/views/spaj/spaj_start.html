@@ -1,0 +1,125 @@
+<ion-view cache-view="false" view-title="Sebelum Anda melanjutkan" id="spaj-start">
+    <ion-content>
+        <div class="container text-center">
+            <div class="list">
+                <div class="item">
+                    <div class="description">
+                        Silahkan cek info berikut yang mana dapat mempengaruhi dokumen premium atau dokumen yang dipersyaratkan
+                    </div>
+                </div>
+                <div class="item gray-block">
+                    <div class="description">
+                        Saya, pemegang polis mengkonfirmasi bahwa saya ...
+                    </div>
+                    <div class="row responsive-sm mini-center-container">
+                        <div class="col-50">
+                            <ion-checkbox class="policy-checkbox" ng-model="data.policyHolder.main_primary_insured">Tertanggung Utama</ion-checkbox>
+                        </div>
+                        <div class="col-50">
+                            <ion-checkbox class="policy-checkbox" ng-model="data.policyHolder.policy_payor">Tertanggung Tambahan 1</ion-checkbox>
+                        </div>
+                    </div>
+                    <div class="row responsive-sm mini-center-container">
+                        <div class="col-50">
+                            <ion-checkbox class="policy-checkbox" ng-model="data.policyHolder.additional_insured">Tertanggung Tambahan 2</ion-checkbox>
+                        </div>
+                        <div class="col-50">
+                            <ion-checkbox class="policy-checkbox" ng-model="data.policyHolder.no_insured">Bukan Tertanggung</ion-checkbox>
+                        </div>
+                    </div>
+                </div>
+                <div class="item gray-block mt-30">
+                    <div class="description">
+                        Saya, pemegang polis mengkonfirmasi bahwa saya ...
+                    </div>
+                    <div class="row responsive-sm mini-center-container radio-block">
+                        <div class="col-50">
+                            <input ng-model="data.policyRadio" class='custom_radio' type="radio" value="Pemegang Polis" name="pemegang_polis" id="pemegang_polis"
+                            />
+                            <label class='' for="pemegang_polis">Pemegang Polis</label>
+                        </div>
+                        <div class="col-50">
+                            <input ng-model="data.policyRadio" class='custom_radio' type="radio" value="Tertanggung Utama" name="tertanggung_utama" id="tertanggung_utama"
+                            />
+                            <label class='' for="tertanggung_utama">Tertanggung Utama</label>
+                        </div>
+                    </div>
+                    <div class="row responsive-sm mini-center-container radio-block">
+                        <div class="col-50">
+                            <input ng-model="data.policyRadio" class='custom_radio' type="radio" value="Tertanggung Utama 1" name="tertanggung_tambahan_1"
+                                id="tertanggung_tambahan_1" />
+                            <label class='' for="tertanggung_tambahan_1">Tertanggung Utama 1</label>
+                        </div>
+                        <div class="col-50">
+                            <input ng-model="data.policyRadio" class='custom_radio' type="radio" value="Tertanggung Utama 2" name="tertanggung_tambahan_2"
+                                id="tertanggung_tambahan_2" />
+                            <label class='' for="tertanggung_tambahan_2">Tertanggung Utama 2</label>
+                        </div>
+                    </div>
+                    <div class="row responsive-sm mini-center-container radio-block">
+                        <div class="col">
+                            <input ng-model="data.policyRadio" class='custom_radio' type="radio" value="Lainnya" name="lainnya" id="lainnya" />
+                            <label class='' for="lainnya">Lainnya</label>
+                        </div>
+                    </div>
+                    <div ng-show="data.policyRadio === 'Lainnya'" class="row responsive-sm mini-center-container radio-block">
+                        <div class="col">
+                            <input class="other-policy-input" ng-model="policyOtherText" type="text" placeholder="Enter">
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="description">
+                        {{data.beforeProceed_1.title}}
+                    </div>
+                    <div class="row">
+                        <div class="col col-50">
+                            <button class="button value-btn" ng-class="{selected: data.beforeProceed_1.value}" ng-click="data.beforeProceed_1.value = true">Ya</button>
+                        </div>
+                        <div class="col col-50">
+                            <button class="button value-btn" ng-class="{selected: !data.beforeProceed_1.value}" ng-click="data.beforeProceed_1.value = false">Tidak</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="description">
+                        {{data.beforeProceed_2.title}}
+                    </div>
+                    <div class="row">
+                        <div class="col col-50">
+                            <button class="button value-btn" ng-class="{selected: data.beforeProceed_2.value}" ng-click="data.beforeProceed_2.value = true">Ya</button>
+                        </div>
+                        <div class="col col-50">
+                            <button class="button value-btn" ng-class="{selected: !data.beforeProceed_2.value}" ng-click="data.beforeProceed_2.value = false">Tidak</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="description">
+                        {{data.beforeProceed_2.title}}
+                    </div>
+                    <div class="row pb-0">
+                        <div class="col col-50 pb-0">
+                            <button class="button value-btn pb-0" ng-class="{selected: data.beforeProceed_3.value}" ng-click="data.beforeProceed_3.value = true">Ya</button>
+                        </div>
+                        <div class="col col-50">
+                            <button class="button value-btn pb-0" ng-class="{selected: !data.beforeProceed_3.value}" ng-click="data.beforeProceed_3.value = false">Tidak</button>
+                        </div>
+                    </div>
+                    <div class="before-proceed-3 left-align" ng-show="data.beforeProceed_3.value == true" class="row">
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">No. SPAJ Sebelumnya</span>
+                            <input ng-model="data.beforeProceed_3.otherValue" type="text" placeholder="Enter">
+                        </label>
+                    </div>
+                    <!--<div class="gray-background left-align" ng-show="data.beforeProceed_3.value== false" class="row">
+                        321
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <div class="bar bar-footer bar-assertive">
+        <a href="#/app/spaj" title="Lanjutkan" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
+    </div>
+</ion-view>
