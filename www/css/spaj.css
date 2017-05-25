@@ -218,6 +218,13 @@
   padding-top: 0px;
   min-height: 40px;
   white-space: normal;
+  vertical-align: center
+}
+#health_question1 .grey-box .item p{    color: #FFF;
+    white-space: normal;
+    height: 100%;}
+#health_question1 .grey-box .item:nth-child(2) {
+  padding-top: 10px
 }
 
 #health_question1 .item .icon {
@@ -258,7 +265,179 @@
   background-size: 100%;
 }
 
+#health_question1 .ihocmon .icon:before {
+  background: url('../img/health-question6.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
 
+#health_question1 .ieye .icon:before {
+  background: url('../img/health-question7.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .iear .icon:before {
+  background: url('../img/health-question8.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .irespiratory .icon:before {
+  background: url('../img/health-question9.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .iheart .icon:before {
+  background: url('../img/health-question10.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .idigestive .icon:before {
+  background: url('../img/health-question11.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .ikidney .icon:before {
+  background: url('../img/health-question12png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .iface .icon:before {
+  background: url('../img/health-question13.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .ibone .icon:before {
+  background: url('../img/health-question14.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .itumors .icon:before {
+  background: url('../img/health-question15.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .iill .icon:before {
+  background: url('../img/health-question16.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .iinjury .icon:before {
+  background: url('../img/health-question17.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .idisease .icon:before {
+  background: url('../img/health-question17.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .idisorder .icon:before {
+  background: url('../img/health-question17.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .iabnormality .icon:before {
+  background: url('../img/health-question17.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .ipapsmear .icon:before {
+  background: url('../img/health-question17.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .ipregnant .icon:before {
+  background: url('../img/health-question17.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .isurgery .icon:before {
+  background: url('../img/health-question17.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .icomplication .icon:before {
+  background: url('../img/health-question17.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .ilostweight .icon:before {
+  background: url('../img/health-question17.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .checkbox input:before, #health_question1 .checkbox-icon:before {
+  border-radius: 2px;
+}
+
+#health_question1 .checkbox input:checked+.checkbox-icon:before, #health_question1 .checkbox input:checked:before {
+  background: #da291c;
+  border-color: #FFF;
+  border-width: 1px
+}
+
+
+.button-red{
+  background: #d0021b;
+}
+.popup-prudential.popup-container .popup {
+  width: 90%;
+  background-color: rgba(255,255,255, 1);
+}
+.popup-prudential .btn-popup-back{
+  background: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.popup-prudential .btn-popup-close{
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: #f00;
+  color: #fff;
+  width: 50px;
+  height: 40px;
+  display: block;
+  flex: inherit;
+  margin: 0;
+  min-height: initial;
+  min-width: initial;
+  padding: 0;
+  line-height: 0;
+}
+.popup-prudential .popup-buttons{
+  padding: 0;
+}
+.popup-prudential .popup-buttons button{
+  border-radius: 0;
+}
+.popup-prudential .popup-head{
+  background-color: #f7f5f5;
+  border: none;
+}
+.popup-prudential .popup-wrapper{
+  padding: 10px;
+}
 /*Css for beneficiary*/
 
 #policy_beneficiary {

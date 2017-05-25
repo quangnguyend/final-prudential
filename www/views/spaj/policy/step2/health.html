@@ -191,19 +191,19 @@
           <div class='grey-box' ng-show="vm.healthData.ieye=='Ya'">
             <ul>
               <li class="item item-checkbox">
-                Rabun jauh dengan menggunakan kacamata softlens (lensa kontak) melebihi -6,0 pada satu atau kedua mata
+                <p>Rabun jauh dengan menggunakan kacamata softlens (lensa kontak) melebihi -6,0 pada satu atau kedua mata</p>
                 <label class="checkbox">
               <input type="checkbox" ng-model='vm.healthData.brain_option1'>
               </label>
               </li>
               <li class="item item-checkbox">
-                Katarak atau kelainan mata lainnya
+                <p>Katarak atau kelainan mata lainnya</p>
                 <label class="checkbox">
               <input type="checkbox"  ng-model='vm.healthData.brain_option2'>
               </label>
               </li>
             </ul>
-            <button class="button button-full button-done">Done</button>
+            <button class="button button-full button-done" ng-click='showPopup()'>Done</button>
           </div>
 
         </div>
