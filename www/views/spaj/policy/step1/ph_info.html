@@ -1,5 +1,5 @@
-<div ng-show="vm.step1==='info'" id="policy_info_ph_info">
-  <form>
+
+  <form id="policy_info_ph_info">
     <div class="list list-inset no-lines">
       <div class='item'>
         <div class="row-no-padding">
@@ -473,9 +473,6 @@
       </div>
     </div>
   </form>
-</div>
-<div ng-show="vm.step1==='active'" ng-include="'templates/spaj/policy/step1/active_insurance.html'"></div>
-
 <div ng-show="true" class="bar bar-footer bar-assertive">
   <a  ng-click="vm.viewStep1('active')" title="Continue" class="btn">Next<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
 </div>

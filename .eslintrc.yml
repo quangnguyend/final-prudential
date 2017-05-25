@@ -1,0 +1,40 @@
+parserOptions:
+  ecmaVersion: 7
+
+env:
+  node: true
+
+globals:
+  "$": true
+  "$location": true
+  "$ionicScrollDelegate": true
+  "document": true
+  "window": true
+  "SignaturePad": true
+
+rules:
+  "no-confusing-arrow": 2
+  "arrow-parens": 2
+  "no-alert": 2
+  "comma-dangle": 1
+  "no-console": 2
+  "no-constant-condition": 2
+  "no-dupe-args": 2
+  "no-dupe-keys": 2
+  "no-duplicate-case": 2
+  "no-empty": 2
+  "no-extra-semi": 1
+  "no-func-assign": 2
+  "valid-typeof": 2
+  "no-unexpected-multiline": 2
+  "no-redeclare": 1
+  "no-undef": 1
+  "no-unused-vars": 0
+  "handle-callback-err": 2
+  "no-sync": 1
+  "camelcase": 0
+  "valid-jsdoc": 0
+  "new-cap": 0
+  "standard/object-curly-even-spacing": 0
+  "no-useless-escape": 0
+  "indent": [2, 2, { "SwitchCase": 1 }]

@@ -41,6 +41,17 @@ angular.module('prudential', ['ionic', 'prudential.controllers', 'prudential.ser
           }
         }
       })
+      .state('app.step1', {
+        cache: false,
+        url: '/step1/:isPru',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/policy/step1/ph_info.html',
+            controller: 'Step1Ctrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/spaj_start')
   })
