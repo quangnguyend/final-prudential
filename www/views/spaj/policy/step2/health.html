@@ -180,14 +180,14 @@
         </div>
         <!--end-item ihocmon-->
         <div class="item ieye">
-          <div class="icon" ng-class="{'completed': vm.eyePopupTouched && vm.checkPropertiesNotNull(vm.eyePopupData), 
+          <div class="icon" ng-class="{'completed': (vm.eyePopupTouched && vm.checkPropertiesNotNull(vm.eyePopupData)) || vm.healthData.ieye == false, 
           'not-complete': vm.eyePopupTouched && !vm.checkPropertiesNotNull(vm.eyePopupData)}"></div>
           <h1 class="text-center">Kondisi mata</h1>
           <p class="item_description">Rabun jauh dengan menggunakan kacamata/softlens (lensa kontak) melebihi -6,0 pada satu atau kedua mata, Katarak
             atau kelainan mata lainnya</p>
           <div class="button-bar">
-            <a class="button col col-50" grouped-radio="'Ya'" ng-model="vm.healthData.ieye">Ya</a>
-            <a class="button col col-50" grouped-radio="'Tidak'" ng-model="vm.healthData.ieye">Tidak</a>
+            <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ieye">Ya</a>
+            <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ieye">Tidak</a>
           </div>
           <div class='grey-box' ng-show="vm.healthData.ieye=='Ya'">
             <ul>

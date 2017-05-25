@@ -36,7 +36,6 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $ionicPopup, UserSe
           text: '<i class="icon ion-ios-arrow-back"></i>',
           type: 'btn-popup-back',
           onTap: function (e) {
-            console.log('back clicked');
             e.preventDefault();
           }
         },
@@ -52,7 +51,6 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $ionicPopup, UserSe
           text: 'Selesai',
           type: 'button-assertive btn-popup-save',
           onTap: function (e) {
-            console.log('save clicked!');
             return $scope.popupData;
           }
         }
