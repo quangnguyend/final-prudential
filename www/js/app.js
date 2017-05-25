@@ -46,8 +46,29 @@ angular.module('prudential', ['ionic', 'prudential.controllers', 'prudential.ser
         url: '/step1/:isPru',
         views: {
           'menuContent': {
-            templateUrl: 'views/spaj/policy/step1/ph_info.html',
             controller: 'Step1Ctrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.main', {
+        cache: false,
+        url: '/main',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/policy/step1/ph_main.html',
+            controller: 'PhMainCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.notmain', {
+        cache: false,
+        url: '/notmain',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/policy/step1/ph_not_main.html',
+            controller: 'PhNotMainCtrl',
             controllerAs: 'vm'
           }
         }
