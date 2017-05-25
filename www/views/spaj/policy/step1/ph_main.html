@@ -1,4 +1,8 @@
 <ion-view cache-view="false" view-title="Sebelum Anda melanjutkan" id="spaj-start">
+  <ion-nav-title>
+    Sebelum Anda melanjutkan
+    <step-status step='1' totalStep='10'></step-status>
+  </ion-nav-title>
   <ion-content>
     <step-process></step-process>
     <form id="policy_info_ph_info">
@@ -51,11 +55,11 @@
             <div class="row">
               <div class="row indent_row">
                 <div class="col-50">
-                  <input name='radio' class='custom_radio' type="radio" id='pira'/>
+                  <input name='radio' class='custom_radio' type="radio" id='pira' />
                   <label class='' for="pira">Pira</label>
                 </div>
                 <div class="col-50">
-                  <input name='radio' class='custom_radio' type="radio" id='wanita'/>
+                  <input name='radio' class='custom_radio' type="radio" id='wanita' />
                   <label class='' for="wanita">Wanita</label>
                 </div>
               </div>
@@ -152,11 +156,11 @@
             <div class="row">
               <div class="row indent_row">
                 <div class="col-50">
-                  <input id='seumurHidup' class='custom_radio' type="radio" name='kadaluwarasa'/>
+                  <input id='seumurHidup' class='custom_radio' type="radio" name='kadaluwarasa' />
                   <label class='' for="seumurHidup">Seumur hidup</label>
                 </div>
                 <div class="col-50">
-                  <input id='tidak' class='custom_radio' type="radio" name='kadaluwarasa'/>
+                  <input id='tidak' class='custom_radio' type="radio" name='kadaluwarasa' />
                   <label class='' for="tidak">Tidak</label>
                 </div>
               </div>
@@ -244,11 +248,11 @@
             <div class="row">
               <div class="row indent_row">
                 <div class="col-50">
-                  <input name='alamattempattinggal' id='alamatIndonesia' class='custom_radio' type="radio"/>
+                  <input name='alamattempattinggal' id='alamatIndonesia' class='custom_radio' type="radio" />
                   <label for="alamatIndonesia">Indonesia</label>
                 </div>
                 <div class="col-50">
-                  <input name='alamattempattinggal' id='alamatDiluarIndonesia' class='custom_radio' type="radio"/>
+                  <input name='alamattempattinggal' id='alamatDiluarIndonesia' class='custom_radio' type="radio" />
                   <label for="alamatDiluarIndonesia">Diluar Indonesia</label>
                 </div>
               </div>
@@ -446,15 +450,15 @@
             <div class="row">
               <div class="row indent_row">
                 <div class="col-33">
-                  <input name='alamatSuratMenyurat' id='alamatTempatTingal' class='custom_radio' type="radio"/>
+                  <input name='alamatSuratMenyurat' id='alamatTempatTingal' class='custom_radio' type="radio" />
                   <label class='' for="alamatTempatTingal">Alamat Tempat Tingal</label>
                 </div>
                 <div class="col-33">
-                  <input name='alamatSuratMenyurat' id='alamatKantor' class='custom_radio' type="radio"/>
+                  <input name='alamatSuratMenyurat' id='alamatKantor' class='custom_radio' type="radio" />
                   <label class='' for="alamatKantor">Alamat Kantor</label>
                 </div>
                 <div class="col-33">
-                  <input name='alamatSuratMenyurat' id='alamatLain' class='custom_radio' type="radio"/>
+                  <input name='alamatSuratMenyurat' id='alamatLain' class='custom_radio' type="radio" />
                   <label class='' for="alamatLain">Alamat Lain</label>
                 </div>
               </div>
@@ -478,5 +482,5 @@
   </ion-content>
 </ion-view>
 <div ng-show="true" class="bar bar-footer bar-assertive">
-  <a  ng-click="vm.viewStep1('active')" title="Continue" class="btn">Next<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
+  <a ng-click="vm.viewStep1('active')" title="Continue" class="btn">Next<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
 </div>
