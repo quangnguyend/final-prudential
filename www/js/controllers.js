@@ -65,5 +65,19 @@ angular
   .controller("HardCopyPolicyCtrl", hardCopyPolicyCtrl)
   .controller('ESignatureConfirmCtrl', eSignatureConfirmCtrl)
   .controller("eSignDeclarationCtrl", eSignDeclarationCtrl)
+  .controller('StepProcessCtr', stepProcessCtr)
+  .controller('SpajStartCtrl', spajStartCtrl)
+
+  .controller('Step1Ctrl', step1Ctrl)
+  .controller('PhMainCtrl', phMainCtrl)
+  .controller('PhNotMainCtrl', phNotMainCtrl)
+
+  .controller('Step2Ctrl', step2Ctrl)
+  .controller('OtherHealthCtrl', otherHealthCtrl)
+  .controller('FamilyHistoryCtrl', familyHistoryCtrl)
+  .controller('RiskHobbyCtrl', riskHobbyCtrl)
+
   .directive("dataService", dataService)
-  .directive("groupedRadio", groupedRadio);
+  .directive("groupedRadio", groupedRadio)
+  .directive('dataService', dataService)
+  .directive('groupedRadio', groupedRadio)

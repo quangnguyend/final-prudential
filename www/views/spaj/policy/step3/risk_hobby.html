@@ -1,0 +1,18 @@
+<ion-view cache-view="false" view-title="Kegiatan/aktivitas Beresiko" id="family-history">
+  <ion-content>
+    <step-process></step-process>
+    <div class="header-tab">
+      <div class='row tab-menu' >
+        <span class='col' ng-repeat="tab in vm.tabs" ng-class="vm.currentTab==tab.value? 'active': ''" ng-click="vm.switchTab(tab.value)">{{ tab.title}}</span>
+      </div>
+    </div>
+    <div class="wrapper text-center has-bottom-bar padding-bottom">
+      <div ng-if="vm.currentTab=='major_insured'" ng-include="'views/spaj/policy/step3/risk_hobby_major_insured.html'"></div>
+      <div ng-if="vm.currentTab=='additional_insured_1'" ng-include="'views/spaj/policy/step3/risk_hobby_additional_insured_1.html'"></div>
+      <div ng-if="vm.currentTab=='additional_insured_2'" ng-include="'views/spaj/policy/step3/risk_hobby_additional_insured_2.html'"></div>
+    </div>
+  </ion-content>
+  <div class="bar bar-footer bar-assertive">
+    <a ng-click="vm.save()" title="Lanjutkan" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
+  </div>
+</ion-view>
