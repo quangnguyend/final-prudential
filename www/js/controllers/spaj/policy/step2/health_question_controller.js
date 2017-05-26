@@ -15,7 +15,7 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $ionicPopup, UserSe
     medicine: null
   }
   vm.checkPropertiesNotNull = function (obj) {
-    if(obj === null || obj === "" ){return false}
+    if (obj === null || obj === "") { return false }
     for (var key in obj) {
       if (obj[key] === null || obj[key] === "")
         return false;
@@ -63,6 +63,46 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $ionicPopup, UserSe
     });
   }
 
-  
+  $scope.showPopup_paccident = function () {
+    // custom popup
+    $scope.popupData = vm.eyePopupData;
+    var eyePopup2 = $ionicPopup.show({
+      templateUrl: 'views/spaj/policy/step2/popup-personal-accident.html',
+      title: 'Kecelakaan Pribadi / Cedera Jangka Panjang',
+      cssClass: 'popup-prudential',
+      scope: $scope,
+      buttons: [
+        {
+          text: '<i class="icon ion-ios-arrow-back"></i>',
+          type: 'btn-popup-back',
+          onTap: function (e) {
+            e.preventDefault();
+          }
+        },
+        {
+          text: '<i class="icon ion-android-close"></i>',
+          type: 'btn-popup-close',
+          onTap: function (e) {
+            // eyePopup.close();
+            return $scope.popupData;
+          }
+        },
+        {
+          text: 'Selesai',
+          type: 'button-assertive btn-popup-save',
+          onTap: function (e) {
+            return $scope.popupData;
+          }
+        }
+      ]
+    });
+    eyePopup2.then(function (res) {
+      vm.eyePopupData = res
+      vm.eyePopupTouched = true
+      console.log(vm.eyePopupData)
+    });
+  }
+
+
 }
 
