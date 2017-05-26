@@ -68,9 +68,14 @@ angular
   .controller('PhNotMainCtrl', phNotMainCtrl)
 
   .controller('Step2Ctrl', step2Ctrl)
+
   .controller('OtherHealthCtrl', otherHealthCtrl)
   .controller('FamilyHistoryCtrl', familyHistoryCtrl)
   .controller('RiskHobbyCtrl', riskHobbyCtrl)
+
+  .controller('PayorCtrl', payorCtrl)
+
+  .controller('BeneficiariesCtrl', beneficiariesCtrl)
 
   .directive('dataService', dataService)
   .directive('groupedRadio', groupedRadio)
