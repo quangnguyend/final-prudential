@@ -273,7 +273,6 @@ select {
   padding-left: 0;
   height: 34px;
   color: #111;
-  vertical-align: middle;
   line-height: 16px;
   border: none;
   background-color: #fff;
@@ -375,5 +374,12 @@ select {
 .radio-btn-group {
   display: inline-block;
   margin-left: 40px;
+}
 
+.text-center{
+  text-align: center;
+}
+
+.text-left{
+  text-align: left;
 }
