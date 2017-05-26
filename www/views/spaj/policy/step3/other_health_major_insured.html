@@ -6,17 +6,17 @@
   <input type="text" placeholder="Enter" ng-model="vm.questions.question_1.other_answer">
   <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_2')">Berikutnya</button>
 </div>
-<div ng-if="vm.questions.question_2.active == true" class="mt-50">
+<div ng-class="vm.questions.question_2.active == false? 'disabled': ''" class="mt-50" id="question_2">
   <h4>{{vm.questions.question_2.title}}</h4>
   <input type="datetime" placeholder="DD/MM/YYYY" ng-model="vm.questions.question_2.date_inspection">
   <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_3')">Berikutnya</button>
 </div>
-<div ng-if="vm.questions.question_3.active == true" class="mt-50">
+<div ng-class="vm.questions.question_3.active == false? 'disabled': ''" class="mt-50" id="question_3">
   <h4>{{vm.questions.question_3.title}}</h4>
   <input type="text" placeholder="Enter" ng-model="vm.questions.question_3.examination_reason">
   <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_4')">Berikutnya</button>
 </div>
-<div ng-if="vm.questions.question_4.active == true" class="mt-50">
+<div ng-class="vm.questions.question_4.active == false? 'disabled': ''" class="mt-50" id="question_4">
   <h4>{{vm.questions.question_4.title}}</h4>
   <div  ng-repeat="item in vm.questions.question_4.results">
     <p class="text-right">200 karakter</p>
@@ -25,7 +25,7 @@
   <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_5')">Berikutnya</button>
   <button class="button button-stable button-block mt-30" ng-click="vm.addQuestion4()">+ Tambah tes kesehatan </button>
 </div>
-<div ng-if="vm.questions.question_5.active == true" class="mt-50">
+<div ng-class="vm.questions.question_5.active == false? 'disabled': ''" class="mt-50" id="question_5">
   <h4>{{vm.questions.question_5.title}}</h4>
   <div class="row">
     <div class="col col-padding">
@@ -36,7 +36,7 @@
     </div>
   </div>
 </div>
-<div ng-if="vm.questions.question_6.active == true" class="mt-50">
+<div ng-class="vm.questions.question_6.active == false? 'disabled': ''" class="mt-50" id="question_6">
   <h4>{{vm.questions.question_6.title}}</h4>
   <div class="row">
     <div class="col col-padding">
