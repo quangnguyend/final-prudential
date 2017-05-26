@@ -13,8 +13,12 @@
         <span ng-if='additionalList.length<2' class='col blur-text' ng-click='addAdditionalTab()'>+ Tertanggung Tambahan</span>
       </div>
     </div>
-    <insured-home insured-data='{{main_insured_tab}}' ng-show='currentTab===main_insured_tab'></insured-home>
-    <insured-home ng-repeat='tab in additionalList' insured-data='{{tab.id}}' ng-show='currentTab===tab.id' ng-class='currentTab===tab.id?"active":""'></insured-home>
+    <div ng-show='currentLayout === main_layout'>
+      <insured-home insured-data='{{main_insured_tab}}' ng-show='currentTab===main_insured_tab'></insured-home>
+      <insured-home ng-repeat='tab in additionalList' insured-data='{{tab.id}}' ng-show='currentTab===tab.id' ng-class='currentTab===tab.id?"active":""'></insured-home>
+    </div>
+    <div ng-show='currentLayout === active_insured_layout' ng-include="'views/spaj/policy/step1/active_insurance.html'"></div>
+
   </ion-content>
 </ion-view>
 <div ng-show="true" class="bar bar-footer bar-assertive">

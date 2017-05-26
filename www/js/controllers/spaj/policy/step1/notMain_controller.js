@@ -1,10 +1,14 @@
-function phNotMainCtrl($scope, $rootScope, SpajService) {
+function phNotMainCtrl($scope, $state, $rootScope, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
-  var MAIN_INSURED_TAB = 'MAIN_INSURED'
+  var MAIN_INSURED_TAB = 'MAIN_INSURED', MAIN_LAYOUT = 'MAIN_LAYOUT',
+    ACTIVE_INSURED = 'ACTIVE_INSURED'
+
   var rootSpajData = SpajService.getData('spaj')
-  console.log('rootSpajData', rootSpajData)
+  $scope.currentLayout = MAIN_LAYOUT
+  $scope.main_layout = MAIN_LAYOUT
+  $scope.active_insured_layout = ACTIVE_INSURED
   $scope.main_insured_tab = MAIN_INSURED_TAB
 
   $scope.currentTab = MAIN_INSURED_TAB
@@ -26,6 +30,9 @@ function phNotMainCtrl($scope, $rootScope, SpajService) {
   }
 
   $scope.nextClickHandle = function () {
+    if ($scope.currentLayout === MAIN_LAYOUT) { $scope.currentLayout = ACTIVE_INSURED } else if ($scope.currentLayout === ACTIVE_INSURED) {
+      $state.go('app.step2')
+    }
     console.dir(SpajService.getData())
   }
 

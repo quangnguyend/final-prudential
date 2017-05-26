@@ -1,4 +1,4 @@
-function phMainCtrl($scope, $rootScope, $stateParams, UserService, DataService, SpajService) {
+function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, DataService, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
@@ -28,9 +28,10 @@ function phMainCtrl($scope, $rootScope, $stateParams, UserService, DataService, 
 
   $scope.nextClickHandle = function () {
     console.dir(SpajService.getData())
+    $state.go('app.step2')
   }
 
-  function initPage(rootSpajData) {
+  function initPage (rootSpajData) {
     if (!rootSpajData) return
     if (rootSpajData.tambahan1) { $scope.addAdditionalTab() }
     if (rootSpajData.tambahan2) { $scope.addAdditionalTab() }
