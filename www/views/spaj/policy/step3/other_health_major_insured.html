@@ -8,7 +8,7 @@
 </div>
 <div ng-class="vm.questions.question_2.active == false? 'disabled': ''" class="mt-50" id="question_2">
   <h4>{{vm.questions.question_2.title}}</h4>
-  <input type="datetime" placeholder="DD/MM/YYYY" ng-model="vm.questions.question_2.date_inspection">
+  <input type="date" placeholder="DD/MM/YYYY" ng-model="vm.questions.question_2.date_inspection">
   <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_3')">Berikutnya</button>
 </div>
 <div ng-class="vm.questions.question_3.active == false? 'disabled': ''" class="mt-50" id="question_3">
