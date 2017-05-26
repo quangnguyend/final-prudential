@@ -3,9 +3,11 @@ function phMainCtrl($scope, $rootScope, $stateParams, UserService, DataService, 
   $rootScope.showBack = true
   $rootScope.showMenu = true
 
-  var POCICY_HOLDER_TAB = 'POLICY_HOLDER', ADDITIONAL_TAB = 'ADDITIONAL'
+  var POCICY_HOLDER_TAB = 'POLICY_HOLDER'
+  var rootSpajData = SpajService.getData('spaj')
+  console.log('rootSpajData', rootSpajData)
   $scope.policy_holder_tab = POCICY_HOLDER_TAB
-  $scope.additional_tab = ADDITIONAL_TAB
+
   $scope.currentTab = POCICY_HOLDER_TAB
   $scope.additionalList = []
 
@@ -21,9 +23,18 @@ function phMainCtrl($scope, $rootScope, $stateParams, UserService, DataService, 
       id: 'ADDITIONAL_' + numberTab,
       name: 'Tertanggung Tambahan ' + (numberTab + 1)
     })
+    $scope.currentTab = 'ADDITIONAL_' + numberTab
   }
 
   $scope.nextClickHandle = function () {
-    console.log(SpajService.getData())
+    console.dir(SpajService.getData())
   }
+
+  function initPage(rootSpajData) {
+    if (!rootSpajData) return
+    if (rootSpajData.tambahan1) { $scope.addAdditionalTab() }
+    if (rootSpajData.tambahan2) { $scope.addAdditionalTab() }
+  }
+
+  initPage(rootSpajData)
 }
