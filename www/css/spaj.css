@@ -1119,6 +1119,43 @@
   padding-left: 52px;
 }
 
+/* health_tumor */
+#health_tumor .close_btn, #health_respiratory .close_btn{
+  background: #D0021B;
+  padding: 6px 48px;
+  float: right;
+
+}
+#health_tumor .close_btn .ion-android-close, #health_respiratory .close_btn .ion-android-close {
+  color: white;
+  font-size: 35px;
+}
+#health_tumor .clear_btn, #health_respiratory .clear_btn {
+  clear: both;
+}
+#health_tumor .indent_btn, #health_respiratory .indent_btn{
+  margin-top: 45px;
+}
+#health_tumor #policy_info_ph_info .form_select, #health_respiratory #policy_info_ph_info .form_select {
+  color: #39393A;
+}
+#health_tumor .inside_check, #health_respiratory .inside_check {
+  margin: 0 0 0 32px;
+  width: 100%;
+}
+#health_tumor #policy_info_ph_info .form_select, #health_respiratory #policy_info_ph_info .form_select {
+  border-bottom-width: 0;
+}
+#health_tumor .checkbox_child, #health_respiratory .checkbox_child{
+  margin-top: -20px;
+}
+
+/* health_respiratory */
+#health_respiratory {}
+
+/* esign_paymnet */
+#esign_paymnet{}
+
 
 /* Active Insurance Policies */
 
