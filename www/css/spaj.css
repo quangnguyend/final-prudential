@@ -252,6 +252,283 @@
 }
 #health_question1 .grey-box .item p{    color: #FFF;
     white-space: normal;
+    height: 60px; display: -webkit-box; -webkit-box-align: center}
+#health_question1 .grey-box .item:nth-child(2) {
+  padding-bottom: 0px
+}
+
+#health_question1 .item .icon {
+  content: '';
+  width: 111px;
+  height: 64px;
+  background: url('../img/health-question0.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  margin: 0 auto;
+  position: relative
+}
+
+#health_question1 .icon:before {
+  content: '';
+  width: 111px;
+  height: 64px;
+  position: absolute;
+  top: 0px;
+  left: 0px
+}
+
+#health_question1 .ibrain .icon:before {
+  background: url('../img/health-question5.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .ibrain.done .icon:before {
+  background: url('../img/health-question5.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .ibrain.notdone .icon:before {
+  background: url('../img/health-question5.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .ihocmon .icon:before {
+  background: url('../img/health-question6.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .ieye .icon:before {
+  background: url('../img/health-question7.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .iear .icon:before {
+  background: url('../img/health-question8.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .irespiratory .icon:before {
+  background: url('../img/health-question9.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .iheart .icon:before {
+  background: url('../img/health-question10.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .idigestive .icon:before {
+  background: url('../img/health-question11.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .ikidney .icon:before {
+  background: url('../img/health-question12png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .iface .icon:before {
+  background: url('../img/health-question13.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .ibone .icon:before {
+  background: url('../img/health-question14.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .itumors .icon:before {
+  background: url('../img/health-question15.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .iill .icon:before {
+  background: url('../img/health-question16.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .iinjury .icon:before {
+  background: url('../img/health-question17.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .idisease .icon:before {
+  background: url('../img/health-question17.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .idisorder .icon:before {
+  background: url('../img/health-question17.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .iabnormality .icon:before {
+  background: url('../img/health-question17.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .ipapsmear .icon:before {
+  background: url('../img/health-question17.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .ipregnant .icon:before {
+  background: url('../img/health-question17.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .isurgery .icon:before {
+  background: url('../img/health-question17.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .icomplication .icon:before {
+  background: url('../img/health-question17.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .ilostweight .icon:before {
+  background: url('../img/health-question17.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+#health_question1 .checkbox input:before, #health_question1 .checkbox-icon:before {
+  border-radius: 2px;
+}
+
+#health_question1 .checkbox input:checked+.checkbox-icon:before, #health_question1 .checkbox input:checked:before {
+  background: #da291c;
+  border-color: #FFF;
+  border-width: 1px
+}
+
+#health_question1 .icon.completed::after{
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: 0px;
+  width: 53px;
+  height: 53px;
+  background: url(../img/completed-sign.png) no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+#health_question1 .icon.not-complete:after{
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: 0px;
+  width: 53px;
+  height: 53px;
+  background: url('../img/not-complete-sign.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+#health_question1 .icon.un-touched:after{
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: 0px;
+  width: 53px;
+  height: 53px;
+  background: url('../img/un-touched-sign.png') no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+.button-red{
+  background: #d0021b;
+}
+.popup-prudential.popup-container .popup {
+  width: 90%;
+  background-color: rgba(255,255,255, 1);
+}
+.popup-prudential .btn-popup-back{
+  background: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.popup-prudential .btn-popup-close{
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: #f00;
+  color: #fff;
+  width: 50px;
+  height: 40px;
+  display: block;
+  flex: inherit;
+  margin: 0;
+  min-height: initial;
+  min-width: initial;
+  padding: 0;
+  line-height: 0;
+}
+.popup-prudential .popup-buttons{
+  padding: 0;
+}
+.popup-prudential .popup-buttons button{
+  border-radius: 0;
+}
+.popup-prudential .popup-head{
+  background-color: #f7f5f5;
+  border: none;
+}
+.popup-prudential .popup-wrapper{
+  padding: 10px;
+}
+.popup-prudential .item2{margin:20px 0}
+.popup-prudential .item2 .label{margin-bottom:10px}
+#health_question1 .grey-box {
+  background: #5B6770;
+}
+
+#health_question1 .grey-box ul {
+  padding: 30px;
+  margin: 0px;
+}
+
+#health_question1 .button-done {
+  background: transparent;
+  border-top: 1px solid #6e7880;
+  color: #FFF
+}
+
+#health_question1 .grey-box .item {
+  background: transparent;
+  padding-left: 60px;
+  color: #FFF;
+  padding-top: 0px;
+  min-height: 40px;
+  white-space: normal;
+  vertical-align: center
+}
+#health_question1 .grey-box .item p{    color: #FFF;
+    white-space: normal;
     height: 100%;}
 #health_question1 .grey-box .item:nth-child(2) {
   padding-top: 10px
