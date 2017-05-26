@@ -10,9 +10,11 @@ function step1Ctrl ($state, $scope, $rootScope, $stateParams, SpajService) {
   // console.log(SpajService.getData('spaj'))
 
   function gotoPhPage () {
-    vm.isPrudential = $stateParams.isPru
-    if (vm.isPrudential === '1') {
+    if (vm.objSpaj.utama && vm.objSpaj.typeSpaj=='PemegangPolis') {
       $state.go('app.main')
+    }
+    else {
+       $state.go('app.notmain')
     }
   }
 }

@@ -1,1 +1,25 @@
-// e copy layout thang kia vao nhung 3 tab nha
+<ion-view cache-view="false" view-title="Sebelum Anda melanjutkan" id="spaj-start">
+  <ion-nav-title>
+    Sebelum Anda melanjutkan
+    <step-status step='1' totalStep='10'></step-status>
+  </ion-nav-title>
+  <ion-content>
+    <step-process></step-process>
+    <div id="SPAJ">
+      <div class='row tab-menu'>
+        <span class='col disabled' ng-disabled>Pemegang Polis</span>
+        <span class='col' ng-class="active==1? 'active': ''" ng-click="vm.clickTab(1)">Tertanggung Utama</span>
+        <span class='col'  ng-class="active==2? 'active': ''" ng-click="addTab()">+ Tertanggung Tambahan</span>
+        <span class='col'  ng-class="active==3? 'active': ''" ng-show="vm.Tambahan1" ng-click="vm.clickTab(3)">Tertanggung Tambahan 1</span>
+        <span class='col'  ng-class="active==4? 'active': ''" ng-show="vm.Tambahan2" ng-click="vm.clickTab(4)">Tertanggung Tambahan 2</span>
+      </div>
+    </div>
+    
+    <div ng-if="active==1" ng-include="'views/spaj/policy/step1/ph_not_main_active.html'"></div>
+    <div ng-if="active==3" ng-include="'views/spaj/policy/step1/ph_blank.html'"></div>
+    <div ng-if="active==4" ng-include="'views/spaj/policy/step1/ph_blank.html'"></div>
+  </ion-content>
+</ion-view>
+<div ng-show="true" class="bar bar-footer bar-assertive">
+  <a ng-click="vm.viewStep1('active')" title="Continue" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
+</div>
