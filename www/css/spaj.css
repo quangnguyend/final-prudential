@@ -1475,18 +1475,16 @@
 }
 
 .header-tab .tab-menu {
-  height: 50px;
   padding: 0px;
 }
 
 .header-tab .tab-menu .col {
   text-align: center;
-  height: 50px;
-  line-height: 40px;
   background: #F7F5F5;
   border-right: 1px solid #f0eded;
   border-left: 1px solid #f0eded;
-  box-sizing: border-box
+  box-sizing: border-box;
+  padding: 9px 5px;
 }
 
 .header-tab.tab-menu .col:first-child {
@@ -1531,6 +1529,19 @@
 #other-health input[type=text], #other-health input[type=datetime]{
   font-size: 16px;
 }
+#other-health .disabled{
+  opacity: .5;
+}
+#other-health .disabled input{
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+#other-health .disabled button{
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 #family-history .float-left {
   float: left;
 }

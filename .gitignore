@@ -2,3 +2,6 @@
 **/.DS_Store
 **/.gitignore
 /.idea
+/platforms
+/plugins
+/resources

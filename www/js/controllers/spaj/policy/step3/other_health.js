@@ -54,8 +54,14 @@ function otherHealthCtrl ($scope, $rootScope, $ionicPopup, UserService, DataServ
     }
   };
 
+  vm.scrollTo = function(id){
+    var element = document.getElementById(id);
+    $ionicScrollDelegate.scrollTo(0, element.offsetTop - 50, true);
+  };
+
   vm.nextQuestion = function (question) {
     vm.questions[question].active = true;
+    vm.scrollTo(question);
   };
 
   vm.addQuestion4 = function () {
