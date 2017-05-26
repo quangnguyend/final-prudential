@@ -52,6 +52,9 @@ angular.module('prudential.controllers', [])
   .controller('PhNotMainCtrl', phNotMainCtrl)
 
   .controller('Step2Ctrl', step2Ctrl)
+  .controller('OtherHealthCtrl', otherHealthCtrl)
+  .controller('FamilyHistoryCtrl', familyHistoryCtrl)
+  .controller('RiskHobbyCtrl', riskHobbyCtrl)
 
   .directive('dataService', dataService)
   .directive('groupedRadio', groupedRadio)

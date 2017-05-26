@@ -84,6 +84,39 @@ angular.module('prudential', ['ionic', 'prudential.controllers', 'prudential.ser
           }
         }
       })
+      .state('app.other_health', {
+        cache: false,
+        url: '/other_health',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/policy/step3/other_health.html',
+            controller: 'OtherHealthCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.family_history', {
+        cache: false,
+        url: '/family_history',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/policy/step3/family_history.html',
+            controller: 'FamilyHistoryCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.risk_hobby', {
+        cache: false,
+        url: '/risk_hobby',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/policy/step3/risk_hobby.html',
+            controller: 'RiskHobbyCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/spaj_start')
   })
