@@ -1,0 +1,38 @@
+<ion-view cache-view="false" view-title="Sebelum Anda melanjutkan" id="spaj-start">
+  <ion-nav-title>
+    Metode Pembayaran
+    <step-status step='1' totalStep='10'></step-status>
+  </ion-nav-title>
+  <ion-content>
+    <step-process></step-process>
+    <form id="esign_paymnet">
+      <div id="policy_info_ph_info" class="list list-inset no-lines">
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <div class="row indent_row">
+                <div class="col-50">
+                  <input id='kartuDebit_kredit' class='custom_radio' type="radio" name='kadaluwarasa' />
+                  <label class='' for="kartuDebit_kredit">Kartu Debit / Kredit</label>
+                </div>
+                <div class="col-50">
+                  <input id='bankTransfer_atm' class='custom_radio' type="radio" name='kadaluwarasa' />
+                  <label class='' for="bankTransfer_atm">Bank transfer / ATM</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row"><ion-checkbox>Semua Pembayaran Premi harus sudah diterima di rekening Penanggung dan telah teridentifikasi</ion-checkbox></div>
+            <div class="row"><ion-checkbox>Bahwa jika Penanggung melakukan pembayaran dana, Penanggung harus tunduk kepada aturan yang <br>berlaku di Indonesia maupun sesuai standar Grup Prudential, di antaranya adalah diperlukannya tambahan <br>proses tertentu jika SAYA termasuk dalam daftar sanksi tertentu.</ion-checkbox></div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
+<div ng-show="true" class="bar bar-footer bar-assertive">
+  <a ng-click="vm.viewStep1('active')" title="Continue" class="btn">Next<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
+</div>
