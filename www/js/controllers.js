@@ -57,26 +57,20 @@ angular
   })
   .controller('StepProcessCtr', stepProcessCtr)
   .controller('SpajStartCtrl', spajStartCtrl)
-
+  .controller('insuredHomeCtrl', insuredHomeCtrl)
   .controller('EPolicyCtrl', ePolicyCtrl)
   .controller('HardCopyPolicyCtrl', hardCopyPolicyCtrl)
   .controller('ESignatureConfirmCtrl', eSignatureConfirmCtrl)
   .controller('eSignDeclarationCtrl', eSignDeclarationCtrl)
-
   .controller('Step1Ctrl', step1Ctrl)
   .controller('PhMainCtrl', phMainCtrl)
   .controller('PhNotMainCtrl', phNotMainCtrl)
-
   .controller('Step2Ctrl', step2Ctrl)
-
   .controller('OtherHealthCtrl', otherHealthCtrl)
   .controller('FamilyHistoryCtrl', familyHistoryCtrl)
   .controller('RiskHobbyCtrl', riskHobbyCtrl)
-
   .controller('PayorCtrl', payorCtrl)
-
   .controller('BeneficiariesCtrl', beneficiariesCtrl)
-
   .controller('StepHeaderCtr', stepHeaderCtr)
   .controller('DocumentUploadCtrl', documentUploadCtrl)
 

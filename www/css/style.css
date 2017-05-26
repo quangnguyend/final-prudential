@@ -273,7 +273,6 @@ select {
   padding-left: 0;
   height: 34px;
   color: #111;
-  vertical-align: middle;
   line-height: 16px;
   border: none;
   background-color: #fff;
@@ -284,6 +283,44 @@ select {
   color: #c2c2c2 !important;
 }
 
+
+/*style for tab menus*/
+.tab-menu {
+  height: 50px;
+  padding: 0px !important;
+}
+
+.tab-menu .col {
+  text-align: center;
+  height: 50px;
+  line-height: 40px;
+  background: #F7F5F5;
+  border-right: 1px solid #f0eded;
+  border-left: 1px solid #f0eded;
+  box-sizing: border-box
+}
+
+.tab-menu .col:first-child {
+  border-left: none
+}
+
+.tab-menu .col:last-child {
+  border-right: none
+}
+
+.tab-menu .col.active {
+  border-bottom: 2px solid #da291c;
+  border-right: 1px solid #f1d6d7;
+  border-left: 1px solid #f1d6d7
+}
+
+.tab-menu .col.active:first-child {
+  border-left: none
+}
+
+.tab-menu .col.active:last-child {
+  border-right: none
+}
 .no-lines {
   border: none!important;
 }
@@ -337,4 +374,12 @@ select {
 .radio-btn-group {
   display: inline-block;
   margin-left: 40px;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.text-left{
+  text-align: left;
 }
