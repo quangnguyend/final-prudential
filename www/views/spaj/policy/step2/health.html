@@ -8,15 +8,15 @@
           <h1 class='text-center'>Tinggi dan berat badan saya</h1>
           <div class="row">
             <div class="col col-50">
-              <input type="text" placeholder="155.5" ng-model='vm.healthData.height'>
+              <input type="number" placeholder="155.5" ng-model='vm.healthData.height'>
               <span class="item-note">cm</span>
             </div>
             <div class="col col-50">
-              <input type="text" placeholder="Berat" ng-model='vm.healthData.weight'>
+              <input type="number" placeholder="Berat" ng-model='vm.healthData.weight'>
               <span class="item-note">kg</span>
             </div>
           </div>
-          <button class="button next" ng-class="{'button-dark': vm.healthData.height&&vm.healthData.weight}" ng-disabled="!vm.healthData.height || !vm.healthData.weight"
+          <button class="button next" ng-class="{'button-dark': vm.healthData.height && vm.healthData.weight}" ng-disabled="!vm.healthData.height || !vm.healthData.weight"
             ng-click="health1NextStep('health1_step2')">Berikutnya</button>
         </div>
         <div class='item' id="health1_step2" ng-class="{'_active': health1Steps[1]}">
@@ -27,9 +27,9 @@
           </div>
           <h1 class='text-center'>Sebutkan jumlah batang per hari</h1>
           <div class="row">
-            <input type="text" placeholder="Enter" ng-model='vm.healthData.sticks_cigarettes' />
+            <input type="number" placeholder="Enter" ng-model='vm.healthData.sticks_cigarettes' />
           </div>
-          <button class="button next" ng-disabled="!vm.healthData.sticks_cigarettes || !vm.healthData.smoker" ng-class="{'button-dark': vm.healthData.sticks_cigarettes&&vm.healthData.smoker}"
+          <button class="button next" ng-disabled="!vm.healthData.sticks_cigarettes || !vm.healthData.smoker == null" ng-class="{'button-dark': vm.healthData.sticks_cigarettes && vm.healthData.smoker != null}"
             ng-click="health1NextStep('health1_step3')">Berikutnya</button>
         </div>
         <div class='item' id="health1_step3" ng-class="{'_active': health1Steps[2]}">
@@ -42,7 +42,7 @@
           <div class="row">
             <input type="text" placeholder="Enter" ng-model="vm.healthData.medication_detail" />
           </div>
-          <button class="button next" ng-disabled="!vm.healthData.medication || !vm.healthData.medication_detail" ng-class="{'button-dark': vm.healthData.medication_detail&&vm.healthData.medication_detail}"
+          <button class="button next" ng-disabled="!vm.healthData.medication || !vm.healthData.medication_detail == null" ng-class="{'button-dark': vm.healthData.medication_detail && vm.healthData.medication_detail == null}"
             ng-click="health1NextStep('health1_step4')">Berikutnya</button>
         </div>
         <div class='item' id="health1_step4" ng-class="{'_active': health1Steps[3]}">
