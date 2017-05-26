@@ -77,5 +77,7 @@ angular
 
   .controller('BeneficiariesCtrl', beneficiariesCtrl)
 
+  .controller('StepHeaderCtr', stepHeaderCtr)
+
   .directive('dataService', dataService)
   .directive('groupedRadio', groupedRadio)
