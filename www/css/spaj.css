@@ -114,6 +114,15 @@
   color: #DA291C;
 }
 
+.multi-step .col.active span a{
+  color: #F8383F;
+}
+
+.multi-step .col span a {
+  color: white;
+  text-decoration: none;
+}
+
 #step-status{
   position: absolute;
   right: 20px;
