@@ -1536,3 +1536,22 @@
   padding: 0px!important;
 }
 /* step 3 style*/
+#add-digestive{}
+#add-digestive .item-checkbox p{padding-left: 40px; }
+#add-digestive .item-checkbox{width:33.3%}
+#add-digestive .item-checkbox .checkbox{left:0px; padding-left: 0px}
+#add-digestive .customize-cb .item{padding-top: 17px;
+    height: 50px;}
+    #add-digestive  ul.more {height: 40px}
+#add-digestive  ul.more li{height: 50px; margin-left: 40px;padding-top: 0px;}
+#add-digestive .more-space{margin-bottom:10px}
+#add-digestive .row-no-padding h4{padding:10px 0 ; font-size:16px; font-weight: normal}
+ #add-digestive .title-cb{    line-height: 40px;
+    font-size: 20px;
+    font-weight: bold;}
+ #add-digestive .col.disable{
+   opacity: 0.4; pointer-events: none
+ }
+  #add-digestive .col.active{
+   opacity: 1; pointer-events: normal
+ }
