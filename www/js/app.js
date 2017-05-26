@@ -5,102 +5,190 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 angular
-  .module("prudential", [
-    "ionic",
-    "prudential.controllers",
-    "prudential.services",
-    "prudential.components",
-    "ngAnimate",
-    "ui.router",
-    "ngCordova"
+  .module('prudential', [
+    'ionic',
+    'prudential.controllers',
+    'prudential.services',
+    'prudential.components',
+    'ngAnimate',
+    'ui.router',
+    'ngCordova'
   ])
-  .run(function($ionicPlatform, $rootScope) {
-    $ionicPlatform.ready(function() {
+  .run(function ($ionicPlatform, $rootScope) {
+    $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
       if (window.cordova && window.cordova.plugins.Keyboard) {
-        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-        cordova.plugins.Keyboard.disableScroll(true);
+        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true)
+        cordova.plugins.Keyboard.disableScroll(true)
       }
       if (window.StatusBar) {
         // org.apache.cordova.statusbar required
-        StatusBar.styleDefault();
+        StatusBar.styleDefault()
       }
-    });
+    })
   })
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state("app", {
-        url: "/app",
+      .state('app', {
+        url: '/app',
         abstract: true,
-        templateUrl: "views/layout/menu.html",
-        controller: "AppCtrl"
+        templateUrl: 'views/layout/menu.html',
+        controller: 'AppCtrl'
       })
-      .state("app.spaj_start", {
+      .state('app.spaj_start', {
         cache: false,
-        url: "/spaj_start",
+        url: '/spaj_start',
         views: {
           menuContent: {
-            templateUrl: "views/spaj/spaj_start.html",
-            controller: "SpajStartCtrl",
-            controllerAs: "vm"
+            templateUrl: 'views/spaj/spaj_start.html',
+            controller: 'SpajStartCtrl',
+            controllerAs: 'vm'
           }
         }
       })
-      .state("app.step1", {
+      .state('app.step1', {
         cache: false,
-        url: "/step1",
+        url: '/step1',
         views: {
           menuContent: {
-            controller: "Step1Ctrl",
-            controllerAs: "vm"
+            controller: 'Step1Ctrl',
+            controllerAs: 'vm'
           }
         }
       })
-      .state("app.main", {
+      .state('app.main', {
         cache: false,
-        url: "/main",
+        url: '/main',
         views: {
           menuContent: {
-            templateUrl: "views/spaj/policy/step1/ph_main.html",
-            controller: "PhMainCtrl",
-            controllerAs: "vm"
+            templateUrl: 'views/spaj/policy/step1/ph_main.html',
+            controller: 'PhMainCtrl',
+            controllerAs: 'vm'
           }
         }
       })
-      .state("app.notmain", {
+      .state('app.notmain', {
         cache: false,
-        url: "/notmain",
+        url: '/notmain',
         views: {
           menuContent: {
-            templateUrl: "views/spaj/policy/step1/ph_not_main.html",
-            controller: "PhNotMainCtrl",
-            controllerAs: "vm"
+            templateUrl: 'views/spaj/policy/step1/ph_not_main.html',
+            controller: 'PhNotMainCtrl',
+            controllerAs: 'vm'
           }
         }
       })
-      .state("app.step2", {
+      .state('app.step2', {
         cache: false,
-        url: "/step2",
+        url: '/step2',
         views: {
           menuContent: {
-            templateUrl: "views/spaj/policy/step2/health.html",
-            controller: "Step2Ctrl",
-            controllerAs: "vm"
+            templateUrl: 'views/spaj/policy/step2/health.html',
+            controller: 'Step2Ctrl',
+            controllerAs: 'vm'
           }
         }
       })
-      .state("app.esign_declaration", {
+      .state('app.e_policy', {
         cache: false,
-        url: "/esign_declaration",
+        url: '/e_policy',
         views: {
           menuContent: {
-            templateUrl: "views/spaj/esign_declaration.html",
-            controller: "eSignDeclarationCtrl",
-            controllerAs: "vm"
+            templateUrl: 'views/spaj/policy/final_step/e_policy.html',
+            controller: 'EPolicyCtrl',
+            controllerAs: 'vm'
           }
         }
-      });
+      })
+      .state('app.hardcopy_policy', {
+        cache: false,
+        url: '/hardcopy_policy',
+        views: {
+          menuContent: {
+            templateUrl: 'views/spaj/policy/final_step/hardcopy_policy.html',
+            controller: 'HardCopyPolicyCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.spaj_esignature_confirmation', {
+        cache: false,
+        url: '/spaj_esignature_confirmation',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/e-signature-confirmation.html',
+            controller: 'ESignatureConfirmCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.esign_declaration', {
+        cache: false,
+        url: '/esign_declaration',
+        views: {
+          menuContent: {
+            templateUrl: 'views/spaj/esign_declaration.html',
+            controller: 'eSignDeclarationCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.step3', {
+        cache: false,
+        url: '/step3',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/policy/step3/other_health.html',
+            controller: 'OtherHealthCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.family_history', {
+        cache: false,
+        url: '/step3/family_history',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/policy/step3/family_history.html',
+            controller: 'FamilyHistoryCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.risk_hobby', {
+        cache: false,
+        url: '/step3/risk_hobby',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/policy/step3/risk_hobby.html',
+            controller: 'RiskHobbyCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.step4', {
+        cache: false,
+        url: '/step4',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/policy/step4/payor.html',
+            controller: 'PayorCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.step5', {
+        cache: false,
+        url: '/step5',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/policy/step5/beneficiaries.html',
+            controller: 'BeneficiariesCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise("/app/spaj_start");
-  });
+    $urlRouterProvider.otherwise('/app/spaj_start')
+  })

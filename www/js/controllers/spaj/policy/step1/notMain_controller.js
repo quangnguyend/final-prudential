@@ -1,4 +1,4 @@
-function phNotMainCtrl($scope, $state, $rootScope, SpajService) {
+function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
@@ -33,10 +33,10 @@ function phNotMainCtrl($scope, $state, $rootScope, SpajService) {
     if ($scope.currentLayout === MAIN_LAYOUT) { $scope.currentLayout = ACTIVE_INSURED } else if ($scope.currentLayout === ACTIVE_INSURED) {
       $state.go('app.step2')
     }
-    console.dir(SpajService.getData())
+    // console.dir(SpajService.getData())
   }
 
-  function initPage(rootSpajData) {
+  function initPage (rootSpajData) {
     if (!rootSpajData) return
     if (rootSpajData.tambahan1) { $scope.addAdditionalTab() }
     if (rootSpajData.tambahan2) { $scope.addAdditionalTab() }

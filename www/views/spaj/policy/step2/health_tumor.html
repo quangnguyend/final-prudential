@@ -1,0 +1,463 @@
+<ion-view cache-view="false" view-title="Sebelum Anda melanjutkan" id="spaj-start">
+  <ion-nav-title>
+    Form Kesehatan Tambahan Tumor
+    <step-status step='1' totalStep='10'></step-status>
+  </ion-nav-title>
+  <ion-content>
+    <step-process></step-process>
+    <form id="health_respiratory">
+      <div class="clear_btn indent_btn">
+        <div class="close_btn"><i class="icon ion-android-close"></i></div>
+        <p class="clear_btn"></p>
+      </div>
+      <div id="policy_info_ph_info" class="list list-inset no-lines">
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <span class="input-label">Jenis kelainan yang diderita</span>
+              </label>
+            </div>
+            <div class="row">
+              <div class="col-33">
+                <ion-checkbox>Tumor</ion-checkbox>
+              </div>
+              <div class="col-33">
+                <ion-checkbox>Kista</ion-checkbox>
+              </div>
+              <div class="col-33">
+                <ion-checkbox>Benjolan</ion-checkbox>
+              </div>
+            </div>
+            <div class="row">
+              <ion-checkbox>Lainnya</ion-checkbox>
+            </div>
+            <div class="checkbox_child">
+              <div class="row">
+                <div class='item inside_check'>
+                  <div class="row-no-padding">
+                    <div class="row"><input type="text" placeholder="Enter"></div>
+                  </div>
+                </div>
+              </div>
+            </div>         
+          </div>
+        </div>
+        
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <span class="input-label">Lokasi</span>
+              </label>
+            </div>
+            <div class="row">
+              <div class="col-33">
+                <ion-checkbox>Leher</ion-checkbox>
+              </div>
+              <div class="col-33">
+                <ion-checkbox>Lengan Kanan</ion-checkbox>
+              </div>
+              <div class="col-33">
+                <ion-checkbox>Punggung</ion-checkbox>
+              </div>
+            </div>
+            <div class="row">
+              <ion-checkbox>Lainnya</ion-checkbox>
+            </div>
+            <div class="checkbox_child">
+              <div class="row">
+                <div class='item inside_check'>
+                  <div class="row-no-padding">
+                    <div class="row"><input type="text" placeholder="Enter"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <di class="row-no-padding">
+            <div class="row">
+              <div class="button-block add_icon">
+                <a class="button" grouped-red-radio="'Male'" ng-model="agent.gender"><span>Berikutnya</span></a>
+              </div>
+            </div>
+          </di>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <div class="input-label">Sudah operasi ?</div>
+              </label>
+            </div>
+            <div class="row">
+              <div class="col col-50">
+                <button class="button value-btn" ng-class="{selected: vm.data.beforeProceed_1.value}" ng-click="vm.data.beforeProceed_1.value = true">Ya</button>
+              </div>
+              <div class="col col-50">
+                <button class="button value-btn" ng-class="{selected: !vm.data.beforeProceed_1.value}" ng-click="vm.data.beforeProceed_1.value = false">Tidak</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <div class="input-label">Kapan</div>
+              </label>
+            </div>
+            <div class="row">
+              <div class="col-40">
+                <select class="form_select" ng-model='agent.occupation'>
+                  <option selected value>September</option>
+                  <option>Blue</option>
+                  <option>Green</option>
+                  <option>Red</option>
+                </select>
+              </div>
+              <div class="col-20"></div>
+              <div class="col-40">
+                <select class="form_select" ng-model='agent.occupation'>
+                  <option selected value>2001</option>
+                  <option>Blue</option>
+                  <option>Green</option>
+                  <option>Red</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <div class="input-label">Nama Dokter / Rumah Sakit</div>
+              </label>
+            </div>
+            <div class="row">
+              <input type="text" placeholder="Enter">
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <span class="input-label">Jenis Operasi</span>
+              </label>
+            </div>
+            <div class="row"><ion-checkbox>Angkat Rahim</ion-checkbox></div>
+            <div class="checkbox_child">
+              <div class="row">
+                <div class='item inside_check'>
+                  <div class="row-no-padding">
+                    <div class="row">
+                      <label class="item-stacked-label">
+                        <span class="input-label">Tipe</span>
+                      </label>
+                    </div>
+                    <div class="row">
+                      <select class="form_select" ng-model='agent.occupation'>
+                        <option selected value>Angkat Seluruh Rahim</option>
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Red</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class='item inside_check'>
+                  <div class="row-no-padding">
+                    <div class="row">
+                      <label class="item-stacked-label">
+                        <div class="input-label">Kapan</div>
+                      </label>
+                    </div>
+                    <div class="row">
+                      <div class="col-40">
+                        <select class="form_select" ng-model='agent.occupation'>
+                          <option selected value>September</option>
+                          <option>Blue</option>
+                          <option>Green</option>
+                          <option>Red</option>
+                        </select>
+                      </div>
+                      <div class="col-20"></div>
+                      <div class="col-40">
+                        <select class="form_select" ng-model='agent.occupation'>
+                          <option selected value>2001</option>
+                          <option>Blue</option>
+                          <option>Green</option>
+                          <option>Red</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row"><ion-checkbox>Angkat Payudara</ion-checkbox></div>
+            <div class="checkbox_child">
+              <div class="row">
+                <div class='item inside_check'>
+                  <div class="row-no-padding">
+                    <div class="row">
+                      <label class="item-stacked-label">
+                        <div class="input-label">Kapan</div>
+                      </label>
+                    </div>
+                    <div class="row">
+                      <div class="col-40">
+                        <select class="form_select" ng-model='agent.occupation'>
+                          <option selected value>September</option>
+                          <option>Blue</option>
+                          <option>Green</option>
+                          <option>Red</option>
+                        </select>
+                      </div>
+                      <div class="col-20"></div>
+                      <div class="col-40">
+                        <select class="form_select" ng-model='agent.occupation'>
+                          <option selected value>2001</option>
+                          <option>Blue</option>
+                          <option>Green</option>
+                          <option>Red</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class='item inside_check'>
+                  <div class="row-no-padding">
+                    <div class="row">
+                      <label class="item-stacked-label">
+                        <span class="input-label">Hasil USG/Mamografi terbaru</span>
+                      </label>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <select class="form_select" ng-model='agent.occupation'>
+                        <option selected value>Baik</option>
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Red</option>
+                      </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <div class="input-label">Kategori Tumor</div>
+              </label>
+            </div>
+            <div class="row">
+              <select class="form_select" ng-model='agent.occupation'>
+                <option selected value>Jinak</option>
+                <option>Blue</option>
+                <option>Green</option>
+                <option>Red</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <di class="row-no-padding">
+            <div class="row">
+              <div class="button-block add_icon">
+                <a class="button" grouped-red-radio="'Male'" ng-model="agent.gender"><span>Berikutnya</span></a>
+              </div>
+            </div>
+          </di>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <span class="input-label">Pengobatan / Terapi / Tindakan yang pernah dianjurkan / dilakukan</span>
+              </label>
+            </div>
+            <div class="row"><ion-checkbox>Obat</ion-checkbox></div>
+            <div class="checkbox_child">
+              <div class="row">
+                <div class='item inside_check'>
+                  <div class="row-no-padding">
+                    <div class="row">
+                      <label class="item-stacked-label">
+                        <span class="input-label">Nama Obat</span>
+                      </label>
+                    </div>
+                    <div class="row">
+                      <input type="text" placeholder="Enter">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class='item inside_check'>
+                  <div class="row-no-padding">
+                    <div class="row indent_row">
+                      <div class="col-33">
+                        <label class="item-stacked-label">
+                          <div class="input-label">Masih memakai obat</div>
+                        </label>
+                      </div>
+                      <div class="col-33">
+                        <input id='YA' class='custom_radio' type="radio" name='kadaluwarasa' />
+                        <label class='' for="YA">YA</label>
+                      </div>
+                      <div class="col-33">
+                        <input id='tidak' class='custom_radio' type="radio" name='kadaluwarasa' />
+                        <label class='' for="tidak">Tidak</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row"><ion-checkbox>Radiography</ion-checkbox></div>
+            <div class="checkbox_child">
+              <div class="row">
+                <div class='item inside_check'>
+                  <div class="row-no-padding">
+                    <div class="row indent_row">
+                      <div class="col-33">
+                        <label class="item-stacked-label">
+                          <div class="input-label">Masih memakai obat</div>
+                        </label>
+                      </div>
+                      <div class="col-33">
+                        <input id='YA' class='custom_radio' type="radio" name='kadaluwarasa' />
+                        <label class='' for="YA">YA</label>
+                      </div>
+                      <div class="col-33">
+                        <input id='tidak' class='custom_radio' type="radio" name='kadaluwarasa' />
+                        <label class='' for="tidak">Tidak</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class='item inside_check'>
+                  <div class="row-no-padding">
+                    <div class="row">
+                      <label class="item-stacked-label">
+                        <span class="input-label">Berapa per tahun</span>
+                      </label>
+                    </div>
+                    <div class="row">
+                      <input type="text" placeholder="Enter">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row"><ion-checkbox>Chemography</ion-checkbox></div>
+            <div class="checkbox_child">
+              <div class="row">
+                <div class='item inside_check'>
+                  <div class="row-no-padding">
+                    <div class="row indent_row">
+                      <div class="col-33">
+                        <label class="item-stacked-label">
+                          <div class="input-label">Masih memakai obat</div>
+                        </label>
+                      </div>
+                      <div class="col-33">
+                        <input id='YA' class='custom_radio' type="radio" name='kadaluwarasa' />
+                        <label class='' for="YA">YA</label>
+                      </div>
+                      <div class="col-33">
+                        <input id='tidak' class='custom_radio' type="radio" name='kadaluwarasa' />
+                        <label class='' for="tidak">Tidak</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class='item inside_check'>
+                  <div class="row-no-padding">
+                    <div class="row">
+                      <label class="item-stacked-label">
+                        <span class="input-label">Berapa per tahun</span>
+                      </label>
+                    </div>
+                    <div class="row">
+                      <input type="text" placeholder="Enter">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row"><ion-checkbox>Lainnya</ion-checkbox></div>
+            <div class="checkbox_child">
+              <div class="row">
+                <div class='item inside_check'>
+                  <div class="row-no-padding">
+                    <div class="row"><input type="text" placeholder="Enter"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <di class="row-no-padding">
+            <div class="row">
+              <div class="button-block add_icon">
+                <a class="button" grouped-red-radio="'Male'" ng-model="agent.gender"><span>Berikutnya</span></a>
+              </div>
+            </div>
+          </di>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <div class="input-label">Apakah Anda pernah tidak dapat bekerja karena kondisi tersebut?</div>
+              </label>
+            </div>
+            <div class="row">
+              <div class="col col-50">
+                <button class="button value-btn" ng-class="{selected: vm.data.beforeProceed_1.value}" ng-click="vm.data.beforeProceed_1.value = true">Ya</button>
+              </div>
+              <div class="col col-50">
+                <button class="button value-btn" ng-class="{selected: !vm.data.beforeProceed_1.value}" ng-click="vm.data.beforeProceed_1.value = false">Tidak</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <div class="input-label">Jelaskan</div>
+              </label>
+            </div>
+            <div class="row">
+              <input type="text" placeholder="Enter">
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
+<div ng-show="true" class="bar bar-footer bar-assertive">
+  <a ng-click="vm.viewStep1('active')" title="Continue" class="btn">Next<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
+</div>

@@ -11,6 +11,7 @@ globals:
   "document": true
   "window": true
   "SignaturePad": true
+  "angular": true
 
 rules:
   "no-confusing-arrow": 2

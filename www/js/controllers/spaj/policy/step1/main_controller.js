@@ -1,13 +1,12 @@
-function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, DataService, SpajService) {
+function phMainCtrl($scope, $rootScope, $state, $stateParams, UserService, DataService, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
 
   var POCICY_HOLDER_TAB = 'POLICY_HOLDER'
   var rootSpajData = SpajService.getData('spaj')
-  console.log('rootSpajData', rootSpajData)
+  //console.log('rootSpajData', rootSpajData)
   $scope.policy_holder_tab = POCICY_HOLDER_TAB
-
   $scope.currentTab = POCICY_HOLDER_TAB
   $scope.additionalList = []
 
@@ -27,11 +26,11 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
   }
 
   $scope.nextClickHandle = function () {
-    console.dir(SpajService.getData())
+    //console.dir(SpajService.getData())
     $state.go('app.step2')
   }
 
-  function initPage (rootSpajData) {
+  function initPage(rootSpajData) {
     if (!rootSpajData) return
     if (rootSpajData.tambahan1) { $scope.addAdditionalTab() }
     if (rootSpajData.tambahan2) { $scope.addAdditionalTab() }
