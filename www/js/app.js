@@ -100,7 +100,40 @@ angular
             controllerAs: "vm"
           }
         }
-      });
+      })
+      .state('app.step3', {
+        cache: false,
+        url: '/step3',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/policy/step3/other_health.html',
+            controller: 'OtherHealthCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.family_history', {
+        cache: false,
+        url: '/step3/family_history',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/policy/step3/family_history.html',
+            controller: 'FamilyHistoryCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.risk_hobby', {
+        cache: false,
+        url: '/step3/risk_hobby',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/policy/step3/risk_hobby.html',
+            controller: 'RiskHobbyCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise("/app/spaj_start");
   });

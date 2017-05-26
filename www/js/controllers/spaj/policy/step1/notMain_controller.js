@@ -2,7 +2,7 @@ function phNotMainCtrl ($scope, $rootScope, $stateParams, UserService, DataServi
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
-
+  vm = this
   vm.Tambahan1 = true;
   vm.Tambahan2 = false;
   vm.tab = 1;
