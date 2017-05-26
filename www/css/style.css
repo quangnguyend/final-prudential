@@ -283,3 +283,58 @@ select {
 .blur-text {
   color: #c2c2c2 !important;
 }
+
+.no-lines {
+  border: none!important;
+}
+
+.half-width-center {
+  width: 50%;
+  margin: 0 auto!important;
+}
+
+.custom-checkbox .checkbox input:checked:before,
+.custom-checkbox .checkbox input:checked + .checkbox-icon:before{
+    background: #DA291C;
+    border-color: #DA291C;
+}
+
+.custom-checkbox .checkbox input:before,
+.custom-checkbox .checkbox-icon:before {
+    border-radius: 4px;
+}
+
+.sub-header {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 26 px;
+  color: #212121;
+}
+
+.mt-50{
+  margin-top: 50px;
+}
+
+.mb-10{
+  margin-bottom: 10px;
+}
+
+.mb-20{
+  margin-bottom: 20px;
+}
+
+.gray-btn {
+  background-color: #5B6770;
+  color: #979797;
+}
+
+.no-padding {
+  padding: 0!important;
+}
+
+.radio-btn-group {
+  display: inline-block;
+  margin-left: 40px;
+}
