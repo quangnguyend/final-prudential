@@ -3,7 +3,7 @@ function stepHeaderCtr ($scope, $rootScope) {
   $rootScope.showBack = true
   $rootScope.showMenu = true
   var vm = this
-  vm.step = 1
+  vm.policyStep = $rootScope.currentStep? $rootScope.currentStep : '1'
   vm.totalStep = 10
   // vm.policyStep = '1'
 
