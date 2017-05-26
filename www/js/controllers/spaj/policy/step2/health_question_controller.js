@@ -1,19 +1,26 @@
-function step2Ctrl($state, $scope, $rootScope, $stateParams, $ionicPopup, UserService, DataService) {
+function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserService/*, SpajService */) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
 
   var vm = this
-  vm.healthData = {}
-  vm.eyePopupTouched = false
-  vm.eyePopupData = {
-    name: null,
-    when: null,
-    last_care_date: null,
-    hospoital_name: null,
-    hospital_address: null,
-    medicine: null
+  vm.healthData = {
+    personalAccidentPopupData: {
+      function_name: null,
+      is_pen_installed: null
+    },
+    eyePopupData: {
+      name: null,
+      when: null,
+      last_care_date: null,
+      hospoital_name: null,
+      hospital_address: null,
+      medicine: null
+    }
   }
+  vm.eyePopupTouched = false
+  vm.personalAccidentPopupTouched = false
+
   vm.checkPropertiesNotNull = function (obj) {
     if (obj === null || obj === "") { return false }
     for (var key in obj) {
@@ -23,9 +30,14 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $ionicPopup, UserSe
     return true;
   }
 
+  // vm.nextStep = function () {
+  //   SpajService.setData('spaj', vm.healthData)
+  //   $state.go('app.spaj_start')
+  // }
+
   $scope.showPopup = function () {
     // custom popup
-    $scope.popupData = vm.eyePopupData;
+    $scope.popupData = vm.healthData.eyePopupData;
     var eyePopup = $ionicPopup.show({
       templateUrl: 'views/spaj/policy/step2/popup-eye.html',
       title: 'Detail Kondisi Mata',
@@ -57,16 +69,15 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $ionicPopup, UserSe
       ]
     });
     eyePopup.then(function (res) {
-      vm.eyePopupData = res
+      vm.healthData.eyePopupData = res
       vm.eyePopupTouched = true
-      console.log(vm.eyePopupData)
     });
   }
 
   $scope.showPopup_paccident = function () {
     // custom popup
-    $scope.popupData = vm.eyePopupData;
-    var eyePopup2 = $ionicPopup.show({
+    $scope.popupData = vm.healthData.personalAccidentPopupData;
+    var injuryPopup = $ionicPopup.show({
       templateUrl: 'views/spaj/policy/step2/popup-personal-accident.html',
       title: 'Kecelakaan Pribadi / Cedera Jangka Panjang',
       cssClass: 'popup-prudential',
@@ -96,13 +107,10 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $ionicPopup, UserSe
         }
       ]
     });
-    eyePopup2.then(function (res) {
-      vm.eyePopupData = res
-      vm.eyePopupTouched = true
-      console.log(vm.eyePopupData)
+    injuryPopup.then(function (res) {
+      vm.healthData.personalAccidentPopupData = res
+      vm.personalAccidentPopupTouched = true
     });
   }
-
-
 }
 

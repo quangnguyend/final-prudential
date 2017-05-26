@@ -439,7 +439,7 @@
 #health_question1 .icon.not-complete:after{
   content: '';
   position: absolute;
-  top: 7px;
+  top: 6px;
   right: 0px;
   width: 53px;
   height: 53px;
@@ -450,7 +450,7 @@
 #health_question1 .icon.un-touched:after{
   content: '';
   position: absolute;
-  top: 7px;
+  top: 6px;
   right: 0px;
   width: 53px;
   height: 53px;
