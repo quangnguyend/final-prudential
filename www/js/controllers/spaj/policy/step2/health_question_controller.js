@@ -1,4 +1,4 @@
-function step2Ctrl($state, $scope, $rootScope, $stateParams, $ionicPopup, UserService, $ionicScrollDelegate/*, SpajService */) {
+function step2Ctrl($state, $scope, $rootScope, $stateParams, $ionicPopup, UserService, $ionicScrollDelegate, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
@@ -30,10 +30,21 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $ionicPopup, UserSe
     return true;
   }
 
-  // vm.nextStep = function () {
-  //   SpajService.setData('spaj', vm.healthData)
-  //   $state.go('app.spaj_start')
-  // }
+  vm.nextStep = function () {
+    SpajService.setData('step2_HealthData', vm.healthData)
+    $state.go('app.step3')
+  }
+ 
+  vm.tabs = [
+    {title: 'Tertanggung Utama', value: 'main_question'},
+    {title: 'Tertanggung Tambahan 1', value: 'additional_insured_1'},
+    {title: 'Tertanggung Tambahan 2', value: 'additional_insured_2'}
+  ];
+  vm.currentTab = 'main_question';
+
+  vm.switchTab = function (tab) {
+    vm.currentTab = tab;
+  };
 
   $scope.showPopup = function () {
     // custom popup
