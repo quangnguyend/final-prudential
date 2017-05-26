@@ -1,60 +1,18 @@
 <ion-view cache-view="false" view-title="Sebelum Anda melanjutkan" id="other-health">
   <ion-content>
     <step-process></step-process>
+    <div class="header-tab">
+      <div class='row tab-menu' >
+        <span class='col' ng-repeat="tab in vm.tabs" ng-class="vm.currentTab==tab.value? 'active': ''" ng-click="vm.switchTab(tab.value)">{{ tab.title}}</span>
+      </div>
+    </div>
     <div class="wrapper text-center has-bottom-bar padding-bottom">
-      <div>
-        <h4>{{vm.questions.question_1.title}}</h4>
-        <select ng-model="vm.questions.question_1.heath_check">
-          <option value="">Lainnya</option>
-        </select>
-        <input type="text" placeholder="Enter" ng-model="vm.questions.question_1.other_answer">
-        <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_2')">Berikutnya</button>
-      </div>
-      <div ng-if="vm.questions.question_2.active == true" class="mt-50">
-        <h4>{{vm.questions.question_2.title}}</h4>
-        <input type="datetime" placeholder="DD/MM/YYYY" ng-model="vm.questions.question_2.date_inspection">
-        <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_3')">Berikutnya</button>
-      </div>
-      <div ng-if="vm.questions.question_3.active == true" class="mt-50">
-        <h4>{{vm.questions.question_3.title}}</h4>
-        <input type="text" placeholder="Enter" ng-model="vm.questions.question_3.examination_reason">
-        <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_4')">Berikutnya</button>
-      </div>
-      <div ng-if="vm.questions.question_4.active == true" class="mt-50">
-        <h4>{{vm.questions.question_4.title}}</h4>
-        <div  ng-repeat="item in vm.questions.question_4.results">
-          <p class="text-right">200 karakter</p>
-          <input type="text" placeholder="Enter" ng-model="item.result">
-        </div>
-        <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_5')">Berikutnya</button>
-        <button class="button button-stable button-block mt-30" ng-click="vm.addQuestion4()">+ Tambah tes kesehatan </button>
-      </div>
-      <div ng-if="vm.questions.question_5.active == true" class="mt-50">
-        <h4>{{vm.questions.question_5.title}}</h4>
-        <input type="text" placeholder="Enter" ng-model="vm.questions.question_4.result">
-        <div class="row">
-          <div class="col col-padding">
-            <button class="button button-stable button-block btn-insurance" ng-class="vm.questions.question_5.result==1? 'button-active': ''" ng-click="vm.setValueQuestion5(1)"><span>Ya</span></button>
-          </div>
-          <div class="col col-padding">
-            <button class="button button-stable button-block btn-insurance" ng-class="vm.questions.question_5.result==0? 'button-active': ''" ng-click="vm.setValueQuestion5(0)"><span>Tidak</span></button>
-          </div>
-        </div>
-      </div>
-      <div ng-if="vm.questions.question_6.active == true" class="mt-50">
-        <h4>{{vm.questions.question_6.title}}</h4>
-        <div class="row">
-          <div class="col col-padding">
-            <button class="button button-stable button-block btn-insurance" ng-class="vm.questions.question_6.result==1? 'button-active': ''" ng-click="vm.setValueQuestion6(1)"><span>Ya</span></button>
-          </div>
-          <div class="col col-padding">
-            <button class="button button-stable button-block btn-insurance" ng-class="vm.questions.question_6.result==0? 'button-active': ''" ng-click="vm.setValueQuestion6(0)"><span>Tidak</span></button>
-          </div>
-        </div>
-      </div>
+      <div ng-if="vm.currentTab=='major_insured'" ng-include="'views/spaj/policy/step3/other_health_major_insured.html'"></div>
+      <div ng-if="vm.currentTab=='additional_insured_1'" ng-include="'views/spaj/policy/step3/other_health_additional_insured_1.html'"></div>
+      <div ng-if="vm.currentTab=='additional_insured_2'" ng-include="'views/spaj/policy/step3/other_health_additional_insured_2.html'"></div>
     </div>
   </ion-content>
   <div class="bar bar-footer bar-assertive">
-    <a href="" title="Lanjutkan" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
+    <a ng-click="vm.save()" title="Lanjutkan" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
   </div>
 </ion-view>

@@ -1,11 +1,23 @@
 'use strict'
 
-function otherHealthCtrl ($scope, $rootScope, $ionicPopup, UserService, DataService, $ionicScrollDelegate) {
+function otherHealthCtrl ($scope, $rootScope, $ionicPopup, UserService, DataService, $ionicScrollDelegate, $location) {
   $rootScope.showBar = true;
   $rootScope.showBack = true;
   $rootScope.showMenu = true;
 
   var vm = this;
+
+  vm.tabs = [
+    {title: 'Tertanggung Utama', value: 'major_insured'},
+    {title: 'Tertanggung Tambahan 1', value: 'additional_insured_1'},
+    {title: 'Tertanggung Tambahan 2', value: 'additional_insured_2'}
+  ];
+  vm.currentTab = 'major_insured';
+
+  vm.switchTab = function (tab) {
+    vm.currentTab = tab;
+  };
+
   vm.questions = {
     question_1: {
       active: true,
@@ -57,5 +69,12 @@ function otherHealthCtrl ($scope, $rootScope, $ionicPopup, UserService, DataServ
 
   vm.setValueQuestion6 = function (value) {
     vm.questions.question_6.result = value;
+  };
+
+  // save and redirect to another page
+  vm.save = function () {
+    // var data = vm.questions;
+    // console.log(data);
+    $location.path('/app/step3/family_history')
   };
 }

@@ -114,6 +114,36 @@
   color: #DA291C;
 }
 
+.multi-step .col.active span a{
+  color: #F8383F;
+}
+
+.multi-step .col span a {
+  color: white;
+  text-decoration: none;
+}
+
+#step-status{
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  background: transparent;
+  border: none;
+  color: white;
+  
+}
+
+#step-status.down-arrow:after{
+  content: '⏷';
+  color: white;
+  margin-left: 5px;
+}
+
+#step-status.up-arrow:after{
+  content: '⏶';
+  color: white;
+  margin-left: 5px;
+}
 
 /*Css health_question*/
 
@@ -1073,3 +1103,110 @@
 .thanks-footer .btn-dark {
   background: #5B6770
 }
+/* step 3 style*/
+.clearfix{
+  clear: both;
+}
+.mt-30{
+  margin-top: 30px;
+}
+
+.header-tab .tab-menu {
+  height: 50px;
+  padding: 0px;
+}
+
+.header-tab .tab-menu .col {
+  text-align: center;
+  height: 50px;
+  line-height: 40px;
+  background: #F7F5F5;
+  border-right: 1px solid #f0eded;
+  border-left: 1px solid #f0eded;
+  box-sizing: border-box
+}
+
+.header-tab.tab-menu .col:first-child {
+  border-left: none
+}
+
+.header-tab .tab-menu .col:last-child {
+  border-right: none
+}
+
+.header-tab .tab-menu .col.active {
+  border-bottom: 2px solid #da291c;
+  border-right: 1px solid #f1d6d7;
+  border-left: 1px solid #f1d6d7
+}
+
+.header-tab .tab-menu .col.active:first-child {
+  border-left: none
+}
+
+.header-tab .tab-menu .col.active:last-child {
+  border-right: none
+}
+
+.header-tab .bar.bar-header {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#other-health .wrapper{
+  width: 90%;
+  margin: 0 auto;
+  padding: 50px 0 100px;
+}
+#other-health .mt-50{
+  margin-top: 50px;
+}
+#other-health .button.button-active {
+  background-color: #5b6770;
+  color: #fff!important;
+}
+#other-health input[type=text], #other-health input[type=datetime]{
+  font-size: 16px;
+}
+#family-history .float-left {
+  float: left;
+}
+
+#family-history .float-right {
+  float: right;
+}
+#family-history .wrapper{
+  width: 90%;
+  margin: 0 auto;
+  padding: 50px 0 100px;
+}
+
+#family-history .mt-50{
+  margin-top: 50px;
+}
+
+#family-history .button.button-active {
+  background-color: #5b6770;
+  color: #fff!important;
+}
+
+#family-history input[type=text], #family-history input[type=datetime]{
+  font-size: 16px;
+}
+
+#family-history .col-5 {
+  width: 5%;
+}
+
+#family-history .col-95 {
+  width: 95%;
+}
+
+#family-history .row .col-padding, #family-history .col-padding {
+  padding: 5px!important;
+}
+
+#family-history select option {
+  padding: 0px!important;
+}
+/* step 3 style*/

@@ -1,11 +1,23 @@
 'use strict'
 
-function familyHistoryCtrl ($scope, $rootScope, $ionicPopup, UserService, DataService, $ionicScrollDelegate) {
+function familyHistoryCtrl ($scope, $rootScope, $ionicPopup, UserService, DataService, $ionicScrollDelegate, $location) {
   $rootScope.showBar = true;
   $rootScope.showBack = true;
   $rootScope.showMenu = true;
 
   var vm = this;
+
+  vm.tabs = [
+    {title: 'Tertanggung Utama', value: 'major_insured'},
+    {title: 'Tertanggung Tambahan 1', value: 'additional_insured_1'},
+    {title: 'Tertanggung Tambahan 2', value: 'additional_insured_2'}
+  ];
+  vm.currentTab = 'major_insured';
+
+  vm.switchTab = function (tab) {
+    vm.currentTab = tab;
+  };
+
   vm.family_history = {
     question: 1,
     membersInfo: [
@@ -18,9 +30,11 @@ function familyHistoryCtrl ($scope, $rootScope, $ionicPopup, UserService, DataSe
       }
     ]
   };
+
   vm.relationshipType = [
     { name: 'Kakek', value: 'Kakek' }
   ];
+
   vm.setValueQuestion = function (value) {
     vm.family_history.question = value;
   };
@@ -34,5 +48,12 @@ function familyHistoryCtrl ($scope, $rootScope, $ionicPopup, UserService, DataSe
       type_of_disorder: ''
     };
     vm.family_history.membersInfo.push(item);
+  };
+
+  // save and redirect to another page
+  vm.save = function () {
+    // var data = vm.questions;
+    // console.log(data);
+    $location.path('/app/step3/risk_hobby')
   };
 }
