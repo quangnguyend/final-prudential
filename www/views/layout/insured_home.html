@@ -8,7 +8,7 @@
               </label>
                 </div>
                 <div class="row">
-                    <input type="text" placeholder="Enter">
+                    <input type="text" ng-model='data.name' placeholder="Enter">
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="row">
                     <div class="col-40">
-                        <select class="form_select" ng-model='agent.occupation'>
+                        <select ng-model='data.birthdayAddr' class="form_select" ng-model='agent.occupation'>
                   <option selected value>Select</option>
                   <option>Blue</option>
                   <option>Green</option>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="col-20"></div>
                     <div class="col-50 left_input_date">
-                        <input type="date" placeholder="Enter">
+                        <input ng-model='data.birthday' type="date" placeholder="Enter">
                         <span class="icon-calendar">
                   <i class="icon ion-android-calendar"></i>
                 </span>

@@ -37,5 +37,5 @@ angular.module('prudential.components', [])
   })
   .component('insuredHome', {
     templateUrl: 'views/layout/insured_home.html',
-    controller: function () { }
+    controller: insuredHomeCtrl
   })

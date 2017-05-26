@@ -7,7 +7,8 @@ function spajService ($rootScope, $http, $location, $ionicLoading, $cordovaProgr
   }
 
   function getData (key) {
-    return dataSpaj[key]
+    if (key) { return dataSpaj[key] }
+    return dataSpaj
   }
 
   function setData (key, value) {
