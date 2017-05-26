@@ -7,19 +7,20 @@
     <step-process></step-process>
     <div id="SPAJ">
       <div class='row tab-menu'>
-        <span class='col disabled' ng-disabled>Pemegang Polis</span>
-        <span class='col' ng-class="active==1? 'active': ''" ng-click="vm.clickTab(1)">Tertanggung Utama</span>
-        <span class='col'  ng-class="active==2? 'active': ''" ng-click="addTab()">+ Tertanggung Tambahan</span>
-        <span class='col'  ng-class="active==3? 'active': ''" ng-show="vm.Tambahan1" ng-click="vm.clickTab(3)">Tertanggung Tambahan 1</span>
-        <span class='col'  ng-class="active==4? 'active': ''" ng-show="vm.Tambahan2" ng-click="vm.clickTab(4)">Tertanggung Tambahan 2</span>
+        <span class='col blur-text' ng-disabled>Pemegang Polis</span>
+        <span class='col' ng-click='switchTab(main_insured_tab)' ng-class='currentTab===main_insured_tab?"active":""'>Tertanggung Utama</span>
+        <span class='col' ng-repeat='tab in additionalList' ng-click='switchTab(tab.id)' ng-class='currentTab===tab.id?"active":""'>{{tab.name}}</span>
+        <span ng-if='additionalList.length<2' class='col blur-text' ng-click='addAdditionalTab()'>+ Tertanggung Tambahan</span>
       </div>
     </div>
-    
-    <div ng-if="active==1" ng-include="'views/spaj/policy/step1/ph_not_main_active.html'"></div>
-    <div ng-if="active==3" ng-include="'views/spaj/policy/step1/ph_blank.html'"></div>
-    <div ng-if="active==4" ng-include="'views/spaj/policy/step1/ph_blank.html'"></div>
+    <div ng-show='currentLayout === main_layout'>
+      <insured-home insured-data='{{main_insured_tab}}' ng-show='currentTab===main_insured_tab'></insured-home>
+      <insured-home ng-repeat='tab in additionalList' insured-data='{{tab.id}}' ng-show='currentTab===tab.id' ng-class='currentTab===tab.id?"active":""'></insured-home>
+    </div>
+    <div ng-show='currentLayout === active_insured_layout' ng-include="'views/spaj/policy/step1/active_insurance.html'"></div>
+
   </ion-content>
 </ion-view>
 <div ng-show="true" class="bar bar-footer bar-assertive">
-  <a ng-click="vm.viewStep1('active')" title="Continue" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
+  <a ng-click="nextClickHandle()" title="Continue" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
 </div>
