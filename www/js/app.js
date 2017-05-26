@@ -12,7 +12,8 @@ angular
     'prudential.components',
     'ngAnimate',
     'ui.router',
-    'ngCordova'
+    'ngCordova',
+    'ngFileUpload'
   ])
   .run(function ($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function () {
@@ -185,6 +186,17 @@ angular
           'menuContent': {
             templateUrl: 'views/spaj/policy/step5/beneficiaries.html',
             controller: 'BeneficiariesCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.document_upload', {
+        cache: false,
+        url: '/step5/document_upload',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/policy/step5/document_upload.html',
+            controller: 'DocumentUploadCtrl',
             controllerAs: 'vm'
           }
         }
