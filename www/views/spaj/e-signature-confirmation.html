@@ -1,0 +1,94 @@
+<ion-view cache-view="false" view-title="Sebelum melakukan pengajuan" id="spaj-esignature-confirmation">
+  <ion-content class="has-footer has-header">
+    <div class="container">
+      <div class="list mt-50">
+        <div class="item no-lines">
+          <div class="description text-center">
+            Kami membutuhkan sedikit informasi dan dokumen lagi </br>
+            Sebelum kami dapat mengajukan polis ini untuk </br>
+            mendapatkan persetujuan.
+          </div>
+        </div>
+        <!--end item-->
+        <div class="item no-lines">
+          <div class="title text-center">
+            <h1>Informasi lain yang perlu diisi</h1>
+          </div>
+        </div>
+        <!--end item-->
+        <div class="item no-lines half-width-center custom-checkbox">
+          <ion-list>
+            <ion-checkbox ng-model="data.other_information.email">Email</ion-checkbox>
+            <ion-checkbox ng-model="data.other_information.investation">Investasi</ion-checkbox>
+            <ion-checkbox ng-model="data.other_information.form_tambahan_pernafasan">Form Tambahan Pernafasan </br> (additional insured)</ion-checkbox>
+            <ion-checkbox ng-model="data.other_information.sumber_pendapatan">Sumber Pendapatan</ion-checkbox>
+          </ion-list>
+        </div>
+        <!--end item-->
+        <div class='item no-lines'>
+          <div class="row ">
+            <label class="item-stacked-label">
+                <span class="input-label">Email</span>
+                <input type="text" placeholder="Enter" ng-model="data.email">
+              </label>
+          </div>
+        </div>
+        <!--end item-->
+        <div class='item no-lines' ng-repeat="(index, item) in data.policy_array">
+          <div class="row row-no-padding mb-20">
+            <div class="col">
+              <div class="select-item">
+                <span class="input-label">Jenis asuransi yang ada</span>
+                <select>
+                  <option ng-repeat="i in const.type_of_insurances" value="{{i.value}}">{{i.type}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col">
+              <label class="item-stacked-label">
+                <span class="input-label">Perusahaan</span>
+                <input type="text" placeholder="Enter" ng-model="item.company">
+              </label>
+            </div>
+            <div class="col">
+              <div class="select-item">
+                <span class="input-label">Uang Pertanggungan</span>
+                <select>
+                  <option ng-repeat="c in const.type_of_currencies" value="{{c.value}}">{{c.type}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row row-no-padding responsive-sm mini-center-container radio-block">
+            <div class="col-30">
+              <span>Apakah itu polis Substandard?</span>
+            </div>
+            <div class="col-70">
+              <div class="radio-btn-group">
+                <input ng-model="item.is_substandard" class='custom_radio' type="radio" value="true" name="substandard_{{index}}" id="substandard_{{index}}"
+                />
+                <label class='' for="substandard_{{index}}">Yes</label>
+              </div>
+              <div class="radio-btn-group">
+                <input ng-model="item.is_substandard" class='custom_radio' type="radio" value="false" name="not_substandard_{{index}}" id="not_substandard_{{index}}"
+                />
+                <label class='' for="not_substandard_{{index}}">No</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end item-->
+        <div class='item no-lines'>
+          <div class="row ">
+            <button class="button value-btn add-policy-btn" ng-click="addPolicy()">+ Tambah Polis</button>
+          </div>
+        </div>
+        <!--end item-->
+      </div>
+    </div>
+  </ion-content>
+  <div ng-show="true" class="bar bar-footer bar-assertive no-padding no-lines">
+    <a title="Continue" class="btn gray-btn">Ingatkan saya<button class="button button-clear"></button></a>
+    <a title="Continue" ng-click="submit()" class="btn">Submit<button class="button button-clear"></button></a>
+</div>
+</ion-view>

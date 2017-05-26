@@ -14,8 +14,8 @@ angular
     "ui.router",
     "ngCordova"
   ])
-  .run(function($ionicPlatform, $rootScope) {
-    $ionicPlatform.ready(function() {
+  .run(function ($ionicPlatform, $rootScope) {
+    $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
       if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -28,7 +28,7 @@ angular
       }
     });
   })
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state("app", {
         url: "/app",
@@ -87,6 +87,39 @@ angular
             templateUrl: "views/spaj/policy/step2/health.html",
             controller: "Step2Ctrl",
             controllerAs: "vm"
+          }
+        }
+      })
+      .state("app.e_policy", {
+        cache: false,
+        url: "/e_policy",
+        views: {
+          menuContent: {
+            templateUrl: "views/spaj/policy/final_step/e_policy.html",
+            controller: "EPolicyCtrl",
+            controllerAs: "vm"
+          }
+        }
+      })
+      .state("app.hardcopy_policy", {
+        cache: false,
+        url: "/hardcopy_policy",
+        views: {
+          menuContent: {
+            templateUrl: "views/spaj/policy/final_step/hardcopy_policy.html",
+            controller: "HardCopyPolicyCtrl",
+            controllerAs: "vm"
+          }
+        }
+      })
+      .state('app.spaj_esignature_confirmation', {
+        cache: false,
+        url: '/spaj_esignature_confirmation',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/e-signature-confirmation.html',
+            controller: 'ESignatureConfirmCtrl',
+            controllerAs: 'vm'
           }
         }
       })

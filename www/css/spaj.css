@@ -1138,3 +1138,50 @@
 .thanks-footer .btn-dark {
   background: #5B6770
 }
+
+#e-policy .large-icon{
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+
+/*E signature confirmation */
+
+#spaj-esignature-confirmation .custom-checkbox{
+  width: 50%!important;
+}
+
+#spaj-esignature-confirmation .title h1 {
+  line-height: 50px;
+}
+
+#spaj-esignature-confirmation .item-checkbox{
+  border: none;
+  color: #3B7ADB;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 100%;
+  padding-left: 80px
+}
+
+#spaj-esignature-confirmation .item {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.add-policy-btn{
+  width: 100%;
+  font-size: 17px!important;
+  line-height: 100%!important;
+  letter-spacing: -0.408px;
+  color: #5B6770!important;
+  background-color: #F7F5F5!important;
+}
+
+
+@media screen and (max-width: 568px) {
+    #spaj-esignature-confirmation .custom-checkbox{
+      width: 100%!important;
+    }
+}

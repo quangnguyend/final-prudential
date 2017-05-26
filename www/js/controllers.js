@@ -61,6 +61,9 @@ angular
   .controller("PhMainCtrl", phMainCtrl)
   .controller("PhNotMainCtrl", phNotMainCtrl)
   .controller("Step2Ctrl", step2Ctrl)
+  .controller("EPolicyCtrl", ePolicyCtrl)
+  .controller("HardCopyPolicyCtrl", hardCopyPolicyCtrl)
+  .controller('ESignatureConfirmCtrl', eSignatureConfirmCtrl)
   .controller("eSignDeclarationCtrl", eSignDeclarationCtrl)
   .directive("dataService", dataService)
   .directive("groupedRadio", groupedRadio);
