@@ -151,11 +151,10 @@
               </div>
             </div>
           </div>
-          <button class="button next" ng-class="{'button-dark': vm.healthData.height && vm.healthData.weight}" ng-disabled="!vm.healthData.height || !vm.healthData.weight"
-            ng-click="health1NextStep('health1_step2')">Berikutnya</button>
+          <button class="button next" ng-class="{'button-dark': vm.healthData.darah}" ng-disabled="!vm.healthData.darah" ng-click="health1NextStep('health_brain')">Berikutnya</button>
           <!--end item -->
         </div>
-        <div class="item ibrain">
+        <div class="item ibrain" id="health_brain" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': vm.healthData.ibrain != null}"></div>
           <h1 class="text-center">Kondisi Terkait Otak, Saraf, Saraf Tulang Belakang</h1>
           <p class="item_description">Sakit kepala*, Pusing*, Migrain*,Vertigo*, Epilepsi (atau ayan)**, Gangguan Kesadaran, Kelainan Psikologis atau
@@ -168,7 +167,7 @@
 
         </div>
         <!--end-item brain-->
-        <div class="item ihocmon">
+        <div class="item ihocmon" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': vm.healthData.ihocmon != null}"></div>
           <h1 class="text-center">Kondisi Hormon atau Autoimun</h1>
           <p class="item_description">Kencing Manis/Diabetes, Kelenjar Gondok* atau Gangguan Endokrin / Hormon, Systemic Lupus Erythematosus (SLE), Anti-cardiolipin
@@ -180,7 +179,7 @@
 
         </div>
         <!--end-item ihocmon-->
-        <div class="item ieye">
+        <div class="item ieye" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': (vm.eyePopupTouched && vm.checkPropertiesNotNull(vm.healthData.eyePopupData)) || vm.healthData.ieye == false, 
           'not-complete': vm.eyePopupTouched && !vm.checkPropertiesNotNull(vm.healthData.eyePopupData) && vm.healthData.ieye == true}"></div>
           <h1 class="text-center">Kondisi mata</h1>
@@ -211,7 +210,7 @@
         </div>
         <!--end-item ieye-->
 
-        <div class="item iear">
+        <div class="item iear" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': vm.healthData.iear != null}"></div>
           <h1 class="text-center">Telinga, Hidung & Kondisi Tenggorokan</h1>
           <p class="item_description">Telinga, Hidung, Tenggorokan (THT), Sinus, Gangguan Berbicara.</p>
@@ -222,7 +221,7 @@
         </div>
         <!--end-item iear-->
 
-        <div class="item irespiratory">
+        <div class="item irespiratory" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': vm.healthData.irespiratory != null}"></div>
           <h1 class="text-center">Kondisi Pernafasan</h1>
           <p class="item_description">Gangguan Pernafasan*, Batuk Berkepanjangan*, Sesak Nafas*, Bronkitis, Asma*, Tuberkulosis (TBC)*, Sesak Nafas yang
@@ -233,7 +232,7 @@
           </div>
         </div>
         <!--end-item irespiratory-->
-        <div class="item iheart">
+        <div class="item iheart" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': vm.healthData.iheart != null}"></div>
           <h1 class="text-center">Kondisi Jantung, Pembuluh Darah atau Darah</h1>
           <p class="item_description">Wasir (Haemorrhoid), Varises atau Kelainan Pembuluh Darah lainnya. Kelainan Darah* (seperti Thalassemia / Hemofilia
@@ -244,7 +243,7 @@
           </div>
         </div>
         <!--end-item iheart-->
-        <div class="item idigestive">
+        <div class="item idigestive" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': vm.healthData.idigestive != null}"></div>
           <h1 class="text-center">Kondisi Sistem Saluran Pencernaan</h1>
           <p class="item_description">Maag*/Gastritis*, Usus* / Hernia / Pankreas / Organ Pencernaan lainnya</p>
@@ -255,7 +254,7 @@
         </div>
         <!--end-item idigestive-->
 
-        <div class="item ikidney">
+        <div class="item ikidney" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': vm.healthData.ikidney != null}"></div>
           <h1 class="text-center">Kondisi Hati, Ginjal & Saluran Kemih</h1>
           <p class="item_description">Hepatitis A, Hepatitis B, Hepatitis C, Penyakit/Gangguan Hati (Selain Hepatitis) atau Kandung Empedu, Ginjal, Saluran
@@ -266,7 +265,7 @@
           </div>
         </div>
         <!--end-item ikidney-->
-        <div class="item iface">
+        <div class="item iface" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': vm.healthData.iface != null}"></div>
           <h1 class="text-center">Kulit, Kelamin & Alergi</h1>
           <p class="item_description">Alergi / Penyakit Kulit atau Kelamin</p>
@@ -277,7 +276,7 @@
         </div>
         <!--end-item iface-->
 
-        <div class="item ibone">
+        <div class="item ibone" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': vm.healthData.ibone != null}"></div>
           <h1 class="text-center">Kondisi Tulang, Sendi & Otot</h1>
           <p class="item_description">Gangguan Persendian*/ Rematik*/Kelainan pada Otot*/Sendi* atau Tulang*/ Gangguan Tulang Belakang*/ Polio*/Multiple
@@ -289,7 +288,7 @@
         </div>
         <!--end-item ibone-->
 
-        <div class="item itumors">
+        <div class="item itumors" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': vm.healthData.itumors != null}"></div>
           <h1 class="text-center">Tumor & Pertumbuhan</h1>
           <p class="item_description">Pernahkah Anda mengalami Benjolan / Tumor / Kista / Kanker / Nodul / Pembengkakan / Pertumbuhan / Pembesaran lainnya</p>
@@ -300,7 +299,7 @@
         </div>
         <!--end-item itumors-->
 
-        <div class="item iill">
+        <div class="item iill" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': vm.healthData.iill != null}"></div>
           <h1 class="text-center">Penyakit Infeksi, Penyakit Menular Seksual & AIDS</h1>
           <p class="item_description">Penyakit Infeksi seperti Malaria, Penyakit Menular Seksual, AIDS atau kondisi yang berkaitan dengan AIDS (Demam
@@ -312,7 +311,7 @@
           </div>
         </div>
         <!--end-item iill-->
-        <div class="item iinjury">
+        <div class="item iinjury" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': (vm.personalAccidentPopupTouched && vm.checkPropertiesNotNull(vm.healthData.personalAccidentPopupData)) || vm.healthData.iinjury == false, 
           'not-complete': vm.personalAccidentPopupTouched && !vm.checkPropertiesNotNull(vm.healthData.personalAccidentPopupData) && vm.healthData.iinjury == true}"></div>
           <h1 class="text-center">Kecelakaan Pribadi / Cedera jangka panjang</h1>
@@ -341,7 +340,7 @@
           </div>
         </div>
         <!--end-item iinjury-->
-        <div class="item idisease">
+        <div class="item idisease" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': vm.healthData.idisease != null}"></div>
           <h1 class="text-center">Penyakit lain yang belum disebutkan?</h1>
 
@@ -351,7 +350,7 @@
           </div>
         </div>
         <!--end-item idisease-->
-        <div class="item idisorder">
+        <div class="item idisorder" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': vm.healthData.idisorder != null}"></div>
           <h1 class="text-center">Apakah Calon Tertanggung mempunyai keluhan/kelainan/gangguan pada Payudara atau Prostat?</h1>
           <div class="button-bar">
@@ -360,7 +359,7 @@
           </div>
         </div>
         <!--end-item idisorder -->
-        <div class="item iabnormality">
+        <div class="item iabnormality" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': vm.healthData.iabnormality != null}"></div>
           <h1 class="text-center">Apakah Anda memiliki kelainan pada, Payudara*, Kandungan*, Indung Telur/Ovarium*</h1>
           <div class="button-bar">
@@ -369,7 +368,7 @@
           </div>
         </div>
         <!--end-item iabnormality-->
-        <div class="item ipapsmear">
+        <div class="item ipapsmear" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': vm.healthData.ipapsmear != null}"></div>
           <h1 class="text-center">Apakah Anda pernah melakukan papsmear dengan hasil abnormal</h1>
 
@@ -379,7 +378,7 @@
           </div>
         </div>
         <!--end-item ipapsmear-->
-        <div class="item ipregnant">
+        <div class="item ipregnant" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': vm.healthData.ipregnant != null}"></div>
           <h1 class="text-center">Apakah saat ini Anda sedang hamil?</h1>
 
@@ -389,7 +388,7 @@
           </div>
         </div>
         <!--end-item ipregnant-->
-        <div class="item isurgery ">
+        <div class="item isurgery " ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': vm.healthData.isurgery != null}"></div>
           <h1 class="text-center">Apakah Calon Tertanggung pernah melahirkan dengan cara operasi/Sectio Caesaria karena alasan kesehatan?</h1>
 
@@ -399,7 +398,7 @@
           </div>
         </div>
         <!--end-item isurgery -->
-        <div class="item icomplication">
+        <div class="item icomplication" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': vm.healthData.icomplication != null}"></div>
           <h1 class="text-center">Apakah Calon Tertanggung pernah mengalami kesulitan/komplikasi pada saat hamil atau melahirkan?</h1>
           <div class="button-bar">
@@ -408,7 +407,7 @@
           </div>
         </div>
         <!--end-item icomplication-->
-        <div class="item ilostweight">
+        <div class="item ilostweight" ng-class="{'_active': health1Steps[4]}">
           <div class="icon" ng-class="{'completed': vm.healthData.ilostweight != null}"></div>
           <h1 class="text-center">Berat Badan waktu Lahir kurang dari atau sama dengan 2500 gram?</h1>
 
