@@ -7,9 +7,12 @@ function stepProcessCtr ($scope, $rootScope, UserService, DataService, $location
   vm.pageList = [
     { step: '1', title: 'Policy Holder Information', state: 'app.main' },
     { step: '2', title: 'Health Questions', state: 'app.step2' },
-    { step: '3', title: 'Health Questions', state: 'app.step3' },
-    { step: '4', title: 'Payor', state: 'app.step4' },
-    { step: '5', title: 'Beneficiaries', state: 'app.step5' }]
+    { step: '3', title: 'Kegiatan beresiko', state: 'app.step3' },
+    { step: '4', title: 'Pembayar Premi', state: 'app.step4' },
+    { step: '5', title: 'Penerima Manfaat', state: 'app.step5' },
+    { step: '6', title: 'Health Questions', state: 'app.step6' },
+    { step: '7', title: 'Health Questions', state: 'app.step7' },
+    { step: '8', title: 'Payor', state: 'app.step8' }]
 
   $rootScope.policyStep = { steps: vm.pageList, currentStep: '1' }
 
