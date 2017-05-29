@@ -1,8 +1,9 @@
-function step2Ctrl($state, $scope, $rootScope, $stateParams, $ionicPopup, UserService, $ionicScrollDelegate, SpajService) {
+function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserService, $ionicScrollDelegate, SpajService, $ionicSideMenuDelegate) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
 
+  $ionicSideMenuDelegate.canDragContent(false)
   var vm = this
   vm.healthData = {
     personalAccidentPopupData: {
@@ -34,17 +35,33 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $ionicPopup, UserSe
     SpajService.setData('step2_HealthData', vm.healthData)
     $state.go('app.step3')
   }
- 
+
   vm.tabs = [
-    {title: 'Tertanggung Utama', value: 'main_question'},
-    {title: 'Tertanggung Tambahan 1', value: 'additional_insured_1'},
-    {title: 'Tertanggung Tambahan 2', value: 'additional_insured_2'}
+    { title: 'Tertanggung Utama', value: 'main_question' },
+    { title: 'Tertanggung Tambahan 1', value: 'additional_insured_1' },
+    { title: 'Tertanggung Tambahan 2', value: 'additional_insured_2' }
   ];
   vm.currentTab = 'main_question';
+  vm.currentTabIndex = 0;
 
-  vm.switchTab = function (tab) {
+  vm.switchTab = function (tab, index) {
     vm.currentTab = tab;
+    vm.currentTabIndex = index;
   };
+
+  vm.handleSwipe = function (e) {
+    var direct = e.gesture.direction;
+    //if swipeleft and current tab index smaller than tabs length
+    if (direct == 'left' && (vm.currentTabIndex < vm.tabs.length - 1)) {
+      var nextTab = vm.tabs[vm.currentTabIndex + 1]['value'];
+      vm.switchTab(nextTab, vm.currentTabIndex + 1)
+    }
+    //if swiperight and current tab index bigger than 0
+    if (direct == 'right' && vm.currentTabIndex > 0) {
+      var prevTab = vm.tabs[vm.currentTabIndex - 1]['value'];
+      vm.switchTab(prevTab, vm.currentTabIndex - 1)
+    }
+  }
 
   $scope.showPopup = function () {
     // custom popup
