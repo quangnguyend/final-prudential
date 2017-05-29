@@ -6,10 +6,10 @@
     <step-process></step-process>
     <div id="SPAJ">
       <div class='row tab-menu'>
-        <span class='col blur-text' ng-disabled>Pemegang Polis</span>
-        <span class='col' ng-click='switchTab(main_insured_tab)' ng-class='currentTab===main_insured_tab?"active":""'>Tertanggung Utama</span>
-        <span class='col' ng-repeat='tab in additionalList' ng-click='switchTab(tab.id)' ng-class='currentTab===tab.id?"active":""'>{{tab.name}}</span>
-        <span ng-if='additionalList.length<2' class='col blur-text' ng-click='addAdditionalTab()'>+ Tertanggung Tambahan</span>
+        <div class='col blur-text' ng-disabled><span class="d-table"><span class="d-table-cell">Pemegang Polis</span></span></div>
+        <div class='col' ng-click='switchTab(main_insured_tab)' ng-class='currentTab===main_insured_tab?"active":""'><span class="d-table"><span class="d-table-cell">Tertanggung Utama</span></span></div>
+        <div class='col' ng-repeat='tab in additionalList' ng-click='switchTab(tab.id)' ng-class='currentTab===tab.id?"active":""'><span class="d-table"><span class="d-table-cell">{{tab.name}}</span></span></div>
+        <div ng-if='additionalList.length<2' class='col blur-text' ng-click='addAdditionalTab()'><span class="d-table"><span class="d-table-cell">+ Tertanggung Tambahan</span></span></div></div>
       </div>
     </div>
     <div ng-show='currentLayout === main_layout'>

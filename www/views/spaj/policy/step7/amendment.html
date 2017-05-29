@@ -3,7 +3,9 @@
     <step-process></step-process>
     <div class="header-tab">
       <div class='row tab-menu' >
-        <span class='col' ng-repeat="tab in vm.tabs" ng-class="vm.currentTab==tab.value? 'active': ''" ng-click="vm.switchTab(tab.value)">{{ tab.title}}</span>
+        <div class='col' ng-repeat="tab in vm.tabs" ng-class="vm.currentTab==tab.value? 'active': ''" ng-click="vm.switchTab(tab.value)">
+          <span class="d-table"><span class="d-table-cell">{{ tab.title}}</span></span>
+        </div>
       </div>
     </div>
     <div class="wrapper has-bottom-bar amendment-page mt-30">

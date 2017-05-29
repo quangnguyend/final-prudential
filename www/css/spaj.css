@@ -14,7 +14,7 @@
 .header-bar-spaj button.down-arrow::after {
   content: ' ⏷';
 }
-
+/*
 #SPAJ .tab-menu {
   height: 50px;
   padding: 0px;
@@ -55,7 +55,7 @@
 #SPAJ .bar.bar-header {
   padding-left: 0px;
   padding-right: 0px;
-}
+}*/
 
 .multiStep-wrapper {
   width: 100%
@@ -1222,46 +1222,6 @@
 }
 .mt-30{
   margin-top: 30px;
-}
-
-.header-tab .tab-menu {
-  padding: 0px;
-}
-
-.header-tab .tab-menu .col {
-  text-align: center;
-  background: #F7F5F5;
-  border-right: 1px solid #f0eded;
-  border-left: 1px solid #f0eded;
-  box-sizing: border-box;
-  padding: 9px 5px;
-}
-
-.header-tab.tab-menu .col:first-child {
-  border-left: none
-}
-
-.header-tab .tab-menu .col:last-child {
-  border-right: none
-}
-
-.header-tab .tab-menu .col.active {
-  border-bottom: 2px solid #da291c;
-  border-right: 1px solid #f1d6d7;
-  border-left: 1px solid #f1d6d7
-}
-
-.header-tab .tab-menu .col.active:first-child {
-  border-left: none
-}
-
-.header-tab .tab-menu .col.active:last-child {
-  border-right: none
-}
-
-.header-tab .bar.bar-header {
-  padding-left: 0px;
-  padding-right: 0px;
 }
 
 #other-health .wrapper{
