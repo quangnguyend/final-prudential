@@ -15,7 +15,6 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
 
   $scope.switchTab = function (tab, index) {
     $scope.currentTab = tab || POCICY_HOLDER_TAB;
-    console.log('current tab:', $scope.currentTab)
     $scope.currentTabIndex = index;
   }
 
@@ -52,7 +51,6 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
       }
     }
     if (direct == 'right') {
-      console.log($scope.currentTabIndex)
       switch ($scope.currentTabIndex) {
         case 1:
           var prevTab1 = $scope.additionalList[$scope.currentTabIndex - 1]['id'];

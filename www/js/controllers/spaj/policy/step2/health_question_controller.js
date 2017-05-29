@@ -50,7 +50,6 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
   };
 
   vm.handleSwipe = function (e) {
-    console.log('fewf', e.gesture.direction)
     var direct = e.gesture.direction;
     //if swipeleft and current tab index smaller than tabs length
     if (direct == 'left' && (vm.currentTabIndex < vm.tabs.length - 1)) {
