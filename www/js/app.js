@@ -168,13 +168,24 @@ angular
           }
         }
       })
-      .state('app.step4', {
+      .state('app.step4_option1', {
         cache: false,
         url: '/step4',
         views: {
           'menuContent': {
             templateUrl: 'views/spaj/policy/step4/payor.html',
             controller: 'PayorCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.step4', {
+        cache: false,
+        url: '/step4/option1',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/policy/step4/payor_option1.html',
+            controller: 'PayorOption1Ctrl',
             controllerAs: 'vm'
           }
         }
