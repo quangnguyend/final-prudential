@@ -43,7 +43,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 /* ========================== HEADER + FOOTER ========================== */
 .card-container{margin: 20px 15px 100px;}
 
-.has-header{top:55px;}
+.has-header {
+  top:55px!important;
+}
+.has-footer {
+  bottom: 65px!important;
+}
 .bar.bar-header
 {
   height: 55px;

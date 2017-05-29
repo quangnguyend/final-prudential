@@ -60,7 +60,7 @@ angular
   .controller('insuredHomeCtrl', insuredHomeCtrl)
   .controller('EPolicyCtrl', ePolicyCtrl)
   .controller('HardCopyPolicyCtrl', hardCopyPolicyCtrl)
-  .controller('ESignatureConfirmCtrl', eSignatureConfirmCtrl)
+  .controller('ReminderCtrl', reminderCtrl)
   .controller('eSignDeclarationCtrl', eSignDeclarationCtrl)
   .controller('Step1Ctrl', step1Ctrl)
   .controller('PhMainCtrl', phMainCtrl)
