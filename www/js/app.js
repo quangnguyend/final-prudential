@@ -201,13 +201,24 @@ angular
           }
         }
       })
-      .state('app.document_upload', {
+      .state('app.step6', {
         cache: false,
-        url: '/step5/document_upload',
+        url: '/step6',
         views: {
           'menuContent': {
-            templateUrl: 'views/spaj/policy/step5/document_upload.html',
+            templateUrl: 'views/spaj/policy/step6/document_upload.html',
             controller: 'DocumentUploadCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.step7', {
+        cache: false,
+        url: '/step7',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/policy/step7/amendment.html',
+            controller: 'AmendmentCtrl',
             controllerAs: 'vm'
           }
         }

@@ -1,6 +1,6 @@
 'use strict'
 
-function riskHobbyCtrl ($scope, $rootScope, $ionicPopup, UserService, DataService, $ionicScrollDelegate, $location) {
+function riskHobbyCtrl ($scope, $rootScope, $ionicPopup, UserService, DataService, $ionicScrollDelegate, $location, SpajService) {
   $rootScope.showBar = true;
   $rootScope.showBack = true;
   $rootScope.showMenu = true;
@@ -30,6 +30,23 @@ function riskHobbyCtrl ($scope, $rootScope, $ionicPopup, UserService, DataServic
   vm.save = function () {
     // var data = vm.questions;
     // console.log(data);
-    $location.path('/app/step4')
+    /* Condition
+    * If (Policy holder (page 1, section 2: first option: Pemegang Polis)
+      or Policy Holder và Main Insured
+      or Main Insured.
+     * */
+    var condition = SpajService.getData('spaj');
+    if (typeof condition != 'undefined'){
+      if(condition.utama == true ||
+        condition.typeSpaj == 'PemegangPolis' ||
+        (condition.utama == true && condition.typeSpaj == 'PemegangPolis')
+      ){
+        $location.path('/app/step5');
+      }else{
+        $location.path('/app/step4');
+      }
+    }else{
+      $location.path('/app/step4');
+    }
   };
 }

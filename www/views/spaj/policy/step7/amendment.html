@@ -1,0 +1,21 @@
+<ion-view cache-view="false" view-title="Amendment">
+  <ion-content>
+    <step-process></step-process>
+    <div class="header-tab">
+      <div class='row tab-menu' >
+        <span class='col' ng-repeat="tab in vm.tabs" ng-class="vm.currentTab==tab.value? 'active': ''" ng-click="vm.switchTab(tab.value)">{{ tab.title}}</span>
+      </div>
+    </div>
+    <div class="wrapper has-bottom-bar amendment-page mt-30">
+      <form>
+        <div class="col col-padding">
+          <div class="">Amendment / Keterangan lain</div>
+          <input type="text" class="form-input" placeholder="Enter" ng-model="amendment">
+        </div>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>
+<div ng-show="true" class="bar bar-footer bar-assertive">
+  <a href="#/app/step8" title="Continue" class="btn">Next<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
+</div>
