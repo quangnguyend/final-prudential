@@ -5,9 +5,9 @@
   <ion-content>
     <step-process></step-process>
     <div class='row tab-menu'>
-      <span class='col' ng-click='switchTab(policy_holder_tab)' ng-class='currentTab===policy_holder_tab?"active":""'>Pemegang Polis - Tertanggung Utama</span>
-      <span class='col' ng-repeat='tab in additionalList' ng-click='switchTab(tab.id, $index)' ng-class='currentTab===tab.id?"active":""'>{{tab.name}}</span>
-      <span ng-if='additionalList.length<2' class='col blur-text' ng-click='addAdditionalTab()'>+ Tertanggung Tambahan</span>
+      <div class='col' ng-click='switchTab(policy_holder_tab)' ng-class='currentTab===policy_holder_tab?"active":""'><span class="d-table"><span class="d-table-cell">Pemegang Polis - Tertanggung Utama</span></span></div>
+      +      <div class='col' ng-repeat='tab in additionalList' ng-click='switchTab(tab.id)' ng-class='currentTab===tab.id?"active":""'><span class="d-table"><span class="d-table-cell">{{tab.name}}</span></span></div>
+      +      <div ng-if='additionalList.length<2' class='col blur-text' ng-click='addAdditionalTab()'><span class="d-table"><span class="d-table-cell">+ Tertanggung Tambahan</span></span></div>
     </div>
     <insured-home insured-data='{{policy_holder_tab}}' ng-show='currentTab===policy_holder_tab' on-swipe-left='handleMainTabSwipe()'></insured-home>
     <insured-home ng-repeat='tab in additionalList' insured-data='{{tab.id}}' ng-show='currentTab===tab.id' ng-class='currentTab===tab.id?"active":""'

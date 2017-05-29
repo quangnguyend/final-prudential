@@ -292,20 +292,27 @@ select {
 
 /*style for tab menus*/
 .tab-menu {
-  height: 50px;
   padding: 0px !important;
 }
 
 .tab-menu .col {
   text-align: center;
-  height: 50px;
-  line-height: 40px;
   background: #F7F5F5;
   border-right: 1px solid #f0eded;
   border-left: 1px solid #f0eded;
-  box-sizing: border-box
+  box-sizing: border-box;
+  padding: 0px 5px;
 }
-
+.tab-menu .col .d-table{
+  height: 50px;
+  display: table;
+  text-align: center;
+  width: 100%;
+}
+.tab-menu .col .d-table-cell{
+  vertical-align:middle;
+  display: table-cell;
+}
 .tab-menu .col:first-child {
   border-left: none
 }
