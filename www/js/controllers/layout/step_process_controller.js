@@ -5,18 +5,18 @@ function stepProcessCtr ($scope, $rootScope, UserService, DataService, $location
   var vm = this
   vm.policyStep = $rootScope.policyStep ? $rootScope.policyStep.currentStep : '1'
   vm.pageList = [
-    { step: '1', title: 'Policy Holder Information', state: 'app.main' },
-    { step: '2', title: 'Health Questions', state: 'app.step2' },
-    { step: '3', title: 'Kegiatan beresiko', state: 'app.step3' },
-    { step: '4', title: 'Pembayar Premi', state: 'app.step4' },
-    { step: '5', title: 'Penerima Manfaat', state: 'app.step5' },
-    { step: '6', title: 'Health Questions', state: 'app.step6' },
-    { step: '7', title: 'Health Questions', state: 'app.step7' },
-    { step: '8', title: 'Payor', state: 'app.step8' }]
+    { step: '1', title: 'Policy Holder Information', state: 'main' },
+    { step: '2', title: 'Health Questions', state: 'step2' },
+    { step: '3', title: 'Kegiatan beresiko', state: 'step3' },
+    { step: '4', title: 'Pembayar Premi', state: 'step4' },
+    { step: '5', title: 'Penerima Manfaat', state: 'step5' },
+    { step: '6', title: 'Health Questions', state: 'step6' },
+    { step: '7', title: 'Health Questions', state: 'step7' },
+    { step: '8', title: 'Payor', state: 'step8' }]
 
   $rootScope.policyStep = { steps: vm.pageList, currentStep: '1' }
 
-  $rootScope.setPolicyStep = function (step) {
+  $rootScope.setCurrentPolicyStep = function (step) {
     $rootScope.policyStep.currentStep = step
   }
 
