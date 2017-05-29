@@ -391,6 +391,11 @@ select {
 }
 
 /*css for step header*/
+@media screen and (max-width: 720px){
+  #step-header{
+    display: none;
+  }
+}
 #step-header{
   position: absolute;
   right: 0px;
