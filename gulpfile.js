@@ -19,6 +19,7 @@ gulp.task('inject', function () {
   var source = gulp.src([
     'www/css/*.css', 'www/lib/**/*.min.css',
     'www/lib/ionic/js/ionic.bundle.min.js', 'www/lib/**/*.min.js',
+    'www/lib/ng-file-upload/*.js',
     'www/js/controllers/**/*.js',
     'www/js/services/**/*.js', 'www/js/*.js'])
 
