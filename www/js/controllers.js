@@ -76,6 +76,7 @@ angular
   .controller('DocumentUploadCtrl', documentUploadCtrl)
   .controller('AmendmentCtrl', amendmentCtrl)
   .controller('TermsCtrl', termsCtrl)
+  .controller('CustomHeaderCtrl', customHeaderCtrl)
 
   .directive('dataService', dataService)
   .directive('groupedRadio', groupedRadio)
