@@ -14,7 +14,7 @@ function stepProcessCtr ($scope, $rootScope, UserService, DataService, $location
     { step: '7', title: 'Health Questions', state: 'step7' },
     { step: '8', title: 'Payor', state: 'step8' }]
 
-  $rootScope.policyStep = { steps: vm.pageList, currentStep: '1' }
+  $rootScope.policyStep = $rootScope.policyStep ? $rootScope.policyStep : { steps: vm.pageList, currentStep: '1' }
 
   $rootScope.setCurrentPolicyStep = function (step) {
     $rootScope.policyStep.currentStep = step

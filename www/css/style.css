@@ -387,7 +387,7 @@ select {
 /*css for step header*/
 #step-header{
   position: absolute;
-  right: 20px;
+  right: 0px;
   top: 15px;
   
 }
@@ -396,6 +396,7 @@ select {
   background: transparent;
   border: none;
   color: white;
+  text-align-last: right;
 }
 
 #step-header select option{
