@@ -10,7 +10,6 @@ function documentUploadCtrl ($scope, $rootScope, Upload, SpajService) {
   ];
 
   var condition = SpajService.getData('spaj');
-  console.log(condition);
   if (typeof condition != 'undefined'){
     if(condition.utama == true && condition.typeSpaj == 'PemegangPolis'){
       vm.currentTab = 'premiums';
@@ -26,8 +25,8 @@ function documentUploadCtrl ($scope, $rootScope, Upload, SpajService) {
   }
 
   vm.switchTab = function (tab) {
-    vm.currentTab = tab;
-  };
+    vm.currentTab = tab
+  }
 
   vm.documents = [
     {
@@ -47,33 +46,32 @@ function documentUploadCtrl ($scope, $rootScope, Upload, SpajService) {
       'document_type': '',
       'document_image': ''
     }
-  ];
+  ]
 
-  vm.documentType= [
+  vm.documentType = [
     { name: 'Kartu Identitas', value: 1 }
-  ];
-  vm.amendment = '';
-  $scope.uploadFiles = function(file, errFiles, item) {
-    console.log(file);
+  ]
+  vm.amendment = ''
+  $scope.uploadFiles = function (file, errFiles, item) {
     // item.document_image = file.$ngfBlobUrl;
-    $scope.errFile = errFiles && errFiles[0];
+    $scope.errFile = errFiles && errFiles[0]
     if (file) {
       file.upload = Upload.upload({
         url: '',
         data: {file: file}
-      });
+      })
       file.upload.then(function (response) {
         // upload successful
-        item.document_image = response.data;
+        item.document_image = response.data
       }, function (response) {
         // upload error
-        /*if (response.status > 0)
-         $scope.errorMsg = response.status + ': ' + response.data;*/
+        /* if (response.status > 0)
+         $scope.errorMsg = response.status + ': ' + response.data; */
       }, function (evt) {
         // upload processing
-        /*file.progress = Math.min(100, parseInt(100.0 *
-         evt.loaded / evt.total));*/
-      });
+        /* file.progress = Math.min(100, parseInt(100.0 *
+         evt.loaded / evt.total)); */
+      })
     }
-  };
+  }
 }
