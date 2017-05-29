@@ -1,4 +1,5 @@
 function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserService, $ionicScrollDelegate, SpajService, $ionicSideMenuDelegate) {
+
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
@@ -11,13 +12,50 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
       is_pen_installed: null
     },
     eyePopupData: {
-      name: null,
-      when: null,
+      name_of_illness: null,
+      when_the_condition_found: null,
       last_care_date: null,
       hospoital_name: null,
       hospital_address: null,
       medicine: null
-    }
+    },
+    height: null,
+    weight: null,
+    smoker: null,
+    sticks_cigarettes: null,
+    medication: null,
+    medication_detail: null,
+    darah: null,
+    ipeningkatan: null,
+    ijantung: null,
+    ikelainan: null,
+    istroke: null,
+    idemam: null,
+    inyeri: null,
+    inodule: null,
+    ibrain: null,
+    ihocmon: null,
+    ieye: null,
+    eye_contact_lenses: false,
+    eye_disorders: false,
+    iear: null,
+    irespiratory: null,
+    iheart: null,
+    idigestive: null,
+    ikidney: null,
+    iface: null,
+    ibone: null,
+    itumors: null,
+    iill: null,
+    iinjury: null,
+    idisease: null,
+    idisorder: null,
+    iabnormality: null,
+    ipapsmear: null,
+    ipregnant: null,
+    isurgery: null,
+    icomplication: null,
+    ilostweight: null
   }
   vm.eyePopupTouched = false
   vm.personalAccidentPopupTouched = false

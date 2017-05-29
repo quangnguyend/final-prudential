@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="list mt-50">
+        <div class="item no-lines">
+            <div class="description text-center">
+                Anda memiliki {{vm.healthFormValidStatus.null_properties.length}} data yang belum dilengkapi.</br></br>
+                Mohon melakukan pengecekan ulang sebelum Anda melanjutkan e-submission
+            </div>
+        </div>
+        <!--end item-->
+        <div ng-if="vm.healthFormValidStatus.null_properties.length > 0">
+            <div class="item no-lines">
+                <div class="title text-center">
+                    <h1>List data yang belum dilengkapi</h1>
+                </div>
+            </div>
+            <!--end item-->
+            <div class="no-lines half-width-center text-left">
+                <p ng-repeat="item in vm.healthFormValidStatus.null_properties"> {{vm.getDisplayText(item)}} </p>
+            </div>
+        </div>
+        <!--end item-->
+    </div>
+</div>

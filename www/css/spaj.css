@@ -1191,12 +1191,26 @@
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
-  line-height: 100%;
   padding-left: 80px
+}
+
+#spaj-esignature-confirmation .policy-item .col{
+  padding: 10px;
+}
+
+
+#spaj-esignature-confirmation .policy-item .col:first-child{
+  padding-left: 0;
+}
+
+
+#spaj-esignature-confirmation .policy-item .col:last-child{
+  padding-right: 0;
 }
 
 #spaj-esignature-confirmation .item {
   width: 90%;
+  text-align: left;
   margin: 0 auto;
 }
 
@@ -1209,6 +1223,9 @@
   background-color: #F7F5F5!important;
 }
 
+#spaj-esignature-confirmation .disabled-btn {
+  background: #9B9B9B;
+}
 
 @media screen and (max-width: 568px) {
     #spaj-esignature-confirmation .custom-checkbox{

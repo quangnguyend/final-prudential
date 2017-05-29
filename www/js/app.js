@@ -113,13 +113,13 @@ angular
           }
         }
       })
-      .state('app.spaj_esignature_confirmation', {
+      .state('app.spaj_remider_before_submit', {
         cache: false,
-        url: '/spaj_esignature_confirmation',
+        url: '/spaj_remider_before_submit',
         views: {
           'menuContent': {
-            templateUrl: 'views/spaj/e-signature-confirmation.html',
-            controller: 'ESignatureConfirmCtrl',
+            templateUrl: 'views/spaj/policy/reminder_step/reminder_before_submit.html',
+            controller: 'ReminderCtrl',
             controllerAs: 'vm'
           }
         }
