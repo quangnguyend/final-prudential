@@ -1,16 +1,19 @@
-function stepHeaderCtr ($scope, $rootScope) {
+function stepHeaderCtr ($scope, $state, $rootScope) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
   var vm = this
-  vm.policyStep = $rootScope.currentStep? $rootScope.currentStep : '1'
-  vm.totalStep = 10
-  // vm.policyStep = '1'
+  if (!$rootScope.policyStep) return
+  vm.steps = $rootScope.getPolicySteps()
+  vm.currentStep = $rootScope.getCurrentPolicyStep()
+  $scope.selectStep = '1'
 
-  // vm.pageList = [
-  //   { step: '1', title: 'Policy Holder Information', state: 'app.main'},
-  //   { step: '2', title: 'Health Questions', state: 'step2' },
-  //   { step: '3', title: 'Health Questions', state: 'step3' },
-  //   { step: '4', title: 'Payor', state: 'step4' },
-  //   { step: '5', title: 'Beneficiaries', state: 'step5' }]
+  $scope.changeStep = function () {
+    for (var i in vm.steps) {
+      if (vm.steps[i].step === $scope.selectStep) {
+        $state.go(vm.steps[i].state)
+        $rootScope.policyStep.currentStep = $scope.selectStep
+      }
+    }
+  }
 }

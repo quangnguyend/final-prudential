@@ -383,3 +383,34 @@ select {
 .text-left{
   text-align: left;
 }
+
+/*css for step header*/
+#step-header{
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  
+}
+
+#step-header select{
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+#step-header select option{
+  background: none;
+  color: black;
+}
+
+#step-header.down-arrow:after{
+  content: '⏷';
+  color: white;
+  margin-left: 5px;
+}
+
+#step-header.up-arrow:after{
+  content: '⏶';
+  color: white;
+  margin-left: 5px;
+}

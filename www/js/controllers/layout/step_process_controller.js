@@ -3,22 +3,29 @@ function stepProcessCtr ($scope, $rootScope, UserService, DataService, $location
   $rootScope.showBack = true
   $rootScope.showMenu = true
   var vm = this
-  var step = $location.path().split("/")[2].replace(/step/i, '');
-  if( step === undefined || step === null || step === 'main' )
-    $rootScope.currentStep = '1';
-  else{
-    $rootScope.currentStep = step;
-  }
-  vm.policyStep = $rootScope.currentStep;
-
+  vm.policyStep = $rootScope.policyStep ? $rootScope.policyStep.currentStep : '1'
   vm.pageList = [
-    { step: '1', title: 'Policy Holder Information', state: 'app.main'},
-    { step: '2', title: 'Health Questions', state: 'step2' },
-    { step: '3', title: 'Health Questions', state: 'step3' },
-    { step: '4', title: 'Payor', state: 'step4' },
-    { step: '5', title: 'Beneficiaries', state: 'step5' }]
+    { step: '1', title: 'Policy Holder Information', state: 'app.main' },
+    { step: '2', title: 'Health Questions', state: 'app.step2' },
+    { step: '3', title: 'Health Questions', state: 'app.step3' },
+    { step: '4', title: 'Payor', state: 'app.step4' },
+    { step: '5', title: 'Beneficiaries', state: 'app.step5' }]
+
+  $rootScope.policyStep = { steps: vm.pageList, currentStep: '1' }
+
+  $rootScope.setPolicyStep = function (step) {
+    $rootScope.policyStep.currentStep = step
+  }
+
+  $rootScope.getCurrentPolicyStep = function () {
+    return $rootScope.policyStep.currentStep
+  }
+
+  $rootScope.getPolicySteps = function () {
+    return $rootScope.policyStep.steps
+  }
 
   vm.changeStep = function (step) {
-    vm.policyStep = step;
+    $rootScope.policyStep.currentStep = step
   }
 }

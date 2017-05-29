@@ -1,5 +1,5 @@
 <ul class="row text-center multi-step">
-  <li ng-repeat="page in vm.pageList" class='col col-20' ng-class="vm.policyStep == page.step?'active':''">
+  <li ng-repeat="page in vm.pageList" class='col col-20' ng-class="vm.policyStep === page.step?'active':''">
     <span><a href="#/app/{{page.state}}" ng-click="vm.changeStep(page.step)">{{page.step}}</a></span>
   </li>
 </ul>
