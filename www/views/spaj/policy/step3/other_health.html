@@ -2,11 +2,11 @@
   <ion-content>
     <step-process></step-process>
     <div class="header-tab">
-      <div class='row tab-menu' >
-        <span class='col' ng-repeat="tab in vm.tabs" ng-class="vm.currentTab==tab.value? 'active': ''" ng-click="vm.switchTab(tab.value)">{{ tab.title}}</span>
+      <div class='row tab-menu'>
+        <span class='col' ng-repeat="tab in vm.tabs" ng-class="vm.currentTab==tab.value? 'active': ''" ng-click="vm.switchTab(tab.value, $index)">{{ tab.title}}</span>
       </div>
     </div>
-    <div class="wrapper text-center has-bottom-bar padding-bottom">
+    <div class="wrapper text-center has-bottom-bar padding-bottom" on-swipe='vm.handleSwipe($event)'>
       <div ng-if="vm.currentTab=='major_insured'" ng-include="'views/spaj/policy/step3/other_health_major_insured.html'"></div>
       <div ng-if="vm.currentTab=='additional_insured_1'" ng-include="'views/spaj/policy/step3/other_health_additional_insured_1.html'"></div>
       <div ng-if="vm.currentTab=='additional_insured_2'" ng-include="'views/spaj/policy/step3/other_health_additional_insured_2.html'"></div>
