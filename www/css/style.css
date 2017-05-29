@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .bar button.back-button .icon:before{color:#fff;}
 .bar button.back-button .back-text{display: none;}
 
-.bar.bar-footer{background-color: #da291c;height: 64px;}
+.bar.bar-footer{background-color: #DA291C;height: 64px;}
 /*.bar-footer .title{height: 64px;line-height: 70px;}*/
 .bar-footer .button-clear{position: absolute;right:10px;top:15px}
 

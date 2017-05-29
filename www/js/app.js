@@ -124,17 +124,6 @@ angular
           }
         }
       })
-      .state('app.esign_declaration', {
-        cache: false,
-        url: '/esign_declaration',
-        views: {
-          menuContent: {
-            templateUrl: 'views/spaj/esign_declaration.html',
-            controller: 'eSignDeclarationCtrl',
-            controllerAs: 'vm'
-          }
-        }
-      })
       .state('app.step3', {
         cache: false,
         url: '/step3',
@@ -231,6 +220,26 @@ angular
             templateUrl: 'views/spaj/policy/step8/terms_conditions.html',
             controller: 'TermsCtrl',
             controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.esign_declaration', {
+        cache: false,
+        url: '/esign_declaration',
+        views: {
+          menuContent: {
+            templateUrl: 'views/spaj/esign_declaration.html',
+            controller: 'eSignDeclarationCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.esign_payment', {
+        cache: false,
+        url: '/payment',
+        views: {
+          menuContent: {
+            templateUrl: 'views/spaj/esign_payment.html'
           }
         }
       })

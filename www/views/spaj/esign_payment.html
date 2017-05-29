@@ -1,10 +1,8 @@
 <ion-view cache-view="false" view-title="Sebelum Anda melanjutkan" id="spaj-start">
   <ion-nav-title>
     Metode Pembayaran
-    <step-status step='1' totalStep='10'></step-status>
   </ion-nav-title>
   <ion-content>
-    <step-process></step-process>
     <form id="esign_paymnet">
       <div id="policy_info_ph_info" class="list list-inset no-lines">
         <div class='item'>
@@ -32,7 +30,7 @@
       </div>
     </form>
   </ion-content>
-</ion-view>
-<div ng-show="true" class="bar bar-footer bar-assertive">
-  <a ng-click="vm.viewStep1('active')" title="Continue" class="btn">Next<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
+<ion-footer-bar class="bar bar-footer bar-assertive">
+  <a href="/#/app/spaj_remider_before_submit" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
 </div>
+</ion-view>
