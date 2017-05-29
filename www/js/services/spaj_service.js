@@ -13,5 +13,6 @@ function spajService ($rootScope, $http, $location, $ionicLoading, $cordovaProgr
 
   function setData (key, value) {
     dataSpaj[key] = value
+    console.log(value)
   }
 }

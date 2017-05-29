@@ -14,7 +14,7 @@
 .header-bar-spaj button.down-arrow::after {
   content: ' ⏷';
 }
-
+/*
 #SPAJ .tab-menu {
   height: 50px;
   padding: 0px;
@@ -55,7 +55,7 @@
 #SPAJ .bar.bar-header {
   padding-left: 0px;
   padding-right: 0px;
-}
+}*/
 
 .multiStep-wrapper {
   width: 100%
@@ -1191,12 +1191,26 @@
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
-  line-height: 100%;
   padding-left: 80px
+}
+
+#spaj-esignature-confirmation .policy-item .col{
+  padding: 10px;
+}
+
+
+#spaj-esignature-confirmation .policy-item .col:first-child{
+  padding-left: 0;
+}
+
+
+#spaj-esignature-confirmation .policy-item .col:last-child{
+  padding-right: 0;
 }
 
 #spaj-esignature-confirmation .item {
   width: 90%;
+  text-align: left;
   margin: 0 auto;
 }
 
@@ -1209,6 +1223,9 @@
   background-color: #F7F5F5!important;
 }
 
+#spaj-esignature-confirmation .disabled-btn {
+  background: #9B9B9B;
+}
 
 @media screen and (max-width: 568px) {
     #spaj-esignature-confirmation .custom-checkbox{
@@ -1222,46 +1239,6 @@
 }
 .mt-30{
   margin-top: 30px;
-}
-
-.header-tab .tab-menu {
-  padding: 0px;
-}
-
-.header-tab .tab-menu .col {
-  text-align: center;
-  background: #F7F5F5;
-  border-right: 1px solid #f0eded;
-  border-left: 1px solid #f0eded;
-  box-sizing: border-box;
-  padding: 9px 5px;
-}
-
-.header-tab.tab-menu .col:first-child {
-  border-left: none
-}
-
-.header-tab .tab-menu .col:last-child {
-  border-right: none
-}
-
-.header-tab .tab-menu .col.active {
-  border-bottom: 2px solid #da291c;
-  border-right: 1px solid #f1d6d7;
-  border-left: 1px solid #f1d6d7
-}
-
-.header-tab .tab-menu .col.active:first-child {
-  border-left: none
-}
-
-.header-tab .tab-menu .col.active:last-child {
-  border-right: none
-}
-
-.header-tab .bar.bar-header {
-  padding-left: 0px;
-  padding-right: 0px;
 }
 
 #other-health .wrapper{

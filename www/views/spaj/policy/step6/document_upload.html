@@ -5,9 +5,9 @@
   <ion-content>
     <step-process></step-process>
     <div class="header-tab">
-      <div class='row tab-menu'>
+      <div class='row tab-menu' >
         <div class="col" ng-repeat="tab in vm.tabs" ng-class="vm.currentTab==tab.value? 'active': ''" ng-click="vm.switchTab(tab.value)">
-          <span class='tab-label'>{{ tab.title}}</span>
+          <span class="d-table"><span class="d-table-cell">{{ tab.title}}</span></span>
         </div>
       </div>
     </div>
