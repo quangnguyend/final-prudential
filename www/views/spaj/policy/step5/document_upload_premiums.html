@@ -13,7 +13,6 @@
           </div>
           <div class="col col-33 col-padding">
             <div class="document-upload-file">
-              <!--<input type="file" ng-model="item.document_image" ng-model-instant onchange="angular.element(this).scope().uploadFiles(this)">-->
               <input type="file" ngf-select="uploadFiles($file, $invalidFiles, item)" accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">
               <button class="button button-stable btn-upload-img">Ambil Foto</button>
             </div>
