@@ -34,3 +34,13 @@ angular.module('prudential.components', [])
     templateUrl: 'views/layout/insured_home.html',
     controller: insuredHomeCtrl
   })
+  .component('customHeader', {
+    template: `<div class="bar bar-header bar-light">
+                <span class='title'>{{$ctrl.title}}</span>
+                <step-header></step-header>
+              </div>`,
+    controller: function ($attrs) {
+      var ctrl = this
+      ctrl.title = $attrs.title
+    }
+  })

@@ -1,4 +1,4 @@
-function documentUploadCtrl ($scope, $rootScope, Upload) {
+function documentUploadCtrl ($scope, $rootScope, Upload, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
@@ -8,11 +8,22 @@ function documentUploadCtrl ($scope, $rootScope, Upload) {
     {title: 'Pemegang Polis', value: 'policy_holders'},
     {title: 'Tertanggung Tambahan 1', value: 'additional_insured'}
   ]
-  vm.currentTab = 'premiums'
-
-  vm.switchTab = function (tab) {
-    vm.currentTab = tab
+  
+  var condition = SpajService.getData('spaj');
+  if (typeof condition != 'undefined'){
+    if(condition.utama == true && condition.typeSpaj == 'PemegangPolis'){
+      vm.currentTab = 'premiums';
+    }else if(condition.typeSpaj == 'PemegangPolis'){
+      vm.currentTab = 'policy_holders';
+    }else if(condition.typeSpaj == '' && condition.tambahan1 == true){
+      vm.currentTab = 'additional_insured';
+    }else{
+      vm.currentTab = 'premiums';
+    }
+  }else{
+    vm.currentTab = 'premiums';
   }
+
 
   vm.documents = [
     {
@@ -37,7 +48,7 @@ function documentUploadCtrl ($scope, $rootScope, Upload) {
   vm.documentType = [
     { name: 'Kartu Identitas', value: 1 }
   ]
-  vm.amendment = ''
+  
   $scope.uploadFiles = function (file, errFiles, item) {
     // item.document_image = file.$ngfBlobUrl;
     $scope.errFile = errFiles && errFiles[0]
