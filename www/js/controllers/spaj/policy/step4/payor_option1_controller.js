@@ -1,8 +1,4 @@
-function payorOption1Ctrl ($scope, $rootScope, $ionicPopup, UserService, DataService, $ionicScrollDelegate, $location) {
-  $scope.data = {
-    payorRadio: 'dưưeqd',
-    iaddress: 'dưưeqd'
-  }
+function payorOption1Ctrl ($scope, DataService, $ionicScrollDelegate, $location) {
 
   var vm = this;
   vm.tabs = [
