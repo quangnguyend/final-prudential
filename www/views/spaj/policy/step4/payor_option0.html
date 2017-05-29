@@ -1,0 +1,52 @@
+<div id="spaj-start">
+
+  <div id="" class="has-bottom-bar payor-page">
+    <form>
+      <div class="list text-center">
+        <div class="item">
+          <div class="description no-padding-top">
+            Silahkan cek info berikut untuk pengajuan sesuai kriteria
+          </div>
+        </div>
+
+        <div class="item gray-block mt-30">
+          <div class="description bold">
+            (Calon) Pembayar Premi / Kontributor adalah Perorangan, dan hubungan dengan ( Calon ) Pemegang Polis adalah
+          </div>
+          <div class="row responsive-sm mini-center-container radio-block">
+            <div class="col-50">
+              <input ng-model="data.payorRadio" class='custom_radio' type="radio" value="parents" id="parents" />
+              <label class='' for="parents">Orang Tua</label>
+            </div>
+            <div class="col-50">
+              <input ng-model="data.payorRadio" class='custom_radio' type="radio" value="husband_wife" name="husband_wife" id="husband_wife"
+              />
+              <label class='' for="husband_wife">Suami-Istri</label>
+            </div>
+          </div>
+          <div class="row responsive-sm mini-center-container radio-block">
+            <div class="col-50">
+              <input ng-model="data.payorRadio" class='custom_radio' type="radio" value="children" id="children" id="tertanggung_tambahan_1"
+              />
+              <label for="children">Anak</label>
+            </div>
+            <div class="col-50">
+              <input ng-model="data.payorRadio" class='custom_radio' type="radio" value="others" id="others" id="tertanggung_tambahan_2"
+              />
+              <label for="others">Lainnya</label>
+            </div>
+          </div>
+          <div ng-show="data.payorRadio === 'others'" class="row responsive-sm mini-center-container radio-block">
+            <div class="col">
+              <input class="other-policy-input" ng-model="policyOtherText" type="text" placeholder="Enter">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </form>
+  </div>
+</div>

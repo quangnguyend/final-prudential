@@ -70,6 +70,7 @@ angular
   .controller('FamilyHistoryCtrl', familyHistoryCtrl)
   .controller('RiskHobbyCtrl', riskHobbyCtrl)
   .controller('PayorCtrl', payorCtrl)
+  .controller('PayorOption1Ctrl', payorOption1Ctrl)
   .controller('BeneficiariesCtrl', beneficiariesCtrl)
   .controller('StepHeaderCtr', stepHeaderCtr)
   .controller('DocumentUploadCtrl', documentUploadCtrl)
