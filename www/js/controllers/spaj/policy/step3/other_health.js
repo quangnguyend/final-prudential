@@ -16,8 +16,6 @@ function otherHealthCtrl ($scope, $rootScope, $ionicPopup, UserService, DataServ
   vm.currentTabIndex = 0;
 
   vm.switchTab = function (tab, index) {
-    console.log("index hien tai:", index)
-    console.log("Tabs length:", vm.tabs.length)
     vm.currentTab = tab;
     vm.currentTabIndex = index;
   };
