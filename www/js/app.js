@@ -223,6 +223,17 @@ angular
           }
         }
       })
+      .state('app.step8', {
+        cache: false,
+        url: '/step8',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/spaj/policy/step8/terms_conditions.html',
+            controller: 'TermsCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/spaj_start')
   })
