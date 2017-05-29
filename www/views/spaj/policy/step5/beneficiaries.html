@@ -1,4 +1,7 @@
-<ion-view cache-view="false" view-title="Calon penerima manfaat asuransi">
+<ion-view cache-view="false">
+  <ion-nav-title>
+    <custom-header title='Calon penerima manfaat asuransi'></custom-header>
+  </ion-nav-title>
   <ion-content>
     <step-process></step-process>
     <div id='policy_beneficiary'>
@@ -39,7 +42,8 @@
                   <label for='gender-male-{{index}}'>Pria</label>
                 </div>
                 <div>
-                  <input type='radio' id='gender-female-{{index}}' name='gender-{{index}}' value='female' ng-click="vm.beneficiary.setGender(index, 'female')" />
+                  <input type='radio' id='gender-female-{{index}}' name='gender-{{index}}' value='female' ng-click="vm.beneficiary.setGender(index, 'female')"
+                  />
                   <label for='gender-female-{{index}}'>Wanita</label>
                 </div>
               </div>

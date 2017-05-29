@@ -1,10 +1,13 @@
-<ion-view cache-view="false" view-title="Kelengkapan dokumen">
+<ion-view cache-view="false">
+  <ion-nav-title>
+    <custom-header title='Kelengkapan dokumen'></custom-header>
+  </ion-nav-title>
   <ion-content>
     <step-process></step-process>
     <div class="header-tab">
-      <div class='row tab-menu' >
+      <div class='row tab-menu'>
         <div class="col" ng-repeat="tab in vm.tabs" ng-class="vm.currentTab==tab.value? 'active': ''" ng-click="vm.switchTab(tab.value)">
-          <span class='tab-label' >{{ tab.title}}</span>
+          <span class='tab-label'>{{ tab.title}}</span>
         </div>
       </div>
     </div>

@@ -123,27 +123,7 @@
   text-decoration: none;
 }
 
-#step-status{
-  position: absolute;
-  right: 20px;
-  top: 15px;
-  background: transparent;
-  border: none;
-  color: white;
-  
-}
 
-#step-status.down-arrow:after{
-  content: '⏷';
-  color: white;
-  margin-left: 5px;
-}
-
-#step-status.up-arrow:after{
-  content: '⏶';
-  color: white;
-  margin-left: 5px;
-}
 
 /*Css health_question*/
 
