@@ -4,7 +4,7 @@ function stepProcessCtr ($scope, $rootScope, UserService, DataService, $location
   $rootScope.showMenu = true
   var vm = this
   vm.pageList = [
-    { step: '1', title: 'Policy Holder Information', state: 'main' },
+    { step: '1', title: 'Policy Holder Information', state: 'step1' },
     { step: '2', title: 'Health Questions', state: 'step2' },
     { step: '3', title: 'Kegiatan beresiko', state: 'step3' },
     { step: '4', title: 'Pembayar Premi', state: 'step4' },

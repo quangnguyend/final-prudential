@@ -5,15 +5,18 @@
   <ion-content>
     <step-process></step-process>
     <div class='row tab-menu'>
-      <div class='col' ng-click='switchTab(policy_holder_tab)' ng-class='currentTab===policy_holder_tab?"active":""'><span class="d-table"><span class="d-table-cell">Pemegang Polis - Tertanggung Utama</span></span></div>
-      +      <div class='col' ng-repeat='tab in additionalList' ng-click='switchTab(tab.id)' ng-class='currentTab===tab.id?"active":""'><span class="d-table"><span class="d-table-cell">{{tab.name}}</span></span></div>
-      +      <div ng-if='additionalList.length<2' class='col blur-text' ng-click='addAdditionalTab()'><span class="d-table"><span class="d-table-cell">+ Tertanggung Tambahan</span></span></div>
+      <div class='col' ng-click='switchTab(policy_holder_tab)' ng-class='currentTab===policy_holder_tab?"active":""'><span class="d-table"><span class="d-table-cell">Pemegang Polis - Tertanggung Utama</span></span>
+      </div>
+      <div class='col' ng-repeat='tab in additionalList' ng-click='switchTab(tab.id)' ng-class='currentTab===tab.id?"active":""'><span class="d-table"><span class="d-table-cell">{{tab.name}}</span></span>
+      </div>
+      <div ng-if='additionalList.length<2' class='col blur-text' ng-click='addAdditionalTab()'><span class="d-table"><span class="d-table-cell">+ Tertanggung Tambahan</span></span>
+      </div>
     </div>
     <insured-home insured-data='{{policy_holder_tab}}' ng-show='currentTab===policy_holder_tab' on-swipe-left='handleMainTabSwipe()'></insured-home>
     <insured-home ng-repeat='tab in additionalList' insured-data='{{tab.id}}' ng-show='currentTab===tab.id' ng-class='currentTab===tab.id?"active":""'
       on-swipe='handleAddedTabSwipe($event)'></insured-home>
   </ion-content>
 </ion-view>
-<div ng-show="true" class="bar bar-footer bar-assertive">
-  <a ng-click="nextClickHandle()" title="Continue" class="btn">Next<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
-</div>
+<ion-footer-bar class="bar bar-footer bar-assertive">
+  <div class="btn" ng-click="nextClickHandle()">Lanjutkan</div><button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button>
+</ion-footer-bar>
