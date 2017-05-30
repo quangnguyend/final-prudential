@@ -91,14 +91,12 @@ ion-footer-bar.bar.bar-assertive {
   height: 64px;
 }
 
-
-/*.bar-footer .title{height: 64px;line-height: 70px;}*/
-
 .bar-footer .button-clear {
   position: absolute;
   right: 10px;
   top: 15px
 }
+
 
 .btn-disable {
   background: #9B9B9B !important;
@@ -506,3 +504,77 @@ select {
   color: white;
   margin-left: 5px;
 }
+
+/* ================ COMMON CSS ================ */
+body, body *{font-size: 17px;}
+.item h1, .item h2, .item h3, .item h4, .item h5, .item h6{font-weight: 600; font-size: 17px;}
+.description {
+  white-space: initial;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  white-space: normal !important;
+  font-weight: 600
+}
+.item input[type=search], .item  input[type=text], .item  input[type=password], .item  input[type=datetime],  .item  input[type=datetime-local], .item  input[type=date], .item  input[type=month], .item  input[type=time], .item  input[type=week], .item  input[type=number], .item  input[type=email], .item  input[type=url], .item  input[type=tel], .item  input[type=color], .item  textarea{
+  font-size: 17px;
+}
+.item  .input-label{
+ width:100%;
+ font-size: 17px;
+}
+.item .button-block .button{
+  font-size: 17px;
+  font-weight: 400;
+}
+.item .form_select{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 100%;
+  width: 100%;
+  color: rgba(91, 103, 112, 0.5);
+  padding: 5px;
+  padding-left: 0;
+  margin-top: 5px;
+  margin-left: 0;
+  background-color: #fff;
+  border: none;
+}
+.item .item-note{font-size: 17px;}
+.item  .button{font-size: 17px;}
+@media only screen and (min-width: 768px)  { 
+  .body, body.{font-size:25px;}
+  .description {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  label, label.item{
+    font-size:25px;
+  }
+  .bar.bar-header .title{
+    font-size: 25px;
+  }
+  .bar-footer .btn{
+    font-size: 25px
+  }
+  .tab-menu .col .d-table-cell{
+    font-size: 20px;
+  }
+  [type="radio"]:not(:checked)+label, [type="radio"]:checked+label{
+    font-size: 25px;
+  }
+  .item input[type=search], .item  input[type=text], .item  input[type=password], .item  input[type=datetime],  .item  input[type=datetime-local], .item  input[type=date], .item  input[type=month], .item  input[type=time], .item  input[type=week], .item  input[type=number], .item  input[type=email], .item  input[type=url], .item  input[type=tel], .item  input[type=color], .item  textarea{
+    font-size: 25px;
+  }
+  .item .input-label{
+    font-size: 25px;
+  }
+  .item .button-block .button{
+    font-size: 25px;
+  }
+  .item .form_select{font-size:25px;}
+  .item .item-note{font-size: 25px;}
+  .item  .button{font-size: 25px;}
+  .item h1, .item h2, .item h3, .item h4, .item h5, .item h6{font-size:25px;}
+ }
+/* ================ END COMMON CSS ================ */

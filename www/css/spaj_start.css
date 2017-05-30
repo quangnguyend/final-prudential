@@ -43,13 +43,9 @@
   display: inline-block;
   border: none;
   background: #F7F5F5;
+ 
 }
 
-#spaj-start .description {
-  white-space: initial;
-  padding-bottom: 20px;
-  padding-top: 20px;
-}
 
 #spaj-start .other-policy-input {
   padding-left: 15px;
