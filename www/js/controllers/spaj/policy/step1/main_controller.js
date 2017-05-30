@@ -13,17 +13,16 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
   $scope.currentTabIndex = null
 
   $scope.switchTab = function (tab, index) {
-    $scope.currentTab = tab || POCICY_HOLDER_TAB;
-    $scope.currentTabIndex = index;
+    $scope.currentTab = tab || POCICY_HOLDER_TAB
+    $scope.currentTabIndex = index
   }
 
   $scope.addAdditionalTab = function () {
     var numberTab = $scope.additionalList.length
     // we have only maximum 2 addtional tabs
     if (numberTab === 2) { return }
-    $scope.currentTabIndex = numberTab;
+    $scope.currentTabIndex = numberTab
     $scope.additionalList.push({
-
       id: 'ADDITIONAL_' + numberTab,
       name: 'Tertanggung Tambahan ' + (numberTab + 1)
     })
@@ -31,7 +30,6 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
   }
 
   $scope.nextClickHandle = function () {
-    //console.dir(SpajService.getData())
     $state.go('app.step2')
   }
 
@@ -41,27 +39,25 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
     }
   }
   $scope.handleAddedTabSwipe = function (e) {
-    var direct = e.gesture.direction;
-    //if swipeleft and current tab index smaller than tabs length
-    if (direct == 'left') {
-      if ($scope.additionalList.length == 2 && $scope.currentTabIndex == 0) {
-        var nextTab = $scope.additionalList[$scope.currentTabIndex + 1]['id'];
+    var direct = e.gesture.direction
+    // if swipeleft and current tab index smaller than tabs length
+    if (direct === 'left') {
+      if ($scope.additionalList.length === 2 && $scope.currentTabIndex === 0) {
+        var nextTab = $scope.additionalList[$scope.currentTabIndex + 1]['id']
         $scope.switchTab(nextTab, $scope.currentTabIndex + 1)
       }
     }
-    if (direct == 'right') {
+    if (direct === 'right') {
       switch ($scope.currentTabIndex) {
         case 1:
-          var prevTab1 = $scope.additionalList[$scope.currentTabIndex - 1]['id'];
+          var prevTab1 = $scope.additionalList[$scope.currentTabIndex - 1]['id']
           $scope.switchTab(prevTab1, $scope.currentTabIndex - 1)
-          break;
+          break
         case 0:
           $scope.switchTab('POLICY_HOLDER', null)
-          break;
-
+          break
       }
     }
-
   }
 
   function initPage (rootSpajData) {

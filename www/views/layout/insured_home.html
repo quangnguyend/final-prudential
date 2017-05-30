@@ -22,11 +22,11 @@
                 <div class="row">
                     <div class="col-40">
                         <select ng-model='data.birthdayAddr' class="form_select" ng-model='agent.occupation'>
-                  <option selected value>Select</option>
-                  <option>Blue</option>
-                  <option>Green</option>
-                  <option>Red</option>
-                </select>
+                            <option selected value>Select</option>
+                            <option>Blue</option>
+                            <option>Green</option>
+                            <option>Red</option>
+                        </select>
                     </div>
                     <div class="col-20"></div>
                     <div class="col-50 left_input_date">
@@ -48,12 +48,12 @@
                 <div class="row">
                     <div class="row indent_row">
                         <div class="col-50">
-                            <input name='radio' class='custom_radio' type="radio" id='pira' />
-                            <label class='' for="pira">Pira</label>
+                            <input name='radio' class='custom_radio' type="radio" id='{{insuredName}}-pira'  />
+                            <label class='' for="{{insuredName}}-pira">Pira</label>
                         </div>
                         <div class="col-50">
-                            <input name='radio' class='custom_radio' type="radio" id='wanita' />
-                            <label class='' for="wanita">Wanita</label>
+                            <input name='radio' class='custom_radio' type="radio" id='{{insuredName}}-wanita' />
+                            <label class='' for="{{insuredName}}-wanita">Wanita</label>
                         </div>
                     </div>
                 </div>
@@ -149,12 +149,12 @@
                 <div class="row">
                     <div class="row indent_row">
                         <div class="col-50">
-                            <input id='seumurHidup' class='custom_radio' type="radio" name='kadaluwarasa' />
-                            <label class='' for="seumurHidup">Seumur hidup</label>
+                            <input id='{{insuredName}}-seumurHidup' class='custom_radio' type="radio" name='kadaluwarasa' />
+                            <label class='' for="{{insuredName}}-seumurHidup">Seumur hidup</label>
                         </div>
                         <div class="col-50">
-                            <input id='tidak' class='custom_radio' type="radio" name='kadaluwarasa' />
-                            <label class='' for="tidak">Tidak</label>
+                            <input id='{{insuredName}}-tidak' class='custom_radio' type="radio" name='kadaluwarasa' />
+                            <label class='' for="{{insuredName}}-tidak">Tidak</label>
                         </div>
                     </div>
                 </div>
@@ -241,12 +241,12 @@
                 <div class="row">
                     <div class="row indent_row">
                         <div class="col-50">
-                            <input name='alamattempattinggal' id='alamatIndonesia' class='custom_radio' type="radio" />
-                            <label for="alamatIndonesia">Indonesia</label>
+                            <input name='alamattempattinggal' id='{{insuredName}}-alamatIndonesia' class='custom_radio' type="radio" />
+                            <label for="{{insuredName}}-alamatIndonesia">Indonesia</label>
                         </div>
                         <div class="col-50">
-                            <input name='alamattempattinggal' id='alamatDiluarIndonesia' class='custom_radio' type="radio" />
-                            <label for="alamatDiluarIndonesia">Diluar Indonesia</label>
+                            <input name='alamattempattinggal' id='{{insuredName}}-alamatDiluarIndonesia' class='custom_radio' type="radio" />
+                            <label for="{{insuredName}}-alamatDiluarIndonesia">Diluar Indonesia</label>
                         </div>
                     </div>
                 </div>
@@ -443,16 +443,16 @@
                 <div class="row">
                     <div class="row indent_row">
                         <div class="col-33">
-                            <input name='alamatSuratMenyurat' id='alamatTempatTingal' class='custom_radio' type="radio" />
-                            <label class='' for="alamatTempatTingal">Alamat Tempat Tingal</label>
+                            <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatTempatTingal' class='custom_radio' type="radio" />
+                            <label class='' for="{{insuredName}}-alamatTempatTingal">Alamat Tempat Tingal</label>
                         </div>
                         <div class="col-33">
-                            <input name='alamatSuratMenyurat' id='alamatKantor' class='custom_radio' type="radio" />
-                            <label class='' for="alamatKantor">Alamat Kantor</label>
+                            <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatKantor' class='custom_radio' type="radio" />
+                            <label class='' for="{{insuredName}}-alamatKantor">Alamat Kantor</label>
                         </div>
                         <div class="col-33">
-                            <input name='alamatSuratMenyurat' id='alamatLain' class='custom_radio' type="radio" />
-                            <label class='' for="alamatLain">Alamat Lain</label>
+                            <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatLain' class='custom_radio' type="radio" />
+                            <label class='' for="{{insuredName}}-alamatLain">Alamat Lain</label>
                         </div>
                     </div>
                 </div>

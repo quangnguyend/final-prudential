@@ -18,7 +18,7 @@ function otherHealthCtrl ($scope, $rootScope, $ionicPopup, UserService, DataServ
   vm.switchTab = function (tab, index) {
     vm.currentTab = tab
     vm.currentTabIndex = index
-  };
+  }
 
   vm.questions = {
     question_1: {
@@ -59,35 +59,35 @@ function otherHealthCtrl ($scope, $rootScope, $ionicPopup, UserService, DataServ
   vm.scrollTo = function (id) {
     var element = document.getElementById(id)
     $ionicScrollDelegate.scrollTo(0, element.offsetTop - 50, true)
-  };
+  }
 
   vm.nextQuestion = function (question) {
     vm.questions[question].active = true
     vm.scrollTo(question)
-  };
+  }
 
   vm.addQuestion4 = function () {
     vm.questions.question_4.results.push({ result: '' })
-  };
+  }
 
   vm.setValueQuestion5 = function (value) {
     vm.questions.question_5.result = value
     vm.nextQuestion('question_6')
-  };
+  }
 
   vm.setValueQuestion6 = function (value) {
     vm.questions.question_6.result = value
-  };
+  }
 
   vm.handleSwipe = function (e) {
     var direct = e.gesture.direction
-    //if swipeleft and current tab index smaller than tabs length
-    if (direct == 'left' && (vm.currentTabIndex < vm.tabs.length - 1)) {
+    // if swipeleft and current tab index smaller than tabs length
+    if (direct === 'left' && (vm.currentTabIndex < vm.tabs.length - 1)) {
       var nextTab = vm.tabs[vm.currentTabIndex + 1]['value']
       vm.switchTab(nextTab, vm.currentTabIndex + 1)
     }
     // if swiperight and current tab index bigger than 0
-    if (direct == 'right' && vm.currentTabIndex > 0) {
+    if (direct === 'right' && vm.currentTabIndex > 0) {
       var prevTab = vm.tabs[vm.currentTabIndex - 1]['value']
       vm.switchTab(prevTab, vm.currentTabIndex - 1)
     }

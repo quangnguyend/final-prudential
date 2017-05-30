@@ -34,15 +34,15 @@ function riskHobbyCtrl ($scope, $rootScope, $ionicPopup, UserService, DataServic
       or Main Insured.
      * */
     var condition = SpajService.getData('spaj')
-    if (typeof condition !== 'undefined') {
-      if (condition.utama === true ||
+    if (!condition) {
+      $location.path('/app/step4')
+      return
+    }
+    if (condition.utama === true ||
         condition.typeSpaj === 'PemegangPolis' ||
         (condition.utama === true && condition.typeSpaj === 'PemegangPolis')
       ) {
-        $location.path('/app/step5')
-      } else {
-        $location.path('/app/step4')
-      }
+      $location.path('/app/step5')
     } else {
       $location.path('/app/step4')
     }
