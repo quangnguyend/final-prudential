@@ -13,7 +13,8 @@ angular
     'ngAnimate',
     'ui.router',
     'ngCordova',
-    'ngFileUpload'
+    'ngFileUpload',
+    'ngMaterial'
   ])
   .run(function ($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function () {
