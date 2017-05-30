@@ -98,7 +98,7 @@ ion-footer-bar.bar.bar-assertive {
 }
 
 
-.btn-disable {
+.bar.bar-assertive.bar-footer.btn-disable {
   background: #9B9B9B !important;
   border: none !important;
 }
