@@ -148,7 +148,14 @@
           </div>
         </div>
       </div>
-      <button class="button next" ng-class="{'button-dark': vm.healthData.darah}" ng-disabled="!vm.healthData.darah" ng-click="health1NextStep('health_brain')">Berikutnya</button>
+      <button class="button next" ng-class="{'button-dark': vm.healthData.darah != null && vm.healthData.ipeningkatan != null
+      && vm.healthData.ijantung != null && vm.healthData.ikelainan != null
+      && vm.healthData.istroke != null && vm.healthData.idemam != null
+      && vm.healthData.inyeri != null && vm.healthData.inodule != null}" 
+      ng-disabled="!(vm.healthData.darah != null) && !(vm.healthData.ipeningkatan != null)
+      && !(vm.healthData.ijantung != null) && !(vm.healthData.ikelainan != null)
+      && !(vm.healthData.istroke != null) && !(vm.healthData.idemam != null)
+      && !(vm.healthData.inyeri != null) && !(vm.healthData.inodule != null)" ng-click="health1NextStep('health_brain')">Berikutnya</button>
       <!--end item -->
     </div>
     <div class="item ibrain" id="health_brain" ng-class="{'_active': health1Steps[4]}">
@@ -187,7 +194,7 @@
         <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ieye">Tidak</a>
       </div>
       <div class='grey-box' ng-show="vm.healthData.ieye==true">
-          <div class="text-left">
+        <div class="text-left">
           <ion-list>
             <ion-checkbox ng-model='vm.healthData.eye_contact_lenses'>Rabun jauh dengan menggunakan kacamata softlens (lensa kontak) melebihi -6,0 pada satu atau kedua mata</ion-checkbox>
             <ion-checkbox ng-model='vm.healthData.eye_disorders'>Katarak atau kelainan mata lainnya</ion-checkbox>
