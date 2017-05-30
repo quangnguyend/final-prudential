@@ -27,10 +27,10 @@ function eSignDeclarationCtrl (
 
   function getNumberOfAdditional () {
     var spajData = SpajService.getData()
-    var number = []
-    if (spajData['ADDITIONAL_0']) { number.push('ADDITIONAL_0') }
-    if (spajData['ADDITIONAL_1']) { number.push('ADDITIONAL_1') }
-    return number
+    var list = []
+    if (spajData['ADDITIONAL_0']) { list.push('ADDITIONAL_0') }
+    if (spajData['ADDITIONAL_1']) { list.push('ADDITIONAL_1') }
+    return list
   }
 
   function signatureHandler (idCanvas) {

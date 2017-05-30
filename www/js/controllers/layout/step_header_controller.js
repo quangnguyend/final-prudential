@@ -12,6 +12,7 @@ function stepHeaderCtr ($scope, $state, $rootScope) {
       if (vm.steps[i].step === $scope.selectStep) {
         $state.go('app.' + vm.steps[i].state)
         $rootScope.setCurrentPolicyStep($scope.selectStep)
+        return
       }
     }
   }
