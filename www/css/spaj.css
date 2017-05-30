@@ -130,9 +130,10 @@
 
 #health_question1 h1 {
 
-  line-height: 34px;
+  line-height: 25px;
   overflow: visible;
-  margin-bottom: 25px
+  margin-bottom: 25px;
+  padding:0px
 }
 
 #health_question1 input[type=number],
@@ -193,14 +194,15 @@
 #health_question1 #health1_step4 .row .col:nth-child(1) {
   white-space: normal;
   align-self: center;
-  font-size: 16px
-}
 
+}
+#health_question1 #health1_step4 .row h1{font-weight: normal; white-space: normal}
 #health_question1 .item_description {
   white-space: normal;
   text-align: center;
   margin-bottom: 20px;
   padding: 0 20px;
+  font-size: 17px;
 }
 
 #health_question1 .icon.completed::after{
@@ -498,7 +500,7 @@
   padding: 10px 10px 100px 10px;
   font-size: 17px;
 }
-
+#policy_beneficiary .item{border:none}
 #policy_beneficiary div.title {
   margin: 25px 0px;
 }
@@ -506,6 +508,7 @@
 #policy_beneficiary table {
   overflow-x: auto;
   padding-bottom: 100px;
+  font-size: 17px;
 }
 
 #policy_beneficiary table, th {
@@ -528,7 +531,7 @@
 
 #policy_beneficiary table td input, #policy_beneficiary table td select {
   height: 35px;
-  font-size: 17px;
+
 }
 
 #policy_beneficiary table td .gender span {
@@ -564,7 +567,10 @@
 #policy_beneficiary div.add-new-row i {
   margin: 0px 20px 0px 10px;
 }
+@media only screen and (min-width: 768px)  { 
 
+  #policy_beneficiary table, th, td{font-size:25px;}
+}
 
 /* Css PH Info */
 
@@ -760,9 +766,17 @@
 
 
 /* Terms & Conditions */
-
+#terms_conditions h2{
+  font-weight: 600
+}
 #terms_conditions p, #terms_conditions h2 {
-  font-family: "Roboto", "Frutiger-Regular", "Helvetica Neue", "Segoe UI", sans-serif !important;
+  font-size: 17px;
+}
+@media only screen and (min-width: 768px)  { 
+#terms_conditions p, #terms_conditions h2 {
+  font-size: 25px; line-height: 30px;  
+}
+
 }
 
 #terms_conditions {
@@ -779,16 +793,6 @@
   padding: 25px;
 }
 
-#terms_conditions h2 {
-  font-weight: 400;
-  width: 100%;
-}
-
-#terms_conditions .terms_block h2 {
-  font-size: 17px;
-  text-transform: uppercase;
-  margin-bottom: 22px;
-}
 
 #terms_conditions .terms_padding_box {
   padding: 0 30px;
@@ -994,11 +998,15 @@
 .upload-document-page .upload-document-name {
   margin-top: 7px;
   display: inline-block;
+  font-size: 17px;
 }
-
+@media only screen and (min-width: 768px)  { 
+  
+  .upload-document-page .upload-document-name{font-size:25px;}
+}
 .upload-document-page.wrapper {
-  width: 90%;
-  margin: 50px auto;
+
+  margin: 0px auto;
 }
 
 .upload-document-page .m-gap-30 {
@@ -1038,8 +1046,7 @@
   height: 34px;
   color: #111;
   vertical-align: middle;
-  font-size: 14px;
-  line-height: 16px;
+
   border: none;
   border-bottom: 1px solid #5b6770;
   background-color: #fff;
@@ -1071,7 +1078,6 @@
 }
 
 .document-upload-file .btn-upload-img {
-  font-size: 14px;
   padding: 0 5px;
   line-height: 120%;
   background: #efecec;
@@ -1216,11 +1222,11 @@
 .mt-30{
   margin-top: 30px;
 }
-
+#other-health .item{border:none}
 #other-health .wrapper{
-  width: 90%;
+
   margin: 0 auto;
-  padding: 50px 0 100px;
+
 }
 #other-health .mt-50{
   margin-top: 50px;
@@ -1253,10 +1259,10 @@
   float: right;
 }
 #family-history .wrapper{
-  width: 90%;
+
   margin: 0 auto;
-  padding: 50px 0 100px;
 }
+#family-history .item{border:none}
 
 #family-history .mt-50{
   margin-top: 50px;
@@ -1307,10 +1313,11 @@
    opacity: 1; pointer-events: normal
  }
  .amendment-page.wrapper{
-   width: 90%;
    margin-left: auto;
    margin-right: auto; 
  }
  .amendment-page input[type=text]{
    font-size: 16px;
  }
+ .amendment-page .item{border:none}
+  .amendment-page .description{padding-left:0px;}

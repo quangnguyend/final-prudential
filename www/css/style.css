@@ -489,6 +489,7 @@ select {
   border: none;
   color: white;
   text-align-last: right;
+  font-size: 17px;
 }
 
 #step-header select option {
@@ -512,9 +513,7 @@ select {
 body, body *{font-size: 17px;}
 .item h1, .item h2, .item h3, .item h4, .item h5, .item h6{font-weight: 600; font-size: 17px;}
 .description {
-  white-space: initial;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding:20px;
   white-space: normal !important;
   font-weight: 600
 }
@@ -544,14 +543,16 @@ body, body *{font-size: 17px;}
   border: none;
 }
 .item .item-note{font-size: 17px;}
-.item  .button{font-size: 17px;}
+.item .button,
+.item select{font-size: 17px;}
 @media only screen and (min-width: 768px)  { 
   .body, body *{font-size:25px;}
+  #step-header select{font-size: 25px;}
   .description {
     font-size: 25px;
     line-height: 30px;
   }
-  label, label.item{
+  label, label.item, .item select{
     font-size:25px;
   }
   .bar.bar-header .title{

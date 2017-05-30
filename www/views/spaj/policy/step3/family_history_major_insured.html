@@ -1,6 +1,7 @@
-<div>
-  <h4>Apakah ada di antara immediate family*/anggota keluarga** dari Calon Tertanggung (hidup atau meninggal) yang pernah menderita
-    penyakit Jantung Koroner / Stroke / Diabetes Mellitus / Kanker / Kelainan Bawaan atau Congenital/ Penyakit lainnya?</h4>
+<div class="list list-inset">
+<div class="item">
+  <h1 class="description">Apakah ada di antara immediate family*/anggota keluarga** dari Calon Tertanggung (hidup atau meninggal) yang pernah menderita
+    penyakit Jantung Koroner / Stroke / Diabetes Mellitus / Kanker / Kelainan Bawaan atau Congenital/ Penyakit lainnya?</h1>
   <div class="row">
     <div class="col col-padding">
       <button class="button button-stable button-block btn-insurance" ng-class="vm.family_history.question == 1? 'button-active': ''"
@@ -12,7 +13,8 @@
     </div>
   </div>
 </div>
-<div>
+
+<div class="item">
   <ul>
     <li class="clearfix m-gap-30" ng-repeat="item in vm.family_history.membersInfo">
       <div class="float-left col-5 col-padding"><span class="row-number">{{$index + 1}}</span></div>
@@ -53,4 +55,5 @@
   <div class="clearfix"></div>
   <div class="mt-30"><button class="button button-stable button-block float-right col-95" ng-click="vm.addMember()">  <i class="ion-ios-plus-empty"></i> <span class="txt-add-policy"> Tambah Anggota Keluarga</span></button></div>
   <div class="clearfix"></div>
+</div>
 </div>
