@@ -5,7 +5,7 @@
   <ion-content>
     <step-process></step-process>
     <div class="header-tab">
-      <div class='row tab-menu' >
+      <div class='row tab-menu'>
         <div class="col" ng-repeat="tab in vm.tabs" ng-class="vm.currentTab==tab.value? 'active': ''" ng-click="vm.switchTab(tab.value)">
           <span class="d-table"><span class="d-table-cell">{{ tab.title}}</span></span>
         </div>
@@ -40,9 +40,8 @@
         </div>
       </form>
     </div>
-
   </ion-content>
+  <ion-footer-bar ng-show="true" class="bar bar-footer bar-assertive">
+    <a href="#/app/step7" title="Continue" class="btn">Terus<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
+  </ion-footer-bar>
 </ion-view>
-<div ng-show="true" class="bar bar-footer bar-assertive">
-  <a href="#/app/step7" title="Continue" class="btn">Terus<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
-</div>

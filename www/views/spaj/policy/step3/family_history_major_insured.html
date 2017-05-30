@@ -1,11 +1,14 @@
 <div>
-  <h4>Apakah ada di antara immediate family*/anggota keluarga** dari Calon Tertanggung (hidup atau meninggal) yang pernah menderita penyakit Jantung Koroner / Stroke / Diabetes Mellitus / Kanker / Kelainan Bawaan atau Congenital/ Penyakit lainnya?</h4>
+  <h4>Apakah ada di antara immediate family*/anggota keluarga** dari Calon Tertanggung (hidup atau meninggal) yang pernah menderita
+    penyakit Jantung Koroner / Stroke / Diabetes Mellitus / Kanker / Kelainan Bawaan atau Congenital/ Penyakit lainnya?</h4>
   <div class="row">
     <div class="col col-padding">
-      <button class="button button-stable button-block btn-insurance" ng-class="vm.family_history.question == 1? 'button-active': ''" ng-click="vm.setValueQuestion(1)"><span>Ya</span></button>
+      <button class="button button-stable button-block btn-insurance" ng-class="vm.family_history.question == 1? 'button-active': ''"
+        ng-click="vm.setValueQuestion(1)"><span>Ya</span></button>
     </div>
     <div class="col col-padding">
-      <button class="button button-stable button-block btn-insurance" ng-class="vm.family_history.question == 0? 'button-active': ''" ng-click="vm.setValueQuestion(0)"><span>Tidak</span></button>
+      <button class="button button-stable button-block btn-insurance" ng-class="vm.family_history.question == 0? 'button-active': ''"
+        ng-click="vm.setValueQuestion(0)"><span>Tidak</span></button>
     </div>
   </div>
 </div>
@@ -48,6 +51,6 @@
     </li>
   </ul>
   <div class="clearfix"></div>
-  <div class="mt-30"><button class="button button-stable button-block float-right col-95" ng-click="vm.addMember()" >  <i class="ion-ios-plus-empty"></i> <span class="txt-add-policy"> Tambah Anggota Keluarga</span></button></div>
+  <div class="mt-30"><button class="button button-stable button-block float-right col-95" ng-click="vm.addMember()">  <i class="ion-ios-plus-empty"></i> <span class="txt-add-policy"> Tambah Anggota Keluarga</span></button></div>
   <div class="clearfix"></div>
 </div>

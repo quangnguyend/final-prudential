@@ -23,37 +23,46 @@
     </div>
     <!--end item-->
     <div class='item no-lines'>
-      <div class="row ">
-        <label class="item-stacked-label">
-                <span class="input-label">Email</span>
-                <input type="text" placeholder="Enter" ng-model="vm.data.email">
-              </label>
+      <div class="row no-padding">
+        <div class="col">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Email</label>
+            <input ng-model="vm.data.email">
+          </md-input-container>
+        </div>
+        <div class="col"></div>
       </div>
     </div>
     <!--end item-->
     <div class='item no-lines policy-item' ng-repeat="(index, item) in vm.data.policy">
       <div class="row row-no-padding mb-20">
         <div class="col">
-          <div class="select-item">
-            <span class="input-label">Jenis asuransi yang ada</span>
-            <select>
-                  <option ng-repeat="i in vm.const.type_of_insurances" value="{{i.value}}">{{i.type}}</option>
-                </select>
-          </div>
+          <md-input-container class="select-box">
+            <label class="input-label">Jenis asuransi yang ada</label>
+            <md-select ng-model="vm.type_of_insurances">
+              <md-option><em>None</em></md-option>
+              <md-option ng-repeat="i in vm.const.type_of_insurances" ng-value="i.value">
+                {{i.type}}
+              </md-option>
+            </md-select>
+          </md-input-container>
         </div>
         <div class="col">
-          <label>
-                <span class="input-label">Perusahaan</span>
-                <input type="text" placeholder="Enter" ng-model="item.company">
-              </label>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Perusahaan</label>
+            <input ng-model="user.name" />
+          </md-input-container>
         </div>
         <div class="col">
-          <div class="select-item">
-            <span class="input-label">Uang Pertanggungan</span>
-            <select>
-                  <option ng-repeat="c in vm.const.type_of_currencies" value="{{c.value}}">{{c.type}}</option>
-                </select>
-          </div>
+          <md-input-container class="select-box">
+            <label class="input-label">Uang Pertanggungan</label>
+            <md-select ng-model="vm.type_of_currencies">
+              <md-option><em>None</em></md-option>
+              <md-option ng-repeat="c in vm.const.type_of_currencies" ng-value="c.value">
+                {{c.type}}
+              </md-option>
+            </md-select>
+          </md-input-container>
         </div>
       </div>
       <div class="row row-no-padding responsive-sm mini-center-container radio-block">
