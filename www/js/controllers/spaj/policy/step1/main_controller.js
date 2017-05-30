@@ -7,7 +7,6 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
 
   var POCICY_HOLDER_TAB = 'POLICY_HOLDER'
   var rootSpajData = SpajService.getData('spaj')
-  //console.log('rootSpajData', rootSpajData)
   $scope.policy_holder_tab = POCICY_HOLDER_TAB
   $scope.currentTab = POCICY_HOLDER_TAB
   $scope.additionalList = []

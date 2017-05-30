@@ -7,8 +7,6 @@ function payorOption1Ctrl ($scope, DataService, $ionicScrollDelegate, $location)
   vm.currentTab = 'payor_option0'
 
   vm.save = function () {
-    // var data = vm.questions;
-    // console.log(data);
     $location.path('/app/step4/option1')
   }
 }
