@@ -1175,7 +1175,7 @@
   margin-bottom: 60px;
 }
 
-/*E signature confirmation */
+/*E signature confirmation  - Reminder Step*/
 
 #spaj-esignature-confirmation .custom-checkbox{
   width: 50%!important;
@@ -1213,6 +1213,10 @@
   width: 90%;
   text-align: left;
   margin: 0 auto;
+}
+
+#spaj-esignature-confirmation .select-box {
+  width: 100%;
 }
 
 .add-policy-btn{
