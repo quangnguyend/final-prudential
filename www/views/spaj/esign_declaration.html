@@ -1,389 +1,379 @@
 <ion-view cache-view="false" view-title="Sebelum Anda melanjutkan" id="spaj-start">
-    <ion-content>
-        <div id="declaration">
-            <!--id='declaration'-->
-            <form>
-                <div class="list list-inset no-lines">
-                    <div class='item'>
-                        <div class="row-no-padding">
-                            <div class="row">
-                                <label class="item-stacked-label">
-                                <div class="input-label">Amendment / Keterangan lain</div>
-                                </label>
-                            </div>
-                            <div class="row">
-                                <input type="text" placeholder="Enter">
-                            </div>
-                        </div>
-                    </div>
-                    <div class='item three-input'>
-                        <div class="row-no-padding">
-                            <div class="row">
-
-                                <span>Pernyataan tenaga pemasar</span>
-
-                            </div>
-                            <div class="row extra-space">
-                                <div class="col">
-                                    <label class="item-stacked-label">
-                                            <div class="input-label">Nama Tenaga Pemasar</div>
-                                        </label>
-                                    <input type="text" placeholder="Calvin Widjaya">
-                                </div>
-                                <div class="col">
-                                    <label class="item-stacked-label">
-                                            <div class="input-label">Unit Tenaga Pemasar</div>
-                                        </label>
-                                    <input type="text" placeholder="GA Power">
-                                </div>
-                                <div class="col">
-                                    <label class="item-stacked-label">
-                                            <div class="input-label">Kode Tenaga Pemasar</div>
-                                        </label>
-                                    <input type="text" placeholder="1002334557">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class='item three-select'>
-                        <div class="row-no-padding ">
-                            <div class="row">
-                                <span>SAYA mengenal</span>
-                            </div>
-                            <div class="row extra-space">
-                                <div class="col col-10">
-                                    <input name='checkbox' class='custom_checkbox' type="checkbox" id='option1' ng-model='data.option1' />
-                                    <label for="option1"></label>
-                                </div>
-                                <div class="col" ng-class="data.option1? ' active ': 'disable'">
-                                    <div class="row">Calon Pemegang Polis </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <label class="item-stacked-label">
-                                                <div class="input-label">Selama</div>
-                                            </label>
-                                            <select class="form_select" ng-model='data.selama '>
-                                                <option selected value>Select</option>
-                                                <option>Blue</option>
-                                                <option>Green</option>
-                                                <option>Red</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <label class="item-stacked-label">
-                                                <div class="input-label">Sebagai</div>
-                                            </label>
-                                            <select class="form_select" ng-model='data.selama2 '>
-                                                <option selected value>Select</option>
-                                                <option>Blue</option>
-                                                <option>Green</option>
-                                                <option>Red</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <label class="item-stacked-label">
-                                                <div class="input-label">Jelaskan</div>
-                                            </label>
-                                            <select class="form_select" ng-model='data.selama3 '>
-                                                <option selected value>Select</option>
-                                                <option>Blue</option>
-                                                <option>Green</option>
-                                                <option>Red</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row extra-space">
-                                <div class="col col-10">
-                                    <input name='checkbox' class='custom_checkbox' type="checkbox" id='option2' ng-model='data.option2' />
-                                    <label for="option2"></label>
-                                </div>
-                                <div class="col" ng-class="data.option2? ' active ': 'disable'">
-                                    <div class="row">Calon Pemegang Polis </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <label class="item-stacked-label">
-                                                <div class="input-label">Selama</div>
-                                            </label>
-                                            <select class="form_select" ng-model='data.selama '>
-                                                <option selected value>Select</option>
-                                                <option>Blue</option>
-                                                <option>Green</option>
-                                                <option>Red</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <label class="item-stacked-label">
-                                                <div class="input-label">Sebagai</div>
-                                            </label>
-                                            <select class="form_select" ng-model='data.selama2 '>
-                                                <option selected value>Select</option>
-                                                <option>Blue</option>
-                                                <option>Green</option>
-                                                <option>Red</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <label class="item-stacked-label">
-                                                <div class="input-label">Jelaskan</div>
-                                            </label>
-                                            <select class="form_select" ng-model='data.selama3 '>
-                                                <option selected value>Select</option>
-                                                <option>Blue</option>
-                                                <option>Green</option>
-                                                <option>Red</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row extra-space">
-                                <div class="col col-10">
-                                    <input name='checkbox' class='custom_checkbox' type="checkbox" id='option3' ng-model='data.option3' />
-                                    <label for="option3"></label>
-                                </div>
-                                <div class="col" ng-class="data.option3? ' active ': 'disable'">
-                                    <div class="row">Calon Pemegang Polis </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <label class="item-stacked-label">
-                                                <div class="input-label">Selama</div>
-                                            </label>
-                                            <select class="form_select" ng-model='data.selama '>
-                                                <option selected value>Select</option>
-                                                <option>Blue</option>
-                                                <option>Green</option>
-                                                <option>Red</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <label class="item-stacked-label">
-                                                <div class="input-label">Sebagai</div>
-                                            </label>
-                                            <select class="form_select" ng-model='data.selama2 '>
-                                                <option selected value>Select</option>
-                                                <option>Blue</option>
-                                                <option>Green</option>
-                                                <option>Red</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <label class="item-stacked-label">
-                                                <div class="input-label">Jelaskan</div>
-                                            </label>
-                                            <select class="form_select" ng-model='data.selama3 '>
-                                                <option selected value>Select</option>
-                                                <option>Blue</option>
-                                                <option>Green</option>
-                                                <option>Red</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row extra-space">
-                                <div class="col col-10">
-                                    <input name='checkbox' class='custom_checkbox' type="checkbox" id='option4' ng-model='data.option4' />
-                                    <label for="option4"></label>
-                                </div>
-                                <div class="col" ng-class="data.option4? ' active ': 'disable'">
-                                    <div class="row">Calon Pemegang Polis </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <label class="item-stacked-label">
-                                                <div class="input-label">Selama</div>
-                                            </label>
-                                            <select class="form_select" ng-model='data.selama '>
-                                                <option selected value>Select</option>
-                                                <option>Blue</option>
-                                                <option>Green</option>
-                                                <option>Red</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <label class="item-stacked-label">
-                                                <div class="input-label">Sebagai</div>
-                                            </label>
-                                            <select class="form_select" ng-model='data.selama2 '>
-                                                <option selected value>Select</option>
-                                                <option>Blue</option>
-                                                <option>Green</option>
-                                                <option>Red</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <label class="item-stacked-label">
-                                                <div class="input-label">Jelaskan</div>
-                                            </label>
-                                            <select class="form_select" ng-model='data.selama3 '>
-                                                <option selected value>Select</option>
-                                                <option>Blue</option>
-                                                <option>Green</option>
-                                                <option>Red</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row extra-space">
-                                <div class="col col-10">
-                                    <input name='checkbox' class='custom_checkbox' type="checkbox" id='option5' ng-model='data.option5' />
-                                    <label for="option5"></label>
-                                </div>
-                                <div class="col" ng-class="data.option5? ' active ': 'disable'">
-                                    <div class="row">Calon Pemegang Polis </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <label class="item-stacked-label">
-                                                <div class="input-label">Selama</div>
-                                            </label>
-                                            <select class="form_select" ng-model='data.selama '>
-                                                <option selected value>Select</option>
-                                                <option>Blue</option>
-                                                <option>Green</option>
-                                                <option>Red</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <label class="item-stacked-label">
-                                                <div class="input-label">Sebagai</div>
-                                            </label>
-                                            <select class="form_select" ng-model='data.selama2 '>
-                                                <option selected value>Select</option>
-                                                <option>Blue</option>
-                                                <option>Green</option>
-                                                <option>Red</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <label class="item-stacked-label">
-                                                <div class="input-label">Jelaskan</div>
-                                            </label>
-                                            <select class="form_select" ng-model='data.selama3 '>
-                                                <option selected value>Select</option>
-                                                <option>Blue</option>
-                                                <option>Green</option>
-                                                <option>Red</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end item-->
-                    <div class='item no-wp '>
-                        <div class="row-no-padding">
-                            <div class="">
-                                <ion-checkbox>Semua keterangan yang terdapat di SPAJ ini adalah semata-mata keterangan yang diberikan oleh
-                                    Calon Pemegang Polis dan/atau Calon Tertanggung Utama dan/atau Calon Tertanggung Tambahan
-                                    1 dan/atau Calon Pembayar Premi, SAYA tidak menyembunyikan informasi atau keterangan
-                                    apapun yang telah diberikan oleh Calon Pemegang Polis dan/atau Calon Tertanggung Utama
-                                    dan/atau Calon Tertanggung Tambahan 1 dan/atau Calon Pembayar Premi yang dapat memengaruhi
-                                    penerimaan SPAJ ini.</ion-checkbox>
-                            </div>
-                            <div class="">
-                                <ion-checkbox>SAYA telah menerangkan semua isi butir pernyataan di SPAJ dengan jelas dan menjelaskan informasi
-                                    / keterangan mengenai produk asuransi dan manfaatnya sesuai dengan Ketentuan Umum dan
-                                    Ketentuan Khusus Polis.</ion-checkbox>
-                            </div>
-                            <div class="">
-                                <ion-checkbox>SAYA telah bertemu dan melihat secara langsung kondisi terakhir Calon Tertanggung Utama dan/atau
-                                    Calon Tertanggung Tambahan 1 pada saat SPAJ ini diisi dan ditandatangani di hadapan SAYA
-                                    oleh Calon Pemegang Polis dan/atau Calon Tertanggung Utama dan/atau Calon Tertanggung
-                                    Tambahan 1.
-                                </ion-checkbox>
-                            </div>
-                            <div class="">
-                                <ion-checkbox>SAYA bersedia menerima sanksi dari PT Prudential Life Assurance sebagaimana diatur dalam
-                                    Perjanjian Keagenan dan/atau Perjanjian Manajer Keagenan bilamana salah satu atau lebih
-                                    pernyataan di atas tidak benar atau salah</ion-checkbox>
-                            </div>
-                            <div class="">
-                                <ion-checkbox>SAYA telah menerangkan dan memberikan penjelasan mengenai Ringkasan Informasi Produk dan/atau
-                                    Layanan PRUlink assurance account kepada Calon Pemegang Polis dan/atau Calon Tertanggung
-                                    Utama dan/atau Calon Tertanggung Tambahan 1.</ion-checkbox>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='item '>
-                        <div class="signature">
-                            <canvas class='signature-pad' id='agent-signature-canvas'></canvas>
-                        </div>
-                    </div>
-                    <div class='item three-input '>
-                        <div class="row-no-padding">
-                            <div class="row">
-
-                                <span>Pernyataan tenaga pemasar</span>
-
-                            </div>
-                            <div class="row extra-space">
-                                <div class="col">
-                                    <label class="item-stacked-label">
-                                            <div class="input-label">Nama Tenaga Pemasar</div>
-                                        </label>
-                                    <input type="text" placeholder="Calvin Widjaya">
-                                </div>
-                                <div class="col">
-                                    <label class="item-stacked-label">
-                                            <div class="input-label">Unit Tenaga Pemasar</div>
-                                        </label>
-                                    <input type="text" placeholder="GA Power">
-                                </div>
-                                <div class="col">
-                                    <label class="item-stacked-label">
-                                            <div class="input-label">Kode Tenaga Pemasar</div>
-                                        </label>
-                                    <input type="text" placeholder="1002334557">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class='item no-wp '>
-                        <div class="row-no-padding">
-                            <div class="">
-                                <ion-checkbox>Menyelesaikan dan menerima saran agen saya melalui tujuan keuangan dan penilaian risiko saya</ion-checkbox>
-                            </div>
-                            <div class="">
-                                <ion-checkbox>Selesaikan formulir SPAJ sesuai pengetahuan saya, jika sebaliknya aplikasi ini akan dianggap
-                                    batal.
-                                </ion-checkbox>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class='item ibox '>
-                        <span class="input-label">Pernyataan tenaga pemasar</span>
-                        <div class="ibox-content">
-                            <canvas class='signature-pad' id='policyholder-signature-canvas'></canvas>
-                        </div>
-                    </div>
-                    <div ng-repeat="(index, i) in numberOfAdditional">
-                        <div class='item ibox '>
-                            <span class="input-label">Tertanggung Utama {{index + 1}}</span>
-                            <div class="ibox-content">
-                                <canvas class='signature-pad' id='mainlife-signature-canvas-{{index}}'></canvas>
-                            </div>
-                        </div>
-                        <div class='item ibox '>
-                            <span class="input-label">Orang tua (bila tertanggung berusia dibawah 21 thn) {{index + 1}}</span>
-                            <div class="ibox-content">
-                                <canvas class='signature-pad' id='parent-signature-canvas-{{index}}'></canvas>
-                            </div>
-                        </div>
-                    </div>
+  <ion-content>
+    <div id="declaration">
+      <!--id='declaration'-->
+      <form>
+        <div class="list list-inset no-lines">
+          <div class='item'>
+            <div class="row-no-padding">
+              <div class="row">
+                <label class="item-stacked-label">
+                  <div class="input-label">Amendment / Keterangan lain</div>
+                </label>
+              </div>
+              <div class="row">
+                <input type="text" placeholder="Enter">
+              </div>
+            </div>
+          </div>
+          <div class='item three-input'>
+            <div class="row-no-padding">
+              <div class="row">
+                <span>Pernyataan tenaga pemasar</span>
+              </div>
+              <div class="row extra-space">
+                <div class="col">
+                  <label class="item-stacked-label">
+                    <div class="input-label">Nama Tenaga Pemasar</div>
+                  </label>
+                  <input type="text" placeholder="Calvin Widjaya">
                 </div>
-            </form>
+                <div class="col">
+                  <label class="item-stacked-label">
+                    <div class="input-label">Unit Tenaga Pemasar</div>
+                  </label>
+                  <input type="text" placeholder="GA Power">
+                </div>
+                <div class="col">
+                  <label class="item-stacked-label">
+                    <div class="input-label">Kode Tenaga Pemasar</div>
+                  </label>
+                  <input type="text" placeholder="1002334557">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='item three-select'>
+            <div class="row-no-padding ">
+              <div class="row">
+                <span>SAYA mengenal</span>
+              </div>
+              <div class="row extra-space">
+                <div class="col col-10">
+                  <input name='checkbox' class='custom_checkbox' type="checkbox" id='option1' ng-model='data.option1' />
+                  <label for="option1"></label>
+                </div>
+                <div class="col" ng-class="data.option1? ' active ': 'disable'">
+                  <div class="row">Calon Pemegang Polis </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="item-stacked-label">
+                        <div class="input-label">Selama</div>
+                      </label>
+                      <select class="form_select" ng-model='data.selama '>
+                        <option selected value>Select</option>
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Red</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label class="item-stacked-label">
+                        <div class="input-label">Sebagai</div>
+                      </label>
+                      <select class="form_select" ng-model='data.selama2 '>
+                        <option selected value>Select</option>
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Red</option>
+                       </select>
+                    </div>
+                    <div class="col">
+                      <label class="item-stacked-label">
+                        <div class="input-label">Jelaskan</div>
+                      </label>
+                      <select class="form_select" ng-model='data.selama3 '>
+                        <option selected value>Select</option>
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Red</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row extra-space">
+                <div class="col col-10">
+                  <input name='checkbox' class='custom_checkbox' type="checkbox" id='option2' ng-model='data.option2' />
+                  <label for="option2"></label>
+                </div>
+                <div class="col" ng-class="data.option2? ' active ': 'disable'">
+                  <div class="row">Calon Pemegang Polis </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="item-stacked-label">
+                        <div class="input-label">Selama</div>
+                      </label>
+                      <select class="form_select" ng-model='data.selama '>
+                        <option selected value>Select</option>
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Red</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label class="item-stacked-label">
+                        <div class="input-label">Sebagai</div>
+                      </label>
+                      <select class="form_select" ng-model='data.selama2 '>
+                        <option selected value>Select</option>
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Red</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label class="item-stacked-label">
+                        <div class="input-label">Jelaskan</div>
+                      </label>
+                      <select class="form_select" ng-model='data.selama3 '>
+                        <option selected value>Select</option>
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Red</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row extra-space">
+                <div class="col col-10">
+                  <input name='checkbox' class='custom_checkbox' type="checkbox" id='option3' ng-model='data.option3' />
+                  <label for="option3"></label>
+                </div>
+                <div class="col" ng-class="data.option3? ' active ': 'disable'">
+                  <div class="row">Calon Pemegang Polis </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="item-stacked-label">
+                        <div class="input-label">Selama</div>
+                      </label>
+                      <select class="form_select" ng-model='data.selama '>
+                        <option selected value>Select</option>
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Red</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label class="item-stacked-label">
+                        <div class="input-label">Sebagai</div>
+                      </label>
+                      <select class="form_select" ng-model='data.selama2 '>
+                        <option selected value>Select</option>
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Red</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label class="item-stacked-label">
+                        <div class="input-label">Jelaskan</div>
+                      </label>
+                      <select class="form_select" ng-model='data.selama3 '>
+                        <option selected value>Select</option>
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Red</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row extra-space">
+                <div class="col col-10">
+                  <input name='checkbox' class='custom_checkbox' type="checkbox" id='option4' ng-model='data.option4' />
+                  <label for="option4"></label>
+                </div>
+                <div class="col" ng-class="data.option4? ' active ': 'disable'">
+                  <div class="row">Calon Pemegang Polis </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="item-stacked-label">
+                        <div class="input-label">Selama</div>
+                      </label>
+                      <select class="form_select" ng-model='data.selama '>
+                        <option selected value>Select</option>
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Red</option>
+                       </select>
+                    </div>
+                    <div class="col">
+                      <label class="item-stacked-label">
+                        <div class="input-label">Sebagai</div>
+                      </label>
+                      <select class="form_select" ng-model='data.selama2 '>
+                        <option selected value>Select</option>
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Red</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label class="item-stacked-label">
+                        <div class="input-label">Jelaskan</div>
+                      </label>
+                      <select class="form_select" ng-model='data.selama3 '>
+                        <option selected value>Select</option>
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Red</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row extra-space">
+                <div class="col col-10">
+                  <input name='checkbox' class='custom_checkbox' type="checkbox" id='option5' ng-model='data.option5' />
+                  <label for="option5"></label>
+                </div>
+                <div class="col" ng-class="data.option5? ' active ': 'disable'">
+                  <div class="row">Calon Pemegang Polis </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="item-stacked-label">
+                        <div class="input-label">Selama</div>
+                      </label>
+                      <select class="form_select" ng-model='data.selama '>
+                        <option selected value>Select</option>
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Red</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label class="item-stacked-label">
+                        <div class="input-label">Sebagai</div>
+                      </label>
+                      <select class="form_select" ng-model='data.selama2 '>
+                        <option selected value>Select</option>
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Red</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label class="item-stacked-label">
+                        <div class="input-label">Jelaskan</div>
+                      </label>
+                      <select class="form_select" ng-model='data.selama3 '>
+                        <option selected value>Select</option>
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Red</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end item-->
+          <div class='item no-wp '>
+            <div class="row-no-padding">
+              <div class="">
+                <ion-checkbox>Semua keterangan yang terdapat di SPAJ ini adalah semata-mata keterangan yang diberikan oleh Calon Pemegang
+                  Polis dan/atau Calon Tertanggung Utama dan/atau Calon Tertanggung Tambahan 1 dan/atau Calon Pembayar Premi,
+                  SAYA tidak menyembunyikan informasi atau keterangan apapun yang telah diberikan oleh Calon Pemegang Polis
+                  dan/atau Calon Tertanggung Utama dan/atau Calon Tertanggung Tambahan 1 dan/atau Calon Pembayar Premi yang
+                  dapat memengaruhi penerimaan SPAJ ini.</ion-checkbox>
+              </div>
+              <div class="">
+                <ion-checkbox>SAYA telah menerangkan semua isi butir pernyataan di SPAJ dengan jelas dan menjelaskan informasi / keterangan
+                  mengenai produk asuransi dan manfaatnya sesuai dengan Ketentuan Umum dan Ketentuan Khusus Polis.</ion-checkbox>
+              </div>
+              <div class="">
+                <ion-checkbox>SAYA telah bertemu dan melihat secara langsung kondisi terakhir Calon Tertanggung Utama dan/atau Calon Tertanggung
+                  Tambahan 1 pada saat SPAJ ini diisi dan ditandatangani di hadapan SAYA oleh Calon Pemegang Polis dan/atau
+                  Calon Tertanggung Utama dan/atau Calon Tertanggung Tambahan 1.
+                </ion-checkbox>
+              </div>
+              <div class="">
+                <ion-checkbox>SAYA bersedia menerima sanksi dari PT Prudential Life Assurance sebagaimana diatur dalam Perjanjian Keagenan
+                  dan/atau Perjanjian Manajer Keagenan bilamana salah satu atau lebih pernyataan di atas tidak benar atau
+                  salah
+                </ion-checkbox>
+              </div>
+              <div class="">
+                <ion-checkbox>SAYA telah menerangkan dan memberikan penjelasan mengenai Ringkasan Informasi Produk dan/atau Layanan PRUlink
+                  assurance account kepada Calon Pemegang Polis dan/atau Calon Tertanggung Utama dan/atau Calon Tertanggung
+                  Tambahan 1.</ion-checkbox>
+              </div>
+            </div>
+          </div>
+
+          <div class='item '>
+            <div class="signature">
+              <canvas class='signature-pad' id='agent-signature-canvas'></canvas>
+            </div>
+          </div>
+          <div class='item three-input '>
+            <div class="row-no-padding">
+              <div class="row">
+                <span>Pernyataan tenaga pemasar</span>
+              </div>
+              <div class="row extra-space">
+                <div class="col">
+                  <label class="item-stacked-label">
+                    <div class="input-label">Nama Tenaga Pemasar</div>
+                  </label>
+                  <input type="text" placeholder="Calvin Widjaya">
+                </div>
+                <div class="col">
+                  <label class="item-stacked-label">
+                    <div class="input-label">Unit Tenaga Pemasar</div>
+                  </label>
+                  <input type="text" placeholder="GA Power">
+                </div>
+                <div class="col">
+                  <label class="item-stacked-label">
+                    <div class="input-label">Kode Tenaga Pemasar</div>
+                  </label>
+                  <input type="text" placeholder="1002334557">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='item no-wp '>
+            <div class="row-no-padding">
+              <div class="">
+                <ion-checkbox>Menyelesaikan dan menerima saran agen saya melalui tujuan keuangan dan penilaian risiko saya</ion-checkbox>
+              </div>
+              <div class="">
+                <ion-checkbox>Selesaikan formulir SPAJ sesuai pengetahuan saya, jika sebaliknya aplikasi ini akan dianggap batal.
+                </ion-checkbox>
+              </div>
+            </div>
+          </div>
+          <div class='item ibox '>
+            <span class="input-label">Pernyataan tenaga pemasar</span>
+            <div class="ibox-content">
+              <canvas class='signature-pad' id='policyholder-signature-canvas'></canvas>
+            </div>
+          </div>
+          <div ng-repeat="(index, i) in numberOfAdditional">
+            <div class='item ibox '>
+              <span class="input-label">Tertanggung Utama {{index + 1}}</span>
+              <div class="ibox-content">
+                <canvas class='signature-pad' id='mainlife-signature-canvas-{{index}}'></canvas>
+              </div>
+            </div>
+            <div class='item ibox '>
+              <span class="input-label">Orang tua (bila tertanggung berusia dibawah 21 thn) {{index + 1}}</span>
+              <div class="ibox-content">
+                <canvas class='signature-pad' id='parent-signature-canvas-{{index}}'></canvas>
+              </div>
+            </div>
+          </div>
         </div>
-    </ion-content>
+      </form>
+    </div>
+  </ion-content>
   <ion-footer-bar class="bar bar-footer bar-assertive no-padding no-lines">
     <a title="Continue" class="btn gray-btn">Email PDF<button class="button button-clear"></button></a>
-    <a href="#/app/payment" class="btn" >Lanjuktan<button class="button button-clear"></button></a>
+    <a href="#/app/payment" class="btn">Lanjuktan<button class="button button-clear"></button></a>
   </ion-footer-bar>
-</ion-footer-bar>
+
 </ion-view>

@@ -1,4 +1,4 @@
-<ion-view cache-view="false" view-title="Sebelum Anda melanjutkan" id="spaj-start">
+<ion-view cache-view="false" id="spaj-start">
   <ion-nav-title>
     <custom-header title='Sebelum Anda melanjutkan' step='1'></custom-header>
   </ion-nav-title>
@@ -16,7 +16,7 @@
     <insured-home ng-repeat='tab in additionalList' insured-data='{{tab.id}}' ng-show='currentTab===tab.id' ng-class='currentTab===tab.id?"active":""'
       on-swipe='handleAddedTabSwipe($event)'></insured-home>
   </ion-content>
+  <ion-footer-bar class="bar bar-footer bar-assertive">
+    <div class="btn" ng-click="nextClickHandle()">Lanjutkan</div><button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button>
+  </ion-footer-bar>
 </ion-view>
-<ion-footer-bar class="bar bar-footer bar-assertive">
-  <div class="btn" ng-click="nextClickHandle()">Lanjutkan</div><button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button>
-</ion-footer-bar>

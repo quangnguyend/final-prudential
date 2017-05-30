@@ -18,7 +18,7 @@
 </div>
 <div ng-class="vm.questions.question_4.active == false? 'disabled': ''" class="mt-50" id="question_4">
   <h4>{{vm.questions.question_4.title}}</h4>
-  <div  ng-repeat="item in vm.questions.question_4.results">
+  <div ng-repeat="item in vm.questions.question_4.results">
     <p class="text-right">200 karakter</p>
     <input type="text" placeholder="Enter" ng-model="item.result">
   </div>
@@ -29,10 +29,12 @@
   <h4>{{vm.questions.question_5.title}}</h4>
   <div class="row">
     <div class="col col-padding">
-      <button class="button button-stable button-block btn-insurance" ng-class="vm.questions.question_5.result==1? 'button-active': ''" ng-click="vm.setValueQuestion5(1)"><span>Ya</span></button>
+      <button class="button button-stable button-block btn-insurance" ng-class="vm.questions.question_5.result==1? 'button-active': ''"
+        ng-click="vm.setValueQuestion5(1)"><span>Ya</span></button>
     </div>
     <div class="col col-padding">
-      <button class="button button-stable button-block btn-insurance" ng-class="vm.questions.question_5.result==0? 'button-active': ''" ng-click="vm.setValueQuestion5(0)"><span>Tidak</span></button>
+      <button class="button button-stable button-block btn-insurance" ng-class="vm.questions.question_5.result==0? 'button-active': ''"
+        ng-click="vm.setValueQuestion5(0)"><span>Tidak</span></button>
     </div>
   </div>
 </div>
@@ -40,10 +42,12 @@
   <h4>{{vm.questions.question_6.title}}</h4>
   <div class="row">
     <div class="col col-padding">
-      <button class="button button-stable button-block btn-insurance" ng-class="vm.questions.question_6.result==1? 'button-active': ''" ng-click="vm.setValueQuestion6(1)"><span>Ya</span></button>
+      <button class="button button-stable button-block btn-insurance" ng-class="vm.questions.question_6.result==1? 'button-active': ''"
+        ng-click="vm.setValueQuestion6(1)"><span>Ya</span></button>
     </div>
     <div class="col col-padding">
-      <button class="button button-stable button-block btn-insurance" ng-class="vm.questions.question_6.result==0? 'button-active': ''" ng-click="vm.setValueQuestion6(0)"><span>Tidak</span></button>
+      <button class="button button-stable button-block btn-insurance" ng-class="vm.questions.question_6.result==0? 'button-active': ''"
+        ng-click="vm.setValueQuestion6(0)"><span>Tidak</span></button>
     </div>
   </div>
 </div>

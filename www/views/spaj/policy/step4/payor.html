@@ -4,13 +4,12 @@
   </ion-nav-title>
   <ion-content>
     <step-process></step-process>
-
     <div class="wrapper text-center has-bottom-bar padding-bottom">
       <div ng-if="vm.currentTab=='payor_option0'" ng-include="'views/spaj/policy/step4/payor_option0.html'"></div>
       <div ng-if="vm.currentTab=='payor_option1'" ng-include="'views/spaj/policy/step4/payor_option1.html'"></div>
     </div>
   </ion-content>
-  <div class="bar bar-footer bar-assertive">
+  <ion-footer-bar class="bar bar-footer bar-assertive">
     <a ng-click="vm.save()" title="Lanjutkan" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
-  </div>
+  </ion-footer-bar>
 </ion-view>
