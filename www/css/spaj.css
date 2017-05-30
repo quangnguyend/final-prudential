@@ -57,14 +57,15 @@
   padding-right: 0px;
 }*/
 
-.multiStep-wrapper {
-  width: 100%
+.wrapper-multi-step {
+  background: #DA291C;
 }
 
 .multi-step {
   margin: 0px;
   background: #DA291C;
-  padding: 40px 0 !important
+  padding: 40px 0 !important;
+  position: relative;
 }
 
 .multi-step .col span {

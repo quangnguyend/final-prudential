@@ -14,6 +14,16 @@ function stepProcessCtr ($scope, $rootScope, UserService, DataService, $location
     { step: '8', title: 'T&C', state: 'step8' }]
   $rootScope.policyStep = $rootScope.policyStep ? $rootScope.policyStep : { steps: vm.pageList }
 
+  function changeProcessPosition () {
+    if (typeof $ !== 'function') {
+      return null
+    }
+    var distance = $rootScope.getCurrentPolicyStep() / vm.pageList.length * 100
+    distance = (distance > 50) ? distance : 0
+    distance = (distance < 60) ? distance : 60
+    $('.multi-step').css('right', distance + '%')
+  }
+
   $rootScope.setCurrentPolicyStep = $rootScope.setCurrentPolicyStep || function (step) {
     $rootScope.policyStep.currentStep = step
   }
@@ -30,5 +40,8 @@ function stepProcessCtr ($scope, $rootScope, UserService, DataService, $location
     $rootScope.policyStep.currentStep = step
   }
 
-  $timeout(function () { vm.policyStep = $rootScope.getCurrentPolicyStep() })
+  $timeout(function () {
+    vm.policyStep = $rootScope.getCurrentPolicyStep()
+    changeProcessPosition()
+  })
 }
