@@ -405,7 +405,7 @@ select {
 /*css for step header*/
 @media screen and (max-width: 720px){
   #step-header{
-    display: none;
+    width: 60px;
   }
 }
 #step-header{
