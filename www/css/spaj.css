@@ -153,7 +153,7 @@
   border: none;
   padding: 40px 0 0;
   opacity: 0.4;
-  /*pointer-events: none;*/
+  pointer-events: none;
 }
 
 #health_question1 .item:nth-child(1), #health_question1 .item._active {
