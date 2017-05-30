@@ -3,66 +3,11 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService) {
   $rootScope.showBack = true
   $rootScope.showMenu = true
 
-  $scope.lineWidths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  $scope.lineWidth = 3
-
   var vm = this
   vm.healthData = SpajService.getData('step2_HealthData')
   vm.healthFormValidStatus = {
     is_checked: false,
     null_properties: []
-  }
-
-  var tempDataStructure = {
-    'personalAccidentPopupData': {
-      'function_name': 'Bila kecelakaan menyangkut alat gerak, bagaimana fungsi alat gerak tersebut saat ini?',
-      'is_pen_installed': true
-    },
-    'eyePopupData': {
-      'name_of_illness': 'Nama Keadaan/Penyakit',
-      'when_the_condition_found': 'Kapan kondisi ditemukan',
-      'last_care_date': 'Tanggal Konsultati/Perawatan terakhir',
-      'hospoital_name': 'Nama Rumah sakit yang dikunjungi',
-      'hospital_address': 'Alamat Rumah sakit yang dikunjungi',
-      'medicine': 'Tindakan Medis'
-    },
-    'height': null,
-    'weight': null,
-    'smoker': 123,
-    'sticks_cigarettes': 10,
-    'medication': 321,
-    'medication_detail': '5',
-    'darah': 123,
-    'ipeningkatan': null,
-    'ijantung': true,
-    'ikelainan': false,
-    'istroke': true,
-    'idemam': false,
-    'inyeri': true,
-    'inodule': false,
-    'ibrain': true,
-    'ihocmon': false,
-    'ieye': true,
-    'eye_contact_lenses': true,
-    'eye_disorders': true,
-    'iear': true,
-    'irespiratory': true,
-    'iheart': true,
-    'idigestive': true,
-    'ikidney': true,
-    'iface': true,
-    'ibone': true,
-    'itumors': true,
-    'iill': true,
-    'iinjury': true,
-    'idisease': true,
-    'idisorder': true,
-    'iabnormality': true,
-    'ipapsmear': true,
-    'ipregnant': true,
-    'isurgery': true,
-    'icomplication': true,
-    'ilostweight': true
   }
 
   vm.data = {
@@ -97,7 +42,7 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService) {
     returnObj.is_checked = true
   }
 
-  validateHealthData(tempDataStructure, vm.healthFormValidStatus)
+  validateHealthData(vm.healthData, vm.healthFormValidStatus)
 
   vm.const = {
     type_of_insurances: [
@@ -116,16 +61,16 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService) {
     ],
     type_of_currencies: [
       {
-        type: 'Type 1',
-        value: 'Value 1'
+        type: 'IDR',
+        value: 'IDR'
       },
       {
-        type: 'Type 2',
-        value: 'Value 2'
+        type: 'USD',
+        value: 'USD'
       },
       {
-        type: 'Type 3',
-        value: 'Value 3'
+        type: 'MLR',
+        value: 'MLR'
       }
     ],
     model_to_field_name_reference: {
