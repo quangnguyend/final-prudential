@@ -67,9 +67,14 @@
   margin-bottom: 5px;
 }
 
+#spaj-start .before-proceed-3 label,
 #spaj-start .before-proceed-3 input {
-  padding-left: 24px;
   color: #EFECEC;
+}
+
+#spaj-start .before-proceed-3 .md-input-container{
+  margin-left: 20px;
+  margin-top: 30px;
 }
 
 #spaj-start .mt-30 {

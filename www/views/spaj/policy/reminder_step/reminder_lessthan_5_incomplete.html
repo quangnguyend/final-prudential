@@ -35,11 +35,11 @@
     </div>
     <!--end item-->
     <div class='item no-lines policy-item' ng-repeat="(index, item) in vm.data.policy">
-      <div class="row row-no-padding mb-20">
+      <div class="row responsive-sm row-no-padding mb-20">
         <div class="col">
           <md-input-container class="select-box">
             <label class="input-label">Jenis asuransi yang ada</label>
-            <md-select ng-model="vm.type_of_insurances">
+            <md-select ng-model="vm.data.policy[index].insurance_type">
               <md-option><em>None</em></md-option>
               <md-option ng-repeat="i in vm.const.type_of_insurances" ng-value="i.value">
                 {{i.type}}
@@ -50,15 +50,17 @@
         <div class="col">
           <md-input-container class="md-block" flex-gt-sm>
             <label>Perusahaan</label>
-            <input ng-model="user.name" />
+            <input ng-model="vm.data.policy[index].company" />
           </md-input-container>
         </div>
         <div class="col">
-          <md-input-container class="select-box">
-            <label class="input-label">Uang Pertanggungan</label>
-            <md-select ng-model="vm.type_of_currencies">
-              <md-option><em>None</em></md-option>
-              <md-option ng-repeat="c in vm.const.type_of_currencies" ng-value="c.value">
+          <md-input-container class="" flex="70">
+            <label>Uang Pertanggungan</label>
+            <input ng-model="vm.data.policy[index].sum_insured" />
+          </md-input-container>
+          <md-input-container class="push-up" flex="30">
+            <md-select ng-model="vm.data.policy[index].currency_type">
+              <md-option ng-repeat="c in vm.const.type_of_currencies" ng-value="c.value" ng-selected="$index === 0">
                 {{c.type}}
               </md-option>
             </md-select>

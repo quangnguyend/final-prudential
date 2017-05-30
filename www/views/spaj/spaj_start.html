@@ -106,11 +106,11 @@
               <button class="button value-btn pb-0" ng-class="{selected: !vm.data.beforeProceed_3.value}" ng-click="vm.data.beforeProceed_3.value = false">Tidak</button>
             </div>
           </div>
-          <div class="before-proceed-3 left-align" ng-show="vm.data.beforeProceed_3.value == true" class="row">
-            <label class="item item-input item-floating-label">
-              <span class="input-label">No. SPAJ Sebelumnya</span>
-              <input ng-model="vm.data.beforeProceed_3.otherValue" type="text" placeholder="Enter">
-            </label>
+          <div class="before-proceed-3 text-left" ng-show="vm.data.beforeProceed_3.value == true" class="row">
+            <md-input-container class="md-input-container">
+              <label>No. SPAJ Sebelumnya</label>
+              <input ng-model="vm.data.beforeProceed_3.otherValue">
+            </md-input-container>
           </div>
         </div>
       </div>

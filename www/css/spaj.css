@@ -1172,17 +1172,7 @@
 }
 
 #spaj-esignature-confirmation .policy-item .col{
-  padding: 10px;
-}
-
-
-#spaj-esignature-confirmation .policy-item .col:first-child{
-  padding-left: 0;
-}
-
-
-#spaj-esignature-confirmation .policy-item .col:last-child{
-  padding-right: 0;
+  margin-right: 10px;
 }
 
 #spaj-esignature-confirmation .item {
@@ -1206,6 +1196,11 @@
 
 #spaj-esignature-confirmation .disabled-btn {
   background: #9B9B9B;
+}
+
+#spaj-esignature-confirmation .push-up{
+  position: relative;
+    top: -12px;
 }
 
 @media screen and (max-width: 568px) {
