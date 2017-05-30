@@ -489,6 +489,7 @@ select {
   border: none;
   color: white;
   text-align-last: right;
+  font-size: 17px;
 }
 
 #step-header select option {
@@ -546,6 +547,7 @@ body, body *{font-size: 17px;}
 .item select{font-size: 17px;}
 @media only screen and (min-width: 768px)  { 
   .body, body *{font-size:25px;}
+  #step-header select{font-size: 25px;}
   .description {
     font-size: 25px;
     line-height: 30px;
