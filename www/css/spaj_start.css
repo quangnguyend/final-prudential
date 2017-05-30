@@ -7,7 +7,8 @@
   border-radius: 4px;
 }
 
-#spaj-start .item {
+#spaj-start .item,
+#upload-page .item {
   border: none;
 }
 
@@ -22,7 +23,6 @@
   opacity: 1.00;
   border-radius: 2px;
   width: 100%;
-  font-size: 17px;
   line-height: 100%;
   letter-spacing: -0.408px;
   color: rgba(73, 84, 93, 0.5);
@@ -89,21 +89,25 @@
   margin-bottom: 80px;
 }
 
-.wrapper #spaj-start .payor-page {
-  margin-left: -5%;
-  width: 110%;
-}
+
 
 #spaj-start .no-padding-top {
   padding-top: 0px;
 }
 
-#spaj-start .payor-page .description {
-  color: #000;
-}
+
 
 @media screen and (min-width: 568px) {
   #spaj-start .mini-center-container {
     width: 50%;
+  }
+}
+@media only screen and (min-width: 768px)  {
+  #health_question1 .item_description{
+    font-size: 20px;
+    line-height: 30px;
+  } 
+  #health_question1 h1{
+    line-height: 34px;
   }
 }

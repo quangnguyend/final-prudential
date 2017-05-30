@@ -1,4 +1,4 @@
-<ion-view cache-view="false">
+<ion-view cache-view="false"  id="upload-page">
   <ion-nav-title>
     <custom-header title='Kelengkapan dokumen' step='6'></custom-header>
   </ion-nav-title>
@@ -14,29 +14,33 @@
 
     <div class="wrapper has-bottom-bar upload-document-page mt-30">
       <form>
-        <h4 class="text-center text-header">Kami membutuhkan beberapa dokumen dalam mengajukan polis ini</h4>
-        <div class="m-gap-30">
-          <ul>
-            <li class="clearfix" ng-repeat="item in vm.documents">
-              <div class="col-padding"><span class="upload-document-name">{{item.document_name}}</span></div>
-              <div class="row row-no-padding">
-                <div class="col col-67 col-padding">
-                  <select class="form-input" ng-model="item.document_type">
-                    <option value="">Select</option>
-                    <option ng-repeat="type in vm.documentType" value="{{type.value}}">{{type.name}}</option>
-                  </select>
-                </div>
-                <div class="col col-33 col-padding">
-                  <div class="document-upload-file">
-                    <!--<input type="file" ng-model="item.document_image" ng-model-instant onchange="angular.element(this).scope().uploadFiles(this)">-->
-                    <input type="file" ngf-select="uploadFiles($file, $invalidFiles, item)" accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">
-                    <button class="button button-stable btn-upload-img">Ambil Foto</button>
+        <div class="list list-inset">
+          <div class='item'>
+            <h1 class="text-center  discription">Kami membutuhkan beberapa dokumen dalam mengajukan polis ini</h1>
+            <div class="m-gap-30">
+              <ul>
+                <li class="clearfix" ng-repeat="item in vm.documents">
+                  <div class="col-padding"><span class="upload-document-name">{{item.document_name}}</span></div>
+                  <div class="row row-no-padding">
+                    <div class="col col-67 col-padding">
+                      <select class="form-input" ng-model="item.document_type">
+                        <option value="">Select</option>
+                        <option ng-repeat="type in vm.documentType" value="{{type.value}}">{{type.name}}</option>
+                      </select>
+                    </div>
+                    <div class="col col-33 col-padding">
+                      <div class="document-upload-file">
+                        <!--<input type="file" ng-model="item.document_image" ng-model-instant onchange="angular.element(this).scope().uploadFiles(this)">-->
+                        <input type="file" ngf-select="uploadFiles($file, $invalidFiles, item)" accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">
+                        <button class="button button-stable btn-upload-img">Ambil Foto</button>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <div class="clearfix"></div>
+                </li>
+              </ul>
+              <div class="clearfix"></div>
+            </div>
+          </div>
         </div>
       </form>
     </div>
