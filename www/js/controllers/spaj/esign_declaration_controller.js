@@ -17,9 +17,7 @@ function eSignDeclarationCtrl (
       $scope[model] = -$scope[model]
     }
   }
-  console.log(SpajService.getData())
   $scope.numberOfAdditional = getNumberOfAdditional()
-  console.log($scope.numberOfAdditional)
 
   // list id of canvas DOM for esignature, default will have 2 ids
   var listEsignature = [
