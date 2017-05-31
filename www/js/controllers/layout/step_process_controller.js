@@ -4,14 +4,14 @@ function stepProcessCtr ($scope, $rootScope, UserService, DataService, $location
   $rootScope.showMenu = true
   var vm = this
   vm.pageList = [
-    { step: '1', title: 'Policy Holder Information', state: 'step1' },
-    { step: '2', title: 'Health Questions', state: 'step2' },
-    { step: '3', title: 'Kegiatan beresiko', state: 'step3' },
-    { step: '4', title: 'Pembayar Premi', state: 'step4' },
-    { step: '5', title: 'Penerima Manfaat', state: 'step5' },
-    { step: '6', title: 'Dokumen', state: 'step6' },
-    { step: '7', title: 'Amendment', state: 'step7' },
-    { step: '8', title: 'T&C', state: 'step8' }]
+    { step: '1', title: 'Policy Holder Information', state: 'step1', complete: false },
+    { step: '2', title: 'Health Questions', state: 'step2', complete: true },
+    { step: '3', title: 'Kegiatan beresiko', state: 'step3', complete: false },
+    { step: '4', title: 'Pembayar Premi', state: 'step4', complete: false },
+    { step: '5', title: 'Penerima Manfaat', state: 'step5', complete: false },
+    { step: '6', title: 'Dokumen', state: 'step6', complete: false },
+    { step: '7', title: 'Amendment', state: 'step7', complete: false },
+    { step: '8', title: 'T&C', state: 'step8', complete: false }]
   $rootScope.policyStep = $rootScope.policyStep ? $rootScope.policyStep : { steps: vm.pageList }
 
   function changeProcessPosition () {
