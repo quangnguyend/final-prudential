@@ -20,4 +20,18 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
     data.data = $scope.data
   })
 
+  $scope.contacts = [
+    {
+      tel : { home: '', office: '', gsm: ''}
+    }
+  ];
+  $scope.addContact = function () {
+    var tel = {
+      tel_home: '',
+      tel_office: '',
+      tel_gsm: ''
+    };
+    $scope.contacts.push(tel);
+  }
+
 }

@@ -2,6 +2,9 @@ function spajStartCtrl ($state, $scope, $rootScope, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
+
+  $rootScope.typeOfStep = 0
+
   var vm = this
   vm.saveSpaj = function () {
     var utama = vm.data.policyHolder.main_primary_insured
@@ -19,6 +22,8 @@ function spajStartCtrl ($state, $scope, $rootScope, SpajService) {
     }
 
     SpajService.setData('spaj', objSpaj)
+
+    if (typeSpaj === 'PemegangPolis' && utama) { $rootScope.typeOfStep = 1 }
     $state.go('app.step1')
   }
 

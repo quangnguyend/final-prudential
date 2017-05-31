@@ -4,7 +4,7 @@
             <div class="row-no-padding">
                 <md-input-container class="md-block" flex-gt-sm>
                     <label>Nama Lengkap</label>
-                    <input ng-model='data.name' required>
+                    <input ng-model='data.name' required />
                 </md-input-container>
             </div>
         </div>
@@ -29,7 +29,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <div class='item'>
         <div class="row-no-padding">
@@ -291,24 +290,25 @@
     </div>
     </div>
     <div class='item'  ng-repeat="(index, row) in vm.insuredData.address">
+
         <div class="row-no-padding">
             <div class="row">
                 <div class="col-33">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>No.Tel.Rumah </label>
-                        <input type="tel" ng-model='data.rumah_tel' required>
+                        <input type="tel" ng-model='data.rumah_tel' required ng-model='contact.tel.home'>
                     </md-input-container>
                 </div>
                 <div class="col-33">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>No.Tel.Kantor</label>
-                        <input type="tel" ng-model='data.kantor_tel' required>
+                        <input type="tel" ng-model='data.kantor_tel' required ng-model='contact.tel.office'>
                     </md-input-container>
                 </div>
                 <div class="col-33">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>No. HP /GSM </label>
-                        <input type="tel" ng-model='data.hp_gsm_tel' required>
+                        <input type="tel" ng-model='data.hp_gsm_tel' required ng-model='contact.tel.gsm'>
                     </md-input-container>
                 </div>
             </div>
@@ -319,6 +319,7 @@
             <div class="row">
                 <div class="button-block add_icon" ng-click='vm.addInsuredAddress()'>
                     <a class="button" ><i class="icon ion-ios-plus-empty"></i> <span>Tampah Kontak</span></a>
+
                 </div>
             </div>
         </di>
