@@ -1,10 +1,6 @@
 'use strict'
 
 function familyHistoryCtrl ($scope, $rootScope, $ionicPopup, UserService, DataService, $ionicScrollDelegate, $location) {
-  $rootScope.showBar = true
-  $rootScope.showBack = true
-  $rootScope.showMenu = true
-
   var vm = this
 
   vm.tabs = [
@@ -19,7 +15,7 @@ function familyHistoryCtrl ($scope, $rootScope, $ionicPopup, UserService, DataSe
   }
 
   vm.family_history = {
-    question: 1,
+    question: null,
     membersInfo: [
       {
         family_member: '',

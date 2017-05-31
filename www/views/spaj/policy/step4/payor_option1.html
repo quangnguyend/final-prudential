@@ -9,14 +9,12 @@
         <div class="list list-inset no-lines" id='payor-option1'>
           <div class='item'>
             <div class="row-no-padding">
-              <div class="row">
+              <md-input-container class="md-block"  md-no-float >
                 <label class="item-stacked-label">
                   <div class="input-label">Nama Lengkap <span class="input_red">(*)</span></div>
                 </label>
-              </div>
-              <div class="row">
-                <input type="text" placeholder="Enter">
-              </div>
+                <input  placeholder="Enter" ng-model="vm.questions.question_1.other_answer" />
+              </md-input-container>
             </div>
           </div>
           <div class='item '>
@@ -28,19 +26,22 @@
               </div>
               <div class="row">
                 <div class="col-40">
-                  <select class="form_select" ng-model='agent.occupation '>
-                    <option selected value>Select</option>
-                    <option>Blue</option>
-                    <option>Green</option>
-                    <option>Red</option>
-                  </select>
+                  <md-input-container class="md-block">
+                    <md-select ng-model="vm.questions.question_1.heath_check">
+                      <md-option ng-repeat="c in vm.questions.birplace" ng-value="c" ng-selected="$index === 0">
+                          {{c}}
+                      </md-option>
+                    </md-select>
+                  </md-input-container>
                 </div>
-                <div class="col-20"></div>
-                <div class="col-50 left_input_date">
-                  <input type="date" placeholder="Enter">
-                  <span class="icon-calendar">
+                <div class="col-10"></div>
+                <div class="col-40 left_input_date">
+                  <md-input-container  class="md-block"   md-no-float >
+                    <input type="date" placeholder="DD/MM/YYYY" onblur="(this.type='date')" ng-model="vm.questions.question_2.date_inspection">
+                  </md-input-container>
+                </div>
+                <div class="col-10 icon-calendar"> 
                     <i class="icon ion-android-calendar"></i>
-                  </span>
                 </div>
               </div>
             </div>
@@ -74,12 +75,13 @@
                 </label>
               </div>
               <div class="row">
-                <select class="form_select" ng-model='agent.occupation '>
-                  <option selected value>Select</option>
-                  <option>Blue</option>
-                  <option>Green</option>
-                  <option>Red</option>
-                </select>
+                <md-input-container class="md-block">
+                    <md-select ng-model="vm.questions.question_1.heath_check">
+                      <md-option ng-repeat="c in vm.questions.pernikahan" ng-value="c" ng-selected="$index === 0">
+                          {{c}}
+                      </md-option>
+                    </md-select>
+                  </md-input-container>
               </div>
             </div>
           </div>
@@ -91,12 +93,13 @@
                 </label>
               </div>
               <div class="row">
-                <select class="form_select" ng-model='agent.occupation '>
-                  <option selected value>Select</option>
-                  <option>Blue</option>
-                  <option>Green</option>
-                  <option>Red</option>
-                </select>
+                <md-input-container class="md-block">
+                    <md-select ng-model="vm.questions.question_1.heath_check">
+                      <md-option ng-repeat="c in vm.questions.agama" ng-value="c" ng-selected="$index === 0">
+                          {{c}}
+                      </md-option>
+                    </md-select>
+                  </md-input-container>
               </div>
             </div>
           </div>
@@ -108,12 +111,13 @@
                 </label>
               </div>
               <div class="row">
-                <select class="form_select" ng-model='agent.occupation '>
-                  <option selected value>Select</option>
-                  <option>Blue</option>
-                  <option>Green</option>
-                  <option>Red</option>
-                </select>
+                 <md-input-container class="md-block">
+                    <md-select ng-model="vm.questions.question_1.heath_check">
+                      <md-option ng-repeat="c in vm.questions.homeaddress" ng-value="c" ng-selected="$index === 0">
+                          {{c}}
+                      </md-option>
+                    </md-select>
+                  </md-input-container>
               </div>
             </div>
           </div>
@@ -125,25 +129,24 @@
                 </label>
               </div>
               <div class="row">
-                <select class="form_select" ng-model='agent.occupation '>
-                  <option selected value>Select</option>
-                  <option>Blue</option>
-                  <option>Green</option>
-                  <option>Red</option>
-                </select>
+                <md-input-container class="md-block">
+                    <md-select ng-model="vm.questions.question_1.heath_check">
+                      <md-option ng-repeat="c in vm.questions.kadaluwarsa" ng-value="c" ng-selected="$index === 0">
+                          {{c}}
+                      </md-option>
+                    </md-select>
+                  </md-input-container>
               </div>
             </div>
           </div>
           <div class='item '>
-            <div class="row-no-padding">
-              <div class="row">
+            <div class="row-no-padding">         
+               <md-input-container class="md-block"  md-no-float >
                 <label class="item-stacked-label">
-                  <div class="input-label">No Identitas<span class="input_red">(*)</span></div>
+                   <div class="input-label">No Identitas<span class="input_red">(*)</span></div>
                 </label>
-              </div>
-              <div class="row">
-                <input type="text" placeholder="Enter">
-              </div>
+                <input  placeholder="Enter" ng-model="vm.questions.question_1.other_answer" />
+              </md-input-container>
             </div>
           </div>
           <div class='item '>
@@ -175,7 +178,9 @@
                 </label>
               </div>
               <div class="row left_input_date input_full_width">
-                <input type="date" placeholder="Enter">
+                <md-input-container  class="md-block"   md-no-float >
+                    <input type="date" placeholder="DD/MM/YYYY"  ng-model="vm.questions.question_2.date_inspection">
+                  </md-input-container>
                 <span class="icon-calendar">
                   <i class="icon ion-android-calendar"></i>
                 </span>
@@ -184,14 +189,12 @@
           </div>
           <div class='item '>
             <div class="row-no-padding">
-              <div class="row">
+              <md-input-container class="md-block"  md-no-float >
                 <label class="item-stacked-label">
-                  <div class="input-label">No NPWP</div>
+                   No NPWP
                 </label>
-              </div>
-              <div class="row">
-                <input type="text" placeholder="Enter">
-              </div>
+                <input  placeholder="Enter" ng-model="vm.questions.question_1.other_answer" />
+              </md-input-container>
             </div>
           </div>
           <div class='item '>

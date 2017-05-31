@@ -134,7 +134,10 @@ ion-footer-bar.bar.bar-assertive {
 
 
 /* ========================== COMMON STYLE ========================== */
-
+md-input-container:not(.md-input-has-value) input:not(:focus){
+  color:#CCC !important
+}
+label.item-stacked-label{font-size:17px;}
 .txt-large {
   color: #000;
   font-size: 34px;
@@ -548,6 +551,7 @@ body, body *{font-size: 17px;}
 @media only screen and (min-width: 768px)  { 
   .body, body *{font-size:25px;}
   #step-header select{font-size: 25px;}
+  label.item-stacked-label{font-size:25px;}
   .description {
     font-size: 25px;
     line-height: 30px;

@@ -18,12 +18,22 @@
             <td class='index-column' width='15px'></td>
             <td class='name-column'><input type='input' placeholder="Enter" ng-model="row.name" /></td>
             <td class='relationship-column'>
-              <select ng-model='row.relationship' class='blur-text'>
-                <option  value="" disabled selected>Select</option>
-                <option ng-repeat='value in vm.relationshipData' value='{{value}}'>{{value}}</option>
-              </select>
+              <md-input-container class="select-box">
+                <label class="input-label">Tipe Asuransi2</label>
+                <md-select  ng-model='row.relationship' class='blur-text'>
+                  <md-option  value="" disabled selected>Select</md-option>
+                  <md-option ng-repeat='value in vm.relationshipData' ng-value='{{value}}'>
+                    {{value}}
+                  </md-option>
+                </md-select>
+              </md-input-container>
             </td>
-            <td class="birthdate-column row row-top blur-text"><input class='blur-text' type='date' ng-model="row.birthday" /><i class="icon ion-calendar"></i></td>
+            <td class="birthdate-column row row-top blur-text">
+              <md-input-container  class="md-block"   md-no-float >
+                <input type="date" placeholder="DD/MM/YYYY" onblur="(this.type='date')" ng-model="vm.questions.question_2.date_inspection">
+              </md-input-container>
+              <i class="icon ion-calendar"></i>
+            </td>
             <td class='share-column' width='10%'><input type='input' placeholder="%" ng-model="row.share" /></td>
           </tr>
           <tr>
