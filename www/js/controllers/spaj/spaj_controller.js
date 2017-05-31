@@ -19,20 +19,7 @@ function spajCtrl ($scope, $rootScope, $ionicPopup, UserService, DataService, $i
 
   // vm.relationshipData = ['Mother', 'Father', 'Brother', 'Sister']
 
-  // vm.insurancePolicies = [
-  //   {
-  //     type_of_insurance: '',
-  //     insurance_company: '',
-  //     sum_assured: '',
-  //     substandard_policy: false
-  //   },
-  //   {
-  //     type_of_insurance: '',
-  //     insurance_company: '',
-  //     sum_assured: '',
-  //     substandard_policy: false
-  //   }
-  // ]
+   
   // vm.typeOfInsurance = [
   //   { name: "Option 1", value: 1 },
   //   { name: "Option 2", value: 2 },
@@ -257,4 +244,5 @@ function spajCtrl ($scope, $rootScope, $ionicPopup, UserService, DataService, $i
   //   if ($scope.health1Steps.indexOf(id) < 0) $scope.health1Steps.push(id)
   //   $ionicScrollDelegate.scrollTo(0, distance, true)
   // }
+  
 }
