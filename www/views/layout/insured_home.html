@@ -290,7 +290,7 @@
         </div>
     </div>
     </div>
-    <div class='item'>
+    <div class='item'  ng-repeat="(index, row) in vm.insuredData.address">
         <div class="row-no-padding">
             <div class="row">
                 <div class="col-33">
@@ -317,8 +317,8 @@
     <div class="item">
         <di class="row-no-padding">
             <div class="row">
-                <div class="button-block add_icon">
-                    <a class="button" grouped-red-radio="'Male'" ng-model="agent.gender"><i class="icon ion-ios-plus-empty"></i> <span>Tampah Kontak</span></a>
+                <div class="button-block add_icon" ng-click='vm.addInsuredAddress()'>
+                    <a class="button" ><i class="icon ion-ios-plus-empty"></i> <span>Tampah Kontak</span></a>
                 </div>
             </div>
         </di>

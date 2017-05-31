@@ -4,6 +4,7 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
   $rootScope.showMenu = true
   var MAIN_INSURED_TAB = 'MAIN_INSURED', MAIN_LAYOUT = 'MAIN_LAYOUT',
     ACTIVE_INSURED = 'ACTIVE_INSURED'
+  var vm =this
 
   var rootSpajData = SpajService.getData('spaj')
   $scope.currentLayout = MAIN_LAYOUT
@@ -13,6 +14,27 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
 
   $scope.currentTab = MAIN_INSURED_TAB
   $scope.additionalList = []
+
+  vm.policy={
+    apaka:null,
+    insurancePolicies : [
+     {
+       type_of_insurance: '',
+       insurance_company: '',
+       sum_assured: '',
+       substandard_policy: false
+     }
+   ],
+   addActivePolicy:function(){
+     var newPolicy={
+       type_of_insurance: '',
+       insurance_company: '',
+       sum_assured: '',
+       substandard_policy: false
+     };
+     vm.policy.insurancePolicies.push(newPolicy)
+   }
+  }
 
   $scope.switchTab = function (tab) {
     $scope.currentTab = tab || MAIN_INSURED_TAB
@@ -30,7 +52,9 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
   }
 
   $scope.nextClickHandle = function () {
-    if ($scope.currentLayout === MAIN_LAYOUT) { $scope.currentLayout = ACTIVE_INSURED } else if ($scope.currentLayout === ACTIVE_INSURED) {
+    if ($scope.currentLayout === MAIN_LAYOUT) 
+    { $state.go('app.notmainactive') } 
+    else if ($scope.currentLayout === ACTIVE_INSURED) {
       $state.go('app.step2')
     }
     // console.dir(SpajService.getData())

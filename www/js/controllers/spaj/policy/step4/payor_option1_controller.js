@@ -10,7 +10,7 @@ function payorOption1Ctrl ($scope, DataService, $ionicScrollDelegate, $location)
     homeaddress:["Option1","Option2","Option3"],
     agama:["Option1","Option2","Option3"],
     pernikahan:["Option1","Option2","Option3"],
-    kadaluwarsa:["Option1","Option2","Option3"],
+    kadaluwarsa:["Option1","Option2","Option3"]
   }
 
   vm.save = function () {
