@@ -30,6 +30,8 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
   }
 
   $scope.nextClickHandle = function () {
+    //console.log($rootScope.dataSave);
+    SpajService.setData('spaj1', $rootScope.dataSave)
     $state.go('app.step2')
   }
 
