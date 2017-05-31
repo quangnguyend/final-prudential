@@ -25,8 +25,6 @@ angular
     $rootScope.init = true
     $rootScope.base_url = 'https://www.headwatersroofinggroup.com'
 
-    UserService.authenticate()
-
     $scope.logout = function () {
       UserService.logout()
     }
@@ -46,14 +44,6 @@ angular
         }
       })
     }
-
-    $scope.sync = function () {
-      if ($rootScope.uid > 0 && !$rootScope.synchronizing) {
-        SyncService.sync(null)
-      }
-    }
-
-    setTimeout($scope.sync, 1800000)
   })
   .controller('StepProcessCtr', stepProcessCtr)
   .controller('SpajStartCtrl', spajStartCtrl)
@@ -72,7 +62,6 @@ angular
   .controller('PayorCtrl', payorCtrl)
   .controller('PayorOption1Ctrl', payorOption1Ctrl)
   .controller('BeneficiariesCtrl', beneficiariesCtrl)
-  .controller('StepHeaderCtr', stepHeaderCtr)
   .controller('DocumentUploadCtrl', documentUploadCtrl)
   .controller('AmendmentCtrl', amendmentCtrl)
   .controller('TermsCtrl', termsCtrl)

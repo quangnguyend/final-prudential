@@ -4,16 +4,12 @@ angular.module('prudential.components', [])
     controller: 'StepProcessCtr',
     controllerAs: 'vm'
   })
-  .component('stepHeader', {
-    templateUrl: 'views/layout/step_header.html',
-    controller: 'StepHeaderCtr',
-    controllerAs: 'vm'
-  })
   .component('insuredHome', {
     templateUrl: 'views/layout/insured_home.html',
     controller: 'insuredHomeCtrl'
   })
   .component('customHeader', {
     templateUrl: 'views/layout/custom_header.html',
-    controller: 'CustomHeaderCtrl'
+    controller: 'CustomHeaderCtrl',
+    controllerAs: 'vm'
   })
