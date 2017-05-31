@@ -12,7 +12,7 @@ function step1Ctrl ($state, $scope, $rootScope, $stateParams, SpajService) {
     if (!vm.objSpaj) {
       $state.go('app.spaj_start')
     } else {
-      (vm.objSpaj.utama && vm.objSpaj.typeSpaj === 'PemegangPolis') ? $state.go('app.main') : $state.go('app.notmain')
+      (vm.objSpaj.utama) ? $state.go('app.main') : $state.go('app.notmain')
     }
   }
 }
