@@ -19,7 +19,7 @@ function riskHobbyCtrl ($scope, $rootScope, $ionicPopup, UserService, DataServic
   }
 
   vm.risk_hobby = {
-    question: 1
+    question: null
   }
 
   vm.setValueQuestion = function (value) {

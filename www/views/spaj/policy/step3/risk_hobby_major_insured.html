@@ -1,12 +1,10 @@
 <div class="item">
   <h1 class="description">Apakah Calon Tertanggung memiliki hobi atau sewaktu-waktu melakukan kegiatan yang berisiko tinggi atau CalonTertanggung masih aktif dalam pekerjaan berisiko tinggi tersebut di bawah ini?</h1>
   <div class="row">
-    <div class="col col-padding">
-      <button class="button button-stable button-block btn-insurance" ng-class="vm.risk_hobby.question == 1? 'button-active': ''" ng-click="vm.setValueQuestion(1)"><span>Ya</span></button>
-    </div>
-    <div class="col col-padding">
-      <button class="button button-stable button-block btn-insurance" ng-class="vm.risk_hobby.question == 0? 'button-active': ''" ng-click="vm.setValueQuestion(0)"><span>Tidak</span></button>
-    </div>
+     <div class="button-bar">
+        <a class="button col col-50" grouped-radio="1" ng-model="vm.risk_hobby.question">Ya</a>
+        <a class="button col col-50" grouped-radio="0" ng-model="vm.risk_hobby.question">Tidak</a>
+      </div>
   </div>
 </div>
 <div class="item mt-50">
