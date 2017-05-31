@@ -18,22 +18,22 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
   vm.policy={
     apaka:null,
     insurancePolicies : [
-     {
-       type_of_insurance: '',
-       insurance_company: '',
-       sum_assured: '',
-       substandard_policy: false
-     }
-   ],
-   addActivePolicy:function(){
-     var newPolicy={
-       type_of_insurance: '',
-       insurance_company: '',
-       sum_assured: '',
-       substandard_policy: false
-     };
-     vm.policy.insurancePolicies.push(newPolicy)
-   }
+      {
+        type_of_insurance: '',
+        insurance_company: '',
+        sum_assured: '',
+        substandard_policy: false
+      }
+    ],
+    addActivePolicy:function(){
+      var newPolicy={
+        type_of_insurance: '',
+        insurance_company: '',
+        sum_assured: '',
+        substandard_policy: false
+      };
+      vm.policy.insurancePolicies.push(newPolicy)
+    }
   }
 
   $scope.switchTab = function (tab) {
