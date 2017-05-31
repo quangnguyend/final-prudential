@@ -6,7 +6,6 @@ function stepProcessCtr ($scope, $rootScope, $location) {
   var vm = this
 
   vm.policyStep = '1'
-  vm.objSpaj = SpajService.getData('spaj')
   var payor = [
     { step: '1', title: 'Data Informasi', state: 'step1' },
     { step: '2', title: 'Data Kesehatan', state: 'step2' },
