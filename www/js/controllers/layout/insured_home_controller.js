@@ -2,6 +2,14 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
+  var vm=this;
+
+  vm.insuredData={
+    address:[{}]
+  }
+  vm.addInsuredAddress=function(){
+    vm.insuredData.address.push({})
+  }
   $scope.data = {}
   var data = {}
   $timeout(function () {
@@ -11,6 +19,7 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
     data = SpajService.getData(insuredName)
     data.data = $scope.data
   })
+
   $scope.contacts = [
     {
       tel : { home: '', office: '', gsm: ''}
@@ -24,4 +33,5 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
     };
     $scope.contacts.push(tel);
   }
+
 }
