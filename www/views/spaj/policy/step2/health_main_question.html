@@ -299,8 +299,7 @@
     </div>
     <!--end-item iill-->
     <div class="item iinjury" ng-class="{'_active': health1Steps[4]}">
-      <div class="icon" ng-class="{'completed': (vm.personalAccidentPopupTouched && vm.checkPropertiesNotNull(vm.healthData.personalAccidentPopupData)) || vm.healthData.iinjury == false, 
-          'not-complete': vm.personalAccidentPopupTouched && !vm.checkPropertiesNotNull(vm.healthData.personalAccidentPopupData) && vm.healthData.iinjury == true}"></div>
+      <div class="icon" ng-class="{'completed': vm.healthData.iinjury != null && (vm.healthData.iinjury == false || vm.healthData.personalAccidentPopupData.function_name != null || vm.healthData.personalAccidentPopupData.is_pen_installed != null)}"></div>
       <h1 class="text-center description">Kecelakaan Pribadi / Cedera jangka panjang</h1>
       <p class="item_description">Kecelakaan / Cidera Berat Berkepanjangan / Kelumpuhan / Kelainan Syaraf lainnya, Bila kecelakaan menyangkut alat gerak,
         bagaimana fungsi alat gerak tersebut saat ini? </p>
@@ -309,16 +308,45 @@
         <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.iinjury">Tidak</a>
       </div>
       <div class='grey-box' ng-show="vm.healthData.iinjury==true">
-        <button class="button button-full button-done" ng-click='showPopup_paccident()'>Done</button>
+        <div class="additional-question text-left">
+          <div class="row">
+            <label>Bila kecelakaan menyangkut alat gerak,</br> bagaimana fungsi alat gerak tersebut saat ini?</label>
+          </div>
+          <md-input-container class="md-block md-input" flex-gt-sm>
+            <label>Kaki kanan</label>
+            <input type="text" ng-model="vm.healthData.personalAccidentPopupData.function_name">
+          </md-input-container>
+          <div class="row">
+            <label>Apakah saat ini terpasang pen pada tubuh Anda?</label>
+          </div>
+          <div class="row">
+            <div class="button-bar">
+              <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.personalAccidentPopupData.is_pen_installed">Iya</a>
+              <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.personalAccidentPopupData.is_pen_installed">Tidak</a>
+            </div>
+          </div>
+        </div>
+        <button class="button button-full button-done" ng-click=''>Done</button>
       </div>
     </div>
     <!--end-item iinjury-->
     <div class="item idisease" ng-class="{'_active': health1Steps[4]}">
-      <div class="icon" ng-class="{'completed': vm.healthData.idisease != null}"></div>
+      <div class="icon" ng-class="{'completed': vm.healthData.idisease != null && (vm.healthData.idisease == false || vm.healthData.idisea_others != null)}"></div>
       <h1 class="text-center description">Penyakit lain yang belum disebutkan?</h1>
       <div class="button-bar">
         <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.idisease">Ya</a>
         <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.idisease">Tidak</a>
+      </div>
+      <div class='grey-box' ng-show="vm.healthData.idisease==true">
+        <div class="additional-question text-left">
+          <div class="row">
+            <label>Sebutkan</label>
+          </div>
+          <md-input-container class="md-block md-input" md-no-float flex-gt-sm>
+            <input type="text" ng-model="vm.healthData.idisea_others" placeholder="Enter">
+          </md-input-container>
+        </div>
+        <button class="button button-full button-done" ng-click=''>Done</button>
       </div>
     </div>
     <!--end-item idisease-->

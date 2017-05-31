@@ -451,6 +451,86 @@
   border-width: 1px
 }
 
+#health_question1 .additional-question{
+  padding: 40px 40px 70px 40px;
+}
+
+#health_question1 .additional-question .md-input input{
+  color: #F5F2F2!important;
+}
+
+#health_question1 .additional-question .md-input input:focus{
+  border-color: #ccc!important;
+}
+
+#health_question1 .additional-question label{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 100%;
+  color: #F5F2F2;
+}
+
+#health_question1 .additional-question .button-bar{
+  margin-top: 20px;
+}
+
+#health_question1 .additional-question .button-bar .button{
+  border: solid 1px #ffffff;
+  background: #5B6770;
+  color: #FFFFFF;
+  opacity: 1.00;
+  border-radius: 2px;
+}
+
+#health_question1 .additional-question .button-bar .button:first-child{
+  margin-right: 20px;
+}
+
+#health_question1 .additional-question .button-bar .button.button-dark{
+  color: #5B6770!important;
+  background: #FFFFFF!important;
+}
+#eye-popup .popup-content {
+  padding: 40px;
+}
+
+#eye-popup .popup-content .item {
+  margin-top: 30px 50px;
+}
+
+#eye-popup .popup-content .item:first-child {
+  margin-top: 0;
+}
+
+#eye-popup .popup-content .number {
+  position: relative;
+  top: 50px;
+  left: -15px;
+}
+#eye-popup .popup-content label{
+  font-size: 17px!important;
+  color: #39393A;
+}
+
+#eye-popup .popup-content .add-more-btn{
+  background: #F7F5F5;
+  opacity: 1.00;
+  border-radius: 2px;
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 100%;
+  letter-spacing: -0.408px;
+  color: rgba(73, 84, 93, 0.5);
+  height: 48px;
+  border: none;
+}
+
+#eye-popup .popup-content .add-more-btn:hover{
+  background: #e5e3e3;
+}
 
 .button-red{
   background: #d0021b;
