@@ -1,42 +1,38 @@
 <div class="popup-wrapper">
   <form action="">
-    <div class="">
-      <div class="">Nama Keadaan/Penyakit</div>
-      <div class="">
-        <input type="text" placeholder="Enter" ng-model="popupData.name_of_illness">
-      </div>
+    <div class="row">
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Nama Keadaan/Penyakit</label>
+        <input ng-model="popupData.name_of_illness">
+      </md-input-container>
     </div>
-    <div class="row row-no-padding">
-      <div class="col">
-        <div class="">Kapan kondisi ditemukan</div>
-        <div class="">
-          <input type="text" placeholder="Enter" ng-model="popupData.when_the_condition_found">
-        </div>
-      </div>
-      <div class="col">
-        <div class="">Tanggal Konsultasi/Perawatan terakhir</div>
-        <div class="">
-          <input type="text" placeholder="Enter" ng-model="popupData.last_care_date">
-        </div>
-      </div>
+    <div class="row responsive-sm">
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Kapan kondisi ditemukan</label>
+        <input ng-model="popupData.when_the_condition_found">
+      </md-input-container>
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Tanggal Konsultasi/Perawatan terakhir</label>
+        <input ng-model="popupData.last_care_date">
+      </md-input-container>
     </div>
-    <div class="">
-      <div class="">Nama Rumah sakit yang dikunjungi</div>
-      <div class="">
-        <input type="text" placeholder="Enter" ng-model="popupData.hospoital_name">
-      </div>
+    <div class="row">
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Nama Rumah sakit yang dikunjungi</label>
+        <input ng-model="popupData.hospoital_name">
+      </md-input-container>
     </div>
-    <div class="">
-      <div class="">Alamat Rumah sakit yang dikunjungi</div>
-      <div class="">
-        <input type="text" placeholder="Enter" ng-model="popupData.hospital_address">
-      </div>
+    <div class="row">
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Alamat Rumah sakit yang dikunjungi</label>
+        <input ng-model="popupData.hospital_address">
+      </md-input-container>
     </div>
-    <div class="">
-      <div class="">Tindakan Medis</div>
-      <div class="">
-        <input type="text" placeholder="Enter" ng-model="popupData.medicine">
-      </div>
+    <div class="row">
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Tindakan Medis</label>
+        <input ng-model="popupData.medicine">
+      </md-input-container>
     </div>
   </form>
 </div>

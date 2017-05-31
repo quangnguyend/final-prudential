@@ -1,27 +1,40 @@
  <div class="list list-inset">
   <div class="item">
     <h1 class="description">{{vm.questions.question_1.title}}</h4>
-    <select ng-model="vm.questions.question_1.heath_check">
-      <option value="">Lainnya</option>
-    </select>
-    <input type="text" placeholder="Enter" ng-model="vm.questions.question_1.other_answer">
+    <md-input-container class="md-block">
+      <md-select ng-model="vm.questions.question_1.heath_check">
+        <md-option ng-repeat="c in vm.questions.question_1.option" ng-value="c.value" ng-selected="$index === 0">
+             {{c.type}}
+         </md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container class="md-block"  md-no-float >
+      <input  placeholder="Enter" ng-model="vm.questions.question_1.other_answer" />
+    </md-input-container>
     <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_2')">Berikutnya</button>
   </div>
   <div  class="item" ng-class="vm.questions.question_2.active == false? 'disabled': ''" class="mt-50" id="question_2">
     <h1 class="description">{{vm.questions.question_2.title}}</h4>
-    <input type="date" placeholder="DD/MM/YYYY" ng-model="vm.questions.question_2.date_inspection">
+    <md-input-container  class="md-block"   md-no-float >
+      <input type="date" placeholder="DD/MM/YYYY" onblur="(this.type='date')" ng-model="vm.questions.question_2.date_inspection">
+    </md-input-container>
+    
     <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_3')">Berikutnya</button>
   </div>
   <div  class="item" ng-class="vm.questions.question_3.active == false? 'disabled': ''" class="mt-50" id="question_3">
     <h1 class="description">{{vm.questions.question_3.title}}</h4>
-    <input type="text" placeholder="Enter" ng-model="vm.questions.question_3.examination_reason">
+    <md-input-container class="md-block" md-no-float >
+      <input placeholder="Enter" ng-model="vm.questions.question_3.examination_reason" />
+    </md-input-container>
     <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_4')">Berikutnya</button>
   </div>
   <div  class="item" ng-class="vm.questions.question_4.active == false? 'disabled': ''" class="mt-50" id="question_4">
     <h1 class="description">{{vm.questions.question_4.title}}</h4>
     <div ng-repeat="item in vm.questions.question_4.results">
       <p class="text-right">200 karakter</p>
-      <input type="text" placeholder="Enter" ng-model="item.result">
+      <md-input-container class="md-block" md-no-float >
+        <input  ng-model="item.result" placeholder="Enter"/>
+      </md-input-container>
     </div>
     <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_5')">Berikutnya</button>
     <button class="button button-stable button-block mt-30" ng-click="vm.addQuestion4()">+ Tambah tes kesehatan </button>

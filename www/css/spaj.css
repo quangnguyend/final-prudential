@@ -1326,3 +1326,11 @@
  }
  .amendment-page .item{border:none}
   .amendment-page .description{padding-left:0px;}
+
+
+.payor-page md-input-container{width:100%}
+.payor-page .icon-calendar{font-size: 40px;
+    display: -webkit-box;
+    -webkit-box-align: center;}
+
+#other-health .md-select-value>span:not(.md-select-icon){text-align: left}

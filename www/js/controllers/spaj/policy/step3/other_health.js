@@ -25,7 +25,11 @@ function otherHealthCtrl ($scope, $rootScope, $ionicPopup, UserService, DataServ
       active: true,
       title: 'Pemeriksaan kesehatan, tes diagnostik medis yang pernah Anda lakukan?',
       heath_check: '',
-      other_answer: ''
+      other_answer: '',
+      option:[
+        {"value":'value1', "type":"Lainnya"},
+        {"value":'value2', "type":"Lainnya2"}
+      ]
     },
     question_2: {
       active: false,

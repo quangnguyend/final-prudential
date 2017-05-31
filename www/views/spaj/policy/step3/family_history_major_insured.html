@@ -3,14 +3,10 @@
   <h1 class="description">Apakah ada di antara immediate family*/anggota keluarga** dari Calon Tertanggung (hidup atau meninggal) yang pernah menderita
     penyakit Jantung Koroner / Stroke / Diabetes Mellitus / Kanker / Kelainan Bawaan atau Congenital/ Penyakit lainnya?</h1>
   <div class="row">
-    <div class="col col-padding">
-      <button class="button button-stable button-block btn-insurance" ng-class="vm.family_history.question == 1? 'button-active': ''"
-        ng-click="vm.setValueQuestion(1)"><span>Ya</span></button>
-    </div>
-    <div class="col col-padding">
-      <button class="button button-stable button-block btn-insurance" ng-class="vm.family_history.question == 0? 'button-active': ''"
-        ng-click="vm.setValueQuestion(0)"><span>Tidak</span></button>
-    </div>
+     <div class="button-bar">
+        <a class="button col col-50" grouped-radio="1" ng-model="vm.family_history.question">Ya</a>
+        <a class="button col col-50" grouped-radio="0" ng-model="vm.family_history.question">Tidak</a>
+      </div>
   </div>
 </div>
 
@@ -21,33 +17,43 @@
       <div class="float-left col-95 text-left">
         <div class="row row-no-padding ">
           <div class="col col-33 col-padding">
-            <label>Tipe Asuransi</label>
-            <select class="form-input">
-              <option ng-repeat="type in vm.relationshipType" value="{{type.value}}">{{type.name}}</option>
-            </select>
+            <md-input-container class="select-box">
+              <label class="input-label">Tipe Asuransi2</label>
+              <md-select ng-model="vm.data.policy[index].insurance_type">
+                <md-option ng-repeat="type in vm.relationshipType" ng-value="{{type.value}}">
+                  {{type.name}}
+                </md-option>
+              </md-select>
+            </md-input-container>
           </div>
           <div class="col col-33 col-padding">
-            <label>Perusahaan</label>
-            <select class="form-input">
-              <option ng-repeat="type in vm.relationshipType" value="{{type.value}}">{{type.name}}</option>
-            </select>
+            <md-input-container class="select-box">
+              <label class="input-label">Perusahaan</label>
+              <md-select ng-model="vm.data.policy[index].insurance_type">
+                <md-option ng-repeat="type in vm.relationshipType"  ng-value="{{type.value}}">
+                  {{type.name}}
+                </md-option>
+              </md-select>
+            </md-input-container>
           </div>
           <div class="col col-33 col-padding">
-            <label>Uang Pertanggungan</label>
-            <input type="text" class="form-input" placeholder="Enter" ng-model="item.age_diagnosis">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Uang Pertanggungan</label>
+              <input placeholder="Enter" ng-model="item.age_diagnosis" />
+            </md-input-container>
           </div>
         </div>
         <div class="m-gap-20 col-padding">
-          <div>Tipe Kanker</div>
-          <div>
-            <input type="text" class="form-input" placeholder="Enter" ng-model="item.type_of_cancer">
-          </div>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Tipe Kanker</label>
+            <input placeholder="Enter"  ng-model="item.type_of_cancer" />
+          </md-input-container>
         </div>
         <div class="m-gap-20 col-padding">
-          <div>Jenis Gangguan</div>
-          <div>
-            <input type="text" class="form-input" placeholder="Enter" ng-model="item.type_of_disorder">
-          </div>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Jenis Gangguan</label>
+            <input placeholder="Enter" ng-model="item.type_of_disorder" />
+          </md-input-container>
         </div>
       </div>
     </li>

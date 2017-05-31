@@ -2,473 +2,358 @@
     <div class="list list-inset no-lines">
         <div class='item'>
             <div class="row-no-padding">
-                <div class="row">
-                    <label class="item-stacked-label">
-                <div class="input-label">Nama Lengkap <span class="input_red">(*)</span></div>
-              </label>
-                </div>
-                <div class="row">
-                    <input type="text" ng-model='data.name' placeholder="Enter">
-                </div>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Nama Lengkap</label>
+                    <input ng-model='data.name' required />
+                </md-input-container>
             </div>
         </div>
         <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <label class="item-stacked-label">
-                <div class="input-label">Yempat dan Tanggal lahir<span class="input_red">(*)</div></span>
-              </label>
+            <div class="row row-no-padding responsive-sm">
+                <div class="col">
+                    <md-input-container class="md-block">
+                        <label class="input-label">Jenis asuransi yang ada</label>
+                        <md-select ng-model="data.address">
+                            <md-option value="None"><em>None</em></md-option>
+                            <md-option value="Red"><em>Red</em></md-option>
+                            <md-option value="Green"><em>Green</em></md-option>
+                            <md-option value="Blue"><em>Blue</em></md-option>
+                        </md-select>
+                    </md-input-container>
                 </div>
-                <div class="row">
-                    <div class="col-40">
-                        <select ng-model='data.birthdayAddr' class="form_select" ng-model='agent.occupation'>
-                            <option selected value>Select</option>
-                            <option>Blue</option>
-                            <option>Green</option>
-                            <option>Red</option>
-                        </select>
-                    </div>
-                    <div class="col-20"></div>
-                    <div class="col-50 left_input_date">
-                        <input ng-model='data.birthday' type="date" placeholder="Enter">
-                        <span class="icon-calendar">
-                  <i class="icon ion-android-calendar"></i>
-                </span>
-                    </div>
+                <div class="col">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Tanggal Lahir </label>
+                        <input type="date" ng-model="data.date_of_birth" />
+                    </md-input-container>
                 </div>
             </div>
         </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <label class="item-stacked-label">
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <div class="row">
+                <label class="item-stacked-label">
                 <div class="input-label">Jenis Kelamin<span class="input_red">(*)</span></div>
               </label>
-                </div>
-                <div class="row">
-                    <div class="row indent_row">
-                        <div class="col-50">
-                            <input name='radio' class='custom_radio' type="radio" id='{{insuredName}}-pira'  />
-                            <label class='' for="{{insuredName}}-pira">Pira</label>
-                        </div>
-                        <div class="col-50">
-                            <input name='radio' class='custom_radio' type="radio" id='{{insuredName}}-wanita' />
-                            <label class='' for="{{insuredName}}-wanita">Wanita</label>
-                        </div>
+            </div>
+            <div class="row">
+                <div class="row indent_row">
+                    <div class="col-50">
+                        <input name='radio' class='custom_radio' type="radio" id='{{insuredName}}-pira' />
+                        <label class='' for="{{insuredName}}-pira">Pira</label>
+                    </div>
+                    <div class="col-50">
+                        <input name='radio' class='custom_radio' type="radio" id='{{insuredName}}-wanita' />
+                        <label class='' for="{{insuredName}}-wanita">Wanita</label>
                     </div>
                 </div>
             </div>
         </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <label class="item-stacked-label">
-                <div class="input-label">Status Pernikahan <span class="input_red">(*)</span></div>
-              </label>
-                </div>
-                <div class="row">
-                    <select class="form_select" ng-model='agent.occupation'>
-                <option selected value>Select</option>
-                <option>Blue</option>
-                <option>Green</option>
-                <option>Red</option>
-              </select>
-                </div>
-            </div>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <md-input-container class="md-block">
+                <label class="input-label">Status Pernikahan</label>
+                <md-select ng-model="data.occupation">
+                    <md-option value="None"><em>None</em></md-option>
+                    <md-option value="Red"><em>Red</em></md-option>
+                    <md-option value="Green"><em>Green</em></md-option>
+                    <md-option value="Blue"><em>Blue</em></md-option>
+                </md-select>
+            </md-input-container>
         </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <label class="item-stacked-label">
-                <div class="input-label">Agama<span class="input_red">(*)</span></div>
-              </label>
-                </div>
-                <div class="row">
-                    <select class="form_select" ng-model='agent.occupation'>
-                <option selected value>Select</option>
-                <option>Blue</option>
-                <option>Green</option>
-                <option>Red</option>
-              </select>
-                </div>
-            </div>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <md-input-container class="md-block">
+                <label class="input-label">Agama</label>
+                <md-select ng-model="data.agama">
+                    <md-option value="None"><em>None</em></md-option>
+                    <md-option value="Red"><em>Red</em></md-option>
+                    <md-option value="Green"><em>Green</em></md-option>
+                    <md-option value="Blue"><em>Blue</em></md-option>
+                </md-select>
+            </md-input-container>
         </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <label class="item-stacked-label">
-                <div class="input-label">Negara Kelahiran <span class="input_red">(*)</span></div>
-              </label>
-                </div>
-                <div class="row">
-                    <select class="form_select" ng-model='agent.occupation'>
-                <option selected value>Select</option>
-                <option>Blue</option>
-                <option>Green</option>
-                <option>Red</option>
-              </select>
-                </div>
-            </div>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <md-input-container class="md-block">
+                <label class="input-label">Negara Kelahiran </label>
+                <md-select ng-model="data.negara">
+                    <md-option value="None"><em>None</em></md-option>
+                    <md-option value="Red"><em>Red</em></md-option>
+                    <md-option value="Green"><em>Green</em></md-option>
+                    <md-option value="Blue"><em>Blue</em></md-option>
+                </md-select>
+            </md-input-container>
         </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <label class="item-stacked-label">
-                <div class="input-label">Kewarganegaraan <span class="input_red">(*)</span></div>
-              </label>
-                </div>
-                <div class="row">
-                    <select class="form_select" ng-model='agent.occupation'>
-                <option selected value>Select</option>
-                <option>Blue</option>
-                <option>Green</option>
-                <option>Red</option>
-              </select>
-                </div>
-            </div>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <md-input-container class="md-block">
+                <label class="input-label">Kewarganegaraan </label>
+                <md-select ng-model="data.kewarganegaraan">
+                    <md-option value="None"><em>None</em></md-option>
+                    <md-option value="Red"><em>Red</em></md-option>
+                    <md-option value="Green"><em>Green</em></md-option>
+                    <md-option value="Blue"><em>Blue</em></md-option>
+                </md-select>
+            </md-input-container>
         </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <label class="item-stacked-label">
-                <div class="input-label">No Identitas <span class="input_red">(*)</span></div>
-              </label>
-                </div>
-                <div class="row">
-                    <input type="text" placeholder="Enter">
-                </div>
-            </div>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>No Identitas </label>
+                <input ng-model='data.identitas' required>
+            </md-input-container>
         </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <label class="item-stacked-label">
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <div class="row">
+                <label class="item-stacked-label">
                 <div class="input-label">Kadaluwarsa</div>
               </label>
-                </div>
-                <div class="row">
-                    <div class="row indent_row">
-                        <div class="col-50">
-                            <input id='{{insuredName}}-seumurHidup' class='custom_radio' type="radio" name='kadaluwarasa' />
-                            <label class='' for="{{insuredName}}-seumurHidup">Seumur hidup</label>
-                        </div>
-                        <div class="col-50">
-                            <input id='{{insuredName}}-tidak' class='custom_radio' type="radio" name='kadaluwarasa' />
-                            <label class='' for="{{insuredName}}-tidak">Tidak</label>
-                        </div>
+            </div>
+            <div class="row">
+                <div class="row indent_row">
+                    <div class="col-50">
+                        <input id='{{insuredName}}-seumurHidup' class='custom_radio' type="radio" name='kadaluwarasa' />
+                        <label class='' for="{{insuredName}}-seumurHidup">Seumur hidup</label>
+                    </div>
+                    <div class="col-50">
+                        <input id='{{insuredName}}-tidak' class='custom_radio' type="radio" name='kadaluwarasa' />
+                        <label class='' for="{{insuredName}}-tidak">Tidak</label>
                     </div>
                 </div>
             </div>
         </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <label class="item-stacked-label">
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <div class="row">
+                <label class="item-stacked-label">
                 <div class="input-label">Kadaluwarsa Identitas</div>
               </label>
-                </div>
-                <div class="row left_input_date input_full_width">
-                    <input type="date" placeholder="Enter">
-                    <span class="icon-calendar">
+            </div>
+            <div class="row left_input_date input_full_width">
+                <input type="date" placeholder="Enter">
+                <span class="icon-calendar">
                 <i class="icon ion-android-calendar"></i>
               </span>
-                </div>
             </div>
         </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <label class="item-stacked-label">
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <div class="row">
+                <label class="item-stacked-label">
                 <span class="input-label">Status Pajak <span class="input_red">(*)</span></span>
               </label>
+            </div>
+            <div class="row">
+                <div class="col-33">
+                    <ion-checkbox>Wajib Pajak Indonesia</ion-checkbox>
                 </div>
-                <div class="row">
-                    <div class="col-33">
-                        <ion-checkbox>Wajib Pajak Indonesia</ion-checkbox>
-                    </div>
-                    <div class="col-33">
-                        <ion-checkbox>Pembayar pajak AS</ion-checkbox>
-                    </div>
-                    <div class="col-33">
-                        <ion-checkbox>Lainya</ion-checkbox>
-                    </div>
+                <div class="col-33">
+                    <ion-checkbox>Pembayar pajak AS</ion-checkbox>
+                </div>
+                <div class="col-33">
+                    <ion-checkbox>Lainya</ion-checkbox>
                 </div>
             </div>
         </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <label class="item-stacked-label">
-                <div class="input-label">No NPWP <span class="input_red">(*)</span></div>
-              </label>
-                </div>
-                <div class="row">
-                    <input type="text" placeholder="Enter">
-                </div>
-            </div>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>No NPWP </label>
+                <input ng-model='data.npwp' required>
+            </md-input-container>
         </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <label class="item-stacked-label">
-                <div class="input-label">Nama Perusahaan Tempat Bekerja</div>
-              </label>
-                </div>
-                <div class="row">
-                    <input type="text" placeholder="Enter">
-                </div>
-            </div>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Nama Perusahaan Tempat Bekerja</label>
+                <input ng-model='data.npwp'>
+            </md-input-container>
         </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <label class="item-stacked-label">
-                <div class="input-label">Alamat Kantor</div>
-              </label>
-                </div>
-                <div class="row">
-                    <input type="text" placeholder="Enter">
-                </div>
-            </div>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Alamat Kantor</label>
+                <input ng-model='data.alamat_kantor'>
+            </md-input-container>
         </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <label class="item-stacked-label">
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <div class="row">
+                <label class="item-stacked-label">
                 <div class="input-label">Alamat Tempat Tinggal <span class="input_red">(*)</span></div>
               </label>
-                </div>
-                <div class="row">
-                    <div class="row indent_row">
-                        <div class="col-50">
-                            <input name='alamattempattinggal' id='{{insuredName}}-alamatIndonesia' class='custom_radio' type="radio" />
-                            <label for="{{insuredName}}-alamatIndonesia">Indonesia</label>
-                        </div>
-                        <div class="col-50">
-                            <input name='alamattempattinggal' id='{{insuredName}}-alamatDiluarIndonesia' class='custom_radio' type="radio" />
-                            <label for="{{insuredName}}-alamatDiluarIndonesia">Diluar Indonesia</label>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <label class="item-stacked-label">
-                <div class="input-label">Alamat <span class="input_red">(*)</span></div>
-              </label>
-                </div>
-                <div class="row">
-                    <input type="text" placeholder="Enter">
-                </div>
-            </div>
-        </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <label class="item-stacked-label">
-                <div class="input-label">Kode Pos</div>
-              </label>
-                </div>
-                <div class="row">
-                    <input type="text" placeholder="Enter">
-                </div>
-            </div>
-        </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
+            <div class="row">
+                <div class="row indent_row">
                     <div class="col-50">
-                        <div class="row">
-                            <label class="item-stacked-label">
-                    <div class="input-label">Provinsi <span class="input_red">(*)</span></div>
-                  </label>
-                        </div>
-                        <div class="row">
-                            <input type="text" placeholder="Enter">
-                        </div>
+                        <input name='alamattempattinggal' id='{{insuredName}}-alamatIndonesia' class='custom_radio' type="radio" />
+                        <label for="{{insuredName}}-alamatIndonesia">Indonesia</label>
                     </div>
                     <div class="col-50">
-                        <div class="row">
-                            <label class="item-stacked-label">
-                    <div class="input-label">Kabupaten / Kota <span class="input_red">(*)</span></div>
-                  </label>
-                        </div>
-                        <div class="row">
-                            <input type="text" placeholder="Enter">
-                        </div>
+                        <input name='alamattempattinggal' id='{{insuredName}}-alamatDiluarIndonesia' class='custom_radio' type="radio" />
+                        <label for="{{insuredName}}-alamatDiluarIndonesia">Diluar Indonesia</label>
                     </div>
                 </div>
             </div>
         </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <div class="col-50">
-                        <div class="row">
-                            <label class="item-stacked-label">
-                    <div class="input-label">Kecamata</div>
-                  </label>
-                        </div>
-                        <div class="row">
-                            <input type="text" placeholder="Enter">
-                        </div>
-                    </div>
-                    <div class="col-50">
-                        <div class="row">
-                            <label class="item-stacked-label">
-                    <div class="input-label">Kelurahan</div>
-                  </label>
-                        </div>
-                        <div class="row">
-                            <input type="text" placeholder="Enter">
-                        </div>
-                    </div>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Alamat</label>
+                <input ng-model='data.alamat' required>
+            </md-input-container>
+        </div>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Kode Pos</label>
+                <input ng-model='data.kode_pos'>
+            </md-input-container>
+        </div>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <div class="row">
+                <div class="col-50">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Provinsi</label>
+                        <input ng-model='data.provinsi' required>
+                    </md-input-container>
+                </div>
+                <div class="col-50">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Kabupaten / Kota </label>
+                        <input ng-model='data.kabupaten' required>
+                    </md-input-container>
                 </div>
             </div>
         </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <div class="col-33">
-                        <div class="row">
-                            <label class="item-stacked-label">
-                    <div class="input-label">RT</div>
-                  </label>
-                        </div>
-                        <div class="row">
-                            <input type="text" placeholder="Enter">
-                        </div>
-                    </div>
-                    <div class="col-33">
-                        <div class="row">
-                            <label class="item-stacked-label">
-                    <div class="input-label">RW</div>
-                  </label>
-                        </div>
-                        <div class="row">
-                            <input type="text" placeholder="Enter">
-                        </div>
-                    </div>
-                    <div class="col-33">
-                        <div class="row">
-                            <label class="item-stacked-label">
-                    <div class="input-label">KM</div>
-                  </label>
-                        </div>
-                        <div class="row">
-                            <input type="text" placeholder="Enter">
-                        </div>
-                    </div>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <div class="row">
+                <div class="col-50">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Kecamata</label>
+                        <input ng-model='data.kecamata'>
+                    </md-input-container>
+                </div>
+                <div class="col-50">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Kelurahan</label>
+                        <input ng-model='data.kelurahan'>
+                    </md-input-container>
                 </div>
             </div>
         </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <div class="col-33">
-                        <div class="row">
-                            <label class="item-stacked-label">
-                    <div class="input-label">No.Tel.Rumah <span class="input_red">(*)</span></div>
-                  </label>
-                        </div>
-                        <div class="row">
-                            <div class="col-20">
-                                <select class="form_select reset_threecol" ng-model='agent.occupation'>
-                      <option selected value>+62</option>
-                      <option>+61</option>
-                      <option>+60</option>
-                      <option>+59</option>
-                    </select>
-                            </div>
-                            <div class="col-80"><input type="text" placeholder="XXX  XXXXXXXX"></div>
-                        </div>
-                    </div>
-                    <div class="col-33">
-                        <div class="row">
-                            <label class="item-stacked-label">
-                    <div class="input-label">No.Tel.Kantor</div>
-                  </label>
-                        </div>
-                        <div class="row">
-                            <div class="col-20">
-                                <select class="form_select reset_threecol" ng-model='agent.occupation'>
-                      <option selected value>+62</option>
-                      <option>+61</option>
-                      <option>+60</option>
-                      <option>+59</option>
-                    </select>
-                            </div>
-                            <div class="col-80"><input type="text" placeholder="XXX  XXXXXXXX"></div>
-                        </div>
-                    </div>
-                    <div class="col-33">
-                        <div class="row">
-                            <label class="item-stacked-label">
-                    <div class="input-label">No. HP /GSM <span class="input_red">(*)</span></div>
-                  </label>
-                        </div>
-                        <div class="row">
-                            <div class="col-20">
-                                <select class="form_select reset_threecol" ng-model='agent.occupation'>
-                      <option selected value>+62</option>
-                      <option>+61</option>
-                      <option>+60</option>
-                      <option>+59</option>
-                    </select>
-                            </div>
-                            <div class="col-80"><input type="text" placeholder="XXX  XXXXXXXX"></div>
-                        </div>
-                    </div>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <div class="row">
+                <div class="col-33">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>RT</label>
+                        <input ng-model='data.RT'>
+                    </md-input-container>
+                </div>
+                <div class="col-33">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>RW</label>
+                        <input ng-model='data.RW'>
+                    </md-input-container>
+                </div>
+                <div class="col-33">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>KM</label>
+                        <input ng-model='data.KM'>
+                    </md-input-container>
                 </div>
             </div>
         </div>
-        <div class="item">
-            <di class="row-no-padding">
-                <div class="row">
-                    <div class="button-block add_icon">
-                        <a class="button" grouped-red-radio="'Male'" ng-model="agent.gender"><i class="icon ion-ios-plus-empty"></i> <span>Tampah Kontak</span></a>
-                    </div>
+    </div>
+    </div>
+    <div class='item'  ng-repeat="contact in contacts">
+        <div class="row-no-padding">
+            <div class="row">
+                <div class="col-33">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>No.Tel.Rumah </label>
+                        <input type="tel" ng-model='data.rumah_tel' required ng-model='contact.tel.home'>
+                    </md-input-container>
                 </div>
-            </di>
+                <div class="col-33">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>No.Tel.Kantor</label>
+                        <input type="tel" ng-model='data.kantor_tel' required ng-model='contact.tel.office'>
+                    </md-input-container>
+                </div>
+                <div class="col-33">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>No. HP /GSM </label>
+                        <input type="tel" ng-model='data.hp_gsm_tel' required ng-model='contact.tel.gsm'>
+                    </md-input-container>
+                </div>
+            </div>
         </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <label class="item-stacked-label">
+    </div>
+    <div class="item">
+        <di class="row-no-padding">
+            <div class="row">
+                <div class="button-block add_icon">
+                    <a class="button" grouped-red-radio="'Male'" ng-click="addContact()"><i class="icon ion-ios-plus-empty"></i> <span>Tampah Kontak</span></a>
+                </div>
+            </div>
+        </di>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <div class="row">
+                <label class="item-stacked-label">
                 <div class="input-label">Alamat Surat Menyurat <span class="input_red">(*)</span></div>
               </label>
-                </div>
-                <div class="row">
-                    <div class="row indent_row">
-                        <div class="col-33">
-                            <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatTempatTingal' class='custom_radio' type="radio" />
-                            <label class='' for="{{insuredName}}-alamatTempatTingal">Alamat Tempat Tingal</label>
-                        </div>
-                        <div class="col-33">
-                            <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatKantor' class='custom_radio' type="radio" />
-                            <label class='' for="{{insuredName}}-alamatKantor">Alamat Kantor</label>
-                        </div>
-                        <div class="col-33">
-                            <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatLain' class='custom_radio' type="radio" />
-                            <label class='' for="{{insuredName}}-alamatLain">Alamat Lain</label>
-                        </div>
+            </div>
+            <div class="row">
+                <div class="row indent_row">
+                    <div class="col-33">
+                        <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatTempatTingal' class='custom_radio' type="radio" />
+                        <label class='' for="{{insuredName}}-alamatTempatTingal">Alamat Tempat Tingal</label>
+                    </div>
+                    <div class="col-33">
+                        <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatKantor' class='custom_radio' type="radio" />
+                        <label class='' for="{{insuredName}}-alamatKantor">Alamat Kantor</label>
+                    </div>
+                    <div class="col-33">
+                        <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatLain' class='custom_radio' type="radio" />
+                        <label class='' for="{{insuredName}}-alamatLain">Alamat Lain</label>
                     </div>
                 </div>
             </div>
         </div>
-        <div class='item'>
-            <div class="row-no-padding">
-                <div class="row">
-                    <label class="item-stacked-label">
-                <div class="input-label">Email</div>
-              </label>
-                </div>
-                <div class="row">
-                    <input type="text" placeholder="Enter">
-                </div>
-            </div>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Email</label>
+                <input type="tel" ng-model='data.hp_gsm_tel' required>
+            </md-input-container>
         </div>
+    </div>
     </div>
 </form>
