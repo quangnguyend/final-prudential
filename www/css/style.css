@@ -551,6 +551,56 @@ body label{font-size: 17px;}
 .item .item-note{font-size: 17px;}
 .item .button,
 .item select{font-size: 17px;}
+.backdrop{background-color:transparent !important}
+.popup-prudential.popup-container  .popup{ width: 100%;  background-color:#FFF;    background-color: #FFF;
+    bottom: 0px; top:50px;
+    position: absolute; max-height: 100%}
+.popup-prudential.popup-container .popup-head{background-color:#DA291C; color:#FFF}
+.popup-prudential.popup-container .popup-head .popup-title{color: #FFF}
+.popup-prudential.popup-container .btn-popup-save{
+    background-color: #DA291C;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 60px;}
+.popup-prudential .btn-popup-back{
+  background: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.popup-prudential .btn-popup-close{
+  position: absolute;
+  top: 0px;
+  right: 0;
+  background: transparent;
+  color: #fff;
+  width: 50px;
+  height: 40px;
+  display: block;
+  flex: inherit;
+  margin: 0;
+  min-height: initial;
+  min-width: initial;
+  padding: 0;
+  line-height: 0;
+}
+.popup-prudential .popup-buttons{
+  padding: 0;
+}
+.popup-prudential .popup-buttons button{
+  border-radius: 0;
+}
+.popup-prudential .popup-head{
+  background-color: #f7f5f5;
+  border: none;
+}
+.popup-prudential .popup-wrapper{
+  padding: 10px;
+}
+.popup-prudential .scroll-view.scroll-y{
+  height: 300px;
+}
 @media only screen and (min-width: 768px)  { 
   .body, 
   body *,
@@ -559,7 +609,7 @@ body label{font-size: 17px;}
   label.item, 
   .item select,
   #step-header select{font-size:25px;}
-
+  #eye-popup .popup-content .number{font-size: 20px;}
   .description {
     font-size: 25px;
     line-height: 30px;

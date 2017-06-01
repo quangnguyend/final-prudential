@@ -58,6 +58,8 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
   }
   vm.eyePopupTouched = false
 
+  vm.rgb=['red', 'green', 'blue'];
+
   vm.checkPropertiesNotNull = function (arrayObj) {
     if (arrayObj === null || arrayObj === '') { return false }
     for(var i = 0; i < arrayObj.length; i++) {
@@ -101,7 +103,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     }
   }
 
-  vm.showPopup = function () {
+  vm.showPopupEye = function () {
     // custom popup
     vm.popupData = vm.healthData.eyePopupData
     vm.addPopupData = function () {
@@ -123,13 +125,6 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
       cssClass: 'popup-prudential',
       scope: $scope,
       buttons: [
-        {
-          text: '<i class="icon ion-ios-arrow-back"></i>',
-          type: 'btn-popup-back',
-          onTap: function (e) {
-            e.preventDefault()
-          }
-        },
         {
           text: '<i class="icon ion-android-close"></i>',
           type: 'btn-popup-close',
@@ -162,7 +157,38 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
   vm.health1NextStep = function (id) {
     var STEP_HEIGHT = $('.multi-step').height() + 120
     var distance = $('#' + id) && $('#' + id).position().top + STEP_HEIGHT
-    if ($scope.health1Steps.indexOf(id) < 0) $scope.health1Steps.push(id)
+    if (vm.health1Steps.indexOf(id) < 0) vm.health1Steps.push(id)
     $ionicScrollDelegate.scrollTo(0, distance, true)
+  }
+  // popup
+
+  vm.showPopupDigestive = function () {
+    var digestivePopup = $ionicPopup.show({
+      templateUrl: 'views/spaj/policy/step2/popup-digestive.html',
+      title: 'Detail Kondisi Mata',
+      cssClass: 'popup-prudential',
+      scope: $scope,
+      buttons: [
+        {
+          text: '<i class="icon ion-android-close"></i>',
+          type: 'btn-popup-close',
+          onTap: function (e) {
+            // eyePopup.close();
+            return vm.popupData
+          }
+        },
+        {
+          text: 'Selesai',
+          type: 'button-assertive btn-popup-save',
+          onTap: function (e) {
+            return vm.popupData
+          }
+        }
+      ]
+    })
+    digestive.then(function (res) {
+      //vm.healthData.eyePopupData = res
+      //vm.eyePopupTouched = true
+    })
   }
 }
