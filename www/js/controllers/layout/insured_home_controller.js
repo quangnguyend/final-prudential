@@ -30,6 +30,8 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
     $scope.option = value
   }
 
+  $scope.boxCheckButton = false;
+
   $scope.$watch('[option]', function () {
     $rootScope.dataSave = {
       conditionSelected: $scope.conditionSelected,
