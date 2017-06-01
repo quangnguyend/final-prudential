@@ -1437,7 +1437,10 @@
    font-size: 16px;
  }
  .amendment-page .item{border:none}
-  .amendment-page .description{padding-left:0px;}
+  .amendment-page .description{
+    padding-left:0px;
+    font-weight: normal !important;
+  }
 
 
 .payor-page md-input-container{width:100%}
