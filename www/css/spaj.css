@@ -655,7 +655,7 @@
 /* Css PH Info */
 
 #policy_info_ph_info {
-  padding-bottom: 50px;
+  
 }
 
 #policy_info_ph_info, #policy_info_ph_info h2, #policy_info_ph_info .button, #policy_info_ph_info .input-label, #policy_info_ph_info input[type="text"], #policy_info_ph_info input[type="date"], #policy_info_ph_info .form_select {
@@ -842,6 +842,34 @@
   background-size: 15px 13px;
   color: #39393A;
   font-size: 18px;
+}
+#policy_info_ph_info .checkbox-condition .item-checkbox{
+  float: left;
+}
+#policy_info_ph_info .label-text-check {
+  margin-top: -6px;
+  display: block;
+  overflow: auto;
+  text-overflow: initial;
+  white-space: normal;
+  font-size: 25px;
+  line-height: normal;
+}
+#policy_info_ph_info .button-device-block .button{
+  display: block;
+  width: 50%;
+  float: left;
+  border: 1px solid #5B6770;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#policy_info_ph_info .button-device-block .button span{
+  font-size: 16px;
+  display: block;
+  margin-top: -10px;
+}
+#policy_info_ph_info .button-device-block .button:first-child{
+  border-right-width: 0;
 }
 
 
