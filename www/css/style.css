@@ -398,7 +398,8 @@ select {
 .tab-menu .col.active {
   border-bottom: 2px solid #da291c;
   border-right: 1px solid #f1d6d7;
-  border-left: 1px solid #f1d6d7
+  border-left: 1px solid #f1d6d7;
+  color: #da291c;
 }
 
 .tab-menu .col.active:first-child {
@@ -476,19 +477,12 @@ select {
 
 /*css for step header*/
 
-@media screen and (max-width: 720px) {
-  #step-header {
-    width: 60px;
-  }
-}
-
 #step-header {
-  position: absolute;
-  right: 0px;
-  top: 15px;
+  margin: auto;
 }
 
-#step-header select {
+#step-header md-select {
+  margin: 0px;
   background: transparent;
   border: none;
   color: white;
