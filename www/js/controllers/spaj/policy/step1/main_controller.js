@@ -21,16 +21,25 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
     vm.currentTabIndex = index
   }
 
-  vm.addAdditionalTab = function () {
+  vm.addAdditionalTab = function (tabIndex) {
     var numberTab = vm.additionalList.length
-    // we have only maximum 2 addtional tabs
-    if (numberTab === 2) { return }
-    vm.currentTabIndex = numberTab
-    vm.additionalList.push({
-      id: 'ADDITIONAL_' + numberTab,
-      name: 'Tertanggung Tambahan ' + (numberTab + 1)
-    })
-    vm.currentTab = 'ADDITIONAL_' + numberTab
+    var newTab = {}
+    if (typeof tabIndex === 'undefined') { tabIndex = numberTab }
+    // we have only maximum 2 addtional tabs and only accept index 0 or 1
+    if (numberTab === 2 && (tabIndex !== 1 || tabIndex !== 0)) { return }
+    if (vm.additionalList[0] && vm.additionalList[0].index === tabIndex) {
+      tabIndex = 1 - tabIndex // switch between 0 and 1
+    }
+
+    newTab = {
+      index: tabIndex,
+      id: 'ADDITIONAL_' + tabIndex,
+      name: 'Tertanggung Tambahan ' + (tabIndex + 1)
+    }
+
+    vm.currentTabIndex = tabIndex
+    vm.additionalList.push(newTab)
+    vm.currentTab = 'ADDITIONAL_' + tabIndex
   }
 
   vm.nextClickHandle = function () {
@@ -75,12 +84,10 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
     if (!rootSpajData) {
       $state.go('app.spaj_start')
     } else {
-      var typeOfSession = rootSpajData.session1
-      if (typeOfSession == 1 || typeOfSession == 2) {
+      var typeOfSession = Number.parseInt(rootSpajData.session1)
+      if (typeOfSession === 1 || typeOfSession === 2) {
         vm.PH = ''
-        for (var i = 0; i < parseInt(typeOfSession); i++) {
-          vm.addAdditionalTab()
-        }
+        vm.addAdditionalTab(typeOfSession - 1)
       }
     }
   }

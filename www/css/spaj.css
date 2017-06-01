@@ -68,6 +68,12 @@
   position: relative;
 }
 
+.multi-step .col div{
+  font-size: 17px;
+  margin-top: 5px;
+  color:#fff;
+}
+
 .multi-step .col span {
   background: #F8383F;
   color: #FFF;
@@ -1400,7 +1406,10 @@
    font-size: 16px;
  }
  .amendment-page .item{border:none}
-  .amendment-page .description{padding-left:0px;}
+  .amendment-page .description{
+    padding-left:0px;
+    font-weight: normal !important;
+  }
 
 
 .payor-page md-input-container{width:100%}

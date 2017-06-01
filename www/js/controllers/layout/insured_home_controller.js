@@ -4,18 +4,18 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
   $rootScope.showMenu = true
   var vm = this
 
-  vm.insuredData={
-    address:[{
-      rumah_tel:null,
-      kantor_tel:null,
-      hp_gsm_tel:null
+  vm.insuredData = {
+    address: [{
+      rumah_tel: null,
+      kantor_tel: null,
+      hp_gsm_tel: null
     }]
   }
-  vm.addInsuredAddress=function(){
-    var newAddress={
-      rumah_tel:null,
-      kantor_tel:null,
-      hp_gsm_tel:null
+  vm.addInsuredAddress = function () {
+    var newAddress = {
+      rumah_tel: null,
+      kantor_tel: null,
+      hp_gsm_tel: null
     }
     vm.insuredData.address.push(newAddress)
   }
@@ -44,7 +44,7 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
     if (!SpajService.getData('step1')) {
       SpajService.setData('step1', {})
     }
-    data = SpajService.getData('step1')
+    var data = SpajService.getData('step1')
     data[insuredName] = $scope.data
 
     $scope.$on('$destroy', function () {

@@ -1,3 +1,7 @@
 <div class="bar bar-header bar-light">
-    <span class='title'>Step {{vm.step}}: {{vm.title}}</span>
+  <div id="step-header">
+    <select ng-model='vm.selectStep' ng-change="vm.changeStep()">
+        <option ng-repeat="step in vm.steps" value='{{step.step}}'>Step {{step.step}} {{step.title}}</option>
+      </select>
+  </div>
 </div>
