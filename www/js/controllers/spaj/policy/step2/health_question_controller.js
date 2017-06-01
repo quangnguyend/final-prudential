@@ -60,14 +60,11 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
 
   vm.checkPropertiesNotNull = function (arrayObj) {
     if (arrayObj === null || arrayObj === '') { return false }
-    
     for(var i = 0; i < arrayObj.length; i++) {
       for (var key in arrayObj[i]) {
-        console.log('co gia tri', key)
         if (!arrayObj[i][key]) return false
       }
     }
-   
     return true
   }
 
@@ -103,10 +100,9 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     }
   }
 
- vm.showPopup = function () {
+  vm.showPopup = function () {
     // custom popup
     vm.popupData = vm.healthData.eyePopupData
-   
     vm.addPopupData = function () {
       vm.popupData.push({
         name_of_illness: null,

@@ -5,7 +5,7 @@ function activePolicyCtrl ($state, $scope, $rootScope, $stateParams, SpajService
 
   var vm = this
   vm.nextClickHandle = function () {
-        $state.go('app.step2')
+    $state.go('app.step2')
   }
 
   vm.policy={
