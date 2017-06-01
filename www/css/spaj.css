@@ -166,8 +166,8 @@
 #health_question1 .item {
   border: none;
   padding: 40px 0 0;
-  /*opacity: 0.4;
-  pointer-events: none;*/
+  opacity: 0.4;
+  pointer-events: none;
 }
 
 #health_question1 .item:nth-child(1), #health_question1 .item._active {
@@ -522,9 +522,9 @@
   position: relative;
   top: 50px;
   left: -15px;
+  font-size: 17px;
 }
 #eye-popup .popup-content label{
-  font-size: 17px!important;
   color: #39393A;
 }
 
@@ -532,10 +532,9 @@
   background: #F7F5F5;
   opacity: 1.00;
   border-radius: 2px;
-  width: 80%;
+  width: 100%;
   text-align: center;
   margin: 0 auto;
-  font-size: 17px;
   line-height: 100%;
   letter-spacing: -0.408px;
   color: rgba(73, 84, 93, 0.5);
@@ -550,45 +549,7 @@
 .button-red{
   background: #d0021b;
 }
-.popup-prudential.popup-container .popup {
-  width: 90%;
-  background-color: rgba(255,255,255, 1);
-}
-.popup-prudential .btn-popup-back{
-  background: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.popup-prudential .btn-popup-close{
-  position: absolute;
-  top: -40px;
-  right: 0;
-  background: #f00;
-  color: #fff;
-  width: 50px;
-  height: 40px;
-  display: block;
-  flex: inherit;
-  margin: 0;
-  min-height: initial;
-  min-width: initial;
-  padding: 0;
-  line-height: 0;
-}
-.popup-prudential .popup-buttons{
-  padding: 0;
-}
-.popup-prudential .popup-buttons button{
-  border-radius: 0;
-}
-.popup-prudential .popup-head{
-  background-color: #f7f5f5;
-  border: none;
-}
-.popup-prudential .popup-wrapper{
-  padding: 10px;
-}
+
 /*Css for beneficiary*/
 
 #policy_beneficiary {
@@ -1421,25 +1382,27 @@
   padding: 0px!important;
 }
 /* step 3 style*/
-#add-digestive{}
-#add-digestive .item-checkbox p{padding-left: 40px; }
-#add-digestive .item-checkbox{width:33.3%}
-#add-digestive .item-checkbox .checkbox{left:0px; padding-left: 0px}
-#add-digestive .customize-cb .item{padding-top: 17px;
+#digestive-popup{}
+#digestive-popup .item{border:none}
+#digestive-popup .item-checkbox p{padding-left: 40px; }
+#digestive-popup .item-checkbox{width:33.3%}
+#digestive-popup .item-checkbox .checkbox{left:0px; padding-left: 0px}
+#digestive-popup .customize-cb .item{padding-top: 17px;
     height: 50px;}
-    #add-digestive  ul.more {height: 40px}
-#add-digestive  ul.more li{height: 50px; margin-left: 40px;padding-top: 0px;}
-#add-digestive .more-space{margin-bottom:10px}
-#add-digestive .row-no-padding h4{padding:10px 0 ; font-size:16px; font-weight: normal}
- #add-digestive .title-cb{    line-height: 40px;
+    #digestive-popup  ul.more {height: 40px}
+#digestive-popup  ul.more li{height: 50px; margin-left: 40px;padding-top: 0px;}
+#digestive-popup .more-space{margin-bottom:10px}
+#digestive-popup .row-no-padding h4{padding:10px 0 ; font-size:16px; font-weight: normal}
+ #digestive-popup .title-cb{    line-height: 40px;
     font-size: 20px;
     font-weight: bold;}
- #add-digestive .col.disable{
+ #digestive-popup .col.disable{
    opacity: 0.4; pointer-events: none
  }
-  #add-digestive .col.active{
+  #digestive-popup .col.active{
    opacity: 1; pointer-events: normal
  }
+ #digestive-popup .button.next{width: 100%}
  .amendment-page.wrapper{
    margin-left: auto;
    margin-right: auto; 
