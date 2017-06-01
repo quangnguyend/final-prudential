@@ -398,7 +398,8 @@ select {
 .tab-menu .col.active {
   border-bottom: 2px solid #da291c;
   border-right: 1px solid #f1d6d7;
-  border-left: 1px solid #f1d6d7
+  border-left: 1px solid #f1d6d7;
+  color:#DA291C
 }
 
 .tab-menu .col.active:first-child {
