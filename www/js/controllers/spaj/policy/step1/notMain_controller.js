@@ -30,16 +30,34 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
   }
 
   $scope.nextClickHandle = function () {
+    validator(function (rs) {
+      if (rs.indexOf(false) >= 0) {
+        SpajService.stepComplete('step1', false)
+      } else {
+        SpajService.stepComplete('step1', true)
+      }
+    })
     if ($scope.currentLayout === MAIN_LAYOUT) { $scope.currentLayout = ACTIVE_INSURED } else if ($scope.currentLayout === ACTIVE_INSURED) {
       $state.go('app.step2')
     }
-    // console.dir(SpajService.getData())
   }
 
   function initPage (rootSpajData) {
     if (!rootSpajData) return
     if (rootSpajData.tambahan1) { $scope.addAdditionalTab() }
     if (rootSpajData.tambahan2) { $scope.addAdditionalTab() }
+  }
+
+  function validator (callback) {
+    if (!SpajService.getData('step1')) {
+      SpajService.setData('step1', {})
+    }
+
+    setTimeout(function () {
+      var data = SpajService.getData('step1')
+      var rs = Object.keys(data).map(function (page) { return data[page].isComplete })
+      callback(rs)
+    }, 1500)
   }
 
   initPage(rootSpajData)

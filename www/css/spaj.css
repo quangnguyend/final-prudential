@@ -80,7 +80,6 @@
   font-size: 16px;
   position: relative;
   z-index: 2;
-  border: solid 1px white;
 }
 
 .multi-step .col {
@@ -113,6 +112,10 @@
 
 .multi-step .col.complete span{
   border: none;
+}
+
+.multi-step .col.incomplete span{
+  border: solid 1px white;
 }
 
 .multi-step .col.active span {
