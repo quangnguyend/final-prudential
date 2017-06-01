@@ -68,6 +68,12 @@
   position: relative;
 }
 
+.multi-step .col div{
+  font-size: 17px;
+  margin-top: 5px;
+  color:#fff;
+}
+
 .multi-step .col span {
   background: #F8383F;
   color: #FFF;
