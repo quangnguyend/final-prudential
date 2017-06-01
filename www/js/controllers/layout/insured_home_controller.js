@@ -5,13 +5,21 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
   var vm=this;
 
   vm.insuredData={
-    address:[{}]
+    address:[{
+      rumah_tel:null,
+      kantor_tel:null,
+      hp_gsm_tel:null
+    }]
   }
   vm.addInsuredAddress=function(){
-    vm.insuredData.address.push({})
+    var newAddress={
+      rumah_tel:null,
+      kantor_tel:null,
+      hp_gsm_tel:null
+    }
+    vm.insuredData.address.push(newAddress)
   }
   $scope.data = {}
-  var data = {}
 
   $scope.conditionSelected = false
   $scope.$watch('[conditionSelected]', function(){

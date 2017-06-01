@@ -1,6 +1,6 @@
 <div id="eye-popup" class="popup-wrapper">
   <div class="popup-content">
-    <div class="item no-lines" ng-repeat="(index, item) in popupData track by $index">
+    <div class="item no-lines" ng-repeat="(index, item) in vm.popupData track by $index">
       <span class="number">{{index + 1}}</span>
       <div class="row">
         <md-input-container class="md-block" flex-gt-sm>
@@ -38,7 +38,7 @@
       </div>
     </div>
     <div class="row">
-      <button class="add-more-btn" ng-click="addPopupData()">
+      <button class="add-more-btn" ng-click="vm.addPopupData()">
         + Tambah detail kondisi 
       </button>
     </div>

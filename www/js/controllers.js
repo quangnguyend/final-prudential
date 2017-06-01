@@ -55,6 +55,7 @@ angular
   .controller('Step1Ctrl', step1Ctrl)
   .controller('PhMainCtrl', phMainCtrl)
   .controller('PhNotMainCtrl', phNotMainCtrl)
+  .controller('ActivePolicyCtrl', activePolicyCtrl)
   .controller('Step2Ctrl', step2Ctrl)
   .controller('OtherHealthCtrl', otherHealthCtrl)
   .controller('FamilyHistoryCtrl', familyHistoryCtrl)
