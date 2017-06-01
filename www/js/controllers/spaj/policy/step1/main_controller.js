@@ -37,6 +37,8 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
         SpajService.stepComplete('step1', true)
       }
     })
+    // console.log($rootScope.dataSave);
+    SpajService.setData('spaj1', $rootScope.dataSave)
     $state.go('app.step2')
   }
 

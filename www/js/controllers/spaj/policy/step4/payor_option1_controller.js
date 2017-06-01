@@ -5,6 +5,7 @@ function payorOption1Ctrl ($scope, DataService, $ionicScrollDelegate, $location)
     { title: 'Tertanggung Tambahan 1', value: 'payor_option1' }
   ]
   vm.currentTab = 'payor_option0'
+
   vm.questions = {
     birplace: ['Option1', 'Option2', 'Option3'],
     homeaddress: ['Option1', 'Option2', 'Option3'],
