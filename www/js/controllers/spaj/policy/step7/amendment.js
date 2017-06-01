@@ -1,4 +1,4 @@
-function amendmentCtrl ($scope, $rootScope, SpajService) {
+function amendmentCtrl ($scope, $rootScope, SpajService, $state) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
@@ -25,4 +25,15 @@ function amendmentCtrl ($scope, $rootScope, SpajService) {
   }
 
   vm.amendment = ''
+
+  function validator () {
+    // TODO
+    return true
+  }
+
+  vm.handleSubmit = function () {
+    $state.go('app.step8')
+    // TODO
+    SpajService.setData('step7', {isComplete: validator()})
+  }
 }

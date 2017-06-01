@@ -33,9 +33,15 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
   $timeout(function () {
     var insuredName = $attrs.insuredData
     $scope.insuredName = insuredName
-    if (!SpajService.getData(insuredName)) { SpajService.setData(insuredName, {}) }
-    data = SpajService.getData(insuredName)
-    data.data = $scope.data
+    if (!SpajService.getData('step1')) {
+      SpajService.setData('step1', {})
+    }
+    data = SpajService.getData('step1')
+    data[insuredName] = $scope.data
+
+    $scope.$on('$destroy', function () {
+      data[insuredName]['isComplete'] = validator()
+    })
   })
 
   $scope.contacts = [
@@ -50,5 +56,12 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
       tel_gsm: ''
     }
     $scope.contacts.push(tel)
+  }
+
+  function validator () {
+    var data = $scope.data
+    // TODO
+    if (data.name) { return true }
+    return false
   }
 }
