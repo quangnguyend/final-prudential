@@ -8,18 +8,18 @@
       <div class='row tab-menu'>
         <div class='col blur-text' ng-disabled><span class="d-table"><span class="d-table-cell">Pemegang Polis</span></span>
         </div>
-        <div class='col' ng-click='switchTab(main_insured_tab)' ng-class='currentTab===main_insured_tab?"active":""'><span class="d-table"><span class="d-table-cell">Tertanggung Utama</span></span>
+        <div class='col' ng-click='vm.switchTab(vm.main_insured_tab)' ng-class='vm.currentTab===vm.main_insured_tab?"active":""'><span class="d-table"><span class="d-table-cell">Tertanggung Utama</span></span>
         </div>
-        <div class='col' ng-repeat='tab in additionalList' ng-click='switchTab(tab.id)' ng-class='currentTab===tab.id?"active":""'><span class="d-table"><span class="d-table-cell">{{tab.name}}</span></span>
+        <div class='col' ng-repeat='tab in vm.additionalList track by $index' ng-click='vm.switchTab(tab.id)' ng-class='vm.currentTab===tab.id?"active":""'><span class="d-table"><span class="d-table-cell">{{tab.name}}</span></span>
         </div>
-        <div ng-if='additionalList.length<2' class='col blur-text' ng-click='addAdditionalTab()'><span class="d-table"><span class="d-table-cell">+ Tertanggung Tambahan</span></span>
+        <div ng-if='vm.additionalList.length<2' class='col blur-text' ng-click='vm.addAdditionalTab()'><span class="d-table"><span class="d-table-cell">+ Tertanggung Tambahan</span></span>
         </div>
       </div>
     </div>
     </div>
-    <div ng-show='currentLayout === main_layout'>
-      <insured-home insured-data='{{main_insured_tab}}' ng-show='currentTab===main_insured_tab'></insured-home>
-      <insured-home ng-repeat='tab in additionalList' insured-data='{{tab.id}}' ng-show='currentTab===tab.id' ng-class='currentTab===tab.id?"active":""'></insured-home>
+    <div ng-show='vm.currentLayout === vm.main_layout'>
+      <insured-home insured-data='{{vm.main_insured_tab}}' ng-show='vm.currentTab===vm.main_insured_tab'></insured-home>
+      <insured-home ng-repeat='tab in vm.additionalList track by $index' insured-data='{{tab.id}}' ng-show='vm.currentTab===tab.id' ng-class='vm.currentTab===tab.id?"active":""'></insured-home>
     </div>
     <!--note-->
      <div id="" class="wrapper has-bottom-bar active-insurance-page">
