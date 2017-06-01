@@ -1,4 +1,4 @@
-function beneficiariesCtrl ($scope, $rootScope) {
+function beneficiariesCtrl ($scope, $rootScope, $state, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
@@ -25,5 +25,16 @@ function beneficiariesCtrl ($scope, $rootScope) {
         }
       })
     }
+  }
+
+  function validator () {
+    // TODO
+    return true
+  }
+
+  vm.handleSubmit = function () {
+    $state.go('app.step6')
+    // TODO
+    SpajService.setData('step5', {isComplete: validator()})
   }
 }

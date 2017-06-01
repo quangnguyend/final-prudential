@@ -1,4 +1,4 @@
-function documentUploadCtrl ($scope, $rootScope, Upload, SpajService) {
+function documentUploadCtrl ($scope, $rootScope, Upload, $state, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
@@ -69,5 +69,15 @@ function documentUploadCtrl ($scope, $rootScope, Upload, SpajService) {
          evt.loaded / evt.total)); */
       })
     }
+  }
+  function validator () {
+    // TODO
+    return true
+  }
+
+  vm.handleSubmit = function () {
+    $state.go('app.step7')
+    // TODO
+    SpajService.setData('step6', {isComplete: validator()})
   }
 }

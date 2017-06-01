@@ -67,7 +67,8 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
   }
 
   vm.nextStep = function () {
-    SpajService.setData('step2_HealthData', vm.healthData)
+    vm.healthData.isComplete = validator()
+    SpajService.setData('step2', vm.healthData)
     $state.go('app.step3')
   }
 
@@ -145,6 +146,10 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
       vm.healthData.eyePopupData = res
       vm.eyePopupTouched = true
     })
+  }
+
+  function validator () {
+    return true
   }
 
   // Spaj Health 1
