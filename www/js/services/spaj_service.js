@@ -15,7 +15,8 @@ function spajService ($rootScope, $http, $location, $ionicLoading, $cordovaProgr
   }
 
   function setData (key, value) {
-    dataSpaj[key] = value
+    var data = _.assign(dataSpaj[key], value)
+    dataSpaj[key] = _.assign({}, data)
   }
 
   function stepComplete (step, status) {
