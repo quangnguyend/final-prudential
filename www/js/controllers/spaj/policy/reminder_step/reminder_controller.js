@@ -4,7 +4,7 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService) {
   $rootScope.showMenu = true
 
   var vm = this
-  vm.healthData = SpajService.getData('step2_HealthData')
+  vm.healthData = SpajService.getData('step2')
   vm.healthFormValidStatus = {
     is_checked: false,
     null_properties: []

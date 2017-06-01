@@ -1,7 +1,7 @@
 <div class='wrapper-multi-step'>
   <ul class="row text-center multi-step">
-    <li ng-repeat="page in vm.pageList" class='col' ng-class="vm.policyStep === page.step?'active':''">
-      <span><a href="#/app/{{page.state}}" ng-click="vm.changeStep(page.step)">{{page.step}}</a></span>
+    <li ng-repeat="page in vm.pageList" name='{{"step-"+page.step}}' class='col' ng-class='{"complete":page.complete, "incomplete":!page.complete, "actives":vm.policyStep === page.step}'>
+      <span><a href="" ng-click="vm.changeStep(page)">{{page.step}}</a></span>
     </li>
   </ul>
 </div>

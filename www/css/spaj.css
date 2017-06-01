@@ -110,6 +110,14 @@
   color: #DA291C
 }
 
+.multi-step .col.complete span{
+  border: none;
+}
+
+.multi-step .col.incomplete span{
+  border: solid 1px white;
+}
+
 .multi-step .col.active span {
   background: #FFF;
   color: #DA291C;

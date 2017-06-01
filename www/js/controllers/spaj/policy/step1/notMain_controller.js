@@ -52,8 +52,36 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
 
 
   vm.nextClickHandle = function () {
+    validator(function (rs) {
+      if (rs.indexOf(false) >= 0) {
+        SpajService.stepComplete('step1', false)
+      } else {
+        SpajService.stepComplete('step1', true)
+      }
+    })
+
     if (vm.currentLayout === MAIN_LAYOUT) { $state.go('app.active_policy') } else if (vm.currentLayout === ACTIVE_INSURED) {
       $state.go('app.step2')
     }
   }
+
+  function initPage (rootSpajData) {
+    if (!rootSpajData) return
+    if (rootSpajData.tambahan1) { $scope.addAdditionalTab() }
+    if (rootSpajData.tambahan2) { $scope.addAdditionalTab() }
+  }
+
+  function validator (callback) {
+    if (!SpajService.getData('step1')) {
+      SpajService.setData('step1', {})
+    }
+
+    setTimeout(function () {
+      var data = SpajService.getData('step1')
+      var rs = Object.keys(data).map(function (page) { return data[page].isComplete })
+      callback(rs)
+    }, 1500)
+  }
+
+  initPage(rootSpajData)
 }
