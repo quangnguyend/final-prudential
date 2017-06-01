@@ -5,15 +5,14 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
   var MAIN_INSURED_TAB = 'MAIN_INSURED', MAIN_LAYOUT = 'MAIN_LAYOUT',
     ACTIVE_INSURED = 'ACTIVE_INSURED'
   var vm = this
-
   var rootSpajData = SpajService.getData('spaj')
-  $scope.currentLayout = MAIN_LAYOUT
-  $scope.main_layout = MAIN_LAYOUT
-  $scope.active_insured_layout = ACTIVE_INSURED
-  $scope.main_insured_tab = MAIN_INSURED_TAB
+  vm.currentLayout = MAIN_LAYOUT
+  vm.main_layout = MAIN_LAYOUT
+  vm.active_insured_layout = ACTIVE_INSURED
+  vm.main_insured_tab = MAIN_INSURED_TAB
 
-  $scope.currentTab = MAIN_INSURED_TAB
-  $scope.additionalList = []
+  vm.currentTab = MAIN_INSURED_TAB
+  vm.additionalList = []
 
   vm.policy = {
     apaka: null,
@@ -36,22 +35,22 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
     }
   }
 
-  $scope.switchTab = function (tab) {
-    $scope.currentTab = tab || MAIN_INSURED_TAB
+  vm.switchTab = function (tab) {
+    vm.currentTab = tab || MAIN_INSURED_TAB
   }
 
-  $scope.addAdditionalTab = function () {
-    var numberTab = $scope.additionalList.length
+  vm.addAdditionalTab = function () {
+    var numberTab = vm.additionalList.length
     // we have only maximum 2 addtional tabs
     if (numberTab === 2) { return }
-    $scope.additionalList.push({
+    vm.additionalList.push({
       id: 'ADDITIONAL_' + numberTab,
       name: 'Tertanggung Tambahan ' + (numberTab + 1)
     })
-    $scope.currentTab = 'ADDITIONAL_' + numberTab
+    vm.currentTab = 'ADDITIONAL_' + numberTab
   }
 
-  $scope.nextClickHandle = function () {
+  vm.nextClickHandle = function () {
     validator(function (rs) {
       if (rs.indexOf(false) >= 0) {
         SpajService.stepComplete('step1', false)
