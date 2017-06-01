@@ -357,7 +357,7 @@
             </md-input-container>
         </div>
     </div>
-    <div class='item'>
+    <div class='item' ng-hide="boxCheckButton">
       <div class="row-no-padding checkbox-condition">
         <div class="row">
           <label class="item-stacked-label">
@@ -368,7 +368,7 @@
         </div>
       </div>
     </div>
-    <div class='item'>
+    <div class='item' ng-hide="boxCheckButton">
       <div class="row-no-padding">
         <div class="row">
           <label class="item-stacked-label">
@@ -377,8 +377,8 @@
         </div>
         <div class="row">
           <div class="button-block button-device-block">
-            <a class='button' ng-disabled='nextButtonDisabled' ng-click="getValueButton(1)">E-policy <span>1 hari kerja setelah persetujuan</span></a>
-            <a class='button' ng-disabled='nextButtonDisabled' ng-click="getValueButton(0)">Buku Polis ke alamat rumah <span>Dalam waktu 10 hari kerja setelah persetujuan</span></a>
+            <a class='button' ng-class="isactive==1?'active':''" ng-disabled='nextButtonDisabled' ng-click="getValueButton(1)">E-policy <span>1 hari kerja setelah persetujuan</span></a>
+            <a class='button' ng-class="isactive==1?'active':''" ng-disabled='nextButtonDisabled' ng-click="getValueButton(0)">Buku Polis ke alamat rumah <span>Dalam waktu 10 hari kerja setelah persetujuan</span></a>
           </div>
         </div>
       </div>

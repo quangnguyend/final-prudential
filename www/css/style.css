@@ -67,8 +67,8 @@ ion-footer-bar.bar.bar-assertive {
 }
 
 .bar.bar-header .title {
-  font-size: 25px !important;;
-  color: #fff  !important;!important;
+  font-size: 25px !important;
+  color: #fff  !important ;
   font-weight: normal;
   height: 55px;
   line-height: 65px;
@@ -399,7 +399,7 @@ select {
   border-bottom: 2px solid #da291c;
   border-right: 1px solid #f1d6d7;
   border-left: 1px solid #f1d6d7;
-  color:#DA291C
+  color: #da291c;
 }
 
 .tab-menu .col.active:first-child {
@@ -477,19 +477,12 @@ select {
 
 /*css for step header*/
 
-@media screen and (max-width: 720px) {
-  #step-header {
-    width: 60px;
-  }
-}
-
 #step-header {
-  position: absolute;
-  right: 0px;
-  top: 15px;
+  margin: auto;
 }
 
-#step-header select {
+#step-header md-select {
+  margin: 0px;
   background: transparent;
   border: none;
   color: white;

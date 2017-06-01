@@ -847,6 +847,11 @@
 #policy_info_ph_info .button-device-block .button:first-child{
   border-right-width: 0;
 }
+#policy_info_ph_info .button-device-block .button:hover, #policy_info_ph_info .button-device-block .button:active, #policy_info_ph_info .button-device-block .button.active {
+  background-color: #DA291C;
+  border-color: #DA291C;
+  color: white;
+}
 
 
 /* Terms & Conditions */
