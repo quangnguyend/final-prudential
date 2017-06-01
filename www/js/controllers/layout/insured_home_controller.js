@@ -2,7 +2,7 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
-  var vm=this;
+  var vm = this
 
   vm.insuredData={
     address:[{
@@ -22,21 +22,21 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
   $scope.data = {}
 
   $scope.conditionSelected = false
-  $scope.$watch('[conditionSelected]', function(){
-    $scope.nextButtonDisabled = !$scope.conditionSelected;
-  }, true );
+  $scope.$watch('[conditionSelected]', function () {
+    $scope.nextButtonDisabled = !$scope.conditionSelected
+  }, true)
 
-  $scope.getValueButton= function(value){
-    $scope.option = value;
+  $scope.getValueButton = function (value) {
+    $scope.option = value
   }
 
-  $scope.$watch('[option]', function(){
+  $scope.$watch('[option]', function () {
     $rootScope.dataSave = {
-    conditionSelected: $scope.conditionSelected,
-    valueButtonSubmit: $scope.option
-  }
-  }, true );
-  //console.log( SpajService.getData('spaj1'));
+      conditionSelected: $scope.conditionSelected,
+      valueButtonSubmit: $scope.option
+    }
+  }, true)
+  // console.log( SpajService.getData('spaj1'));
 
   $timeout(function () {
     var insuredName = $attrs.insuredData
@@ -48,16 +48,15 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
 
   $scope.contacts = [
     {
-      tel : { home: '', office: '', gsm: ''}
+      tel: { home: '', office: '', gsm: ''}
     }
-  ];
+  ]
   $scope.addContact = function () {
     var tel = {
       tel_home: '',
       tel_office: '',
       tel_gsm: ''
-    };
-    $scope.contacts.push(tel);
+    }
+    $scope.contacts.push(tel)
   }
-
 }

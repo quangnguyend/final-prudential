@@ -4,48 +4,56 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
   $rootScope.showMenu = true
   var MAIN_INSURED_TAB = 'MAIN_INSURED', MAIN_LAYOUT = 'MAIN_LAYOUT',
     ACTIVE_INSURED = 'ACTIVE_INSURED'
-  var vm =this
-
+  var vm = this
   var rootSpajData = SpajService.getData('spaj')
-  $scope.currentLayout = MAIN_LAYOUT
-  $scope.main_layout = MAIN_LAYOUT
-  $scope.active_insured_layout = ACTIVE_INSURED
-  $scope.main_insured_tab = MAIN_INSURED_TAB
+  vm.currentLayout = MAIN_LAYOUT
+  vm.main_layout = MAIN_LAYOUT
+  vm.active_insured_layout = ACTIVE_INSURED
+  vm.main_insured_tab = MAIN_INSURED_TAB
 
-  $scope.currentTab = MAIN_INSURED_TAB
-  $scope.additionalList = []
+  vm.currentTab = MAIN_INSURED_TAB
+  vm.additionalList = []
 
-  
-  $scope.switchTab = function (tab) {
-    $scope.currentTab = tab || MAIN_INSURED_TAB
+  vm.policy = {
+    apaka: null,
+    insurancePolicies: [
+      {
+        type_of_insurance: '',
+        insurance_company: '',
+        sum_assured: '',
+        substandard_policy: false
+      }
+    ],
+    addActivePolicy: function () {
+      var newPolicy = {
+        type_of_insurance: '',
+        insurance_company: '',
+        sum_assured: '',
+        substandard_policy: false
+      }
+      vm.policy.insurancePolicies.push(newPolicy)
+    }
   }
 
-  $scope.addAdditionalTab = function () {
-    var numberTab = $scope.additionalList.length
+  vm.switchTab = function (tab) {
+    vm.currentTab = tab || MAIN_INSURED_TAB
+  }
+
+  vm.addAdditionalTab = function () {
+    var numberTab = vm.additionalList.length
     // we have only maximum 2 addtional tabs
     if (numberTab === 2) { return }
-    $scope.additionalList.push({
+    vm.additionalList.push({
       id: 'ADDITIONAL_' + numberTab,
       name: 'Tertanggung Tambahan ' + (numberTab + 1)
     })
-    $scope.currentTab = 'ADDITIONAL_' + numberTab
+    vm.currentTab = 'ADDITIONAL_' + numberTab
   }
 
-  $scope.nextClickHandle = function () {
-   
-    if ($scope.currentLayout === MAIN_LAYOUT) 
-    { $state.go('app.active_policy') } 
-    else if ($scope.currentLayout === ACTIVE_INSURED) {
+
+  vm.nextClickHandle = function () {
+    if (vm.currentLayout === MAIN_LAYOUT) { $state.go('app.active_policy') } else if (vm.currentLayout === ACTIVE_INSURED) {
       $state.go('app.step2')
     }
-    // console.dir(SpajService.getData())
   }
-
-  function initPage (rootSpajData) {
-    if (!rootSpajData) return
-    if (rootSpajData.tambahan1) { $scope.addAdditionalTab() }
-    if (rootSpajData.tambahan2) { $scope.addAdditionalTab() }
-  }
-
-  initPage(rootSpajData)
 }
