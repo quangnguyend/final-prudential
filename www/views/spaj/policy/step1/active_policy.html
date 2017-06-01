@@ -1,0 +1,112 @@
+<ion-view cache-view="false" id="spaj-start">
+  <ion-nav-title>
+    <custom-header title='Sebelum Anda melanjutkan' step='1'></custom-header>
+  </ion-nav-title>
+  <ion-content>
+    <step-process></step-process>
+    <div id="SPAJ">
+      <div class='row tab-menu'>
+        <div class='col blur-text' ng-disabled><span class="d-table"><span class="d-table-cell">Pemegang Polis</span></span>
+        </div>
+        <div class='col' ng-click='switchTab(main_insured_tab)' ng-class='currentTab===main_insured_tab?"active":""'><span class="d-table"><span class="d-table-cell">Tertanggung Utama</span></span>
+        </div>
+        <div class='col' ng-repeat='tab in additionalList' ng-click='switchTab(tab.id)' ng-class='currentTab===tab.id?"active":""'><span class="d-table"><span class="d-table-cell">{{tab.name}}</span></span>
+        </div>
+        <div ng-if='additionalList.length<2' class='col blur-text' ng-click='addAdditionalTab()'><span class="d-table"><span class="d-table-cell">+ Tertanggung Tambahan</span></span>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    <!--note-->
+     <div id="" class="has-bottom-bar active-insurance-page">
+      <form>
+        <div class="list">
+          <div class="item">
+            <h1 class="text-center description">Apakah Calon Tertanggung juga sebagai Tertanggung pada Polis lain di Prudential dan/atau Perusahaan Asuransi Jiwa lain?</h1>
+            <div class="clearfix">
+              <div class="float-left col-5">&nbsp;</div>
+              <div class="float-left col-95">
+                <div class="row">
+                  <div class="button-bar">
+                    <a class="button col col-50" grouped-radio="true" ng-model="vm.policy.apaka">Ya</a>
+                    <a class="button col col-50" grouped-radio="false" ng-model="vm.policy.apaka">Tidak</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="m-gap-30" ng-show="vm.policy.apaka">
+              <ul>
+                <li class="clearfix m-gap-30" ng-repeat="n in vm.policy.items">
+                  <div class="float-left col-5 col-padding"><span class="row-number">{{$index + 1}}</span></div>
+                  <div class="float-left col-95">
+                    <div class="row row-no-padding">
+                      <div class="col col-25 col-padding">
+                        <md-input-container class="md-block">
+                            <label class="input-label">Tipe Asuransi</label>
+                            <md-select  ng-model="vm.policy.items.type">
+                                <md-option ng-repeat="type in vm.policy.options.tipe" value="{{type.value}}">{{type.name}}</md-option>
+                            </md-select>
+                        </md-input-container>
+                      </div>
+                      <div class="col col-25 col-padding">
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Perusahaan</label>
+                            <input  ng-model="vm.policy.items.company" required />
+                        </md-input-container>
+                      </div>
+                      <div class="col col-30 col-padding">
+                        <div class="row row-no-padding">
+                          <div class="col col-60">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>Uang Pertanggungan</label>
+                                <input  ng-model="vm.policy.items.sum" required />
+                            </md-input-container>
+                          </div>
+                          <div class="col  col-40">
+                            <md-input-container class="md-block">
+                                <label>IDR</label>
+                                <md-select  ng-model="vm.policy.items.idr">
+                                 
+                                  <md-option  ng-repeat="currency in vm.policy.options.tipe" value="{{currency.value}}">{{currency.name}}</md-option>
+                                </md-select>
+                            </md-input-container>
+                          
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="col col-20 col-padding">
+                        <div class="row row-no-padding">
+                          <md-input-container class="md-block">
+                            <label class="input-label">Substandard</label>
+                            <md-select  ng-model="vm.policy.items.substandard">
+                                <md-option ng-repeat="type in vm.policy.options.substandard" value="{{type.value}}">{{type.name}}</md-option>
+                            </md-select>
+                          </md-input-container>
+                        </div>
+
+                      </div>
+                    </div>
+                    
+                  </div>
+                </li>
+              </ul>
+              <div class="clearfix"></div>
+              <div class="m-gap-30"><button class="button button-stable button-block float-right col-95" ng-click="vm.policy.addActivePolicy()" >  <i class="ion-ios-plus-empty"></i> <span class="txt-add-policy"> Tambah Polis</span></button></div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- note-->
+
+  </ion-content>
+  <ion-footer-bar class="bar bar-footer bar-assertive">
+    <div class="btn" ng-click="vm.nextClickHandle()">Lanjutkan</div><button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button>
+  </ion-footer-bar>
+</ion-view>
+

@@ -515,6 +515,7 @@ select {
 
 /* ================ COMMON CSS ================ */
 body, body *{font-size: 17px;}
+body label{font-size: 17px;}
 .item h1, .item h2, .item h3, .item h4, .item h5, .item h6{font-weight: 600; font-size: 17px;}
 .description {
   padding:20px;
@@ -527,6 +528,7 @@ body, body *{font-size: 17px;}
 .item  .input-label{
  width:100%;
  font-size: 17px;
+ padding-bottom:0px;
 }
 .item .button-block .button{
   font-size: 17px;
@@ -550,15 +552,17 @@ body, body *{font-size: 17px;}
 .item .button,
 .item select{font-size: 17px;}
 @media only screen and (min-width: 768px)  { 
-  .body, body *{font-size:25px;}
-  #step-header select{font-size: 25px;}
-  label.item-stacked-label{font-size:25px;}
+  .body, 
+  body *,
+  label.item-stacked-label,
+  body label, 
+  label.item, 
+  .item select,
+  #step-header select{font-size:25px;}
+
   .description {
     font-size: 25px;
     line-height: 30px;
-  }
-  label, label.item, .item select{
-    font-size:25px;
   }
   .bar.bar-header .title{
     font-size: 25px;

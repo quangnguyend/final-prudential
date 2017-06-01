@@ -81,6 +81,17 @@ angular
           }
         }
       })
+      .state('app.active_policy', {
+        cache: false,
+        url: '/active_policy',
+        views: {
+          menuContent: {
+            templateUrl: 'views/spaj/policy/step1/active_policy.html',
+            controller: 'ActivePolicyCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
       .state('app.step2', {
         cache: false,
         url: '/step2',

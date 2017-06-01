@@ -58,10 +58,12 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
   }
   vm.eyePopupTouched = false
 
-  vm.checkPropertiesNotNull = function (obj) {
-    if (obj === null || obj === '') { return false }
-    for (var key in obj) {
-      if (obj[key] === null || obj[key] === '') { return false }
+  vm.checkPropertiesNotNull = function (arrayObj) {
+    if (arrayObj === null || arrayObj === '') { return false }
+    for(var i = 0; i < arrayObj.length; i++) {
+      for (var key in arrayObj[i]) {
+        if (!arrayObj[i][key]) return false
+      }
     }
     return true
   }
@@ -99,11 +101,11 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     }
   }
 
-  $scope.showPopup = function () {
+  vm.showPopup = function () {
     // custom popup
-    $scope.popupData = vm.healthData.eyePopupData
-    $scope.addPopupData = function () {
-      $scope.popupData.push({
+    vm.popupData = vm.healthData.eyePopupData
+    vm.addPopupData = function () {
+      vm.popupData.push({
         name_of_illness: null,
         when_the_condition_found: null,
         last_care_date: null,
@@ -111,6 +113,9 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
         hospital_address: null,
         medicine: null
       })
+    }
+    if(vm.healthData.eye_contact_lenses&&vm.healthData.eye_disorders){ // if choose both option
+      vm.addPopupData()
     }
     var eyePopup = $ionicPopup.show({
       templateUrl: 'views/spaj/policy/step2/popup-eye.html',
@@ -130,14 +135,14 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
           type: 'btn-popup-close',
           onTap: function (e) {
             // eyePopup.close();
-            return $scope.popupData
+            return vm.popupData
           }
         },
         {
           text: 'Selesai',
           type: 'button-assertive btn-popup-save',
           onTap: function (e) {
-            return $scope.popupData
+            return vm.popupData
           }
         }
       ]
@@ -153,8 +158,8 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
   }
 
   // Spaj Health 1
-  $scope.health1Steps = ['health1_step1']
-  $scope.health1NextStep = function (id) {
+  vm.health1Steps = ['health1_step1']
+  vm.health1NextStep = function (id) {
     var STEP_HEIGHT = $('.multi-step').height() + 120
     var distance = $('#' + id) && $('#' + id).position().top + STEP_HEIGHT
     if ($scope.health1Steps.indexOf(id) < 0) $scope.health1Steps.push(id)
