@@ -16,15 +16,34 @@
       <form>
         <div class="list list-inset">
           <div class='item'>
-            <h1 class="text-center  discription">Kami membutuhkan beberapa dokumen dalam mengajukan polis ini</h1>
+            <h1 class="text-center description">Kami membutuhkan beberapa dokumen dalam mengajukan polis ini</h1>
             <div class="m-gap-30">
               <ul>
-                <li class="clearfix" ng-repeat="item in vm.documents">
+                <li class="clearfix" ng-repeat="item in vm.data[vm.currentTab]">
+                  <div class="row row-no-padding" ng-if="vm.currentTab=='premiums'">
+                    <div class="col col-67 col-padding">
+                      <md-input-container class="select-box md-block" md-no-float>
+                        <label class="input-label">{{item.document_name}}</label>
+                        <md-select ng-model="item.document_type">
+                          <md-option ng-repeat="type in vm.documentType" value="{{type.value}}">
+                            {{type.name}}
+                          </md-option>
+                        </md-select>
+                      </md-input-container>
+                    </div>
+                    <div class="col col-33 col-padding">
+                      <div class="img-options">
+                        <button class="button button-stable" ng-disabled="item.document_image == ''"><i class="ion-checkmark " ng-class="item.document_image!=''?'green-color':''"></i></button>
+                        <button class="button button-stable" ng-disabled="item.document_image == ''" ng-click="vm.viewImage(item)"><i class="ion-eye"></i></button>
+                        <button class="button button-stable" ng-disabled="item.document_image == ''" ng-click="vm.deleteImage(item)"><i class="ion-trash-b"></i></button>
+                      </div>
+                    </div>
+                  </div>
                   <div class="row row-no-padding">
                     <div class="col col-67 col-padding">
                       <md-input-container class="select-box md-block" md-no-float>
                         <label class="input-label">{{item.document_name}}</label>
-                        <md-select  ng-model="item.document_type">           
+                        <md-select  ng-model="item.document_type">
                           <md-option ng-repeat="type in vm.documentType" value="{{type.value}}">
                             {{type.name}}
                           </md-option>
@@ -33,15 +52,14 @@
                     </div>
                     <div class="col col-33 col-padding">
                       <div class="document-upload-file">
-                        <!--<input type="file" ng-model="item.document_image" ng-model-instant onchange="angular.element(this).scope().uploadFiles(this)">-->
-                        <input type="file" ngf-select="uploadFiles($file, $invalidFiles, item)" accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">
-                        <button class="button button-stable btn-upload-img">Ambil Foto</button>
+                        <button class="button button-stable btn-upload-img button-block" ng-click="vm.takePhoto(item)">Ambil Foto</button>
                       </div>
                     </div>
                   </div>
                 </li>
               </ul>
               <div class="clearfix"></div>
+              <button class="button button-stable button-block" ng-click="vm.addDocument()">+ Tambah Dokumen</button>
             </div>
           </div>
         </div>
