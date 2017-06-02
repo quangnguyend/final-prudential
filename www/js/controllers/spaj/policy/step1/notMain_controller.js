@@ -50,7 +50,6 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
     vm.currentTab = 'ADDITIONAL_' + numberTab
   }
 
-
   vm.nextClickHandle = function () {
     var tabs = vm.additionalList;
     SpajService.setData('step1', { tabs: tabs });
@@ -63,7 +62,7 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
     })
 
     if (vm.currentLayout === MAIN_LAYOUT) { $state.go('app.active_policy') } else if (vm.currentLayout === ACTIVE_INSURED) {
-      $state.go('app.step2')
+      $rootScope.nextStep()
     }
   }
 

@@ -2,7 +2,7 @@ function customHeaderCtrl ($state, $scope, $rootScope, $attrs, $timeout) {
   var vm = this
   vm.title = $attrs.title
   var currentStep = $attrs.step
-  $rootScope.setCurrentPolicyStep(currentStep)
+  // $rootScope.setCurrentPolicyStep(currentStep)
   if (!$rootScope.policyStep) return
   vm.steps = $rootScope.getPolicySteps()
   vm.selectStep = currentStep

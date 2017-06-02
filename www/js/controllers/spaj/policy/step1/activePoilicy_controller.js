@@ -5,12 +5,12 @@ function activePolicyCtrl ($state, $scope, $rootScope, $stateParams, SpajService
 
   var vm = this
   vm.nextClickHandle = function () {
-    $state.go('app.step2')
+    $rootScope.nextStep()
   }
 
-  vm.policy={
-    apaka:null,
-    items : [
+  vm.policy = {
+    apaka: null,
+    items: [
       {
         type: '',
         company: '',
@@ -19,27 +19,25 @@ function activePolicyCtrl ($state, $scope, $rootScope, $stateParams, SpajService
         substandard: false
       }
     ],
-    addActivePolicy:function(){
-      var newPolicy={
+    addActivePolicy: function () {
+      var newPolicy = {
         type: '',
         company: '',
         sum: '',
         idr: '',
         substandard: false
-      };
+      }
       vm.policy.items.push(newPolicy)
     }
   }
-  vm.policy.options={
+  vm.policy.options = {
     tipe: [
-      {value: 'opion1', name:'option1'},
-      {value: 'opion2', name:'option2'}
+      {value: 'opion1', name: 'option1'},
+      {value: 'opion2', name: 'option2'}
     ],
     substandard: [
-      {value: 'opion1', name:'option1'},
-      {value: 'opion2', name:'option2'}
+      {value: 'opion1', name: 'option1'},
+      {value: 'opion2', name: 'option2'}
     ]
   }
-
-  
 }

@@ -1,4 +1,4 @@
-function payorCtrl ($scope, DataService, $location) {
+function payorCtrl ($scope, $rootScope, $state, DataService, $location) {
   var vm = this
   vm.tabs = [
     { title: 'Tertanggung Utama', value: 'payor_option0' },
@@ -7,6 +7,6 @@ function payorCtrl ($scope, DataService, $location) {
   vm.currentTab = 'payor_option0'
 
   vm.save = function () {
-    $location.path('/app/step4/option1')
+    $state.go('app.step4')
   }
 }

@@ -35,7 +35,7 @@ function riskHobbyCtrl ($scope, $rootScope, $ionicPopup, UserService, DataServic
      * */
     var condition = SpajService.getData('spaj')
     if (!condition) {
-      $location.path('/app/step4')
+      $rootScope.nextStep()
       return
     }
     if (condition.utama === true ||
@@ -44,7 +44,7 @@ function riskHobbyCtrl ($scope, $rootScope, $ionicPopup, UserService, DataServic
       ) {
       $location.path('/app/step5')
     } else {
-      $location.path('/app/step4')
+      $rootScope.nextStep()
     }
 
     // TODO

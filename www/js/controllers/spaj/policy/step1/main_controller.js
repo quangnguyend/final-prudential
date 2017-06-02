@@ -53,7 +53,7 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
         SpajService.stepComplete('step1', true)
       }
     })
-    $state.go('app.step2')
+    $rootScope.nextStep()
   }
 
   vm.handleMainTabSwipe = function () {

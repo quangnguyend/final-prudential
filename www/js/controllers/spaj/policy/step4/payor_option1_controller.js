@@ -1,4 +1,4 @@
-function payorOption1Ctrl ($scope, DataService, $ionicScrollDelegate, $location, SpajService) {
+function payorOption1Ctrl ($scope, $rootScope, $state, DataService, $ionicScrollDelegate, $location, SpajService) {
   var vm = this
   vm.tabs = [
     { title: 'Tertanggung Utama', value: 'payor_option0' },
@@ -15,7 +15,7 @@ function payorOption1Ctrl ($scope, DataService, $ionicScrollDelegate, $location,
   }
 
   vm.save = function () {
-    $location.path('/app/step5')
+    $rootScope.nextStep()
   }
 
   // TODO
