@@ -1298,6 +1298,21 @@
     top: -12px;
 }
 
+#spaj-esignature-confirmation .missing-reminder .missing-title.open::before{
+  content: '+';
+  margin-right: 20px;
+}
+
+#spaj-esignature-confirmation .missing-reminder .missing-title.close::before{
+  content: '-';
+  margin-right: 20px;
+}
+
+#spaj-esignature-confirmation .missing-reminder .missing-content{
+  padding: 10px;
+}
+
+
 @media screen and (max-width: 568px) {
     #spaj-esignature-confirmation .custom-checkbox{
       width: 100%!important;

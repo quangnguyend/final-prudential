@@ -2,13 +2,22 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
-
   var vm = this
+  var listToCheck =
+    {
+      'POLICY_HOLDER': 'Pemegang Polis',
+      'MAIN_INSURED': 'Tertanggung Utama',
+      'ADDITIONAL_0': 'Tertanggung Tambahan 1',
+      'ADDITIONAL_1': 'Tertanggung Tambahan 2'
+    }
+  var idListToCheck = Object.keys(listToCheck)
   vm.healthData = SpajService.getData('step2')
   vm.healthFormValidStatus = {
     is_checked: false,
     null_properties: []
   }
+
+  vm.showData = {}
 
   vm.data = {
     policy: [{
@@ -149,4 +158,57 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService) {
   vm.review = function () {
     $state.go('app.step2')
   }
+
+  function checkMissingData () {
+   // var healthData = vm.healthData
+    var infoData = SpajService.getData('step1') || {}
+    var missingData = {MAIN_INSURED: []}
+    var totalMissing = 0
+    Object.keys(infoData).forEach(function (key) {
+      if (idListToCheck.indexOf(key) >= 0) {
+        // check this field
+        missingData[key] = getIncompleteInfo(infoData[key]) || []
+        totalMissing = totalMissing + missingData[key].length
+      }
+    })
+
+    missingData['MAIN_INSURED'] = missingData['MAIN_INSURED'].concat(vm.healthFormValidStatus.null_properties.map(function (field) { return vm.getDisplayText(field) }))
+    totalMissing = totalMissing + vm.healthFormValidStatus.null_properties.length
+    missingData.totalMissing = totalMissing
+    return missingData
+  }
+
+  function getIncompleteInfo (info) {
+    // checkList keys depend on varible name of Step 1 (insured_home template)
+    // TODO This not enough!! Plz add more
+    var checkList = {
+      name: 'Missing name',
+      date_of_birth: 'Missing date_of_birth',
+      address: 'Missing address'
+      // ,..... add more
+    }
+
+    // return missing datas
+    var missingData = Object.keys(checkList).map(function (key) {
+      if (!info[key]) {
+        return checkList[key]
+      }
+    })
+
+    missingData = missingData.filter(function (item) { return !!item })
+    return missingData
+  }
+  vm.inCompleteData = checkMissingData()
+  vm.inCompleteList = Object.keys(vm.inCompleteData).map(function (key) {
+    if (idListToCheck.indexOf(key) >= 0) {
+      return {id: key, name: listToCheck[key], data: vm.inCompleteData[key]}
+    }
+  })
+
+  vm.inCompleteList = vm.inCompleteList.filter(function (item) { return !!item })
+
+  vm.toggle = function (key) {
+    vm.showData[key] = !vm.showData[key]
+  }
+  checkMissingData()
 }
