@@ -45,5 +45,15 @@
       "cordova-plugin-camera": {},
       "ionic-plugin-keyboard": {}
     }
-  }
+  },
+  "cordovaPlugins": [
+    "ionic-plugin-keyboard",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-console",
+    "cordova-plugin-statusbar",
+    "cordova-plugin-device",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-compat",
+    "cordova-plugin-camera"
+  ]
 }
