@@ -58,7 +58,22 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
   }
   vm.eyePopupTouched = false
 
-  vm.rgb=['red', 'green', 'blue'];
+  vm.rgb= ['red', 'green', 'blue'];
+  vm.rgb2= ['red 2', 'green 2', 'blue2'];
+  vm.const=[
+    {
+      type:'a',
+      value:'red2'
+    },
+    {
+      type:'bewf',
+      value:'green3'
+    },
+    {
+      type:'cfew',
+      value:'blue4'
+    }
+  ]
 
   vm.checkPropertiesNotNull = function (arrayObj) {
     if (arrayObj === null || arrayObj === '') { return false }
@@ -165,7 +180,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
   vm.showPopupDigestive = function () {
     var digestivePopup = $ionicPopup.show({
       templateUrl: 'views/spaj/policy/step2/popup-digestive.html',
-      title: 'Detail Kondisi Mata',
+      title: 'Kuesioner Gangguan Saluran Cerna',
       cssClass: 'popup-prudential',
       scope: $scope,
       buttons: [
@@ -186,9 +201,64 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
         }
       ]
     })
-    digestive.then(function (res) {
-      //vm.healthData.eyePopupData = res
-      //vm.eyePopupTouched = true
+    digestivePopup.then(function (res) {
     })
   }
+
+  vm.showPopupRespiratory = function () {
+    var respiratoryPopup = $ionicPopup.show({
+      templateUrl: 'views/spaj/policy/step2/popup_respiratory.html',
+      title: 'Kuesioner Gangguan Pernapasan',
+      cssClass: 'popup-prudential',
+      scope: $scope,
+      buttons: [
+        {
+          text: '<i class="icon ion-android-close"></i>',
+          type: 'btn-popup-close',
+          onTap: function (e) {
+            // eyePopup.close();
+            return vm.popupData
+          }
+        },
+        {
+          text: 'Selesai',
+          type: 'button-assertive btn-popup-save',
+          onTap: function (e) {
+            return vm.popupData
+          }
+        }
+      ]
+    })
+    respiratoryPopup.then(function (res) {
+    })
+  }
+
+  vm.showPopupTumor = function () {
+    var tumorPopup = $ionicPopup.show({
+      templateUrl: 'views/spaj/policy/step2/popup_tumor.html',
+      title: 'Kesehatan Tambahan Tumor',
+      cssClass: 'popup-prudential',
+      scope: $scope,
+      buttons: [
+        {
+          text: '<i class="icon ion-android-close"></i>',
+          type: 'btn-popup-close',
+          onTap: function (e) {
+            // eyePopup.close();
+            return vm.popupData
+          }
+        },
+        {
+          text: 'Selesai',
+          type: 'button-assertive btn-popup-save',
+          onTap: function (e) {
+            return vm.popupData
+          }
+        }
+      ]
+    })
+    tumorPopup.then(function (res) {
+    })
+  }
+
 }

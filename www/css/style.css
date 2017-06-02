@@ -68,7 +68,7 @@ ion-footer-bar.bar.bar-assertive {
 
 .bar.bar-header .title {
   font-size: 25px !important;
-  color: #fff  !important ;
+  color: #fff !important;
   font-weight: normal;
   height: 55px;
   line-height: 65px;
@@ -97,7 +97,6 @@ ion-footer-bar.bar.bar-assertive {
   right: 10px;
   top: 15px
 }
-
 
 .bar.bar-assertive.bar-footer.btn-disable {
   background: #9B9B9B !important;
@@ -135,10 +134,15 @@ ion-footer-bar.bar.bar-assertive {
 
 
 /* ========================== COMMON STYLE ========================== */
-md-input-container:not(.md-input-has-value) input:not(:focus){
-  color:#CCC !important
+
+md-input-container:not(.md-input-has-value) input:not(:focus) {
+  color: #CCC !important
 }
-label.item-stacked-label{font-size:17px;}
+
+label.item-stacked-label {
+  font-size: 17px;
+}
+
 .txt-large {
   color: #000;
   font-size: 34px;
@@ -471,9 +475,10 @@ select {
   text-align: left;
 }
 
-.full-height{
+.full-height {
   height: 100%;
 }
+
 
 /*css for step header*/
 
@@ -507,28 +512,44 @@ select {
   margin-left: 5px;
 }
 
+
 /* ================ COMMON CSS ================ */
-body, body *{font-size: 17px;}
-body label{font-size: 17px;}
-.item h1, .item h2, .item h3, .item h4, .item h5, .item h6{font-weight: 600; font-size: 17px;}
+
+body, body * {
+  font-size: 17px;
+}
+
+body label {
+  font-size: 17px;
+}
+
+.item h1, .item h2, .item h3, .item h4, .item h5, .item h6 {
+  font-weight: 600;
+  font-size: 17px;
+}
+
 .description {
-  padding:20px;
+  padding: 20px;
   white-space: normal !important;
   font-weight: 600
 }
-.item input[type=search], .item  input[type=text], .item  input[type=password], .item  input[type=datetime],  .item  input[type=datetime-local], .item  input[type=date], .item  input[type=month], .item  input[type=time], .item  input[type=week], .item  input[type=number], .item  input[type=email], .item  input[type=url], .item  input[type=tel], .item  input[type=color], .item  textarea{
+
+.item input[type=search], .item input[type=text], .item input[type=password], .item input[type=datetime], .item input[type=datetime-local], .item input[type=date], .item input[type=month], .item input[type=time], .item input[type=week], .item input[type=number], .item input[type=email], .item input[type=url], .item input[type=tel], .item input[type=color], .item textarea {
   font-size: 17px;
 }
-.item  .input-label{
- width:100%;
- font-size: 17px;
- padding-bottom:0px;
+
+.item .input-label {
+  width: 100%;
+  font-size: 17px;
+  padding-bottom: 0px;
 }
-.item .button-block .button{
+
+.item .button-block .button {
   font-size: 17px;
   font-weight: 400;
 }
-.item .form_select{
+
+.item .form_select {
   font-style: normal;
   font-weight: normal;
   font-size: 17px;
@@ -542,28 +563,63 @@ body label{font-size: 17px;}
   background-color: #fff;
   border: none;
 }
-.item .item-note{font-size: 17px;}
-.item .button,
-.item select{font-size: 17px;}
-.backdrop{background-color:transparent !important}
-.popup-prudential.popup-container  .popup{ width: 100%;  background-color:#FFF;    background-color: #FFF;
-    bottom: 0px; top:50px;
-    position: absolute; max-height: 100%}
-.popup-prudential.popup-container .popup-head{background-color:#DA291C; color:#FFF}
-.popup-prudential.popup-container .popup-head .popup-title{color: #FFF}
-.popup-prudential.popup-container .btn-popup-save{
-    background-color: #DA291C;
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    height: 60px;}
-.popup-prudential .btn-popup-back{
+
+.item .item-note {
+  font-size: 17px;
+}
+
+.item .button, .item select {
+  font-size: 17px;
+}
+
+.backdrop {
+  background-color: transparent !important
+}
+
+.popup-prudential .option_other {
+  margin-left: 50px;
+}
+
+.popup-prudential .option_other li {
+  height: 50px;
+  padding-top: 0px;
+}
+
+.popup-prudential.popup-container .popup {
+  width: 100%;
+  background-color: #FFF;
+  background-color: #FFF;
+  bottom: 0px;
+  top: 50px;
+  position: absolute;
+  max-height: 100%
+}
+
+.popup-prudential.popup-container .popup-head {
+  background-color: #DA291C;
+  color: #FFF
+}
+
+.popup-prudential.popup-container .popup-head .popup-title {
+  color: #FFF
+}
+
+.popup-prudential.popup-container .btn-popup-save {
+  background-color: #DA291C;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 60px;
+}
+
+.popup-prudential .btn-popup-back {
   background: none;
   position: absolute;
   top: 0;
   left: 0;
 }
-.popup-prudential .btn-popup-close{
+
+.popup-prudential .btn-popup-close {
   position: absolute;
   top: 0px;
   right: 0;
@@ -579,59 +635,77 @@ body label{font-size: 17px;}
   padding: 0;
   line-height: 0;
 }
-.popup-prudential .popup-buttons{
+
+.popup-prudential .popup-buttons {
   padding: 0;
 }
-.popup-prudential .popup-buttons button{
+
+.popup-prudential .popup-buttons button {
   border-radius: 0;
 }
-.popup-prudential .popup-head{
+
+.popup-prudential .popup-head {
   background-color: #f7f5f5;
   border: none;
 }
-.popup-prudential .popup-wrapper{
+
+.popup-prudential .popup-wrapper {
   padding: 10px;
 }
-.popup-prudential .scroll-view.scroll-y{
+
+.popup-prudential .scroll-view.scroll-y {
   height: 300px;
 }
-@media only screen and (min-width: 768px)  { 
-  .body, 
-  body *,
-  label.item-stacked-label,
-  body label, 
-  label.item, 
-  .item select,
-  #step-header select{font-size:25px;}
-  #eye-popup .popup-content .number{font-size: 20px;}
+#health_question1 .message{font-size:12px;}
+@media only screen and (min-width: 768px) {
+  .body, body *, label.item-stacked-label, body label, label.item, .item select, #step-header select {
+    font-size: 25px;
+  }
+  #eye-popup .popup-content .number {
+    font-size: 20px;
+  }
   .description {
     font-size: 25px;
     line-height: 30px;
   }
-  .bar.bar-header .title{
+  .bar.bar-header .title {
     font-size: 25px;
   }
-  .bar-footer .btn{
+  .bar-footer .btn {
     font-size: 25px
   }
-  .tab-menu .col .d-table-cell{
+  .tab-menu .col .d-table-cell {
     font-size: 20px;
   }
-  [type="radio"]:not(:checked)+label, [type="radio"]:checked+label{
+  [type="radio"]:not(:checked)+label, [type="radio"]:checked+label {
     font-size: 25px;
   }
-  .item input[type=search], .item  input[type=text], .item  input[type=password], .item  input[type=datetime],  .item  input[type=datetime-local], .item  input[type=date], .item  input[type=month], .item  input[type=time], .item  input[type=week], .item  input[type=number], .item  input[type=email], .item  input[type=url], .item  input[type=tel], .item  input[type=color], .item  textarea{
+  .item input[type=search], .item input[type=text], .item input[type=password], .item input[type=datetime], .item input[type=datetime-local], .item input[type=date], .item input[type=month], .item input[type=time], .item input[type=week], .item input[type=number], .item input[type=email], .item input[type=url], .item input[type=tel], .item input[type=color], .item textarea {
     font-size: 25px;
   }
-  .item .input-label{
+  .item .input-label {
     font-size: 25px;
   }
-  .item .button-block .button{
+  .item .button-block .button {
     font-size: 25px;
   }
-  .item .form_select{font-size:25px;}
-  .item .item-note{font-size: 25px;}
-  .item  .button{font-size: 25px;}
-  .item h1, .item h2, .item h3, .item h4, .item h5, .item h6{font-size:25px;}
- }
+  .item .form_select {
+    font-size: 25px;
+  }
+  .item .item-note {
+    font-size: 25px;
+  }
+  .item .button {
+    font-size: 25px;
+  }
+  .item h1, .item h2, .item h3, .item h4, .item h5, .item h6 {
+    font-size: 25px;
+  }
+  #digestive-popup .item p {
+    font-size: 25px;
+  }
+  
+}
+
+
 /* ================ END COMMON CSS ================ */
