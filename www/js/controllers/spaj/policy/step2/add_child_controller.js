@@ -26,12 +26,12 @@ function addChildCtrl ($state, $scope, $rootScope, SpajService, $ionicSideMenuDe
       value: true,
       answer: ''
     }
-  };
+  }
 
   vm.nextStep = function () {
     vm.dataAddChild.isComplete = validator()
     SpajService.setData('step2', vm.dataAddChild)
-    $state.go('app.step3')
+    $rootScope.nextStep()
   }
 
   vm.tabs = [

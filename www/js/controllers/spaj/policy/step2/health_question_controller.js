@@ -73,7 +73,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
   vm.nextStep = function () {
     vm.healthData.isComplete = validator()
     SpajService.setData('step2', vm.healthData)
-    $state.go('app.step3')
+    $rootScope.nextStep()
   }
 
   vm.tabs = [

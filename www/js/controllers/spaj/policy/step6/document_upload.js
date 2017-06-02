@@ -110,7 +110,7 @@ function documentUploadCtrl ($ionicPlatform, $scope, $rootScope, $state, SpajSer
   }
 
   vm.handleSubmit = function () {
-    $state.go('app.step7')
+    $rootScope.nextStep()
     // TODO
     SpajService.setData('step6', {isComplete: validator()})
   }
