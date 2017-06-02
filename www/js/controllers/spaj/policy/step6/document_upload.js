@@ -2,7 +2,7 @@ function documentUploadCtrl ($ionicPlatform, $scope, $rootScope, $state, SpajSer
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
-  var vm = this;
+  var vm = this
 
   var spajData = SpajService.getData('spaj');
   var step1 = SpajService.getData('step1');
@@ -31,8 +31,8 @@ function documentUploadCtrl ($ionicPlatform, $scope, $rootScope, $state, SpajSer
       'document_name': '<Nama dokumen>',
       'document_type': '',
       'document_image': ''
-    }];
-  });
+    }]
+  })
 
   if (typeof vm.tabs[0] !== 'undefined'){
     vm.currentTab = vm.tabs[0].id;
@@ -41,24 +41,24 @@ function documentUploadCtrl ($ionicPlatform, $scope, $rootScope, $state, SpajSer
   }
 
   vm.switchTab = function (tab, index) {
-    vm.currentTab = tab;
-    vm.currentTabIndex = index;
-  };
+    vm.currentTab = tab
+    vm.currentTabIndex = index
+  }
 
   vm.documentType = [
     { name: 'Kartu Identitas', value: 1 }
-  ];
+  ]
 
   vm.addDocument = function () {
     vm.data[vm.currentTab].push({
       'document_name': '<Nama dokumen>',
       'document_type': '',
       'document_image': ''
-    });
-  };
-  $ionicPlatform.ready(function() {
-    vm.isOpeningCamera = false;
-    vm.takePhoto =function (item) {
+    })
+  }
+  $ionicPlatform.ready(function () {
+    vm.isOpeningCamera = false
+    vm.takePhoto = function (item) {
       var options = {
         quality: 75,
         destinationType: Camera.DestinationType.DATA_URL,
@@ -67,18 +67,18 @@ function documentUploadCtrl ($ionicPlatform, $scope, $rootScope, $state, SpajSer
         encodingType: Camera.EncodingType.JPEG,
         popoverOptions: Camera.PopoverArrowDirection.ARROW_UP,
         saveToPhotoAlbum: false
-      };
-      if(vm.isOpeningCamera === false){
-        vm.isOpeningCamera = true;
-        $cordovaCamera.getPicture(options).then(function(imageData) {
-          item.document_image = "data:image/jpeg;base64," + imageData;
-          vm.isOpeningCamera = false ;
-        }, function() {
-          return;
-        });
       }
-    };
-  });
+      if (vm.isOpeningCamera === false) {
+        vm.isOpeningCamera = true
+        $cordovaCamera.getPicture(options).then(function (imageData) {
+          item.document_image = 'data:image/jpeg;base64,' + imageData
+          vm.isOpeningCamera = false
+        }, function () {
+
+        })
+      }
+    }
+  })
 
   // Modal view image
   vm.modalShowImage = $ionicModal.fromTemplate('<ion-modal-view> ' +
@@ -92,22 +92,22 @@ function documentUploadCtrl ($ionicPlatform, $scope, $rootScope, $state, SpajSer
       scope: $scope,
       animation: 'slide-in-up',
       hardwareBackButtonClose: true,
-      backdropClickToClose :true
-    });
+      backdropClickToClose: true
+    })
 
   // Close modal view image
-  vm.closeModalShowImage = function() {
-    vm.modalShowImage.hide();
-  };
+  vm.closeModalShowImage = function () {
+    vm.modalShowImage.hide()
+  }
 
-  vm.viewImage =function (document) {
-    $scope.dataPopup = document;
-    vm.modalShowImage.show();
-  };
+  vm.viewImage = function (document) {
+    $scope.dataPopup = document
+    vm.modalShowImage.show()
+  }
 
-  vm.deleteImage =function (document) {
-    document.document_image = '';
-  };
+  vm.deleteImage = function (document) {
+    document.document_image = ''
+  }
 
   function validator () {
     // TODO

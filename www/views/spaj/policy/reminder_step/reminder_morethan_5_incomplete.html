@@ -2,7 +2,7 @@
     <div class="list mt-50">
         <div class="item no-lines">
             <div class="description text-center">
-                Anda memiliki {{vm.healthFormValidStatus.null_properties.length}} data yang belum dilengkapi.</br></br>
+                Anda memiliki {{vm.inCompleteData.totalMissing}} data yang belum dilengkapi.</br></br>
                 Mohon melakukan pengecekan ulang sebelum Anda melanjutkan e-submission
             </div>
         </div>
@@ -15,7 +15,12 @@
             </div>
             <!--end item-->
             <div class="no-lines half-width-center text-left">
-                <p ng-repeat="item in vm.healthFormValidStatus.null_properties"> {{vm.getDisplayText(item)}} </p>
+                <div ng-repeat='list in vm.inCompleteList' class='missing-reminder'>
+                    <span class='missing-title' ng-click='vm.toggle(list.id)' ng-class='vm.showData[list.id]?"close":"open"'>{{list.name}}</span>
+                    <div class='missing-content' ng-show='vm.showData[list.id]'>
+                        <span ng-repeat="(index, item) in list.data">{{index+1}}. {{item}}</br></span>
+                    </div>
+                </div>
             </div>
         </div>
         <!--end item-->

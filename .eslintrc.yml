@@ -12,6 +12,8 @@ globals:
   "window": true
   "SignaturePad": true
   "angular": true
+  "digestive": true
+  "Camera": true
 
 rules:
   "no-confusing-arrow": 2
