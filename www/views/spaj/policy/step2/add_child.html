@@ -23,13 +23,14 @@
               <button class="button button-block" ng-class="vm.dataAddChild.question1.value == false? 'selected': ''" ng-click="vm.dataAddChild.question1.value = false">Tidak</button>
             </div>
           </div>
-        </div>
-        <div class="item">
-          <h1 class="text-center description">Jelaskan</h1>
-          <div class="row">
-            <div><input type="text" placeholder="Enter" ng-model="vm.dataAddChildAddChild.question1.answer"></div>
+          <div ng-if="vm.dataAddChild.question1.value == true">
+            <h1 class="text-center description">Jelaskan</h1>
+            <div class="row">
+              <div><input type="text" placeholder="Enter" ng-model="vm.dataAddChildAddChild.question1.answer"></div>
+            </div>
           </div>
         </div>
+
         <div class="item">
           <h1 class="text-center description">Apakah anak Anda pernah memiliki,
             diberitahu memiliki, atau menerimapengobatan untuk kelainan berikut: Gangguan fisik/perkembangan/ ketidaknormalan/ kelahiran prematur/ gangguan penglihatan/ pendengaran/
@@ -42,13 +43,14 @@
               <button class="button button-block" ng-class="vm.dataAddChild.question2.value == false? 'selected': ''" ng-click="vm.dataAddChild.question2.value = false">Tidak</button>
             </div>
           </div>
-        </div>
-        <div class="item">
-          <h1 class="text-center description">Jelaskan</h1>
-          <div class="row">
-            <div><input type="text" placeholder="Enter" ng-model="vm.dataAddChild.question2.answer"></div>
+          <div ng-if="vm.dataAddChild.question2.value == true">
+            <h1 class="text-center description">Jelaskan</h1>
+            <div class="row">
+              <div><input type="text" placeholder="Enter" ng-model="vm.dataAddChild.question2.answer"></div>
+            </div>
           </div>
         </div>
+
         <div class="item">
           <h1 class="text-center description">Apakah terdapat keterlambatan dalam tahap
             perkembangan anak Anda?</h1>
@@ -60,11 +62,11 @@
               <button class="button button-block" ng-class="vm.dataAddChild.question3.value == false? 'selected': ''" ng-click="vm.dataAddChild.question3.value = false">Tidak</button>
             </div>
           </div>
-        </div>
-        <div class="item">
-          <h1 class="text-center description">Jelaskan</h1>
-          <div class="row">
-            <div><input type="text" placeholder="Enter" ng-model="vm.dataAddChild.question3.answer"></div>
+          <div ng-if="vm.dataAddChild.question3.value == true">
+            <h1 class="text-center description">Jelaskan</h1>
+            <div class="row">
+              <div><input type="text" placeholder="Enter" ng-model="vm.dataAddChild.question3.answer"></div>
+            </div>
           </div>
         </div>
         <div class="item">
@@ -77,13 +79,14 @@
               <button class="button button-block" ng-class="vm.dataAddChild.question4.value == false? 'selected': ''" ng-click="vm.dataAddChild.question4.value = false">Tidak</button>
             </div>
           </div>
-        </div>
-        <div class="item">
-          <h1 class="text-center description">Jelaskan</h1>
-          <div class="row">
-            <div><input type="text" placeholder="Enter" ng-model="vm.dataAddChild.question4.answer"></div>
+          <div ng-if="vm.dataAddChild.question4.value == true">
+            <h1 class="text-center description">Jelaskan</h1>
+            <div class="row">
+              <div><input type="text" placeholder="Enter" ng-model="vm.dataAddChild.question4.answer"></div>
+            </div>
           </div>
         </div>
+
         <div class="item">
           <h1 class="text-center description">Apakah salah satu saudara dari Calon Tertanggung/
             Peserta ada yang menderita cacat dari lahir/
@@ -97,11 +100,11 @@
               <button class="button button-block" ng-class="vm.dataAddChild.question5.value == false? 'selected': ''" ng-click="vm.dataAddChild.question5.value = false">Tidak</button>
             </div>
           </div>
-        </div>
-        <div class="item">
-          <h1 class="text-center description">Jelaskan</h1>
-          <div class="row">
-            <div><input type="text" placeholder="Enter" ng-model="vm.dataAddChild.question5.answer"></div>
+          <div ng-if="vm.dataAddChild.question5.value == true">
+            <h1 class="text-center description">Jelaskan</h1>
+            <div class="row">
+              <div><input type="text" placeholder="Enter" ng-model="vm.dataAddChild.question5.answer"></div>
+            </div>
           </div>
         </div>
       </div>

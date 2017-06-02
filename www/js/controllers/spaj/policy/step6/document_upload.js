@@ -3,31 +3,30 @@ function documentUploadCtrl ($ionicPlatform, $scope, $rootScope, $state, SpajSer
   $rootScope.showBack = true
   $rootScope.showMenu = true
   var vm = this;
-  vm.tabs = [
-    {title: 'Pembayar Premi', value: 'premiums'},
-    {title: 'Pemegang Polis', value: 'policy_holders'},
-    {title: 'Tertanggung Tambahan 1', value: 'additional_insured'}
-  ];
 
-  var condition = SpajService.getData('spaj');
-  if (typeof condition !== 'undefined') {
-    if (condition.utama === true && condition.typeSpaj === 'PemegangPolis') {
-      vm.currentTab = 'premiums'
-    } else if (condition.typeSpaj === 'PemegangPolis') {
-      vm.currentTab = 'policy_holders'
-    } else if (condition.typeSpaj === '' && condition.tambahan1 === true) {
-      vm.currentTab = 'additional_insured'
-    } else {
-      vm.currentTab = 'premiums'
+  var spajData = SpajService.getData('spaj');
+  var step1 = SpajService.getData('step1');
+
+  vm.tabs = [];
+
+  if (typeof spajData !== 'undefined') {
+    if(typeof spajData.session2 !== 'undefined' && spajData.session2 == 'lainnya'){
+      vm.tabs.push({name: 'Tertanggung utama', id: 'main_issue'});
     }
-  } else {
-    vm.currentTab = 'premiums'
+  }
+
+  if (typeof step1 !== 'undefined'){
+    if(step1.hasOwnProperty('tabs')){
+      var step1Tabs = step1.tabs;
+      step1Tabs.forEach(function (tab) {
+        vm.tabs.push(tab);
+      });
+    }
   }
 
   vm.data = {};
-
   vm.tabs.forEach(function (tab) {
-    var tabKey = tab.value;
+    var tabKey = tab.id;
     vm.data[tabKey] = [{
       'document_name': '<Nama dokumen>',
       'document_type': '',
@@ -35,11 +34,16 @@ function documentUploadCtrl ($ionicPlatform, $scope, $rootScope, $state, SpajSer
     }];
   });
 
+  if (typeof vm.tabs[0] !== 'undefined'){
+    vm.currentTab = vm.tabs[0].id;
+  }else{
+    vm.currentTab = '';
+  }
+
   vm.switchTab = function (tab, index) {
     vm.currentTab = tab;
     vm.currentTabIndex = index;
   };
-
 
   vm.documentType = [
     { name: 'Kartu Identitas', value: 1 }
