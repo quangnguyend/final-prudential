@@ -1441,3 +1441,16 @@
 .pd-20{
   padding: 20px;
 }
+.button.selected{
+  background-color: #5B6770;
+  color: #F7F5F5;
+}
+.list-no-border .item{
+  border: none;
+}
+#add_child .item button{
+  margin: 0;
+}
+#add_child .item .description{
+  margin: 0;
+}
