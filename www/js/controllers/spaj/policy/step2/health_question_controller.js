@@ -58,20 +58,20 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
   }
   vm.eyePopupTouched = false
 
-  vm.rgb= ['red', 'green', 'blue'];
-  vm.rgb2= ['red 2', 'green 2', 'blue2'];
-  vm.const=[
+  vm.rgb = ['red', 'green', 'blue'];
+  vm.rgb2 = ['red 2', 'green 2', 'blue2'];
+  vm.const = [
     {
-      type:'a',
-      value:'red2'
+      type: 'a',
+      value: 'red2'
     },
     {
-      type:'bewf',
-      value:'green3'
+      type: 'bewf',
+      value: 'green3'
     },
     {
-      type:'cfew',
-      value:'blue4'
+      type: 'cfew',
+      value: 'blue4'
     }
   ]
 
@@ -257,13 +257,10 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
         }
       ]
     })
-<<<<<<< HEAD
     tumorPopup.then(function (res) {
-=======
-    digestive.then(function (res) {
+
       // vm.healthData.eyePopupData = res
       // vm.eyePopupTouched = true
->>>>>>> 5934edc87ba3d503e132e58e7430aa22128f83e1
     })
   }
 
