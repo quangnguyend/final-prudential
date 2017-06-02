@@ -1,4 +1,4 @@
-function documentUploadCtrl ($scope, $rootScope, $state, SpajService, $cordovaCamera, $ionicModal) {
+function documentUploadCtrl ($ionicPlatform, $scope, $rootScope, $state, SpajService, $cordovaCamera, $ionicModal) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
@@ -52,28 +52,29 @@ function documentUploadCtrl ($scope, $rootScope, $state, SpajService, $cordovaCa
       'document_image': ''
     });
   };
-
-  vm.isOpeningCamera = false;
-  vm.takePhoto =function (item) {
-    var options = {
-      quality: 75,
-      destinationType: Camera.DestinationType.DATA_URL,
-      sourceType: Camera.PictureSourceType.CAMERA,
-      allowEdit: true,
-      encodingType: Camera.EncodingType.JPEG,
-      popoverOptions: CameraPopoverOptions,
-      saveToPhotoAlbum: false
+  $ionicPlatform.ready(function() {
+    vm.isOpeningCamera = false;
+    vm.takePhoto =function (item) {
+      var options = {
+        quality: 75,
+        destinationType: Camera.DestinationType.DATA_URL,
+        sourceType: Camera.PictureSourceType.CAMERA,
+        allowEdit: true,
+        encodingType: Camera.EncodingType.JPEG,
+        popoverOptions: Camera.PopoverArrowDirection.ARROW_UP,
+        saveToPhotoAlbum: false
+      };
+      if(vm.isOpeningCamera === false){
+        vm.isOpeningCamera = true;
+        $cordovaCamera.getPicture(options).then(function(imageData) {
+          item.document_image = "data:image/jpeg;base64," + imageData;
+          vm.isOpeningCamera = false ;
+        }, function() {
+          return;
+        });
+      }
     };
-    if(vm.isOpeningCamera === false){
-      vm.isOpeningCamera = true;
-      $cordovaCamera.getPicture(options).then(function(imageData) {
-        item.document_image = "data:image/jpeg;base64," + imageData;
-        vm.isOpeningCamera = false ;
-      }, function(err) {
-        // error
-      });
-    }
-  };
+  });
 
   // Modal view image
   vm.modalShowImage = $ionicModal.fromTemplate('<ion-modal-view> ' +
@@ -84,11 +85,11 @@ function documentUploadCtrl ($scope, $rootScope, $state, SpajService, $cordovaCa
     '</div> ' +
     '<div class="mt-30"><img ng-src="{{dataPopup.document_image}}" class="img-responsive"></div></div></ion-content> ' +
     '</ion-modal-view>', {
-    scope: $scope,
-    animation: 'slide-in-up',
-    hardwareBackButtonClose: true,
-    backdropClickToClose :true
-  });
+      scope: $scope,
+      animation: 'slide-in-up',
+      hardwareBackButtonClose: true,
+      backdropClickToClose :true
+    });
 
   // Close modal view image
   vm.closeModalShowImage = function() {
