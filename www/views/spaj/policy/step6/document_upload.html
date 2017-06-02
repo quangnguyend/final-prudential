@@ -6,13 +6,12 @@
     <step-process></step-process>
     <div class="header-tab">
       <div class='row tab-menu'>
-        <div class="col" ng-repeat="tab in vm.tabs" ng-class="vm.currentTab==tab.value? 'active': ''" ng-click="vm.switchTab(tab.value)">
-          <span class="d-table"><span class="d-table-cell">{{ tab.title}}</span></span>
+        <div class="col" ng-repeat="tab in vm.tabs" ng-class="vm.currentTab==tab.id? 'active': ''" ng-click="vm.switchTab(tab.id)">
+          <span class="d-table"><span class="d-table-cell">{{ tab.name}}</span></span>
         </div>
       </div>
     </div>
-
-    <div class="wrapper has-bottom-bar upload-document-page mt-30">
+    <div class="wrapper has-bottom-bar upload-document-page mt-30" ng-show="vm.tabs.length > 0">
       <form>
         <div class="list list-inset">
           <div class='item'>
@@ -20,7 +19,7 @@
             <div class="m-gap-30">
               <ul>
                 <li class="clearfix" ng-repeat="item in vm.data[vm.currentTab]">
-                  <div class="row row-no-padding" ng-if="vm.currentTab=='premiums'">
+                  <div class="row row-no-padding">
                     <div class="col col-67 col-padding">
                       <md-input-container class="select-box md-block" md-no-float>
                         <label class="input-label">{{item.document_name}}</label>

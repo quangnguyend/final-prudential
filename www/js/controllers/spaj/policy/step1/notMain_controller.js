@@ -52,6 +52,8 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
 
 
   vm.nextClickHandle = function () {
+    var tabs = vm.additionalList;
+    SpajService.setData('step1', { tabs: tabs });
     validator(function (rs) {
       if (rs.indexOf(false) >= 0) {
         SpajService.stepComplete('step1', false)

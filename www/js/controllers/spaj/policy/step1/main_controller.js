@@ -43,6 +43,9 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
   }
 
   vm.nextClickHandle = function () {
+    var tabs = [{id:POCICY_HOLDER_TAB, name: vm.PH + 'Tertanggung Utama'}].concat(vm.additionalList);
+    SpajService.setData('step1', { tabs: tabs });
+
     validator(function (rs) {
       if (rs.indexOf(false) >= 0) {
         SpajService.stepComplete('step1', false)
