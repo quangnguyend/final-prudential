@@ -1,0 +1,113 @@
+<ion-view cache-view="false" view-title="Step 2: Data pemeriksaan kesehatan" id="add_child">
+  <ion-nav-title>
+    <custom-header title='Step 2: Data pemeriksaan kesehatan' step='2'></custom-header>
+  </ion-nav-title>
+  <ion-content>
+    <step-process></step-process>
+    <div class="header-tab">
+      <div class='row tab-menu'>
+        <div class='col' ng-repeat="tab in vm.tabs" ng-class="vm.currentTab==tab.value? 'active': ''" ng-click="vm.switchTab(tab.value)">
+          <span class="d-table"><span class="d-table-cell">{{ tab.title}}</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper text-center has-bottom-bar padding-bottom">
+      <div class="list list-no-border">
+        <div class="item">
+          <h1 class="text-center description">Apakah anak Anda tidak divaksinasi sesuai standar usia ?</h1>
+          <div class="row no-padding-top">
+            <div class="col col-50">
+              <button class="button button-block" ng-class="vm.dataAddChild.question1.value == true? 'selected': ''" ng-click="vm.dataAddChild.question1.value = true">Ya</button>
+            </div>
+            <div class="col col-50">
+              <button class="button button-block" ng-class="vm.dataAddChild.question1.value == false? 'selected': ''" ng-click="vm.dataAddChild.question1.value = false">Tidak</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <h1 class="text-center description">Jelaskan</h1>
+          <div class="row">
+            <div><input type="text" placeholder="Enter" ng-model="vm.dataAddChildAddChild.question1.answer"></div>
+          </div>
+        </div>
+        <div class="item">
+          <h1 class="text-center description">Apakah anak Anda pernah memiliki,
+            diberitahu memiliki, atau menerimapengobatan untuk kelainan berikut: Gangguan fisik/perkembangan/ ketidaknormalan/ kelahiran prematur/ gangguan penglihatan/ pendengaran/
+            bicara/ Epilepsi/ kelemahan otot/ hidrosefalus/ pingsan/ sakit kepala berkepanjangan/ nervous breakdown/ any mental/nervous disorder</h1>
+          <div class="row no-padding-top">
+            <div class="col col-50">
+              <button class="button button-block" ng-class="vm.dataAddChildAddChild.question2.value == true? 'selected': ''" ng-click="vm.dataAddChild.question2.value = true">Ya</button>
+            </div>
+            <div class="col col-50">
+              <button class="button button-block" ng-class="vm.dataAddChild.question2.value == false? 'selected': ''" ng-click="vm.dataAddChild.question2.value = false">Tidak</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <h1 class="text-center description">Jelaskan</h1>
+          <div class="row">
+            <div><input type="text" placeholder="Enter" ng-model="vm.dataAddChild.question2.answer"></div>
+          </div>
+        </div>
+        <div class="item">
+          <h1 class="text-center description">Apakah terdapat keterlambatan dalam tahap
+            perkembangan anak Anda?</h1>
+          <div class="row no-padding-top">
+            <div class="col col-50">
+              <button class="button button-block" ng-class="vm.dataAddChild.question3.value == true? 'selected': ''" ng-click="vm.dataAddChild.question3.value = true">Ya</button>
+            </div>
+            <div class="col col-50">
+              <button class="button button-block" ng-class="vm.dataAddChild.question3.value == false? 'selected': ''" ng-click="vm.dataAddChild.question3.value = false">Tidak</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <h1 class="text-center description">Jelaskan</h1>
+          <div class="row">
+            <div><input type="text" placeholder="Enter" ng-model="vm.dataAddChild.question3.answer"></div>
+          </div>
+        </div>
+        <div class="item">
+          <h1 class="text-center description">Apakah anak Anda pernah dianjurkan untuk menjalani fisioterapi, terapi pekerjaan*, atau mengikuti sekolah/ pendidikan khusus?</h1>
+          <div class="row no-padding-top">
+            <div class="col col-50">
+              <button class="button button-block" ng-class="vm.dataAddChild.question4.value == true? 'selected': ''" ng-click="vm.dataAddChild.question4.value = true">Ya</button>
+            </div>
+            <div class="col col-50">
+              <button class="button button-block" ng-class="vm.dataAddChild.question4.value == false? 'selected': ''" ng-click="vm.dataAddChild.question4.value = false">Tidak</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <h1 class="text-center description">Jelaskan</h1>
+          <div class="row">
+            <div><input type="text" placeholder="Enter" ng-model="vm.dataAddChild.question4.answer"></div>
+          </div>
+        </div>
+        <div class="item">
+          <h1 class="text-center description">Apakah salah satu saudara dari Calon Tertanggung/
+            Peserta ada yang menderita cacat dari lahir/
+            kelainan bawaan/ gangguan perkembangan/
+            kelainan genetik/ gangguan intelektual/ autis?</h1>
+          <div class="row no-padding-top">
+            <div class="col col-50">
+              <button class="button button-block" ng-class="vm.dataAddChild.question5.value == true? 'selected': ''" ng-click="vm.dataAddChild.question5.value = true">Ya</button>
+            </div>
+            <div class="col col-50">
+              <button class="button button-block" ng-class="vm.dataAddChild.question5.value == false? 'selected': ''" ng-click="vm.dataAddChild.question5.value = false">Tidak</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <h1 class="text-center description">Jelaskan</h1>
+          <div class="row">
+            <div><input type="text" placeholder="Enter" ng-model="vm.dataAddChild.question5.answer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  <ion-footer-bar ng-show="true" class="bar bar-footer bar-assertive">
+    <a ng-click="vm.nextStep()" title="Lanjutkan" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
+  </ion-footer-bar>
+</ion-view>

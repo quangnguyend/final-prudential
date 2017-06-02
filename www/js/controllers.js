@@ -67,6 +67,7 @@ angular
   .controller('AmendmentCtrl', amendmentCtrl)
   .controller('TermsCtrl', termsCtrl)
   .controller('CustomHeaderCtrl', customHeaderCtrl)
+  .controller('AddChildCtrl', addChildCtrl)
 
   .directive('dataService', dataService)
   .directive('groupedRadio', groupedRadio)
