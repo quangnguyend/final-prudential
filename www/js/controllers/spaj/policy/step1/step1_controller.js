@@ -11,7 +11,7 @@ function step1Ctrl ($state, $scope, $rootScope, $stateParams, SpajService) {
     if (!objSpaj) {
       $state.go('app.spaj_start')
     } else {
-      objSpaj.session1.toLowerCase() === 'bukan' ? $state.go('app.notmain') : $state.go('app.main')
+      objSpaj.session2 === 'pemegangpolis' ? $state.go('app.main') : $state.go('app.notmain')
     }
   }
 }
