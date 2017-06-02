@@ -1,0 +1,328 @@
+<div class="popup-wrapper">
+
+  <div class="popup-content">
+    <div id="policy_info_ph_info" class="list list-inset no-lines">
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <span class="input-label">Gangguan pernafasan yang diderita</span>
+            </label>
+          </div>
+          <div class="row">
+            <div class="col-33">
+              <ion-checkbox ng-model='fewfe'>Asma</ion-checkbox>
+            </div>
+            <div class="col-33">
+              <ion-checkbox>TBC</ion-checkbox>
+            </div>
+            <div class="col-33">
+              <ion-checkbox>Bronkhitis</ion-checkbox>
+            </div>
+          </div>
+          <div class="row">
+            <ion-checkbox ng-model='item3'>Lainnya</ion-checkbox>
+          </div>
+          <div class="option_other" ng-show='item3'>
+            <div class="row">
+              <input type="text" placeholder="Enter">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <md-input-container class="md-block">
+              <md-select ng-model='fewf' placeholder="Kapan pertama kali gejala dirasakan">
+                <md-option ng-repeat="n in vm.const" value="{{n.type}}">{{n.value}}</md-option>
+              </md-select>
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+              <span class="input-label">Keluhan yang dirasakan</span>
+            </label>
+          </div>
+          <div class="row">
+            <div class="col-33">
+              <ion-checkbox>Sesak Nafas</ion-checkbox>
+            </div>
+            <div class="col-33">
+              <ion-checkbox>Batuk lama</ion-checkbox>
+            </div>
+            <div class="col-33">
+              <ion-checkbox>Nafas Berbunyi</ion-checkbox>
+            </div>
+          </div>
+          <div class="row">
+            <ion-checkbox ng-model='item4'>Lainnya</ion-checkbox>
+          </div>
+          <div class="option_other" ng-show='item4'>
+            <div class="row">
+              <input type="text" placeholder="Enter">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Faktor pemicu terhadap keluhan yang dirasakan </label>
+            <input type="text" />
+          </md-input-container>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+                <div class="input-label">Apakah membatasi aktivitas pekerjaan ?</div>
+              </label>
+          </div>
+          <div class="row">
+            <div class="row indent_row">
+              <div class="button-bar">
+                <a class="button col col-50" grouped-radio="'Ya'" ng-model="vm.healthDigest.apakah2">Ya</a>
+                <a class="button col col-50" grouped-radio="'Tidak'" ng-model="vm.healthDigest.apakah2">Tidak</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <di class="row-no-padding">
+          <div class="row">
+            <div class="button-block add_icon">
+              <a class="button" grouped-red-radio="'Male'" ng-model="agent.gender"><span>Berikutnya</span></a>
+            </div>
+          </div>
+        </di>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+
+          <div class="row">
+            <md-input-container class="md-block">
+              <md-select ng-model='agent.occupation333' placeholder='Kapan keluhan terakhir'>
+                <md-option ng-repeat="type in vm.rgb2" value="{{type}}">{{type}}</md-option>
+              </md-select>
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Nama Dokter / Rumah Sakit</label>
+            <input type="text" ng-model="data.date_of_birth" />
+          </md-input-container>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <div class="col-40">
+              <div class="row">
+                <md-input-container class="md-block">
+                  <md-select ng-model='agent.occupation233' placeholder='Berapa kali konsultasi'>
+                    <md-option ng-repeat="type in vm.rgb2" value="{{type}}">{{type}}</md-option>
+                  </md-select>
+                </md-input-container>
+
+              </div>
+            </div>
+            <div class="col-20"></div>
+            <div class="col-40">
+
+              <div class="row">
+                <div class="col-50">
+                  <md-input-container class="md-block">
+                    <md-select ng-model='agent.occupation233' placeholder='Terakhir konsultasi'>
+                      <md-option ng-repeat="type in vm.rgb2" value="{{type}}">{{type}}</md-option>
+                    </md-select>
+                  </md-input-container>
+                </div>
+
+                <div class="col-50">
+                  <md-input-container class="md-block">
+                    <md-select ng-model='agent.occupation233' placeholder='2011'>
+                      <md-option ng-repeat="type in vm.rgb2" value="{{type}}">{{type}}</md-option>
+                    </md-select>
+                  </md-input-container>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <di class="row-no-padding">
+          <div class="row">
+            <div class="button-block add_icon">
+              <a class="button" grouped-red-radio="'Male'" ng-model="agent.gender"><span>Berikutnya</span></a>
+            </div>
+          </div>
+        </di>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+                <div class="input-label">Apakah pernah dirawat inap di Rumah Sakit ?</div>
+              </label>
+          </div>
+          <div class="row">
+            <div class="button-bar">
+              <a class="button col col-50" grouped-radio="'Ya'" ng-model="vm.healthDigest.apakah2">Ya</a>
+              <a class="button col col-50" grouped-radio="'Tidak'" ng-model="vm.healthDigest.apakah2">Tidak</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <div class="col-40">
+              <div class="row">
+                <md-input-container class="md-block">
+                  <md-select ng-model='agent.occupation233' placeholder='Kapan'>
+                    <md-option ng-repeat="type in vm.rgb2" value="{{type}}">{{type}}</md-option>
+                  </md-select>
+                </md-input-container>
+              </div>
+            </div>
+            <div class="col-20"></div>
+            <div class="col-40">
+
+              <div class="row">
+                <md-input-container class="md-block">
+                  <md-select ng-model='agent.occupation233' placeholder='Lama di Rumah Sakit'>
+                    <md-option ng-repeat="type in vm.rgb2" value="{{type}}">{{type}}</md-option>
+                  </md-select>
+                </md-input-container>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Nama Dokter / Rumah Sakit</label>
+            <input type="text" ng-model="data.date_of_birth" />
+          </md-input-container>
+        </div>
+      </div>
+      <div class="item">
+        <di class="row-no-padding">
+          <div class="row">
+            <div class="button-block add_icon">
+              <a class="button" grouped-red-radio="'Male'" ng-model="agent.gender"><span>Berikutnya</span></a>
+            </div>
+          </div>
+        </di>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+                <span class="input-label">Pengobatan / Terapi</span>
+              </label>
+          </div>
+          <div class="row">
+            <ion-checkbox>Inhalasi</ion-checkbox>
+          </div>
+          <div class="row">
+            <ion-checkbox>Suntikan</ion-checkbox>
+          </div>
+          <div class="option_other">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Nama Obat</label>
+              <input type="text" />
+            </md-input-container>
+          </div>
+          <div class="row">
+            <ion-checkbox>Obat minum</ion-checkbox>
+          </div>
+          <div class="row">
+            <ion-checkbox>Operasi</ion-checkbox>
+          </div>
+          <div class="row">
+            <ion-checkbox>Lainnya</ion-checkbox>
+          </div>
+          <div class="option_other">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Nama Obat</label>
+              <input type="text" />
+            </md-input-container>
+          </div>
+
+        </div>
+      </div>
+      <div class="item">
+        <di class="row-no-padding">
+          <div class="row">
+            <div class="button-block add_icon">
+              <a class="button" grouped-red-radio="'Male'" ng-model="agent.gender"><span>Berikutnya</span></a>
+            </div>
+          </div>
+        </di>
+      </div>
+      <div class='item'>
+        <div class="row-no-padding">
+          <div class="row">
+            <label class="item-stacked-label">
+                <span class="input-label">Pemeriksaan</span>
+              </label>
+          </div>
+          <div class="row">
+            <ion-checkbox>Rontgen Dada</ion-checkbox>
+          </div>
+          <div class="row">
+            <ion-checkbox>Tes Fungsi Paru / Spirometri</ion-checkbox>
+          </div>
+          <div class="option_other">
+
+            <div class="row">
+              <div class="col-40">
+                <md-input-container class="md-block">
+                  <md-select ng-model='agent.occupation233' placeholder='Kapan'>
+                    <md-option ng-repeat="type in vm.rgb2" value="{{type}}">{{type}}</md-option>
+                  </md-select>
+                </md-input-container>
+              </div>
+              <div class="col-20"></div>
+              <div class="col-40">
+                <md-input-container class="md-block">
+                  <md-select ng-model='agent.occupation233' placeholder='Hasil'>
+                    <md-option ng-repeat="type in vm.rgb2" value="{{type}}">{{type}}</md-option>
+                  </md-select>
+                </md-input-container>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <ion-checkbox>EKG</ion-checkbox>
+          </div>
+          <div class="row">
+            <ion-checkbox>Lainnya</ion-checkbox>
+          </div>
+          <div class="option_other">
+            <div class="row">
+              <input type="text" placeholder="Enter">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
