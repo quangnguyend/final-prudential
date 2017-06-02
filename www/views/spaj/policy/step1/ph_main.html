@@ -5,7 +5,7 @@
   <ion-content>
     <step-process></step-process>
     <div class='row tab-menu'>
-      <div class='col' ng-repeat='tab in vm.additionalList track by $index' ng-click='vm.switchTab(tab.id)' ng-class='vm.currentTab===tab.id?"active":""'><span class="d-table"><span class="d-table-cell">Pemegang Polis - {{tab.name}}</span></span>
+      <div class='col' ng-repeat='tab in vm.additionalList track by $index' ng-click='vm.switchTab(tab.id)' ng-class='vm.currentTab===tab.id?"active":""'><span class="d-table"><span class="d-table-cell">{{tab.name}}</span></span>
       </div>
       <div class='col' ng-click='vm.switchTab(vm.policy_holder_tab)' ng-class='vm.currentTab===vm.policy_holder_tab?"active":""'><span class="d-table"><span class="d-table-cell">{{vm.PH}} Tertanggung Utama</span></span>
       </div>
