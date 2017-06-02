@@ -5,65 +5,103 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
 
   $ionicSideMenuDelegate.canDragContent(false)
 
+  var vm = this
+
   var POCICY_HOLDER_TAB = 'POLICY_HOLDER'
   var rootSpajData = SpajService.getData('spaj')
-  $scope.policy_holder_tab = POCICY_HOLDER_TAB
-  $scope.currentTab = POCICY_HOLDER_TAB
-  $scope.additionalList = []
-  $scope.currentTabIndex = null
 
-  $scope.switchTab = function (tab, index) {
-    $scope.currentTab = tab || POCICY_HOLDER_TAB
-    $scope.currentTabIndex = index
+  vm.PH = 'Pemegang Polis - '
+  vm.policy_holder_tab = POCICY_HOLDER_TAB
+  vm.currentTab = POCICY_HOLDER_TAB
+  vm.additionalList = []
+  vm.currentTabIndex = null
+
+  vm.switchTab = function (tab, index) {
+    vm.currentTab = tab || POCICY_HOLDER_TAB
+    vm.currentTabIndex = index
   }
 
-  $scope.addAdditionalTab = function () {
-    var numberTab = $scope.additionalList.length
-    // we have only maximum 2 addtional tabs
-    if (numberTab === 2) { return }
-    $scope.currentTabIndex = numberTab
-    $scope.additionalList.push({
-      id: 'ADDITIONAL_' + numberTab,
-      name: 'Tertanggung Tambahan ' + (numberTab + 1)
+  vm.addAdditionalTab = function (tabIndex) {
+    var numberTab = vm.additionalList.length
+    var newTab = {}
+    if (typeof tabIndex === 'undefined') { tabIndex = numberTab }
+    // we have only maximum 2 addtional tabs and only accept index 0 or 1
+    if (numberTab === 2 && (tabIndex !== 1 || tabIndex !== 0)) { return }
+    if (vm.additionalList[0] && vm.additionalList[0].index === tabIndex) {
+      tabIndex = 1 - tabIndex // switch between 0 and 1
+    }
+
+    newTab = {
+      index: tabIndex,
+      id: 'ADDITIONAL_' + tabIndex,
+      name: 'Tertanggung Tambahan ' + (tabIndex + 1)
+    }
+
+    vm.currentTabIndex = tabIndex
+    vm.additionalList.push(newTab)
+    vm.currentTab = 'ADDITIONAL_' + tabIndex
+  }
+
+  vm.nextClickHandle = function () {
+    validator(function (rs) {
+      if (rs.indexOf(false) >= 0) {
+        SpajService.stepComplete('step1', false)
+      } else {
+        SpajService.stepComplete('step1', true)
+      }
     })
-    $scope.currentTab = 'ADDITIONAL_' + numberTab
-  }
-
-  $scope.nextClickHandle = function () {
     $state.go('app.step2')
   }
 
-  $scope.handleMainTabSwipe = function () {
-    if ($scope.additionalList.length) {
-      $scope.switchTab('ADDITIONAL_0', 0)
+  vm.handleMainTabSwipe = function () {
+    if (vm.additionalList.length) {
+      vm.switchTab('ADDITIONAL_0', 0)
     }
   }
-  $scope.handleAddedTabSwipe = function (e) {
+  vm.handleAddedTabSwipe = function (e) {
     var direct = e.gesture.direction
     // if swipeleft and current tab index smaller than tabs length
     if (direct === 'left') {
-      if ($scope.additionalList.length === 2 && $scope.currentTabIndex === 0) {
-        var nextTab = $scope.additionalList[$scope.currentTabIndex + 1]['id']
-        $scope.switchTab(nextTab, $scope.currentTabIndex + 1)
+      if (vm.additionalList.length === 2 && vm.currentTabIndex === 0) {
+        var nextTab = vm.additionalList[vm.currentTabIndex + 1]['id']
+        vm.switchTab(nextTab, vm.currentTabIndex + 1)
       }
     }
     if (direct === 'right') {
-      switch ($scope.currentTabIndex) {
+      switch (vm.currentTabIndex) {
         case 1:
-          var prevTab1 = $scope.additionalList[$scope.currentTabIndex - 1]['id']
-          $scope.switchTab(prevTab1, $scope.currentTabIndex - 1)
+          var prevTab1 = vm.additionalList[vm.currentTabIndex - 1]['id']
+          vm.switchTab(prevTab1, vm.currentTabIndex - 1)
           break
         case 0:
-          $scope.switchTab('POLICY_HOLDER', null)
+          vm.switchTab('POLICY_HOLDER', null)
           break
       }
     }
   }
 
   function initPage (rootSpajData) {
-    if (!rootSpajData) return
-    if (rootSpajData.tambahan1) { $scope.addAdditionalTab() }
-    if (rootSpajData.tambahan2) { $scope.addAdditionalTab() }
+    if (!rootSpajData) {
+      $state.go('app.spaj_start')
+    } else {
+      var typeOfSession = Number.parseInt(rootSpajData.session1)
+      if (typeOfSession === 1 || typeOfSession === 2) {
+        vm.PH = ''
+        vm.addAdditionalTab(typeOfSession - 1)
+      }
+    }
+  }
+
+  function validator (callback) {
+    if (!SpajService.getData('step1')) {
+      SpajService.setData('step1', {})
+    }
+
+    setTimeout(function () {
+      var data = SpajService.getData('step1')
+      var rs = Object.keys(data).map(function (page) { return data[page].isComplete })
+      callback(rs)
+    }, 1500)
   }
 
   initPage(rootSpajData)

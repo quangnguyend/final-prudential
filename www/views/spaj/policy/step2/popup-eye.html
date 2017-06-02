@@ -1,38 +1,48 @@
-<div class="popup-wrapper">
-  <form action="">
+<div id="eye-popup" class="popup-wrapper">
+ 
+  <div class="popup-content">
+    <div class="item no-lines" ng-repeat="(index, item) in vm.popupData track by $index">
+      <span class="number">{{index + 1}}</span>
+      <div class="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Nama Keadaan/Penyakit</label>
+          <input ng-model="item[index].name_of_illness">
+        </md-input-container>
+      </div>
+      <div class="row responsive-sm">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Kapan kondisi ditemukan</label>
+          <input ng-model="item[index].when_the_condition_found">
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Tanggal Konsultasi/Perawatan terakhir</label>
+          <input ng-model="item[index].last_care_date">
+        </md-input-container>
+      </div>
+      <div class="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Nama Rumah sakit yang dikunjungi</label>
+          <input ng-model="item[index].hospoital_name">
+        </md-input-container>
+      </div>
+      <div class="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Alamat Rumah sakit yang dikunjungi</label>
+          <input ng-model="item[index].hospital_address">
+        </md-input-container>
+      </div>
+      <div class="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Tindakan Medis</label>
+          <input ng-model="item[index].medicine">
+        </md-input-container>
+      </div>
+    </div>
     <div class="row">
-      <md-input-container class="md-block" flex-gt-sm>
-        <label>Nama Keadaan/Penyakit</label>
-        <input ng-model="popupData.name_of_illness">
-      </md-input-container>
+      <button class="add-more-btn" ng-click="vm.addPopupData()">
+        + Tambah detail kondisi 
+      </button>
     </div>
-    <div class="row responsive-sm">
-      <md-input-container class="md-block" flex-gt-sm>
-        <label>Kapan kondisi ditemukan</label>
-        <input ng-model="popupData.when_the_condition_found">
-      </md-input-container>
-      <md-input-container class="md-block" flex-gt-sm>
-        <label>Tanggal Konsultasi/Perawatan terakhir</label>
-        <input ng-model="popupData.last_care_date">
-      </md-input-container>
-    </div>
-    <div class="row">
-      <md-input-container class="md-block" flex-gt-sm>
-        <label>Nama Rumah sakit yang dikunjungi</label>
-        <input ng-model="popupData.hospoital_name">
-      </md-input-container>
-    </div>
-    <div class="row">
-      <md-input-container class="md-block" flex-gt-sm>
-        <label>Alamat Rumah sakit yang dikunjungi</label>
-        <input ng-model="popupData.hospital_address">
-      </md-input-container>
-    </div>
-    <div class="row">
-      <md-input-container class="md-block" flex-gt-sm>
-        <label>Tindakan Medis</label>
-        <input ng-model="popupData.medicine">
-      </md-input-container>
-    </div>
-  </form>
+  </div>
+  
 </div>

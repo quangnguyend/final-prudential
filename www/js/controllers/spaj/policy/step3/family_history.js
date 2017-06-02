@@ -1,6 +1,6 @@
 'use strict'
 
-function familyHistoryCtrl ($scope, $rootScope, $ionicPopup, UserService, DataService, $ionicScrollDelegate, $location) {
+function familyHistoryCtrl ($scope, $rootScope, $ionicPopup, $ionicScrollDelegate, $location) {
   var vm = this
 
   vm.tabs = [

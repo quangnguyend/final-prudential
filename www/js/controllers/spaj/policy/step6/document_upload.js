@@ -1,4 +1,4 @@
-function documentUploadCtrl ($scope, $rootScope, Upload, SpajService, $cordovaCamera, $ionicModal) {
+function documentUploadCtrl ($scope, $rootScope, $state, SpajService, $cordovaCamera, $ionicModal) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
@@ -104,4 +104,14 @@ function documentUploadCtrl ($scope, $rootScope, Upload, SpajService, $cordovaCa
     document.document_image = '';
   };
 
+  function validator () {
+    // TODO
+    return true
+  }
+
+  vm.handleSubmit = function () {
+    $state.go('app.step7')
+    // TODO
+    SpajService.setData('step6', {isComplete: validator()})
+  }
 }

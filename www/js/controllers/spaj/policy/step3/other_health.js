@@ -1,6 +1,6 @@
 'use strict'
 
-function otherHealthCtrl ($scope, $rootScope, $ionicPopup, UserService, DataService, $ionicScrollDelegate, $location, $ionicSideMenuDelegate) {
+function otherHealthCtrl ($scope, $rootScope, $ionicScrollDelegate, $location, $ionicSideMenuDelegate, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
@@ -26,9 +26,9 @@ function otherHealthCtrl ($scope, $rootScope, $ionicPopup, UserService, DataServ
       title: 'Pemeriksaan kesehatan, tes diagnostik medis yang pernah Anda lakukan?',
       heath_check: '',
       other_answer: '',
-      option:[
-        {"value":'value1', "type":"Lainnya"},
-        {"value":'value2', "type":"Lainnya2"}
+      option: [
+        {'value': 'value1', 'type': 'Lainnya'},
+        {'value': 'value2', 'type': 'Lainnya2'}
       ]
     },
     question_2: {

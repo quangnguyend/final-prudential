@@ -10,14 +10,14 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
       function_name: null,
       is_pen_installed: null
     },
-    eyePopupData: {
+    eyePopupData: [{
       name_of_illness: null,
       when_the_condition_found: null,
       last_care_date: null,
       hospoital_name: null,
       hospital_address: null,
       medicine: null
-    },
+    }],
     height: null,
     weight: null,
     smoker: null,
@@ -57,18 +57,22 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     ilostweight: null
   }
   vm.eyePopupTouched = false
-  vm.personalAccidentPopupTouched = false
 
-  vm.checkPropertiesNotNull = function (obj) {
-    if (obj === null || obj === '') { return false }
-    for (var key in obj) {
-      if (obj[key] === null || obj[key] === '') { return false }
+  vm.rgb=['red', 'green', 'blue'];
+
+  vm.checkPropertiesNotNull = function (arrayObj) {
+    if (arrayObj === null || arrayObj === '') { return false }
+    for(var i = 0; i < arrayObj.length; i++) {
+      for (var key in arrayObj[i]) {
+        if (!arrayObj[i][key]) return false
+      }
     }
     return true
   }
 
   vm.nextStep = function () {
-    SpajService.setData('step2_HealthData', vm.healthData)
+    vm.healthData.isComplete = validator()
+    SpajService.setData('step2', vm.healthData)
     $state.go('app.step3')
   }
 
@@ -99,9 +103,22 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     }
   }
 
-  $scope.showPopup = function () {
+  vm.showPopupEye = function () {
     // custom popup
-    $scope.popupData = vm.healthData.eyePopupData
+    vm.popupData = vm.healthData.eyePopupData
+    vm.addPopupData = function () {
+      vm.popupData.push({
+        name_of_illness: null,
+        when_the_condition_found: null,
+        last_care_date: null,
+        hospoital_name: null,
+        hospital_address: null,
+        medicine: null
+      })
+    }
+    if(vm.healthData.eye_contact_lenses&&vm.healthData.eye_disorders){ // if choose both option
+      vm.addPopupData()
+    }
     var eyePopup = $ionicPopup.show({
       templateUrl: 'views/spaj/policy/step2/popup-eye.html',
       title: 'Detail Kondisi Mata',
@@ -109,25 +126,18 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
       scope: $scope,
       buttons: [
         {
-          text: '<i class="icon ion-ios-arrow-back"></i>',
-          type: 'btn-popup-back',
-          onTap: function (e) {
-            e.preventDefault()
-          }
-        },
-        {
           text: '<i class="icon ion-android-close"></i>',
           type: 'btn-popup-close',
           onTap: function (e) {
             // eyePopup.close();
-            return $scope.popupData
+            return vm.popupData
           }
         },
         {
           text: 'Selesai',
           type: 'button-assertive btn-popup-save',
           onTap: function (e) {
-            return $scope.popupData
+            return vm.popupData
           }
         }
       ]
@@ -138,51 +148,47 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     })
   }
 
-  $scope.showPopup_paccident = function () {
-    // custom popup
-    $scope.popupData = vm.healthData.personalAccidentPopupData
-    var injuryPopup = $ionicPopup.show({
-      templateUrl: 'views/spaj/policy/step2/popup-personal-accident.html',
-      title: 'Kecelakaan Pribadi / Cedera Jangka Panjang',
+  function validator () {
+    return true
+  }
+
+  // Spaj Health 1
+  vm.health1Steps = ['health1_step1']
+  vm.health1NextStep = function (id) {
+    var STEP_HEIGHT = $('.multi-step').height() + 120
+    var distance = $('#' + id) && $('#' + id).position().top + STEP_HEIGHT
+    if (vm.health1Steps.indexOf(id) < 0) vm.health1Steps.push(id)
+    $ionicScrollDelegate.scrollTo(0, distance, true)
+  }
+  // popup
+
+  vm.showPopupDigestive = function () {
+    var digestivePopup = $ionicPopup.show({
+      templateUrl: 'views/spaj/policy/step2/popup-digestive.html',
+      title: 'Detail Kondisi Mata',
       cssClass: 'popup-prudential',
       scope: $scope,
       buttons: [
-        {
-          text: '<i class="icon ion-ios-arrow-back"></i>',
-          type: 'btn-popup-back',
-          onTap: function (e) {
-            e.preventDefault()
-          }
-        },
         {
           text: '<i class="icon ion-android-close"></i>',
           type: 'btn-popup-close',
           onTap: function (e) {
             // eyePopup.close();
-            return $scope.popupData
+            return vm.popupData
           }
         },
         {
           text: 'Selesai',
           type: 'button-assertive btn-popup-save',
           onTap: function (e) {
-            return $scope.popupData
+            return vm.popupData
           }
         }
       ]
     })
-    injuryPopup.then(function (res) {
-      vm.healthData.personalAccidentPopupData = res
-      vm.personalAccidentPopupTouched = true
+    digestive.then(function (res) {
+      //vm.healthData.eyePopupData = res
+      //vm.eyePopupTouched = true
     })
-  }
-
-  // Spaj Health 1
-  $scope.health1Steps = ['health1_step1']
-  $scope.health1NextStep = function (id) {
-    var STEP_HEIGHT = $('.multi-step').height() + 120
-    var distance = $('#' + id) && $('#' + id).position().top + STEP_HEIGHT
-    if ($scope.health1Steps.indexOf(id) < 0) $scope.health1Steps.push(id)
-    $ionicScrollDelegate.scrollTo(0, distance, true)
   }
 }

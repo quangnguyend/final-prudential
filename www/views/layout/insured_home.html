@@ -289,25 +289,26 @@
         </div>
     </div>
     </div>
-    <div class='item'  ng-repeat="contact in contacts">
+    <div class='item'  ng-repeat="(index, row) in vm.insuredData.address">
+
         <div class="row-no-padding">
             <div class="row">
                 <div class="col-33">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>No.Tel.Rumah </label>
-                        <input type="tel" ng-model='data.rumah_tel' required ng-model='contact.tel.home'>
+                        <input type="tel" ng-model='vm.insuredData.address.rumah_tel' required ng-model='contact.tel.home'>
                     </md-input-container>
                 </div>
                 <div class="col-33">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>No.Tel.Kantor</label>
-                        <input type="tel" ng-model='data.kantor_tel' required ng-model='contact.tel.office'>
+                        <input type="tel" ng-model='vm.insuredData.address.kantor_tel' required ng-model='contact.tel.office'>
                     </md-input-container>
                 </div>
                 <div class="col-33">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>No. HP /GSM </label>
-                        <input type="tel" ng-model='data.hp_gsm_tel' required ng-model='contact.tel.gsm'>
+                        <input type="tel" ng-model='vm.insuredData.address.hp_gsm_tel' required ng-model='contact.tel.gsm'>
                     </md-input-container>
                 </div>
             </div>
@@ -316,8 +317,9 @@
     <div class="item">
         <di class="row-no-padding">
             <div class="row">
-                <div class="button-block add_icon">
-                    <a class="button" grouped-red-radio="'Male'" ng-click="addContact()"><i class="icon ion-ios-plus-empty"></i> <span>Tampah Kontak</span></a>
+                <div class="button-block add_icon" ng-click='vm.addInsuredAddress()'>
+                    <a class="button" ><i class="icon ion-ios-plus-empty"></i> <span>Tampah Kontak</span></a>
+
                 </div>
             </div>
         </di>
@@ -355,5 +357,30 @@
             </md-input-container>
         </div>
     </div>
+    <div class='item' ng-hide="boxCheckButton">
+      <div class="row-no-padding checkbox-condition">
+        <div class="row">
+          <label class="item-stacked-label">
+            <ion-checkbox ng-model='conditionSelected'></ion-checkbox>
+            <div class="label-text-check">Saya setuju bahwa Prudential dapat menghubungi saya untuk tujuan apapun yang berkaitan dengan kebijakan ini. Prudential berhak Gunakan informasi pelanggan dan bagikan dengan pihak ke 3 bila perlu</div>
+          </label>
+          
+        </div>
+      </div>
+    </div>
+    <div class='item' ng-hide="boxCheckButton">
+      <div class="row-no-padding">
+        <div class="row">
+          <label class="item-stacked-label">
+            <div class="input-label">Bagaimana Anda ingin menerima polis Anda?</div>
+          </label>
+        </div>
+        <div class="row">
+          <div class="button-block button-device-block">
+            <a class='button' ng-class="isactive==1?'active':''" ng-disabled='nextButtonDisabled' ng-click="getValueButton(1)">E-policy <span>1 hari kerja setelah persetujuan</span></a>
+            <a class='button' ng-class="isactive==1?'active':''" ng-disabled='nextButtonDisabled' ng-click="getValueButton(0)">Buku Polis ke alamat rumah <span>Dalam waktu 10 hari kerja setelah persetujuan</span></a>
+          </div>
+        </div>
+      </div>
     </div>
 </form>

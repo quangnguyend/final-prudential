@@ -6,7 +6,8 @@ angular.module('prudential.components', [])
   })
   .component('insuredHome', {
     templateUrl: 'views/layout/insured_home.html',
-    controller: 'insuredHomeCtrl'
+    controller: 'insuredHomeCtrl',
+    controllerAs: 'vm'
   })
   .component('customHeader', {
     templateUrl: 'views/layout/custom_header.html',

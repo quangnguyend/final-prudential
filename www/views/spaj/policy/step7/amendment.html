@@ -1,13 +1,9 @@
-<ion-view cache-view="false" view-title="Amendment">
+<ion-view cache-view="false">
+  <ion-nav-title>
+    <custom-header title='Amendment' step='7'></custom-header>
+  </ion-nav-title>
   <ion-content>
     <step-process></step-process>
-    <div class="header-tab">
-      <div class='row tab-menu'>
-        <div class='col' ng-repeat="tab in vm.tabs" ng-class="vm.currentTab==tab.value? 'active': ''" ng-click="vm.switchTab(tab.value)">
-          <span class="d-table"><span class="d-table-cell">{{ tab.title}}</span></span>
-        </div>
-      </div>
-    </div>
     <div class="wrapper has-bottom-bar amendment-page mt-30">
       <form>
         <div class="list list-inset">
@@ -22,6 +18,6 @@
     </div>
   </ion-content>
   <ion-footer-bar ng-show="true" class="bar bar-footer bar-assertive">
-    <a href="#/app/step8" title="Continue" class="btn">Next<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
+    <a ng-click="vm.handleSubmit()" title="Continue" class="btn">Next<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
   </ion-footer-bar>
 </ion-view>

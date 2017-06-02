@@ -4,15 +4,14 @@ function step1Ctrl ($state, $scope, $rootScope, $stateParams, SpajService) {
   $rootScope.showMenu = true
 
   var vm = this
-  vm.objSpaj = SpajService.getData('spaj')
-
+  var objSpaj = SpajService.getData('spaj')
   gotoPhPage()
 
   function gotoPhPage () {
-    if (!vm.objSpaj) {
+    if (!objSpaj) {
       $state.go('app.spaj_start')
     } else {
-      (vm.objSpaj.utama) ? $state.go('app.main') : $state.go('app.notmain')
+      objSpaj.session1.toLowerCase() === 'bukan' ? $state.go('app.notmain') : $state.go('app.main')
     }
   }
 }

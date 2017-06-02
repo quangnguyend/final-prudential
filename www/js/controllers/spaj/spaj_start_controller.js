@@ -2,23 +2,22 @@ function spajStartCtrl ($state, $scope, $rootScope, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
-  var vm = this
-  vm.saveSpaj = function () {
-    var utama = vm.data.policyHolder.main_primary_insured
-    var tambahan1 = vm.data.policyHolder.policy_payor
-    var tambahan2 = vm.data.policyHolder.additional_insured
-    var bukanTertanggung = vm.data.policyHolder.no_insured
 
-    var typeSpaj = vm.data.policyRadio
+  $rootScope.typeOfStep = 0
+
+  var vm = this
+
+  vm.saveSpaj = function () {
+    var session1 = vm.data.sessionRadio.toLowerCase()
+    var session2 = vm.data.policyRadio.toLowerCase()
     var objSpaj = {
-      utama: utama,
-      tambahan1: tambahan1,
-      tambahan2: tambahan2,
-      bukanTertanggung: bukanTertanggung,
-      typeSpaj: typeSpaj
+      session1: session1,
+      session2: session2
     }
 
     SpajService.setData('spaj', objSpaj)
+
+    if (session2 === 'pemegangpolis') { $rootScope.typeOfStep = 1 }
     $state.go('app.step1')
   }
 
@@ -30,6 +29,7 @@ function spajStartCtrl ($state, $scope, $rootScope, SpajService) {
       no_insured: false
     },
     policyRadio: '',
+    sessionRadio: '',
     policyOtherText: '',
     beforeProceed_1: {
       title: 'Apakah Anda sebelumnya telah memiliki Polis Asuransi PT Prudential Life Assurance dengan Tertanggung yang sama dalam kondisi Polis tidak aktif (lapsed)/telah dilakukan Penebusan Polis ( Surrendered), atau telah melakukan penurunan Premi lebih dari 25% dari nilai Premi sebelumnya (“Polis Lama”) dalam periode yang kurang dari 365 hari terhitung sejak tanggal SPAJ yang Anda tanda tangani ini?',

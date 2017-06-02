@@ -46,5 +46,13 @@ function riskHobbyCtrl ($scope, $rootScope, $ionicPopup, UserService, DataServic
     } else {
       $location.path('/app/step4')
     }
+
+    // TODO
+    SpajService.setData('step3', {isComplete: validator()})
+  }
+
+  function validator () {
+    // TODO
+    return true
   }
 }

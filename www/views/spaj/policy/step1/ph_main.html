@@ -5,18 +5,18 @@
   <ion-content>
     <step-process></step-process>
     <div class='row tab-menu'>
-      <div class='col' ng-click='switchTab(policy_holder_tab)' ng-class='currentTab===policy_holder_tab?"active":""'><span class="d-table"><span class="d-table-cell">Pemegang Polis - Tertanggung Utama</span></span>
+      <div class='col' ng-repeat='tab in vm.additionalList track by $index' ng-click='vm.switchTab(tab.id)' ng-class='vm.currentTab===tab.id?"active":""'><span class="d-table"><span class="d-table-cell">Pemegang Polis - {{tab.name}}</span></span>
       </div>
-      <div class='col' ng-repeat='tab in additionalList' ng-click='switchTab(tab.id)' ng-class='currentTab===tab.id?"active":""'><span class="d-table"><span class="d-table-cell">{{tab.name}}</span></span>
+      <div class='col' ng-click='vm.switchTab(vm.policy_holder_tab)' ng-class='vm.currentTab===vm.policy_holder_tab?"active":""'><span class="d-table"><span class="d-table-cell">{{vm.PH}} Tertanggung Utama</span></span>
       </div>
-      <div ng-if='additionalList.length<2' class='col blur-text' ng-click='addAdditionalTab()'><span class="d-table"><span class="d-table-cell">+ Tertanggung Tambahan</span></span>
+      <div ng-if='vm.additionalList.length<2' class='col blur-text' ng-click='vm.addAdditionalTab()'><span class="d-table"><span class="d-table-cell">+ Tertanggung Tambahan</span></span>
       </div>
     </div>
-    <insured-home insured-data='{{policy_holder_tab}}' ng-show='currentTab===policy_holder_tab' on-swipe-left='handleMainTabSwipe()'></insured-home>
-    <insured-home ng-repeat='tab in additionalList' insured-data='{{tab.id}}' ng-show='currentTab===tab.id' ng-class='currentTab===tab.id?"active":""'
-      on-swipe='handleAddedTabSwipe($event)'></insured-home>
+    <insured-home insured-data='{{vm.policy_holder_tab}}' ng-show='vm.currentTab===vm.policy_holder_tab' on-swipe-left='vm.handleMainTabSwipe()'></insured-home>
+    <insured-home ng-repeat='tab in vm.additionalList track by $index' insured-data='{{tab.id}}' ng-show='vm.currentTab===tab.id' ng-class='vm.currentTab===tab.id?"active":""'
+      on-swipe='vm.handleAddedTabSwipe($event)'></insured-home>
   </ion-content>
   <ion-footer-bar class="bar bar-footer bar-assertive">
-    <div class="btn" ng-click="nextClickHandle()">Lanjutkan</div><button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button>
+    <div class="btn" ng-click="vm.nextClickHandle()">Lanjutkan</div><button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button>
   </ion-footer-bar>
 </ion-view>
