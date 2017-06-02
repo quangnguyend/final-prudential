@@ -255,6 +255,17 @@ angular
           }
         }
       })
+      .state('app.add_child', {
+        cache: false,
+        url: '/step2/add_child',
+        views: {
+          menuContent: {
+            templateUrl: 'views/spaj/policy/step2/add_child.html',
+            controller: 'AddChildCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/spaj_start')
   })

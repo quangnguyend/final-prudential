@@ -77,7 +77,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
 
   vm.checkPropertiesNotNull = function (arrayObj) {
     if (arrayObj === null || arrayObj === '') { return false }
-    for(var i = 0; i < arrayObj.length; i++) {
+    for (var i = 0; i < arrayObj.length; i++) {
       for (var key in arrayObj[i]) {
         if (!arrayObj[i][key]) return false
       }
@@ -131,7 +131,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
         medicine: null
       })
     }
-    if(vm.healthData.eye_contact_lenses&&vm.healthData.eye_disorders){ // if choose both option
+    if (vm.healthData.eye_contact_lenses && vm.healthData.eye_disorders) { // if choose both option
       vm.addPopupData()
     }
     var eyePopup = $ionicPopup.show({
@@ -257,7 +257,13 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
         }
       ]
     })
+<<<<<<< HEAD
     tumorPopup.then(function (res) {
+=======
+    digestive.then(function (res) {
+      // vm.healthData.eyePopupData = res
+      // vm.eyePopupTouched = true
+>>>>>>> 5934edc87ba3d503e132e58e7430aa22128f83e1
     })
   }
 
