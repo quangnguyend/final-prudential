@@ -656,7 +656,11 @@ body label {
 .popup-prudential .scroll-view.scroll-y {
   height: 300px;
 }
-#health_question1 .message{font-size:12px;}
+
+#health_question1 .message {
+  font-size: 12px;
+}
+
 @media only screen and (min-width: 768px) {
   .body, body *, label.item-stacked-label, body label, label.item, .item select, #step-header select {
     font-size: 25px;
@@ -701,10 +705,9 @@ body label {
   .item h1, .item h2, .item h3, .item h4, .item h5, .item h6 {
     font-size: 25px;
   }
-  #digestive-popup .item p {
+  .popup-prudential .item p, .popup-prudential .title-cb {
     font-size: 25px;
   }
-  
 }
 
 

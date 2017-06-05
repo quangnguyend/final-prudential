@@ -168,8 +168,8 @@
 #health_question1 .item {
   border: none;
   padding: 40px 0 0;
-  opacity: 0.4;
-  pointer-events: none;
+  /*opacity: 0.4;
+  pointer-events: none;*/
 }
 
 #health_question1 .item:nth-child(1), #health_question1 .item._active {
@@ -1387,20 +1387,19 @@
   top: -12px;
 }
 
-#spaj-esignature-confirmation .missing-reminder .missing-title.open::before{
+#spaj-esignature-confirmation .missing-reminder .missing-title.open::before {
   content: '+';
   margin-right: 20px;
 }
 
-#spaj-esignature-confirmation .missing-reminder .missing-title.close::before{
+#spaj-esignature-confirmation .missing-reminder .missing-title.close::before {
   content: '-';
   margin-right: 20px;
 }
 
-#spaj-esignature-confirmation .missing-reminder .missing-content{
+#spaj-esignature-confirmation .missing-reminder .missing-content {
   padding: 10px;
 }
-
 
 @media screen and (max-width: 568px) {
   #spaj-esignature-confirmation .custom-checkbox {
@@ -1508,6 +1507,20 @@
   border: none
 }
 
+#digestive-popup .obat-item .obat-index {
+  position: absolute;
+  left: 0px;
+  top: 30px;
+}
+
+#digestive-popup .obat-item {
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 20px
+}
+
+#digestive-popup .obat-add {}
+
 #digestive-popup .item-checkbox {
   width: 100%
 }
@@ -1517,7 +1530,7 @@
   padding-left: 0px
 }
 
-#digestive-popup .item p {
+.popup-prudential .item p {
   font-size: 17px;
 }
 
@@ -1542,11 +1555,10 @@
 
 #digestive-popup .title-cb {
   line-height: 40px;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 17px;
 }
 
-#digestive-popup .col.disable, #digestive-popup input.disable {
+#digestive-popup .disable, #digestive-popup input.disable {
   opacity: 0.4;
   pointer-events: none
 }
@@ -1589,38 +1601,46 @@
   -webkit-box-align: center;
 }
 
-
 #other-health .md-select-value>span:not(.md-select-icon) {
   text-align: left
 }
-.img-options button{
+
+.img-options button {
   padding-left: 5px;
   padding-right: 5px;
   min-width: 35px;
 }
-.upload-document-page h1{
+
+.upload-document-page h1 {
   white-space: inherit;
 }
-.green-color{
+
+.green-color {
   color: #3bab4e;
 }
-.img-responsive{
+
+.img-responsive {
   max-width: 100%;
   max-height: 100%;
 }
-.pd-20{
+
+.pd-20 {
   padding: 20px;
 }
-.button.selected{
+
+.button.selected {
   background-color: #5B6770;
   color: #F7F5F5;
 }
-.list-no-border .item{
+
+.list-no-border .item {
   border: none;
 }
-#add_child .item button{
+
+#add_child .item button {
   margin: 0;
 }
-#add_child .item .description{
+
+#add_child .item .description {
   margin: 0;
 }
