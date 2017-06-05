@@ -15,6 +15,7 @@
     <insured-home insured-data='{{vm.policy_holder_tab}}' ng-show='vm.currentTab===vm.policy_holder_tab' on-swipe-left='vm.handleMainTabSwipe()'></insured-home>
     <insured-home ng-repeat='tab in vm.additionalList track by $index' insured-data='{{tab.id}}' ng-show='vm.currentTab===tab.id' ng-class='vm.currentTab===tab.id?"active":""'
       on-swipe='vm.handleAddedTabSwipe($event)'></insured-home>
+    <div ng-include="'views/layout/step_1_condition.html'"></div>
   </ion-content>
   <ion-footer-bar class="bar bar-footer bar-assertive">
     <div class="btn" ng-click="vm.nextClickHandle()">Lanjutkan</div><button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button>
