@@ -66,7 +66,7 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
     var direct = e.gesture.direction
     // if swipeleft and current tab index smaller than tabs length
     if (direct === 'left') {
-      alert(vm.additionalList.length + 'and index' + vm.currentTabIndex)
+      //alert(vm.additionalList.length + 'and index' + vm.currentTabIndex)
       if (vm.additionalList.length === 1 && vm.currentTabIndex === 1) {
         var nextTab = vm.additionalList[vm.currentTabIndex + 1]['id']
         vm.switchTab(nextTab, vm.currentTabIndex + 1)
