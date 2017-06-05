@@ -618,9 +618,6 @@ body {
   }
 }
 
-#health_question1 .message {
-  font-size: 12px;
-}
 
 @media only screen and (min-width: 768px) {
   .body, body *, label.item-stacked-label, body label, label.item, .item select, #step-header select {
@@ -628,6 +625,9 @@ body {
   }
   #eye-popup .popup-content .number {
     font-size: 20px;
+  }
+  #health_question1 .message {
+    font-size: 17px; 
   }
   .description {
     font-size: 25px;
@@ -655,10 +655,11 @@ body {
     }
   }
   .popup-prudential {
-    .item p, .title-cb {
+    .item p, .title-cb, .add-more-btn {
       font-size: 25px;
     }
   }
+ 
 }
 
 /* ================ END COMMON CSS ================ */

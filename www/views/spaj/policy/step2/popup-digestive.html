@@ -70,7 +70,7 @@
                 <div class="col col-50">
                     <md-input-container>
                         <md-select ng-model='vm.digestive.frekuensi_select' placeholder='Frekuensi timbulnya keluhan'>
-                            <md-option ng-repeat="type in vm.rgb" ng-value="type">{{type}}</md-option>
+                            <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                         </md-select>
                     </md-input-container>
                 </div>
@@ -87,7 +87,7 @@
             <div class="row-no-padding">
                 <md-input-container class="md-block">
                     <md-select ng-model='vm.digestive.kapan_keluhan_select' placeholder='Kapan keluhan terakhir'>
-                        <md-option ng-repeat="type in vm.rgb" ng-value="type">{{type}}</md-option>
+                        <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                     </md-select>
                 </md-input-container>
             </div>
@@ -115,14 +115,14 @@
                 <div class="col">
                     <md-input-container class="md-block">
                         <md-select ng-model="vm.digestive.kapan_month_select" placeholder='Januari'>
-                            <md-option ng-repeat="type in vm.rgb" ng-value="type">{{type}}</md-option>
+                            <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                         </md-select>
                     </md-input-container>
                 </div>
                 <div class="col">
                     <md-input-container class="md-block">
                         <md-select ng-model="vm.digestive.kapan_year_select" placeholder='YYYY'>
-                            <md-option ng-repeat="type in vm.rgb" ng-value="type">{{type}}</md-option>
+                            <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                         </md-select>
                     </md-input-container>
                 </div>
@@ -188,7 +188,7 @@
                                             <div class="col col-50">
                                                 <md-input-container>
                                                     <md-select ng-model="vm.digestive.tindakan_obat[index].timbulnya_select" placeholder='Frekuensi timbulnya keluhan'>
-                                                        <md-option ng-repeat="type in vm.rgb" ng-value="type">{{type}}</md-option>
+                                                        <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                                                     </md-select>
                                                 </md-input-container>
                                             </div>
@@ -246,14 +246,14 @@
                         <div class="col">
                             <md-input-container>
                                 <md-select ng-model='vm.digestive.pemeriksaan_waktu' placeholder='Waktu Pemeriksaan'>
-                                    <md-option ng-repeat="type in vm.rgb" ng-value="type">{{type}}</md-option>
+                                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                                 </md-select>
                             </md-input-container>
                         </div>
                         <div class="col">
                             <md-input-container>
                                 <md-select ng-model='vm.digestive.pemeriksaan_hasil' placeholder='Hasil Pemeriksaan'>
-                                    <md-option ng-repeat="type in vm.rgb" ng-value="type">{{type}}</md-option>
+                                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                                 </md-select>
                             </md-input-container>
                         </div>
@@ -279,14 +279,14 @@
                             <div class="col">
                                 <md-input-container>
                                     <md-select ng-model='vm.digestive.lainnya_waktu' placeholder='Waktu Pemeriksaan'>
-                                        <md-option ng-repeat="type in vm.rgb" ng-value="type">{{type}}</md-option>
+                                        <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                                     </md-select>
                                 </md-input-container>
                             </div>
                             <div class="col">
                                 <md-input-container>
                                     <md-select ng-model='vm.digestive.lainnya_hasil' placeholder='Hasil Pemeriksaan'>
-                                        <md-option ng-repeat="type in vm.rgb" ng-value="type">{{type}}</md-option>
+                                        <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                                     </md-select>
                                 </md-input-container>
                             </div>
