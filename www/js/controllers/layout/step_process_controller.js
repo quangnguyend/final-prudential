@@ -42,7 +42,6 @@ function stepProcessCtr ($scope, $rootScope, $state, $timeout, SpajService) {
     var foundRoute = false
     var nextStep = Number.parseInt($rootScope.getCurrentPolicyStep()) + 1
     var state = getState(nextStep)
-    console.log(state)
     if (state) {
       $state.go('app.' + state)
       $rootScope.setCurrentPolicyStep(nextStep + '')
