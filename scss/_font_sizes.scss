@@ -1,0 +1,63 @@
+//HOW TO USE @extend
+// .example {
+//     @extend .heading-1;
+//     color: blue;
+// }
+
+
+
+.heading-1 {
+    font-size: 25px;
+    line-height: 25px;
+    font-family: "Frutiger 45 Light - Bold";
+}
+
+// Main questions text
+.body-text-1 {
+    font-size: 25px;
+    font-family: "Frutiger 45 Light - Bold";
+}
+
+// Main questions text
+.body-text-2 {
+    font-size: 20px;
+    line-height: 26px;
+    font-family: "Frutiger 45 Light - Regular";
+}
+
+// Main questions text, Button Text
+.body-text-3 {
+    font-size: 17px;
+    font-family: "Frutiger 45 Light - Bold";
+}
+
+// Standard Body Text
+.body-text-4 {
+    font-size: 17px;
+    font-family: "Frutiger - Regular";
+}
+
+// Tabs , Floating Text
+.body-text-5 {
+    font-size: 14px;
+    font-family: "Frutiger 45 Light - Bold";
+}
+
+// Standard Body Text
+.body-text-6 {
+    font-size: 14px;
+    font-family: "Frutiger - Regular";
+}
+
+// Specific Condition Underline
+.body-text-7 {
+    font-size: 14px;
+    line-height: 26px;
+    font-family: "Frutiger 45 Light - Regular";
+}
+
+// Error Message
+.body-text-8 {
+    font-size: 14px;
+    font-family: "Frutiger 45 Light - Regular";
+}
