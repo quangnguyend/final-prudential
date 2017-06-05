@@ -1,29 +1,29 @@
+$fontPath: '../fonts/Frutiger/';
+
 @font-face {
   font-family: 'Frutiger-Regular';
-  src: url('../fonts/Frutiger_gdi.eot');
-  src: url('../fonts/Frutiger_gdi.eot?#iefix') format('embedded-opentype'), url('../fonts/Frutiger_gdi.woff') format('woff'), url('../fonts/Frutiger_gdi.ttf') format('truetype'), url('../fonts/Frutiger_gdi.svg#Frutiger-Regular') format('svg');
+  src: url($fontPath+'Frutiger-Regular.ttf') format('truetype');
   font-style: normal;
   font-stretch: normal;
 }
 
 @font-face {
-  font-family: 'Frutiger-Regular';
-  src: url('../fonts/Frutiger_gdi.eot');
-  src: url('../fonts/Frutiger_gdi.eot?#iefix') format('embedded-opentype'), url('../fonts/Frutiger_gdi.woff') format('woff'), url('../fonts/Frutiger_gdi.ttf') format('truetype'), url('../fonts/Frutiger_gdi.svg#Frutiger-Regular') format('svg');
+  font-family: 'Frutiger-Bold';
+  src: url($fontPath+'Frutiger-Regular.ttf') format('truetype');
   font-weight: 600;
   font-stretch: normal;
 }
 
 @font-face {
   font-family: 'Frutiger 45 Light-Regular';
-  src: url('../fonts/frutiger-45-light') format('truetype');
+  src: url($fontPath+'Frutiger45Light-Regular.ttf') format('truetype');
   font-style: normal;
   font-stretch: normal;
 }
 
 @font-face {
   font-family: 'Frutiger 45 Light-Bold';
-  src: url('../fonts/frutiger-45-light') format('truetype');
-  font-weight: 600;
+  src: url($fontPath+'Frutiger45Light-Bold.ttf') format('truetype');
+  font-style: normal;
   font-stretch: normal;
 }
