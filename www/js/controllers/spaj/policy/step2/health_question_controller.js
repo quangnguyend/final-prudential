@@ -80,19 +80,32 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
       pemeriksaan_lainnya: null
     },
     tumorPopupData: {
-      janes_tumor: null,
-      janes_kista: null,
-      janes_benjolan: null,
-      janes_kainnya: null,
-      lokasi_leher: null,
-      lokasi_lengan: null,
-      lokasi_punggung: null,
-      lokasi_lainnya: null,
+      janes: {
+        tumor: null,
+        kista: null,
+        benjolan: null,
+        kainnya: null,
+      },
+      lokasi: {
+        leher: null,
+        lengan: null,
+        punggung: null,
+        lainnya: null,
+      },
       kapan_pertama: null,
       sudah: null,
       kapan_month_select: null,
       kapan_year_select: null,
-      nama_dokter: null
+      nama_dokter: null,
+      angkat_option: null,
+      angkat_tipe: null,
+      angkat_kapan: null,
+      angkat_year: null,
+      payudara_lama_select: null,
+      payudara_lama_select2: null,
+      payudara_hasil_select: null,
+      lainnya_value: null,
+      kategori_select: null
     },
     height: null,
     weight: null,
@@ -136,9 +149,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
   vm.digestivePopupTouched = false;
   vm.tumorPopupTouched = false;
 
-  vm.rgb = ['red', 'green', 'blue'];
-  vm.rgb2 = ['red 2', 'green 2', 'blue2'];
-  vm.const = [
+  vm.fakeoption = [
     {
       type: 'a',
       value: 'red2'
@@ -175,7 +186,27 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     for (key in items) {
       if (items[key] == null) return false
     }
-
+    return true
+  }
+  vm.validateTummor = function () {
+    var items = vm.healthData.tumorPopupData;
+    for (key in items) {
+      if (items[key] == null) return false
+    }
+    return true
+  }
+  vm.validateEye = function () {
+    var items = vm.healthData.tumorPopupData;
+    for (key in items) {
+      if (items[key] == null) return false
+    }
+    return true
+  }
+  vm.validateRespiratory = function () {
+    var items = vm.healthData.respiratoryPopupData;
+    for (key in items) {
+      if (items[key] == null) return false
+    }
     return true
   }
 
@@ -219,6 +250,14 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     $ionicScrollDelegate.scrollTo(0, distance, true)
   }
 
+  // popup Tumor 
+  vm.health1Steps = ['health1_step1']
+  vm.health1NextStep = function (id) {
+    var STEP_HEIGHT = $('.multi-step').height() + 120
+    var distance = $('#' + id) && $('#' + id).position().top + STEP_HEIGHT
+    if (vm.health1Steps.indexOf(id) < 0) vm.health1Steps.push(id)
+    $ionicScrollDelegate.scrollTo(0, distance, true)
+  }
 
   // ======================== PopupEye ======================== //
 
@@ -308,7 +347,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     digestivePopup.then(function (res) {
       vm.healthData.digestivePopupData = res
       vm.digestivePopupTouched = true
-      //console.log(vm.healthData.digestivePopupData)
+      console.log(vm.healthData.digestivePopupData)
     })
   }
 
@@ -371,9 +410,9 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
       ]
     })
     tumorPopup.then(function (res) {
-      vm.healthData.digestivePopupData = res
+      vm.healthData.tumorPopupData = res
       vm.tumorPopupTouched = true
-      //console.log(vm.healthData.digestivePopupData)
+      console.log(vm.healthData.tumorPopupData)
     })
   }
 

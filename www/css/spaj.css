@@ -150,11 +150,6 @@
   padding: 0px
 }
 
-#health_question1 .message {
-  font-size: 17px;
-  color: #DA291C
-}
-
 #health_question1 input[type=number], #health_question1 input[type=text] {}
 
 #health_question1 .button.button-dark {
@@ -320,6 +315,9 @@
 #health_question1 .grey-box {
   background: #5B6770;
   padding-top: 15px;
+  margin-top: -3px;
+  z-index: 10;
+  position: relative;
 }
 
 #health_question1 .grey-box .item-checkbox .item-content {

@@ -134,10 +134,11 @@
     margin-bottom: 25px;
     padding: 0px;
   }
-  .message {
-    font-size: 17px;
-    color: #DA291C;
+  .red{
+     color:#da291c
   }
+
+ 
   input {
     &[type=number], &[type=text] {}
   }
@@ -202,6 +203,7 @@
     margin-bottom: 20px;
     padding: 0 20px;
     font-size: 17px;
+   
   }
   .icon {
     &.completed::after {
@@ -241,6 +243,7 @@
 }
 
 .popup-prudential {
+  
   .checkbox input:before, .checkbox-icon:before {
     border-radius: 0px;
     background: #eee;
@@ -252,6 +255,10 @@
     padding-left: 0px;
     color: #636B70;
     font-weight: 400;
+  }
+  .disable, input.disable {
+    opacity: 0.4;
+    pointer-events: none;
   }
   .button-bar > .button:nth-child(1) {
     margin-right: 10px;
@@ -486,6 +493,7 @@
     color: rgba(73, 84, 93, 0.5);
     height: 48px;
     border: none;
+    font-size: 17px;
     &:hover {
       background: #e5e3e3;
     }
@@ -1351,10 +1359,6 @@ th {
   .title-cb {
     line-height: 40px;
     font-size: 17px;
-  }
-  .disable, input.disable {
-    opacity: 0.4;
-    pointer-events: none;
   }
   .col.active {
     opacity: 1;
