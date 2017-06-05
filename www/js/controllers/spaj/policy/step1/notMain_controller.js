@@ -37,6 +37,7 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
 
   vm.switchTab = function (tab) {
     vm.currentTab = tab || MAIN_INSURED_TAB
+    vm.currentTabIndex = index
   }
 
   vm.addAdditionalTab = function () {
@@ -65,6 +66,34 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
       $rootScope.nextStep()
     }
   }
+
+  vm.handleMainTabSwipe = function () {
+    if (vm.additionalList.length) {
+      vm.switchTab('ADDITIONAL_0', 0)
+    }
+  }
+  vm.handleAddedTabSwipe = function (e) {
+    var direct = e.gesture.direction
+    // if swipeleft and current tab index smaller than tabs length
+    if (direct === 'left') {
+      if (vm.additionalList.length === 2 && vm.currentTabIndex === 0) {
+        var nextTab = vm.additionalList[vm.currentTabIndex + 1]['id']
+        vm.switchTab(nextTab, vm.currentTabIndex + 1)
+      }
+    }
+    if (direct === 'right') {
+      switch (vm.currentTabIndex) {
+        case 1:
+          var prevTab1 = vm.additionalList[vm.currentTabIndex - 1]['id']
+          vm.switchTab(prevTab1, vm.currentTabIndex - 1)
+          break
+        case 0:
+          vm.switchTab('POLICY_HOLDER', null)
+          break
+      }
+    }
+  }
+
 
   function initPage (rootSpajData) {
     if (!rootSpajData) return

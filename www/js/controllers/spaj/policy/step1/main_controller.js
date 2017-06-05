@@ -43,7 +43,7 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
   }
 
   vm.nextClickHandle = function () {
-    var tabs = [{id: POCICY_HOLDER_TAB, name: vm.PH + 'Tertanggung Utama'}].concat(vm.additionalList)
+    var tabs = [{ id: POCICY_HOLDER_TAB, name: vm.PH + 'Tertanggung Utama' }].concat(vm.additionalList)
     SpajService.setData('step1', { tabs: tabs })
 
     validator(function (rs) {
@@ -62,10 +62,12 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
     }
   }
   vm.handleAddedTabSwipe = function (e) {
+
     var direct = e.gesture.direction
     // if swipeleft and current tab index smaller than tabs length
     if (direct === 'left') {
-      if (vm.additionalList.length === 2 && vm.currentTabIndex === 0) {
+      alert(vm.additionalList.length + 'and index' + vm.currentTabIndex)
+      if (vm.additionalList.length === 1 && vm.currentTabIndex === 1) {
         var nextTab = vm.additionalList[vm.currentTabIndex + 1]['id']
         vm.switchTab(nextTab, vm.currentTabIndex + 1)
       }
