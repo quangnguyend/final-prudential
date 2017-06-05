@@ -150,8 +150,8 @@
   .item {
     border: none;
     padding: 40px 0 0;
-    opacity: 0.4;
-    pointer-events: none;
+    /*opacity: 0.4;
+    pointer-events: none;*/
     &:nth-child(1), &._active {
       opacity: 1;
       pointer-events: auto;
@@ -1308,6 +1308,17 @@ th {
   .item {
     border: none;
   }
+  .obat-item {
+    .obat-index {
+      position: absolute;
+      left: 0px;
+      top: 30px;
+    }
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 20px;
+  }
+  .obat-add {}
   .item-checkbox {
     width: 100%;
     .checkbox {
@@ -1315,9 +1326,13 @@ th {
       padding-left: 0px;
     }
   }
-  .item p {
-    font-size: 17px;
-  }
+}
+
+.popup-prudential .item p {
+  font-size: 17px;
+}
+
+#digestive-popup {
   .customize-cb > .item {
     padding-top: 17px;
     width: 33%;
@@ -1335,10 +1350,9 @@ th {
   }
   .title-cb {
     line-height: 40px;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 17px;
   }
-  .col.disable, input.disable {
+  .disable, input.disable {
     opacity: 0.4;
     pointer-events: none;
   }

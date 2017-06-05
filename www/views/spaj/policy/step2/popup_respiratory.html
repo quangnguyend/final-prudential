@@ -11,21 +11,21 @@
           </div>
           <div class="row">
             <div class="col-33">
-              <ion-checkbox ng-model='fewfe'>Asma</ion-checkbox>
+              <ion-checkbox ng-model='vm.respiratory.gangguan_asma'>Asma</ion-checkbox>
             </div>
             <div class="col-33">
-              <ion-checkbox>TBC</ion-checkbox>
+              <ion-checkbox ng-model='vm.respiratory.gangguan_tbc'>TBC</ion-checkbox>
             </div>
             <div class="col-33">
-              <ion-checkbox>Bronkhitis</ion-checkbox>
+              <ion-checkbox ng-model='vm.respiratory.gangguan_bronkhitis'>Bronkhitis</ion-checkbox>
             </div>
           </div>
           <div class="row">
-            <ion-checkbox ng-model='item3'>Lainnya</ion-checkbox>
+            <ion-checkbox ng-model='vm.respiratory.lainnya_option1'>Lainnya</ion-checkbox>
           </div>
-          <div class="option_other" ng-show='item3'>
+          <div class="option_other" ng-show='vm.respiratory.lainnya_option1'>
             <div class="row">
-              <input type="text" placeholder="Enter">
+              <input type="text" placeholder="Enter" ng-model='vm.respiratory.gangguan_lainnya'>
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@
         <div class="row-no-padding">
           <div class="row">
             <md-input-container class="md-block">
-              <md-select ng-model='fewf' placeholder="Kapan pertama kali gejala dirasakan">
+              <md-select ng-model='vm.respiratory.kapan_pertama' placeholder="Kapan pertama kali gejala dirasakan">
                 <md-option ng-repeat="n in vm.const" value="{{n.type}}">{{n.value}}</md-option>
               </md-select>
             </md-input-container>
@@ -50,21 +50,21 @@
           </div>
           <div class="row">
             <div class="col-33">
-              <ion-checkbox>Sesak Nafas</ion-checkbox>
+              <ion-checkbox ng-model='vm.respiratory.yang_sesak'>Sesak Nafas</ion-checkbox>
             </div>
             <div class="col-33">
-              <ion-checkbox>Batuk lama</ion-checkbox>
+              <ion-checkbox ng-model='vm.respiratory.yang_batuk'>Batuk lama</ion-checkbox>
             </div>
             <div class="col-33">
-              <ion-checkbox>Nafas Berbunyi</ion-checkbox>
+              <ion-checkbox ng-model='vm.respiratory.yang_nafas'>Nafas Berbunyi</ion-checkbox>
             </div>
           </div>
           <div class="row">
-            <ion-checkbox ng-model='item4'>Lainnya</ion-checkbox>
+            <ion-checkbox ng-model='vm.respiratory.lainnya_option2'>Lainnya</ion-checkbox>
           </div>
-          <div class="option_other" ng-show='item4'>
+          <div class="option_other" ng-show='vm.respiratory.lainnya_option2'>
             <div class="row">
-              <input type="text" placeholder="Enter">
+              <input type="text" placeholder="Enter" ng-model='vm.respiratory.keluhan_lainnya'>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@
 
           <md-input-container class="md-block" flex-gt-sm>
             <label>Faktor pemicu terhadap keluhan yang dirasakan </label>
-            <input type="text" />
+            <input type="text" ng-model='vm.respiratory.faktor' />
           </md-input-container>
         </div>
       </div>
@@ -88,8 +88,8 @@
           <div class="row">
             <div class="row indent_row">
               <div class="button-bar">
-                <a class="button col col-50" grouped-radio="'Ya'" ng-model="vm.healthDigest.apakah2">Ya</a>
-                <a class="button col col-50" grouped-radio="'Tidak'" ng-model="vm.healthDigest.apakah2">Tidak</a>
+                <a class="button col col-50" grouped-radio="'Ya'" ng-model="vm.respiratory.apakah">Ya</a>
+                <a class="button col col-50" grouped-radio="'Tidak'" ng-model="vm.respiratory.apakah">Tidak</a>
               </div>
             </div>
           </div>
@@ -99,7 +99,7 @@
         <di class="row-no-padding">
           <div class="row">
             <div class="button-block add_icon">
-              <a class="button" grouped-red-radio="'Male'" ng-model="agent.gender"><span>Berikutnya</span></a>
+              <a class="button"><span>Berikutnya</span></a>
             </div>
           </div>
         </di>
@@ -109,7 +109,7 @@
 
           <div class="row">
             <md-input-container class="md-block">
-              <md-select ng-model='agent.occupation333' placeholder='Kapan keluhan terakhir'>
+              <md-select ng-model="vm.respiratory.kapan_keluhan" placeholder='Kapan keluhan terakhir'>
                 <md-option ng-repeat="type in vm.rgb2" value="{{type}}">{{type}}</md-option>
               </md-select>
             </md-input-container>
@@ -120,7 +120,7 @@
         <div class="row-no-padding">
           <md-input-container class="md-block" flex-gt-sm>
             <label>Nama Dokter / Rumah Sakit</label>
-            <input type="text" ng-model="data.date_of_birth" />
+            <input type="text" ng-model="vm.respiratory.nama_dokter" />
           </md-input-container>
         </div>
       </div>
@@ -130,7 +130,7 @@
             <div class="col-40">
               <div class="row">
                 <md-input-container class="md-block">
-                  <md-select ng-model='agent.occupation233' placeholder='Berapa kali konsultasi'>
+                  <md-select ng-model="vm.respiratory.berapa_select" placeholder='Berapa kali konsultasi'>
                     <md-option ng-repeat="type in vm.rgb2" value="{{type}}">{{type}}</md-option>
                   </md-select>
                 </md-input-container>
@@ -139,11 +139,10 @@
             </div>
             <div class="col-20"></div>
             <div class="col-40">
-
               <div class="row">
                 <div class="col-50">
                   <md-input-container class="md-block">
-                    <md-select ng-model='agent.occupation233' placeholder='Terakhir konsultasi'>
+                    <md-select ng-model="vm.respiratory.terakhir_select" placeholder='Terakhir konsultasi'>
                       <md-option ng-repeat="type in vm.rgb2" value="{{type}}">{{type}}</md-option>
                     </md-select>
                   </md-input-container>
@@ -151,7 +150,7 @@
 
                 <div class="col-50">
                   <md-input-container class="md-block">
-                    <md-select ng-model='agent.occupation233' placeholder='2011'>
+                    <md-select ng-model="vm.respiratory.terakhir_year" placeholder='2011'>
                       <md-option ng-repeat="type in vm.rgb2" value="{{type}}">{{type}}</md-option>
                     </md-select>
                   </md-input-container>
@@ -165,7 +164,7 @@
         <di class="row-no-padding">
           <div class="row">
             <div class="button-block add_icon">
-              <a class="button" grouped-red-radio="'Male'" ng-model="agent.gender"><span>Berikutnya</span></a>
+              <a class="button"><span>Berikutnya</span></a>
             </div>
           </div>
         </di>
@@ -174,13 +173,13 @@
         <div class="row-no-padding">
           <div class="row">
             <label class="item-stacked-label">
-                <div class="input-label">Apakah pernah dirawat inap di Rumah Sakit ?</div>
-              </label>
+              <div class="input-label">Apakah pernah dirawat inap di Rumah Sakit ?</div>
+            </label>
           </div>
           <div class="row">
             <div class="button-bar">
-              <a class="button col col-50" grouped-radio="'Ya'" ng-model="vm.healthDigest.apakah2">Ya</a>
-              <a class="button col col-50" grouped-radio="'Tidak'" ng-model="vm.healthDigest.apakah2">Tidak</a>
+              <a class="button col col-50" grouped-radio="'Ya'" ng-model="vm.respiratory.apakah_pernah">Ya</a>
+              <a class="button col col-50" grouped-radio="'Tidak'" ng-model="vm.respiratory.apakah_pernah">Tidak</a>
             </div>
 
           </div>
@@ -192,7 +191,7 @@
             <div class="col-40">
               <div class="row">
                 <md-input-container class="md-block">
-                  <md-select ng-model='agent.occupation233' placeholder='Kapan'>
+                  <md-select ng-model="vm.respiratory.kapan_select" placeholder='Kapan'>
                     <md-option ng-repeat="type in vm.rgb2" value="{{type}}">{{type}}</md-option>
                   </md-select>
                 </md-input-container>
@@ -203,7 +202,7 @@
 
               <div class="row">
                 <md-input-container class="md-block">
-                  <md-select ng-model='agent.occupation233' placeholder='Lama di Rumah Sakit'>
+                  <md-select ng-model="vm.respiratory.lama_select" placeholder='Lama di Rumah Sakit'>
                     <md-option ng-repeat="type in vm.rgb2" value="{{type}}">{{type}}</md-option>
                   </md-select>
                 </md-input-container>
@@ -217,7 +216,7 @@
         <div class="row-no-padding">
           <md-input-container class="md-block" flex-gt-sm>
             <label>Nama Dokter / Rumah Sakit</label>
-            <input type="text" ng-model="data.date_of_birth" />
+            <input type="text" ng-model="vm.respiratory.lama2" />
           </md-input-container>
         </div>
       </div>
@@ -225,7 +224,7 @@
         <di class="row-no-padding">
           <div class="row">
             <div class="button-block add_icon">
-              <a class="button" grouped-red-radio="'Male'" ng-model="agent.gender"><span>Berikutnya</span></a>
+              <a class="button"><span>Berikutnya</span></a>
             </div>
           </div>
         </di>
@@ -238,30 +237,30 @@
               </label>
           </div>
           <div class="row">
-            <ion-checkbox>Inhalasi</ion-checkbox>
+            <ion-checkbox ng-model="vm.respiratory.inhalasi">Inhalasi</ion-checkbox>
           </div>
           <div class="row">
-            <ion-checkbox>Suntikan</ion-checkbox>
+            <ion-checkbox ng-model="vm.respiratory.suntikan">Suntikan</ion-checkbox>
           </div>
-          <div class="option_other">
+          <div class="option_other" ng-class="vm.respiratory.suntikan ? 'active':'disable'">
             <md-input-container class="md-block" flex-gt-sm>
               <label>Nama Obat</label>
-              <input type="text" />
+              <input type="text" ng-model="vm.respiratory.suntikan_nama" />
             </md-input-container>
           </div>
           <div class="row">
-            <ion-checkbox>Obat minum</ion-checkbox>
+            <ion-checkbox ng-model="vm.respiratory.obat_minum">Obat minum</ion-checkbox>
           </div>
           <div class="row">
-            <ion-checkbox>Operasi</ion-checkbox>
+            <ion-checkbox ng-model="vm.respiratory.operasi">Operasi</ion-checkbox>
           </div>
           <div class="row">
-            <ion-checkbox>Lainnya</ion-checkbox>
+            <ion-checkbox ng-model="vm.respiratory.pengobatan_lainnya_option">Lainnya</ion-checkbox>
           </div>
-          <div class="option_other">
+          <div class="option_other" ng-class="vm.respiratory.pengobatan_lainnya_option ? 'active':'disable'">
             <md-input-container class="md-block" flex-gt-sm>
               <label>Nama Obat</label>
-              <input type="text" />
+              <input type="text" ng-model="vm.respiratory.pengobatan_lainnya" />
             </md-input-container>
           </div>
 
@@ -271,7 +270,7 @@
         <di class="row-no-padding">
           <div class="row">
             <div class="button-block add_icon">
-              <a class="button" grouped-red-radio="'Male'" ng-model="agent.gender"><span>Berikutnya</span></a>
+              <a class="button"><span>Berikutnya</span></a>
             </div>
           </div>
         </di>
@@ -284,7 +283,7 @@
               </label>
           </div>
           <div class="row">
-            <ion-checkbox>Rontgen Dada</ion-checkbox>
+            <ion-checkbox ng-model="vm.respiratory.rontgen">Rontgen Dada</ion-checkbox>
           </div>
           <div class="row">
             <ion-checkbox>Tes Fungsi Paru / Spirometri</ion-checkbox>
@@ -294,7 +293,7 @@
             <div class="row">
               <div class="col-40">
                 <md-input-container class="md-block">
-                  <md-select ng-model='agent.occupation233' placeholder='Kapan'>
+                  <md-select ng-model="vm.respiratory.kapan_select2" placeholder='Kapan'>
                     <md-option ng-repeat="type in vm.rgb2" value="{{type}}">{{type}}</md-option>
                   </md-select>
                 </md-input-container>
@@ -302,7 +301,7 @@
               <div class="col-20"></div>
               <div class="col-40">
                 <md-input-container class="md-block">
-                  <md-select ng-model='agent.occupation233' placeholder='Hasil'>
+                  <md-select ng-model="vm.respiratory.hasil_select" placeholder='Hasil'>
                     <md-option ng-repeat="type in vm.rgb2" value="{{type}}">{{type}}</md-option>
                   </md-select>
                 </md-input-container>
@@ -310,14 +309,14 @@
             </div>
           </div>
           <div class="row">
-            <ion-checkbox>EKG</ion-checkbox>
+            <ion-checkbox ng-model="vm.respiratory.ekg">EKG</ion-checkbox>
           </div>
           <div class="row">
-            <ion-checkbox>Lainnya</ion-checkbox>
+            <ion-checkbox ng-model="vm.respiratory.pemeriksaan_lainnya_option">Lainnya</ion-checkbox>
           </div>
           <div class="option_other">
             <div class="row">
-              <input type="text" placeholder="Enter">
+              <input type="text" placeholder="Enter" ng-model="vm.respiratory.pemeriksaan_lainnya">
             </div>
           </div>
         </div>

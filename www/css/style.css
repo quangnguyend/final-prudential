@@ -1,0 +1,714 @@
+/* ========================== CUSTOMIZE CSS ========================== */
+
+@font-face {
+  font-family: 'Frutiger-Regular';
+  src: url('../fonts/Frutiger_gdi.eot');
+  src: url('../fonts/Frutiger_gdi.eot?#iefix') format('embedded-opentype'), url('../fonts/Frutiger_gdi.woff') format('woff'), url('../fonts/Frutiger_gdi.ttf') format('truetype'), url('../fonts/Frutiger_gdi.svg#Frutiger-Regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2212;
+}
+
+@font-face {
+  font-family: 'FrutigerLinotype-Bold';
+  font-style: normal;
+  src: local('FrutigerLinotype-Bold_gdi'), local('FrutigerLinotype-Bold_gdi'), url(../fonts/FrutigerLinotype-Bold_gdi.woff) format('woff'), url('../fonts/FrutigerLinotype-Bold_gdi.woff') format('woff'), url('../fonts/FrutigerLinotype-Bold_gdi.ttf') format('truetype'), url('../fonts/FrutigerLinotype-Bold_gdi.svg#Frutiger-Regular') format('svg');
+  /*font-weight: 700;*/
+  font-style: normal;
+  font-stretch: normal;
+}
+
+html, body {
+  font-family: 'Frutiger-Regular';
+}
+
+body {
+  color: #5b6770;
+}
+
+button, html, input, select, textarea {
+  font-family: 'Frutiger-Regular' !important;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #191919;
+  font-weight: 500;
+  font-family: "Frutiger-Regular", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  line-height: 1.2;
+}
+
+
+/* ========================== HEADER + FOOTER ========================== */
+
+.card-container {
+  margin: 20px 15px 100px;
+}
+
+.has-header {
+  top: 55px!important;
+}
+
+.has-footer {
+  bottom: 65px!important;
+}
+
+.bar.bar-header {
+  height: 55px;
+  border-color: #da291c !important;
+  background-color: #da291c !important;
+  background-image: linear-gradient(0deg, #da291c, #da291c 50%, transparent 50%) !important;
+  color: #fff !important;
+  padding: 5px 10px;
+}
+
+ion-footer-bar.bar.bar-assertive {
+  background-color: #da291c !important;
+}
+
+.bar.bar-header .title {
+  font-size: 25px !important;
+  color: #fff !important;
+  font-weight: normal;
+  height: 55px;
+  line-height: 65px;
+  text-align: center!important;
+}
+
+.bar button.back-button {
+  margin-top: 11px;
+}
+
+.bar button.back-button .icon:before {
+  color: #fff;
+}
+
+.bar button.back-button .back-text {
+  display: none;
+}
+
+.bar.bar-footer {
+  background-color: #DA291C;
+  height: 64px;
+}
+
+.bar-footer .button-clear {
+  position: absolute;
+  right: 10px;
+  top: 15px
+}
+
+.bar.bar-assertive.bar-footer.btn-disable {
+  background: #9B9B9B !important;
+  border: none !important;
+}
+
+.bar-footer .btn {
+  color: #fff;
+  display: block;
+  font-size: 17px;
+  line-height: 53px;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+.bar-footer .wrapper {
+  width: 100%;
+}
+
+.bar-footer .wrapper a {
+  float: left;
+  width: 50%;
+}
+
+.bar-footer .devide {
+  background-color: #b4251a;
+  display: block;
+  height: 100%;
+  width: 1px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+}
+
+
+/* ========================== COMMON STYLE ========================== */
+
+md-input-container:not(.md-input-has-value) input:not(:focus) {
+  color: #CCC !important
+}
+
+label.item-stacked-label {
+  font-size: 17px;
+}
+
+.txt-large {
+  color: #000;
+  font-size: 34px;
+  line-height: 48px;
+}
+
+.item-input-no-label {
+  border-bottom: 1px solid #efecec!important;
+  font-size: 34px!important;
+  height: 80px!important;
+  width: 100%;
+}
+
+.button-stable {
+  color: #5d6972!important;
+}
+
+input {
+  width: 100%;
+  border: none;
+}
+
+input[type=range].custom-range {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 10px 0;
+}
+
+input[type=range].custom-range:focus {
+  outline: none;
+}
+
+input[type=range].custom-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+  background: #efecec;
+  border-radius: 0px;
+  border: 0px solid rgba(0, 0, 0, 0);
+}
+
+input[type=range].custom-range::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
+  border: 0px solid rgba(0, 0, 0, 0);
+  height: 22px;
+  width: 26px;
+  border-radius: 4px;
+  background: #f8383f;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -10px;
+}
+
+
+/*input[type=range].custom-range:focus::-webkit-slider-runnable-track {
+  background: #ffffff;
+}*/
+
+input[type=range].custom-range::-moz-range-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+  background: #efecec;
+  border-radius: 0px;
+  border: 0px solid rgba(0, 0, 0, 0);
+}
+
+input[type=range].custom-range::-moz-range-thumb {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
+  border: 0px solid rgba(0, 0, 0, 0);
+  height: 22px;
+  width: 26px;
+  border-radius: 4px;
+  background: #f8383f;
+  cursor: pointer;
+}
+
+input[type=range].custom-range::-ms-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range].custom-range::-ms-fill-lower {
+  background: #dfd9d9;
+  border: 0px solid rgba(0, 0, 0, 0);
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+}
+
+input[type=range].custom-range::-ms-fill-upper {
+  background: #efecec;
+  border: 0px solid rgba(0, 0, 0, 0);
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+}
+
+input[type=range].custom-range::-ms-thumb {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
+  border: 0px solid rgba(0, 0, 0, 0);
+  height: 22px;
+  width: 26px;
+  border-radius: 4px;
+  background: #f8383f;
+  cursor: pointer;
+  height: 2px;
+}
+
+input[type=range].custom-range:focus::-ms-fill-lower {
+  background: #efecec;
+}
+
+input[type=range].custom-range:focus::-ms-fill-upper {
+  background: #ffffff;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type="radio"]:not(:checked), [type="radio"]:checked {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
+[type="radio"]:not(:checked)+label, [type="radio"]:checked+label {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  display: block;
+  height: 25px;
+  line-height: 25px;
+  font-size: 17px;
+  transition: .28s ease;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+[type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after {
+  border: 2px solid #d2d2d2;
+}
+
+[type="radio"]:checked+label:before {
+  border: 2px solid transparent;
+}
+
+[type="radio"]+label:before, [type="radio"]+label:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 3px;
+  width: 17px;
+  height: 17px;
+  z-index: 0;
+  transition: .28s ease;
+}
+
+[type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after, [type="radio"]:checked+label:before, [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after {
+  border-radius: 50%;
+}
+
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after {
+  border: 6px solid #da291c;
+}
+
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after {
+  background-color: #fff;
+}
+
+[type="radio"]:checked+label:after {
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
+}
+
+input[type="date"] {
+  border-bottom: 10px solid #D8D8D8;
+  padding-bottom: 4px;
+  font-size: 16px;
+  color: #49545D;
+}
+
+.input-helper {
+  padding: 5px 35px 10px;
+}
+
+.even-block {
+  background: #F7F5F5;
+}
+
+select {
+  width: 100%;
+  display: block;
+  padding-top: 2px;
+  padding-left: 0;
+  height: 34px;
+  color: #111;
+  line-height: 16px;
+  border: none;
+  background-color: #fff;
+  font-size: 17px;
+}
+
+.blur-text {
+  color: #c2c2c2 !important;
+}
+
+
+/*style for tab menus*/
+
+.tab-menu {
+  padding: 0px !important;
+}
+
+.tab-menu .col {
+  text-align: center;
+  background: #F7F5F5;
+  border-right: 1px solid #f0eded;
+  border-left: 1px solid #f0eded;
+  box-sizing: border-box;
+  padding: 0px 5px;
+}
+
+.tab-menu .col .d-table {
+  height: 50px;
+  display: table;
+  text-align: center;
+  width: 100%;
+}
+
+.tab-menu .col .d-table-cell {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.tab-menu .col:first-child {
+  border-left: none
+}
+
+.tab-menu .col:last-child {
+  border-right: none
+}
+
+.tab-menu .col.active {
+  border-bottom: 2px solid #da291c;
+  border-right: 1px solid #f1d6d7;
+  border-left: 1px solid #f1d6d7;
+  color: #da291c;
+}
+
+.tab-menu .col.active:first-child {
+  border-left: none
+}
+
+.tab-menu .col.active:last-child {
+  border-right: none
+}
+
+.no-lines {
+  border: none!important;
+}
+
+.half-width-center {
+  width: 50%;
+  margin: 0 auto!important;
+}
+
+.custom-checkbox .checkbox input:checked:before, .custom-checkbox .checkbox input:checked + .checkbox-icon:before {
+  background: #DA291C;
+  border-color: #DA291C;
+}
+
+.custom-checkbox .checkbox input:before, .custom-checkbox .checkbox-icon:before {
+  border-radius: 4px;
+}
+
+.sub-header {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 26 px;
+  color: #212121;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.gray-btn {
+  background-color: #5B6770;
+  color: #979797;
+}
+
+.no-padding {
+  padding: 0!important;
+}
+
+.radio-btn-group {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.full-height {
+  height: 100%;
+}
+
+
+/*css for step header*/
+
+#step-header {
+  margin: auto;
+}
+
+#step-header md-select {
+  margin: 0px;
+  background: transparent;
+  border: none;
+  color: white;
+  text-align-last: right;
+  font-size: 17px;
+}
+
+#step-header select option {
+  background: none;
+  color: black;
+}
+
+#step-header.down-arrow:after {
+  content: '⏷';
+  color: white;
+  margin-left: 5px;
+}
+
+#step-header.up-arrow:after {
+  content: '⏶';
+  color: white;
+  margin-left: 5px;
+}
+
+
+/* ================ COMMON CSS ================ */
+
+body, body * {
+  font-size: 17px;
+}
+
+body label {
+  font-size: 17px;
+}
+
+.item h1, .item h2, .item h3, .item h4, .item h5, .item h6 {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.description {
+  padding: 20px;
+  white-space: normal !important;
+  font-weight: 600
+}
+
+.item input[type=search], .item input[type=text], .item input[type=password], .item input[type=datetime], .item input[type=datetime-local], .item input[type=date], .item input[type=month], .item input[type=time], .item input[type=week], .item input[type=number], .item input[type=email], .item input[type=url], .item input[type=tel], .item input[type=color], .item textarea {
+  font-size: 17px;
+}
+
+.item .input-label {
+  width: 100%;
+  font-size: 17px;
+  padding-bottom: 0px;
+}
+
+.item .button-block .button {
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.item .form_select {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 100%;
+  width: 100%;
+  color: rgba(91, 103, 112, 0.5);
+  padding: 5px;
+  padding-left: 0;
+  margin-top: 5px;
+  margin-left: 0;
+  background-color: #fff;
+  border: none;
+}
+
+.item .item-note {
+  font-size: 17px;
+}
+
+.item .button, .item select {
+  font-size: 17px;
+}
+
+.backdrop {
+  background-color: transparent !important
+}
+
+.popup-prudential .option_other {
+  margin-left: 50px;
+}
+
+.popup-prudential .option_other li {
+  height: 50px;
+  padding-top: 0px;
+}
+
+.popup-prudential.popup-container .popup {
+  width: 100%;
+  background-color: #FFF;
+  background-color: #FFF;
+  bottom: 0px;
+  top: 50px;
+  position: absolute;
+  max-height: 100%
+}
+
+.popup-prudential.popup-container .popup-head {
+  background-color: #DA291C;
+  color: #FFF
+}
+
+.popup-prudential.popup-container .popup-head .popup-title {
+  color: #FFF
+}
+
+.popup-prudential.popup-container .btn-popup-save {
+  background-color: #DA291C;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 60px;
+}
+
+.popup-prudential .btn-popup-back {
+  background: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.popup-prudential .btn-popup-close {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  background: transparent;
+  color: #fff;
+  width: 50px;
+  height: 40px;
+  display: block;
+  flex: inherit;
+  margin: 0;
+  min-height: initial;
+  min-width: initial;
+  padding: 0;
+  line-height: 0;
+}
+
+.popup-prudential .popup-buttons {
+  padding: 0;
+}
+
+.popup-prudential .popup-buttons button {
+  border-radius: 0;
+}
+
+.popup-prudential .popup-head {
+  background-color: #f7f5f5;
+  border: none;
+}
+
+.popup-prudential .popup-wrapper {
+  padding: 10px;
+}
+
+.popup-prudential .scroll-view.scroll-y {
+  height: 300px;
+}
+
+#health_question1 .message {
+  font-size: 12px;
+}
+
+@media only screen and (min-width: 768px) {
+  .body, body *, label.item-stacked-label, body label, label.item, .item select, #step-header select {
+    font-size: 25px;
+  }
+  #eye-popup .popup-content .number {
+    font-size: 20px;
+  }
+  .description {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .bar.bar-header .title {
+    font-size: 25px;
+  }
+  .bar-footer .btn {
+    font-size: 25px
+  }
+  .tab-menu .col .d-table-cell {
+    font-size: 20px;
+  }
+  [type="radio"]:not(:checked)+label, [type="radio"]:checked+label {
+    font-size: 25px;
+  }
+  .item input[type=search], .item input[type=text], .item input[type=password], .item input[type=datetime], .item input[type=datetime-local], .item input[type=date], .item input[type=month], .item input[type=time], .item input[type=week], .item input[type=number], .item input[type=email], .item input[type=url], .item input[type=tel], .item input[type=color], .item textarea {
+    font-size: 25px;
+  }
+  .item .input-label {
+    font-size: 25px;
+  }
+  .item .button-block .button {
+    font-size: 25px;
+  }
+  .item .form_select {
+    font-size: 25px;
+  }
+  .item .item-note {
+    font-size: 25px;
+  }
+  .item .button {
+    font-size: 25px;
+  }
+  .item h1, .item h2, .item h3, .item h4, .item h5, .item h6 {
+    font-size: 25px;
+  }
+  .popup-prudential .item p, .popup-prudential .title-cb {
+    font-size: 25px;
+  }
+}
+
+
+/* ================ END COMMON CSS ================ */
