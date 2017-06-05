@@ -74,7 +74,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
       operasi: null,
       pengobatan_lainnya: null,
       rontgen: null,
-      kapan_select: null,
+      kapan_select2: null,
       hasil_select: null,
       ekg: null,
       pemeriksaan_lainnya: null
@@ -173,8 +173,6 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
   vm.validateDigestive = function () {
     var items = vm.healthData.digestivePopupData;
     for (key in items) {
-      console.log(items[key])
-      console.log(items[key])
       if (items[key] == null) return false
     }
 
@@ -266,7 +264,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     eyePopup.then(function (res) {
       vm.healthData.eyePopupData = res
       vm.eyePopupTouched = true
-      console.log(vm.healthData.eyePopupData)
+      //console.log(vm.healthData.eyePopupData)
     })
   }
 
@@ -310,7 +308,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     digestivePopup.then(function (res) {
       vm.healthData.digestivePopupData = res
       vm.digestivePopupTouched = true
-      console.log(vm.healthData.digestivePopupData)
+      //console.log(vm.healthData.digestivePopupData)
     })
   }
 
@@ -343,7 +341,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     respiratoryPopup.then(function (res) {
       vm.healthData.respiratoryPopupData = res
       vm.respiratoryPopupTouched = true
-      console.log(vm.healthData.respiratoryPopupData)
+      //console.log(vm.healthData.respiratoryPopupData)
     })
   }
   // ======================== PopupTumor ======================== //
@@ -375,7 +373,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     tumorPopup.then(function (res) {
       vm.healthData.digestivePopupData = res
       vm.tumorPopupTouched = true
-      console.log(vm.healthData.digestivePopupData)
+      //console.log(vm.healthData.digestivePopupData)
     })
   }
 
