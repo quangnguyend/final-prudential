@@ -1624,3 +1624,95 @@
 #add_child .item .description{
   margin: 0;
 }
+
+/* top_up */
+#top_up {
+
+}
+
+#top_up .item .description {
+  text-align: center;
+  font-weight: normal;
+  color: #636B70;
+}
+#top_up .checkbox_child {
+  margin: 0 20px;
+}
+#top_up .checkbox_child, #top_up #health_respiratory .item, #top_up #health_respiratory, #top_up #health_respiratory .center_txt, #top_up #policy_info_ph_info{
+  background: #f7f5f5;
+}
+#top_up .item.inside_check{
+  width: 100%;
+}
+#top_up input[type="text"] {
+  background: #f7f5f5;
+  margin-top: 5px;
+}
+#top_up #health_respiratory .center_txt{
+  text-align: center;
+  color: #50585D;
+  margin: 20px 0 35px;
+}
+#top_up #health_respiratory {
+  padding: 20px 0;
+}
+#top_up #health_respiratory .inside_check{
+  margin: 0 0 25px -5px;
+}
+#top_up .center_txt {
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+#top_up .no_bg .item, #top_up .no_bg input[type="text"]{
+  background: white;
+}
+#top_up .button-block {
+  width: 100%;
+  text-align: center;
+}
+
+#top_up .button-block .button {
+  display: block;
+  padding: 15px 28px;
+  min-height: 10px;
+}
+
+#top_up .button-block .button:hover {
+  background-color: #d6d6d6;
+}
+#health_respiratory .center_txt_end {
+  text-align: center;
+  font-size: 25px;
+  color: #444;
+  margin: 50px 0 30px 0;
+  line-height: initial;
+  font-family: "Roboto", "Frutiger-Regular", "Helvetica Neue", "Segoe UI", sans-serif !important;
+}
+#health_respiratory .left_text {
+  text-align: left;
+  padding: 0 20px;
+}
+#top_up_payor_detail .grey-box{
+  padding-top: 15px;
+}
+#top_up_payor_detail .grey-box, #top_up_payor_detail .grey-box .list{
+  background: #5B6770;
+}
+#top_up_payor_detail .grey-box .list {
+  color: white;
+  padding: 25px;
+  font-weight: 300;
+  font-size: 22px;
+}
+#top_up_payor_detail .grey-box .list .indent_payor {
+  margin-bottom: 25px;
+}
+#top_up_payor_detail .grey-box .button-done {
+  background: #5b6770;
+  border-top: 1px solid #757f86;
+  color: white;
+}
+#top_up_payor_detail {
+  padding-bottom: 50px;
+}

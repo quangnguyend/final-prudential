@@ -1,0 +1,266 @@
+<ion-view cache-view="false" view-title="PEMBAYAR TOP-UP" id="top_up_payor_detail">
+
+<ion-nav-buttons side="left">
+    <button class="button back-button buttons button-clear header-item">
+      <i class="icon ion-ios-arrow-back"></i> 
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <form id="health_respiratory">
+      <div id="policy_info_ph_info" class="list list-inset no-lines">
+        <div class="center_txt_end left_text">(Calon) Pembayar Premi / Kontributor adalah Perorangan, dan hubungan dengan ( Calon ) Pemegang Polis adalah</div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <span class="input-label">Jenis kelainan yang diderita</span>
+              </label>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <input id='OrangTua' type="radio" name='kadaluwarasa' />
+                <label class='' for="OrangTua">Orang Tua</label>
+              </div>
+              <div class="col-50">
+                <input id='OrangTua1' type="radio" name='kadaluwarasa' />
+                <label class='' for="OrangTua1">Orang Tua</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <div class="col-50">
+                <input id='Anak' type="radio" name='kadaluwarasa' />
+                <label class='' for="Anak">Anak</label>
+              </div>
+              <div class="col-50">
+                <input id='Lainnya' type="radio" name='kadaluwarasa' />
+                <label class='' for="Lainnya">Lainnya</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <div class="input-label">Pekerjaan</div>
+              </label>
+            </div>
+            <div class="row">
+              <select class="form_select" ng-model='agent.occupation'>
+                  <option selected value>Pegawai Negeri Sipil/ BUMN/ BUMD/ Perusahaan Negara/ Pejabat Pemerintah</option>
+                  <option>Blue</option>
+                  <option>Green</option>
+                  <option>Red</option>
+                </select>
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <div class="input-label">Department</div>
+              </label>
+            </div>
+            <div class="row">
+              <select class="form_select" ng-model='agent.occupation'>
+                  <option selected value>Select</option>
+                  <option>Blue</option>
+                  <option>Green</option>
+                  <option>Red</option>
+                </select>
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <div class="input-label">Jabatan/ Pangkat / Golongan</div>
+              </label>
+            </div>
+            <div class="row">
+              <select class="form_select" ng-model='agent.occupation'>
+                  <option selected value>Select</option>
+                  <option>Blue</option>
+                  <option>Green</option>
+                  <option>Red</option>
+                </select>
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <span class="input-label">Sumber penghasilan rutin per bulan</span>
+              </label>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <ion-checkbox>Gaji</ion-checkbox>
+              </div>
+              <div class="col-50">
+                <ion-checkbox>Laba Perusahaan</ion-checkbox>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <ion-checkbox>Hasil Investasi</ion-checkbox>
+              </div>
+              <div class="col-50">
+                <ion-checkbox>Bisnis Pribadi</ion-checkbox>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <ion-checkbox>Lainnya</ion-checkbox>
+              </div>
+              <div class="col-50">
+                <ion-checkbox></ion-checkbox>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <span class="input-label">Sumber penghasilan non rutin per bulan</span>
+              </label>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <ion-checkbox>Bonus</ion-checkbox>
+              </div>
+              <div class="col-50">
+                <ion-checkbox>Hadiah/warisan</ion-checkbox>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <ion-checkbox>Komisi</ion-checkbox>
+              </div>
+              <div class="col-50">
+                <ion-checkbox>Hasil investasi</ion-checkbox>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <ion-checkbox>Lainnya</ion-checkbox>
+              </div>
+              <div class="col-50">
+                <ion-checkbox>Penjualan aset</ion-checkbox>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <div class="input-label">Total Penghasilan rutin per bulan </div>
+              </label>
+            </div>
+            <div class="row">
+              <select class="form_select" ng-model='agent.occupation'>
+                  <option selected value>> IDR 5 Juta - IDR 7,5 Juta</option>
+                  <option>Blue</option>
+                  <option>Green</option>
+                  <option>Red</option>
+                </select>
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <div class="input-label">Total Penghasilan non-rutin per bulan </div>
+              </label>
+            </div>
+            <div class="row">
+              <select class="form_select" ng-model='agent.occupation'>
+                  <option selected value>> IDR 5 Juta - IDR 7,5 Juta</option>
+                  <option>Blue</option>
+                  <option>Green</option>
+                  <option>Red</option>
+                </select>
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <span class="input-label">Tujuan pengajuan Top-Up adalah</span>
+              </label>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <ion-checkbox>Tabungan</ion-checkbox>
+              </div>
+              <div class="col-50">
+                <ion-checkbox>Investasi</ion-checkbox>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <ion-checkbox>Pendidikan</ion-checkbox>
+              </div>
+              <div class="col-50">
+                <ion-checkbox>Dana pensiun</ion-checkbox>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <ion-checkbox>Lainnya</ion-checkbox>
+              </div>
+              <div class="col-50">
+                <ion-checkbox></ion-checkbox>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="center_txt_end">Apakah (Calon) Pembayar Premi/Kontributor memiliki pekerjaan/usaha/bisnis lain di luar pekerjaan utama?</div>
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ieye">Ya</a>
+            <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ieye">Tidak</a>
+          </div>
+          <div class='grey-box' ng-show="vm.healthData.ieye==true">
+            <div class="text-left">
+              <ion-list>
+                <div class="indent_payor">
+                  <p>Nama perusahaan/usaha/bisnis:</p>
+                  <p>PT. ABC</p>
+                  <br>
+                </div>
+                <div class="indent_payor">
+                  <p>Bidang usaha</p>
+                  <p>Bisnis Online</p>
+                  <br>
+                </div>
+                <div class="indent_payor">
+                  <p>Alamat perusahaan/tempat usaha</p>
+                  <p>Jl. ABC</p>
+                  <br>
+                </div>
+              </ion-list>
+            </div>
+            <button class="button button-full button-done" ng-click='vm.showPopupEye()'>Done</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+  <ion-footer-bar class="bar bar-footer bar-assertive">
+    <div ng-click="vm.saveSpaj()" title="Lanjutkan" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></div>
+  </ion-footer-bar>
+</ion-view>

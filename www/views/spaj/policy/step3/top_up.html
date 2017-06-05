@@ -1,0 +1,210 @@
+<ion-view cache-view="false" view-title="Sebelum Anda melanjutkan" id="spaj-start">
+
+<ion-nav-buttons side="left">
+    <button class="button back-button buttons button-clear header-item">
+      <i class="icon ion-ios-arrow-back"></i> 
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content>
+  
+    <div class="list list-inset" id="top_up">
+      <div class="item">
+        <h1 class="description">Apakah Anda ingin mengajukan <br/>penambahan dana (Top-Up) untuk polis ini?</h1>
+        <div class="row">
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="1" ng-model="vm.family_history.question">Ya</a>
+            <a class="button col col-50" grouped-radio="0" ng-model="vm.family_history.question">Tidak</a>
+          </div>
+        </div>
+      </div>
+      <div id="health_respiratory">
+        <div id="policy_info_ph_info" class="list list-inset no-lines">
+          <div class="center_txt">Saya mengkonfirmasi bahwa saya</div>
+          <div class='item'>
+            <div class="row-no-padding">
+              <div class="row">
+                <input ng-model="data.payorRadio" class="custom_radio ng-pristine ng-untouched ng-valid ng-empty" type="radio" value="parents" id="parents" name="891" aria-invalid="false">
+                <label class="" for="parents">Belum memiliki nomor Polis*</label>
+              </div>
+              <div class="checkbox_child">
+                <div class="row">
+                  <div class='item inside_check'>
+                    <div class="row-no-padding">
+                      <div class="row">
+                        <label class="item-stacked-label">
+                          <span class="input-label">Nomor SPAJ*</span>
+                        </label>
+                      </div>
+                      <div class="row"><input type="text" placeholder="Enter"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <input ng-model="data.payorRadio" class="custom_radio ng-pristine ng-untouched ng-valid ng-empty" type="radio" value="children" id="children" name="892" aria-invalid="false">
+                <label class="" for="children">Sudah memiliki Polis</label>
+              </div>
+              <div class="checkbox_child">
+                <div class="row">
+                  <div class='item inside_check'>
+                    <div class="row-no-padding">
+                      <div class="row">
+                        <label class="item-stacked-label">
+                          <span class="input-label">Nama Pemegang Polis</span>
+                        </label>
+                      </div>
+                      <div class="row"><input type="text" placeholder="Enter"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class='item inside_check'>
+                    <div class="row-no-padding">
+                      <div class="row">
+                        <label class="item-stacked-label">
+                          <span class="input-label">Nomor Polis</span>
+                        </label>
+                      </div>
+                      <div class="row"><input type="text" placeholder="Enter"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <input ng-model="data.payorRadio" class="custom_radio ng-pristine ng-untouched ng-valid ng-empty" type="radio" value="sudahMemiliki" id="sudahMemiliki" name="892" aria-invalid="false">
+                <label class="" for="sudahMemiliki">Sudah memiliki Polisi - membeli melalui bank</label>
+              </div>
+              <div class="checkbox_child">
+                <div class="row">
+                  <div class='item inside_check'>
+                    <div class="row-no-padding">
+                      <div class="row">
+                        <label class="item-stacked-label">
+                          <span class="input-label">Nama Pemberi Referral**</span>
+                        </label>
+                      </div>
+                      <div class="row"><input type="text" placeholder="Enter"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class='item inside_check'>
+                    <div class="row-no-padding">
+                      <div class="row">
+                        <label class="item-stacked-label">
+                          <span class="input-label">Nomor Kode Referral**</span>
+                        </label>
+                      </div>
+                      <div class="row"><input type="text" placeholder="Enter"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="no_bg">
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label center_txt">Jumlah Top-Up</label>
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <div class="col-40">
+                <div class="row">
+                  <label class="item-stacked-label">Jenis Mata Uang</label>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <select class="form_select" ng-model='agent.occupation'>
+                      <option selected value>IDR</option>
+                      <option>Blue</option>
+                      <option>Green</option>
+                      <option>Red</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-20"></div>
+              <div class="col-40">
+                <div class="row">
+                  <label class="item-stacked-label">Jenis Mata Uang</label>
+                </div>
+                <div class="row">
+                  <div class="col"><input type="text" placeholder="260.000.000"></div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="item">
+          <di class="row-no-padding">
+            <div class="row">
+              <div class="button-block add_icon" ng-click='vm.addInsuredAddress()'>
+                <a class="button" >Berikutnya</a>
+              </div>
+            </div>
+          </di>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label center_txt">Alokasi Dana Tujuan Top-Up</label>
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <div class="col-40">
+                <div class="row">
+                  <label class="item-stacked-label">Jenis Dana Investasi Non-Syariah</label>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <select class="form_select" ng-model='agent.occupation'>
+                      <option selected value>PRUlink Rupiah Equity Fund</option>
+                      <option>Blue</option>
+                      <option>Green</option>
+                      <option>Red</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-20"></div>
+              <div class="col-40">
+                <div class="row">
+                  <label class="item-stacked-label">%</label>
+                </div>
+                <div class="row">
+                  <div class="col"><input type="text" placeholder="Enter"></div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="item">
+          <di class="row-no-padding">
+            <div class="row">
+              <div class="button-block add_icon" ng-click='vm.addInsuredAddress()'>
+                <a class="button" ><i class="icon ion-ios-plus-empty"></i> <span>Tambah Dana Investasi</span></a>
+              </div>
+            </div>
+          </di>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+  <ion-footer-bar class="bar bar-footer bar-assertive">
+    <div ng-click="vm.saveSpaj()" title="Lanjutkan" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></div>
+  </ion-footer-bar>
+</ion-view>
