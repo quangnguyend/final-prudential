@@ -150,8 +150,8 @@
   .item {
     border: none;
     padding: 40px 0 0;
-    opacity: 0.4;
-    pointer-events: none;
+    /*opacity: 0.4;
+    pointer-events: none;*/
     &:nth-child(1), &._active {
       opacity: 1;
       pointer-events: auto;
@@ -1308,6 +1308,17 @@ th {
   .item {
     border: none;
   }
+  .obat-item {
+    .obat-index {
+      position: absolute;
+      left: 0px;
+      top: 30px;
+    }
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 20px;
+  }
+  .obat-add {}
   .item-checkbox {
     width: 100%;
     .checkbox {
@@ -1315,9 +1326,13 @@ th {
       padding-left: 0px;
     }
   }
-  .item p {
-    font-size: 17px;
-  }
+}
+
+.popup-prudential .item p {
+  font-size: 17px;
+}
+
+#digestive-popup {
   .customize-cb > .item {
     padding-top: 17px;
     width: 33%;
@@ -1335,10 +1350,9 @@ th {
   }
   .title-cb {
     line-height: 40px;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 17px;
   }
-  .col.disable, input.disable {
+  .disable, input.disable {
     opacity: 0.4;
     pointer-events: none;
   }
@@ -1420,105 +1434,4 @@ th {
   button, .description {
     margin: 0;
   }
-}
-
-/* top_up */
-
-#top_up {
-  .item .description {
-    text-align: center;
-    font-weight: normal;
-    color: #636B70;
-  }
-  .checkbox_child {
-    margin: 0 20px;
-    background: #f7f5f5;
-  }
-  #health_respiratory {
-    .item, .center_txt {
-      background: #f7f5f5;
-    }
-    background: #f7f5f5;
-  }
-  #policy_info_ph_info {
-    background: #f7f5f5;
-  }
-  .item.inside_check {
-    width: 100%;
-  }
-  input[type="text"] {
-    background: #f7f5f5;
-    margin-top: 5px;
-  }
-  #health_respiratory {
-    .center_txt {
-      text-align: center;
-      color: #50585D;
-      margin: 20px 0 35px;
-    }
-    padding: 20px 0;
-    .inside_check {
-      margin: 0 0 25px -5px;
-    }
-  }
-  .center_txt {
-    text-align: center;
-    display: block;
-    width: 100%;
-  }
-  .no_bg {
-    .item, input[type="text"] {
-      background: white;
-    }
-  }
-  .button-block {
-    width: 100%;
-    text-align: center;
-    .button {
-      display: block;
-      padding: 15px 28px;
-      min-height: 10px;
-      &:hover {
-        background-color: #d6d6d6;
-      }
-    }
-  }
-}
-
-#health_respiratory {
-  .center_txt_end {
-    text-align: center;
-    font-size: 25px;
-    color: #444;
-    margin: 50px 0 30px 0;
-    line-height: initial;
-    font-family: "Roboto", "Frutiger-Regular", "Helvetica Neue", "Segoe UI", sans-serif !important;
-  }
-  .left_text {
-    text-align: left;
-    padding: 0 20px;
-  }
-}
-
-#top_up_payor_detail {
-  .grey-box {
-    padding-top: 15px;
-    background: #5B6770;
-    .list {
-      background: #5B6770;
-      color: white;
-      padding: 25px;
-      font-weight: 300;
-      font-size: 22px;
-      .indent_payor {
-        margin-bottom: 25px;
-      }
-    }
-    .button-done {
-      background: #5b6770;
-      border-top: 1px solid #757f86;
-      color: white;
-    }
-  }
-  padding-bottom: 50px;
 }
