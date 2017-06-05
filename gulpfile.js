@@ -13,7 +13,7 @@ var paths = {
   sass: ['./scss/**/*.scss']
 }
 
-gulp.task('default', ['sass', 'inject'])
+gulp.task('default', ['watch', 'inject'])
 
 gulp.task('inject', function () {
   var source = gulp.src([
