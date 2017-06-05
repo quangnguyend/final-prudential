@@ -156,7 +156,7 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService) {
     }
   }
   vm.review = function () {
-    $state.go('app.step2')
+    $state.go('app.health_data')
   }
 
   function checkMissingData () {
