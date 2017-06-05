@@ -1,0 +1,1524 @@
+.header-bar-spaj button {
+  border: none;
+  background: transparent;
+  color: white;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  &.up-arrow::after {
+    content: ' ⏶';
+  }
+  &.down-arrow::after {
+    content: ' ⏷';
+  }
+}
+
+/*
+#SPAJ .tab-menu {
+  height: 50px;
+  padding: 0px;
+}
+
+#SPAJ .tab-menu .col {
+  text-align: center;
+  height: 50px;
+  line-height: 40px;
+  background: #F7F5F5;
+  border-right: 1px solid #f0eded;
+  border-left: 1px solid #f0eded;
+  box-sizing: border-box
+}
+
+#SPAJ .tab-menu .col:first-child {
+  border-left: none
+}
+
+#SPAJ .tab-menu .col:last-child {
+  border-right: none
+}
+
+#SPAJ .tab-menu .col.active {
+  border-bottom: 2px solid #da291c;
+  border-right: 1px solid #f1d6d7;
+  border-left: 1px solid #f1d6d7
+}
+
+#SPAJ .tab-menu .col.active:first-child {
+  border-left: none
+}
+
+#SPAJ .tab-menu .col.active:last-child {
+  border-right: none
+}
+
+#SPAJ .bar.bar-header {
+  padding-left: 0px;
+  padding-right: 0px;
+}*/
+
+.wrapper-multi-step {
+  background: #DA291C;
+}
+
+.multi-step {
+  margin: 0px;
+  background: #DA291C;
+  padding: 40px 0 !important;
+  position: relative;
+  .col {
+    div {
+      font-size: 17px;
+      margin-top: 5px;
+      color: #fff;
+    }
+    span {
+      background: #F8383F;
+      color: #FFF;
+      display: block;
+      width: 26px;
+      height: 26px;
+      margin: 0 auto;
+      line-height: 26px;
+      border-radius: 50%;
+      font-size: 16px;
+      position: relative;
+      z-index: 2;
+    }
+    position: relative;
+    &:before {
+      width: 100%;
+      height: 1px;
+      content: '';
+      border: 1px solid #F8383F;
+      position: absolute;
+      top: 16px;
+      z-index: 0;
+      left: 0px;
+    }
+    &:first-child:before {
+      width: 50%;
+      left: 50%;
+    }
+    &:last-child:before {
+      width: 50%;
+    }
+    &.active {
+      color: #DA291C;
+    }
+    &.complete span {
+      border: none;
+    }
+    &.incomplete span {
+      border: solid 1px white;
+    }
+    &.active span {
+      background: #FFF;
+      color: #DA291C;
+      a {
+        color: #F8383F;
+      }
+    }
+    span a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+/*Css health_question*/
+
+#health_question1 {
+  h1 {
+    line-height: 25px;
+    overflow: visible;
+    margin-bottom: 25px;
+    padding: 0px;
+  }
+  .message {
+    font-size: 17px;
+    color: #DA291C;
+  }
+  input {
+    &[type=number], &[type=text] {}
+  }
+  .button.button-dark {
+    background-color: #5B6770;
+  }
+  #health1_step1 .col-50:nth-child(1) .item-note {
+    padding-right: 10px;
+  }
+  .item {
+    border: none;
+    padding: 40px 0 0;
+    opacity: 0.4;
+    pointer-events: none;
+    &:nth-child(1), &._active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    &:last-child {
+      padding-bottom: 40px;
+    }
+  }
+  .smoker-btn {
+    background: #F7F5F5;
+    opacity: 1.00;
+    border-radius: 2px;
+    width: 100%;
+    font-size: 17px;
+    line-height: 100%;
+    letter-spacing: -0.408px;
+    color: rgba(73, 84, 93, 0.5);
+    opacity: 1.00;
+    &.selected {
+      background-color: #5B6770;
+      color: #F7F5F5;
+    }
+  }
+  button.next {
+    width: 100%;
+    margin: 20px 0px 20px 0px;
+  }
+  .item-note {
+    margin-top: -27px;
+  }
+  #health1_step4 .row .col:nth-child(1) {
+    white-space: normal;
+    align-self: center;
+  }
+  .button-bar .col {
+    border-radius: 4px !important;
+    &:nth-child(1) {
+      margin-right: 10px;
+    }
+  }
+  #health1_step4 .row h1 {
+    font-weight: normal;
+    white-space: normal;
+  }
+  .item_description {
+    white-space: normal;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    font-size: 17px;
+  }
+  .icon {
+    &.completed::after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      right: 0px;
+      width: 53px;
+      height: 53px;
+      background: url(../img/completed-sign.png) no-repeat;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+    }
+    &.not-complete:after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      right: 0px;
+      width: 53px;
+      height: 53px;
+      background: url('../img/not-complete-sign.png') no-repeat;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+    }
+    &.un-touched:after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      right: 0px;
+      width: 53px;
+      height: 53px;
+      background: url('../img/un-touched-sign.png') no-repeat;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+    }
+  }
+}
+
+.popup-prudential {
+  .checkbox input:before, .checkbox-icon:before {
+    border-radius: 0px;
+    background: #eee;
+  }
+  .item-checkbox .checkbox {
+    top: 30px;
+  }
+  .description {
+    padding-left: 0px;
+    color: #636B70;
+    font-weight: 400;
+  }
+  .button-bar > .button:nth-child(1) {
+    margin-right: 10px;
+  }
+  [type="checkbox"] {
+    &:not(:checked), &:checked {
+      opacity: 1;
+      left: 0px;
+    }
+  }
+  .checkbox input:checked {
+    &:before, + .checkbox-icon:before {
+      background: #da291c;
+      border-radius: 0px;
+      border-color: #da291c;
+    }
+  }
+  .item2 {
+    margin: 20px 0;
+    .label {
+      margin-bottom: 10px;
+    }
+  }
+  .md-block {
+    width: 100%;
+  }
+}
+
+#health_question1 {
+  .grey-box {
+    ul {
+      padding: 30px;
+      margin: 0px;
+      margin-top: -3px;
+    }
+    background: #5B6770;
+    padding-top: 15px;
+    .item-checkbox .item-content {
+      padding-top: 5px;
+    }
+  }
+  .button-done {
+    background: transparent;
+    border-top: 1px solid #6e7880;
+    color: #FFF;
+  }
+  .grey-box .item {
+    background: transparent;
+    padding-left: 60px;
+    color: #FFF;
+    padding-top: 0px;
+    min-height: 40px;
+    white-space: normal;
+    vertical-align: center;
+    pointer-events: auto;
+    opacity: 1;
+    p {
+      color: #FFF;
+      white-space: normal;
+      height: 100%;
+    }
+    &:nth-child(2) {
+      padding-top: 10px;
+    }
+  }
+  .item .icon {
+    content: '';
+    width: 111px;
+    height: 64px;
+    background: url('../img/health-question0.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .icon:before {
+    content: '';
+    width: 111px;
+    height: 64px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  .ibrain {
+    .icon:before {
+      background: url('../img/health-question5.png') no-repeat;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+    }
+    &.done .icon:before {
+      background: url('../img/health-question5-done.png') no-repeat;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+    }
+    &.notdone .icon:before {
+      background: url('../img/health-question5-notdone.png') no-repeat;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+    }
+  }
+  .ihocmon .icon:before {
+    background: url('../img/health-question6.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .ieye .icon:before {
+    background: url('../img/health-question7.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .iear .icon:before {
+    background: url('../img/health-question8.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .irespiratory .icon:before {
+    background: url('../img/health-question9.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .iheart .icon:before {
+    background: url('../img/health-question10.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .idigestive .icon:before {
+    background: url('../img/health-question11.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .ikidney .icon:before {
+    background: url('../img/health-question12.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .iface .icon:before {
+    background: url('../img/health-question13.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .ibone .icon:before {
+    background: url('../img/health-question14.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .itumors .icon:before {
+    background: url('../img/health-question15.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .iill .icon:before {
+    background: url('../img/health-question16.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .iinjury .icon:before, .idisease .icon:before, .idisorder .icon:before, .iabnormality .icon:before, .ipapsmear .icon:before, .ipregnant .icon:before, .isurgery .icon:before, .icomplication .icon:before, .ilostweight .icon:before {
+    background: url('../img/health-question17.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .checkbox input:before, .checkbox-icon:before {
+    border-radius: 2px;
+  }
+  .checkbox input:checked {
+    + .checkbox-icon:before, &:before {
+      background: #da291c;
+      border-color: #FFF;
+      border-width: 1px;
+    }
+  }
+  .additional-question {
+    padding: 40px 40px 70px 40px;
+    .md-input input {
+      color: #F5F2F2 !important;
+      &:focus {
+        border-color: #ccc !important;
+      }
+    }
+    label {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 17px;
+      line-height: 100%;
+      color: #F5F2F2;
+    }
+    .button-bar {
+      margin-top: 20px;
+      .button {
+        border: solid 1px #ffffff;
+        background: #5B6770;
+        color: #FFFFFF;
+        opacity: 1.00;
+        border-radius: 2px;
+        &:first-child {
+          margin-right: 20px;
+        }
+        &.button-dark {
+          color: #5B6770 !important;
+          background: #FFFFFF !important;
+        }
+      }
+    }
+  }
+}
+
+#eye-popup .popup-content {
+  padding: 40px;
+  .item {
+    margin-top: 30px 50px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  .number {
+    position: relative;
+    top: 50px;
+    left: -15px;
+    font-size: 17px;
+  }
+  label {
+    color: #39393A;
+  }
+  .add-more-btn {
+    background: #F7F5F5;
+    opacity: 1.00;
+    border-radius: 2px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 100%;
+    letter-spacing: -0.408px;
+    color: rgba(73, 84, 93, 0.5);
+    height: 48px;
+    border: none;
+    &:hover {
+      background: #e5e3e3;
+    }
+  }
+}
+
+.button-red {
+  background: #d0021b;
+}
+
+/*Css for beneficiary*/
+
+#policy_beneficiary {
+  padding: 10px 10px 100px 10px;
+  font-size: 17px;
+  .item {
+    border: none;
+  }
+  div.title {
+    margin: 25px 0px;
+  }
+  table {
+    overflow-x: auto;
+    padding-bottom: 100px;
+    font-size: 17px;
+    text-align: left;
+  }
+}
+
+th {
+  text-align: left;
+}
+
+#policy_beneficiary table, th, td {
+  padding: 10px !important;
+}
+
+#policy_beneficiary {
+  table td {
+    &.birthdate-column input[type=date] {
+      width: auto;
+    }
+    span.error-message {
+      float: right;
+      color: red;
+      font-weight: normal;
+    }
+    input, select {
+      height: 35px;
+    }
+    .gender {
+      span {
+        font-weight: normal;
+        margin: 0px 30px 0px 0px;
+      }
+      div {
+        font-weight: bold;
+        margin: 0px 30px;
+        label {
+          font-weight: bold;
+        }
+      }
+    }
+    &.birthdate-column i.icon {
+      font-size: 25px;
+      margin: 0px 5px;
+    }
+    button {
+      line-height: initial;
+      min-height: 35px;
+    }
+  }
+  div.add-new-row {
+    font-size: 14px;
+    color: red;
+    margin: 15px 0px;
+    i {
+      margin: 0px 20px 0px 10px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #policy_beneficiary table, th, td {
+    font-size: 25px;
+  }
+}
+
+/* Css PH Info */
+
+#policy_info_ph_info {
+  font-family: "Roboto", "Frutiger-Regular", "Helvetica Neue", "Segoe UI", sans-serif !important;
+  h2, .button, .input-label {
+    font-family: "Roboto", "Frutiger-Regular", "Helvetica Neue", "Segoe UI", sans-serif !important;
+  }
+  input {
+    &[type="text"], &[type="date"] {
+      font-family: "Roboto", "Frutiger-Regular", "Helvetica Neue", "Segoe UI", sans-serif !important;
+    }
+  }
+  .form_select {
+    font-family: "Roboto", "Frutiger-Regular", "Helvetica Neue", "Segoe UI", sans-serif !important;
+  }
+  h2.headline {
+    color: #5B6770;
+    font-size: 17px;
+    margin-bottom: 39px;
+  }
+  input {
+    &[type="text"] {
+      width: 100%;
+      color: #49545D;
+    }
+    &[type="date"] {
+      width: 100%;
+      color: #49545D;
+      width: 94%;
+    }
+  }
+}
+
+.popup-prudential #policy_info_ph_info input[type="date"] {
+  width: 100%;
+}
+
+#policy_info_ph_info {
+  .small_input {
+    width: 78% !important;
+  }
+  .label_medium_size {
+    font-size: 12px;
+    color: #9B9B9B;
+  }
+  .button-block {
+    width: 100%;
+    text-align: center;
+    .button {
+      display: block;
+      padding: 15px 28px;
+      min-height: 10px;
+      &:hover {
+        background-color: #d6d6d6;
+      }
+    }
+  }
+  .icon-calendar {
+    font-size: 35px;
+    float: left;
+    display: block;
+  }
+  .item {
+    border: none;
+  }
+  input[type="date"], .form_select, input[type="text"] {
+    border-bottom: 1px solid #D8D8D8;
+    padding-bottom: 4px;
+  }
+  .indent_label {
+    margin-top: 25px;
+  }
+  .checkbox input:before, .checkbox-icon:before {
+    border-radius: 0px;
+    background: #eee;
+  }
+  .checkbox {
+    input:checked {
+      &:before, + .checkbox-icon:before {
+        background: #da291c;
+        border-radius: 0px;
+        border-color: #da291c;
+      }
+    }
+    padding-left: 0;
+  }
+  .no_padding .row {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .item-checkbox {
+    .checkbox {
+      left: 0;
+    }
+    padding-left: 52px;
+  }
+  .cust-checkbox {
+    .checkbox input:checked {
+      &:before, + .checkbox-icon:before {
+        background: #da291c;
+        border-color: #da291c;
+      }
+    }
+    .desc {
+      display: block;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+  }
+  .button-block.full_width_button .button, .left_input_date.input_full_width input[type="date"] {
+    width: 100%;
+  }
+  .indent_row {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .add_icon {
+    color: #da291c;
+    cursor: pointer;
+    cursor: pointer;
+    label {
+      cursor: pointer;
+    }
+    i {
+      font-size: 32px;
+      top: -1px;
+      font-weight: bold;
+      display: inline;
+      position: relative;
+    }
+    label {
+      display: block;
+      float: left;
+      margin-top: 7px;
+    }
+  }
+  hr {
+    border: 1px solid #efecec;
+  }
+  .agree_text {
+    display: block;
+    white-space: normal;
+    margin-left: 50px;
+  }
+  .custom_checkbox {
+    display: block;
+    .item-checkbox {
+      padding-left: 35px;
+      float: left;
+    }
+  }
+  .input_red {
+    color: #cb2033;
+  }
+  .item-stacked-label {
+    margin-bottom: 15px;
+  }
+  .left_input_date input[type="date"] {
+    float: left;
+    width: 68%;
+    margin-right: 15px;
+  }
+  .form_select {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    -moz-appearance: none;
+    appearance: none;
+    background: url('../img/icon-arrow.png') no-repeat 100% 50% #ffffff;
+    background-size: 15px 13px;
+    &.reset_threecol {
+      margin-top: 0px;
+      padding: 6px 0px 7px;
+      background: url(../img/icon-arrow.png) no-repeat 90% 50% #ffffff;
+      background-size: 15px 13px;
+      color: #39393A;
+      font-size: 18px;
+    }
+  }
+  .checkbox-condition .item-checkbox {
+    float: left;
+  }
+  .label-text-check {
+    margin-top: -6px;
+    display: block;
+    overflow: auto;
+    text-overflow: initial;
+    white-space: normal;
+    font-size: 25px;
+    line-height: normal;
+  }
+  .button-device-block .button {
+    display: block;
+    width: 50%;
+    float: left;
+    border: 1px solid #5B6770;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    span {
+      font-size: 16px;
+      display: block;
+      margin-top: -10px;
+    }
+    &:first-child {
+      border-right-width: 0;
+    }
+    &:hover, &:active, &.active {
+      background-color: #DA291C;
+      border-color: #DA291C;
+      color: white;
+    }
+  }
+}
+
+/* Terms & Conditions */
+
+#terms_conditions {
+  h2 {
+    font-weight: 600;
+  }
+  p, h2 {
+    font-size: 17px;
+  }
+  padding-bottom: 100px;
+  .terms_space {
+    height: 1px;
+    margin-top: 11px;
+    margin-bottom: 20px;
+  }
+  .terms_block {
+    padding: 25px;
+  }
+  .terms_padding_box {
+    padding: 0 30px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #terms_conditions {
+    p, h2 {
+      font-size: 25px;
+      line-height: 30px;
+    }
+  }
+}
+
+#iscroll8 {
+  height: 80%;
+}
+
+#terms_conditions {
+  .terms_check {
+    float: right;
+    .item {
+      border-width: 0;
+      margin-top: 36px;
+      margin-bottom: 35px;
+    }
+  }
+  .cust-checkbox {
+    .checkbox input:checked {
+      &:before, + .checkbox-icon:before {
+        background: #da291c;
+        border-color: #da291c;
+      }
+    }
+    .desc {
+      display: block;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+  }
+  .button-block.full_width_button .button:first-child {
+    margin-right: 0;
+  }
+  .checkbox input:before, .checkbox-icon:before {
+    border-radius: 0px;
+    background: #eee;
+  }
+  .checkbox {
+    input:checked {
+      &:before, + .checkbox-icon:before {
+        background: #da291c;
+        border-radius: 0px;
+        border-color: #da291c;
+      }
+    }
+    padding-left: 0;
+  }
+  .no_padding .row {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .item-checkbox {
+    .checkbox {
+      left: 0;
+    }
+    padding-left: 52px;
+  }
+}
+
+/* health_tumor */
+
+#health_tumor .close_btn, #health_respiratory .close_btn {
+  background: #D0021B;
+  padding: 6px 48px;
+  float: right;
+}
+
+#health_tumor .close_btn .ion-android-close, #health_respiratory .close_btn .ion-android-close {
+  color: white;
+  font-size: 35px;
+}
+
+#health_tumor .clear_btn, #health_respiratory .clear_btn {
+  clear: both;
+}
+
+#health_tumor .indent_btn, #health_respiratory .indent_btn {
+  margin-top: 45px;
+}
+
+#health_tumor #policy_info_ph_info .form_select, #health_respiratory #policy_info_ph_info .form_select {
+  color: #39393A;
+}
+
+#health_tumor .inside_check, #health_respiratory .inside_check {
+  margin: 0 0 0 32px;
+  width: 100%;
+}
+
+#health_tumor #policy_info_ph_info .form_select, #health_respiratory #policy_info_ph_info .form_select {
+  border-bottom-width: 0;
+}
+
+#health_tumor .checkbox_child, #health_respiratory .checkbox_child {
+  margin-top: -20px;
+}
+
+/* health_respiratory */
+
+/* esign_paymnet */
+
+#esign_paymnet {}
+
+/* Active Insurance Policies */
+
+.active-insurance-page {
+  &.wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .ins-toggle {
+    background-color: #fff;
+    color: #444;
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin: -1px;
+    padding: 5px 99px 5px 0px;
+  }
+  .m-gap-30 {
+    margin-top: 30px;
+  }
+  .m-gap-20 {
+    margin-top: 20px;
+  }
+  .input-inline {
+    display: inline-block;
+  }
+  .clearfix {
+    clear: both;
+  }
+}
+
+.lst-insurance-policy .input-label {
+  width: 50%;
+}
+
+.heading-row {
+  font-size: 80%;
+  line-height: 110%;
+}
+
+.clearfix:after {
+  content: '';
+  display: inline;
+  clear: both;
+}
+
+.active-insurance-page {
+  .float-left {
+    float: left;
+  }
+  .float-right {
+    float: right;
+  }
+  .col-5 {
+    width: 5%;
+  }
+  .col-95 {
+    width: 95%;
+  }
+  .row .col-padding, .col-padding {
+    padding: 5px !important;
+  }
+  input[type="text"].form-input {
+    width: 100%;
+    font-size: 17px;
+  }
+  select.form-input {
+    width: 100%;
+    display: block;
+    padding-top: 2px;
+    padding-left: 0;
+    height: 34px;
+    color: #111;
+    vertical-align: middle;
+    line-height: 16px;
+    border: none;
+    background-color: #fff;
+    font-size: 17px;
+  }
+  .button.button-active {
+    background-color: #5b6770;
+    color: #fff !important;
+  }
+  .m-gap-left-30 {
+    margin-left: 30px;
+  }
+  .txt-add-policy {
+    margin-left: 10px;
+  }
+  &.has-bottom-bar {
+    padding-bottom: 100px;
+  }
+}
+
+/* Upload document page*/
+
+.upload-document-page {
+  .upload-document-name {
+    margin-top: 7px;
+    display: inline-block;
+    font-size: 17px;
+  }
+  &.wrapper {
+    margin: 0px auto;
+  }
+  .m-gap-30 {
+    margin-top: 30px;
+  }
+  .clearfix {
+    clear: both;
+  }
+  .float-left {
+    float: left;
+  }
+  .col-5 {
+    width: 5%;
+  }
+  .col-95 {
+    width: 95%;
+  }
+  .row .col-padding, .col-padding {
+    padding: 5px;
+  }
+  input[type="text"].form-input {
+    border-bottom: 1px solid #5b6770;
+    max-width: 100%;
+  }
+  select.form-input {
+    max-width: 100%;
+    display: block;
+    padding-top: 2px;
+    padding-left: 0;
+    height: 34px;
+    color: #111;
+    vertical-align: middle;
+    border: none;
+    border-bottom: 1px solid #5b6770;
+    background-color: #fff;
+  }
+  .row-number {
+    height: 34px;
+    line-height: 34px;
+    display: inline-block;
+  }
+  &.has-bottom-bar {
+    padding-bottom: 100px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .upload-document-page .upload-document-name {
+    font-size: 25px;
+  }
+}
+
+.document-upload-file {
+  position: relative;
+  input[type=file] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    opacity: 0;
+    z-index: 1;
+  }
+  .btn-upload-img {
+    padding: 0 5px;
+    line-height: 120%;
+    background: #efecec;
+  }
+}
+
+/*thanks css page*/
+
+#thanks {
+  .title_small {
+    font-size: 16px;
+    white-space: normal;
+  }
+  .list-inset {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .item {
+    border-left: none;
+    border-right: none;
+    padding: 30px;
+    h1 {
+      font-size: 17px;
+      margin-bottom: 20px;
+    }
+  }
+  .no-lines .item {
+    .row {
+      justify-content: space-between;
+      margin-bottom: 15px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+    .first {
+      line-height: 44px;
+      span {
+        font-size: 75%;
+        vertical-align: top;
+        padding-right: 5px;
+      }
+    }
+    .button {
+      min-width: 170px;
+    }
+  }
+  .btn_img {
+    background: #f8f8f8 url(../img/icon_img.png) 15px no-repeat;
+    background-size: 20px auto;
+    -webkit-background-size: 20px auto;
+    padding-left: 30px;
+  }
+}
+
+.thanks-footer {
+  padding: 0px !important;
+  .btn {
+    line-height: 60px;
+  }
+  .btn-dark {
+    background: #5B6770;
+  }
+}
+
+#e-policy .large-icon {
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+
+/*E signature confirmation  - Reminder Step*/
+
+#spaj-esignature-confirmation {
+  .custom-checkbox {
+    width: 50% !important;
+  }
+  .title h1 {
+    line-height: 50px;
+  }
+  .item-checkbox {
+    border: none;
+    color: #3B7ADB;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    padding-left: 80px;
+  }
+  .policy-item .col {
+    margin-right: 10px;
+  }
+  .item {
+    width: 90%;
+    text-align: left;
+    margin: 0 auto;
+  }
+  .select-box {
+    width: 100%;
+  }
+}
+
+.add-policy-btn {
+  width: 100%;
+  font-size: 17px !important;
+  line-height: 100% !important;
+  letter-spacing: -0.408px;
+  color: #5B6770 !important;
+  background-color: #F7F5F5 !important;
+}
+
+#spaj-esignature-confirmation {
+  .disabled-btn {
+    background: #9B9B9B;
+  }
+  .push-up {
+    position: relative;
+    top: -12px;
+  }
+  .missing-reminder {
+    .missing-title {
+      &.open::before {
+        content: '+';
+        margin-right: 20px;
+      }
+      &.close::before {
+        content: '-';
+        margin-right: 20px;
+      }
+    }
+    .missing-content {
+      padding: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 568px) {
+  #spaj-esignature-confirmation .custom-checkbox {
+    width: 100% !important;
+  }
+}
+
+/* step 3 style*/
+
+.clearfix {
+  clear: both;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+#other-health {
+  .item {
+    border: none;
+  }
+  .wrapper {
+    margin: 0 auto;
+  }
+  .mt-50 {
+    margin-top: 50px;
+  }
+  .button.button-active {
+    background-color: #5b6770;
+    color: #fff !important;
+  }
+  input {
+    &[type=text], &[type=datetime] {
+      font-size: 16px;
+    }
+  }
+  .disabled {
+    opacity: .5;
+    input, button {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+}
+
+#family-history {
+  .float-left {
+    float: left;
+  }
+  .float-right {
+    float: right;
+  }
+  .wrapper {
+    margin: 0 auto;
+  }
+  .item {
+    border: none;
+  }
+  .mt-50 {
+    margin-top: 50px;
+  }
+  .button.button-active {
+    background-color: #5b6770;
+    color: #fff !important;
+  }
+  input {
+    &[type=text], &[type=datetime] {
+      font-size: 16px;
+    }
+  }
+  .col-5 {
+    width: 5%;
+  }
+  .col-95 {
+    width: 95%;
+  }
+  .row .col-padding, .col-padding {
+    padding: 5px !important;
+  }
+  select option {
+    padding: 0px !important;
+  }
+}
+
+/* step 3 style*/
+
+#digestive-popup {
+  .item {
+    border: none;
+  }
+  .item-checkbox {
+    width: 100%;
+    .checkbox {
+      left: 0px;
+      padding-left: 0px;
+    }
+  }
+  .item p {
+    font-size: 17px;
+  }
+  .customize-cb > .item {
+    padding-top: 17px;
+    width: 33%;
+  }
+  .more-space {
+    margin-bottom: 10px;
+  }
+  .row-no-padding h4 {
+    padding: 10px 0;
+    font-weight: normal;
+  }
+  .vertical-space {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  .title-cb {
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .col.disable, input.disable {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  .col.active {
+    opacity: 1;
+    pointer-events: normal;
+  }
+  .button.next {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.amendment-page {
+  &.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  input[type=text] {
+    font-size: 16px;
+  }
+  .item {
+    border: none;
+  }
+  .description {
+    padding-left: 0px;
+    font-weight: normal !important;
+  }
+}
+
+.payor-page {
+  md-input-container {
+    width: 100%;
+  }
+  .icon-calendar {
+    font-size: 40px;
+    display: -webkit-box;
+    -webkit-box-align: center;
+  }
+}
+
+#other-health .md-select-value > span:not(.md-select-icon) {
+  text-align: left;
+}
+
+.img-options button {
+  padding-left: 5px;
+  padding-right: 5px;
+  min-width: 35px;
+}
+
+.upload-document-page h1 {
+  white-space: inherit;
+}
+
+.green-color {
+  color: #3bab4e;
+}
+
+.img-responsive {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.pd-20 {
+  padding: 20px;
+}
+
+.button.selected {
+  background-color: #5B6770;
+  color: #F7F5F5;
+}
+
+.list-no-border .item {
+  border: none;
+}
+
+#add_child .item {
+  button, .description {
+    margin: 0;
+  }
+}
+
+/* top_up */
+
+#top_up {
+  .item .description {
+    text-align: center;
+    font-weight: normal;
+    color: #636B70;
+  }
+  .checkbox_child {
+    margin: 0 20px;
+    background: #f7f5f5;
+  }
+  #health_respiratory {
+    .item, .center_txt {
+      background: #f7f5f5;
+    }
+    background: #f7f5f5;
+  }
+  #policy_info_ph_info {
+    background: #f7f5f5;
+  }
+  .item.inside_check {
+    width: 100%;
+  }
+  input[type="text"] {
+    background: #f7f5f5;
+    margin-top: 5px;
+  }
+  #health_respiratory {
+    .center_txt {
+      text-align: center;
+      color: #50585D;
+      margin: 20px 0 35px;
+    }
+    padding: 20px 0;
+    .inside_check {
+      margin: 0 0 25px -5px;
+    }
+  }
+  .center_txt {
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+  .no_bg {
+    .item, input[type="text"] {
+      background: white;
+    }
+  }
+  .button-block {
+    width: 100%;
+    text-align: center;
+    .button {
+      display: block;
+      padding: 15px 28px;
+      min-height: 10px;
+      &:hover {
+        background-color: #d6d6d6;
+      }
+    }
+  }
+}
+
+#health_respiratory {
+  .center_txt_end {
+    text-align: center;
+    font-size: 25px;
+    color: #444;
+    margin: 50px 0 30px 0;
+    line-height: initial;
+    font-family: "Roboto", "Frutiger-Regular", "Helvetica Neue", "Segoe UI", sans-serif !important;
+  }
+  .left_text {
+    text-align: left;
+    padding: 0 20px;
+  }
+}
+
+#top_up_payor_detail {
+  .grey-box {
+    padding-top: 15px;
+    background: #5B6770;
+    .list {
+      background: #5B6770;
+      color: white;
+      padding: 25px;
+      font-weight: 300;
+      font-size: 22px;
+      .indent_payor {
+        margin-bottom: 25px;
+      }
+    }
+    .button-done {
+      background: #5b6770;
+      border-top: 1px solid #757f86;
+      color: white;
+    }
+  }
+  padding-bottom: 50px;
+}
