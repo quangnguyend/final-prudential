@@ -68,6 +68,9 @@ angular
   .controller('TermsCtrl', termsCtrl)
   .controller('CustomHeaderCtrl', customHeaderCtrl)
   .controller('AddChildCtrl', addChildCtrl)
+  .controller('TopupCtrl', topupCtrl)
+  .controller('TopupPayorCtrl', topupPayorCtrl)
+  .controller('TopupPayorDetailCtrl', topupPayorDetailCtrl)
 
   .directive('dataService', dataService)
   .directive('groupedRadio', groupedRadio)

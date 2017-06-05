@@ -7,6 +7,6 @@ function payorCtrl ($scope, $rootScope, $state, DataService, $location) {
   vm.currentTab = 'payor_option0'
 
   vm.save = function () {
-    $state.go('app.step4')
+    $state.go('app.payor_premium_detail')
   }
 }

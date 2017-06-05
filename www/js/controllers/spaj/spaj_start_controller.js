@@ -18,7 +18,7 @@ function spajStartCtrl ($state, $scope, $rootScope, SpajService) {
     SpajService.setData('spaj', objSpaj)
 
     if (session2 === 'pemegangpolis') { $rootScope.typeOfStep = 1 }
-    $state.go('app.step1')
+    $state.go('app.start')
   }
 
   vm.data = {

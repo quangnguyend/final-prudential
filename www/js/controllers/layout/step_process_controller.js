@@ -6,20 +6,21 @@ function stepProcessCtr ($scope, $rootScope, $state, $timeout, SpajService) {
   var vm = this
   vm.policyStep = '1'
   var payor = [
-    { step: '1', title: 'Data Informasi', state: 'step1' },
-    { step: '2', title: 'Data Kesehatan', state: 'step2' },
-    { step: '3', title: 'Penerima Manfaat ', state: 'step3' },
-    { step: '4', title: 'Upload', state: 'step6' },
-    { step: '5', title: 'Amendment  ', state: 'step7' }]
+    { step: '1', title: 'DATA INFORMASI', state: 'start' },
+    { step: '2', title: 'DATA KESEHATAN', state: 'health_data' },
+    { step: '3', title: 'PENERIMA MANFAAT', state: 'beneficiaries' },
+    { step: '4', title: 'UPLOAD', state: 'document_upload' },
+    { step: '5', title: 'AMENDMENT  ', state: 'amendment' }]
 
   var notPayor = [
-    { step: '1', title: 'Data Informasi', state: 'step1' },
-    { step: '2', title: 'Data Kesehatan', state: 'step2' },
-    { step: '3', title: 'Kegiatan beresiko', state: 'step4_option1' },
-    { step: '4', title: 'Pembayar Premi', state: 'step5' },
-    { step: '5', title: 'Penerima Manfaat', state: 'step3' },
-    { step: '6', title: 'Dokumen', state: 'step6' },
-    { step: '7', title: 'Amendment', state: 'step7' }]
+    { step: '1', title: 'DATA INFORMASI', state: 'start' },
+    { step: '2', title: 'DATA KESEHATAN', state: 'health_data' },
+    { step: '3', title: 'PEMBAYAR PREMI', state: 'payor_premium' },
+    { step: '4', title: 'TOP-UP', state: 'topup' },
+    { step: '5', title: 'CALON PENERIMA MANFAAT ASURANSI', state: 'beneficiaries' },
+    { step: '6', title: 'DOKUMEN', state: 'document_upload' },
+    { step: '7', title: 'AMENDMENT', state: 'amendment' }
+  ]
 
   vm.pageList = ($rootScope.typeOfStep === 1) ? payor : notPayor
 
@@ -37,7 +38,7 @@ function stepProcessCtr ($scope, $rootScope, $state, $timeout, SpajService) {
     return $rootScope.policyStep.steps
   }
 
-  $rootScope.nextStep = function (fallbackPath) {
+  $rootScope.nextStep = function () {
     var foundRoute = false
     for (var i in vm.pageList) {
       var nextStep = Number.parseInt($rootScope.getCurrentPolicyStep()) + 1
@@ -49,7 +50,8 @@ function stepProcessCtr ($scope, $rootScope, $state, $timeout, SpajService) {
       }
     }
     if (!foundRoute) {
-      if (fallbackPath) { $state.go('app.' + fallbackPath) }
+      var finishedState = vm.pageList.length === 7 ? 'terms_conditions' : 'terms_conditions'
+      $state.go('app.' + finishedState)
     }
   }
 
