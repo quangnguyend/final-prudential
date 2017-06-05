@@ -1439,3 +1439,162 @@ th {
     margin: 0;
   }
 }
+
+#health_respiratory {
+  .center_txt_end {
+    text-align: center;
+    font-size: 25px;
+    color: #444;
+    margin: 50px 0 30px 0;
+    line-height: initial;
+    font-family: "Roboto", "Frutiger-Regular", "Helvetica Neue", "Segoe UI", sans-serif !important;
+  }
+  .left_text {
+    text-align: left;
+    padding: 0 20px;
+  }
+}
+
+/* Top Up */
+#top_up {
+  .item .description {
+    text-align: center;
+    font-weight: normal;
+    color: #636B70;
+  }
+  .checkbox_child {
+    margin: 0 20px;
+    background: #f7f5f5;
+  }
+  #health_respiratory {
+    .item, .center_txt {
+      background: #f7f5f5;
+    }
+    background: #f7f5f5;
+  }
+  #policy_info_ph_info {
+    background: #f7f5f5;
+  }
+  .item.inside_check {
+    width: 100%;
+  }
+  input[type="text"] {
+    background: #f7f5f5;
+    margin-top: 5px;
+  }
+  #health_respiratory {
+    .center_txt {
+      text-align: center;
+      color: #50585D;
+      margin: 20px 0 35px;
+    }
+    padding: 20px 0;
+    .inside_check {
+      margin: 0 0 25px -5px;
+    }
+  }
+  .center_txt {
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+  .no_bg {
+    .item, input[type="text"] {
+      background: white;
+    }
+  }
+  .button-block {
+    width: 100%;
+    text-align: center;
+    .button {
+      display: block;
+      padding: 15px 28px;
+      min-height: 10px;
+      &:hover {
+        background-color: #d6d6d6;
+      }
+    }
+  }
+}
+
+#health_respiratory {
+  .center_txt_end {
+    text-align: center;
+    font-size: 25px;
+    color: #444;
+    margin: 50px 0 30px 0;
+    line-height: initial;
+    font-family: "Roboto", "Frutiger-Regular", "Helvetica Neue", "Segoe UI", sans-serif !important;
+  }
+  .left_text {
+    text-align: left;
+    padding: 0 20px;
+  }
+}
+
+#top_up_payor_detail {
+  .grey-box {
+    padding-top: 15px;
+    background: #5B6770;
+    .list {
+      background: #5B6770;
+      color: white;
+      padding: 25px;
+      font-weight: 300;
+      font-size: 22px;
+      .indent_payor {
+        margin-bottom: 25px;
+      }
+    }
+    .button-done {
+      background: #5b6770;
+      border-top: 1px solid #757f86;
+      color: white;
+    }
+  }
+  padding-bottom: 50px;
+}
+
+#top_up_payment {
+  .center_txt_end {
+    background: #F7F5F5;
+    padding: 83px 0 !important;
+    margin: 0 0 55px 0 !important;
+  }
+  .data_table .centered {
+    text-align: center;
+    margin-top: 25px;
+  }
+  .block_table {
+    border: 1px solid #979797;
+    width: 50%;
+    margin: 35px auto 150px;
+    .row {
+      border-bottom: 1px solid #979797;
+      margin-top: 0;
+      padding: 0;
+    }
+    .no_border_bottom {
+      border-bottom-width: 0;
+    }
+    .cell_padding {
+      padding: 15px;
+    }
+    .border_right {
+      border-right: 1px solid #979797;
+    }
+  }
+  .center_inside {
+    text-align: center;
+    color: #444;
+    width: 100%;
+    font-family: "Roboto", "Frutiger-Regular", "Helvetica Neue", "Segoe UI", sans-serif !important;
+    font-size: 25px;
+    margin-bottom: 50px;
+  }
+  .block_inside_child {
+    padding: 30px 50px;
+    margin-bottom: 130px;
+  }
+}
+/* End Top Up */

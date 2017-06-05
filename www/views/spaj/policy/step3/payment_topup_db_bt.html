@@ -1,0 +1,101 @@
+<ion-view cache-view="false" view-title="Metode pembayaran" id="top_up_payment">
+
+<!--<ion-nav-buttons side="left">
+    <button class="button back-button buttons button-clear header-item">
+      <i class="icon ion-ios-arrow-back"></i> 
+    </button>
+  </ion-nav-buttons>-->
+
+  <ion-content>
+    <form id="health_respiratory">
+      <div class="center_txt_end">
+        <p>No. SPAJ Anda</p>
+        <p class="main_value">123456789</p>
+      </div>
+      <div id="policy_info_ph_info" class="list list-inset no-lines">
+        <div class="data_table">
+          <p class="centered">Ringkasan (IDR)</p>
+          <div class="block_table">
+            <div class="row">
+              <div class="col-50 cell_padding border_right">First Premi</div>
+              <div class="col-50 cell_padding">1.000.000</div>
+            </div>
+            <div class="row bordered">
+              <div class="col-50 cell_padding border_right">Top-Up</div>
+              <div class="col-50 cell_padding">50.000</div>
+            </div>
+            <div class="row no_border_bottom">
+              <div class="col-50 cell_padding border_right">Pembayaran</div>
+              <div class="col-50 cell_padding">1.050.000</div>
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding">
+            <div class="row">
+              <p class="center_inside">Pilih Metode Pembayaran</p>
+            </div>
+            <div class="row">
+              <div class="col-33">
+                <input id='OrangTua' type="radio" name='kadaluwarasa' />
+                <label class='' for="OrangTua">Kartu Kredit</label>
+              </div>
+              <div class="col-33">
+                <input id='OrangTua1' type="radio" name='kadaluwarasa' />
+                <label class='' for="OrangTua1">Kartu Debit</label>
+              </div>
+              <div class="col-33">
+                <input id='banTransfer' type="radio" name='kadaluwarasa' />
+                <label class='' for="banTransfer">Bank transfer / ATM</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='item block_inside_child'>
+          <div class="row-no-padding">
+            <div class="row">
+              <label class="item-stacked-label">
+                <div class="input-label">Pilih Metode Pembayaran lain untuk Top-Up</div>
+              </label>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <input id='OrangTua' type="radio" name='kadaluwarasa' />
+                <label class='' for="OrangTua">Kartu Debit</label>
+              </div>
+              <div class="col-50">
+                <input id='banTransfer' type="radio" name='kadaluwarasa' />
+                <label class='' for="banTransfer">Bank transfer / ATM</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding checkbox-condition">
+            <div class="row">
+              <label class="item-stacked-label">
+                <ion-checkbox></ion-checkbox>
+                <div class="label-text-check">Semua Pembayaran Premi harus sudah diterima di rekening Penanggung dan telah teridentifikasi</div>
+              </label>
+              
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class="row-no-padding checkbox-condition">
+            <div class="row">
+              <label class="item-stacked-label">
+                <ion-checkbox></ion-checkbox>
+                <div class="label-text-check">Bahwa jika Penanggung melakukan pembayaran dana, Penanggung harus tunduk kepada aturan yang berlaku di Indonesia maupun sesuai standar Grup Prudential, di antaranya adalah diperlukannya tambahan proses tertentu jika SAYA termasuk dalam daftar sanksi tertentu.</div>
+              </label>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+  <ion-footer-bar class="bar bar-footer bar-assertive">
+    <div ng-click="vm.saveSpaj()" title="Lanjutkan" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></div>
+  </ion-footer-bar>
+</ion-view>

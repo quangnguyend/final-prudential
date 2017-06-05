@@ -49,9 +49,9 @@ angular
           }
         }
       })
-      .state('app.step1', {
+      .state('app.start', {
         cache: false,
-        url: '/step1',
+        url: '/start',
         views: {
           menuContent: {
             controller: 'Step1Ctrl',
@@ -92,9 +92,9 @@ angular
           }
         }
       })
-      .state('app.step2', {
+      .state('app.health_data', {
         cache: false,
-        url: '/step2',
+        url: '/health_data',
         views: {
           menuContent: {
             templateUrl: 'views/spaj/policy/step2/health.html',
@@ -136,9 +136,9 @@ angular
           }
         }
       })
-      .state('app.step3', {
+      .state('app.other_health', {
         cache: false,
-        url: '/step3',
+        url: '/other_health',
         views: {
           'menuContent': {
             templateUrl: 'views/spaj/policy/step3/other_health.html',
@@ -169,9 +169,9 @@ angular
           }
         }
       })
-      .state('app.step4_option1', {
+      .state('app.payor_premium', {
         cache: false,
-        url: '/step4',
+        url: '/payor_premium',
         views: {
           'menuContent': {
             templateUrl: 'views/spaj/policy/step4/payor.html',
@@ -180,9 +180,9 @@ angular
           }
         }
       })
-      .state('app.step4', {
+      .state('app.payor_premium_detail', {
         cache: false,
-        url: '/step4/option1',
+        url: '/payor_premium_detail',
         views: {
           'menuContent': {
             templateUrl: 'views/spaj/policy/step4/payor_option1.html',
@@ -191,9 +191,9 @@ angular
           }
         }
       })
-      .state('app.step5', {
+      .state('app.beneficiaries', {
         cache: false,
-        url: '/step5',
+        url: '/beneficiaries',
         views: {
           'menuContent': {
             templateUrl: 'views/spaj/policy/step5/beneficiaries.html',
@@ -202,9 +202,9 @@ angular
           }
         }
       })
-      .state('app.step6', {
+      .state('app.document_upload', {
         cache: false,
-        url: '/step6',
+        url: '/document_upload',
         views: {
           'menuContent': {
             templateUrl: 'views/spaj/policy/step6/document_upload.html',
@@ -213,9 +213,9 @@ angular
           }
         }
       })
-      .state('app.step7', {
+      .state('app.amendment', {
         cache: false,
-        url: '/step7',
+        url: '/amendment',
         views: {
           'menuContent': {
             templateUrl: 'views/spaj/policy/step7/amendment.html',
@@ -224,9 +224,9 @@ angular
           }
         }
       })
-      .state('app.step8', {
+      .state('app.terms_conditions', {
         cache: false,
-        url: '/step8',
+        url: '/terms_conditions',
         views: {
           'menuContent': {
             templateUrl: 'views/spaj/policy/step8/terms_conditions.html',
@@ -262,6 +262,39 @@ angular
           menuContent: {
             templateUrl: 'views/spaj/policy/step2/add_child.html',
             controller: 'AddChildCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.topup', {
+        cache: false,
+        url: '/topup',
+        views: {
+          menuContent: {
+            templateUrl: 'views/spaj/policy/step3/top_up.html',
+            controller: 'TopupCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.topup_payor', {
+        cache: false,
+        url: '/topup_payor',
+        views: {
+          menuContent: {
+            templateUrl: 'views/spaj/policy/step3/top_up_payor.html',
+            controller: 'TopupPayorCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.topup_payor_detail', {
+        cache: false,
+        url: '/topup_payor_detail',
+        views: {
+          menuContent: {
+            templateUrl: 'views/spaj/policy/step3/top_up_payor_detail.html',
+            controller: 'TopupPayorDetailCtrl',
             controllerAs: 'vm'
           }
         }
