@@ -1,0 +1,107 @@
+#spaj-start {
+  .checkbox input {
+    &:checked {
+      &:before, + .checkbox-icon:before {
+        background: #DA291C;
+        border-color: #DA291C;
+      }
+    }
+    &:before {
+      border-radius: 4px;
+    }
+  }
+  .checkbox-icon:before {
+    border-radius: 4px;
+  }
+  .item {
+    border: none;
+  }
+}
+
+#upload-page .item {
+  border: none;
+}
+
+#spaj-start {
+  .item.gray-block {
+    border-top: solid 1px #EFECEC;
+    border-bottom: solid 1px #EFECEC;
+    background: #F7F5F5;
+  }
+  .value-btn {
+    background: #F7F5F5;
+    opacity: 1.00;
+    border-radius: 2px;
+    width: 100%;
+    line-height: 100%;
+    letter-spacing: -0.408px;
+    color: rgba(73, 84, 93, 0.5);
+    opacity: 1.00;
+    &.selected {
+      background-color: #5B6770;
+      color: #F7F5F5;
+    }
+  }
+  .mini-center-container {
+    text-align: left;
+    margin: 0 auto;
+    .policy-checkbox {
+      display: inline-block;
+      border: none;
+      background: #F7F5F5;
+    }
+  }
+  .other-policy-input {
+    padding-left: 15px;
+  }
+  .mini-center-container.radio-block div {
+    padding: 16px !important;
+  }
+  .before-proceed-3 {
+    background-color: #5B6770;
+    margin: 10px;
+    margin-top: -5px;
+    span {
+      color: #EFECEC;
+      opacity: 1;
+      margin-bottom: 5px;
+    }
+    label, input {
+      color: #EFECEC;
+    }
+    .md-input-container {
+      margin-left: 20px;
+      margin-top: 30px;
+    }
+  }
+  .mt-30 {
+    margin-top: 30px;
+  }
+  .pb-0 {
+    padding-bottom: 0;
+  }
+  .container {
+    margin-bottom: 80px;
+  }
+  .no-padding-top {
+    padding-top: 0px;
+  }
+}
+
+@media screen and (min-width: 568px) {
+  #spaj-start .mini-center-container {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #health_question1 {
+    .item_description {
+      font-size: 20px;
+      line-height: 30px;
+    }
+    h1 {
+      line-height: 34px;
+    }
+  }
+}
