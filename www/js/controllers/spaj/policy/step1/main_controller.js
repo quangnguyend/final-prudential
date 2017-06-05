@@ -43,8 +43,8 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
   }
 
   vm.nextClickHandle = function () {
-    var tabs = [{id:POCICY_HOLDER_TAB, name: vm.PH + 'Tertanggung Utama'}].concat(vm.additionalList);
-    SpajService.setData('step1', { tabs: tabs });
+    var tabs = [{id: POCICY_HOLDER_TAB, name: vm.PH + 'Tertanggung Utama'}].concat(vm.additionalList)
+    SpajService.setData('step1', { tabs: tabs })
 
     validator(function (rs) {
       if (rs.indexOf(false) >= 0) {
@@ -91,10 +91,9 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
   $scope.getValueButton = function (value) {
     $scope.option = value
     $scope.isactive = value
-    console.log(value);
   }
 
-  $scope.boxCheckButton = false;
+  $scope.boxCheckButton = false
 
   $scope.$watch('[option]', function () {
     $rootScope.dataSave = {
@@ -102,7 +101,7 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
       valueButtonSubmit: $scope.option
     }
   }, true)
-  //console.log( SpajService.getData('spaj1'));
+  // console.log( SpajService.getData('spaj1'));
 
   function initPage (rootSpajData) {
     if (!rootSpajData) {

@@ -132,12 +132,12 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     icomplication: null,
     ilostweight: null
   }
-  vm.eyePopupTouched = false;
-  vm.digestivePopupTouched = false;
-  vm.tumorPopupTouched = false;
+  vm.eyePopupTouched = false
+  vm.digestivePopupTouched = false
+  vm.tumorPopupTouched = false
 
-  vm.rgb = ['red', 'green', 'blue'];
-  vm.rgb2 = ['red 2', 'green 2', 'blue2'];
+  vm.rgb = ['red', 'green', 'blue']
+  vm.rgb2 = ['red 2', 'green 2', 'blue2']
   vm.const = [
     {
       type: 'a',
@@ -163,7 +163,6 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     return true
   }
 
-
   vm.nextStep = function () {
     vm.healthData.isComplete = validator()
     SpajService.setData('step2', vm.healthData)
@@ -171,8 +170,8 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
   }
 
   vm.validateDigestive = function () {
-    var items = vm.healthData.digestivePopupData;
-    for (key in items) {
+    var items = vm.healthData.digestivePopupData
+    for (var key in items) {
       if (items[key] == null) return false
     }
 
@@ -219,7 +218,6 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     $ionicScrollDelegate.scrollTo(0, distance, true)
   }
 
-
   // ======================== PopupEye ======================== //
 
   vm.showPopupEye = function () {
@@ -264,10 +262,9 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     eyePopup.then(function (res) {
       vm.healthData.eyePopupData = res
       vm.eyePopupTouched = true
-      //console.log(vm.healthData.eyePopupData)
+      // console.log(vm.healthData.eyePopupData)
     })
   }
-
 
   // ======================== PopupDigestive ======================== //
 
@@ -308,7 +305,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     digestivePopup.then(function (res) {
       vm.healthData.digestivePopupData = res
       vm.digestivePopupTouched = true
-      //console.log(vm.healthData.digestivePopupData)
+      // console.log(vm.healthData.digestivePopupData)
     })
   }
 
@@ -341,7 +338,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     respiratoryPopup.then(function (res) {
       vm.healthData.respiratoryPopupData = res
       vm.respiratoryPopupTouched = true
-      //console.log(vm.healthData.respiratoryPopupData)
+      // console.log(vm.healthData.respiratoryPopupData)
     })
   }
   // ======================== PopupTumor ======================== //
@@ -373,8 +370,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     tumorPopup.then(function (res) {
       vm.healthData.digestivePopupData = res
       vm.tumorPopupTouched = true
-      //console.log(vm.healthData.digestivePopupData)
+      // console.log(vm.healthData.digestivePopupData)
     })
   }
-
 }
