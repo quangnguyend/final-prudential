@@ -40,19 +40,21 @@ function stepProcessCtr ($scope, $rootScope, $state, $timeout, SpajService) {
 
   $rootScope.nextStep = function () {
     var foundRoute = false
-    for (var i in vm.pageList) {
-      var nextStep = Number.parseInt($rootScope.getCurrentPolicyStep()) + 1
-      if (Number.parseInt(vm.pageList[i].step) === nextStep) {
-        $state.go('app.' + vm.pageList[i].state)
-        $rootScope.setCurrentPolicyStep(nextStep + '')
-        foundRoute = true
-        break
-      }
+    var nextStep = Number.parseInt($rootScope.getCurrentPolicyStep()) + 1
+    var state = getState(nextStep)
+    if (state) {
+      $state.go('app.' + state)
+      $rootScope.setCurrentPolicyStep(nextStep + '')
+      foundRoute = true
     }
     if (!foundRoute) {
       var finishedState = vm.pageList.length === 7 ? 'terms_conditions' : 'terms_conditions'
       $state.go('app.' + finishedState)
     }
+  }
+
+  $rootScope.resetPolicyData = function () {
+    delete $rootScope.policyStep
   }
 
   vm.changeStep = vm.changeStep || function (page) {
@@ -77,5 +79,16 @@ function stepProcessCtr ($scope, $rootScope, $state, $timeout, SpajService) {
         $scope.$apply(function () { updateCompleteStatus(step.step, step.isComplete) })
       })
     })
+  }
+
+  function getState (step) {
+    var state
+    for (var i in vm.pageList) {
+      if (Number.parseInt(vm.pageList[i].step) === Number.parseInt(step)) {
+        state = vm.pageList[i].state
+        break
+      }
+    }
+    return state
   }
 }

@@ -7,6 +7,8 @@ function step1Ctrl ($state, $scope, $rootScope, $stateParams, SpajService) {
   var objSpaj = SpajService.getData('spaj')
   gotoPhPage()
 
+  // reset policy data when come to step 1
+  delete $rootScope.policyStep
   function gotoPhPage () {
     if (!objSpaj) {
       $state.go('app.spaj_start')
