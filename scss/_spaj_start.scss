@@ -97,10 +97,14 @@
 @media only screen and (min-width: 768px) {
   #health_question1 {
     .item_description {
-      @extend .body-text-2;
+      font-size: 20px !important;
+      line-height: 26px !important;
+      font-family: "Frutiger 45 Light-Regular" !important;
     }
     h1 {
-      @extend .heading-1;
+      font-size: 25px !important;
+      line-height: 25px !important;
+      font-family: "Frutiger 45 Light-Bold" !important;
     }
   }
 }
