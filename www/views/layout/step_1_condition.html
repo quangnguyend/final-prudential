@@ -1,0 +1,28 @@
+<div id="policy_info_ph_info">
+  <div class='item' ng-hide="boxCheckButton">
+    <div class="row-no-padding checkbox-condition">
+      <div class="row">
+        <label class="item-stacked-label">
+          <ion-checkbox ng-model='conditionSelected'></ion-checkbox>
+          <div class="label-text-check">Saya setuju bahwa Prudential dapat menghubungi saya untuk tujuan apapun yang berkaitan dengan kebijakan ini. Prudential berhak Gunakan informasi pelanggan dan bagikan dengan pihak ke 3 bila perlu</div>
+        </label>
+        
+      </div>
+    </div>
+  </div>
+  <div class='item' ng-hide="boxCheckButton">
+    <div class="row-no-padding">
+      <div class="row">
+        <label class="item-stacked-label">
+          <div class="input-label">Bagaimana Anda ingin menerima polis Anda?</div>
+        </label>
+      </div>
+      <div class="row">
+        <div class="button-block button-device-block">
+          <a class='button' ng-class="isactive==1?'active':''" ng-disabled='nextButtonDisabled' ng-click="getValueButton(1)">E-policy <span>1 hari kerja setelah persetujuan</span></a>
+          <a class='button' ng-class="isactive==0?'active':''" ng-disabled='nextButtonDisabled' ng-click="getValueButton(0)">Buku Polis ke alamat rumah <span>Dalam waktu 10 hari kerja setelah persetujuan</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

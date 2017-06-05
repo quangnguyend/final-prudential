@@ -83,6 +83,27 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
     }
   }
 
+  $scope.conditionSelected = false
+  // $scope.$watch('[conditionSelected]', function () {
+  //   $scope.nextButtonDisabled = !$scope.conditionSelected
+  // }, true)
+
+  $scope.getValueButton = function (value) {
+    $scope.option = value
+    $scope.isactive = value
+    console.log(value);
+  }
+
+  $scope.boxCheckButton = false;
+
+  $scope.$watch('[option]', function () {
+    $rootScope.dataSave = {
+      conditionSelected: $scope.conditionSelected,
+      valueButtonSubmit: $scope.option
+    }
+  }, true)
+  //console.log( SpajService.getData('spaj1'));
+
   function initPage (rootSpajData) {
     if (!rootSpajData) {
       $state.go('app.spaj_start')

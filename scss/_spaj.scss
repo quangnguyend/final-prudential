@@ -1436,8 +1436,22 @@ th {
   }
 }
 
-/* top_up */
+#health_respiratory {
+  .center_txt_end {
+    text-align: center;
+    font-size: 25px;
+    color: #444;
+    margin: 50px 0 30px 0;
+    line-height: initial;
+    font-family: "Roboto", "Frutiger-Regular", "Helvetica Neue", "Segoe UI", sans-serif !important;
+  }
+  .left_text {
+    text-align: left;
+    padding: 0 20px;
+  }
+}
 
+/* Top Up */
 #top_up {
   .item .description {
     text-align: center;
@@ -1536,3 +1550,47 @@ th {
   }
   padding-bottom: 50px;
 }
+
+#top_up_payment {
+  .center_txt_end {
+    background: #F7F5F5;
+    padding: 83px 0 !important;
+    margin: 0 0 55px 0 !important;
+  }
+  .data_table .centered {
+    text-align: center;
+    margin-top: 25px;
+  }
+  .block_table {
+    border: 1px solid #979797;
+    width: 50%;
+    margin: 35px auto 150px;
+    .row {
+      border-bottom: 1px solid #979797;
+      margin-top: 0;
+      padding: 0;
+    }
+    .no_border_bottom {
+      border-bottom-width: 0;
+    }
+    .cell_padding {
+      padding: 15px;
+    }
+    .border_right {
+      border-right: 1px solid #979797;
+    }
+  }
+  .center_inside {
+    text-align: center;
+    color: #444;
+    width: 100%;
+    font-family: "Roboto", "Frutiger-Regular", "Helvetica Neue", "Segoe UI", sans-serif !important;
+    font-size: 25px;
+    margin-bottom: 50px;
+  }
+  .block_inside_child {
+    padding: 30px 50px;
+    margin-bottom: 130px;
+  }
+}
+/* End Top Up */
