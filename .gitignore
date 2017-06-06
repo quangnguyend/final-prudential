@@ -9,3 +9,6 @@
 desktop.ini
 /typings/
 /bower_components/
+/www/css/*
+/www/css/ionic.app.min.css
+/www/css/main.min.css

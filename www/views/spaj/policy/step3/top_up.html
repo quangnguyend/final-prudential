@@ -9,10 +9,12 @@
     <div class="list list-inset" id="top_up">
       <div class="item">
         <h1 class="description">Apakah Anda ingin mengajukan <br/>penambahan dana (Top-Up) untuk polis ini?</h1>
-        <div class="row">
-          <div class="button-bar">
-            <a class="button col col-50" grouped-radio="1" ng-model="vm.family_history.question">Ya</a>
-            <a class="button col col-50" grouped-radio="0" ng-model="vm.family_history.question">Tidak</a>
+        <div class="row no-padding-top">
+          <div class="col col-50">
+            <button class="button button-block selected" ng-class="vm.data.is_additional_funds == true? 'selected': ''" ng-click="vm.data.is_additional_funds = true">Ya</button>
+          </div>
+          <div class="col col-50">
+            <button class="button button-block" ng-class="vm.data.is_additional_funds == false? 'selected': ''" ng-click="vm.data.is_additional_funds = false">Tidak</button>
           </div>
         </div>
       </div>
@@ -22,8 +24,8 @@
           <div class='item'>
             <div class="row-no-padding">
               <div class="row">
-                <input ng-model="data.payorRadio" class="custom_radio ng-pristine ng-untouched ng-valid ng-empty" type="radio" value="parents" id="parents" name="891" aria-invalid="false">
-                <label class="" for="parents">Belum memiliki nomor Polis*</label>
+                <input ng-model="vm.data.type_of_policy_number" value="1" class="custom_radio" type="radio" ng-value="true" id="have_policy_number1" name="have_policy_number" aria-invalid="false" checked>
+                <label class="" for="have_policy_number1">Belum memiliki nomor Polis*</label>
               </div>
               <div class="checkbox_child">
                 <div class="row">
@@ -34,14 +36,14 @@
                           <span class="input-label">Nomor SPAJ*</span>
                         </label>
                       </div>
-                      <div class="row"><input type="text" placeholder="Enter"></div>
+                      <div class="row"><input type="text" placeholder="Enter" ng-model="vm.data.name_of_policyholder"></div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="row">
-                <input ng-model="data.payorRadio" class="custom_radio ng-pristine ng-untouched ng-valid ng-empty" type="radio" value="children" id="children" name="892" aria-invalid="false">
-                <label class="" for="children">Sudah memiliki Polis</label>
+                <input ng-model="vm.data.type_of_policy_number" class="custom_radio" type="radio" value="2" id="have_policy_number2" name="have_policy_number" aria-invalid="false">
+                <label class="" for="have_policy_number2">Sudah memiliki Polis</label>
               </div>
               <div class="checkbox_child">
                 <div class="row">
@@ -52,7 +54,7 @@
                           <span class="input-label">Nama Pemegang Polis</span>
                         </label>
                       </div>
-                      <div class="row"><input type="text" placeholder="Enter"></div>
+                      <div class="row"><input type="text" placeholder="Enter" ng-model="vm.data.name_of_policy"></div>
                     </div>
                   </div>
                 </div>
@@ -64,14 +66,14 @@
                           <span class="input-label">Nomor Polis</span>
                         </label>
                       </div>
-                      <div class="row"><input type="text" placeholder="Enter"></div>
+                      <div class="row"><input type="text" placeholder="Enter" ng-model="vm.data.policy_number"></div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="row">
-                <input ng-model="data.payorRadio" class="custom_radio ng-pristine ng-untouched ng-valid ng-empty" type="radio" value="sudahMemiliki" id="sudahMemiliki" name="892" aria-invalid="false">
-                <label class="" for="sudahMemiliki">Sudah memiliki Polisi - membeli melalui bank</label>
+                <input ng-model="vm.data.type_of_policy_number" class="custom_radio" type="radio" value="3" id="have_policy_number3" name="have_policy_number" aria-invalid="false">
+                <label class="" for="have_policy_number3">Sudah memiliki Polisi - membeli melalui bank</label>
               </div>
               <div class="checkbox_child">
                 <div class="row">
@@ -82,7 +84,7 @@
                           <span class="input-label">Nama Pemberi Referral**</span>
                         </label>
                       </div>
-                      <div class="row"><input type="text" placeholder="Enter"></div>
+                      <div class="row"><input type="text" placeholder="Enter" ng-model="vm.data.name_of_referral_giver"></div>
                     </div>
                   </div>
                 </div>
@@ -94,7 +96,7 @@
                           <span class="input-label">Nomor Kode Referral**</span>
                         </label>
                       </div>
-                      <div class="row"><input type="text" placeholder="Enter"></div>
+                      <div class="row"><input type="text" placeholder="Enter" ng-model="vm.data.referral_code_number"></div>
                     </div>
                   </div>
                 </div>
@@ -120,22 +122,21 @@
                 </div>
                 <div class="row">
                   <div class="col">
-                    <select class="form_select" ng-model='agent.occupation'>
-                      <option selected value>IDR</option>
-                      <option>Blue</option>
-                      <option>Green</option>
-                      <option>Red</option>
-                    </select>
+                    <md-input-container class="md-block mt-0">
+                      <md-select ng-model="vm.data.currency">
+                        <md-option ng-repeat="c in vm.currencies" value="{{c.value}}" ng-selected="$first">{{c.name}}</md-option>
+                      </md-select>
+                    </md-input-container>
                   </div>
                 </div>
               </div>
               <div class="col-20"></div>
               <div class="col-40">
                 <div class="row">
-                  <label class="item-stacked-label">Jenis Mata Uang</label>
+                  <label class="item-stacked-label">Jumlah Top-Up</label>
                 </div>
                 <div class="row">
-                  <div class="col"><input type="text" placeholder="260.000.000"></div>
+                  <div class="col"><input type="text" placeholder="260.000.000" ng-model="vm.data.top_up_amount"></div>
                 </div>
               </div>
             </div>
@@ -143,13 +144,13 @@
           </div>
         </div>
         <div class="item">
-          <di class="row-no-padding">
+          <div class="row-no-padding">
             <div class="row">
               <div class="button-block add_icon" ng-click='vm.addInsuredAddress()'>
                 <a class="button" >Berikutnya</a>
               </div>
             </div>
-          </di>
+          </div>
         </div>
         <div class='item'>
           <div class="row-no-padding">
@@ -160,39 +161,38 @@
         </div>
         <div class='item'>
           <div class="row-no-padding">
-            <div class="row">
-              <div class="col-40">
+            <div class="row" ng-repeat="item in vm.data.top_up_destination_fund_allocation">
+              <div class="col-10 sm-font">{{$index + 1}}</div>
+              <div class="col-50">
                 <div class="row">
-                  <label class="item-stacked-label">Jenis Dana Investasi Non-Syariah</label>
+                  <label class="sm-font">Jenis Dana Investasi Non-Syariah</label>
                 </div>
                 <div class="row">
                   <div class="col">
-                    <select class="form_select" ng-model='agent.occupation'>
-                      <option selected value>PRUlink Rupiah Equity Fund</option>
-                      <option>Blue</option>
-                      <option>Green</option>
-                      <option>Red</option>
-                    </select>
+                    <md-input-container class="md-block mt-0" >
+                      <md-select ng-model="item.type_of_investment_fund">
+                        <md-option ng-repeat="t in vm.type_of_investment_fund" value="{{t.value}}" ng-selected="$first">{{t.name}}</md-option>
+                      </md-select>
+                    </md-input-container>
                   </div>
                 </div>
               </div>
-              <div class="col-20"></div>
-              <div class="col-40">
+              <div class="col-10"></div>
+              <div class="col-30">
                 <div class="row">
-                  <label class="item-stacked-label">%</label>
+                  <label class="sm-font">%</label>
                 </div>
                 <div class="row">
-                  <div class="col"><input type="text" placeholder="Enter"></div>
+                  <div class="col"><input type="text" placeholder="Enter" ng-model="item.investment_fund_percent"></div>
                 </div>
               </div>
             </div>
-            
           </div>
         </div>
         <div class="item">
           <di class="row-no-padding">
             <div class="row">
-              <div class="button-block add_icon" ng-click='vm.addInsuredAddress()'>
+              <div class="button-block add_icon" ng-click='vm.addTopUpDestinationFund()'>
                 <a class="button" ><i class="icon ion-ios-plus-empty"></i> <span>Tambah Dana Investasi</span></a>
               </div>
             </div>
@@ -200,7 +200,6 @@
         </div>
       </div>
     </div>
-
   </ion-content>
   <ion-footer-bar class="bar bar-footer bar-assertive">
     <div ng-click="vm.next()" title="Lanjutkan" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></div>
