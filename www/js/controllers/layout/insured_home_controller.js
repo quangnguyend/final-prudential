@@ -24,10 +24,10 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
   $timeout(function () {
     var insuredName = $attrs.insuredData
     $scope.insuredName = insuredName
-    if (!SpajService.getData('step1')) {
-      SpajService.setData('step1', {})
+    if (!SpajService.getData('start')) {
+      SpajService.setData('start', {})
     }
-    var data = SpajService.getData('step1')
+    var data = SpajService.getData('start')
     data[insuredName] = $scope.data
 
     $scope.$on('$destroy', function () {

@@ -37,7 +37,7 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
 
   vm.switchTab = function (tab) {
     vm.currentTab = tab || MAIN_INSURED_TAB
-    vm.currentTabIndex = index
+    // vm.currentTabIndex = index
   }
 
   vm.addAdditionalTab = function () {
@@ -52,13 +52,13 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
   }
 
   vm.nextClickHandle = function () {
-    var tabs = vm.additionalList;
-    SpajService.setData('step1', { tabs: tabs });
+    var tabs = vm.additionalList
+    SpajService.setData('start', { tabs: tabs })
     validator(function (rs) {
       if (rs.indexOf(false) >= 0) {
-        SpajService.stepComplete('step1', false)
+        SpajService.stepComplete('start', false)
       } else {
-        SpajService.stepComplete('step1', true)
+        SpajService.stepComplete('start', true)
       }
     })
 
@@ -94,7 +94,6 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
     }
   }
 
-
   function initPage (rootSpajData) {
     if (!rootSpajData) return
     if (rootSpajData.tambahan1) { $scope.addAdditionalTab() }
@@ -102,12 +101,12 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
   }
 
   function validator (callback) {
-    if (!SpajService.getData('step1')) {
-      SpajService.setData('step1', {})
+    if (!SpajService.getData('start')) {
+      SpajService.setData('start', {})
     }
 
     setTimeout(function () {
-      var data = SpajService.getData('step1')
+      var data = SpajService.getData('start')
       var rs = Object.keys(data).map(function (page) { return data[page].isComplete })
       callback(rs)
     }, 1500)

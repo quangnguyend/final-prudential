@@ -1,6 +1,6 @@
 function spajService ($rootScope, $http, $location, $ionicLoading, $cordovaProgress) {
   var dataSpaj = {}
-  var stepList = ['step1', 'step2', 'step3', 'step4', 'step5', 'step6', 'step7']
+  var stepList = ['start', 'health_data', 'payor_premium', 'topup', 'beneficiaries', 'document_upload', 'amendment']
 
   return {
     getData: getData,
