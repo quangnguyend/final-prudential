@@ -275,35 +275,35 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, $mdDi
 
   // ======================== PopupDigestive ======================== //
 
-    vm.showPopupDigestive = function () {
-      vm.digestive = vm.healthData.digestivePopupData
+  vm.showPopupDigestive = function () {
+    vm.digestive = vm.healthData.digestivePopupData
   
-      $mdDialog.show({
-        controller: 'DigestiveController',
-        templateUrl: 'views/spaj/policy/step2/popup-digestive.html',
-        clickOutsideToClose: true
-      })
-      .then(function (res) {
-        vm.healthData.digestivePopupData = res
-        vm.digestivePopupTouched = true
-      })
-    }
+    $mdDialog.show({
+      controller: 'DigestiveController',
+      templateUrl: 'views/spaj/policy/step2/popup-digestive.html',
+      clickOutsideToClose: true
+    })
+    .then(function (res) {
+      vm.healthData.digestivePopupData = res
+      vm.digestivePopupTouched = true
+    })
+  }
 
   // ======================== PopupRespiratory ======================== //
 
-   vm.showPopupRespiratory = function () {
-      vm.respiratory = vm.healthData.respiratoryPopupData
+  vm.showPopupRespiratory = function () {
+    vm.respiratory = vm.healthData.respiratoryPopupData
   
-      $mdDialog.show({
-        controller: 'RespiratoryController',
-        templateUrl: 'views/spaj/policy/step2/popup_respiratory.html',
-        clickOutsideToClose: true
-      })
-      .then(function (res) {
-        vm.healthData.respiratoryPopupData = res
-        vm.respiratoryPopupTouched = true
-      })
-    }
+    $mdDialog.show({
+      controller: 'RespiratoryController',
+      templateUrl: 'views/spaj/policy/step2/popup_respiratory.html',
+      clickOutsideToClose: true
+    })
+    .then(function (res) {
+      vm.healthData.respiratoryPopupData = res
+      vm.respiratoryPopupTouched = true
+    })
+  }
   // ======================== PopupTumor ======================== //
   vm.showPopupTumor = function () {
     vm.tumor = vm.healthData.tumorPopupData

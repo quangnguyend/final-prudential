@@ -72,9 +72,8 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
     var num = vm.additionalList.length;
     // if swipeleft and current tab index smaller than tabs length
     if (direct === 'left') {
-      console.log('addList: '+num + 'and currentTabIndex: ' + vm.currentTabIndex)
       if (num === 1){
-         vm.switchTab(vm.policy_holder_tab,vm.currentTabIndex)
+        vm.switchTab(vm.policy_holder_tab,vm.currentTabIndex)
       }
       if (num === 2 && vm.currentTabIndex==0) {
 

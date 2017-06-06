@@ -71,14 +71,12 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
     vm.switchTab('ADDITIONAL_0', 0)
   }
   vm.handleAddedTabSwipe = function (e) {
-    console.log(vm.currentTabIndex)
     var direct   = e.gesture.direction;
     var num = vm.additionalList.length;
     // if swipeleft and current tab index smaller than tabs length
     if (direct === 'left') {
-      console.log('addList: '+num + 'and currentTabIndex: ' + vm.currentTabIndex)
       if (num === 1){
-         vm.switchTab(vm.policy_holder_tab,vm.currentTabIndex)
+        vm.switchTab(vm.policy_holder_tab,vm.currentTabIndex)
       }
       if (num === 2 && vm.currentTabIndex==0) {
         var nextTab = vm.additionalList[vm.currentTabIndex + 1]['id']

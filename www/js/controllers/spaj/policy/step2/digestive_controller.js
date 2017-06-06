@@ -3,15 +3,15 @@
 
       {
         type: 'a',
-        value: 'red2'
+        value: 'Red'
       },
       {
         type: 'bewf',
-        value: 'green3'
+        value: 'Green'
       },
       {
         type: 'cfew',
-        value: 'blue4'
+        value: 'Blue'
       }
     ]
     $scope.addObat = function () {
@@ -36,7 +36,7 @@
     }
 
     $scope.closeDialog = function() {
-       $mdDialog.hide();
+      $mdDialog.hide();
     }
     // popup Tumor
     $scope.puSteps = ['tumor_1'];
