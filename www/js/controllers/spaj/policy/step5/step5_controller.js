@@ -4,27 +4,21 @@ function beneficiariesCtrl ($scope, $rootScope, $state, SpajService) {
   $rootScope.showMenu = true
   var vm = this
 
+  vm.genderData = ['WANITA']
+  vm.relationshipData = ['ISTRI']
   vm.dataBeneficiary = [
     { name: '', birthday: null, relationship: null, share: '', gender: '' }
   ]
 
-  vm.beneficiary = {
-    addRow: function () {
-      vm.dataBeneficiary.push({
-        name: '',
-        birthday: null,
-        relationship: '',
-        share: '',
-        gender: ''
-      })
-    },
-    setGender: function (rowIndex, gender) {
-      vm.dataBeneficiary.forEach(function (row, index) {
-        if (index === rowIndex) {
-          row.gender = gender
-        }
-      })
-    }
+  vm.addRow = function () {
+    vm.dataBeneficiary.push({
+      name: '',
+      birthday: null,
+      relationship: '',
+      share: '',
+      gender: ''
+    })
+    console.log(vm.dataBeneficiary)
   }
 
   function validator () {
