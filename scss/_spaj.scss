@@ -276,6 +276,16 @@
       border-color: #da291c;
     }
   }
+  .list{
+    >.item{
+        &._active{
+          opacity: 1
+        }
+        //opacity: 0.4
+        
+    }
+  }
+  
   .item2 {
     margin: 20px 0;
     .label {
@@ -284,6 +294,15 @@
   }
   .md-block {
     width: 100%;
+  }
+  .button{
+    &.button-dark{
+      background-color:#5B6770;
+      border-radius: 4px; color: #FFF
+    }
+  }
+  .row-no-padding{
+    margin-bottom:20px
   }
 }
 
@@ -296,6 +315,8 @@
     }
     background: #5B6770;
     padding-top: 15px;
+    position: relative;
+    margin-top:-3px;
     .item-checkbox .item-content {
       padding-top: 5px;
     }
@@ -464,7 +485,7 @@
   }
 }
 
-#eye-popup .popup-content {
+#eye-popup md-dialog-content {
   padding: 40px;
   .item {
     margin-top: 30px 50px;

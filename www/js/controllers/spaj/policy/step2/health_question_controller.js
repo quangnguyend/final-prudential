@@ -254,178 +254,67 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, $mdDi
     $ionicScrollDelegate.scrollTo(0, distance, true)
   }
 
-  // popup Tumor
-  vm.health1Steps = ['health1_step1']
-  vm.health1NextStep = function (id) {
-    var STEP_HEIGHT = $('.multi-step').height() + 120
-    var distance = $('#' + id) && $('#' + id).position().top + STEP_HEIGHT
-    if (vm.health1Steps.indexOf(id) < 0) vm.health1Steps.push(id)
-    $ionicScrollDelegate.scrollTo(0, distance, true)
-  }
-
+ 
   // ======================== PopupEye ======================== //
-
   vm.showPopupEye = function () {
-    // custom popup
-    vm.popupData = vm.healthData.eyePopupData
-    vm.addPopupData = function () {
-      vm.popupData.push({
-        name_of_illness: null,
-        when_the_condition_found: null,
-        last_care_date: null,
-        hospoital_name: null,
-        hospital_address: null,
-        medicine: null
-      })
-    }
+    vm.showPopupEye = vm.healthData.eyePopupData
+   
     if (vm.healthData.eye_contact_lenses && vm.healthData.eye_disorders) { // if choose both option
       vm.addPopupData()
     }
-    var eyePopup = $ionicPopup.show({
+    $mdDialog.show({
+      controller: 'EyeController',
       templateUrl: 'views/spaj/policy/step2/popup-eye.html',
-      title: 'Detail Kondisi Mata',
-      cssClass: 'popup-prudential',
-      scope: $scope,
-      buttons: [
-        {
-          text: '<i class="icon ion-android-close"></i>',
-          type: 'btn-popup-close',
-          onTap: function (e) {
-            // eyePopup.close();
-            return vm.popupData
-          }
-        },
-        {
-          text: 'Selesai',
-          type: 'button-assertive btn-popup-save',
-          onTap: function (e) {
-            return vm.popupData
-          }
-        }
-      ]
+      clickOutsideToClose: true
     })
-    eyePopup.then(function (res) {
+    .then(function (res) {
       vm.healthData.eyePopupData = res
-      vm.eyePopupTouched = true
-      // console.log(vm.healthData.eyePopupData)
+      vm.tumorPopupTouched = true
     })
   }
 
   // ======================== PopupDigestive ======================== //
 
-  vm.showPopupDigestive = function () {
-    vm.digestive = vm.healthData.digestivePopupData
-    vm.addObat = function () {
-      vm.digestive.tindakan_obat.push({
-        yang: null,
-        diperoleh_dari: null,
-        timbulnya_select: null,
-        timbulnya_option: null,
-        mashit: null
+    vm.showPopupDigestive = function () {
+      vm.digestive = vm.healthData.digestivePopupData
+  
+      $mdDialog.show({
+        controller: 'DigestiveController',
+        templateUrl: 'views/spaj/policy/step2/popup-digestive.html',
+        clickOutsideToClose: true
+      })
+      .then(function (res) {
+        vm.healthData.digestivePopupData = res
+        vm.digestivePopupTouched = true
       })
     }
-    var digestivePopup = $ionicPopup.show({
-      templateUrl: 'views/spaj/policy/step2/popup-digestive.html',
-      title: 'Kuesioner Gangguan Saluran Cerna',
-      cssClass: 'popup-prudential',
-      scope: $scope,
-      buttons: [
-        {
-          text: '<i class="icon ion-android-close"></i>',
-          type: 'btn-popup-close',
-          onTap: function (e) {
-            // eyePopup.close();
-            return vm.digestive
-          }
-        },
-        {
-          text: 'Selesai',
-          type: 'button-assertive btn-popup-save',
-          onTap: function (e) {
-            return vm.digestive
-          }
-        }
-      ]
-    })
-    digestivePopup.then(function (res) {
-      vm.healthData.digestivePopupData = res
-      vm.digestivePopupTouched = true
-    })
-  }
 
   // ======================== PopupRespiratory ======================== //
-  vm.showPopupRespiratory = function () {
-    vm.respiratory = vm.healthData.respiratoryPopupData
-    var respiratoryPopup = $ionicPopup.show({
-      templateUrl: 'views/spaj/policy/step2/popup_respiratory.html',
-      title: 'Kuesioner Gangguan Pernapasan',
-      cssClass: 'popup-prudential',
-      scope: $scope,
-      buttons: [
-        {
-          text: '<i class="icon ion-android-close"></i>',
-          type: 'btn-popup-close',
-          onTap: function (e) {
-            // eyePopup.close();
-            return vm.respiratory
-          }
-        },
-        {
-          text: 'Selesai',
-          type: 'button-assertive btn-popup-save',
-          onTap: function (e) {
-            return vm.respiratory
-          }
-        }
-      ]
-    })
-    respiratoryPopup.then(function (res) {
-      vm.healthData.respiratoryPopupData = res
-      vm.respiratoryPopupTouched = true
-      // console.log(vm.healthData.respiratoryPopupData)
-    })
-  }
+
+   vm.showPopupRespiratory = function () {
+      vm.respiratory = vm.healthData.respiratoryPopupData
+  
+      $mdDialog.show({
+        controller: 'RespiratoryController',
+        templateUrl: 'views/spaj/policy/step2/popup_respiratory.html',
+        clickOutsideToClose: true
+      })
+      .then(function (res) {
+        vm.healthData.respiratoryPopupData = res
+        vm.respiratoryPopupTouched = true
+      })
+    }
   // ======================== PopupTumor ======================== //
   vm.showPopupTumor = function () {
     vm.tumor = vm.healthData.tumorPopupData
     $mdDialog.show({
       controller: 'TumorController',
       templateUrl: 'views/spaj/policy/step2/popup_tumor.html',
-
       clickOutsideToClose: true
     })
     .then(function (res) {
       vm.healthData.tumorPopupData = res
       vm.tumorPopupTouched = true
     })
-    // var tumorPopup = $$mdDialog.show({
-    //   templateUrl: 'views/spaj/policy/step2/popup_tumor.html',
-    //   title: 'Kesehatan Tambahan Tumor',
-    //   cssClass: 'popup-prudential',
-    //   scope: $scope,
-    //   buttons: [
-    //     {
-    //       text: '<i class="icon ion-android-close"></i>',
-    //       type: 'btn-popup-close',
-    //       onTap: function (e) {
-    //         // eyePopup.close();
-    //         return vm.tumor
-    //       }
-    //     },
-    //     {
-    //       text: 'Selesai',
-    //       type: 'button-assertive btn-popup-save',
-    //       onTap: function (e) {
-    //         return vm.tumor
-    //       }
-    //     }
-    //   ]
-    // })
-    // tumorPopup.then(function (res) {
-    //   vm.healthData.tumorPopupData = res
-    //   vm.tumorPopupTouched = true
-
-    //   // console.log(vm.healthData.digestivePopupData)
-    // })
   }
 }

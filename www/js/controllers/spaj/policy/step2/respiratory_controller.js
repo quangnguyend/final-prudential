@@ -1,5 +1,4 @@
-  function tumorController ($scope, $mdDialog,  $ionicScrollDelegate) {
-    var vm = this
+  function respiratoryController ($scope, $mdDialog,  $ionicScrollDelegate) {
     $scope.fakeoption = [
 
       {
@@ -15,6 +14,24 @@
         value: 'blue4'
       }
     ]
+    $scope.eyePopupData= [{
+      name_of_illness: null,
+      when_the_condition_found: null,
+      last_care_date: null,
+      hospoital_name: null,
+      hospital_address: null,
+      medicine: null
+    }]
+    $scope.addPopupData = function () {
+      $scope.eyePopupData.push({
+        name_of_illness: null,
+        when_the_condition_found: null,
+        last_care_date: null,
+        hospoital_name: null,
+        hospital_address: null,
+        medicine: null
+      })
+    }
 
     $scope.closeDialog = function() {
        $mdDialog.hide();
