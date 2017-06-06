@@ -35,9 +35,10 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
     }
   }
 
-  vm.switchTab = function (tab) {
+  vm.switchTab = function (tab, index) {
+    alert('day la index',index)
     vm.currentTab = tab || MAIN_INSURED_TAB
-    vm.currentTabIndex = index
+    vm.currentTabIndex = index ||0
   }
 
   vm.addAdditionalTab = function () {
@@ -68,17 +69,23 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
   }
 
   vm.handleMainTabSwipe = function () {
-    if (vm.additionalList.length) {
-      vm.switchTab('ADDITIONAL_0', 0)
-    }
+    vm.switchTab('ADDITIONAL_0', 0)
   }
   vm.handleAddedTabSwipe = function (e) {
-    var direct = e.gesture.direction
+    console.log(vm.currentTabIndex)
+    var direct   = e.gesture.direction;
+    var num = vm.additionalList.length;
     // if swipeleft and current tab index smaller than tabs length
     if (direct === 'left') {
-      if (vm.additionalList.length === 2 && vm.currentTabIndex === 0) {
+      console.log('addList: '+num + 'and currentTabIndex: ' + vm.currentTabIndex)
+      if (num === 1){
+         vm.switchTab(vm.policy_holder_tab,vm.currentTabIndex)
+      }
+      if (num === 2 && vm.currentTabIndex==0) {
         var nextTab = vm.additionalList[vm.currentTabIndex + 1]['id']
         vm.switchTab(nextTab, vm.currentTabIndex + 1)
+      }else if(num === 2 && vm.currentTabIndex==1){
+        vm.switchTab(vm.policy_holder_tab,vm.currentTabIndex)
       }
     }
     if (direct === 'right') {
@@ -86,10 +93,9 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
         case 1:
           var prevTab1 = vm.additionalList[vm.currentTabIndex - 1]['id']
           vm.switchTab(prevTab1, vm.currentTabIndex - 1)
-          break
+          break 
         case 0:
-          vm.switchTab('POLICY_HOLDER', null)
-          break
+          vm.switchTab(vm.policy_holder_tab,vm.currentTabIndex)
       }
     }
   }
