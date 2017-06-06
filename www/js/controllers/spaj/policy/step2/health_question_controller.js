@@ -1,10 +1,12 @@
-function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserService, $ionicScrollDelegate, SpajService, $ionicSideMenuDelegate) {
+function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, $mdDialog, $ionicScrollDelegate, SpajService, $ionicSideMenuDelegate) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
 
   $ionicSideMenuDelegate.canDragContent(false)
   var vm = this
+
+  var alert
   vm.healthData = {
     personalAccidentPopupData: {
       function_name: null,
@@ -148,7 +150,6 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
   vm.eyePopupTouched = false
   vm.digestivePopupTouched = false
   vm.tumorPopupTouched = false
-
   vm.fakeoption = [
 
     {
@@ -190,6 +191,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
   }
   vm.validateTummor = function () {
     var items = vm.healthData.tumorPopupData
+
     for (var key in items) {
       if (items[key] == null) return false
     }
@@ -197,6 +199,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
   }
   vm.validateEye = function () {
     var items = vm.healthData.tumorPopupData
+
     for (var key in items) {
       if (items[key] == null) return false
     }
@@ -204,6 +207,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
   }
   vm.validateRespiratory = function () {
     var items = vm.healthData.respiratoryPopupData
+
     for (var key in items) {
       if (items[key] == null) return false
     }
@@ -384,34 +388,44 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
   // ======================== PopupTumor ======================== //
   vm.showPopupTumor = function () {
     vm.tumor = vm.healthData.tumorPopupData
-    var tumorPopup = $ionicPopup.show({
+    $mdDialog.show({
+      controller: 'TumorController',
       templateUrl: 'views/spaj/policy/step2/popup_tumor.html',
-      title: 'Kesehatan Tambahan Tumor',
-      cssClass: 'popup-prudential',
-      scope: $scope,
-      buttons: [
-        {
-          text: '<i class="icon ion-android-close"></i>',
-          type: 'btn-popup-close',
-          onTap: function (e) {
-            // eyePopup.close();
-            return vm.tumor
-          }
-        },
-        {
-          text: 'Selesai',
-          type: 'button-assertive btn-popup-save',
-          onTap: function (e) {
-            return vm.tumor
-          }
-        }
-      ]
+
+      clickOutsideToClose: true
     })
-    tumorPopup.then(function (res) {
+    .then(function (res) {
       vm.healthData.tumorPopupData = res
       vm.tumorPopupTouched = true
-
-      // console.log(vm.healthData.digestivePopupData)
     })
+    // var tumorPopup = $$mdDialog.show({
+    //   templateUrl: 'views/spaj/policy/step2/popup_tumor.html',
+    //   title: 'Kesehatan Tambahan Tumor',
+    //   cssClass: 'popup-prudential',
+    //   scope: $scope,
+    //   buttons: [
+    //     {
+    //       text: '<i class="icon ion-android-close"></i>',
+    //       type: 'btn-popup-close',
+    //       onTap: function (e) {
+    //         // eyePopup.close();
+    //         return vm.tumor
+    //       }
+    //     },
+    //     {
+    //       text: 'Selesai',
+    //       type: 'button-assertive btn-popup-save',
+    //       onTap: function (e) {
+    //         return vm.tumor
+    //       }
+    //     }
+    //   ]
+    // })
+    // tumorPopup.then(function (res) {
+    //   vm.healthData.tumorPopupData = res
+    //   vm.tumorPopupTouched = true
+
+    //   // console.log(vm.healthData.digestivePopupData)
+    // })
   }
 }
