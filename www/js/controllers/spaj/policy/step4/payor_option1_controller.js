@@ -19,7 +19,7 @@ function payorOption1Ctrl ($scope, $rootScope, $state, DataService, $ionicScroll
   }
 
   // TODO
-  SpajService.setData('step4', {isComplete: validator()})
+  SpajService.setData('payor_premium', {isComplete: validator()})
   function validator () {
     // TODO
     return true

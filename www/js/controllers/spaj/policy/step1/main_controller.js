@@ -44,13 +44,13 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
 
   vm.nextClickHandle = function () {
     var tabs = [{ id: POCICY_HOLDER_TAB, name: vm.PH + 'Tertanggung Utama' }].concat(vm.additionalList)
-    SpajService.setData('step1', { tabs: tabs })
+    SpajService.setData('start', { tabs: tabs })
 
     validator(function (rs) {
       if (rs.indexOf(false) >= 0) {
-        SpajService.stepComplete('step1', false)
+        SpajService.stepComplete('start', false)
       } else {
-        SpajService.stepComplete('step1', true)
+        SpajService.stepComplete('start', true)
       }
     })
     $rootScope.nextStep()
@@ -62,11 +62,10 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
     }
   }
   vm.handleAddedTabSwipe = function (e) {
-
     var direct = e.gesture.direction
     // if swipeleft and current tab index smaller than tabs length
     if (direct === 'left') {
-      //alert(vm.additionalList.length + 'and index' + vm.currentTabIndex)
+      // alert(vm.additionalList.length + 'and index' + vm.currentTabIndex)
       if (vm.additionalList.length === 1 && vm.currentTabIndex === 1) {
         var nextTab = vm.additionalList[vm.currentTabIndex + 1]['id']
         vm.switchTab(nextTab, vm.currentTabIndex + 1)
@@ -118,12 +117,12 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
   }
 
   function validator (callback) {
-    if (!SpajService.getData('step1')) {
-      SpajService.setData('step1', {})
+    if (!SpajService.getData('start')) {
+      SpajService.setData('start', {})
     }
 
     setTimeout(function () {
-      var data = SpajService.getData('step1')
+      var data = SpajService.getData('start')
       var rs = Object.keys(data).map(function (page) { return data[page].isComplete })
       callback(rs)
     }, 1500)

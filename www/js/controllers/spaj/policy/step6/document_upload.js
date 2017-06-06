@@ -4,29 +4,29 @@ function documentUploadCtrl ($ionicPlatform, $scope, $rootScope, $state, SpajSer
   $rootScope.showMenu = true
   var vm = this
 
-  var spajData = SpajService.getData('spaj');
-  var step1 = SpajService.getData('step1');
+  var spajData = SpajService.getData('spaj')
+  var step1 = SpajService.getData('start')
 
-  vm.tabs = [];
+  vm.tabs = []
 
   if (typeof spajData !== 'undefined') {
-    if(typeof spajData.session2 !== 'undefined' && spajData.session2 == 'lainnya'){
-      vm.tabs.push({name: 'Tertanggung utama', id: 'main_issue'});
+    if (typeof spajData.session2 !== 'undefined' && spajData.session2 === 'lainnya') {
+      vm.tabs.push({name: 'Tertanggung utama', id: 'main_issue'})
     }
   }
 
-  if (typeof step1 !== 'undefined'){
-    if(step1.hasOwnProperty('tabs')){
-      var step1Tabs = step1.tabs;
+  if (typeof step1 !== 'undefined') {
+    if (step1.hasOwnProperty('tabs')) {
+      var step1Tabs = step1.tabs
       step1Tabs.forEach(function (tab) {
-        vm.tabs.push(tab);
-      });
+        vm.tabs.push(tab)
+      })
     }
   }
 
-  vm.data = {};
+  vm.data = {}
   vm.tabs.forEach(function (tab) {
-    var tabKey = tab.id;
+    var tabKey = tab.id
     vm.data[tabKey] = [{
       'document_name': '<Nama dokumen>',
       'document_type': '',
@@ -34,10 +34,10 @@ function documentUploadCtrl ($ionicPlatform, $scope, $rootScope, $state, SpajSer
     }]
   })
 
-  if (typeof vm.tabs[0] !== 'undefined'){
-    vm.currentTab = vm.tabs[0].id;
-  }else{
-    vm.currentTab = '';
+  if (typeof vm.tabs[0] !== 'undefined') {
+    vm.currentTab = vm.tabs[0].id
+  } else {
+    vm.currentTab = ''
   }
 
   vm.switchTab = function (tab, index) {
@@ -117,6 +117,6 @@ function documentUploadCtrl ($ionicPlatform, $scope, $rootScope, $state, SpajSer
   vm.handleSubmit = function () {
     $rootScope.nextStep()
     // TODO
-    SpajService.setData('step6', {isComplete: validator()})
+    SpajService.setData('document_upload', {isComplete: validator()})
   }
 }

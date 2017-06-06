@@ -48,7 +48,7 @@ function riskHobbyCtrl ($scope, $rootScope, $ionicPopup, UserService, DataServic
     }
 
     // TODO
-    SpajService.setData('step3', {isComplete: validator()})
+    SpajService.setData('risk_hobby', {isComplete: validator()})
   }
 
   function validator () {

@@ -178,7 +178,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
 
   vm.nextStep = function () {
     vm.healthData.isComplete = validator()
-    SpajService.setData('step2', vm.healthData)
+    SpajService.setData('health_data', vm.healthData)
     $rootScope.nextStep()
   }
 

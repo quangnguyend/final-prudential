@@ -32,8 +32,8 @@ function amendmentCtrl ($scope, $rootScope, SpajService, $state) {
   }
 
   vm.handleSubmit = function () {
-    $rootScope.nextStep('step8')
+    $rootScope.nextStep()
     // TODO
-    SpajService.setData('step7', {isComplete: validator()})
+    SpajService.setData('amendment', {isComplete: validator()})
   }
 }
