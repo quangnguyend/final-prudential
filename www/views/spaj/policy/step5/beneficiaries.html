@@ -11,58 +11,44 @@
             <th class='blur-text'>{{index+1}}</th>
             <th>Nama</th>
             <th>Hubungan</th>
+            <th>Jenis Kelamin</th>
             <th>Tanggal Lahir</th>
             <th>%</th>
           </tr>
           <tr>
-            <td class='index-column' width='15px'></td>
-            <td class='name-column'><input type='input' placeholder="Enter" ng-model="row.name" /></td>
-            <td class='relationship-column'>
-              <md-input-container class="select-box">
-                <label class="input-label">Tipe Asuransi2</label>
+            <td class='' width='15px'></td>
+            <td class=''>
+              <input type="text" ng-model="row.name">
+            </td>
+            <td class=''>
+                <md-select  ng-model='row.gender' value='WANITA' class='blur-text'>
+                  <md-option ng-repeat='value in vm.genderData' ng-value='{{value}}'>
+                    {{value}}
+                  </md-option>
+                </md-select>
+            </td>
+            <td class=''>
                 <md-select  ng-model='row.relationship' class='blur-text'>
-                  <md-option  value="" disabled selected>Select</md-option>
                   <md-option ng-repeat='value in vm.relationshipData' ng-value='{{value}}'>
                     {{value}}
                   </md-option>
                 </md-select>
-              </md-input-container>
             </td>
-            <td class="birthdate-column row row-top blur-text">
-              <md-input-container  class="md-block"   md-no-float >
+            <td class=" row row-top blur-text">
                 <input type="date" placeholder="DD/MM/YYYY" onblur="(this.type='date')" ng-model="vm.questions.question_2.date_inspection">
-              </md-input-container>
               <i class="icon ion-calendar"></i>
             </td>
-            <td class='share-column' width='10%'><input type='input' placeholder="%" ng-model="row.share" /></td>
+            <td class='' width='10%'><input type='input' placeholder="%" ng-model="row.share" /></td>
           </tr>
           <tr>
             <td colspan="5">
               <span class="error-message">! Silakan memasukkan angka kelipatan 5 contoh: 5,10,15..100 </span>
             </td>
           </tr>
-          <tr>
-            <td></td>
-            <td colspan="4">
-              <div class="row gender">
-                <span>Gender</span>
-                <div>
-                  <input type='radio' id='gender-male-{{index}}' name='gender-{{index}}' value='male' ng-click="vm.beneficiary.setGender(index, 'male')"
-                  />
-                  <label for='gender-male-{{index}}'>Pria</label>
-                </div>
-                <div>
-                  <input type='radio' id='gender-female-{{index}}' name='gender-{{index}}' value='female' ng-click="vm.beneficiary.setGender(index, 'female')"
-                  />
-                  <label for='gender-female-{{index}}'>Wanita</label>
-                </div>
-              </div>
-            </td>
-          </tr>
         </table>
       </div>
       <div class="item">
-        <button class="button button-stable button-block float-right col-95" ng-click="vm.beneficiary.addRow()">+ Tambah Penerima Manfaat Asuransi</button>
+        <button class="button button-stable button-block float-right col-95" ng-click="vm.addRow()">+ Tambah Penerima Manfaat Asuransi</button>
       </div>
     </div>
   </ion-content>

@@ -1,0 +1,19 @@
+#terms_conditions{
+    .terms_padding_box{
+        @extend .term-text;
+        padding: 3rem;
+        
+        .terms_block{
+            h2 {
+                @extend .font-size-big;
+                margin: 2rem 0rem 2rem;
+            }
+            p{
+                @extend .font-size-normal;
+            }
+        }
+        .terms_space{
+
+        }
+    }
+}
