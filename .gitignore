@@ -10,3 +10,9 @@ desktop.ini
 /typings/
 /bower_components/
 package-lock.json
+www/css/main.min.css
+package.json
+www/css/ionic.app.min.css
+www/css/main.min.css
+www/index.html
+www/css/maps/
