@@ -1,8 +1,19 @@
-<md-dialog>
+<md-dialog aria-label="Mango (Fruit)" class="_md md-transition-in md-content-overflow" role="dialog" >
   <form >
-  <md-dialog-content>
-    <div id="policy_info_ph_info" class="list list-inset no-lines">
-      <div class='item'>
+    <md-toolbar class="_md _md-toolbar-transitions">
+      <div class="md-toolbar-tools">
+        <h2>Kesehatan Tambahan Tumor</h2>
+        <span flex="" class="flex"></span>
+        <button class="md-icon-button md-button md-ink-ripple" type="button"  ng-click="closeDialog()">
+          <i class="icon ion-android-close"></i>
+        </button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content class="popup-prudential" >
+      <div class="md-dialog-content">
+        <div id="policy_info_ph_info" class="list list-inset no-lines">
+      <div class='item _active' id='tumor_1'>
         <div class="row-no-padding">
           <div class="row">
             <label class="item-stacked-label">
@@ -11,27 +22,25 @@
           </div>
           <div class="row">
             <div class="col-33">
-              <ion-checkbox ng-model='vm.tumor.janes.tumor'>Tumor</ion-checkbox>
+              <ion-checkbox ng-model='tumor.janes.tumor'>Tumor</ion-checkbox>
             </div>
             <div class="col-33">
-              <ion-checkbox ng-model='vm.tumor.janes.kista'>Kista</ion-checkbox>
+              <ion-checkbox ng-model='tumor.janes.kista'>Kista</ion-checkbox>
             </div>
             <div class="col-33">
-              <ion-checkbox ng-model='vm.tumor.janes.benjolan'>Benjolan</ion-checkbox>
+              <ion-checkbox ng-model='tumor.janes.benjolan'>Benjolan</ion-checkbox>
             </div>
           </div>
           <div class="row">
-            <ion-checkbox ng-model='vm.tumor.janes_kainnya_option'>Lainnya</ion-checkbox>
+            <ion-checkbox ng-model='tumor.janes_kainnya_option'>Lainnya</ion-checkbox>
           </div>
-          <div class="option_other" ng-show='vm.tumor.janes_kainnya_option'>
+          <div class="option_other" ng-show='tumor.janes_kainnya_option'>
             <div class="row">
-              <input type="text" placeholder="Enter" ng-model='vm.tumor.janes.kainnya'>
+              <input type="text" placeholder="Enter" ng-model='tumor.janes.kainnya'>
             </div>
           </div>
         </div>
-      </div>
-      <div class='item'>
-        <div class="row-no-padding">
+         <div class="row-no-padding">
           <div class="row">
             <label class="item-stacked-label">
                 <span class="input-label">Lokasi</span>
@@ -39,41 +48,41 @@
           </div>
           <div class="row">
             <div class="col-33">
-              <ion-checkbox ng-model='vm.tumor.lokasi.leher'>Leher</ion-checkbox>
+              <ion-checkbox ng-model='tumor.lokasi.leher'>Leher</ion-checkbox>
             </div>
             <div class="col-33">
-              <ion-checkbox ng-model='vm.tumor.lokasi.lengan'>Lengan Kanan</ion-checkbox>
+              <ion-checkbox ng-model='tumor.lokasi.lengan'>Lengan Kanan</ion-checkbox>
             </div>
             <div class="col-33">
-              <ion-checkbox ng-model='vm.tumor.lokasi.punggung'>Punggung</ion-checkbox>
+              <ion-checkbox ng-model='tumor.lokasi.punggung'>Punggung</ion-checkbox>
             </div>
           </div>
           <div class="row">
-            <ion-checkbox ng-model='vm.tumor.lokasi_lainnya_option'>Lainnya</ion-checkbox>
+            <ion-checkbox ng-model='tumor.lokasi_lainnya_option'>Lainnya</ion-checkbox>
           </div>
-          <div class="option_other" ng-show='vm.tumor.lokasi_lainnya_option'>
+          <div class="option_other" ng-show='tumor.lokasi_lainnya_option'>
             <div class="row">
-              <input type="text" placeholder="Enter" ng-model='vm.tumor.lokasi.lainnya'>
+              <input type="text" placeholder="Enter" ng-model='tumor.lokasi.lainnya'>
             </div>
           </div>
         </div>
-      </div>
-      <div class="item">
-        <md-input-container class="md-block">
+         <md-input-container class="md-block">
           <input type="date" placeholder="Kapan pertama kali mengalami / mengetahui gangguan tersebut?" onblur="(this.type='date')"
-            ng-model='vm.tumor.kapan_pertama'>
+            ng-model='tumor.kapan_pertama'>
         </md-input-container>
-      </div>
-      <div class="item">
-        <div class="row-no-padding">
+         <div class="row-no-padding">
           <div class="row">
-            <div class="button-block add_icon">
-              <a class="button"><span>Berikutnya</span></a>
-            </div>
+            <button class="button  btn_next button-full" 
+              ng-class="{'button-dark': (tumor.janes.tumor||tumor.janes.kista||tumor.janes.benjolan||tumor.janes_kainnya_option)&&(tumor.lokasi.leher||tumor.lokasi.lengan||tumor.lokasi.punggung||tumor.lokasi.lainnya)}"
+              ng-disabled="(tumor.janes.tumor==null&&tumor.janes.kista==null&&tumor.janes.benjolan==null||tumor.janes_kainnya_option==null)||(tumor.lokasi.leher==null&&tumor.lokasi.lengan==null&&tumor.lokasi.punggung==null&&tumor.lokasi.lainnya==null)"
+              ng-click="puNextStep('tumor_2')">
+              <span>Berikutnya</span></button>
+            
           </div>
         </div>
       </div>
-      <div class='item'>
+     
+      <div class='item' id="tumor_2"  ng-class="{'_active': puSteps.indexOf('tumor_2')>0}">
         <div class="row-no-padding">
           <div class="row">
             <label class="item-stacked-label">
@@ -82,18 +91,16 @@
           </div>
           <div class="row">
             <div class="button-bar">
-              <a class="button col col-50" grouped-radio="'Ya'" ng-model="vm.tumor.sudah">Ya</a>
-              <a class="button col col-50" grouped-radio="'Tidak'" ng-model="vm.tumor.sudah">Tidak</a>
+              <a class="button col col-50" grouped-radio="'Ya'" ng-model="tumor.sudah">Ya</a>
+              <a class="button col col-50" grouped-radio="'Tidak'" ng-model="tumor.sudah">Tidak</a>
             </div>
           </div>
         </div>
-      </div>
-      <div class='item'>
         <div class="row-no-padding">
           <div class="row">
             <div class="col-40">
               <md-input-container class="md-block">
-                <md-select ng-model="vm.tumor.kapan_month_select" placeholder='Kapan ssss'>
+                <md-select ng-model="tumor.kapan_month_select" placeholder='Kapan'>
                   <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                 </md-select>
               </md-input-container>
@@ -101,52 +108,48 @@
             <div class="col-20"></div>
             <div class="col-40">
               <md-input-container class="md-block">
-                <md-select ng-model="vm.tumor.kapan_year_select" placeholder='Year'>
+                <md-select ng-model="tumor.kapan_year_select" placeholder='Year'>
                   <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                 </md-select>
               </md-input-container>
             </div>
           </div>
         </div>
-      </div>
-      <div class='item'>
-        <div class="row-no-padding">
+         <div class="row-no-padding">
           <md-input-container class="md-block" flex-gt-sm>
             <label>Nama Dokter / Rumah Sakit</label>
-            <input type="text" ng-model="vm.tumor.nama_dokter" />
+            <input type="text" ng-model="tumor.nama_dokter" />
           </md-input-container>
         </div>
-      </div>
-      <div class='item'>
-        <div class="row-no-padding">
+         <div class="row-no-padding">
           <h1 class="description">Jenis Operasi</h1>
           <ul>
             <li class="item  item-checkbox">
               <p>Angkat Rahim</p>
               <label class="checkbox">
-                  <input type="checkbox" ng-model='vm.tumor.angkat_option'>
+                  <input type="checkbox" ng-model='tumor.angkat_option'>
               </label>
-              <ul ng-class="vm.tumor.angkat_option ? 'active':'disable'">
+              <ul ng-class="tumor.angkat_option ? 'active':'disable'">
                 <li>
                   <div class="row">
                     <md-input-container class="md-block">
-                      <md-select ng-model='vm.tumor.angkat_tipe' placeholder='Tipe'>
-                        <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                      <md-select ng-model='tumor.angkat_tipe' placeholder='Tipe'>
+                        <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                       </md-select>
                     </md-input-container>
                   </div>
                   <div class="row">
                     <div class="col">
                       <md-input-container class="md-block">
-                        <md-select ng-model='vm.tumor.angkat_kapan' placeholder='Kapan'>
-                          <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                        <md-select ng-model='tumor.angkat_kapan' placeholder='Kapan'>
+                          <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                         </md-select>
                       </md-input-container>
                     </div>
                     <div class="col">
                       <md-input-container class="md-block">
-                        <md-select ng-model='vm.tumor.angkat_year' placeholder='Year'>
-                          <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                        <md-select ng-model='tumor.angkat_year' placeholder='Year'>
+                          <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                         </md-select>
                       </md-input-container>
                     </div>
@@ -157,31 +160,31 @@
             <li class="item  item-checkbox">
               <p>Angkat Payudara</p>
               <label class="checkbox">
-                  <input type="checkbox" ng-model='vm.tumor.payudara_option'>
+                  <input type="checkbox" ng-model='tumor.payudara_option'>
               </label>
-              <ul ng-class="vm.tumor.payudara_option ? 'active':'disable'">
+              <ul ng-class="tumor.payudara_option ? 'active':'disable'">
                 <li>
 
                   <div class="row">
                     <div class="col">
                       <md-input-container class="md-block">
-                        <md-select ng-model='vm.tumor.payudara_lama_select' placeholder='Lama di Rumah Sakit'>
-                          <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                        <md-select ng-model='tumor.payudara_lama_select' placeholder='Lama di Rumah Sakit'>
+                          <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                         </md-select>
                       </md-input-container>
                     </div>
                     <div class="col">
                       <md-input-container class="md-block">
-                        <md-select ng-model='vm.tumor.payudara_lama_select2' placeholder='Lama di Rumah Sakit'>
-                          <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                        <md-select ng-model='tumor.payudara_lama_select2' placeholder='Lama di Rumah Sakit'>
+                          <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                         </md-select>
                       </md-input-container>
                     </div>
                   </div>
                   <div class="row">
                     <md-input-container class="md-block">
-                      <md-select ng-model='vm.tumor.payudara_hasil_select' placeholder='Hasil USG/Mamografi terbaru'>
-                        <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                      <md-select ng-model='tumor.payudara_hasil_select' placeholder='Hasil USG/Mamografi terbaru'>
+                        <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                       </md-select>
                     </md-input-container>
                   </div>
@@ -193,41 +196,43 @@
             <li class="item item-checkbox">
               <p>Lainnya</p>
               <label class="checkbox">
-                <input type="checkbox" ng-model='vm.tumor.lainnya_option'>
+                <input type="checkbox" ng-model='tumor.lainnya_option'>
               </label>
-              <input class="vertical-space" type="text" placeholder="Enter" ng-class="vm.tumor.lainnya_option ? 'active':'disable'" ng-model='vm.tumor.lainnya_value'>
+              <input class="vertical-space" type="text" placeholder="Enter" ng-class="tumor.lainnya_option ? 'active':'disable'" ng-model='tumor.lainnya_value'>
             </li>
           </ul>
         </div>
-      </div>
-      <div class='item'>
-        <div class="row-no-padding">
+          <div class="row-no-padding">
           <md-input-container class="md-block">
-            <md-select ng-model='vm.tumor.kategori_select' placeholder='Kategori Tumor'>
-              <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+            <md-select ng-model='tumor.kategori_select' placeholder='Kategori Tumor'>
+              <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
             </md-select>
           </md-input-container>
         </div>
-      </div>
-      <div class="item">
         <div class="row-no-padding">
           <div class="row">
-            <div class="button-block add_icon">
-              <a class="button"><span>Berikutnya</span></a>
-            </div>
+            <button class="button button-full"
+              ng-class="{'button-dark': (tumor.angkat_option||tumor.payudara_option||tumor.lainnya_option)}"
+              ng-disabled="(tumor.angkat_option==null&&tumor.payudara_option==null&&tumor.lainnya_option==null||tumor.janes_kainnya_option==null)||(tumor.lokasi.leher==null&&tumor.lokasi.lengan==null&&tumor.lokasi.punggung==null&&tumor.lokasi.lainnya==null)"
+              ng-click="puNextStep('tumor_3')"
+            >
+              <span>Berikutnya</span>
+            </button>
           </div>
         </div>
       </div>
-      <div class='item'>
+     
+    
+      <div class='item'  id="tumor_3"  ng-class="{'_active': puSteps.indexOf('tumor_3')>0}">
         <div class="row-no-padding">
           <h1 class="description">Pengobatan / Terapi / Tindakan yang pernah dianjurkan / dilakukan</h1>
           <ul>
             <li class="item  item-checkbox">
               <p>Obat</p>
               <label class="checkbox">
-                <input type="checkbox" ng-model='vm.tumor.obat_option'>
+                <input type="checkbox" ng-model='tumor.obat_option'>
               </label>
-              <ul ng-class="vm.tumor.obat_option ? 'active':'disable'">
+              <ul ng-class="tumor.obat_option ? 'active':'disable'">
                 <li>
                   <div class="row">
                     <md-input-container class="md-block" flex-gt-sm>
@@ -241,8 +246,8 @@
                   <div class="row">
 
                     <div class="button-bar">
-                      <a class="button col col-50" grouped-radio="true" ng-model="vm.tumor.obat_masih">Ya</a>
-                      <a class="button col col-50" grouped-radio="false" ng-model="vm.tumor.obat_masih">Tidak</a>
+                      <a class="button col col-50" grouped-radio="true" ng-model="tumor.obat_masih">Ya</a>
+                      <a class="button col col-50" grouped-radio="false" ng-model="tumor.obat_masih">Tidak</a>
                     </div>
                   </div>
                 </li>
@@ -252,9 +257,9 @@
             <li class="item  item-checkbox">
               <p>Radiography</p>
               <label class="checkbox">
-                <input type="checkbox"  ng-model='vm.tumor.radiography_option'>
+                <input type="checkbox"  ng-model='tumor.radiography_option'>
               </label>
-              <ul ng-class="vm.tumor.radiography_option ? 'active':'disable'">
+              <ul ng-class="tumor.radiography_option ? 'active':'disable'">
                 <li>
                   <div class="row">
                     <h3 class="input-label description">Masih memakai obat ini</h3>
@@ -262,8 +267,8 @@
                   <div class="row">
 
                     <div class="button-bar">
-                      <a class="button col col-50" grouped-radio="true" ng-model="vm.tumor.radiography_masih">Ya</a>
-                      <a class="button col col-50" grouped-radio="false" ng-model="vm.tumor.radiography_masih">Tidak</a>
+                      <a class="button col col-50" grouped-radio="true" ng-model="tumor.radiography_masih">Ya</a>
+                      <a class="button col col-50" grouped-radio="false" ng-model="tumor.radiography_masih">Tidak</a>
                     </div>
                   </div>
                   <div class="row">
@@ -279,9 +284,9 @@
             <li class="item  item-checkbox">
               <p>Chemography</p>
               <label class="checkbox">
-                <input type="checkbox"   ng-model='vm.tumor.chemography_option'>
+                <input type="checkbox"   ng-model='tumor.chemography_option'>
               </label>
-              <ul ng-class="vm.tumor.chemography_option ? 'active':'disable'">
+              <ul ng-class="tumor.chemography_option ? 'active':'disable'">
                 <li>
                   <div class="row">
                     <h3 class="input-label description">Masih memakai obat ini</h3>
@@ -289,8 +294,8 @@
                   <div class="row">
 
                     <div class="button-bar">
-                      <a class="button col col-50" grouped-radio="true" ng-model="vm.tumor.chemography_masih">Ya</a>
-                      <a class="button col col-50" grouped-radio="false" ng-model="vm.tumor.chemography_masih">Tidak</a>
+                      <a class="button col col-50" grouped-radio="true" ng-model="tumor.chemography_masih">Ya</a>
+                      <a class="button col col-50" grouped-radio="false" ng-model="tumor.chemography_masih">Tidak</a>
                     </div>
                   </div>
                   <div class="row">
@@ -308,23 +313,33 @@
             <li class="item item-checkbox">
               <p>Lainnya</p>
               <label class="checkbox">
-                <input type="checkbox" ng-model='vm.tumor.lainnya_option3'>
+                <input type="checkbox" ng-model='tumor.lainnya_option3'>
               </label>
-              <input class="vertical-space" type="text" placeholder="Enter" ng-class="vm.tumor.lainnya_option3 ? 'active':'disable'">
+              <input class="vertical-space" type="text" placeholder="Enter" ng-class="tumor.lainnya_option3 ? 'active':'disable'">
             </li>
           </ul>
         </div>
-      </div>
-      <div class="item">
-        <div class="row-no-padding">
+         <div class="row-no-padding">
           <div class="row">
-            <div class="button-block add_icon">
-              <a class="button"><span>Berikutnya</span></a>
-            </div>
+            <button class="button button-full"
+              ng-class=""
+              ng-disabled=""
+              ng-click=""
+            >
+              <span>Berikutnya</span>
+            </button>
           </div>
         </div>
       </div>
+      
     </div>
-  </md-dialog-actions>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row" class="layout-row">
+      <button class="md-button button-full" type="button"  ng-click="closeDialog()">
+        <span class="ng-scope">Selesai</span>
+      </button>
+    </md-dialog-actions>
   </form>
 </md-dialog>

@@ -5,14 +5,14 @@
   <ion-content>
     <step-process></step-process>
     <div class='row tab-menu'>
-      <div class='col' ng-repeat='tab in vm.additionalList track by $index' ng-click='vm.switchTab(tab.id)' ng-class='vm.currentTab===tab.id?"active":""'><span class="d-table"><span class="d-table-cell">{{tab.name}}</span></span>
+      <div class='col' ng-repeat='tab in vm.additionalList track by $index' ng-click='vm.switchTab(tab.id, tab.index)' ng-class='vm.currentTab===tab.id?"active":""'><span class="d-table"><span class="d-table-cell">{{tab.name}}</span></span>
       </div>
       <div class='col' ng-click='vm.switchTab(vm.policy_holder_tab)' ng-class='vm.currentTab===vm.policy_holder_tab?"active":""'><span class="d-table"><span class="d-table-cell">{{vm.PH}} Tertanggung Utama</span></span>
       </div>
       <div ng-if='vm.additionalList.length<2' class='col blur-text' ng-click='vm.addAdditionalTab()'><span class="d-table"><span class="d-table-cell">+ Tertanggung Tambahan</span></span>
       </div>
     </div>
-    <insured-home insured-data='{{vm.policy_holder_tab}}' ng-show='vm.currentTab===vm.policy_holder_tab' on-swipe-left='vm.handleMainTabSwipe()'></insured-home>
+    <insured-home insured-data='{{vm.policy_holder_tab}}' ng-show='vm.currentTab===vm.policy_holder_tab' on-swipe-right='vm.handleMainTabSwipe()'></insured-home>
     <insured-home ng-repeat='tab in vm.additionalList track by $index' insured-data='{{tab.id}}' ng-show='vm.currentTab===tab.id' ng-class='vm.currentTab===tab.id?"active":""'
       on-swipe='vm.handleAddedTabSwipe($event)'></insured-home>
     <div ng-include="'views/layout/step_1_condition.html'"></div>

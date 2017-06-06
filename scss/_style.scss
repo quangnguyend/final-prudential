@@ -36,7 +36,23 @@ body {
 ion-footer-bar.bar.bar-assertive {
   background-color: #da291c !important;
 }
-
+.md-dialog-container md-dialog{
+  width:100%; position: absolute; left: 0px; right:0px; bottom:0px; top:50px; max-width: 100%;
+   max-height: 100%;
+  border-radius: 0px;
+  ._md-toolbar-transitions{
+    background-color:#da291c;
+    .md-toolbar-tools{
+      color:#FFF; text-align: center;
+      h2{ color:#FFF; text-align: center; width: 100%}
+      i{font-size:25px;}
+    }
+  }
+  md-dialog-actions{
+    background: #da291c;
+    .md-button{color:#FFF}
+  }
+}
 .bar {
   &.bar-header .title {
     //font-size: 25px !important;
@@ -596,7 +612,7 @@ select {
     height: 300px;
   }
 }
-
+#health_question1 .message{color:#DA291C}
 
 @media only screen and (min-width: 768px) {
   .body, body *, label.item-stacked-label, body label, label.item, .item select, #step-header select {
@@ -635,9 +651,13 @@ select {
   }
   .popup-prudential {
     .item p, .title-cb, .add-more-btn {
-      //font-size: 25px;
+      font-size: 25px !important;
+    }
+    .description{
+      min-width: 300px; margin-bottom:10px !important;
     }
   }
+ 
  
 }
 

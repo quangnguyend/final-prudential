@@ -1,6 +1,16 @@
-<div class="popup-wrapper">
 
-  <div class="popup-content">
+<md-dialog aria-label="Mango (Fruit)" class="_md md-transition-in md-content-overflow" role="dialog"  id="digestive-popup" >
+  <form >
+    <md-toolbar class="_md _md-toolbar-transitions">
+      <div class="md-toolbar-tools">
+        <h2>Kuesioner Gangguan Pernapasan</h2>
+        <span flex="" class="flex"></span>
+        <button class="md-icon-button md-button md-ink-ripple" type="button"  ng-click="closeDialog()">
+          <i class="icon ion-android-close"></i>
+        </button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content class="popup-prudential" >
     <div id="policy_info_ph_info" class="list list-inset no-lines">
       <div class='item'>
         <div class="row-no-padding">
@@ -11,21 +21,21 @@
           </div>
           <div class="row">
             <div class="col-33">
-              <ion-checkbox ng-model='vm.respiratory.gangguan_asma'>Asma</ion-checkbox>
+              <ion-checkbox ng-model='respiratory.gangguan_asma'>Asma</ion-checkbox>
             </div>
             <div class="col-33">
-              <ion-checkbox ng-model='vm.respiratory.gangguan_tbc'>TBC</ion-checkbox>
+              <ion-checkbox ng-model='respiratory.gangguan_tbc'>TBC</ion-checkbox>
             </div>
             <div class="col-33">
-              <ion-checkbox ng-model='vm.respiratory.gangguan_bronkhitis'>Bronkhitis</ion-checkbox>
+              <ion-checkbox ng-model='respiratory.gangguan_bronkhitis'>Bronkhitis</ion-checkbox>
             </div>
           </div>
           <div class="row">
-            <ion-checkbox ng-model='vm.respiratory.lainnya_option1'>Lainnya</ion-checkbox>
+            <ion-checkbox ng-model='respiratory.lainnya_option1'>Lainnya</ion-checkbox>
           </div>
-          <div class="option_other" ng-show='vm.respiratory.lainnya_option1'>
+          <div class="option_other" ng-show='respiratory.lainnya_option1'>
             <div class="row">
-              <input type="text" placeholder="Enter" ng-model='vm.respiratory.gangguan_lainnya'>
+              <input type="text" placeholder="Enter" ng-model='respiratory.gangguan_lainnya'>
             </div>
           </div>
         </div>
@@ -34,8 +44,8 @@
         <div class="row-no-padding">
           <div class="row">
             <md-input-container class="md-block">
-              <md-select ng-model='vm.respiratory.kapan_pertama' placeholder="Kapan pertama kali gejala dirasakan">
-                <md-option ng-repeat="n in vm.const" value="{{n.type}}">{{n.value}}</md-option>
+              <md-select ng-model='respiratory.kapan_pertama' placeholder="Kapan pertama kali gejala dirasakan">
+                <md-option ng-repeat="n in const" value="{{n.type}}">{{n.value}}</md-option>
               </md-select>
             </md-input-container>
           </div>
@@ -50,21 +60,21 @@
           </div>
           <div class="row">
             <div class="col-33">
-              <ion-checkbox ng-model='vm.respiratory.yang_sesak'>Sesak Nafas</ion-checkbox>
+              <ion-checkbox ng-model='respiratory.yang_sesak'>Sesak Nafas</ion-checkbox>
             </div>
             <div class="col-33">
-              <ion-checkbox ng-model='vm.respiratory.yang_batuk'>Batuk lama</ion-checkbox>
+              <ion-checkbox ng-model='respiratory.yang_batuk'>Batuk lama</ion-checkbox>
             </div>
             <div class="col-33">
-              <ion-checkbox ng-model='vm.respiratory.yang_nafas'>Nafas Berbunyi</ion-checkbox>
+              <ion-checkbox ng-model='respiratory.yang_nafas'>Nafas Berbunyi</ion-checkbox>
             </div>
           </div>
           <div class="row">
-            <ion-checkbox ng-model='vm.respiratory.lainnya_option2'>Lainnya</ion-checkbox>
+            <ion-checkbox ng-model='respiratory.lainnya_option2'>Lainnya</ion-checkbox>
           </div>
-          <div class="option_other" ng-show='vm.respiratory.lainnya_option2'>
+          <div class="option_other" ng-show='respiratory.lainnya_option2'>
             <div class="row">
-              <input type="text" placeholder="Enter" ng-model='vm.respiratory.keluhan_lainnya'>
+              <input type="text" placeholder="Enter" ng-model='respiratory.keluhan_lainnya'>
             </div>
           </div>
         </div>
@@ -74,7 +84,7 @@
 
           <md-input-container class="md-block" flex-gt-sm>
             <label>Faktor pemicu terhadap keluhan yang dirasakan </label>
-            <input type="text" ng-model='vm.respiratory.faktor' />
+            <input type="text" ng-model='respiratory.faktor' />
           </md-input-container>
         </div>
       </div>
@@ -88,8 +98,8 @@
           <div class="row">
             <div class="row indent_row">
               <div class="button-bar">
-                <a class="button col col-50" grouped-radio="'Ya'" ng-model="vm.respiratory.apakah">Ya</a>
-                <a class="button col col-50" grouped-radio="'Tidak'" ng-model="vm.respiratory.apakah">Tidak</a>
+                <a class="button col col-50" grouped-radio="'Ya'" ng-model="respiratory.apakah">Ya</a>
+                <a class="button col col-50" grouped-radio="'Tidak'" ng-model="respiratory.apakah">Tidak</a>
               </div>
             </div>
           </div>
@@ -98,9 +108,13 @@
       <div class="item">
         <div class="row-no-padding">
           <div class="row">
-            <div class="button-block add_icon">
-              <a class="button"><span>Berikutnya</span></a>
-            </div>
+            < <button class="button button-full"
+              ng-class=""
+              ng-disabled=""
+              ng-click=""
+            >
+              <span>Berikutnya</span>
+            </button>
           </div>
         </div>
       </div>
@@ -109,8 +123,8 @@
 
           <div class="row">
             <md-input-container class="md-block">
-              <md-select ng-model="vm.respiratory.kapan_keluhan" placeholder='Kapan keluhan terakhir'>
-                <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+              <md-select ng-model="respiratory.kapan_keluhan" placeholder='Kapan keluhan terakhir'>
+                <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
               </md-select>
             </md-input-container>
           </div>
@@ -120,7 +134,7 @@
         <div class="row-no-padding">
           <md-input-container class="md-block" flex-gt-sm>
             <label>Nama Dokter / Rumah Sakit</label>
-            <input type="text" ng-model="vm.respiratory.nama_dokter" />
+            <input type="text" ng-model="respiratory.nama_dokter" />
           </md-input-container>
         </div>
       </div>
@@ -130,8 +144,8 @@
             <div class="col-40">
               <div class="row">
                 <md-input-container class="md-block">
-                  <md-select ng-model="vm.respiratory.berapa_select" placeholder='Berapa kali konsultasi'>
-                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                  <md-select ng-model="respiratory.berapa_select" placeholder='Berapa kali konsultasi'>
+                    <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                   </md-select>
                 </md-input-container>
 
@@ -142,16 +156,16 @@
               <div class="row">
                 <div class="col-50">
                   <md-input-container class="md-block">
-                    <md-select ng-model="vm.respiratory.terakhir_select" placeholder='Terakhir konsultasi'>
-                      <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                    <md-select ng-model="respiratory.terakhir_select" placeholder='Terakhir konsultasi'>
+                      <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                     </md-select>
                   </md-input-container>
                 </div>
 
                 <div class="col-50">
                   <md-input-container class="md-block">
-                    <md-select ng-model="vm.respiratory.terakhir_year" placeholder='2011'>
-                      <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                    <md-select ng-model="respiratory.terakhir_year" placeholder='2011'>
+                      <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                     </md-select>
                   </md-input-container>
                 </div>
@@ -163,9 +177,13 @@
       <div class="item">
         <div class="row-no-padding">
           <div class="row">
-            <div class="button-block add_icon">
-              <a class="button"><span>Berikutnya</span></a>
-            </div>
+            <button class="button button-full"
+              ng-class=""
+              ng-disabled=""
+              ng-click=""
+            >
+              <span>Berikutnya</span>
+            </button>
           </div>
         </div>
       </div>
@@ -178,8 +196,8 @@
           </div>
           <div class="row">
             <div class="button-bar">
-              <a class="button col col-50" grouped-radio="'Ya'" ng-model="vm.respiratory.apakah_pernah">Ya</a>
-              <a class="button col col-50" grouped-radio="'Tidak'" ng-model="vm.respiratory.apakah_pernah">Tidak</a>
+              <a class="button col col-50" grouped-radio="'Ya'" ng-model="respiratory.apakah_pernah">Ya</a>
+              <a class="button col col-50" grouped-radio="'Tidak'" ng-model="respiratory.apakah_pernah">Tidak</a>
             </div>
 
           </div>
@@ -191,8 +209,8 @@
             <div class="col-40">
               <div class="row">
                 <md-input-container class="md-block">
-                  <md-select ng-model="vm.respiratory.kapan_select" placeholder='Kapan'>
-                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                  <md-select ng-model="respiratory.kapan_select" placeholder='Kapan'>
+                    <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                   </md-select>
                 </md-input-container>
               </div>
@@ -202,8 +220,8 @@
 
               <div class="row">
                 <md-input-container class="md-block">
-                  <md-select ng-model="vm.respiratory.lama_select" placeholder='Lama di Rumah Sakit'>
-                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                  <md-select ng-model="respiratory.lama_select" placeholder='Lama di Rumah Sakit'>
+                    <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                   </md-select>
                 </md-input-container>
 
@@ -216,16 +234,19 @@
         <div class="row-no-padding">
           <md-input-container class="md-block" flex-gt-sm>
             <label>Nama Dokter / Rumah Sakit</label>
-            <input type="text" ng-model="vm.respiratory.lama2" />
+            <input type="text" ng-model="respiratory.lama2" />
           </md-input-container>
         </div>
       </div>
       <div class="item">
         <div class="row-no-padding">
           <div class="row">
-            <div class="button-block add_icon">
-              <a class="button"><span>Berikutnya</span></a>
-            </div>
+             <button class="button button-full"
+              ng-class=""
+              ng-disabled=""
+              ng-click="">
+              <span>Berikutnya</span>
+            </button>
           </div>
         </div>
       </div>
@@ -237,30 +258,30 @@
               </label>
           </div>
           <div class="row">
-            <ion-checkbox ng-model="vm.respiratory.inhalasi">Inhalasi</ion-checkbox>
+            <ion-checkbox ng-model="respiratory.inhalasi">Inhalasi</ion-checkbox>
           </div>
           <div class="row">
-            <ion-checkbox ng-model="vm.respiratory.suntikan">Suntikan</ion-checkbox>
+            <ion-checkbox ng-model="respiratory.suntikan">Suntikan</ion-checkbox>
           </div>
-          <div class="option_other" ng-class="vm.respiratory.suntikan ? 'active':'disable'">
+          <div class="option_other" ng-class="respiratory.suntikan ? 'active':'disable'">
             <md-input-container class="md-block" flex-gt-sm>
               <label>Nama Obat</label>
-              <input type="text" ng-model="vm.respiratory.suntikan_nama" />
+              <input type="text" ng-model="respiratory.suntikan_nama" />
             </md-input-container>
           </div>
           <div class="row">
-            <ion-checkbox ng-model="vm.respiratory.obat_minum">Obat minum</ion-checkbox>
+            <ion-checkbox ng-model="respiratory.obat_minum">Obat minum</ion-checkbox>
           </div>
           <div class="row">
-            <ion-checkbox ng-model="vm.respiratory.operasi">Operasi</ion-checkbox>
+            <ion-checkbox ng-model="respiratory.operasi">Operasi</ion-checkbox>
           </div>
           <div class="row">
-            <ion-checkbox ng-model="vm.respiratory.pengobatan_lainnya_option">Lainnya</ion-checkbox>
+            <ion-checkbox ng-model="respiratory.pengobatan_lainnya_option">Lainnya</ion-checkbox>
           </div>
-          <div class="option_other" ng-class="vm.respiratory.pengobatan_lainnya_option ? 'active':'disable'">
+          <div class="option_other" ng-class="respiratory.pengobatan_lainnya_option ? 'active':'disable'">
             <md-input-container class="md-block" flex-gt-sm>
               <label>Nama Obat</label>
-              <input type="text" ng-model="vm.respiratory.pengobatan_lainnya" />
+              <input type="text" ng-model="respiratory.pengobatan_lainnya" />
             </md-input-container>
           </div>
 
@@ -269,9 +290,12 @@
       <div class="item">
         <div class="row-no-padding">
           <div class="row">
-            <div class="button-block add_icon">
-              <a class="button"><span>Berikutnya</span></a>
-            </div>
+             <button class="button button-full"
+              ng-class=""
+              ng-disabled=""
+              ng-click="">
+              <span>Berikutnya</span>
+            </button>
           </div>
         </div>
       </div>
@@ -283,7 +307,7 @@
               </label>
           </div>
           <div class="row">
-            <ion-checkbox ng-model="vm.respiratory.rontgen">Rontgen Dada</ion-checkbox>
+            <ion-checkbox ng-model="respiratory.rontgen">Rontgen Dada</ion-checkbox>
           </div>
           <div class="row">
             <ion-checkbox>Tes Fungsi Paru / Spirometri</ion-checkbox>
@@ -293,35 +317,41 @@
             <div class="row">
               <div class="col-40">
                 <md-input-container class="md-block">
-                  <md-select ng-model="vm.respiratory.kapan_select2" placeholder='Kapan'>
-                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                  <md-select ng-model="respiratory.kapan_select2" placeholder='Kapan'>
+                    <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                   </md-select>
                 </md-input-container>
               </div>
               <div class="col-20"></div>
               <div class="col-40">
                 <md-input-container class="md-block">
-                  <md-select ng-model="vm.respiratory.hasil_select" placeholder='Hasil'>
-                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                  <md-select ng-model="respiratory.hasil_select" placeholder='Hasil'>
+                    <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                   </md-select>
                 </md-input-container>
               </div>
             </div>
           </div>
           <div class="row">
-            <ion-checkbox ng-model="vm.respiratory.ekg">EKG</ion-checkbox>
+            <ion-checkbox ng-model="respiratory.ekg">EKG</ion-checkbox>
           </div>
           <div class="row">
-            <ion-checkbox ng-model="vm.respiratory.pemeriksaan_lainnya_option">Lainnya</ion-checkbox>
+            <ion-checkbox ng-model="respiratory.pemeriksaan_lainnya_option">Lainnya</ion-checkbox>
           </div>
           <div class="option_other">
             <div class="row">
-              <input type="text" placeholder="Enter" ng-model="vm.respiratory.pemeriksaan_lainnya">
+              <input type="text" placeholder="Enter" ng-model="respiratory.pemeriksaan_lainnya">
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+    </md-dialog-content>
 
-</div>
+    <md-dialog-actions layout="row" class="layout-row">
+      <button class="md-button button-full" type="button"  ng-click="closeDialog()">
+        <span class="ng-scope">Selesai</span>
+      </button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
