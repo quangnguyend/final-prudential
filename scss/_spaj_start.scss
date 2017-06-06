@@ -16,13 +16,7 @@
   .item {
     border: none;
   }
-}
 
-#upload-page .item {
-  border: none;
-}
-
-#spaj-start {
   .item.gray-block {
     border-top: solid 1px #EFECEC;
     border-bottom: solid 1px #EFECEC;
@@ -86,13 +80,27 @@
   .no-padding-top {
     padding-top: 0px;
   }
-}
 
-@media screen and (min-width: 568px) {
-  #spaj-start .mini-center-container {
-    width: 80%;
+  .list .item .small-question{
+    @extend .standard-body-small;
+    white-space: normal;
+    padding: 1.2rem;
+  }
+
+  .description{
+    white-space: normal;
+    @extend .font-size-big;
+  }
+
+  @media screen and (min-width: 568px) {
+  .mini-center-container {
+      width: 80%;
+    }
   }
 }
+
+
+
 
 @media only screen and (min-width: 768px) {
   #health_question1 {
@@ -107,4 +115,8 @@
       font-family: "Frutiger 45 Light-Bold" !important;
     }
   }
+}
+
+#upload-page .item {
+  border: none;
 }
