@@ -18,7 +18,6 @@ function beneficiariesCtrl ($scope, $rootScope, $state, SpajService) {
       share: '',
       gender: ''
     })
-    console.log(vm.dataBeneficiary)
   }
 
   function validator () {
