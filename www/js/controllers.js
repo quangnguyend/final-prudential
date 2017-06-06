@@ -71,6 +71,7 @@ angular
   .controller('TopupCtrl', topupCtrl)
   .controller('TopupPayorCtrl', topupPayorCtrl)
   .controller('TopupPayorDetailCtrl', topupPayorDetailCtrl)
+  .controller('TumorController', tumorController)
 
   .directive('dataService', dataService)
   .directive('groupedRadio', groupedRadio)
