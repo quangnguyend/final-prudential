@@ -1,5 +1,16 @@
-<div id="digestive-popup" class="popup-wrapper">
-    <div class="popup-content">
+
+<md-dialog aria-label="Mango (Fruit)" class="_md md-transition-in md-content-overflow" role="dialog"  id="digestive-popup" >
+  <form >
+    <md-toolbar class="_md _md-toolbar-transitions">
+      <div class="md-toolbar-tools">
+        <h2>Kuesioner Gangguan Saluran Cerna</h2>
+        <span flex="" class="flex"></span>
+        <button class="md-icon-button md-button md-ink-ripple" type="button"  ng-click="closeDialog()">
+          <i class="icon ion-android-close"></i>
+        </button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content class="popup-prudential" >
         <div class='item'>
             <div class="row-no-padding">
                 <h1 class="description">Keluhan yang dirasakan</h1>
@@ -7,19 +18,19 @@
                     <li class="item item-checkbox">
                         <p>Sakit Perut</p>
                         <label class="checkbox">
-                            <input type="checkbox" ng-model='vm.digestive.keluhan_perut'>
+                            <input type="checkbox" ng-model='digestive.keluhan_perut'>
                         </label>
                     </li>
                     <li class="item item-checkbox">
                         <p>Muntah</p>
                         <label class="checkbox">
-                            <input type="checkbox" ng-model='vm.digestive.keluhan_muntah'>
+                            <input type="checkbox" ng-model='digestive.keluhan_muntah'>
                         </label>
                     </li>
                     <li class="item  item-checkbox">
                         <p>Nyeri Ulu hati</p>
                         <label class="checkbox">
-                            <input type="checkbox" ng-model='vm.digestive.keluhan_nyerl'>
+                            <input type="checkbox" ng-model='digestive.keluhan_nyerl'>
                         </label>
                     </li>
                 </ul>
@@ -27,13 +38,13 @@
                     <li class="item item-checkbox">
                         <p>Mual</p>
                         <label class="checkbox">
-                            <input type="checkbox" ng-model='vm.digestive.keluhan_mual'>
+                            <input type="checkbox" ng-model='digestive.keluhan_mual'>
                         </label>
                     </li>
                     <li class="item item-checkbox">
                         <p>Muntah Darah</p>
                         <label class="checkbox">
-                            <input type="checkbox" ng-model='vm.digestive.keluhan_darah'>
+                            <input type="checkbox" ng-model='digestive.keluhan_darah'>
                         </label>
                     </li>
                 </ul>
@@ -41,13 +52,13 @@
                     <li class="item item-checkbox">
                         <p>Lainnya</p>
                         <label class="checkbox">
-                            <input type="checkbox" ng-model='vm.digestive.keluhan_lainnya'>
+                            <input type="checkbox" ng-model='digestive.keluhan_lainnya'>
                         </label>
                     </li>
                 </ul>
-                <ul class="row option_other" ng-show='vm.digestive.keluhan_lainnya'>
+                <ul class="row option_other" ng-show='digestive.keluhan_lainnya'>
                     <li class="item item-checkbox">
-                        <input type="text" placeholder="Enter" ng-model='vm.digestive.keluhan_lainnya_value'>
+                        <input type="text" placeholder="Enter" ng-model='digestive.keluhan_lainnya_value'>
                     </li>
                 </ul>
             </div>
@@ -56,7 +67,7 @@
         <div class='item'>
             <div class="row-no-padding">
                 <md-input-container class="md-block">
-                    <md-select ng-model='vm.digestive.pertamas_select' placeholder='Pertama kali keluhan muncul'>
+                    <md-select ng-model='digestive.pertamas_select' placeholder='Pertama kali keluhan muncul'>
                         <md-option ng-value="red">red</md-option>
                         <md-option ng-value="green">green</md-option>
                         <md-option ng-value="blue">blue</md-option>
@@ -69,15 +80,15 @@
             <div class="row row-no-padding">
                 <div class="col col-50">
                     <md-input-container>
-                        <md-select ng-model='vm.digestive.frekuensi_select' placeholder='Frekuensi timbulnya keluhan'>
-                            <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                        <md-select ng-model='digestive.frekuensi_select' placeholder='Frekuensi timbulnya keluhan'>
+                            <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                         </md-select>
                     </md-input-container>
                 </div>
                 <div class="col col-50">
                     <div class="button-bar">
-                        <a class="button col col-50" grouped-radio="true" ng-model="vm.digestive.frekuensi_option">Hari</a>
-                        <a class="button col col-50" grouped-radio="false" ng-model="vm.digestive.frekuensi_option">Minggu</a>
+                        <a class="button col col-50" grouped-radio="true" ng-model="digestive.frekuensi_option">Hari</a>
+                        <a class="button col col-50" grouped-radio="false" ng-model="digestive.frekuensi_option">Minggu</a>
                     </div>
                 </div>
             </div>
@@ -86,22 +97,22 @@
         <div class='item'>
             <div class="row-no-padding">
                 <md-input-container class="md-block">
-                    <md-select ng-model='vm.digestive.kapan_keluhan_select' placeholder='Kapan keluhan terakhir'>
-                        <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                    <md-select ng-model='digestive.kapan_keluhan_select' placeholder='Kapan keluhan terakhir'>
+                        <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                     </md-select>
                 </md-input-container>
             </div>
         </div>
         <!--end item-->
         <div class='item'>
-            <button class="button next" ng-class="{'button-dark': vm.digestive.keluhan_perut}" ng-disabled="!vm.vm.digestive.keluhan_perut"
+            <button class="button next" ng-class="{'button-dark': digestive.keluhan_perut}" ng-disabled="!digestive.keluhan_perut"
                 ng-click="health1NextStep('health1_step2')">Berikutnya</button>
         </div>
         <div class="item">
             <h1 class="description">Apakah pernah dirawat (inap/jalan) di RS atau pernah dioperasi/ disarankan operasi</h1>
             <div class="button-bar">
-                <a class="button col col-50" grouped-radio="true" ng-model="vm.digestive.apakah_pernah">Ya</a>
-                <a class="button col col-50" grouped-radio="false" ng-model="vm.digestive.apakah_pernah">Tidak</a>
+                <a class="button col col-50" grouped-radio="true" ng-model="digestive.apakah_pernah">Ya</a>
+                <a class="button col col-50" grouped-radio="false" ng-model="digestive.apakah_pernah">Tidak</a>
             </div>
         </div>
         <!--end item-->
@@ -114,15 +125,15 @@
             <div class="row">
                 <div class="col">
                     <md-input-container class="md-block">
-                        <md-select ng-model="vm.digestive.kapan_month_select" placeholder='Januari'>
-                            <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                        <md-select ng-model="digestive.kapan_month_select" placeholder='Januari'>
+                            <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                         </md-select>
                     </md-input-container>
                 </div>
                 <div class="col">
                     <md-input-container class="md-block">
-                        <md-select ng-model="vm.digestive.kapan_year_select" placeholder='YYYY'>
-                            <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                        <md-select ng-model="digestive.kapan_year_select" placeholder='YYYY'>
+                            <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                         </md-select>
                     </md-input-container>
                 </div>
@@ -132,7 +143,7 @@
             <div class="row-no-padding">
                 <md-input-container class="md-block" flex-gt-sm>
                     <label>Nama Dokter / Rumah Sakit </label>
-                    <input type="text" ng-model="vm.digestive.nama_dokter" />
+                    <input type="text" ng-model="digestive.nama_dokter" />
                 </md-input-container>
             </div>
         </div>
@@ -144,29 +155,29 @@
                     <li class="item item-checkbox">
                         <p>Operasi</p>
                         <label class="checkbox">
-                            <input type="checkbox" ng-model='vm.digestive.tindakan_operasi'>
+                            <input type="checkbox" ng-model='digestive.tindakan_operasi'>
                         </label>
                     </li>
                     <li class="item  item-checkbox">
                         <p>Suntikan</p>
                         <label class="checkbox">
-                            <input type="checkbox" ng-model='vm.digestive.tindakan_suntikan'>
+                            <input type="checkbox" ng-model='digestive.tindakan_suntikan'>
                         </label>
                     </li>
                     <li class="item item-checkbox">
                         <p>Obat</p>
                         <label class="checkbox">
-                            <input type="checkbox" ng-model='vm.digestive.tindakan_obat_option'>
+                            <input type="checkbox" ng-model='digestive.tindakan_obat_option'>
                         </label>
-                        <ul ng-class="vm.digestive.tindakan_obat_option ? 'active':'disable'">
+                        <ul ng-class="digestive.tindakan_obat_option ? 'active':'disable'">
                             <li>
-                                <div ng-repeat="(index, row) in vm.digestive.tindakan_obat">
+                                <div ng-repeat="(index, row) in digestive.tindakan_obat">
                                     <div class='obat-item'>
                                         <div class="obat-index">{{index+1}}</div>
                                         <div class="row">
                                             <md-input-container class="md-block" flex-gt-sm>
                                                 <label>Obat yang pernah dikonsumsi</label>
-                                                <input type="text" ng-model="vm.digestive.tindakan_obat[index].yang" />
+                                                <input type="text" ng-model="digestive.tindakan_obat[index].yang" />
                                             </md-input-container>
                                         </div>
                                         <div class="row">
@@ -174,12 +185,12 @@
                                         </div>
                                         <div class="row">
                                             <div class="col">
-                                                <input type='radio' id='dokter' name='dokter' value='dokter' ng-model="vm.digestive.tindakan_obat[index].diperoleh_dari"
+                                                <input type='radio' id='dokter' name='dokter' value='dokter' ng-model="digestive.tindakan_obat[index].diperoleh_dari"
                                                 />
                                                 <label for='dokter'>Dokter</label>
                                             </div>
                                             <div class="col">
-                                                <input type='radio' id='obat_bebas' name='obat_bebas' value='obat_bebas' ng-model="vm.digestive.tindakan_obat[index].diperoleh_dari"
+                                                <input type='radio' id='obat_bebas' name='obat_bebas' value='obat_bebas' ng-model="digestive.tindakan_obat[index].diperoleh_dari"
                                                 />
                                                 <label for='obat_bebas'>Obat Bebas</label>
                                             </div>
@@ -187,28 +198,28 @@
                                         <div class="row row-no-padding vertical-space">
                                             <div class="col col-50">
                                                 <md-input-container>
-                                                    <md-select ng-model="vm.digestive.tindakan_obat[index].timbulnya_select" placeholder='Frekuensi timbulnya keluhan'>
-                                                        <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                                                    <md-select ng-model="digestive.tindakan_obat[index].timbulnya_select" placeholder='Frekuensi timbulnya keluhan'>
+                                                        <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                                                     </md-select>
                                                 </md-input-container>
                                             </div>
                                             <div class="col col-50">
                                                 <div class="button-bar">
-                                                    <a class="button col col-50" grouped-radio="true" ng-model="vm.digestive.tindakan_obat[index].timbulnya_option">Hari</a>
-                                                    <a class="button col col-50" grouped-radio="false" ng-model="vm.digestive.tindakan_obat[index].timbulnya_option">Minggu</a>
+                                                    <a class="button col col-50" grouped-radio="true" ng-model="digestive.tindakan_obat[index].timbulnya_option">Hari</a>
+                                                    <a class="button col col-50" grouped-radio="false" ng-model="digestive.tindakan_obat[index].timbulnya_option">Minggu</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="item row-no-padding">
                                             <h1 class="description">Masih memakai obat ini</h1>
                                             <div class="button-bar">
-                                                <a class="button col col-50" grouped-radio="'Ya'" ng-model="vm.digestive.tindakan_obat[index].mashit">Ya</a>
-                                                <a class="button col col-50" grouped-radio="'Tidak'" ng-model="vm.digestive.tindakan_obat[index].mashit">Tidak</a>
+                                                <a class="button col col-50" grouped-radio="'Ya'" ng-model="digestive.tindakan_obat[index].mashit">Ya</a>
+                                                <a class="button col col-50" grouped-radio="'Tidak'" ng-model="digestive.tindakan_obat[index].mashit">Tidak</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <button class="button button-full obat-add" ng-click='vm.addObat()'>+ Tambah Jenis Obat</button>
+                                <button class="button button-full obat-add" ng-click='addObat()'>+ Tambah Jenis Obat</button>
                             </li>
                             <!--end li-->
                         </ul>
@@ -218,16 +229,16 @@
                     <li class="item item-checkbox">
                         <p>Lainnya</p>
                         <label class="checkbox">
-                            <input type="checkbox" ng-model='vm.digestive.tindakan_lainnya'>
+                            <input type="checkbox" ng-model='digestive.tindakan_lainnya'>
                         </label>
-                        <input class="vertical-space" type="text" placeholder="Enter" ng-model='vm.digestive.tindakan_lainnya_value' ng-class="vm.digestive.tindakan_lainnya ? 'active':'disable'">
+                        <input class="vertical-space" type="text" placeholder="Enter" ng-model='digestive.tindakan_lainnya_value' ng-class="digestive.tindakan_lainnya ? 'active':'disable'">
                     </li>
                 </ul>
             </div>
         </div>
         <!--end item-->
         <div class='item'>
-            <button class="button next" ng-class="{'button-dark': vm.digestive.obat}" ng-disabled="!vm.digestive.obat" ng-click="health1NextStep('health1_step2')">Berikutnya</button>
+            <button class="button next" ng-class="{'button-dark': digestive.obat}" ng-disabled="!digestive.obat" ng-click="health1NextStep('health1_step2')">Berikutnya</button>
         </div>
         <!--end item-->
         <div class="item">
@@ -240,20 +251,20 @@
                 <li class="item item-checkbox">
                     <p>Endoskopi</p>
                     <label class="checkbox">
-                        <input type="checkbox" ng-model='vm.digestive.pemeriksaan_option'>
+                        <input type="checkbox" ng-model='digestive.pemeriksaan_option'>
                     </label>
-                    <div class="row row-no-padding" ng-class="vm.digestive.pemeriksaan_option ? 'active':'disable'">
+                    <div class="row row-no-padding" ng-class="digestive.pemeriksaan_option ? 'active':'disable'">
                         <div class="col">
                             <md-input-container>
-                                <md-select ng-model='vm.digestive.pemeriksaan_waktu' placeholder='Waktu Pemeriksaan'>
-                                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                                <md-select ng-model='digestive.pemeriksaan_waktu' placeholder='Waktu Pemeriksaan'>
+                                    <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                                 </md-select>
                             </md-input-container>
                         </div>
                         <div class="col">
                             <md-input-container>
-                                <md-select ng-model='vm.digestive.pemeriksaan_hasil' placeholder='Hasil Pemeriksaan'>
-                                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                                <md-select ng-model='digestive.pemeriksaan_hasil' placeholder='Hasil Pemeriksaan'>
+                                    <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                                 </md-select>
                             </md-input-container>
                         </div>
@@ -264,29 +275,29 @@
                 <li class="item item-checkbox">
                     <p>Lainnya</p>
                     <label class="checkbox">
-                        <input type="checkbox" ng-model='vm.digestive.lainnya_option'>
+                        <input type="checkbox" ng-model='digestive.lainnya_option'>
                     </label>
-                    <div ng-class="vm.digestive.lainnya_option ? 'active':'disable'">
+                    <div ng-class="digestive.lainnya_option ? 'active':'disable'">
 
                         <div class="row row-no-padding">
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label>Nama Pemeriksaan </label>
-                                <input type="text" ng-model="vm.digestive.lainnya_input" />
+                                <input type="text" ng-model="digestive.lainnya_input" />
                             </md-input-container>
                         </div>
 
                         <div class="row row-no-padding">
                             <div class="col">
                                 <md-input-container>
-                                    <md-select ng-model='vm.digestive.lainnya_waktu' placeholder='Waktu Pemeriksaan'>
-                                        <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                                    <md-select ng-model='digestive.lainnya_waktu' placeholder='Waktu Pemeriksaan'>
+                                        <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                                     </md-select>
                                 </md-input-container>
                             </div>
                             <div class="col">
                                 <md-input-container>
-                                    <md-select ng-model='vm.digestive.lainnya_hasil' placeholder='Hasil Pemeriksaan'>
-                                        <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                                    <md-select ng-model='digestive.lainnya_hasil' placeholder='Hasil Pemeriksaan'>
+                                        <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                                     </md-select>
                                 </md-input-container>
                             </div>
@@ -296,5 +307,12 @@
                 </li>
             </div>
         </div>
-    </div>
-</div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row" class="layout-row">
+      <button class="md-button button-full" type="button"  ng-click="closeDialog()">
+        <span class="ng-scope">Selesai</span>
+      </button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
