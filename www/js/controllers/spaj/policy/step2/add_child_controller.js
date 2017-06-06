@@ -30,7 +30,7 @@ function addChildCtrl ($state, $scope, $rootScope, SpajService, $ionicSideMenuDe
 
   vm.nextStep = function () {
     vm.dataAddChild.isComplete = validator()
-    SpajService.setData('step2', vm.dataAddChild)
+    SpajService.setData('health_data', vm.dataAddChild)
     $rootScope.nextStep()
   }
 

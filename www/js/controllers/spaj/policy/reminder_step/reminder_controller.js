@@ -11,7 +11,7 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService) {
       'ADDITIONAL_1': 'Tertanggung Tambahan 2'
     }
   var idListToCheck = Object.keys(listToCheck)
-  vm.healthData = SpajService.getData('step2')
+  vm.healthData = SpajService.getData('health_data')
   vm.healthFormValidStatus = {
     is_checked: false,
     null_properties: []
@@ -161,7 +161,7 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService) {
 
   function checkMissingData () {
    // var healthData = vm.healthData
-    var infoData = SpajService.getData('step1') || {}
+    var infoData = SpajService.getData('start') || {}
     var missingData = {MAIN_INSURED: []}
     var totalMissing = 0
     Object.keys(infoData).forEach(function (key) {

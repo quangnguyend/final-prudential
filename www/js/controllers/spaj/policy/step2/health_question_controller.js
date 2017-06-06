@@ -84,13 +84,13 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
         tumor: null,
         kista: null,
         benjolan: null,
-        kainnya: null,
+        kainnya: null
       },
       lokasi: {
         leher: null,
         lengan: null,
         punggung: null,
-        lainnya: null,
+        lainnya: null
       },
       kapan_pertama: null,
       sudah: null,
@@ -149,7 +149,6 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
   vm.digestivePopupTouched = false
   vm.tumorPopupTouched = false
 
-
   vm.fakeoption = [
 
     {
@@ -178,7 +177,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
 
   vm.nextStep = function () {
     vm.healthData.isComplete = validator()
-    SpajService.setData('step2', vm.healthData)
+    SpajService.setData('health_data', vm.healthData)
     $rootScope.nextStep()
   }
 
@@ -190,22 +189,22 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     return true
   }
   vm.validateTummor = function () {
-    var items = vm.healthData.tumorPopupData;
-    for (key in items) {
+    var items = vm.healthData.tumorPopupData
+    for (var key in items) {
       if (items[key] == null) return false
     }
     return true
   }
   vm.validateEye = function () {
-    var items = vm.healthData.tumorPopupData;
-    for (key in items) {
+    var items = vm.healthData.tumorPopupData
+    for (var key in items) {
       if (items[key] == null) return false
     }
     return true
   }
   vm.validateRespiratory = function () {
-    var items = vm.healthData.respiratoryPopupData;
-    for (key in items) {
+    var items = vm.healthData.respiratoryPopupData
+    for (var key in items) {
       if (items[key] == null) return false
     }
     return true
@@ -251,8 +250,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     $ionicScrollDelegate.scrollTo(0, distance, true)
   }
 
-
-  // popup Tumor 
+  // popup Tumor
   vm.health1Steps = ['health1_step1']
   vm.health1NextStep = function (id) {
     var STEP_HEIGHT = $('.multi-step').height() + 120
@@ -260,7 +258,6 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, UserS
     if (vm.health1Steps.indexOf(id) < 0) vm.health1Steps.push(id)
     $ionicScrollDelegate.scrollTo(0, distance, true)
   }
-
 
   // ======================== PopupEye ======================== //
 

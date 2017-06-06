@@ -33,8 +33,8 @@ function beneficiariesCtrl ($scope, $rootScope, $state, SpajService) {
   }
 
   vm.handleSubmit = function () {
-    $rootScope.nextStep('step8')
+    $rootScope.nextStep()
     // TODO
-    SpajService.setData('step5', {isComplete: validator()})
+    SpajService.setData('beneficiaries', {isComplete: validator()})
   }
 }
