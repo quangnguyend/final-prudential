@@ -173,6 +173,7 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService) {
     })
 
     missingData['MAIN_INSURED'] = missingData['MAIN_INSURED'].concat(vm.healthFormValidStatus.null_properties.map(function (field) { return vm.getDisplayText(field) }))
+    missingData['MAIN_INSURED'] = missingData['MAIN_INSURED'].filter(function (item) { return !!item })
     totalMissing = totalMissing + vm.healthFormValidStatus.null_properties.length
     missingData.totalMissing = totalMissing
     return missingData
@@ -194,7 +195,6 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService) {
         return checkList[key]
       }
     })
-
     missingData = missingData.filter(function (item) { return !!item })
     return missingData
   }
@@ -206,7 +206,6 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService) {
   })
 
   vm.inCompleteList = vm.inCompleteList.filter(function (item) { return !!item })
-
   vm.toggle = function (key) {
     vm.showData[key] = !vm.showData[key]
   }
