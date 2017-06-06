@@ -37,7 +37,7 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
 
   vm.switchTab = function (tab) {
     vm.currentTab = tab || MAIN_INSURED_TAB
-    vm.currentTabIndex = index
+    // vm.currentTabIndex = index
   }
 
   vm.addAdditionalTab = function () {

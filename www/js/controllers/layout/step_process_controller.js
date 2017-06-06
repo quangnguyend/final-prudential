@@ -49,7 +49,6 @@ function stepProcessCtr ($scope, $rootScope, $state, $timeout, SpajService) {
     }
     if (!foundRoute) {
       var finishedState = vm.pageList.length === 7 ? 'terms_conditions' : 'terms_conditions'
-      console.log(SpajService.getData())
       $state.go('app.' + finishedState)
     }
   }
@@ -76,7 +75,6 @@ function stepProcessCtr ($scope, $rootScope, $state, $timeout, SpajService) {
 
   this.$onInit = function () {
     SpajService.getStepStatus(function (rs) {
-      console.log(rs)
       rs.forEach(function (step) {
         $scope.$apply(function () { updateCompleteStatus(step.step, step.isComplete) })
       })
