@@ -956,6 +956,10 @@ th {
 /* Upload document page*/
 
 .upload-document-page {
+  h1.description{
+    @extend .font-size-huge;
+    white-space: normal;
+  }
   .upload-document-name {
     margin-top: 7px;
     display: inline-block;
