@@ -1,6 +1,6 @@
 'use strict'
 
-function paymentTopupCtrl ($scope, $rootScope, $ionicSideMenuDelegate) {
+function paymentTopupCtrl ($scope, $state, $rootScope, $ionicSideMenuDelegate) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
@@ -16,6 +16,7 @@ function paymentTopupCtrl ($scope, $rootScope, $ionicSideMenuDelegate) {
   }, true);
   // save and redirect to another page
   vm.save = function () {
-    console.log(vm.data);
+    // console.log(vm.data);
+    $state.go('app.spaj_remider_before_submit');
   }
 }

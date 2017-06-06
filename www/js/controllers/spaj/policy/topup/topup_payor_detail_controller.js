@@ -99,7 +99,7 @@ function topupPayorDetailCtrl ($state, $scope, $rootScope, $filter) {
   }, true);
 
   vm.next = function () {
-    console.log(vm.data);
-    //$rootScope.nextStep()
+    // console.log(vm.data);
+    $rootScope.nextStep()
   }
 }
