@@ -1,22 +1,13 @@
 /* ========================== CUSTOMIZE CSS ========================== */
-html {
-  font-family: 'Frutiger-Regular';
+html, body{
+  @extend .standard-body;
 }
 
 body {
-  font-family: 'Frutiger-Regular';
   color: #5b6770;
-}
-
-button, html, input, select, textarea {
-  font-family: 'Frutiger-Regular' !important;
-}
-
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: #191919;
-  font-weight: 500;
-  font-family: "Frutiger-Regular", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
-  line-height: 1.2;
+  button, input, label, option, select, textarea, md-select {
+    @extend .button-text;
+  }
 }
 
 /* ========================== HEADER + FOOTER ========================== */
@@ -64,7 +55,7 @@ ion-footer-bar.bar.bar-assertive {
 }
 .bar {
   &.bar-header .title {
-    font-size: 25px !important;
+    //font-size: 25px !important;
     color: #fff !important;
     font-weight: normal;
     height: 55px;
@@ -101,7 +92,7 @@ ion-footer-bar.bar.bar-assertive {
   .btn {
     color: #fff;
     display: block;
-    font-size: 17px;
+    //font-size: 17px;
     line-height: 53px;
     text-align: center;
     text-decoration: none;
@@ -132,18 +123,18 @@ md-input-container:not(.md-input-has-value) input:not(:focus) {
 }
 
 label.item-stacked-label {
-  font-size: 17px;
+  //font-size: 17px;
 }
 
 .txt-large {
   color: #000;
-  font-size: 34px;
+  //font-size: 34px;
   line-height: 48px;
 }
 
 .item-input-no-label {
   border-bottom: 1px solid #efecec !important;
-  font-size: 34px !important;
+  //font-size: 34px !important;
   height: 80px !important;
   width: 100%;
 }
@@ -263,7 +254,7 @@ input {
     display: block;
     height: 25px;
     line-height: 25px;
-    font-size: 17px;
+    //font-size: 17px;
     transition: .28s ease;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -326,7 +317,7 @@ input {
 input[type="date"] {
   border-bottom: 10px solid #D8D8D8;
   padding-bottom: 4px;
-  font-size: 16px;
+  //font-size: 16px;
   color: #49545D;
 }
 
@@ -348,7 +339,7 @@ select {
   line-height: 16px;
   border: none;
   background-color: #fff;
-  font-size: 17px;
+  //font-size: 17px;
 }
 
 .blur-text {
@@ -358,6 +349,7 @@ select {
 /*style for tab menus*/
 
 .tab-menu {
+  @extend .tab-text;
   padding: 0px !important;
   .col {
     text-align: center;
@@ -427,7 +419,7 @@ select {
   font-family: "Roboto";
   font-style: normal;
   font-weight: normal;
-  font-size: 17px;
+  //font-size: 17px;
   line-height: 26 px;
   color: #212121;
 }
@@ -480,7 +472,7 @@ select {
     border: none;
     color: white;
     text-align-last: right;
-    font-size: 17px;
+    //font-size: 17px;
   }
   select option {
     background: none;
@@ -500,48 +492,35 @@ select {
 
 /* ================ COMMON CSS ================ */
 
-body {
-  font-size: 17px;
-  *, label {
-    font-size: 17px;
-  }
-}
 
-.item {
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    font-size: 17px;
-  }
-}
 
 .description {
   padding: 20px;
-  white-space: normal !important;
-  font-weight: 600;
+  white-space: normal;
 }
 
 .item {
   input {
     &[type=search], &[type=text], &[type=password], &[type=datetime], &[type=datetime-local], &[type=date], &[type=month], &[type=time], &[type=week], &[type=number], &[type=email], &[type=url], &[type=tel], &[type=color] {
-      font-size: 17px;
+      //font-size: 17px;
     }
   }
   textarea {
-    font-size: 17px;
+    //font-size: 17px;
   }
   .input-label {
     width: 100%;
-    font-size: 17px;
+    //font-size: 17px;
     padding-bottom: 0px;
   }
   .button-block .button {
-    font-size: 17px;
+    //font-size: 17px;
     font-weight: 400;
   }
   .form_select {
     font-style: normal;
     font-weight: normal;
-    font-size: 17px;
+    //font-size: 17px;
     line-height: 100%;
     width: 100%;
     color: rgba(91, 103, 112, 0.5);
@@ -553,7 +532,7 @@ body {
     border: none;
   }
   .item-note, .button, select {
-    font-size: 17px;
+    //font-size: 17px;
   }
 }
 
@@ -637,37 +616,37 @@ body {
 
 @media only screen and (min-width: 768px) {
   .body, body *, label.item-stacked-label, body label, label.item, .item select, #step-header select {
-    font-size: 25px;
+    //font-size: 25px;
   }
   #eye-popup .popup-content .number {
-    font-size: 20px;
+    //font-size: 20px;
   }
   #health_question1 .message {
-    font-size: 17px; 
+    //font-size: 17px; 
   }
   .description {
-    font-size: 25px;
+    //font-size: 25px;
     line-height: 30px;
   }
   .bar.bar-header .title, .bar-footer .btn {
-    font-size: 25px;
+    //font-size: 25px;
   }
   .tab-menu .col .d-table-cell {
-    font-size: 20px;
+    //font-size: 20px;
   }
   [type="radio"] {
     &:not(:checked) + label, &:checked + label {
-      font-size: 25px;
+      //font-size: 25px;
     }
   }
   .item {
     input {
       &[type=search], &[type=text], &[type=password], &[type=datetime], &[type=datetime-local], &[type=date], &[type=month], &[type=time], &[type=week], &[type=number], &[type=email], &[type=url], &[type=tel], &[type=color] {
-        font-size: 25px;
+        //font-size: 25px;
       }
     }
     textarea, .input-label, .button-block .button, .form_select, .item-note, .button, h1, h2, h3, h4, h5, h6 {
-      font-size: 25px;
+      //font-size: 25px;
     }
   }
   .popup-prudential {
