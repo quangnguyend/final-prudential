@@ -17,12 +17,12 @@
             </div>
             <div class="row">
               <div class="col-50">
-                <input id='OrangTua' type="radio" name='kadaluwarasa' />
+                <input ng-model="vm.data.type_of_abnormality_suffered"  ng-value="1" value="Orang Tua" id='OrangTua' type="radio" name='kadaluwarasa' />
                 <label class='' for="OrangTua">Orang Tua</label>
               </div>
               <div class="col-50">
-                <input id='OrangTua1' type="radio" name='kadaluwarasa' />
-                <label class='' for="OrangTua1">Orang Tua</label>
+                <input ng-model="vm.data.type_of_abnormality_suffered" value="2" id='SuamidanIstri' type="radio" name='kadaluwarasa' />
+                <label class='' for="SuamidanIstri">Suami dan Istri </label>
               </div>
             </div>
           </div>
@@ -31,11 +31,11 @@
           <div class="row-no-padding">
             <div class="row">
               <div class="col-50">
-                <input id='Anak' type="radio" name='kadaluwarasa' />
+                <input ng-model="vm.data.type_of_abnormality_suffered" value="3" id='Anak' type="radio" name='kadaluwarasa' />
                 <label class='' for="Anak">Anak</label>
               </div>
               <div class="col-50">
-                <input id='Lainnya' type="radio" name='kadaluwarasa' />
+                <input ng-model="vm.data.type_of_abnormality_suffered" value="4" id='Lainnya' type="radio" name='kadaluwarasa' />
                 <label class='' for="Lainnya">Lainnya</label>
               </div>
             </div>
@@ -43,52 +43,49 @@
         </div>
         <div class='item'>
           <div class="row-no-padding">
-            <div class="row">
+            <div class="">
               <label class="item-stacked-label">
                 <div class="input-label">Pekerjaan</div>
               </label>
             </div>
-            <div class="row">
-              <select class="form_select" ng-model='agent.occupation'>
-                  <option selected value>Pegawai Negeri Sipil/ BUMN/ BUMD/ Perusahaan Negara/ Pejabat Pemerintah</option>
-                  <option>Blue</option>
-                  <option>Green</option>
-                  <option>Red</option>
-                </select>
+            <div class="">
+              <md-input-container class="md-block mt-0">
+                <md-select ng-model="vm.data.work">
+                  <md-option ng-repeat="c in vm.works" value="{{c.value}}" ng-selected="$first">{{c.name}}</md-option>
+                </md-select>
+              </md-input-container>
             </div>
           </div>
         </div>
         <div class='item'>
           <div class="row-no-padding">
-            <div class="row">
+            <div class="">
               <label class="item-stacked-label">
                 <div class="input-label">Department</div>
               </label>
             </div>
-            <div class="row">
-              <select class="form_select" ng-model='agent.occupation'>
-                  <option selected value>Select</option>
-                  <option>Blue</option>
-                  <option>Green</option>
-                  <option>Red</option>
-                </select>
+            <div class="">
+              <md-input-container class="md-block mt-0">
+                <md-select ng-model="vm.data.department">
+                  <md-option ng-repeat="d in vm.departments" value="{{d.value}}" ng-selected="$first">{{d.name}}</md-option>
+                </md-select>
+              </md-input-container>
             </div>
           </div>
         </div>
         <div class='item'>
           <div class="row-no-padding">
-            <div class="row">
+            <div class="">
               <label class="item-stacked-label">
                 <div class="input-label">Jabatan/ Pangkat / Golongan</div>
               </label>
             </div>
-            <div class="row">
-              <select class="form_select" ng-model='agent.occupation'>
-                  <option selected value>Select</option>
-                  <option>Blue</option>
-                  <option>Green</option>
-                  <option>Red</option>
-                </select>
+            <div class="">
+              <md-input-container class="md-block mt-0">
+                <md-select ng-model="vm.data.position">
+                  <md-option ng-repeat="p in vm.positions" value="{{p.value}}" ng-selected="$first">{{p.name}}</md-option>
+                </md-select>
+              </md-input-container>
             </div>
           </div>
         </div>
@@ -101,26 +98,26 @@
             </div>
             <div class="row">
               <div class="col-50">
-                <ion-checkbox>Gaji</ion-checkbox>
+                <ion-checkbox ng-model="vm.regular_income[0].selected">{{vm.regular_income[0].name}}</ion-checkbox>
               </div>
               <div class="col-50">
-                <ion-checkbox>Laba Perusahaan</ion-checkbox>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-50">
-                <ion-checkbox>Hasil Investasi</ion-checkbox>
-              </div>
-              <div class="col-50">
-                <ion-checkbox>Bisnis Pribadi</ion-checkbox>
+                <ion-checkbox ng-model="vm.regular_income[1].selected">{{vm.regular_income[1].name}}</ion-checkbox>
               </div>
             </div>
             <div class="row">
               <div class="col-50">
-                <ion-checkbox>Lainnya</ion-checkbox>
+                <ion-checkbox ng-model="vm.regular_income[2].selected">{{vm.regular_income[2].name}}</ion-checkbox>
               </div>
               <div class="col-50">
-                <ion-checkbox></ion-checkbox>
+                <ion-checkbox ng-model="vm.regular_income[3].selected">{{vm.regular_income[3].name}}</ion-checkbox>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <ion-checkbox ng-model="vm.regular_income[4].selected">{{vm.regular_income[4].name}}</ion-checkbox>
+              </div>
+              <div class="col-50">
+               <!-- <ion-checkbox></ion-checkbox>-->
               </div>
             </div>
           </div>
@@ -134,26 +131,26 @@
             </div>
             <div class="row">
               <div class="col-50">
-                <ion-checkbox>Bonus</ion-checkbox>
+                <ion-checkbox ng-model="vm.non_routine_income[0].selected">{{vm.non_routine_income[0].name}}</ion-checkbox>
               </div>
               <div class="col-50">
-                <ion-checkbox>Hadiah/warisan</ion-checkbox>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-50">
-                <ion-checkbox>Komisi</ion-checkbox>
-              </div>
-              <div class="col-50">
-                <ion-checkbox>Hasil investasi</ion-checkbox>
+                <ion-checkbox ng-model="vm.non_routine_income[1].selected">{{vm.non_routine_income[1].name}}</ion-checkbox>
               </div>
             </div>
             <div class="row">
               <div class="col-50">
-                <ion-checkbox>Lainnya</ion-checkbox>
+                <ion-checkbox ng-model="vm.non_routine_income[2].selected">{{vm.non_routine_income[2].name}}</ion-checkbox>
               </div>
               <div class="col-50">
-                <ion-checkbox>Penjualan aset</ion-checkbox>
+                <ion-checkbox ng-model="vm.non_routine_income[3].selected">{{vm.non_routine_income[3].name}}</ion-checkbox>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <ion-checkbox ng-model="vm.non_routine_income[4].selected">{{vm.non_routine_income[4].name}}</ion-checkbox>
+              </div>
+              <div class="col-50">
+                <ion-checkbox ng-model="vm.non_routine_income[5].selected">{{vm.non_routine_income[5].name}}</ion-checkbox>
               </div>
             </div>
           </div>
@@ -165,13 +162,12 @@
                 <div class="input-label">Total Penghasilan rutin per bulan </div>
               </label>
             </div>
-            <div class="row">
-              <select class="form_select" ng-model='agent.occupation'>
-                  <option selected value>> IDR 5 Juta - IDR 7,5 Juta</option>
-                  <option>Blue</option>
-                  <option>Green</option>
-                  <option>Red</option>
-                </select>
+            <div class="">
+              <md-input-container class="md-block mt-0">
+                <md-select ng-model="vm.data.total_earnings_per_month">
+                  <md-option ng-repeat="e in vm.earningRanks" value="{{e.value}}" ng-selected="$first">{{e.name}}</md-option>
+                </md-select>
+              </md-input-container>
             </div>
           </div>
         </div>
@@ -182,13 +178,12 @@
                 <div class="input-label">Total Penghasilan non-rutin per bulan </div>
               </label>
             </div>
-            <div class="row">
-              <select class="form_select" ng-model='agent.occupation'>
-                  <option selected value>> IDR 5 Juta - IDR 7,5 Juta</option>
-                  <option>Blue</option>
-                  <option>Green</option>
-                  <option>Red</option>
-                </select>
+            <div class="">
+              <md-input-container class="md-block mt-0">
+                <md-select ng-model="vm.data.total_non_routine_income_per_month">
+                  <md-option ng-repeat="e in vm.earningRanks" value="{{e.value}}" ng-selected="$first">{{e.name}}</md-option>
+                </md-select>
+              </md-input-container>
             </div>
           </div>
         </div>
@@ -201,26 +196,25 @@
             </div>
             <div class="row">
               <div class="col-50">
-                <ion-checkbox>Tabungan</ion-checkbox>
+                <ion-checkbox ng-model="vm.purpose_of_top_up_submissions[0].selected" >{{vm.purpose_of_top_up_submissions[0].name}}</ion-checkbox>
               </div>
               <div class="col-50">
-                <ion-checkbox>Investasi</ion-checkbox>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-50">
-                <ion-checkbox>Pendidikan</ion-checkbox>
-              </div>
-              <div class="col-50">
-                <ion-checkbox>Dana pensiun</ion-checkbox>
+                <ion-checkbox ng-model="vm.purpose_of_top_up_submissions[1].selected">{{vm.purpose_of_top_up_submissions[1].name}}</ion-checkbox>
               </div>
             </div>
             <div class="row">
               <div class="col-50">
-                <ion-checkbox>Lainnya</ion-checkbox>
+                <ion-checkbox ng-model="vm.purpose_of_top_up_submissions[2].selected" >{{vm.purpose_of_top_up_submissions[1].name}}</ion-checkbox>
               </div>
               <div class="col-50">
-                <ion-checkbox></ion-checkbox>
+                <ion-checkbox ng-model="vm.purpose_of_top_up_submissions[3].selected">{{vm.purpose_of_top_up_submissions[3].name}}</ion-checkbox>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <ion-checkbox ng-model="vm.purpose_of_top_up_submissions[4].selected">{{vm.purpose_of_top_up_submissions[4].name}}</ion-checkbox>
+              </div>
+              <div class="col-50">
               </div>
             </div>
           </div>

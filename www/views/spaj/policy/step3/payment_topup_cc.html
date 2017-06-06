@@ -18,15 +18,15 @@
           <div class="block_table">
             <div class="row">
               <div class="col-50 cell_padding border_right">First Premi</div>
-              <div class="col-50 cell_padding">1.000.000</div>
+              <div class="col-50 cell_padding">1,000,000</div>
             </div>
             <div class="row bordered">
               <div class="col-50 cell_padding border_right">Top-Up</div>
-              <div class="col-50 cell_padding">50.000</div>
+              <div class="col-50 cell_padding">{{vm.topup_value| number}}</div>
             </div>
             <div class="row no_border_bottom">
               <div class="col-50 cell_padding border_right">Pembayaran</div>
-              <div class="col-50 cell_padding">1.050.000</div>
+              <div class="col-50 cell_padding">1,050,000</div>
             </div>
           </div>
         </div>
@@ -37,21 +37,21 @@
             </div>
             <div class="row">
               <div class="col-33">
-                <input id='OrangTua' type="radio" name='kadaluwarasa' />
-                <label class='' for="OrangTua">Kartu Kredit</label>
+                <input id='KartuKredit' value="Kartu Kredit" type="radio" name='kadaluwarasa' ng-model="vm.data.payment_method" />
+                <label class='' for="KartuKredit">Kartu Kredit</label>
               </div>
               <div class="col-33">
-                <input id='OrangTua1' type="radio" name='kadaluwarasa' />
-                <label class='' for="OrangTua1">Kartu Debit</label>
+                <input id='KartuDebit' value="Kartu Debit" type="radio" name='kadaluwarasa' ng-model="vm.data.payment_method" />
+                <label class='' for="KartuDebit">Kartu Debit</label>
               </div>
               <div class="col-33">
-                <input id='banTransfer' type="radio" name='kadaluwarasa' />
+                <input id='banTransfer' value="Bank transfer / ATM" type="radio" name='kadaluwarasa' ng-model="vm.data.payment_method" />
                 <label class='' for="banTransfer">Bank transfer / ATM</label>
               </div>
             </div>
           </div>
         </div>
-        <div class='item block_inside_child'>
+        <div class='item block_inside_child' ng-if="vm.data.payment_method == 'Kartu Kredit' && vm.topup_value > 0">
           <div class="row-no-padding">
             <div class="row">
               <label class="item-stacked-label">
@@ -60,12 +60,12 @@
             </div>
             <div class="row">
               <div class="col-50">
-                <input id='OrangTua' type="radio" name='kadaluwarasa' />
-                <label class='' for="OrangTua">Kartu Debit</label>
+                <input id='KartuDebit1' type="radio" name='kadaluwarasa' />
+                <label class='' for="KartuDebit1">Kartu Debit</label>
               </div>
               <div class="col-50">
-                <input id='banTransfer' type="radio" name='kadaluwarasa' />
-                <label class='' for="banTransfer">Bank transfer / ATM</label>
+                <input id='banTransfer1' type="radio" name='kadaluwarasa' />
+                <label class='' for="banTransfer1">Bank transfer / ATM</label>
               </div>
             </div>
           </div>
@@ -96,6 +96,6 @@
     </form>
   </ion-content>
   <ion-footer-bar class="bar bar-footer bar-assertive">
-    <div ng-click="vm.saveSpaj()" title="Lanjutkan" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></div>
+    <div ng-click="vm.save()" title="Lanjutkan" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></div>
   </ion-footer-bar>
 </ion-view>

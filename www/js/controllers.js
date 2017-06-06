@@ -75,6 +75,7 @@ angular
   .controller('EyeController', eyeController)
   .controller('DigestiveController', digestiveController)
   .controller('RespiratoryController', respiratoryController)
+  .controller('PaymentTopupCtrl', paymentTopupCtrl)
 
   .directive('dataService', dataService)
   .directive('groupedRadio', groupedRadio)
