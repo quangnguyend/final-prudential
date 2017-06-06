@@ -1508,12 +1508,17 @@ th {
     text-align: center;
     .button {
       display: block;
-      padding: 15px 28px;
       min-height: 10px;
       &:hover {
         background-color: #d6d6d6;
       }
     }
+  }
+  .sm-font{
+    font-size: 12px;
+  }
+  .mt-0{
+    margin-top: 0px;
   }
 }
 
@@ -1553,6 +1558,15 @@ th {
     }
   }
   padding-bottom: 50px;
+  .sm-font{
+    font-size: 12px;
+  }
+  .input-light{
+    background: transparent!important;
+    font-size: 16px;
+    color: #fff!important;
+    border: none!important;
+  }
 }
 
 #top_up_payment {
@@ -1567,7 +1581,7 @@ th {
   }
   .block_table {
     border: 1px solid #979797;
-    width: 50%;
+    width: 80%;
     margin: 35px auto 150px;
     .row {
       border-bottom: 1px solid #979797;
@@ -1594,7 +1608,7 @@ th {
   }
   .block_inside_child {
     padding: 30px 50px;
-    margin-bottom: 130px;
+    margin-bottom: 50px;
   }
 }
 /* End Top Up */

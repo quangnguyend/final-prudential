@@ -298,6 +298,16 @@ angular
             controllerAs: 'vm'
           }
         }
+      }).state('app.payment_topup', {
+        cache: false,
+        url: '/payment_topup',
+        views: {
+          menuContent: {
+            templateUrl: 'views/spaj/policy/step3/payment_topup_cc.html',
+            controller: 'PaymentTopupCtrl',
+            controllerAs: 'vm'
+          }
+        }
       })
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/spaj_start')
