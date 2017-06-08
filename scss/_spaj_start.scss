@@ -19,8 +19,12 @@
 
   .break-line{
     @extend .font-size-big;
-    padding: 0px 200px;
+    padding: 0px 10rem;
     white-space: normal;
+
+    @media screen and (max-width: 568px) {
+      padding: 0px 2rem;
+    }
   }
 
   .item.gray-block {
