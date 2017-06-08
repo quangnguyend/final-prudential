@@ -1,12 +1,18 @@
 /* ========================== CUSTOMIZE CSS ========================== */
-html, body{
+html, body {
   @extend .standard-body;
+  
+  h1, h2, h3, h4, h5, h6{
+    color: $main-font-color !important;
+  }
 }
+
+
 
 body {
   color: #5b6770;
-  button, input, label, option, select, textarea, md-select {
-    @extend .button-text;
+  input, label, option, select, textarea, md-select {
+    @extend .standard-body;
   }
 }
 

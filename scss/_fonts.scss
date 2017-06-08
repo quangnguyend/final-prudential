@@ -16,7 +16,7 @@ $fontPath: '../fonts/Frutiger/';
 
 @font-face {
   font-family: 'Frutiger 45 Light-Regular';
-  src: url($fontPath+'Frutiger45Light-Regular.ttf') format('truetype');
+  src: url($fontPath+'FrutigerLTStd-Light.otf') format("opentype");
   font-style: normal;
   font-stretch: normal;
 }
