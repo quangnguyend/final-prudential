@@ -17,6 +17,16 @@
     border: none;
   }
 
+  .break-line{
+    @extend .font-size-big;
+    padding: 0px 10rem;
+    white-space: normal;
+
+    @media screen and (max-width: 568px) {
+      padding: 0px 2rem;
+    }
+  }
+
   .item.gray-block {
     border-top: solid 1px #EFECEC;
     border-bottom: solid 1px #EFECEC;
