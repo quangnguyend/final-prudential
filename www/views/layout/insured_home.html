@@ -4,7 +4,7 @@
             <div class="row-no-padding">
                 <md-input-container class="md-block" flex-gt-sm>
                     <label>Nama Lengkap</label>
-                    <input ng-model='data.name' required />
+                    <input ng-model='data.name' ng-change="vm.onlyAlphabets($event,this)" required />
                 </md-input-container>
             </div>
         </div>
@@ -41,7 +41,7 @@
                 <div class="row indent_row responsive-sm">
                     <div class="col-50">
                         <input name='radio' class='custom_radio' type="radio" id='{{insuredName}}-pira' />
-                        <label class='' for="{{insuredName}}-pira">Pira</label>
+                        <label class='' for="{{insuredName}}-pira">Pria</label>
                     </div>
                     <div class="col-50">
                         <input name='radio' class='custom_radio' type="radio" id='{{insuredName}}-wanita' />
@@ -79,13 +79,8 @@
     </div>
     <div class='item'>
         <div class="row-no-padding">
-            <md-autocomplete
-                md-selected-item="selectedItem"
-                md-search-text="searchText"
-                md-items="item in querySearch(searchText)"
-                md-item-text="item.name"
-                md-min-length="0"
-                md-floating-label="Negara Kelahiran">
+            <md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in querySearch(searchText)" md-item-text="item.name"
+                md-min-length="0" md-floating-label="Negara Kelahiran">
                 <md-item-template>
                     <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.name}}</span>
                 </md-item-template>
@@ -167,12 +162,12 @@
                     <ion-checkbox>Pembayar pajak AS</ion-checkbox>
                 </div>
                 <div class="col-33">
-                    <ion-checkbox>Lainya</ion-checkbox>
+                    <ion-checkbox ng-model="data.Lainnya">Lainnya</ion-checkbox>
                 </div>
             </div>
         </div>
     </div>
-    <div class='item'>
+    <div class='item' ng-show="data.Lainnya === true">
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label>No NPWP </label>
@@ -254,7 +249,7 @@
             <div class="row responsive-sm">
                 <div class="col-50">
                     <md-input-container class="md-block" flex-gt-sm>
-                        <label>Kecamata</label>
+                        <label>Kecamatan</label>
                         <input ng-model='data.kecamata'>
                     </md-input-container>
                 </div>
@@ -287,13 +282,8 @@
     </div>
     <div class='item'>
         <div class="row-no-padding">
-            <md-autocomplete
-                md-selected-item="selectedItem"
-                md-search-text="searchText"
-                md-items="item in querySearch(searchText)"
-                md-item-text="item.name"
-                md-min-length="0"
-                md-floating-label="Kode Pos">
+            <md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in querySearch(searchText)" md-item-text="item.name"
+                md-min-length="0" md-floating-label="Kode Pos">
                 <md-item-template>
                     <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.name}}</span>
                 </md-item-template>
@@ -309,19 +299,19 @@
                 <div class="col-33">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>No.Tel.Rumah </label>
-                        <input type="tel" ng-model='vm.insuredData.address[index].rumah_tel' required ng-model='contact.tel.home'>
+                        <input type="number" ng-model='vm.insuredData.address[index].rumah_tel' required ng-model='contact.tel.home'>
                     </md-input-container>
                 </div>
                 <div class="col-33">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>No.Tel.Kantor</label>
-                        <input type="tel" ng-model='vm.insuredData.address[index].kantor_tel' required ng-model='contact.tel.office'>
+                        <input type="number" ng-model='vm.insuredData.address[index].kantor_tel' required ng-model='contact.tel.office'>
                     </md-input-container>
                 </div>
                 <div class="col-33">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>No. HP /GSM </label>
-                        <input type="tel" ng-model='vm.insuredData.address[index].hp_gsm_tel' required ng-model='contact.tel.gsm'>
+                        <input type="number" ng-model='vm.insuredData.address[index].hp_gsm_tel' required ng-model='contact.tel.gsm'>
                     </md-input-container>
                 </div>
             </div>
@@ -346,11 +336,13 @@
             <div class="row">
                 <div class="row indent_row responsive-sm">
                     <div class="col-33">
-                        <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatTempatTingal' class='custom_radio' type="radio" ng-click="changeAddress('Alamat Tempat Tingal')" />
+                        <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatTempatTingal' class='custom_radio' type="radio" ng-click="changeAddress('Alamat Tempat Tingal')"
+                        />
                         <label class='' for="{{insuredName}}-alamatTempatTingal">Alamat Tempat Tingal</label>
                     </div>
                     <div class="col-33">
-                        <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatKantor' class='custom_radio' type="radio" ng-click="changeAddress('Alamat Kantor')" />
+                        <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatKantor' class='custom_radio' type="radio" ng-click="changeAddress('Alamat Kantor')"
+                        />
                         <label class='' for="{{insuredName}}-alamatKantor">Alamat Kantor</label>
                     </div>
                     <div class="col-33">
