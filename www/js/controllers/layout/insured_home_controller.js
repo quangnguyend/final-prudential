@@ -1,5 +1,9 @@
 function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
   var vm = this
+  // *********
+  // NOTE: ALL DATA MUST BE SET INTO $scope.data, ex: ng-model='data.name', ng-model='data.gender'
+  $scope.data = {}
+  // ********
 
   vm.insuredData = {
     address: [{
@@ -16,7 +20,6 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
     }
     vm.insuredData.address.push(newAddress)
   }
-  $scope.data = {}
 
   $timeout(function () {
     var insuredName = $attrs.insuredData
@@ -61,7 +64,7 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
     return false
   }
 
-  /*auto complete */
+  /* auto complete */
   // list of countries
   vm.countries = [
     {name: 'Afghanistan', code: 'AF'},
@@ -315,15 +318,21 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
   $scope.querySearch = function (query) {
     var results = query ? vm.countries.filter(createFilterFor(query)) : vm.countries
     return results
-  };
+  }
 
   /**
    * Create filter function for a query string
    */
 
+  // Gender selector function
+  $scope.selectGender = function (gender) {
+    console.log(gender)
+    $scope.data.gender = gender
+  }
+
   function createFilterFor (query) {
     return function filterFn (country) {
       return (country.name.toLowerCase().indexOf(query.toLowerCase()) === 0)
-    };
+    }
   }
 }

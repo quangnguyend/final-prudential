@@ -40,12 +40,10 @@
             <div class="row">
                 <div class="row indent_row responsive-sm">
                     <div class="col-50">
-                        <input name='radio' class='custom_radio' type="radio" id='{{insuredName}}-pira' />
-                        <label class='' for="{{insuredName}}-pira">Pira</label>
+                        <button ng-class='data.gender==="PRIA"?"selected":""' ng-click='selectGender("PRIA")' class='button pru-btn'>PRIA</button>
                     </div>
                     <div class="col-50">
-                        <input name='radio' class='custom_radio' type="radio" id='{{insuredName}}-wanita' />
-                        <label class='' for="{{insuredName}}-wanita">Wanita</label>
+                        <button ng-class='data.gender==="WANITA"?"selected":""' ng-click='selectGender("WANITA")' class='button pru-btn'>WANITA</button>
                     </div>
                 </div>
             </div>
