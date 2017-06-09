@@ -1,316 +1,311 @@
-
-<md-dialog aria-label="Mango (Fruit)" class="_md md-transition-in md-content-overflow" role="dialog"  id="digestive-popup" >
-  <form >
+<md-dialog aria-label="Mango (Fruit)" class="_md md-transition-in md-content-overflow" role="dialog" id="digestive-popup">
+  <form>
     <md-toolbar class="_md _md-toolbar-transitions">
       <div class="md-toolbar-tools">
         <h2>Kuesioner Gangguan Saluran Cerna</h2>
         <span flex="" class="flex"></span>
-        <button class="md-icon-button md-button md-ink-ripple" type="button"  ng-click="closeDialog()">
+        <button class="md-icon-button md-button md-ink-ripple" type="button" ng-click="vm.closeDialog()">
           <i class="icon ion-android-close"></i>
         </button>
       </div>
     </md-toolbar>
-    <md-dialog-content class="popup-prudential" >
-        <div class='item'>
+    <md-dialog-content class="popup-prudential">
+      <ion-content>
+        <div class="md-dialog-content">
+          <div class='item'>
             <div class="row-no-padding">
-                <h1 class="description">Keluhan yang dirasakan</h1>
-                <ul class="row customize-cb">
-                    <li class="item item-checkbox">
-                        <p>Sakit Perut</p>
-                        <label class="checkbox">
-                            <input type="checkbox" ng-model='digestive.keluhan_perut'>
-                        </label>
-                    </li>
-                    <li class="item item-checkbox">
-                        <p>Muntah</p>
-                        <label class="checkbox">
-                            <input type="checkbox" ng-model='digestive.keluhan_muntah'>
-                        </label>
-                    </li>
-                    <li class="item  item-checkbox">
-                        <p>Nyeri Ulu hati</p>
-                        <label class="checkbox">
-                            <input type="checkbox" ng-model='digestive.keluhan_nyerl'>
-                        </label>
-                    </li>
-                </ul>
-                <ul class="row customize-cb">
-                    <li class="item item-checkbox">
-                        <p>Mual</p>
-                        <label class="checkbox">
-                            <input type="checkbox" ng-model='digestive.keluhan_mual'>
-                        </label>
-                    </li>
-                    <li class="item item-checkbox">
-                        <p>Muntah Darah</p>
-                        <label class="checkbox">
-                            <input type="checkbox" ng-model='digestive.keluhan_darah'>
-                        </label>
-                    </li>
-                </ul>
-                <ul class="row customize-cb">
-                    <li class="item item-checkbox">
-                        <p>Lainnya</p>
-                        <label class="checkbox">
-                            <input type="checkbox" ng-model='digestive.keluhan_lainnya'>
-                        </label>
-                    </li>
-                </ul>
-                <ul class="row option_other" ng-show='digestive.keluhan_lainnya'>
-                    <li class="item item-checkbox">
-                        <input type="text" placeholder="Enter" ng-model='digestive.keluhan_lainnya_value'>
-                    </li>
-                </ul>
+              <h1 class="description">Keluhan yang dirasakan</h1>
+              <ul class="row customize-cb">
+                <li class="item item-checkbox">
+                  <p>Sakit Perut</p>
+                  <label class="checkbox">
+                    <input type="checkbox" ng-model='vm.healthData.digesPu.keluhan_perut'>
+                  </label>
+                </li>
+                <li class="item item-checkbox">
+                  <p>Muntah</p>
+                  <label class="checkbox">
+                    <input type="checkbox" ng-model='vm.healthData.digesPu.keluhan_muntah'>
+                  </label>
+                </li>
+                <li class="item  item-checkbox">
+                  <p>Nyeri Ulu hati</p>
+                  <label class="checkbox">
+                    <input type="checkbox" ng-model='vm.healthData.digesPu.keluhan_nyerl'>
+                  </label>
+                </li>
+              </ul>
+              <ul class="row customize-cb">
+                <li class="item item-checkbox">
+                  <p>Mual</p>
+                  <label class="checkbox">
+                                    <input type="checkbox" ng-model='vm.healthData.digesPu.keluhan_mual'>
+                                </label>
+                </li>
+                <li class="item item-checkbox">
+                  <p>Muntah Darah</p>
+                  <label class="checkbox">
+                                    <input type="checkbox" ng-model='vm.healthData.digesPu.keluhan_darah'>
+                                </label>
+                </li>
+              </ul>
+              <ul class="row customize-cb">
+                <li class="item item-checkbox">
+                  <p>Lainnya</p>
+                  <label class="checkbox">
+                                    <input type="checkbox" ng-model='vm.healthData.digesPu.keluhan_lainnya_option'>
+                                </label>
+                </li>
+              </ul>
+              <ul class="row option_other" ng-show='vm.healthData.digesPu.keluhan_lainnya_option'>
+                <li class="item item-checkbox">
+                  <input type="text" placeholder="Enter" ng-model='vm.healthData.digesPu.keluhan_lainnya'>
+                </li>
+              </ul>
             </div>
-        </div>
-        <!--end item-->
-        <div class='item'>
-            <div class="row-no-padding">
-                <md-input-container class="md-block">
-                    <md-select ng-model='digestive.pertamas_select' placeholder='Pertama kali keluhan muncul'>
-                        <md-option ng-value="red">red</md-option>
-                        <md-option ng-value="green">green</md-option>
-                        <md-option ng-value="blue">blue</md-option>
-                    </md-select>
+             <div class="row-no-padding">
+              <md-input-container class="md-block">
+                <md-select ng-model='vm.healthData.digesPu.pertamas_select' placeholder='Pertama kali keluhan muncul'>
+                  <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+             <div class="row row-no-padding">
+              <div class="col col-50">
+                <md-input-container>
+                  <md-select ng-model='vm.healthData.digesPu.frekuensi_select' placeholder='Frekuensi timbulnya keluhan'>
+                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                  </md-select>
                 </md-input-container>
-            </div>
-        </div>
-        <!--end item-->
-        <div class='item'>
-            <div class="row row-no-padding">
-                <div class="col col-50">
-                    <md-input-container>
-                        <md-select ng-model='digestive.frekuensi_select' placeholder='Frekuensi timbulnya keluhan'>
-                            <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
-                        </md-select>
-                    </md-input-container>
+              </div>
+              <div class="col col-50">
+                <div class="button-bar">
+                  <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.digesPu.frekuensi_option">Hari</a>
+                  <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.digesPu.frekuensi_option">Minggu</a>
                 </div>
-                <div class="col col-50">
-                    <div class="button-bar">
-                        <a class="button col col-50" grouped-radio="true" ng-model="digestive.frekuensi_option">Hari</a>
-                        <a class="button col col-50" grouped-radio="false" ng-model="digestive.frekuensi_option">Minggu</a>
-                    </div>
-                </div>
+              </div>
             </div>
-        </div>
-        <!--end item-->
-        <div class='item'>
+             <div class="row-no-padding">
+              <md-input-container class="md-block">
+                <md-select ng-model='vm.healthData.digesPu.kapan_keluhan_select' placeholder='Kapan keluhan terakhir'>
+                  <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+            <button class="button next" id="digest_part1"
+              ng-class="{'button-dark': (vm.healthData.digesPu.keluhan_perut||vm.healthData.digesPu.keluhan_muntah||vm.healthData.digesPu.keluhan_nyerl||vm.healthData.digesPu.keluhan_mual||vm.healthData.digesPu.keluhan_darah||vm.healthData.digesPu.keluhan_lainnya)&&vm.healthData.digesPu.pertamas_select&&vm.healthData.digesPu.frekuensi_select&&vm.healthData.digesPu.frekuensi_option!=null&&vm.healthData.digesPu.kapan_keluhan_select}" 
+              ng-disabled="(vm.healthData.digesPu.keluhan_perut==null&&vm.healthData.digesPu.keluhan_muntah==null&&vm.healthData.digesPu.keluhan_nyerl==null&&vm.healthData.digesPu.keluhan_mual==null&&vm.healthData.digesPu.keluhan_darah==null&&vm.healthData.digesPu.keluhan_lainnya)||vm.healthData.digesPu.pertamas_select==null||vm.healthData.digesPu.frekuensi_select==null||vm.healthData.digesPu.frekuensi_option==null||vm.healthData.digesPu.kapan_keluhan_select==null"
+              ng-click="vm.puNextStep('digest_2')">
+            Berikutnya</button>
+          </div>
+          <!--end item-->
+          
+          <div class="item" id='digest_2'>
             <div class="row-no-padding">
-                <md-input-container class="md-block">
-                    <md-select ng-model='digestive.kapan_keluhan_select' placeholder='Kapan keluhan terakhir'>
-                        <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
-                    </md-select>
-                </md-input-container>
-            </div>
-        </div>
-        <!--end item-->
-        <div class='item'>
-            <button class="button next" ng-class="{'button-dark': digestive.keluhan_perut}" ng-disabled="!digestive.keluhan_perut"
-                ng-click="health1NextStep('health1_step2')">Berikutnya</button>
-        </div>
-        <div class="item">
             <h1 class="description">Apakah pernah dirawat (inap/jalan) di RS atau pernah dioperasi/ disarankan operasi</h1>
             <div class="button-bar">
-                <a class="button col col-50" grouped-radio="true" ng-model="digestive.apakah_pernah">Ya</a>
-                <a class="button col col-50" grouped-radio="false" ng-model="digestive.apakah_pernah">Tidak</a>
+              <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.digesPu.apakah_pernah">Ya</a>
+              <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.digesPu.apakah_pernah">Tidak</a>
             </div>
-        </div>
-        <!--end item-->
-        <div class="item">
-            <div class="row">
-                <label class="item-stacked-label">
-                    <div class="input-label">Kapan</div>
-                </label>
             </div>
-            <div class="row">
-                <div class="col">
-                    <md-input-container class="md-block">
-                        <md-select ng-model="digestive.kapan_month_select" placeholder='Januari'>
-                            <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
-                        </md-select>
-                    </md-input-container>
-                </div>
-                <div class="col">
-                    <md-input-container class="md-block">
-                        <md-select ng-model="digestive.kapan_year_select" placeholder='YYYY'>
-                            <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
-                        </md-select>
-                    </md-input-container>
-                </div>
-            </div>
-        </div>
-        <div class='item'>
             <div class="row-no-padding">
-                <md-input-container class="md-block" flex-gt-sm>
-                    <label>Nama Dokter / Rumah Sakit </label>
-                    <input type="text" ng-model="digestive.nama_dokter" />
+                 <div class="row">
+              <label class="item-stacked-label">
+                <div class="input-label">Kapan</div>
+              </label>
+            </div>
+            <div class="row">
+              <div class="col">
+                <md-input-container class="md-block">
+                  <md-select ng-model="vm.healthData.digesPu.kapan_month_select" placeholder='Januari'>
+                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                  </md-select>
                 </md-input-container>
+              </div>
+              <div class="col">
+                <md-input-container class="md-block">
+                  <md-select ng-model="vm.healthData.digesPu.kapan_year_select" placeholder='YYYY'>
+                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                  </md-select>
+                </md-input-container>
+              </div>
             </div>
-        </div>
-        <!--end item-->
-        <div class='item'>
+            </div>
+            
+              <div class="row-no-padding">
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>Nama Dokter / Rumah Sakit </label>
+                  <input type="text" ng-model="vm.healthData.digesPu.nama_dokter" />
+                </md-input-container>
+              </div>
             <div class="row-no-padding">
-                <h1 class="description">Tindakan / terapi yang diberikan</h1>
-                <ul>
-                    <li class="item item-checkbox">
-                        <p>Operasi</p>
-                        <label class="checkbox">
-                            <input type="checkbox" ng-model='digestive.tindakan_operasi'>
-                        </label>
+              <h1 class="description">Tindakan / terapi yang diberikan</h1>
+              <ul>
+                <li class="item item-checkbox">
+                  <p>Operasi</p>
+                  <label class="checkbox">
+                                    <input type="checkbox" ng-model='vm.healthData.digesPu.tindakan_operasi'>
+                                </label>
+                </li>
+                <li class="item  item-checkbox">
+                  <p>Suntikan</p>
+                  <label class="checkbox">
+                    <input type="checkbox" ng-model='vm.healthData.digesPu.tindakan_suntikan'>
+                  </label>
+                </li>
+                <li class="item item-checkbox">
+                  <p>Obat</p>
+                  <label class="checkbox">
+                    <input type="checkbox" ng-model='vm.healthData.digesPu.tindakan_obat_option'>
+                  </label>
+                  <ul ng-class="vm.healthData.digesPu.tindakan_obat_option ? 'active':'disable'">
+                    <li>
+                      <div ng-repeat="(index, row) in vm.healthData.digesPu.tindakan_obat">
+                        <div class='obat-item'>
+                          <div class="obat-index">{{index+1}}</div>
+                          <div class="row">
+                            <md-input-container class="md-block" flex-gt-sm>
+                              <label>Obat yang pernah dikonsumsi</label>
+                              <input type="text" ng-model="digestive.tindakan_obat[index].yang" />
+                            </md-input-container>
+                          </div>
+                          <div class="row">
+                            <h4 class="input-label description">Diperoleh dari</h3>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <input type='radio' id='dokter' name='dokter' value='dokter' ng-model="digestive.tindakan_obat[index].diperoleh_dari" />
+                              <label for='dokter'>Dokter</label>
+                            </div>
+                            <div class="col">
+                              <input type='radio' id='obat_bebas' name='obat_bebas' value='obat_bebas' ng-model="digestive.tindakan_obat[index].diperoleh_dari"
+                              />
+                              <label for='obat_bebas'>Obat Bebas</label>
+                            </div>
+                          </div>
+                          <div class="row row-no-padding vertical-space">
+                            <div class="col col-50">
+                              <md-input-container>
+                                <md-select ng-model="digestive.tindakan_obat[index].timbulnya_select" placeholder='Frekuensi timbulnya keluhan'>
+                                  <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                                </md-select>
+                              </md-input-container>
+                            </div>
+                            <div class="col col-50">
+                              <div class="button-bar">
+                                <a class="button col col-50" grouped-radio="true" ng-model="digestive.tindakan_obat[index].timbulnya_option">Hari</a>
+                                <a class="button col col-50" grouped-radio="false" ng-model="digestive.tindakan_obat[index].timbulnya_option">Minggu</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item row-no-padding">
+                            <h1 class="description">Masih memakai obat ini</h1>
+                            <div class="button-bar">
+                              <a class="button col col-50" grouped-radio="'Ya'" ng-model="digestive.tindakan_obat[index].mashit">Ya</a>
+                              <a class="button col col-50" grouped-radio="'Tidak'" ng-model="digestive.tindakan_obat[index].mashit">Tidak</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <button class="button button-full obat-add" ng-click='vm.digest_addObat()'>+ Tambah Jenis Obat</button>
                     </li>
-                    <li class="item  item-checkbox">
-                        <p>Suntikan</p>
-                        <label class="checkbox">
-                            <input type="checkbox" ng-model='digestive.tindakan_suntikan'>
-                        </label>
-                    </li>
-                    <li class="item item-checkbox">
-                        <p>Obat</p>
-                        <label class="checkbox">
-                            <input type="checkbox" ng-model='digestive.tindakan_obat_option'>
-                        </label>
-                        <ul ng-class="digestive.tindakan_obat_option ? 'active':'disable'">
-                            <li>
-                                <div ng-repeat="(index, row) in digestive.tindakan_obat">
-                                    <div class='obat-item'>
-                                        <div class="obat-index">{{index+1}}</div>
-                                        <div class="row">
-                                            <md-input-container class="md-block" flex-gt-sm>
-                                                <label>Obat yang pernah dikonsumsi</label>
-                                                <input type="text" ng-model="digestive.tindakan_obat[index].yang" />
-                                            </md-input-container>
-                                        </div>
-                                        <div class="row">
-                                            <h4 class="input-label description">Diperoleh dari</h3>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <input type='radio' id='dokter' name='dokter' value='dokter' ng-model="digestive.tindakan_obat[index].diperoleh_dari"
-                                                />
-                                                <label for='dokter'>Dokter</label>
-                                            </div>
-                                            <div class="col">
-                                                <input type='radio' id='obat_bebas' name='obat_bebas' value='obat_bebas' ng-model="digestive.tindakan_obat[index].diperoleh_dari"
-                                                />
-                                                <label for='obat_bebas'>Obat Bebas</label>
-                                            </div>
-                                        </div>
-                                        <div class="row row-no-padding vertical-space">
-                                            <div class="col col-50">
-                                                <md-input-container>
-                                                    <md-select ng-model="digestive.tindakan_obat[index].timbulnya_select" placeholder='Frekuensi timbulnya keluhan'>
-                                                        <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
-                                                    </md-select>
-                                                </md-input-container>
-                                            </div>
-                                            <div class="col col-50">
-                                                <div class="button-bar">
-                                                    <a class="button col col-50" grouped-radio="true" ng-model="digestive.tindakan_obat[index].timbulnya_option">Hari</a>
-                                                    <a class="button col col-50" grouped-radio="false" ng-model="digestive.tindakan_obat[index].timbulnya_option">Minggu</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item row-no-padding">
-                                            <h1 class="description">Masih memakai obat ini</h1>
-                                            <div class="button-bar">
-                                                <a class="button col col-50" grouped-radio="'Ya'" ng-model="digestive.tindakan_obat[index].mashit">Ya</a>
-                                                <a class="button col col-50" grouped-radio="'Tidak'" ng-model="digestive.tindakan_obat[index].mashit">Tidak</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="button button-full obat-add" ng-click='addObat()'>+ Tambah Jenis Obat</button>
-                            </li>
-                            <!--end li-->
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="row customize-cb">
-                    <li class="item item-checkbox">
-                        <p>Lainnya</p>
-                        <label class="checkbox">
-                            <input type="checkbox" ng-model='digestive.tindakan_lainnya'>
-                        </label>
-                        <input class="vertical-space" type="text" placeholder="Enter" ng-model='digestive.tindakan_lainnya_value' ng-class="digestive.tindakan_lainnya ? 'active':'disable'">
-                    </li>
-                </ul>
+                    <!--end li-->
+                  </ul>
+                </li>
+              </ul>
+              <ul class="row customize-cb">
+                <li class="item item-checkbox">
+                  <p>Lainnya</p>
+                  <label class="checkbox">
+                    <input type="checkbox" ng-model='vm.healthData.digesPu.tindakan_lainnya'>
+                  </label>
+                  <input class="vertical-space" type="text" placeholder="Enter" ng-model='digestive.tindakan_lainnya_value' ng-class="vm.healthData.digesPu.tindakan_lainnya ? 'active':'disable'">
+                </li>
+              </ul>
             </div>
-        </div>
-        <!--end item-->
-        <div class='item'>
-            <button class="button next" ng-class="{'button-dark': digestive.obat}" ng-disabled="!digestive.obat" ng-click="health1NextStep('health1_step2')">Berikutnya</button>
-        </div>
-        <!--end item-->
-        <div class="item">
+
+            <button class="button next" 
+            ng-class="{'button-dark': vm.healthData.digesPu.apakah_pernah&&vm.healthData.digesPu.kapan_month_select&&vm.healthData.digesPu.kapan_year_select&&vm.healthData.digesPu.nama_dokter&&(vm.healthData.digesPu.tindakan_operasi||vm.healthData.digesPu.tindakan_suntikan||vm.healthData.digesPu.tindakan_obat_option||vm.healthData.digesPu.tindakan_lainnya)}" 
+            ng-disabled="vm.healthData.digesPu.apakah_pernah==null||vm.healthData.digesPu.kapan_month_select==null||vm.healthData.digesPu.kapan_year_select==null||vm.healthData.digesPu.nama_dokter==null||(vm.healthData.digesPu.tindakan_operasi==null&&vm.healthData.digesPu.tindakan_suntikan==null&&vm.healthData.digesPu.tindakan_obat_option==null&&vm.healthData.digesPu.tindakan_lainnya==null)" 
+            ng-click="vm.puNextStep('digest_3')">
+            Berikutnya</button>
+          </div>
+          <!--end item-->
+
+          
+          <!--end item-->
+          <div class="item" id='digest_3'>
             <div class="row">
-                <label class="item-stacked-label">
-                    <div class="input-label ">Pemeriksaan yang pernah dijalani</div>
-                </label>
+              <label class="item-stacked-label">
+                <div class="input-label ">Pemeriksaan yang pernah dijalani</div>
+              </label>
             </div>
             <div class="row ">
-                <li class="item item-checkbox">
-                    <p>Endoskopi</p>
-                    <label class="checkbox">
-                        <input type="checkbox" ng-model='digestive.pemeriksaan_option'>
-                    </label>
-                    <div class="row row-no-padding" ng-class="digestive.pemeriksaan_option ? 'active':'disable'">
-                        <div class="col">
-                            <md-input-container>
-                                <md-select ng-model='digestive.pemeriksaan_waktu' placeholder='Waktu Pemeriksaan'>
-                                    <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
-                                </md-select>
-                            </md-input-container>
-                        </div>
-                        <div class="col">
-                            <md-input-container>
-                                <md-select ng-model='digestive.pemeriksaan_hasil' placeholder='Hasil Pemeriksaan'>
-                                    <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
-                                </md-select>
-                            </md-input-container>
-                        </div>
-                    </div>
-                </li>
+              <li class="item item-checkbox">
+                <p>Endoskopi</p>
+                <label class="checkbox">
+                                <input type="checkbox" ng-model='vm.healthData.digesPu.pemeriksaan_option'>
+                            </label>
+                <div class="row row-no-padding" ng-class="vm.healthData.digesPu.pemeriksaan_option ? 'active':'disable'">
+                  <div class="col">
+                    <md-input-container>
+                      <md-select ng-model='vm.healthData.digesPu.pemeriksaan_waktu' placeholder='Waktu Pemeriksaan'>
+                        <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                      </md-select>
+                    </md-input-container>
+                  </div>
+                  <div class="col">
+                    <md-input-container>
+                      <md-select ng-model='vm.healthData.digesPu.pemeriksaan_hasil' placeholder='Hasil Pemeriksaan'>
+                        <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                      </md-select>
+                    </md-input-container>
+                  </div>
+                </div>
+              </li>
             </div>
             <div class="row  ">
-                <li class="item item-checkbox">
-                    <p>Lainnya</p>
-                    <label class="checkbox">
-                        <input type="checkbox" ng-model='digestive.lainnya_option'>
-                    </label>
-                    <div ng-class="digestive.lainnya_option ? 'active':'disable'">
+              <li class="item item-checkbox">
+                <p>Lainnya</p>
+                <label class="checkbox">
+                                <input type="checkbox" ng-model='vm.healthData.digesPu.lainnya_option'>
+                            </label>
+                <div ng-class="vm.healthData.digesPu.lainnya_option ? 'active':'disable'">
 
-                        <div class="row row-no-padding">
-                            <md-input-container class="md-block" flex-gt-sm>
-                                <label>Nama Pemeriksaan </label>
-                                <input type="text" ng-model="digestive.lainnya_input" />
-                            </md-input-container>
-                        </div>
+                  <div class="row row-no-padding">
+                    <md-input-container class="md-block" flex-gt-sm>
+                      <label>Nama Pemeriksaan </label>
+                      <input type="text" ng-model="vm.healthData.digesPu.lainnya_input" />
+                    </md-input-container>
+                  </div>
 
-                        <div class="row row-no-padding">
-                            <div class="col">
-                                <md-input-container>
-                                    <md-select ng-model='digestive.lainnya_waktu' placeholder='Waktu Pemeriksaan'>
-                                        <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
-                                    </md-select>
-                                </md-input-container>
-                            </div>
-                            <div class="col">
-                                <md-input-container>
-                                    <md-select ng-model='digestive.lainnya_hasil' placeholder='Hasil Pemeriksaan'>
-                                        <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
-                                    </md-select>
-                                </md-input-container>
-                            </div>
-                        </div>
-
+                  <div class="row row-no-padding">
+                    <div class="col">
+                      <md-input-container>
+                        <md-select ng-model='vm.healthData.digesPu.lainnya_waktu' placeholder='Waktu Pemeriksaan'>
+                          <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                        </md-select>
+                      </md-input-container>
                     </div>
-                </li>
+                    <div class="col">
+                      <md-input-container>
+                        <md-select ng-model='vm.healthData.digesPu.lainnya_hasil' placeholder='Hasil Pemeriksaan'>
+                          <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                        </md-select>
+                      </md-input-container>
+                    </div>
+                  </div>
+
+                </div>
+              </li>
             </div>
+          </div>
         </div>
+      </ion-content>
     </md-dialog-content>
 
     <md-dialog-actions layout="row" class="layout-row">
-      <button class="md-button button-full" type="button"  ng-click="closeDialog()">
+      <button class="md-button button-full" type="button" ng-click="vm.closeDialog()">
         <span class="ng-scope">Selesai</span>
       </button>
     </md-dialog-actions>

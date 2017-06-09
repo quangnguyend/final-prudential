@@ -1,4 +1,4 @@
-function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, $mdDialog, $ionicScrollDelegate, SpajService, $ionicSideMenuDelegate) {
+function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicScrollDelegate, SpajService, $ionicSideMenuDelegate) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
@@ -6,13 +6,12 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, $mdDi
   $ionicSideMenuDelegate.canDragContent(false)
   var vm = this
 
-  var alert
   vm.healthData = {
     personalAccidentPopupData: {
       function_name: null,
       is_pen_installed: null
     },
-    eyePopupData: [{
+    eyePopup: [{
       name_of_illness: null,
       when_the_condition_found: null,
       last_care_date: null,
@@ -20,14 +19,14 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, $mdDi
       hospital_address: null,
       medicine: null
     }],
-    digestivePopupData: {
+    digesPu: {
       keluhan_perut: null,
       keluhan_muntah: null,
       keluhan_nyerl: null,
       keluhan_mual: null,
       keluhan_darah: null,
       keluhan_lainnya: null,
-      keluhan_lainnya_value: null,
+
       pertamas_select: null,
       frekuensi_select: null,
       frekuensi_option: null,
@@ -51,7 +50,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, $mdDi
       lainnya_input: null,
       lainnya_waktu: null
     },
-    respiratoryPopupData: {
+    respiratoryPu: {
       gangguan_asma: null,
       gangguan_tbc: null,
       gangguan_bronkhitis: null,
@@ -81,7 +80,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, $mdDi
       ekg: null,
       pemeriksaan_lainnya: null
     },
-    tumorPopupData: {
+    tumorPopup: {
       janes: {
         tumor: null,
         kista: null,
@@ -154,27 +153,17 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, $mdDi
 
     {
       type: 'a',
-      value: 'red2'
+      value: 'Red2'
     },
     {
       type: 'bewf',
-      value: 'green3'
+      value: 'Green'
     },
     {
       type: 'cfew',
-      value: 'blue4'
+      value: 'Blue'
     }
   ]
-
-  vm.checkPropertiesNotNull = function (arrayObj) {
-    if (arrayObj === null || arrayObj === '') { return false }
-    for (var i = 0; i < arrayObj.length; i++) {
-      for (var key in arrayObj[i]) {
-        if (!arrayObj[i][key]) return false
-      }
-    }
-    return true
-  }
 
   vm.nextStep = function () {
     vm.healthData.isComplete = validator()
@@ -182,37 +171,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, $mdDi
     $state.go('app.other_health')
   }
 
-  vm.validateDigestive = function () {
-    var items = vm.healthData.digestivePopupData
-    for (var key in items) {
-      if (items[key] == null) return false
-    }
-    return true
-  }
-  vm.validateTummor = function () {
-    var items = vm.healthData.tumorPopupData
 
-    for (var key in items) {
-      if (items[key] == null) return false
-    }
-    return true
-  }
-  vm.validateEye = function () {
-    var items = vm.healthData.tumorPopupData
-
-    for (var key in items) {
-      if (items[key] == null) return false
-    }
-    return true
-  }
-  vm.validateRespiratory = function () {
-    var items = vm.healthData.respiratoryPopupData
-
-    for (var key in items) {
-      if (items[key] == null) return false
-    }
-    return true
-  }
 
   vm.tabs = [
     { title: 'Tertanggung Utama', value: 'main_question' },
@@ -241,79 +200,135 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, $mdDi
     }
   }
 
-  function validator () {
+  function validator() {
     return true
   }
 
   // Main Health step
-  vm.health1Steps = ['health1_step1']
+
   vm.health1NextStep = function (id) {
-    var STEP_HEIGHT = $('.multi-step').height() + 120
+    var STEP_HEIGHT = $('.multi-step').height() + 140
     var distance = $('#' + id) && $('#' + id).position().top + STEP_HEIGHT
-    if (vm.health1Steps.indexOf(id) < 0) vm.health1Steps.push(id)
+    $('#' + id).addClass('_active');
+    $ionicScrollDelegate.scrollTo(0, distance, true)
+  }
+  // Popup common function
+  vm.closeDialog = function () {
+    $mdDialog.hide();
+  }
+
+  vm.puNextStep = function (id) {
+    $('#' + id).addClass('_active');
+    var distance = $('#' + id) && $('#' + id).position().top || 0;
     $ionicScrollDelegate.scrollTo(0, distance, true)
   }
 
-  // ======================== PopupEye ======================== //
-  vm.showPopupEye = function () {
-    vm.showPopupEye = vm.healthData.eyePopupData
+  vm.validateDigestive = function () {
+    var cc=$('#digest_part1').length
+    var items = vm.healthData.digestivePopupData
+    for (var key in items) {
+      if (items[key] == null) return false
+    }
+    return true
+  }
+  vm.validateTummor = function () {
+    var items = vm.healthData.tumorPopupData
 
-    if (vm.healthData.eye_contact_lenses && vm.healthData.eye_disorders) { // if choose both option
-      vm.addPopupData()
+    for (var key in items) {
+      if (items[key] == null) return false
+    }
+    return true
+  }
+  vm.validateEye = function () {
+    var items = vm.healthData.eyePopup
+    for (i = 0; i < items.length; i++) {
+      for (var key in items[i]) {
+        if (items[i][key] == null) return false
+      }
+    }
+    return true
+  }
+  vm.validateRespiratory = function () {
+    var items = vm.healthData.respiratoryPopupData
+    for (var key in items) {
+      if (items[key] == null) return false
+    }
+    return true
+  }
+
+  // ======================== PopupEye ======================== //
+  vm.oo = " nguen"
+  vm.showPopupEye = function () {
+    if (vm.healthData.eye_contact_lenses && vm.healthData.eye_disorders && vm.healthData.eyePopup.length < 2) { // if choose both option
+      vm.addPopupEyeItem()
     }
     $mdDialog.show({
-      controller: 'EyeController',
+      scope: $scope.$new(),
       templateUrl: 'views/spaj/policy/step2/popup-eye.html',
       clickOutsideToClose: true
+    }).then(function () {
+      vm.eyePopupTouched = true
     })
-    .then(function (res) {
-      vm.healthData.eyePopupData = res
-      vm.tumorPopupTouched = true
+  }
+  vm.addPopupEyeItem = function () {
+    vm.healthData.eyePopup.push({
+      name_of_illness: null,
+      when_the_condition_found: null,
+      last_care_date: null,
+      hospoital_name: null,
+      hospital_address: null,
+      medicine: null
     })
   }
 
   // ======================== PopupDigestive ======================== //
 
   vm.showPopupDigestive = function () {
-    vm.digestive = vm.healthData.digestivePopupData
-
     $mdDialog.show({
-      controller: 'DigestiveController',
+      scope: $scope.$new(),
       templateUrl: 'views/spaj/policy/step2/popup-digestive.html',
       clickOutsideToClose: true
     })
-    .then(function (res) {
-      vm.healthData.digestivePopupData = res
-      vm.digestivePopupTouched = true
+      .then(function (res) {
+        vm.digestivePopupTouched = true
+      })
+  }
+  vm.digest_addObat = function () {
+    vm.healthData.digesPu.tindakan_obat.push({
+      yang: null,
+      diperoleh_dari: null,
+      timbulnya_select: null,
+      timbulnya_option: null,
+      mashit: null
     })
   }
-
   // ======================== PopupRespiratory ======================== //
 
   vm.showPopupRespiratory = function () {
-    vm.respiratory = vm.healthData.respiratoryPopupData
-
     $mdDialog.show({
-      controller: 'RespiratoryController',
+      scope: $scope.$new(),
       templateUrl: 'views/spaj/policy/step2/popup_respiratory.html',
       clickOutsideToClose: true
     })
     .then(function (res) {
-      vm.healthData.respiratoryPopupData = res
       vm.respiratoryPopupTouched = true
     })
   }
+
   // ======================== PopupTumor ======================== //
   vm.showPopupTumor = function () {
-    vm.tumor = vm.healthData.tumorPopupData
     $mdDialog.show({
-      controller: 'TumorController',
+      scope: $scope.$new(),
       templateUrl: 'views/spaj/policy/step2/popup_tumor.html',
       clickOutsideToClose: true
     })
     .then(function (res) {
-      vm.healthData.tumorPopupData = res
       vm.tumorPopupTouched = true
     })
   }
+  vm.resetTumor = function () {
+    vm.tumorPopupTouched = false
+  }
+  // ======================== End PopupTumor ======================== //
+
 }
