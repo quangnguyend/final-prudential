@@ -220,13 +220,11 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
   vm.puNextStep = function (id) {
     $('#' + id).addClass('_active');
     var distance = $('#' + id) && $('#' + id).position().top || 0;
-    console.log('distance la:'+id,distance)
     $ionicScrollDelegate.scrollTo(0, distance, true)
   }
 
   vm.validateDigestive = function () {
     var cc=$('#digest_part1').length
-    console.log('length: ',cc)
     var items = vm.healthData.digestivePopupData
     for (var key in items) {
       if (items[key] == null) return false
@@ -245,7 +243,6 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
     var items = vm.healthData.eyePopup
     for (i = 0; i < items.length; i++) {
       for (var key in items[i]) {
-        console.log(items[i][key])
         if (items[i][key] == null) return false
       }
     }
@@ -253,9 +250,7 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
   }
   vm.validateRespiratory = function () {
     var items = vm.healthData.respiratoryPopupData
-
     for (var key in items) {
-      console.log(items[key])
       if (items[key] == null) return false
     }
     return true
@@ -299,14 +294,14 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
       })
   }
   vm.digest_addObat = function () {
-      vm.healthData.digesPu.tindakan_obat.push({
-        yang: null,
-        diperoleh_dari: null,
-        timbulnya_select: null,
-        timbulnya_option: null,
-        mashit: null
-      })
-    }
+    vm.healthData.digesPu.tindakan_obat.push({
+      yang: null,
+      diperoleh_dari: null,
+      timbulnya_select: null,
+      timbulnya_option: null,
+      mashit: null
+    })
+  }
   // ======================== PopupRespiratory ======================== //
 
   vm.showPopupRespiratory = function () {
@@ -328,8 +323,7 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
       clickOutsideToClose: true
     })
     .then(function (res) {
-        vm.tumorPopupTouched = true
-        console.log(vm.healthData.tumorPopup)
+      vm.tumorPopupTouched = true
     })
   }
   vm.resetTumor = function () {
