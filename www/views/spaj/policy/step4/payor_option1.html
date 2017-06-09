@@ -13,7 +13,7 @@
                 <label class="item-stacked-label">
                   <div class="input-label">Nama Lengkap <span class="input_red">(*)</span></div>
                 </label>
-                <input  placeholder="Enter" ng-model="vm.questions.question_1.other_answer" />
+                <input  placeholder="Enter" ng-model="vm.questions.question_1.other_answer" name/>
               </md-input-container>
             </div>
           </div>
@@ -57,7 +57,7 @@
                 <div class="row indent_row">
                   <div class="col-50">
                     <input ng-model='data.jenisKelamin' class='custom_radio ' type="radio" value='Pira' id="pira" />
-                    <label for="pira">Pira</label>
+                    <label for="pira">Pria</label>
                   </div>
                   <div class="col-50">
                     <input ng-model='data.jenisKelamin' class='custom_radio ' type="radio" value='Wanita' id="wanita" />
@@ -145,7 +145,7 @@
                 <label class="item-stacked-label">
                    <div class="input-label">No Identitas<span class="input_red">(*)</span></div>
                 </label>
-                <input  placeholder="Enter" ng-model="vm.questions.question_1.other_answer" />
+                <input type="number"  placeholder="Enter" ng-model="vm.questions.question_1.other_answer" />
               </md-input-container>
             </div>
           </div>
@@ -193,7 +193,7 @@
                 <label class="item-stacked-label">
                    No NPWP
                 </label>
-                <input  placeholder="Enter" ng-model="vm.questions.question_1.other_answer" />
+                <input type="number"  placeholder="Enter" ng-model="vm.questions.question_1.other_answer" />
               </md-input-container>
             </div>
           </div>
@@ -365,7 +365,7 @@
                         <option>+59</option>
                       </select>
                     </div>
-                    <div class="col-80"><input type="text" placeholder="XXX  XXXXXXXX" ng-model='phone.phone_home'></div>
+                    <div class="col-80"><input type="number" placeholder="XXX  XXXXXXXX" ng-model='phone.phone_home'></div>
                   </div>
                 </div>
                 <div class="col-33">
@@ -383,7 +383,7 @@
                         <option>+59</option>
                       </select>
                     </div>
-                    <div class="col-80"><input type="text" placeholder="XXX  XXXXXXXX" ng-model='phone.phone_office'></div>
+                    <div class="col-80"><input type="number" placeholder="XXX  XXXXXXXX" ng-model='phone.phone_office'></div>
                   </div>
                 </div>
                 <div class="col-33">
@@ -401,7 +401,7 @@
                         <option>+59</option>
                       </select>
                     </div>
-                    <div class="col-80"><input type="text" placeholder="XXX  XXXXXXXX" ng-model='phone.phone_gsm'></div>
+                    <div class="col-80"><input type="number" placeholder="XXX  XXXXXXXX" ng-model='phone.phone_gsm'></div>
                   </div>
                 </div>
               </div>
