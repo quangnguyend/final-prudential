@@ -4,7 +4,7 @@ function topupCtrl ($state, $scope, $rootScope, SpajService) {
   $rootScope.showMenu = true
   var vm = this;
   vm.data = {
-    is_additional_funds: false,
+    is_additional_funds: null,
     spaj_number: '',
     type_of_policy_number: '',
     name_of_policy: '',
@@ -37,10 +37,23 @@ function topupCtrl ($state, $scope, $rootScope, SpajService) {
       type_of_investment_fund: '', investment_fund_percent: ''
     })
   };
+  vm.isShowForm = true;
+  vm.checkShowForm = function () {
+    if(vm.data.top_up_amount > 250000000){
+      vm.isShowForm = true;
+    }
+    else {
+      vm.isShowForm = false;
+    }
+  };
 
   vm.next = function () {
-    SpajService.setData('topup', {isComplete: validator()})
-    $state.go('app.topup_payor')
+    SpajService.setData('topup', {isComplete: validator()});
+    if(vm.data.is_additional_funds == false){
+      $state.go('app.beneficiaries')
+    }else{
+      $state.go('app.topup_payor')
+    }
   }
 
   function validator () {

@@ -7,95 +7,97 @@
     <step-process></step-process>
   
     <div class="list list-inset" id="top_up">
-      <div class="item">
-        <h1 class="description">Apakah Anda ingin mengajukan <br/>penambahan dana (Top-Up) untuk polis ini?</h1>
-        <div class="row no-padding-top">
-          <div class="col col-50">
-            <button class="button button-block " ng-class="vm.data.is_additional_funds == true? 'selected': ''" ng-click="vm.data.is_additional_funds = true">Ya</button>
-          </div>
-          <div class="col col-50">
-            <button class="button button-block" ng-class="vm.data.is_additional_funds == false? 'selected': ''" ng-click="vm.data.is_additional_funds = false">Tidak</button>
+      <div ng-if="vm.isShowForm">
+        <div class="item">
+          <h1 class="description">Apakah Anda ingin mengajukan <br/>penambahan dana (Top-Up) untuk polis ini?</h1>
+          <div class="row no-padding-top">
+            <div class="col col-50">
+              <button class="button button-block " ng-class="vm.data.is_additional_funds == true? 'selected': ''" ng-click="vm.data.is_additional_funds = true">Ya</button>
+            </div>
+            <div class="col col-50">
+              <button class="button button-block" ng-class="vm.data.is_additional_funds == false? 'selected': ''" ng-click="vm.data.is_additional_funds = false">Tidak</button>
+            </div>
           </div>
         </div>
-      </div>
-      <div id="health_respiratory" ng-if="vm.data.is_additional_funds == true">
-        <div id="policy_info_ph_info" class="list list-inset no-lines">
-          <div class="center_txt">Saya mengkonfirmasi bahwa saya</div>
-          <div class='item'>
-            <div class="row-no-padding">
-              <div class="row">
-                <input ng-model="vm.data.type_of_policy_number" value="1" class="custom_radio" type="radio" ng-value="true" id="have_policy_number1" name="have_policy_number" aria-invalid="false" checked>
-                <label class="" for="have_policy_number1">Belum memiliki nomor Polis*</label>
-              </div>
-              <div class="checkbox_child">
+        <div id="health_respiratory" ng-if="vm.data.is_additional_funds == true">
+          <div id="policy_info_ph_info" class="list list-inset no-lines">
+            <div class="center_txt">Saya mengkonfirmasi bahwa saya</div>
+            <div class='item'>
+              <div class="row-no-padding">
                 <div class="row">
-                  <div class='item inside_check'>
-                    <div class="row-no-padding">
-                      <div class="row">
-                        <md-input-container class="md-block" flex-gt-sm>
-                          <label>Nomor SPAJ</label>
-                          <input type="text" ng-model="vm.data.name_of_policyholder" required />
-                        </md-input-container>
-                      </div>
-                    </div>
-                  </div>
+                  <input ng-model="vm.data.type_of_policy_number" value="1" class="custom_radio" type="radio" ng-value="true" id="have_policy_number1" name="have_policy_number" aria-invalid="false" checked>
+                  <label class="" for="have_policy_number1">Belum memiliki nomor Polis*</label>
                 </div>
-              </div>
-              <div class="row">
-                <input ng-model="vm.data.type_of_policy_number" class="custom_radio" type="radio" value="2" id="have_policy_number2" name="have_policy_number" aria-invalid="false">
-                <label class="" for="have_policy_number2">Sudah memiliki Polis</label>
-              </div>
-              <div class="checkbox_child">
-                <div class="row">
-                  <div class='item inside_check'>
-                    <div class="row-no-padding">
-                      <div class="row">
-                        <md-input-container class="md-block" flex-gt-sm>
-                          <label>Nama Pemegang Polis</label>
-                          <input type="text" ng-model="vm.data.name_of_policy" required />
-                        </md-input-container>
+                <div class="checkbox_child">
+                  <div class="row">
+                    <div class='item inside_check'>
+                      <div class="row-no-padding">
+                        <div class="row">
+                          <md-input-container class="md-block" flex-gt-sm>
+                            <label>Nomor SPAJ</label>
+                            <input type="text" ng-model="vm.data.name_of_policyholder" required />
+                          </md-input-container>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="row">
-                  <div class='item inside_check'>
-                    <div class="row-no-padding">
-                      <div class="row">
-                        <md-input-container class="md-block" flex-gt-sm>
-                          <label>Nomor Polis</label>
-                          <input type="text" ng-model="vm.data.policy_number" required />
-                        </md-input-container>
+                  <input ng-model="vm.data.type_of_policy_number" class="custom_radio" type="radio" value="2" id="have_policy_number2" name="have_policy_number" aria-invalid="false">
+                  <label class="" for="have_policy_number2">Sudah memiliki Polis</label>
+                </div>
+                <div class="checkbox_child">
+                  <div class="row">
+                    <div class='item inside_check'>
+                      <div class="row-no-padding">
+                        <div class="row">
+                          <md-input-container class="md-block" flex-gt-sm>
+                            <label>Nama Pemegang Polis</label>
+                            <input type="text" ng-model="vm.data.name_of_policy" required />
+                          </md-input-container>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class='item inside_check'>
+                      <div class="row-no-padding">
+                        <div class="row">
+                          <md-input-container class="md-block" flex-gt-sm>
+                            <label>Nomor Polis</label>
+                            <input type="text" ng-model="vm.data.policy_number" required />
+                          </md-input-container>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="row">
-                <input ng-model="vm.data.type_of_policy_number" class="custom_radio" type="radio" value="3" id="have_policy_number3" name="have_policy_number" aria-invalid="false">
-                <label class="" for="have_policy_number3">Sudah memiliki Polisi - membeli melalui bank</label>
-              </div>
-              <div class="checkbox_child">
                 <div class="row">
-                  <div class='item inside_check'>
-                    <div class="row-no-padding">
-                      <div class="row">
-                        <md-input-container class="md-block" flex-gt-sm>
-                          <label>Nama Pemberi Referral</label>
-                          <input type="text" ng-model="vm.data.name_of_referral_giver" required />
-                        </md-input-container>
+                  <input ng-model="vm.data.type_of_policy_number" class="custom_radio" type="radio" value="3" id="have_policy_number3" name="have_policy_number" aria-invalid="false">
+                  <label class="" for="have_policy_number3">Sudah memiliki Polisi - membeli melalui bank</label>
+                </div>
+                <div class="checkbox_child">
+                  <div class="row">
+                    <div class='item inside_check'>
+                      <div class="row-no-padding">
+                        <div class="row">
+                          <md-input-container class="md-block" flex-gt-sm>
+                            <label>Nama Pemberi Referral</label>
+                            <input type="text" ng-model="vm.data.name_of_referral_giver" required />
+                          </md-input-container>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class='item inside_check'>
-                    <div class="row-no-padding">
-                      <div class="row">
-                        <md-input-container class="md-block" flex-gt-sm>
-                          <label>Nomor Kode Referral</label>
-                          <input type="text" ng-model="vm.data.referral_code_number" required />
-                        </md-input-container>
+                  <div class="row">
+                    <div class='item inside_check'>
+                      <div class="row-no-padding">
+                        <div class="row">
+                          <md-input-container class="md-block" flex-gt-sm>
+                            <label>Nomor Kode Referral</label>
+                            <input type="text" ng-model="vm.data.referral_code_number" required />
+                          </md-input-container>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -136,7 +138,7 @@
                   <label class="item-stacked-label">Jumlah Top-Up</label>
                 </div>
                 <div class="row">
-                  <div class="col"><input type="text" placeholder="260.000.000" ng-model="vm.data.top_up_amount"></div>
+                  <div class="col"><input type="text" placeholder="260.000.000" ng-model="vm.data.top_up_amount" ng-change="vm.checkShowForm()"></div>
                 </div>
               </div>
             </div>
