@@ -1,8 +1,14 @@
 <ion-view cache-view="false" id="spaj-start">
   <ion-nav-title>
-    <custom-header title='Sebelum Anda melanjutkan' step='1'></custom-header>
+    <custom-header title='Sebelum Anda melanjutkan'></custom-header> 
   </ion-nav-title>
+  <ion-nav-buttons side="left">
+      <button class="button back-button buttons button-clear header-item" ng-click="$root.goSpajStart()">
+          <i class="icon ion-ios-arrow-back"></i> 
+      </button>
+  </ion-nav-buttons>
   <ion-content>
+
     <step-process></step-process>
     <div id="SPAJ">
       <div class='row tab-menu'>

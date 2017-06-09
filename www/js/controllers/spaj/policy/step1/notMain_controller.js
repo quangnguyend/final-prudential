@@ -1,6 +1,6 @@
 function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
   $rootScope.showBar = true
-  $rootScope.showBack = true
+  $rootScope.showBack = false
   $rootScope.showMenu = true
   var MAIN_INSURED_TAB = 'MAIN_INSURED', MAIN_LAYOUT = 'MAIN_LAYOUT',
     ACTIVE_INSURED = 'ACTIVE_INSURED'
@@ -37,7 +37,7 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
 
   vm.switchTab = function (tab, index) {
     vm.currentTab = tab || MAIN_INSURED_TAB
-    vm.currentTabIndex = index ||0
+    vm.currentTabIndex = index || 0
   }
 
   vm.addAdditionalTab = function () {
@@ -71,18 +71,18 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
     vm.switchTab('ADDITIONAL_0', 0)
   }
   vm.handleAddedTabSwipe = function (e) {
-    var direct   = e.gesture.direction;
-    var num = vm.additionalList.length;
+    var direct = e.gesture.direction
+    var num = vm.additionalList.length
     // if swipeleft and current tab index smaller than tabs length
     if (direct === 'left') {
-      if (num === 1){
-        vm.switchTab(vm.policy_holder_tab,vm.currentTabIndex)
+      if (num === 1) {
+        vm.switchTab(vm.policy_holder_tab, vm.currentTabIndex)
       }
-      if (num === 2 && vm.currentTabIndex==0) {
+      if (num === 2 && vm.currentTabIndex == 0) {
         var nextTab = vm.additionalList[vm.currentTabIndex + 1]['id']
         vm.switchTab(nextTab, vm.currentTabIndex + 1)
-      }else if(num === 2 && vm.currentTabIndex==1){
-        vm.switchTab(vm.policy_holder_tab,vm.currentTabIndex)
+      } else if (num === 2 && vm.currentTabIndex == 1) {
+        vm.switchTab(vm.policy_holder_tab, vm.currentTabIndex)
       }
     }
     if (direct === 'right') {
@@ -90,9 +90,9 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
         case 1:
           var prevTab1 = vm.additionalList[vm.currentTabIndex - 1]['id']
           vm.switchTab(prevTab1, vm.currentTabIndex - 1)
-          break 
+          break
         case 0:
-          vm.switchTab(vm.policy_holder_tab,vm.currentTabIndex)
+          vm.switchTab(vm.policy_holder_tab, vm.currentTabIndex)
       }
     }
   }
