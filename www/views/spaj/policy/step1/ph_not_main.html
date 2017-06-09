@@ -12,7 +12,7 @@
     <step-process></step-process>
     <div id="SPAJ">
       <div class='row tab-menu'>
-        <div class='col blur-text' ng-disabled><span class="d-table"><span class="d-table-cell">Pemegang Polis</span></span>
+        <div class='col' ng-click='vm.switchTab(vm.policy_holder_tab)' ng-class='vm.currentTab===vm.policy_holder_tab?"active":""'><span class="d-table"><span class="d-table-cell">Pemegang Polis</span></span>
         </div>
         <div class='col' ng-click='vm.switchTab(vm.main_insured_tab)' ng-class='vm.currentTab===vm.main_insured_tab?"active":""'><span class="d-table"><span class="d-table-cell">Tertanggung Utama</span></span>
         </div>
@@ -24,6 +24,7 @@
     </div>
     </div>
     <div ng-show='vm.currentLayout === vm.main_layout'>
+      <insured-home insured-data='{{vm.policy_holder_tab}}' ng-show='vm.currentTab===vm.policy_holder_tab'  on-swipe-left='vm.handleMainTabSwipe()'></insured-home>
       <insured-home insured-data='{{vm.main_insured_tab}}' ng-show='vm.currentTab===vm.main_insured_tab'  on-swipe-left='vm.handleMainTabSwipe()'></insured-home>
       <insured-home ng-repeat='tab in vm.additionalList track by $index' insured-data='{{tab.id}}' ng-show='vm.currentTab===tab.id' ng-class='vm.currentTab===tab.id?"active":""' on-swipe='vm.handleAddedTabSwipe($event)'></insured-home>
     </div>

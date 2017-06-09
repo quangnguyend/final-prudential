@@ -3,13 +3,14 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
   $rootScope.showBack = false
   $rootScope.showMenu = true
   var MAIN_INSURED_TAB = 'MAIN_INSURED', MAIN_LAYOUT = 'MAIN_LAYOUT',
-    ACTIVE_INSURED = 'ACTIVE_INSURED'
+    ACTIVE_INSURED = 'ACTIVE_INSURED', POCICY_HOLDER_TAB = 'POLICY_HOLDER'
   var vm = this
   var rootSpajData = SpajService.getData('spaj')
   vm.currentLayout = MAIN_LAYOUT
   vm.main_layout = MAIN_LAYOUT
   vm.active_insured_layout = ACTIVE_INSURED
   vm.main_insured_tab = MAIN_INSURED_TAB
+  vm.policy_holder_tab = POCICY_HOLDER_TAB
 
   vm.currentTab = MAIN_INSURED_TAB
   vm.additionalList = []
@@ -78,10 +79,10 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
       if (num === 1) {
         vm.switchTab(vm.policy_holder_tab, vm.currentTabIndex)
       }
-      if (num === 2 && vm.currentTabIndex == 0) {
+      if (num === 2 && vm.currentTabIndex === 0) {
         var nextTab = vm.additionalList[vm.currentTabIndex + 1]['id']
         vm.switchTab(nextTab, vm.currentTabIndex + 1)
-      } else if (num === 2 && vm.currentTabIndex == 1) {
+      } else if (num === 2 && vm.currentTabIndex === 1) {
         vm.switchTab(vm.policy_holder_tab, vm.currentTabIndex)
       }
     }
