@@ -79,3 +79,27 @@ angular
 
   .directive('dataService', dataService)
   .directive('groupedRadio', groupedRadio)
+  .directive('spyStyle', [function () {
+
+    return {
+      scope: false,
+      link: function (scope, element, attrs) {
+            //console.log(vm)
+            scope.$watch(function () {
+                return element.attr('class');
+            },  styleChangedCallBack,
+            true);
+            console.log(scope)
+            function styleChangedCallBack(newValue, oldValue) {
+                if (newValue !== oldValue) {
+                  console.log(newValue)
+                  //scope[attrs['spyStyle']](newValue);
+                  console.log(element.attr('spy-style'))
+                  eval(element.attr('spy-style'))
+                }
+            }
+
+      }
+    };
+
+}]);

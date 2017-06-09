@@ -38,7 +38,9 @@ body {
   color: #fff !important;
   padding: 5px 10px;
 }
-
+.backdrop{
+  background-color: transparent !important
+}
 ion-footer-bar.bar.bar-assertive {
   background-color: #da291c !important;
 }
@@ -49,8 +51,8 @@ ion-footer-bar.bar.bar-assertive {
   ._md-toolbar-transitions{
     background-color:#da291c;
     .md-toolbar-tools{
-      color:#FFF; text-align: center;
-      h2{ color:#FFF; text-align: center; width: 100%}
+      color:#FFF ; text-align: center;
+      h2{ color:#FFF !important; text-align: center; width: 100%}
       i{font-size:25px;}
     }
   }
