@@ -33,22 +33,23 @@ function riskHobbyCtrl ($scope, $rootScope, $ionicPopup, UserService, DataServic
       or Policy Holder và Main Insured
       or Main Insured.
      * */
-    var condition = SpajService.getData('spaj')
-    if (!condition) {
-      $rootScope.nextStep()
-      return
-    }
-    if (condition.utama === true ||
-        condition.typeSpaj === 'PemegangPolis' ||
-        (condition.utama === true && condition.typeSpaj === 'PemegangPolis')
-      ) {
-      $location.path('/app/step5')
-    } else {
-      $rootScope.nextStep()
-    }
+    // var condition = SpajService.getData('spaj')
+    // if (!condition) {
+    //   $rootScope.nextStep()
+    //   return
+    // }
+    // if (condition.utama === true ||
+    //     condition.typeSpaj === 'PemegangPolis' ||
+    //     (condition.utama === true && condition.typeSpaj === 'PemegangPolis')
+    //   ) {
+    //   $location.path('/app/step5')
+    // } else {
+    //   $rootScope.nextStep()
+    // }
 
     // TODO
     SpajService.setData('risk_hobby', {isComplete: validator()})
+    $rootScope.nextStep()
   }
 
   function validator () {

@@ -179,7 +179,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, $mdDi
   vm.nextStep = function () {
     vm.healthData.isComplete = validator()
     SpajService.setData('health_data', vm.healthData)
-    $rootScope.nextStep()
+    $state.go('app.other_health')
   }
 
   vm.validateDigestive = function () {
@@ -254,11 +254,10 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, $mdDi
     $ionicScrollDelegate.scrollTo(0, distance, true)
   }
 
- 
   // ======================== PopupEye ======================== //
   vm.showPopupEye = function () {
     vm.showPopupEye = vm.healthData.eyePopupData
-   
+
     if (vm.healthData.eye_contact_lenses && vm.healthData.eye_disorders) { // if choose both option
       vm.addPopupData()
     }
@@ -277,7 +276,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, $mdDi
 
   vm.showPopupDigestive = function () {
     vm.digestive = vm.healthData.digestivePopupData
-  
+
     $mdDialog.show({
       controller: 'DigestiveController',
       templateUrl: 'views/spaj/policy/step2/popup-digestive.html',
@@ -293,7 +292,7 @@ function step2Ctrl ($state, $scope, $rootScope, $stateParams, $ionicPopup, $mdDi
 
   vm.showPopupRespiratory = function () {
     vm.respiratory = vm.healthData.respiratoryPopupData
-  
+
     $mdDialog.show({
       controller: 'RespiratoryController',
       templateUrl: 'views/spaj/policy/step2/popup_respiratory.html',
