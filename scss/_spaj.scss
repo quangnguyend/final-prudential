@@ -1562,3 +1562,31 @@ th {
   }
 }
 /* End Top Up */
+#policy_beneficiary {
+  .float-left {
+    float: left;
+  }
+  .float-right {
+    float: right;
+  }
+  .col-5 {
+    width: 5%;
+  }
+  .col-95 {
+    width: 95%;
+  }
+  .row .col-padding, .col-padding {
+    padding: 5px !important;
+  }
+  md-input-container{
+    margin-bottom: 0px!important;
+  }
+  .row-number{
+    margin-top: 23px;
+    display: inline-block;
+  }
+  span.error-message {
+    color: red;
+    font-weight: normal;
+  }
+}
