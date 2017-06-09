@@ -14,16 +14,9 @@
         value: 'Blue'
       }
     ]
-    $scope.eyePopupData= [{
-      name_of_illness: null,
-      when_the_condition_found: null,
-      last_care_date: null,
-      hospoital_name: null,
-      hospital_address: null,
-      medicine: null
-    }]
+    
     $scope.addPopupData = function () {
-      $scope.eyePopupData.push({
+      vm.healthData.eyePopupData.push({
         name_of_illness: null,
         when_the_condition_found: null,
         last_care_date: null,
@@ -34,7 +27,9 @@
     }
 
     $scope.closeDialog = function() {
+      //vm.healthData.eyePopupData='fewefewfew'
       $mdDialog.hide();
+      //console.log(vm.healthData.eyePopupData)
     }
     // popup Tumor
     $scope.puSteps = ['tumor_1'];

@@ -142,9 +142,9 @@
      color:#da291c
   }
 
- 
+ .add_question{padding-top:20px;}
   input {
-    &[type=number], &[type=text] {}
+    border-bottom:1px solid #979797;
   }
   .button.button-dark {
     background-color: #5B6770;
@@ -155,8 +155,8 @@
   .item {
     border: none;
     padding: 40px 0 0;
-    opacity: 0.4;
-    pointer-events: none;
+    //opacity: 0.4;
+    //pointer-events: none;
     &:nth-child(1), &._active {
       opacity: 1;
       pointer-events: auto;
@@ -207,6 +207,10 @@
     margin-bottom: 20px;
     padding: 0 20px;
     font-size: 17px;
+    &.text-left{
+      text-align: left;
+      padding-left: 0px;
+    }
    
   }
   .icon {
@@ -248,6 +252,10 @@
 
 .popup-prudential {
   
+  height: -webkit-calc(100vh - 40px);
+  height: -webkit-calc(100vh - 40px);
+  height: -moz-calc(100vh - 40px);
+  height: calc(100vh - 40px);
   .checkbox input:before, .checkbox-icon:before {
     border-radius: 0px;
     background: #eee;
@@ -308,6 +316,7 @@
   .row-no-padding{
     margin-bottom:20px
   }
+  .md-dialog-content{position: relative}
 }
 
 #health_question1 {
@@ -349,7 +358,7 @@
       padding-top: 10px;
     }
   }
-  .item .icon {
+  .item div.icon {
     content: '';
     width: 111px;
     height: 64px;
@@ -358,14 +367,14 @@
     background-size: 100%;
     margin: 0 auto;
     position: relative;
-  }
-  .icon:before {
-    content: '';
-    width: 111px;
-    height: 64px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
+    &:before {
+      content: '';
+      width: 111px;
+      height: 64px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
   }
   .ibrain {
     .icon:before {
@@ -491,6 +500,9 @@
 
 #eye-popup md-dialog-content {
   padding: 40px;
+  height: -webkit-calc(100vh - 20px);
+  height: -moz-calc(100vh - 20px);
+  height: calc(100vh - 20px);
   .item {
     margin-top: 30px 50px;
     &:first-child {
@@ -1554,3 +1566,31 @@ th {
   }
 }
 /* End Top Up */
+#policy_beneficiary {
+  .float-left {
+    float: left;
+  }
+  .float-right {
+    float: right;
+  }
+  .col-5 {
+    width: 5%;
+  }
+  .col-95 {
+    width: 95%;
+  }
+  .row .col-padding, .col-padding {
+    padding: 5px !important;
+  }
+  md-input-container{
+    margin-bottom: 0px!important;
+  }
+  .row-number{
+    margin-top: 23px;
+    display: inline-block;
+  }
+  span.error-message {
+    color: red;
+    font-weight: normal;
+  }
+}

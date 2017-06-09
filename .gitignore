@@ -9,7 +9,6 @@
 desktop.ini
 /typings/
 /bower_components/
-<<<<<<< HEAD
 package-lock.json
 www/css/main.min.css
 package.json
@@ -17,8 +16,4 @@ www/css/ionic.app.min.css
 www/css/main.min.css
 www/index.html
 www/css/maps/
-=======
-/www/css/*
-/www/css/ionic.app.min.css
-/www/css/main.min.css
->>>>>>> ebc814982d8b90bab98512f84d52b0e21e78508f
+

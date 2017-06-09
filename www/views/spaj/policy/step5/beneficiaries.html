@@ -5,51 +5,66 @@
   <ion-content>
     <step-process></step-process>
     <div class="list list-inset" id='policy_beneficiary'>
-      <div class="item" ng-repeat="(index, row) in vm.dataBeneficiary">
-        <table style="width:100%">
-          <tr>
-            <th class='blur-text'>{{index+1}}</th>
-            <th>Nama</th>
-            <th>Hubungan</th>
-            <th>Jenis Kelamin</th>
-            <th>Tanggal Lahir</th>
-            <th>%</th>
-          </tr>
-          <tr>
-            <td class='' width='15px'></td>
-            <td class=''>
-              <input type="text" ng-model="row.name">
-            </td>
-            <td class=''>
-                <md-select  ng-model='row.gender' value='WANITA' class='blur-text'>
-                  <md-option ng-repeat='value in vm.genderData' ng-value='{{value}}'>
-                    {{value}}
-                  </md-option>
-                </md-select>
-            </td>
-            <td class=''>
-                <md-select  ng-model='row.relationship' class='blur-text'>
-                  <md-option ng-repeat='value in vm.relationshipData' ng-value='{{value}}'>
-                    {{value}}
-                  </md-option>
-                </md-select>
-            </td>
-            <td class=" row row-top blur-text">
-                <input type="date" placeholder="DD/MM/YYYY" onblur="(this.type='date')" ng-model="vm.questions.question_2.date_inspection">
-              <i class="icon ion-calendar"></i>
-            </td>
-            <td class='' width='10%'><input type='input' placeholder="%" ng-model="row.share" /></td>
-          </tr>
-          <tr>
-            <td colspan="5">
-              <span class="error-message">! Silakan memasukkan angka kelipatan 5 contoh: 5,10,15..100 </span>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="item">
-        <button class="button button-stable button-block float-right col-95" ng-click="vm.addRow()">+ Tambah Penerima Manfaat Asuransi</button>
-      </div>
+      <form name="myForm">
+        <ul>
+          <li class="m-gap-30" ng-repeat="(index, row) in vm.dataBeneficiary" ng-init="vm.isValidated[$index]=true">
+            <div class="clearfix">
+              <div class="float-left col-5 col-padding"><span class="row-number">{{$index + 1}}</span></div>
+              <div class="float-left col-95">
+                <div class="row row-no-padding">
+                  <div class="col col-33 col-padding">
+                    <md-input-container class="md-block" flex-gt-sm>
+                      <label>Nama</label>
+                      <input type="text" ng-model="row.name" required ng-blur="vm.validateRow(row,$index)" />
+                    </md-input-container>
+                  </div>
+                  <div class="col col-33 col-padding">
+                    <md-input-container class="md-block">
+                      <label>Hubungan </label>
+                      <md-select ng-init="gender={}" ng-model='gender' ng-model-options="{trackBy: '$value.id'}"  class='blur-text' md-on-close="row.gender=gender.name; vm.validateRow(row,$index)" required >
+                        <md-option ng-repeat='value in vm.genderData' ng-value='{{value}}'>
+                          {{value.name}}
+                        </md-option>
+                      </md-select>
+                    </md-input-container>
+                  </div>
+                  <div class="col col-33 col-padding">
+                    <md-input-container class="md-block">
+                      <label>Jenis Kelamin</label>
+                      <md-select ng-init="relationship={}" ng-model='relationship' class='blur-text' md-on-close="row.relationship = relationship.name; vm.validateRow(row,$index)" required>
+                        <md-option ng-repeat='value in vm.relationshipData' ng-value='{{value}}' >
+                          {{value.name}}
+                        </md-option>
+                      </md-select>
+                    </md-input-container>
+                  </div>
+                </div>
+                <div class="row row-no-padding">
+                  <div class="col col-75 col-padding">
+                    <md-input-container>
+                      <label>Tanggal Lahir</label>
+                      <input type="date" placeholder="DD/MM/YYYY" ng-model="row.birthday" ng-blur="vm.validateRow(row, $index)" required>
+                      <!--<md-datepicker ng-model="vm.questions.question_2.date_inspection" name="dateField" md-placeholder="DD/MM/YYYY" md-open-on-focus ng-blur="vm.validateRow(row)" required></md-datepicker>-->
+                    </md-input-container>
+                  </div>
+                  <div class="col col-25 col-padding">
+                    <md-input-container class="md-block" flex-gt-sm >
+                      <label>%</label>
+                      <input type="number" ng-model="row.share" ng-blur="vm.validateRow(row, $index)" required/>
+                    </md-input-container>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="errors" ng-if="!vm.isValidated[$index]" >
+              <div><span class="error-message">! {{vm.isValidated[$index]}} {{$index}}Input salah, silakan masukkan huruf, Silakan memasukkan angka kelipatan 5 i.e: 5,10,15..100 </span></div>
+            </div>
+          </li>
+        </ul>
+        <div class="item">
+          <button class="button button-stable button-block float-right col-95" ng-click="vm.addRow()">+ Tambah Penerima Manfaat Asuransi</button>
+        </div>
+      </form>
     </div>
   </ion-content>
   <ion-footer-bar ng-show="true" class="bar bar-footer bar-assertive">
