@@ -168,7 +168,7 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
   vm.nextStep = function () {
     vm.healthData.isComplete = validator()
     SpajService.setData('health_data', vm.healthData)
-    $rootScope.nextStep()
+    $state.go('app.other_health')
   }
 
 
@@ -260,6 +260,7 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
     }
     return true
   }
+
   // ======================== PopupEye ======================== //
   vm.oo = " nguen"
   vm.showPopupEye = function () {

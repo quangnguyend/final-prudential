@@ -9,15 +9,8 @@
   <ion-content>
     <div class="container text-center">
       <div class="list">
-        <div class="item">
-          <div class='description'>
-            Silahkan cek info berikut yang mana dapat mempengaruhi dokumen premium atau dokumen yang dipersyaratkan
-          </div>
-        </div>
         <div class="item gray-block" ng-init="vm.data.sessionRadio='Utama'">
-          <div>
-            Saya, pemegang polis mengkonfirmasi bahwa saya ...
-          </div>
+          <span class='general-text'>Saya, pemegang polis mengkonfirmasi bahwa saya ...</span>
           <div class="row responsive-sm mini-center-container radio-block">
             <div class="col-50">
               <input ng-model="vm.data.sessionRadio" class='custom_radio' type="radio" value="Utama" name="utama" id="utama"/>
@@ -43,9 +36,7 @@
           </div>
         </div>
         <div class="item gray-block mt-30" ng-init="vm.data.policyRadio='Lainnya'">
-          <div>
-            Pempayar premi adalah...
-          </div>
+          <span class='general-text'>Pembayar premi adalah...</span>
           <div class="row responsive-sm mini-center-container radio-block">
             <div class="col-50">
               <input ng-model="vm.data.policyRadio" class='custom_radio' type="radio" value="PemegangPolis" name="pemegang_polis" id="pemegang_polis"
@@ -82,8 +73,10 @@
             </div>
           </div>
         </div>
+
+        <div class="item break-line general-text">Sebelum Anda melanjutkan pengisian SPAJ, mohon informasikan kepemilikan polis Anda sebelumnya</div>
         <div class="item">
-          <div class='small-question'>
+          <div class='general-text small-question'>
             {{vm.data.beforeProceed_1.title}}
           </div>
           <div class="row">
@@ -96,7 +89,7 @@
           </div>
         </div>
         <div class="item">
-          <div class='small-question'>
+          <div class='general-text small-question'>
             {{vm.data.beforeProceed_2.title}}
           </div>
           <div class="row">
@@ -109,7 +102,7 @@
           </div>
         </div>
         <div class="item">
-          <div class='small-question'>
+          <div class='general-text small-question'>
             {{vm.data.beforeProceed_2.title}}
           </div>
           <div class="row pb-0">

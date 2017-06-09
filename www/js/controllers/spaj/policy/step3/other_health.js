@@ -1,6 +1,6 @@
 'use strict'
 
-function otherHealthCtrl ($scope, $rootScope, $ionicScrollDelegate, $location, $ionicSideMenuDelegate, SpajService) {
+function otherHealthCtrl ($scope, $rootScope, $state, $ionicScrollDelegate, $location, $ionicSideMenuDelegate, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
@@ -99,6 +99,6 @@ function otherHealthCtrl ($scope, $rootScope, $ionicScrollDelegate, $location, $
 
   // save and redirect to another page
   vm.save = function () {
-    $location.path('/app/step3/family_history')
+    $state.go('app.family_history')
   }
 }

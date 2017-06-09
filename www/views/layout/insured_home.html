@@ -79,15 +79,20 @@
     </div>
     <div class='item'>
         <div class="row-no-padding">
-            <md-input-container class="md-block">
-                <label class="input-label">Negara Kelahiran </label>
-                <md-select ng-model="data.negara">
-                    <md-option value="None"><em>None</em></md-option>
-                    <md-option value="Red"><em>Red</em></md-option>
-                    <md-option value="Green"><em>Green</em></md-option>
-                    <md-option value="Blue"><em>Blue</em></md-option>
-                </md-select>
-            </md-input-container>
+            <md-autocomplete
+                md-selected-item="selectedItem"
+                md-search-text="searchText"
+                md-items="item in querySearch(searchText)"
+                md-item-text="item.name"
+                md-min-length="0"
+                md-floating-label="Negara Kelahiran">
+                <md-item-template>
+                    <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.name}}</span>
+                </md-item-template>
+                <md-not-found>
+                    No countries were found.
+                </md-not-found>
+            </md-autocomplete>
         </div>
     </div>
     <div class='item'>
@@ -222,25 +227,23 @@
     </div>
     <div class='item'>
         <div class="row-no-padding">
-            <md-input-container class="md-block" flex-gt-sm>
-                <label>Kode Pos</label>
-                <input ng-model='data.kode_pos'>
-            </md-input-container>
-        </div>
-    </div>
-    <div class='item'>
-        <div class="row-no-padding">
             <div class="row responsive-sm">
-                <div class="col-50">
+                <div class="col-33">
                     <md-input-container class="md-block" flex-gt-sm>
-                        <label>Provinsi</label>
-                        <input ng-model='data.provinsi' required>
+                        <label>RT</label>
+                        <input ng-model='data.RT'>
                     </md-input-container>
                 </div>
-                <div class="col-50">
+                <div class="col-33">
                     <md-input-container class="md-block" flex-gt-sm>
-                        <label>Kabupaten / Kota </label>
-                        <input ng-model='data.kabupaten' required>
+                        <label>RW</label>
+                        <input ng-model='data.RW'>
+                    </md-input-container>
+                </div>
+                <div class="col-33">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>KM</label>
+                        <input ng-model='data.KM'>
                     </md-input-container>
                 </div>
             </div>
@@ -267,30 +270,40 @@
     <div class='item'>
         <div class="row-no-padding">
             <div class="row responsive-sm">
-                <div class="col-33">
+                <div class="col-50">
                     <md-input-container class="md-block" flex-gt-sm>
-                        <label>RT</label>
-                        <input ng-model='data.RT'>
+                        <label>Provinsi</label>
+                        <input ng-model='data.provinsi' required>
                     </md-input-container>
                 </div>
-                <div class="col-33">
+                <div class="col-50">
                     <md-input-container class="md-block" flex-gt-sm>
-                        <label>RW</label>
-                        <input ng-model='data.RW'>
-                    </md-input-container>
-                </div>
-                <div class="col-33">
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>KM</label>
-                        <input ng-model='data.KM'>
+                        <label>Kabupaten / Kota </label>
+                        <input ng-model='data.kabupaten' required>
                     </md-input-container>
                 </div>
             </div>
         </div>
     </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <md-autocomplete
+                md-selected-item="selectedItem"
+                md-search-text="searchText"
+                md-items="item in querySearch(searchText)"
+                md-item-text="item.name"
+                md-min-length="0"
+                md-floating-label="Kode Pos">
+                <md-item-template>
+                    <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.name}}</span>
+                </md-item-template>
+                <md-not-found>
+                    No countries were found.
+                </md-not-found>
+            </md-autocomplete>
+        </div>
     </div>
     <div class='item' ng-repeat="(index, row) in vm.insuredData.address">
-
         <div class="row-no-padding">
             <div class="row responsive-sm">
                 <div class="col-33">
@@ -315,14 +328,13 @@
         </div>
     </div>
     <div class="item">
-        <di class="row-no-padding">
+        <div class="row-no-padding">
             <div class="row">
                 <div class="button-block add_icon" ng-click='vm.addInsuredAddress()'>
                     <a class="button"><i class="icon ion-ios-plus-empty"></i> <span>Tampah Kontak</span></a>
-
                 </div>
             </div>
-        </di>
+        </div>
     </div>
     <div class='item'>
         <div class="row-no-padding">
@@ -334,11 +346,11 @@
             <div class="row">
                 <div class="row indent_row responsive-sm">
                     <div class="col-33">
-                        <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatTempatTingal' class='custom_radio' type="radio" />
+                        <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatTempatTingal' class='custom_radio' type="radio" ng-click="changeAddress('Alamat Tempat Tingal')" />
                         <label class='' for="{{insuredName}}-alamatTempatTingal">Alamat Tempat Tingal</label>
                     </div>
                     <div class="col-33">
-                        <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatKantor' class='custom_radio' type="radio" />
+                        <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatKantor' class='custom_radio' type="radio" ng-click="changeAddress('Alamat Kantor')" />
                         <label class='' for="{{insuredName}}-alamatKantor">Alamat Kantor</label>
                     </div>
                     <div class="col-33">
@@ -353,7 +365,13 @@
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label>Email</label>
-                <input type="tel" ng-model='data.hp_gsm_tel' required>
+                <input type="email" ng-model='data.hp_gsm_tel' required>
+            </md-input-container>
+        </div>
+        <div class="row-no-padding" ng-if="showAddress">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Address </label>
+                <input type="text" ng-model='data.address' required>
             </md-input-container>
         </div>
     </div>
