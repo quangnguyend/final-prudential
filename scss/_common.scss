@@ -2,3 +2,24 @@
     font-weight: 600;
 }
 
+.pru-btn {
+    background: #F7F5F5;
+    opacity: 1.00;
+    border-radius: 2px;
+    width: 100%;
+    line-height: 100%;
+    letter-spacing: -0.408px;
+    color: rgba(73, 84, 93, 0.5);
+    opacity: 1.00;
+    &.selected {
+      background-color: $dark-grey;
+      color: #F7F5F5;
+    }
+}
+
+.asterisk:after{
+    content: '*';
+    color: red;
+    font-size: 13px;
+    vertical-align: top;
+}

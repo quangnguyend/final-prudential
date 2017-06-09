@@ -3662,6 +3662,7 @@ md-input-container {
       content: ' *';
       font-size: 13px;
       vertical-align: top;
+      color: red;
     }
   }
 
@@ -5362,6 +5363,7 @@ md-input-container:not(.md-input-has-value) {
       content: ' *';
       font-size: 13px;
       vertical-align: top;
+      color: red;
     }
   }
 }
@@ -5385,6 +5387,7 @@ md-select {
         content: ' *';
         font-size: 13px;
         vertical-align: top;
+        color: red;
       }
     }
   }
