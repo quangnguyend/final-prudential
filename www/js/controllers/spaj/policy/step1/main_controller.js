@@ -1,6 +1,6 @@
 function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, DataService, SpajService, $ionicSideMenuDelegate) {
   $rootScope.showBar = true
-  $rootScope.showBack = true
+  $rootScope.showBack = false
   $rootScope.showMenu = true
 
   $ionicSideMenuDelegate.canDragContent(false)
@@ -57,7 +57,7 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
   }
 
   vm.handleMainTabSwipe = function () {
-    switch(vm.currentTabIndex){
+    switch (vm.currentTabIndex) {
       case 0:
         vm.switchTab('ADDITIONAL_0', 0)
         break
@@ -65,22 +65,20 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
         vm.switchTab('ADDITIONAL_1', 1)
         break
     }
-   
   }
   vm.handleAddedTabSwipe = function (e) {
-    var direct   = e.gesture.direction;
-    var num = vm.additionalList.length;
+    var direct = e.gesture.direction
+    var num = vm.additionalList.length
     // if swipeleft and current tab index smaller than tabs length
     if (direct === 'left') {
-      if (num === 1){
-        vm.switchTab(vm.policy_holder_tab,vm.currentTabIndex)
+      if (num === 1) {
+        vm.switchTab(vm.policy_holder_tab, vm.currentTabIndex)
       }
-      if (num === 2 && vm.currentTabIndex==0) {
-
+      if (num === 2 && vm.currentTabIndex == 0) {
         var nextTab = vm.additionalList[vm.currentTabIndex + 1]['id']
         vm.switchTab(nextTab, vm.currentTabIndex + 1)
-      }else if(num === 2 && vm.currentTabIndex==1){
-        vm.switchTab(vm.policy_holder_tab,vm.currentTabIndex)
+      } else if (num === 2 && vm.currentTabIndex == 1) {
+        vm.switchTab(vm.policy_holder_tab, vm.currentTabIndex)
       }
     }
     if (direct === 'right') {
@@ -88,7 +86,7 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
         case 1:
           var prevTab1 = vm.additionalList[vm.currentTabIndex - 1]['id']
           vm.switchTab(prevTab1, vm.currentTabIndex - 1)
-          break 
+          break
       }
     }
   }

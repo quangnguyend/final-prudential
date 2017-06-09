@@ -1,7 +1,4 @@
 function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
-  $rootScope.showBar = true
-  $rootScope.showBack = true
-  $rootScope.showMenu = true
   var vm = this
 
   vm.insuredData = {
@@ -49,14 +46,14 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
     $scope.contacts.push(tel)
   }
 
-  $scope.showAddress = false;
+  $scope.showAddress = false
   $scope.changeAddress = function (v) {
-    if(v == 'Alamat Kantor'){
-      $scope.showAddress = true;
-    }else {
-      $scope.showAddress = false;
+    if (v == 'Alamat Kantor') {
+      $scope.showAddress = true
+    } else {
+      $scope.showAddress = false
     }
-  };
+  }
   function validator () {
     var data = $scope.data
     // TODO
@@ -64,7 +61,7 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
     return false
   }
 
-  /*auto complete*/
+  /*auto complete */
   // list of countries
   vm.countries = [
     {name: 'Afghanistan', code: 'AF'},
@@ -310,23 +307,23 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
     {name: 'Yemen', code: 'YE'},
     {name: 'Zambia', code: 'ZM'},
     {name: 'Zimbabwe', code: 'ZW'}
-  ];
+  ]
   /**
    * Search for countries... use $timeout to simulate
    * remote dataservice call.
    */
   $scope.querySearch = function (query) {
-    var results = query ? vm.countries.filter( createFilterFor(query) ) : vm.countries;
-    return results;
+    var results = query ? vm.countries.filter(createFilterFor(query)) : vm.countries
+    return results
   };
 
   /**
    * Create filter function for a query string
    */
 
-  function createFilterFor(query) {
-    return function filterFn(country) {
-      return (country.name.toLowerCase().indexOf(query.toLowerCase()) === 0);
+  function createFilterFor (query) {
+    return function filterFn (country) {
+      return (country.name.toLowerCase().indexOf(query.toLowerCase()) === 0)
     };
   }
 }
