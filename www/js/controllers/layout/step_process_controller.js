@@ -18,7 +18,7 @@ function stepProcessCtr ($scope, $rootScope, $state, $timeout, SpajService) {
     { step: '3', title: 'PEMBAYAR PREMI', state: 'payor_premium' },
     { step: '4', title: 'TOP-UP', state: 'topup' },
     { step: '5', title: 'CALON PENERIMA MANFAAT ASURANSI', state: 'beneficiaries' },
-    { step: '6', title: 'DOKUMEN', state: 'document_upload' },
+    { step: '6', title: 'KELENGKAPAN DOKUMEN', state: 'document_upload' },
     { step: '7', title: 'AMENDMENT', state: 'amendment' }
   ]
 

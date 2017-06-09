@@ -31,26 +31,12 @@
                       </md-input-container>
                     </div>
                     <div class="col col-33 col-padding">
-                      <div class="img-options">
-                        <button class="button button-stable" ng-disabled="item.document_image == ''"><i class="ion-checkmark " ng-class="item.document_image!=''?'green-color':''"></i></button>
-                        <button class="button button-stable" ng-disabled="item.document_image == ''" ng-click="vm.viewImage(item)"><i class="ion-eye"></i></button>
-                        <button class="button button-stable" ng-disabled="item.document_image == ''" ng-click="vm.deleteImage(item)"><i class="ion-trash-b"></i></button>
+                      <div class="img-options" ng-if="item.document_image != ''">
+                        <button class="button button-stable" ><i class="ion-checkmark " ng-class="item.document_image!=''?'green-color':''"></i></button>
+                        <button class="button button-stable" ng-click="vm.viewImage(item)"><i class="ion-eye"></i></button>
+                        <button class="button button-stable" ng-click="vm.deleteImage(item)"><i class="ion-trash-b"></i></button>
                       </div>
-                    </div>
-                  </div>
-                  <div class="row row-no-padding">
-                    <div class="col col-67 col-padding">
-                      <md-input-container class="select-box md-block" md-no-float>
-                        <label class="input-label">{{item.document_name}}</label>
-                        <md-select  ng-model="item.document_type">
-                          <md-option ng-repeat="type in vm.documentType" value="{{type.value}}">
-                            {{type.name}}
-                          </md-option>
-                        </md-select>
-                      </md-input-container>
-                    </div>
-                    <div class="col col-33 col-padding">
-                      <div class="document-upload-file">
+                      <div class="document-upload-file" ng-if="item.document_image == ''">
                         <button class="button button-stable btn-upload-img button-block" ng-click="vm.takePhoto(item)">Ambil Foto</button>
                       </div>
                     </div>

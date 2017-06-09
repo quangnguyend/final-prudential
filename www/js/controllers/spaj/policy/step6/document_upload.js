@@ -11,7 +11,9 @@ function documentUploadCtrl ($ionicPlatform, $scope, $rootScope, $state, SpajSer
 
   if (typeof spajData !== 'undefined') {
     if (typeof spajData.session2 !== 'undefined' && spajData.session2 === 'lainnya') {
-      vm.tabs.push({name: 'Tertanggung utama', id: 'main_issue'})
+      vm.tabs.push(
+        {name: 'Pembayar premi', id: 'premium_payers'},
+        {name: 'Tertanggung utama', id: 'main_issue'})
     }
   }
 
@@ -66,7 +68,7 @@ function documentUploadCtrl ($ionicPlatform, $scope, $rootScope, $state, SpajSer
         allowEdit: true,
         encodingType: Camera.EncodingType.JPEG,
         popoverOptions: Camera.PopoverArrowDirection.ARROW_UP,
-        saveToPhotoAlbum: false
+        saveToPhotoAlbum: true
       }
       if (vm.isOpeningCamera === false) {
         vm.isOpeningCamera = true
