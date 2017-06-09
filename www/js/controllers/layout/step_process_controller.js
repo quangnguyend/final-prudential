@@ -1,8 +1,4 @@
 function stepProcessCtr ($scope, $rootScope, $state, $timeout, SpajService) {
-  $rootScope.showBar = true
-  $rootScope.showBack = true
-  $rootScope.showMenu = true
-
   var vm = this
   vm.policyStep = '1'
   var payor = [
@@ -51,6 +47,10 @@ function stepProcessCtr ($scope, $rootScope, $state, $timeout, SpajService) {
       var finishedState = vm.pageList.length === 7 ? 'terms_conditions' : 'terms_conditions'
       $state.go('app.' + finishedState)
     }
+  }
+
+  $rootScope.goSpajStart = function () {
+    $state.go('app.spaj_start')
   }
 
   $rootScope.resetPolicyData = function () {

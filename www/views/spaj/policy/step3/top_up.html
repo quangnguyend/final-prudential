@@ -11,14 +11,14 @@
         <h1 class="description">Apakah Anda ingin mengajukan <br/>penambahan dana (Top-Up) untuk polis ini?</h1>
         <div class="row no-padding-top">
           <div class="col col-50">
-            <button class="button button-block selected" ng-class="vm.data.is_additional_funds == true? 'selected': ''" ng-click="vm.data.is_additional_funds = true">Ya</button>
+            <button class="button button-block " ng-class="vm.data.is_additional_funds == true? 'selected': ''" ng-click="vm.data.is_additional_funds = true">Ya</button>
           </div>
           <div class="col col-50">
             <button class="button button-block" ng-class="vm.data.is_additional_funds == false? 'selected': ''" ng-click="vm.data.is_additional_funds = false">Tidak</button>
           </div>
         </div>
       </div>
-      <div id="health_respiratory">
+      <div id="health_respiratory" ng-if="vm.data.is_additional_funds == true">
         <div id="policy_info_ph_info" class="list list-inset no-lines">
           <div class="center_txt">Saya mengkonfirmasi bahwa saya</div>
           <div class='item'>
@@ -32,11 +32,11 @@
                   <div class='item inside_check'>
                     <div class="row-no-padding">
                       <div class="row">
-                        <label class="item-stacked-label">
-                          <span class="input-label">Nomor SPAJ*</span>
-                        </label>
+                        <md-input-container class="md-block" flex-gt-sm>
+                          <label>Nomor SPAJ</label>
+                          <input type="text" ng-model="vm.data.name_of_policyholder" required />
+                        </md-input-container>
                       </div>
-                      <div class="row"><input type="text" placeholder="Enter" ng-model="vm.data.name_of_policyholder"></div>
                     </div>
                   </div>
                 </div>
@@ -50,11 +50,11 @@
                   <div class='item inside_check'>
                     <div class="row-no-padding">
                       <div class="row">
-                        <label class="item-stacked-label">
-                          <span class="input-label">Nama Pemegang Polis</span>
-                        </label>
+                        <md-input-container class="md-block" flex-gt-sm>
+                          <label>Nama Pemegang Polis</label>
+                          <input type="text" ng-model="vm.data.name_of_policy" required />
+                        </md-input-container>
                       </div>
-                      <div class="row"><input type="text" placeholder="Enter" ng-model="vm.data.name_of_policy"></div>
                     </div>
                   </div>
                 </div>
@@ -62,11 +62,11 @@
                   <div class='item inside_check'>
                     <div class="row-no-padding">
                       <div class="row">
-                        <label class="item-stacked-label">
-                          <span class="input-label">Nomor Polis</span>
-                        </label>
+                        <md-input-container class="md-block" flex-gt-sm>
+                          <label>Nomor Polis</label>
+                          <input type="text" ng-model="vm.data.policy_number" required />
+                        </md-input-container>
                       </div>
-                      <div class="row"><input type="text" placeholder="Enter" ng-model="vm.data.policy_number"></div>
                     </div>
                   </div>
                 </div>
@@ -80,11 +80,11 @@
                   <div class='item inside_check'>
                     <div class="row-no-padding">
                       <div class="row">
-                        <label class="item-stacked-label">
-                          <span class="input-label">Nama Pemberi Referral**</span>
-                        </label>
+                        <md-input-container class="md-block" flex-gt-sm>
+                          <label>Nama Pemberi Referral</label>
+                          <input type="text" ng-model="vm.data.name_of_referral_giver" required />
+                        </md-input-container>
                       </div>
-                      <div class="row"><input type="text" placeholder="Enter" ng-model="vm.data.name_of_referral_giver"></div>
                     </div>
                   </div>
                 </div>
@@ -92,11 +92,11 @@
                   <div class='item inside_check'>
                     <div class="row-no-padding">
                       <div class="row">
-                        <label class="item-stacked-label">
-                          <span class="input-label">Nomor Kode Referral**</span>
-                        </label>
+                        <md-input-container class="md-block" flex-gt-sm>
+                          <label>Nomor Kode Referral</label>
+                          <input type="text" ng-model="vm.data.referral_code_number" required />
+                        </md-input-container>
                       </div>
-                      <div class="row"><input type="text" placeholder="Enter" ng-model="vm.data.referral_code_number"></div>
                     </div>
                   </div>
                 </div>
@@ -161,31 +161,29 @@
         </div>
         <div class='item'>
           <div class="row-no-padding">
-            <div class="row" ng-repeat="item in vm.data.top_up_destination_fund_allocation">
-              <div class="col-10 sm-font">{{$index + 1}}</div>
-              <div class="col-50">
-                <div class="row">
-                  <label class="sm-font">Jenis Dana Investasi Non-Syariah</label>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <md-input-container class="md-block mt-0" >
-                      <md-select ng-model="item.type_of_investment_fund">
-                        <md-option ng-repeat="t in vm.type_of_investment_fund" value="{{t.value}}" ng-selected="$first">{{t.name}}</md-option>
-                      </md-select>
-                    </md-input-container>
+            <div class="clearfix" ng-repeat="item in vm.data.top_up_destination_fund_allocation">
+                <div class="float-left col-5"><span class="row-number sm-font">{{$index + 1}}</span></div>
+                <div class="float-left col-95">
+                  <div class="row row-no-padding">
+                    <div class="col-50">
+                      <div class="sm-font">Jenis Dana Investasi Non-Syariah</div>
+                      <div class="">
+                        <md-input-container class="md-block mt-0" >
+                          <md-select ng-model="item.type_of_investment_fund">
+                            <md-option ng-repeat="t in vm.type_of_investment_fund" value="{{t.value}}" ng-selected="$first">{{t.name}}</md-option>
+                          </md-select>
+                        </md-input-container>
+                      </div>
+                    </div>
+                    <div class="col-10"></div>
+                    <div class="col-30">
+                      <div class="sm-font">%</div>
+                      <div class="">
+                        <input type="text" placeholder="Enter" ng-model="item.investment_fund_percent">
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-10"></div>
-              <div class="col-30">
-                <div class="row">
-                  <label class="sm-font">%</label>
-                </div>
-                <div class="row">
-                  <div class="col"><input type="text" placeholder="Enter" ng-model="item.investment_fund_percent"></div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
