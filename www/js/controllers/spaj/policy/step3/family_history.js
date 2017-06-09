@@ -1,6 +1,6 @@
 'use strict'
 
-function familyHistoryCtrl ($scope, $rootScope, $ionicPopup, $ionicScrollDelegate, $location) {
+function familyHistoryCtrl ($scope, $rootScope, $state, $ionicPopup, $ionicScrollDelegate, $location) {
   var vm = this
 
   vm.tabs = [
@@ -48,6 +48,6 @@ function familyHistoryCtrl ($scope, $rootScope, $ionicPopup, $ionicScrollDelegat
 
   // save and redirect to another page
   vm.save = function () {
-    $location.path('/app/step3/risk_hobby')
+    $state.go('app.risk_hobby')
   }
 }
