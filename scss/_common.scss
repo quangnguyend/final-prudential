@@ -16,3 +16,10 @@
       color: #F7F5F5;
     }
 }
+
+.asterisk:after{
+    content: '*';
+    color: red;
+    font-size: 13px;
+    vertical-align: top;
+}
