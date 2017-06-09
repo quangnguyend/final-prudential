@@ -1440,7 +1440,9 @@ th {
     }
     padding: 20px 0;
     .inside_check {
-      margin: 0 0 25px -5px;
+      margin: 0 0 0px -5px;
+      padding-top: 0px;
+      padding-bottom: 0px;
     }
   }
   .center_txt {
@@ -1469,6 +1471,9 @@ th {
   }
   .mt-0{
     margin-top: 0px;
+  }
+  md-input-container{
+    margin-bottom: 0px;
   }
 }
 
@@ -1562,22 +1567,22 @@ th {
   }
 }
 /* End Top Up */
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.col-5 {
+  width: 5%;
+}
+.col-95 {
+  width: 95%;
+}
+.row .col-padding, .col-padding {
+  padding: 5px !important;
+}
 #policy_beneficiary {
-  .float-left {
-    float: left;
-  }
-  .float-right {
-    float: right;
-  }
-  .col-5 {
-    width: 5%;
-  }
-  .col-95 {
-    width: 95%;
-  }
-  .row .col-padding, .col-padding {
-    padding: 5px !important;
-  }
   md-input-container{
     margin-bottom: 0px!important;
   }
@@ -1588,5 +1593,9 @@ th {
   span.error-message {
     color: red;
     font-weight: normal;
+  }
+  input[type="date"] {
+    border-bottom: none;
+    padding-bottom: 0px;
   }
 }
