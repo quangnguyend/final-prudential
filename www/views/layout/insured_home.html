@@ -79,15 +79,20 @@
     </div>
     <div class='item'>
         <div class="row-no-padding">
-            <md-input-container class="md-block">
-                <label class="input-label">Negara Kelahiran </label>
-                <md-select ng-model="data.negara">
-                    <md-option value="None"><em>None</em></md-option>
-                    <md-option value="Red"><em>Red</em></md-option>
-                    <md-option value="Green"><em>Green</em></md-option>
-                    <md-option value="Blue"><em>Blue</em></md-option>
-                </md-select>
-            </md-input-container>
+            <md-autocomplete
+                md-selected-item="selectedItem"
+                md-search-text="searchText"
+                md-items="item in querySearch(searchText)"
+                md-item-text="item.name"
+                md-min-length="0"
+                md-floating-label="Negara Kelahiran">
+                <md-item-template>
+                    <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.name}}</span>
+                </md-item-template>
+                <md-not-found>
+                    No countries were found.
+                </md-not-found>
+            </md-autocomplete>
         </div>
     </div>
     <div class='item'>
@@ -282,18 +287,20 @@
     </div>
     <div class='item'>
         <div class="row-no-padding">
-            <md-input-container class="md-block" flex-gt-sm>
-                <label>Kode Pos</label>
-                <md-input-container class="md-block mt-0">
-                    <md-select ng-model="data.kode_pos">
-                        <md-option ng-repeat="(key, value) in countries" value="{{ key }}" ng-selected="$first">{{ key }} ({{ value }})</md-option>
-                    </md-select>
-                </md-input-container>
-
-               <!-- <select>
-                    <option ng-repeat="(key, value) in countries" value="{{ value }}">{{ key }} ({{ value }})</option></select>-->
-                <!--<input ng-model='data.kode_pos'>-->
-            </md-input-container>
+            <md-autocomplete
+                md-selected-item="selectedItem"
+                md-search-text="searchText"
+                md-items="item in querySearch(searchText)"
+                md-item-text="item.name"
+                md-min-length="0"
+                md-floating-label="Kode Pos">
+                <md-item-template>
+                    <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.name}}</span>
+                </md-item-template>
+                <md-not-found>
+                    No countries were found.
+                </md-not-found>
+            </md-autocomplete>
         </div>
     </div>
     <div class='item' ng-repeat="(index, row) in vm.insuredData.address">
