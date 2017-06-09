@@ -166,12 +166,12 @@
                     <ion-checkbox>Pembayar pajak AS</ion-checkbox>
                 </div>
                 <div class="col-33">
-                    <ion-checkbox>Lainya</ion-checkbox>
+                    <ion-checkbox ng-model="data.Lainya">Lainya</ion-checkbox>
                 </div>
             </div>
         </div>
     </div>
-    <div class='item'>
+    <div class='item' ng-show="data.Lainya===true">
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label class='asterisk'>No NPWP </label>
