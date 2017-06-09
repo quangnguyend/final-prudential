@@ -20,43 +20,48 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
       medicine: null
     }],
     digesPu: {
-      keluhan_perut: null,
-      keluhan_muntah: null,
-      keluhan_nyerl: null,
-      keluhan_mual: null,
-      keluhan_darah: null,
-      keluhan_lainnya: null,
-
+      keluhan:{
+        sakit: null,
+        muntah: null,
+        nveri: null,
+        mual: null,
+        darah: null,
+        lainnya: null
+      },
       pertamas_select: null,
       frekuensi_select: null,
       frekuensi_option: null,
       kapan_keluhan_select: null,
+
       apakah_pernah: null,
       kapan_month_select: null,
       kapan_year_select: null,
       nama_dokter: null,
-      tindakan_operasi: null,
-      tindakan_suntikan: null,
-      tindakan_obat: [{
-        yang: null,
-        diperoleh_dari: null,
-        timbulnya_select: null,
-        timbulnya_option: null,
-        mashit: null
-      }],
-      tindakan_lainnya: null,
-      pemeriksaan_waktu: null,
-      pemeriksaan_hasil: null,
-      lainnya_input: null,
-      lainnya_waktu: null
+      tindakan:{
+        operasi: null,
+        suntikan: null,
+        obat:null,
+        lainnya:null
+      },
+      pemer:{
+        endoskopi:null,
+        lainnya:null
+      }
     },
     respiratoryPu: {
-      gangguan_asma: null,
-      gangguan_tbc: null,
-      gangguan_bronkhitis: null,
-      gangguan_lainnya: null,
+      gangguan:{
+        asma: null,
+        tbc: null,
+        bronkhitis: null,
+        lainnya: null
+      },
       kapan_pertama: null,
-      keluhan_lainnya: null,
+      yang:{
+        sesak: null,
+        batuk: null,
+        nafas: null,
+        lainnya: null
+      },
       faktor: null,
       apakah: null,
       kapan_keluhan: null,
@@ -68,19 +73,21 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
       kapan_select: null,
       lama_select: null,
       lama2: null,
-      inhalasi: null,
-      suntikan: null,
-      suntikan_nama: null,
-      obat_minum: null,
-      operasi: null,
-      pengobatan_lainnya: null,
-      rontgen: null,
-      kapan_select2: null,
-      hasil_select: null,
-      ekg: null,
-      pemeriksaan_lainnya: null
+      pengo:{
+        inhalasi: null,
+        suntikan_nama: null,
+        obat_minum: null,
+        operasi: null,
+        lainnya: null,
+      },
+      pemer:{
+        rontgen:null,
+        tes:null,
+        ekg:null,
+        lainnya:null
+      }
     },
-    tumorPopup: {
+    tumorPu: {
       janes: {
         tumor: null,
         kista: null,
@@ -98,15 +105,17 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
       kapan_month_select: null,
       kapan_year_select: null,
       nama_dokter: null,
-      angkat_option: null,
-      angkat_tipe: null,
-      angkat_kapan: null,
-      angkat_year: null,
-      payudara_lama_select: null,
-      payudara_lama_select2: null,
-      payudara_hasil_select: null,
-      lainnya_value: null,
-      kategori_select: null
+      jenis_operasi:{
+        rahim:null,
+        payudara:null,
+        lainnya:null
+      },
+      pengo:{
+        obat_option:null,
+        radiography_option:null,
+        chemography_option:null,
+        lainnya_option:null
+      } 
     },
     height: null,
     weight: null,
@@ -146,9 +155,12 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
     icomplication: null,
     ilostweight: null
   }
+
   vm.eyePopupTouched = false
   vm.digestivePopupTouched = false
   vm.tumorPopupTouched = false
+  vm.respiratoryPopupTouched = false
+
   vm.fakeoption = [
 
     {
@@ -206,6 +218,42 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
 
   // Main Health step
 
+  vm.objectValidate=function(obj){ 
+    var obvalid=0
+    if(obj.constructor==Object){
+      for(var key in obj){
+        if(obj[key]===null) return false
+        if(obj[key]!=null&&obj[key].constructor==Object){
+          var count=0
+          for(var childkey in (obj[key])){
+            if(obj[key][childkey]!=null) {
+              count++
+            };  
+          }
+          if(count==0) {return false ;}else{ obvalid++; }
+        }
+      }
+    }else if(obj.constructor==Array){
+      for (i = 0; i < obj.length; i++) {
+        for (var key in obj[i]) {
+          if (obj[i][key] == null) return false
+        }
+      }
+    }
+    return true
+  }
+  vm.resetObject=function(obj){
+    for(var key in obj){
+      if(obj[key]!=null&&obj[key].constructor==Object){
+        for(var childkey in (obj[key])){
+          obj[key][childkey]=null
+        }
+      }else{
+        obj[key] =null
+      }
+    }
+  }
+
   vm.health1NextStep = function (id) {
     var STEP_HEIGHT = $('.multi-step').height() + 140
     var distance = $('#' + id) && $('#' + id).position().top + STEP_HEIGHT
@@ -223,41 +271,10 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
     $ionicScrollDelegate.scrollTo(0, distance, true)
   }
 
-  vm.validateDigestive = function () {
-    var cc=$('#digest_part1').length
-    var items = vm.healthData.digestivePopupData
-    for (var key in items) {
-      if (items[key] == null) return false
-    }
-    return true
-  }
-  vm.validateTummor = function () {
-    var items = vm.healthData.tumorPopupData
 
-    for (var key in items) {
-      if (items[key] == null) return false
-    }
-    return true
-  }
-  vm.validateEye = function () {
-    var items = vm.healthData.eyePopup
-    for (i = 0; i < items.length; i++) {
-      for (var key in items[i]) {
-        if (items[i][key] == null) return false
-      }
-    }
-    return true
-  }
-  vm.validateRespiratory = function () {
-    var items = vm.healthData.respiratoryPopupData
-    for (var key in items) {
-      if (items[key] == null) return false
-    }
-    return true
-  }
-
+  
+ 
   // ======================== PopupEye ======================== //
-  vm.oo = " nguen"
   vm.showPopupEye = function () {
     if (vm.healthData.eye_contact_lenses && vm.healthData.eye_disorders && vm.healthData.eyePopup.length < 2) { // if choose both option
       vm.addPopupEyeItem()
@@ -280,6 +297,10 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
       medicine: null
     })
   }
+  vm.resetEye = function () {
+    vm.eyePopupTouched = false;
+    vm.resetObject(vm.healthData.eyePopup)
+  }
 
   // ======================== PopupDigestive ======================== //
 
@@ -289,9 +310,9 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
       templateUrl: 'views/spaj/policy/step2/popup-digestive.html',
       clickOutsideToClose: true
     })
-      .then(function (res) {
-        vm.digestivePopupTouched = true
-      })
+    .then(function (res) {
+      vm.digestivePopupTouched = true
+    })
   }
   vm.digest_addObat = function () {
     vm.healthData.digesPu.tindakan_obat.push({
@@ -301,6 +322,10 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
       timbulnya_option: null,
       mashit: null
     })
+  }
+  vm.resetDigestive = function () {
+    vm.digestivePopupTouched = false;
+    vm.resetObject(vm.healthData.digesPu)
   }
   // ======================== PopupRespiratory ======================== //
 
@@ -313,6 +338,10 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
     .then(function (res) {
       vm.respiratoryPopupTouched = true
     })
+  }
+  vm.resetRespiratory = function () {
+    vm.respiratoryPopupTouched = false;
+    vm.resetObject(vm.healthData.respiratoryPu)
   }
 
   // ======================== PopupTumor ======================== //
@@ -327,7 +356,8 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
     })
   }
   vm.resetTumor = function () {
-    vm.tumorPopupTouched = false
+    vm.tumorPopupTouched = false;
+    vm.resetObject(vm.healthData.tumorPu)
   }
   // ======================== End PopupTumor ======================== //
 
