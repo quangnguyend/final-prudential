@@ -4,7 +4,7 @@ function topupCtrl ($state, $scope, $rootScope, SpajService) {
   $rootScope.showMenu = true
   var vm = this;
   vm.data = {
-    is_additional_funds: true,
+    is_additional_funds: false,
     spaj_number: '',
     type_of_policy_number: '',
     name_of_policy: '',

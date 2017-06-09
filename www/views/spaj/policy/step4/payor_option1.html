@@ -21,7 +21,7 @@
             <div class="row-no-padding">
               <div class="row">
                 <label class="item-stacked-label">
-                  <div class="input-label">Tempat dan Tanggal Lahir<span class="input_red">(*)</div></span>
+                  <div class="input-label">Tempat dan Tanggal Lahir<span class="input_red">(*)</span></div>
                 </label>
               </div>
               <div class="row">
@@ -347,7 +347,7 @@
               </div>
             </div>
           </div>
-          <div class='item '>
+          <div class='item ' ng-repeat="phone in vm.phones">
             <div class="row-no-padding">
               <div class="row">
                 <div class="col-33">
@@ -358,14 +358,14 @@
                   </div>
                   <div class="row">
                     <div class="col-20">
-                      <select class="form_select reset_threecol" ng-model='agent.occupation '>
+                      <select class="form_select reset_threecol">
                         <option selected value>+62</option>
                         <option>+61</option>
                         <option>+60</option>
                         <option>+59</option>
                       </select>
                     </div>
-                    <div class="col-80"><input type="text" placeholder="XXX  XXXXXXXX"></div>
+                    <div class="col-80"><input type="text" placeholder="XXX  XXXXXXXX" ng-model='phone.phone_home'></div>
                   </div>
                 </div>
                 <div class="col-33">
@@ -376,14 +376,14 @@
                   </div>
                   <div class="row">
                     <div class="col-20">
-                      <select class="form_select reset_threecol" ng-model='agent.occupation '>
+                      <select class="form_select reset_threecol" >
                         <option selected value>+62</option>
                         <option>+61</option>
                         <option>+60</option>
                         <option>+59</option>
                       </select>
                     </div>
-                    <div class="col-80"><input type="text" placeholder="XXX  XXXXXXXX"></div>
+                    <div class="col-80"><input type="text" placeholder="XXX  XXXXXXXX" ng-model='phone.phone_office'></div>
                   </div>
                 </div>
                 <div class="col-33">
@@ -394,14 +394,14 @@
                   </div>
                   <div class="row">
                     <div class="col-20">
-                      <select class="form_select reset_threecol" ng-model='agent.occupation '>
+                      <select class="form_select reset_threecol" >
                         <option selected value>+62</option>
                         <option>+61</option>
                         <option>+60</option>
                         <option>+59</option>
                       </select>
                     </div>
-                    <div class="col-80"><input type="text" placeholder="XXX  XXXXXXXX"></div>
+                    <div class="col-80"><input type="text" placeholder="XXX  XXXXXXXX" ng-model='phone.phone_gsm'></div>
                   </div>
                 </div>
               </div>
@@ -411,7 +411,7 @@
             <di class="row-no-padding">
               <div class="row">
                 <div class="button-block add_icon">
-                  <a class="button" grouped-red-radio="'Male '" ng-model="agent.gender"><i class="icon ion-ios-plus-empty"></i> <span>Tampah Kontak</span></a>
+                  <a class="button" ng-click="vm.addPhone()"><i class="icon ion-ios-plus-empty"></i> <span>Tampah Kontak</span></a>
                 </div>
               </div>
             </di>
@@ -425,6 +425,9 @@
               <div class="col col-50">
                 <button class="button value-btn pb-0" ng-class="{selected: !data.beforeProceed_3.value}" ng-click="data.beforeProceed_3.value = false">Tidak</button>
               </div>
+            </div>
+            <div class="mt-30" ng-if="data.beforeProceed_3.value == true">
+              <input type="text" placeholder="Enter">
             </div>
           </div>
           <div class="item">

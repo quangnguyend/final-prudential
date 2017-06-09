@@ -17,7 +17,20 @@ function payorOption1Ctrl ($scope, $rootScope, $state, DataService, $ionicScroll
   vm.save = function () {
     $rootScope.nextStep()
   }
-
+  vm.phones = [
+    {
+      phone_home : '',
+      phone_office : '',
+      phone_gsm : ''
+    }
+  ];
+  vm.addPhone = function () {
+    vm.phones.push({
+      phone_home : '',
+      phone_office : '',
+      phone_gsm : ''
+    });
+  };
   // TODO
   SpajService.setData('payor_premium', {isComplete: validator()})
   function validator () {
