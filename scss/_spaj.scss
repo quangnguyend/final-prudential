@@ -70,6 +70,10 @@
       @extend .font-size-small;
       margin-top: 5px;
       color: #fff;
+      position: absolute;
+      text-align: center;
+      right: 0px;
+      left: 0px;
     }
     span {
       background: #F8383F;

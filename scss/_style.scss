@@ -125,8 +125,24 @@ ion-footer-bar.bar.bar-assertive {
 /* ========================== COMMON STYLE ========================== */
 
 md-input-container:not(.md-input-has-value) input:not(:focus) {
+
   color: #CCC !important;
 }
+
+// md-input-container, md-input, md-select {
+//   label {
+//     color: $dark-grey !important;
+//   }
+// }
+
+
+// input.md-input {
+//   border-color: $dark-grey !important;
+// }
+
+// label.md-input-focused{
+//   border-color: $dark-grey !important;
+// }
 
 label.item-stacked-label {
   //font-size: 17px;
@@ -476,8 +492,10 @@ select {
     margin: 0px;
     background: transparent;
     border: none;
-    color: white;
     text-align-last: right;
+   span{
+    color: white;
+   }
     //font-size: 17px;
   }
   select option {
