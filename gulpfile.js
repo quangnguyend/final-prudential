@@ -33,7 +33,7 @@ gulp.task('lint', () => {
 })
 
 gulp.task('sass', function (done) {
-  gulp.src('./scss/*.scss')
+  gulp.src(['./scss/*.scss', './www/lib/angular-material/angular-material.scss'])
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}))
     .on('error', sass.logError)
