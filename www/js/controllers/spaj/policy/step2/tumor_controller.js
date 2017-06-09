@@ -15,7 +15,7 @@
         value: 'Blue'
       }
     ]
-
+    $scope.mainScroll='abv';
     $scope.closeDialog = function() {
       $mdDialog.hide();
     }
@@ -25,7 +25,11 @@
       var STEP_HEIGHT = 120
       var distance = $('#' + id) && $('#' + id).position().top + STEP_HEIGHT
       if ($scope.puSteps.indexOf(id) < 0) $scope.puSteps.push(id)
-      $ionicScrollDelegate.scrollTo(0, distance, true)
-    
+      
+      setTimeout(function() {
+        var delegate = $ionicScrollDelegate.$getByHandle('mainScroll');
+          delegate.scrollTo(0, distance, false)
+      }, 1000);
+      console.log(distance)
     }
   }
