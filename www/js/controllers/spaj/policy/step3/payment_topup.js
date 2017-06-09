@@ -7,16 +7,25 @@ function paymentTopupCtrl ($scope, $state, $rootScope, $ionicSideMenuDelegate) {
   $ionicSideMenuDelegate.canDragContent(false)
   var vm = this;
   vm.data = {
-    payment_method: ''
+    payment_method: '',
+    another_payment_method: '',
+    term1: false,
+    term2: false
   };
   vm.topup_value = 50000;
-
-  $scope.$watch('vm.data.payment_method', function (newVal) {
-
+  vm.isCompleted = false;
+  $scope.$watchGroup(['vm.data.payment_method', 'vm.data.term1', 'vm.data.term2' ], function () {
+    if(vm.data.payment_method !== '' && vm.data.term1 === true && vm.data.term2 === true){
+      vm.isCompleted = true;
+    }else{
+      vm.isCompleted = false;
+    }
   }, true);
   // save and redirect to another page
   vm.save = function () {
     // console.log(vm.data);
-    $state.go('app.spaj_remider_before_submit');
+    if(vm.isCompleted == true){
+      $state.go('app.spaj_remider_before_submit');
+    }
   }
 }

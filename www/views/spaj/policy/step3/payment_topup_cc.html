@@ -37,15 +37,15 @@
             </div>
             <div class="row">
               <div class="col-33">
-                <input id='KartuKredit' value="Kartu Kredit" type="radio" name='kadaluwarasa' ng-model="vm.data.payment_method" />
+                <input id='KartuKredit' value="Kartu Kredit" type="radio" name='payment_method' ng-model="vm.data.payment_method" />
                 <label class='' for="KartuKredit">Kartu Kredit</label>
               </div>
               <div class="col-33">
-                <input id='KartuDebit' value="Kartu Debit" type="radio" name='kadaluwarasa' ng-model="vm.data.payment_method" />
+                <input id='KartuDebit' value="Kartu Debit" type="radio" name='payment_method' ng-model="vm.data.payment_method" />
                 <label class='' for="KartuDebit">Kartu Debit</label>
               </div>
               <div class="col-33">
-                <input id='banTransfer' value="Bank transfer / ATM" type="radio" name='kadaluwarasa' ng-model="vm.data.payment_method" />
+                <input id='banTransfer' value="Bank transfer / ATM" type="radio" name='payment_method' ng-model="vm.data.payment_method" />
                 <label class='' for="banTransfer">Bank transfer / ATM</label>
               </div>
             </div>
@@ -60,11 +60,11 @@
             </div>
             <div class="row">
               <div class="col-50">
-                <input id='KartuDebit1' type="radio" name='kadaluwarasa' />
+                <input id='KartuDebit1' value="Kartu Debit" type="radio" name='another_payment_method' ng-model="vm.data.another_payment_method"/>
                 <label class='' for="KartuDebit1">Kartu Debit</label>
               </div>
               <div class="col-50">
-                <input id='banTransfer1' type="radio" name='kadaluwarasa' />
+                <input id='banTransfer1' value="Bank transfer / ATM" type="radio" name='another_payment_method' ng-model="vm.data.another_payment_method" />
                 <label class='' for="banTransfer1">Bank transfer / ATM</label>
               </div>
             </div>
@@ -73,11 +73,10 @@
         <div class='item'>
           <div class="row-no-padding checkbox-condition">
             <div class="row">
-              <label class="item-stacked-label">
-                <ion-checkbox></ion-checkbox>
+              <label class="item-stacked-label" >
+                <ion-checkbox ng-model="vm.data.term1"></ion-checkbox>
                 <div class="label-text-check">Semua Pembayaran Premi harus sudah diterima di rekening Penanggung dan telah teridentifikasi</div>
               </label>
-              
             </div>
           </div>
         </div>
@@ -85,17 +84,16 @@
           <div class="row-no-padding checkbox-condition">
             <div class="row">
               <label class="item-stacked-label">
-                <ion-checkbox></ion-checkbox>
+                <ion-checkbox ng-model="vm.data.term2"></ion-checkbox>
                 <div class="label-text-check">Bahwa jika Penanggung melakukan pembayaran dana, Penanggung harus tunduk kepada aturan yang berlaku di Indonesia maupun sesuai standar Grup Prudential, di antaranya adalah diperlukannya tambahan proses tertentu jika SAYA termasuk dalam daftar sanksi tertentu.</div>
               </label>
-              
             </div>
           </div>
         </div>
       </div>
     </form>
   </ion-content>
-  <ion-footer-bar class="bar bar-footer bar-assertive">
+  <ion-footer-bar class="bar bar-footer bar-assertive" ng-class="vm.isCompleted==false ? 'btn-disable':''">
     <div ng-click="vm.save()" title="Lanjutkan" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></div>
   </ion-footer-bar>
 </ion-view>
