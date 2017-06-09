@@ -74,11 +74,11 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
       lama_select: null,
       lama2: null,
       pengo:{
-         inhalasi: null,
-         suntikan_nama: null,
-         obat_minum: null,
-         operasi: null,
-         lainnya: null,
+        inhalasi: null,
+        suntikan_nama: null,
+        obat_minum: null,
+        operasi: null,
+        lainnya: null,
       },
       pemer:{
         rontgen:null,
@@ -297,7 +297,7 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
       medicine: null
     })
   }
-   vm.resetEye = function () {
+  vm.resetEye = function () {
     vm.eyePopupTouched = false;
     vm.resetObject(vm.healthData.eyePopup)
   }
