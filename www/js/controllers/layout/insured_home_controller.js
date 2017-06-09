@@ -51,7 +51,7 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
 
   $scope.showAddress = false
   $scope.changeAddress = function (v) {
-    if (v == 'Alamat Kantor') {
+    if (v == 'Alamat Lain') {
       $scope.showAddress = true
     } else {
       $scope.showAddress = false
@@ -326,7 +326,6 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
 
   // Gender selector function
   $scope.selectGender = function (gender) {
-    console.log(gender)
     $scope.data.gender = gender
   }
 

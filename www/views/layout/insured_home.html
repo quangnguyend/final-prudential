@@ -140,7 +140,7 @@
         <div class="row-no-padding">
             <div class="row">
                 <label class="item-stacked-label">
-                <div class="input-label">Kadaluwarsa Identitas</div>
+                <div class="input-label">Tanggal Kadalauwarsa</div>
               </label>
             </div>
             <div class="row left_input_date input_full_width">
@@ -227,48 +227,6 @@
     <div class='item'>
         <div class="row-no-padding">
             <div class="row responsive-sm">
-                <div class="col-33">
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>RT</label>
-                        <input ng-model='data.RT'>
-                    </md-input-container>
-                </div>
-                <div class="col-33">
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>RW</label>
-                        <input ng-model='data.RW'>
-                    </md-input-container>
-                </div>
-                <div class="col-33">
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>KM</label>
-                        <input ng-model='data.KM'>
-                    </md-input-container>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class='item'>
-        <div class="row-no-padding">
-            <div class="row responsive-sm">
-                <div class="col-50">
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>Kecamata</label>
-                        <input ng-model='data.kecamata'>
-                    </md-input-container>
-                </div>
-                <div class="col-50">
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>Kelurahan</label>
-                        <input ng-model='data.kelurahan'>
-                    </md-input-container>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class='item'>
-        <div class="row-no-padding">
-            <div class="row responsive-sm">
                 <div class="col-50">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Kode Pos</label>
@@ -296,24 +254,50 @@
             </div>
         </div>
     </div>
-    <div class='item'>
+     <div class='item'>
         <div class="row-no-padding">
-            <md-autocomplete
-                md-selected-item="selectedItem"
-                md-search-text="searchText"
-                md-items="item in querySearch(searchText)"
-                md-item-text="item.name"
-                md-min-length="0"
-                md-floating-label="Kode Pos">
-                <md-item-template>
-                    <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.name}}</span>
-                </md-item-template>
-                <md-not-found>
-                    No countries were found.
-                </md-not-found>
-            </md-autocomplete>
+            <div class="row responsive-sm">
+                <div class="col-50">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Kecamata</label>
+                        <input ng-model='data.kecamata'>
+                    </md-input-container>
+                </div>
+                <div class="col-50">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Kelurahan</label>
+                        <input ng-model='data.kelurahan'>
+                    </md-input-container>
+                </div>
+            </div>
         </div>
     </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <div class="row responsive-sm">
+                <div class="col-33">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>RT</label>
+                        <input ng-model='data.RT'>
+                    </md-input-container>
+                </div>
+                <div class="col-33">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>RW</label>
+                        <input ng-model='data.RW'>
+                    </md-input-container>
+                </div>
+                <div class="col-33">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>KM</label>
+                        <input ng-model='data.KM'>
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    
     <div class='item' ng-repeat="(index, row) in vm.insuredData.address">
         <div class="row-no-padding">
             <div class="row responsive-sm">
@@ -365,7 +349,7 @@
                         <label class='' for="{{insuredName}}-alamatKantor">Alamat Kantor</label>
                     </div>
                     <div class="col-33">
-                        <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatLain' class='custom_radio' type="radio" />
+                        <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatLain' ng-click="changeAddress('Alamat Lain')" class='custom_radio' type="radio" />
                         <label class='' for="{{insuredName}}-alamatLain">Alamat Lain</label>
                     </div>
                 </div>
@@ -373,16 +357,16 @@
         </div>
     </div>
     <div class='item'>
-        <div class="row-no-padding">
-            <md-input-container class="md-block" flex-gt-sm>
-                <label>Email</label>
-                <input type="email" ng-model='data.hp_gsm_tel' required>
-            </md-input-container>
-        </div>
         <div class="row-no-padding" ng-if="showAddress">
             <md-input-container class="md-block" flex-gt-sm>
                 <label>Address </label>
-                <input type="text" ng-model='data.address' required>
+                <input type="text" ng-model='data.address'>
+            </md-input-container>
+        </div>
+        <div class="row-no-padding">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Email</label>
+                <input type="email" ng-model='data.hp_gsm_tel'>
             </md-input-container>
         </div>
     </div>
