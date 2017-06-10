@@ -2,9 +2,27 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
   var vm = this
   // *********
   // NOTE: ALL DATA MUST BE SET INTO $scope.data, ex: ng-model='data.name', ng-model='data.gender'
-  $scope.data = {}
+  $scope.data = {
+    name: '',
+    address: '',
+    date_of_birth: new Date(),
+    gender: '',
+    occupation: '',
+    identitas: '',
+    alamat_kantor: '',
+    provinsi: '',
+    kabupaten: ''
+  }
   // ********
-
+  $scope.$watchCollection('data', function(newVal) {
+    if(newVal.name != '' && newVal.address != '' && newVal.date_of_birth != '' && newVal.gender != ''
+      && newVal.occupation != ''  && newVal.identitas != '' && newVal.alamat_kantor != ''
+      && newVal.provinsi != '' && newVal.kabupaten != ''){
+      SpajService.setData('step1_valid', {isValid : true});
+    }else{
+      SpajService.setData('step1_valid', {isValid : false});
+    }
+  });
   vm.insuredData = {
     address: [{
       rumah_tel: null,
