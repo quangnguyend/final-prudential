@@ -1,8 +1,4 @@
 function activePolicyCtrl($state, $scope, $rootScope, SpajService, $attrs, $timeout) {
-  $rootScope.showBar = true
-  $rootScope.showBack = true
-  $rootScope.showMenu = true
-
   var vm = this
 
 
