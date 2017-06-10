@@ -1,22 +1,19 @@
 <div class="list list-inset no-lines">
-  <button class="button button-full button-assertive" ng-click='vm.showPopupEye()'>Click Done</button>
+
   <form name='step2'>
     <div class='item' id="health1_step1">
       <h1 class='text-center description description'>Tinggi dan berat badan saya</h1>
       <div class="row">
         <div class="col col-50">
-          <div class="col-80 col-offset-10">
-            <input type="number" placeholder="155.5" name='height' ng-model='vm.healthData.height' ng-pattern="/^\d+\.\d{0,3}$/">
-            <span class="item-note">cm</span>
-            <p class="message" ng-show="step2.height.$touched && step2.height.$invalid"><i class="icon ion-alert"></i> Silakan memasukkan angka non-desimal</p>
-          </div>
+          <input type="number" placeholder="155.5" name='height' ng-model='vm.healthData.height' ng-pattern="/^\d+\.\d{0,3}$/">
+          <span class="item-note">cm</span>
+          <p class="message" ng-show="step2.height.$touched && step2.height.$invalid"><i class="icon ion-alert"></i> Silakan memasukkan angka non-desimal</p>
         </div>
         <div class="col col-50">
-          <div class="col-80 col-offset-10">
-            <input type="number" placeholder="Berat" name='weight' ng-model='vm.healthData.weight' ng-pattern="/^\d+\.\d{0,3}$/">
-            <span class="item-note">kg</span>
-            <p class="message" ng-show="step2.weight.$touched && step2.weight.$invalid"><i class="icon ion-alert"></i> Silakan memasukkan angka non-desimal</p>
-          </div>
+          <input type="number" placeholder="Berat" name='weight' ng-model='vm.healthData.weight' ng-pattern="/^\d+\.\d{0,3}$/">
+          <span class="item-note">kg</span>
+          <p class="message" ng-show="step2.weight.$touched && step2.weight.$invalid"><i class="icon ion-alert"></i> Silakan memasukkan angka non-desimal</p>
+
         </div>
       </div>
       <button class="button next" ng-class="{'button-dark': vm.healthData.height && vm.healthData.weight}" ng-disabled="!vm.healthData.height || !vm.healthData.weight"
@@ -39,6 +36,7 @@
         <button class="button next" ng-disabled="!vm.healthData.sticks_cigarettes || !vm.healthData.smoker == null" ng-class="{'button-dark': vm.healthData.sticks_cigarettes && vm.healthData.smoker != null}"
           ng-click="vm.health1NextStep('health1_step3')">Berikutnya</button>
       </div>
+
 
     </div>
 
@@ -205,7 +203,8 @@
     </div>
     <!--end-item ihocmon-->
     <div class="item ieye">
-      <div class="icon" ng-class="{'completed': vm.eyePopupTouched &&vm.objectValidate(vm.healthData.eyePopup)}"></div>
+      <div class="icon" ng-class="{'completed': vm.eyePopupTouched &&vm.objectValidate(vm.healthData.eyePopup)||vm.healthData.ieye==false}"></div>
+
       <h1 class="text-center description">Kondisi mata</h1>
       <p class="item_description">Rabun jauh dengan menggunakan kacamata/softlens (lensa kontak) melebihi -6,0 pada satu atau kedua mata,
         <span ng-class="{'red': vm.eyePopupTouched&&!vm.objectValidate(vm.healthData.eyePopup)}" ng-click='vm.eyePopupTouched&&!vm.objectValidate(vm.healthData.eyePopup)&&vm.showPopupEye()'>Katarak atau kelainan mata lainnya</span></p>
@@ -235,14 +234,16 @@
     </div>
     <!--end-item iear-->
     <div class="item irespiratory">
-      <div class="icon" ng-class="{'completed': vm.objectValidate(vm.healthData.respiratoryPu)}"></div>
+
+      <div class="icon" ng-class="{'completed': vm.objectValidate(vm.healthData.respiratoryPu)||vm.healthData.irespiratory==false}"></div>
       <h1 class="text-center description">Kondisi Pernafasan</h1>
       <p class="item_description" ng-class="{'red': vm.respiratoryPopupTouched&&!vm.objectValidate(vm.healthData.respiratoryPu)}"
         ng-click='vm.respiratoryPopupTouched&&!vm.objectValidate(vm.healthData.respiratoryPu)&&vm.showPopupRespiratory()'>Gangguan Pernafasan*, Batuk Berkepanjangan*, Sesak Nafas*, Bronkitis, Asma*, Tuberkulosis (TBC)*, Sesak Nafas yang
         disebabkan karena kelainan/penyakit jantung</p>
       <div class="button-bar">
         <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.irespiratory" ng-click='vm.showPopupRespiratory()'>Ya</a>
-        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.irespiratory">Tidak</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.irespiratory" ng-click="vm.resetRespiratory()">Tidak</a>
+
       </div>
     </div>
     <!--end-item irespiratory-->
@@ -258,7 +259,8 @@
     </div>
     <!--end-item iheart-->
     <div class="item idigestive">
-      <div class="icon" ng-class="{'completed': vm.validateDigestive()}"></div>
+      <div class="icon" ng-class="{'completed': vm.objectValidate(vm.healthData.digesPu)||vm.healthData.idigestive==false}"></div>
+
       <h1 class="text-center description">Kondisi Sistem Saluran Pencernaan</h1>
       <p class="item_description" ng-class="{'red': vm.digestivePopupTouched&&!vm.objectValidate(vm.healthData.digesPu)}" ng-click='vm.digestivePopupTouched&&!vm.objectValidate(vm.healthData.digesPu)&&vm.showPopupDigestive()'>Maag*/Gastritis*, Usus* / Hernia / Pankreas / Organ Pencernaan lainnya</p>
       <div class="button-bar">
@@ -310,7 +312,8 @@
     </div>
     <!--end-item itumors-->
     <div class="item iill">
-      <div class="icon" ng-class="{'completed': vm.healthData.iill != null}"></div>
+      <div class="icon" ng-class="{'completed': vm.healthData.iill==false||(vm.healthData.iill==true&&(vm.healthData.iill_rabun||vm.healthData.iill_katarak))}"></div>
+
       <h1 class="text-center description">Penyakit Infeksi, Penyakit Menular Seksual & AIDS</h1>
       <p class="item_description">Penyakit Infeksi seperti Malaria, Penyakit Menular Seksual, AIDS atau kondisi yang berkaitan dengan AIDS (Demam / kelelahan
         / Diare Kronis / penurunan berat badan / Pembesaran Kelenjar Getah Bening / luka di kulit berulang dan berkepanjangan
@@ -322,8 +325,8 @@
       <div class='grey-box' ng-show="vm.healthData.iill==true">
         <div class="text-left">
           <ion-list>
-            <ion-checkbox ng-model='vm.healthData.eye_contact_lenses'>Rabun jauh dengan menggunakan kacamata softlens (lensa kontak) melebihi -6,0 pada satu atau kedua mata</ion-checkbox>
-            <ion-checkbox ng-model='vm.healthData.eye_disorders'>Katarak atau kelainan mata lainnya</ion-checkbox>
+            <ion-checkbox ng-model='vm.healthData.iill_rabun'>Rabun jauh dengan menggunakan kacamata softlens (lensa kontak) melebihi -6,0 pada satu atau kedua mata</ion-checkbox>
+            <ion-checkbox ng-model='vm.healthData.iill_katarak'>Katarak atau kelainan mata lainnya</ion-checkbox>
           </ion-list>
         </div>
         <button class="button button-full button-done" ng-click='vm.showPopup()'>Done</button>
