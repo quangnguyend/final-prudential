@@ -3,7 +3,7 @@
     <custom-header title='Sebelum Anda melanjutkan' step='1'></custom-header>
   </ion-nav-title>
   <ion-nav-buttons side="left">
-      <button class="button back-button buttons button-clear header-item" ng-click="$root.goSpajStart()">
+    <button class="button back-button buttons button-clear header-item" ng-click="$root.goSpajStart()">
           <i class="icon ion-ios-arrow-back"></i> 
       </button>
   </ion-nav-buttons>
@@ -18,9 +18,11 @@
       </div>
     </div>
     <insured-home insured-data='{{vm.policy_holder_tab}}' ng-show='vm.currentTab===vm.policy_holder_tab' on-swipe-right='vm.handleMainTabSwipe()'></insured-home>
-    <insured-home ng-repeat='tab in vm.additionalList track by $index' insured-data='{{tab.id}}' ng-show='vm.currentTab===tab.id' ng-class='vm.currentTab===tab.id?"active":""'
-      on-swipe='vm.handleAddedTabSwipe($event)'></insured-home>
+    <insured-home ng-repeat='tab in vm.additionalList track by $index' insured-data='{{tab.id}}' ng-show='vm.currentTab===tab.id'
+      ng-class='vm.currentTab===tab.id?"active":""' on-swipe='vm.handleAddedTabSwipe($event)'></insured-home>
     <div ng-include="'views/layout/step_1_condition.html'"></div>
+    <active-policy insured-data='{{vm.policy_holder_tab}}' ng-show='vm.currentTab===vm.policy_holder_tab'></active-policy>
+    <active-policy ng-repeat='tab in vm.additionalList track by $index' insured-data='{{tab.id}}' ng-show='vm.currentTab===tab.id'></active-policy>
   </ion-content>
   <ion-footer-bar class="bar bar-footer bar-assertive">
     <div class="btn" ng-click="vm.nextClickHandle()">Lanjutkan</div><button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button>

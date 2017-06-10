@@ -1,16 +1,41 @@
-function activePolicyCtrl ($state, $scope, $rootScope, $stateParams, SpajService) {
+function activePolicyCtrl($state, $scope, $rootScope, SpajService, $attrs, $timeout) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
 
   var vm = this
-  vm.nextClickHandle = function () {
-    $rootScope.nextStep()
-  }
 
-  vm.policy = {
-    apaka: null,
-    items: [
+
+
+  $timeout(function () {
+    var insuredName = $attrs.insuredData
+    $scope.insuredName = insuredName
+
+    vm.policy = {
+      apaka: null,
+      items: {},
+      addActivePolicy: function () {
+        var newPolicy = {
+          type: '',
+          company: '',
+          sum: '',
+          idr: '',
+          substandard: false
+        }
+        vm.policy.items[insuredName].push(newPolicy)
+      }
+    }
+    vm.policy.options = {
+      tipe: [
+        { value: 'opion1', name: 'option1' },
+        { value: 'opion2', name: 'option2' }
+      ],
+      substandard: [
+        { value: 'opion1', name: 'option1' },
+        { value: 'opion2', name: 'option2' }
+      ]
+    }
+    vm.policy.items[insuredName] = [
       {
         type: '',
         company: '',
@@ -18,26 +43,17 @@ function activePolicyCtrl ($state, $scope, $rootScope, $stateParams, SpajService
         idr: '',
         substandard: false
       }
-    ],
-    addActivePolicy: function () {
-      var newPolicy = {
-        type: '',
-        company: '',
-        sum: '',
-        idr: '',
-        substandard: false
-      }
-      vm.policy.items.push(newPolicy)
-    }
-  }
-  vm.policy.options = {
-    tipe: [
-      {value: 'opion1', name: 'option1'},
-      {value: 'opion2', name: 'option2'}
-    ],
-    substandard: [
-      {value: 'opion1', name: 'option1'},
-      {value: 'opion2', name: 'option2'}
     ]
-  }
+    // if (!SpajService.getData('start')) {
+    //   SpajService.setData('start', {})
+    // }
+    // var data = SpajService.getData('start')
+    // data[insuredName] = $scope.data
+
+    // $scope.$on('$destroy', function () {
+    //   data[insuredName]['isComplete'] = validator()
+    // })
+  })
+
+
 }

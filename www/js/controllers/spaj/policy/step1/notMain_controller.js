@@ -1,14 +1,11 @@
-function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
+function phNotMainCtrl($scope, $state, $rootScope, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = false
   $rootScope.showMenu = true
-  var MAIN_INSURED_TAB = 'MAIN_INSURED', MAIN_LAYOUT = 'MAIN_LAYOUT',
+  var MAIN_INSURED_TAB = 'MAIN_INSURED',
     ACTIVE_INSURED = 'ACTIVE_INSURED', POCICY_HOLDER_TAB = 'POLICY_HOLDER'
   var vm = this
   var rootSpajData = SpajService.getData('spaj')
-  vm.currentLayout = MAIN_LAYOUT
-  vm.main_layout = MAIN_LAYOUT
-  vm.active_insured_layout = ACTIVE_INSURED
   vm.main_insured_tab = MAIN_INSURED_TAB
   vm.policy_holder_tab = POCICY_HOLDER_TAB
 
@@ -63,9 +60,7 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
       }
     })
 
-    if (vm.currentLayout === MAIN_LAYOUT) { $state.go('app.active_policy') } else if (vm.currentLayout === ACTIVE_INSURED) {
-      $rootScope.nextStep()
-    }
+    $rootScope.nextStep()
   }
 
   vm.handleMainTabSwipe = function () {
@@ -98,13 +93,13 @@ function phNotMainCtrl ($scope, $state, $rootScope, SpajService) {
     }
   }
 
-  function initPage (rootSpajData) {
+  function initPage(rootSpajData) {
     if (!rootSpajData) return
     if (rootSpajData.tambahan1) { $scope.addAdditionalTab() }
     if (rootSpajData.tambahan2) { $scope.addAdditionalTab() }
   }
 
-  function validator (callback) {
+  function validator(callback) {
     if (!SpajService.getData('start')) {
       SpajService.setData('start', {})
     }
