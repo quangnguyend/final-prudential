@@ -219,6 +219,39 @@
             </div>
           </div>
         </div>
+        <div ng-if="vm.topup_amount>250000000">
+          <div class="center_txt_end">Apakah (Calon) Pembayar Premi/Kontributor memiliki pekerjaan/usaha/bisnis lain di luar pekerjaan utama?</div>
+          <div class="button-bar">
+            <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ieye">Ya</a>
+            <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ieye">Tidak</a>
+          </div>
+          <div class='grey-box' ng-show="vm.healthData.ieye==true">
+            <div class="text-left">
+              <ion-list>
+                <div class="indent_payor">
+                  <p class="sm-font">Nama perusahaan/usaha/bisnis:</p>
+                  <div>
+                    <input type="text" class="input-light" ng-model="vm.data.business_name" >
+                  </div>
+                  <br>
+                </div>
+                <div class="indent_payor">
+                  <p class="sm-font">Bidang usaha</p>
+                  <div>
+                    <input type="text" class="input-light" ng-model="vm.data.business_fields" >
+                  </div>
+                </div>
+                <div class="indent_payor">
+                  <p class="sm-font">Alamat perusahaan/tempat usaha</p>
+                  <div>
+                    <input type="text" class="input-light" ng-model="vm.data.place_of_business">
+                  </div>
+                </div>
+              </ion-list>
+            </div>
+            <button class="button button-full button-done" ng-click='vm.showPopupEye()'>Done</button>
+          </div>
+        </div>
       </div>
     </form>
   </ion-content>
