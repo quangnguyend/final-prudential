@@ -1,8 +1,4 @@
 function step1Ctrl ($state, $scope, $rootScope, $stateParams, SpajService) {
-  $rootScope.showBar = true
-  $rootScope.showBack = true
-  $rootScope.showMenu = true
-
   var vm = this
   var objSpaj = SpajService.getData('spaj')
   gotoPhPage()

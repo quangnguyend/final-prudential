@@ -1,4 +1,5 @@
   function eyeController ($scope, $mdDialog,  $ionicScrollDelegate) {
+    var vm  = this
     $scope.fakeoption = [
 
       {
