@@ -17,8 +17,9 @@ gulp.task('default', ['watch', 'inject'])
 gulp.task('inject', function () {
   var source = gulp.src([
     'www/css/*.css',
-    'www/js/controllers/**/*.js',
+    'www/lib/vendors/*.js',
     'www/js/configs/**/*.js',
+    'www/js/controllers/**/*.js',
     'www/js/services/**/*.js', 'www/js/*.js'])
 
   return gulp.src('www/index.html')
