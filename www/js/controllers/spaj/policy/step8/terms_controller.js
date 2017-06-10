@@ -7,7 +7,6 @@ function termsCtrl($state, $scope, $rootScope, $ionicScrollDelegate, SpajService
   vm.permission = false
   vm.titleFooter = 'Mohon lengkapi data yang wajib diisi (*) sebelum Anda melanjutkan e-sign'
   var data = SpajService.getData('start')
-  console.log(data.toString())
   //alert(data.toString())
   vm.checkScroll = function () {
 
