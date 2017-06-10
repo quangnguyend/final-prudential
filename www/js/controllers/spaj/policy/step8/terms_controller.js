@@ -4,7 +4,6 @@ function termsCtrl ($state, $scope, $rootScope, $ionicScrollDelegate, SpajServic
   $rootScope.showMenu = true
   var vm = this
   var step1Validation = SpajService.getData('step1_valid')? SpajService.getData('step1_valid') : false;
-  console.log(step1Validation.isValid);
   vm.permission = false
   vm.titleFooter = 'Mohon lengkapi data yang wajib diisi (*) sebelum Anda melanjutkan e-sign'
   vm.checkScroll = function () {
