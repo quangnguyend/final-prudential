@@ -1,455 +1,446 @@
-
 <div class="list list-inset no-lines">
-   <button class="button button-full button-assertive" ng-click='vm.showPopupEye()'>Click Done</button>
+  <button class="button button-full button-assertive" ng-click='vm.showPopupEye()'>Click Done</button>
   <form name='step2'>
-  <div class='item' id="health1_step1">
-    <h1 class='text-center description description'>Tinggi dan berat badan saya</h1>
-    <div class="row">
-      <div class="col col-50">
-        <input type="number" placeholder="155.5" name='height' ng-model='vm.healthData.height' ng-pattern="/^\d+\.\d{0,3}$/">
-        <span class="item-note">cm</span>
-        <p class="message" ng-show="step2.height.$touched && step2.height.$invalid"><i class="icon ion-alert" ></i> Silakan memasukkan angka non-desimal</p>
-      </div>
-      <div class="col col-50">
-        <input type="number" placeholder="Berat"  name='weight' ng-model='vm.healthData.weight'  ng-pattern="/^\d+\.\d{0,3}$/">
-        <span class="item-note">kg</span>
-        <p class="message"  ng-show="step2.weight.$touched && step2.weight.$invalid"><i class="icon ion-alert" ></i> Silakan memasukkan angka non-desimal</p>
-      </div>
-    </div>
-    <button class="button next" 
-      ng-class="{'button-dark': vm.healthData.height && vm.healthData.weight}" 
-      ng-disabled="!vm.healthData.height || !vm.healthData.weight"
-      ng-click="vm.health1NextStep('health1_step2')"
-      spy-style="vm.health1NextStep('health1_step2')">Berikutnya</button>
-  </div>
-  <!--end item -->
-
-  <div class='item' id="health1_step2" ng-class="{'_active': vm.health1Steps[1]}">
-    <h1 class='text-center description'>Apakah Anda merokok ?<br><small>( 12 bulan terakhir )</small></h1>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.smoker">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.smoker">Tidak</a>
-    </div>
-    <div class='add_question' ng-show="vm.healthData.smoker==true">
-      <h1 class='text-center description'>Sebutkan jumlah batang per hari</h1>
+    <div class='item' id="health1_step1">
+      <h1 class='text-center description description'>Tinggi dan berat badan saya</h1>
       <div class="row">
-        <input type="number" placeholder="Enter" ng-model='vm.healthData.sticks_cigarettes' />
+        <div class="col col-50">
+          <input type="number" placeholder="155.5" name='height' ng-model='vm.healthData.height' ng-pattern="/^\d+\.\d{0,3}$/">
+          <span class="item-note">cm</span>
+          <p class="message" ng-show="step2.height.$touched && step2.height.$invalid"><i class="icon ion-alert"></i> Silakan memasukkan angka non-desimal</p>
+        </div>
+        <div class="col col-50">
+          <input type="number" placeholder="Berat" name='weight' ng-model='vm.healthData.weight' ng-pattern="/^\d+\.\d{0,3}$/">
+          <span class="item-note">kg</span>
+          <p class="message" ng-show="step2.weight.$touched && step2.weight.$invalid"><i class="icon ion-alert"></i> Silakan memasukkan angka non-desimal</p>
+        </div>
       </div>
-      <p class="message" ><i class="icon ion-alert" ></i> Silakan memasukkan angka</p>
-      <button class="button next" ng-disabled="!vm.healthData.sticks_cigarettes || !vm.healthData.smoker == null" ng-class="{'button-dark': vm.healthData.sticks_cigarettes && vm.healthData.smoker != null}"
-      ng-click="vm.health1NextStep('health1_step3')">Berikutnya</button>
+      <button class="button next" ng-class="{'button-dark': vm.healthData.height && vm.healthData.weight}" ng-disabled="!vm.healthData.height || !vm.healthData.weight"
+        ng-click="vm.health1NextStep('health1_step2')" spy-style="vm.health1NextStep('health1_step2')">Berikutnya</button>
     </div>
-    
-  </div>
+    <!--end item -->
+
+    <div class='item' id="health1_step2" ng-class="{'_active': vm.health1Steps[1]}">
+      <h1 class='text-center description'>Apakah Anda merokok ?<br><small>( 12 bulan terakhir )</small></h1>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.smoker">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.smoker">Tidak</a>
+      </div>
+      <div class='add_question' ng-show="vm.healthData.smoker==true">
+        <h1 class='text-center description'>Sebutkan jumlah batang per hari</h1>
+        <div class="row">
+          <input type="number" placeholder="Enter" ng-model='vm.healthData.sticks_cigarettes' />
+        </div>
+        <p class="message"><i class="icon ion-alert"></i> Silakan memasukkan angka</p>
+        <button class="button next" ng-disabled="!vm.healthData.sticks_cigarettes || !vm.healthData.smoker == null" ng-class="{'button-dark': vm.healthData.sticks_cigarettes && vm.healthData.smoker != null}"
+          ng-click="vm.health1NextStep('health1_step3')">Berikutnya</button>
+      </div>
+
+    </div>
 
 
-  <!--end item -->
-  <div class='item' id="health1_step3">
-    <h1 class='text-center description'>Apakah Anda menggunakan obat-obatan tertentu?</h1>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.medication">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.medication">Tidak</a>
+    <!--end item -->
+    <div class='item' id="health1_step3">
+      <h1 class='text-center description'>Apakah Anda menggunakan obat-obatan tertentu?</h1>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.medication">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.medication">Tidak</a>
+      </div>
+      <div class='add_question' ng-show="vm.healthData.medication==true">
+        <h1 class='text-center description'>Sebutkan jenis dan alasan penggunaannya</h1>
+        <div class="row">
+          <input type="text" placeholder="Enter" ng-model="vm.healthData.medication_detail" />
+        </div>
+        <p class="message">Maksimal 100 karakter</p>
+        <button class="button next" ng-disabled="!vm.healthData.medication_detail || !vm.healthData.medication == null" ng-class="{'button-dark': vm.healthData.medication_detail && vm.healthData.medication != null}"
+          ng-click="vm.health1NextStep('health1_step4')">Berikutnya</button>
+      </div>
     </div>
-    <div class='add_question' ng-show="vm.healthData.medication==true">
-      <h1 class='text-center description'>Sebutkan jenis dan alasan penggunaannya</h1>
+    <!--end item -->
+
+
+
+    <div class='item' id="health1_step4">
+      <h1 class='text-center description'>Apakah Anda menderita kondisi berikut?</h1>
       <div class="row">
-        <input type="text" placeholder="Enter" ng-model="vm.healthData.medication_detail" />
-      </div>
-      <p class="message" >Maksimal 100 karakter</p>
-      <button class="button next" ng-disabled="!vm.healthData.medication_detail || !vm.healthData.medication == null" ng-class="{'button-dark': vm.healthData.medication_detail && vm.healthData.medication != null}"
-        ng-click="vm.health1NextStep('health1_step4')">Berikutnya</button>
-    </div>
-  </div>
-  <!--end item -->
-
-
-
-  <div class='item' id="health1_step4" >
-    <h1 class='text-center description'>Apakah Anda menderita kondisi berikut?</h1>
-    <div class="row">
-      <div class="col col-60">
-        <h1 class="text-left item_description">Tekanan darah tinggi</h1>
-      </div>
-      <div class="col col-40">
-        <div class="row">
-          <div class="button-bar">
-            <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.darah">Ya</a>
-            <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.darah">Tidak</a>
+        <div class="col col-60">
+          <h1 class="text-left item_description">Tekanan darah tinggi</h1>
+        </div>
+        <div class="col col-40">
+          <div class="row">
+            <div class="button-bar">
+              <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.darah">Ya</a>
+              <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.darah">Tidak</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col col-60">
-        <h1 class="text-left item_description">Peningkatan Kolesterol</h1>
-      </div>
-      <div class="col col-40">
-        <div class="row">
-          <div class="button-bar">
-            <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ipeningkatan">Ya</a>
-            <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ipeningkatan">Tidak</a>
+      <div class="row">
+        <div class="col col-60">
+          <h1 class="text-left item_description">Peningkatan Kolesterol</h1>
+        </div>
+        <div class="col col-40">
+          <div class="row">
+            <div class="button-bar">
+              <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ipeningkatan">Ya</a>
+              <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ipeningkatan">Tidak</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col col-60">
-        <h1 class="text-left item_description">Kelainan Jantung Bawaan** Kelainan Bawaan Lainnya</h1>
-      </div>
-      <div class="col col-40">
-        <div class="row">
-          <div class="button-bar">
-            <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ijantung">Ya</a>
-            <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.jantung">Tidak</a>
+      <div class="row">
+        <div class="col col-60">
+          <h1 class="text-left item_description">Kelainan Jantung Bawaan** Kelainan Bawaan Lainnya</h1>
+        </div>
+        <div class="col col-40">
+          <div class="row">
+            <div class="button-bar">
+              <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ijantung">Ya</a>
+              <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.jantung">Tidak</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col col-60">
-        <h1 class="text-left item_description">Kelainan Jantung & Pembuluh Darah</h1>
-      </div>
-      <div class="col col-40">
-        <div class="row">
-          <div class="button-bar">
-            <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ikelainan">Ya</a>
-            <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ikelainan">Tidak</a>
+      <div class="row">
+        <div class="col col-60">
+          <h1 class="text-left item_description">Kelainan Jantung & Pembuluh Darah</h1>
+        </div>
+        <div class="col col-40">
+          <div class="row">
+            <div class="button-bar">
+              <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ikelainan">Ya</a>
+              <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ikelainan">Tidak</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col col-60">
-        <h1 class="text-left item_description">Stroke</h1>
-      </div>
-      <div class="col col-40">
-        <div class="row">
-          <div class="button-bar">
-            <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.istroke">Ya</a>
-            <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.istroke">Tidak</a>
+      <div class="row">
+        <div class="col col-60">
+          <h1 class="text-left item_description">Stroke</h1>
+        </div>
+        <div class="col col-40">
+          <div class="row">
+            <div class="button-bar">
+              <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.istroke">Ya</a>
+              <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.istroke">Tidak</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col col-60">
-        <h1 class="text-left item_description">Demam Rheuma / Penyakit Jantung Rematik</h1>
-      </div>
-      <div class="col col-40">
-        <div class="row">
-          <div class="button-bar">
-            <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.idemam">Ya</a>
-            <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.idemam">Tidak</a>
+      <div class="row">
+        <div class="col col-60">
+          <h1 class="text-left item_description">Demam Rheuma / Penyakit Jantung Rematik</h1>
+        </div>
+        <div class="col col-40">
+          <div class="row">
+            <div class="button-bar">
+              <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.idemam">Ya</a>
+              <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.idemam">Tidak</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col col-60">
-        <h1 class="text-left item_description">Nyeri Dada</h1>
-      </div>
-      <div class="col col-40">
-        <div class="row">
-          <div class="button-bar">
-            <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.inyeri">Ya</a>
-            <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.inyeri">Tidak</a>
+      <div class="row">
+        <div class="col col-60">
+          <h1 class="text-left item_description">Nyeri Dada</h1>
+        </div>
+        <div class="col col-40">
+          <div class="row">
+            <div class="button-bar">
+              <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.inyeri">Ya</a>
+              <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.inyeri">Tidak</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col col-60">
-        <h1 class="text-left item_description" 
-        ng-class="{'red': vm.tumorPopupTouched&&!vm.objectValidate(vm.healthData.tumorPu)}" 
-        ng-click='vm.tumorPopupTouched&&!vm.objectValidate(vm.healthData.tumorPu)&&vm.showPopupTumor()'>
-        Nodule/Tumor/ Kista/ Pembengkakan/Pertumbuhan/pembesaran lainnya (kanker/non-kanker)</h1>
-      </div>
-      <div class="col col-40">
-        <div class="row">
-          <div class="button-bar">
-            <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.inodule" ng-click='vm.showPopupTumor()'>Ya</a>
-            <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.inodule" ng-click='vm.resetTumor()'>Tidak</a>
+      <div class="row">
+        <div class="col col-60">
+          <h1 class="text-left item_description" ng-class="{'red': vm.tumorPopupTouched&&!vm.objectValidate(vm.healthData.tumorPu)}"
+            ng-click='vm.tumorPopupTouched&&!vm.objectValidate(vm.healthData.tumorPu)&&vm.showPopupTumor()'>
+            Nodule/Tumor/ Kista/ Pembengkakan/Pertumbuhan/pembesaran lainnya (kanker/non-kanker)</h1>
+        </div>
+        <div class="col col-40">
+          <div class="row">
+            <div class="button-bar">
+              <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.inodule" ng-click='vm.showPopupTumor()'>Ya</a>
+              <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.inodule" ng-click='vm.resetTumor()'>Tidak</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <button class="button next" ng-class="{'button-dark': 
+      <button class="button next" ng-class="{'button-dark': 
     vm.healthData.darah != null && vm.healthData.ipeningkatan != null
     && vm.healthData.ijantung != null && vm.healthData.ikelainan != null
     && vm.healthData.istroke != null && vm.healthData.idemam != null
-    && vm.healthData.inyeri != null && vm.healthData.inodule != null}" 
-    ng-disabled="!(vm.healthData.darah != null) || !(vm.healthData.ipeningkatan != null)
+    && vm.healthData.inyeri != null && vm.healthData.inodule != null}" ng-disabled="!(vm.healthData.darah != null) || !(vm.healthData.ipeningkatan != null)
     || !(vm.healthData.ijantung != null) || !(vm.healthData.ikelainan != null)
     || !(vm.healthData.istroke != null) || !(vm.healthData.idemam != null)
-    || !(vm.healthData.inyeri != null) || !(vm.healthData.inodule != null)" 
-    ng-click="vm.health1NextStep('health_brain')">Berikutnya</button>
-  </div>
-  <!--end item -->
-  <div class="item ibrain" id="health_brain">
-    <div class="icon" ng-class="{'completed': vm.healthData.ibrain != null}"></div>
-    <h1 class="text-center description">Kondisi Terkait Otak, Saraf, Saraf Tulang Belakang</h1>
-    <p class="item_description">Sakit kepala*, Pusing*, Migrain*,Vertigo*, Epilepsi (atau ayan)**, Gangguan Kesadaran, Kelainan Psikologis atau Kejiwaan*/Mental,
-      Gangguan/Kelainan/Penyakit Otak atau Saraf</p>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ibrain">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ibrain">Tidak</a>
+    || !(vm.healthData.inyeri != null) || !(vm.healthData.inodule != null)" ng-click="vm.health1NextStep('health_brain')">Berikutnya</button>
     </div>
-  </div>
-  <!--end-item brain-->
-  <div class="item ihocmon" >
-    <div class="icon" ng-class="{'completed': vm.healthData.ihocmon != null}"></div>
-    <h1 class="text-center description">Kondisi Hormon atau Autoimun</h1>
-    <p class="item_description">Kencing Manis/Diabetes, Kelenjar Gondok* atau Gangguan Endokrin / Hormon, Systemic Lupus Erythematosus (SLE), Anti-cardiolipin
-      antibodies (ACA) atau Auto Immune Diseases (Penyakit Sistem Kekebalan Lainnya)</p>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ihocmon">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ihocmon">Tidak</a>
-    </div>
-  </div>
-  <!--end-item ihocmon-->
-  <div class="item ieye" >
-    <div class="icon" ng-class="{'completed': vm.eyePopupTouched &&vm.objectValidate(vm.healthData.eyePopup)}"></div>
-    <h1 class="text-center description">Kondisi mata</h1>
-    <p class="item_description">Rabun jauh dengan menggunakan kacamata/softlens (lensa kontak) melebihi -6,0 pada satu atau kedua mata,
-      <span ng-class="{'red': vm.eyePopupTouched&&!vm.objectValidate(vm.healthData.eyePopup)}" ng-click='vm.eyePopupTouched&&!vm.objectValidate(vm.healthData.eyePopup)&&vm.showPopupEye()'>Katarak atau kelainan mata lainnya</span></p>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ieye">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ieye"  ng-click='vm.resetEye()'>Tidak</a>
-    </div>
-    <div class='grey-box' ng-show="vm.healthData.ieye==true">
-      <div class="text-left">
-        <ion-list>
-          <ion-checkbox ng-model='vm.healthData.eye_contact_lenses'>Rabun jauh dengan menggunakan kacamata softlens (lensa kontak) melebihi -6,0 pada satu atau kedua mata</ion-checkbox>
-          <ion-checkbox ng-model='vm.healthData.eye_disorders'>Katarak atau kelainan mata lainnya</ion-checkbox>
-        </ion-list>
+    <!--end item -->
+    <div class="item ibrain" id="health_brain">
+      <div class="icon" ng-class="{'completed': vm.healthData.ibrain != null}"></div>
+      <h1 class="text-center description">Kondisi Terkait Otak, Saraf, Saraf Tulang Belakang</h1>
+      <p class="item_description">Sakit kepala*, Pusing*, Migrain*,Vertigo*, Epilepsi (atau ayan)**, Gangguan Kesadaran, Kelainan Psikologis atau Kejiwaan*/Mental,
+        Gangguan/Kelainan/Penyakit Otak atau Saraf</p>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ibrain">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ibrain">Tidak</a>
       </div>
-      <button class="button button-full button-done" ng-click='vm.showPopupEye()'>Done</button>
     </div>
-  </div>
-  <!--end-item ieye-->
-  <div class="item iear" >
-    <div class="icon" ng-class="{'completed': vm.healthData.iear != null}"></div>
-    <h1 class="text-center description">Telinga, Hidung & Kondisi Tenggorokan</h1>
-    <p class="item_description">Telinga, Hidung, Tenggorokan (THT), Sinus, Gangguan Berbicara.</p>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.iear">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.iear">Tidak</a>
-    </div>
-  </div>
-  <!--end-item iear-->
-  <div class="item irespiratory" >
-    <div class="icon" ng-class="{'completed': vm.objectValidate(vm.healthData.respiratoryPu)}"></div>
-    <h1 class="text-center description">Kondisi Pernafasan</h1>
-    <p class="item_description"
-     ng-class="{'red': vm.respiratoryPopupTouched&&!vm.objectValidate(vm.healthData.respiratoryPu)}" 
-     ng-click='vm.respiratoryPopupTouched&&!vm.objectValidate(vm.healthData.respiratoryPu)&&vm.showPopupRespiratory()'>Gangguan Pernafasan*, Batuk Berkepanjangan*, Sesak Nafas*, Bronkitis, Asma*, Tuberkulosis (TBC)*, Sesak Nafas yang
-      disebabkan karena kelainan/penyakit jantung</p>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.irespiratory" ng-click='vm.showPopupRespiratory()'>Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.irespiratory">Tidak</a>
-    </div>
-  </div>
-  <!--end-item irespiratory-->
-  <div class="item iheart" >
-    <div class="icon" ng-class="{'completed': vm.healthData.iheart != null}"></div>
-    <h1 class="text-center description">Kondisi Jantung, Pembuluh Darah atau Darah</h1>
-    <p class="item_description">Wasir (Haemorrhoid), Varises atau Kelainan Pembuluh Darah lainnya. Kelainan Darah* (seperti Thalassemia / Hemofilia
-      / Leukemia / Anemia atau Kelainan Darah Lainnya), Menerima transfusi darah</p>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.iheart">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.iheart">Tidak</a>
-    </div>
-  </div>
-  <!--end-item iheart-->
-  <div class="item idigestive" >
-    <div class="icon" ng-class="{'completed': vm.validateDigestive()}"></div>
-    <h1 class="text-center description">Kondisi Sistem Saluran Pencernaan</h1>
-    <p class="item_description" ng-class="{'red': vm.digestivePopupTouched&&!vm.objectValidate(vm.healthData.digesPu)}" 
-    ng-click='vm.digestivePopupTouched&&!vm.objectValidate(vm.healthData.digesPu)&&vm.showPopupDigestive()'>Maag*/Gastritis*, Usus* / Hernia / Pankreas / Organ Pencernaan lainnya</p>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.idigestive" ng-click='vm.showPopupDigestive()'>Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.idigestive" ng-click='vm.resetDigestive()'>Tidak</a>
-    </div>
-  </div>
-  <!--end-item idigestive-->
-  <div class="item ikidney" >
-    <div class="icon" ng-class="{'completed': vm.healthData.ikidney != null}"></div>
-    <h1 class="text-center description">Kondisi Hati, Ginjal & Saluran Kemih</h1>
-    <p class="item_description">Hepatitis A, Hepatitis B, Hepatitis C, Penyakit/Gangguan Hati (Selain Hepatitis) atau Kandung Empedu, Ginjal, Saluran
-      Kemih (termasuk Batu), Cuci Darah</p>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ikidney">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ikidney">Tidak</a>
-    </div>
-  </div>
-  <!--end-item ikidney-->
-  <div class="item iface" >
-    <div class="icon" ng-class="{'completed': vm.healthData.iface != null}"></div>
-    <h1 class="text-center description">Kulit, Kelamin & Alergi</h1>
-    <p class="item_description">Alergi / Penyakit Kulit atau Kelamin</p>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.iface">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.iface">Tidak</a>
-    </div>
-  </div>
-  <!--end-item iface-->
-  <div class="item ibone" >
-    <div class="icon" ng-class="{'completed': vm.healthData.ibone != null}"></div>
-    <h1 class="text-center description">Kondisi Tulang, Sendi & Otot</h1>
-    <p class="item_description">Gangguan Persendian*/ Rematik*/Kelainan pada Otot*/Sendi* atau Tulang*/ Gangguan Tulang Belakang*/ Polio*/Multiple
-      Sclerosis/Asam Urat</p>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ibone">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ibone">Tidak</a>
-    </div>
-  </div>
-  <!--end-item ibone-->
-  <div class="item itumors" >
-    <div class="icon" ng-class="{'completed': vm.healthData.itumors != null}"></div>
-    <h1 class="text-center description">Tumor & Pertumbuhan</h1>
-    <p class="item_description">Pernahkah Anda mengalami Benjolan / Tumor / Kista / Kanker / Nodul / Pembengkakan / Pertumbuhan / Pembesaran lainnya</p>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.itumors">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.itumors">Tidak</a>
-    </div>
-  </div>
-  <!--end-item itumors-->
-  <div class="item iill" >
-    <div class="icon" ng-class="{'completed': vm.healthData.iill != null}"></div>
-    <h1 class="text-center description">Penyakit Infeksi, Penyakit Menular Seksual & AIDS</h1>
-    <p class="item_description">Penyakit Infeksi seperti Malaria, Penyakit Menular Seksual, AIDS atau kondisi yang berkaitan dengan AIDS (Demam / kelelahan
-      / Diare Kronis / penurunan berat badan / Pembesaran Kelenjar Getah Bening / luka di kulit berulang dan berkepanjangan
-      yang tidak diketahui penyebabnya)</p>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.iill">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.iill">Tidak</a>
-    </div>
-    <div class='grey-box' ng-show="vm.healthData.iill==true">
-      <div class="text-left">
-        <ion-list>
-          <ion-checkbox ng-model='vm.healthData.eye_contact_lenses'>Rabun jauh dengan menggunakan kacamata softlens (lensa kontak) melebihi -6,0 pada satu atau kedua mata</ion-checkbox>
-          <ion-checkbox ng-model='vm.healthData.eye_disorders'>Katarak atau kelainan mata lainnya</ion-checkbox>
-        </ion-list>
+    <!--end-item brain-->
+    <div class="item ihocmon">
+      <div class="icon" ng-class="{'completed': vm.healthData.ihocmon != null}"></div>
+      <h1 class="text-center description">Kondisi Hormon atau Autoimun</h1>
+      <p class="item_description">Kencing Manis/Diabetes, Kelenjar Gondok* atau Gangguan Endokrin / Hormon, Systemic Lupus Erythematosus (SLE), Anti-cardiolipin
+        antibodies (ACA) atau Auto Immune Diseases (Penyakit Sistem Kekebalan Lainnya)</p>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ihocmon">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ihocmon">Tidak</a>
       </div>
-      <button class="button button-full button-done" ng-click='vm.showPopup()'>Done</button>
     </div>
-  </div>
-  <!--end-item iill-->
-  <div class="item iinjury" >
-    <div class="icon" ng-class="{'completed': vm.healthData.iinjury != null && (vm.healthData.iinjury == false || vm.healthData.personalAccidentPopupData.function_name != null || vm.healthData.personalAccidentPopupData.is_pen_installed != null)}"></div>
-    <h1 class="text-center description">Kecelakaan Pribadi / Cedera jangka panjang</h1>
-    <p class="item_description">Kecelakaan / Cidera Berat Berkepanjangan / Kelumpuhan / Kelainan Syaraf lainnya, Bila kecelakaan menyangkut alat gerak,
-      bagaimana fungsi alat gerak tersebut saat ini? </p>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.iinjury">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.iinjury">Tidak</a>
+    <!--end-item ihocmon-->
+    <div class="item ieye">
+      <div class="icon" ng-class="{'completed': vm.eyePopupTouched &&vm.objectValidate(vm.healthData.eyePopup)||vm.healthData.ieye==false}"></div>
+      <h1 class="text-center description">Kondisi mata</h1>
+      <p class="item_description">Rabun jauh dengan menggunakan kacamata/softlens (lensa kontak) melebihi -6,0 pada satu atau kedua mata,
+        <span ng-class="{'red': vm.eyePopupTouched&&!vm.objectValidate(vm.healthData.eyePopup)}" ng-click='vm.eyePopupTouched&&!vm.objectValidate(vm.healthData.eyePopup)&&vm.showPopupEye()'>Katarak atau kelainan mata lainnya</span></p>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ieye">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ieye" ng-click='vm.resetEye()'>Tidak</a>
+      </div>
+      <div class='grey-box' ng-show="vm.healthData.ieye==true">
+        <div class="text-left">
+          <ion-list>
+            <ion-checkbox ng-model='vm.healthData.eye_contact_lenses'>Rabun jauh dengan menggunakan kacamata softlens (lensa kontak) melebihi -6,0 pada satu atau kedua mata</ion-checkbox>
+            <ion-checkbox ng-model='vm.healthData.eye_disorders'>Katarak atau kelainan mata lainnya</ion-checkbox>
+          </ion-list>
+        </div>
+        <button class="button button-full button-done" ng-click='vm.showPopupEye()'>Done</button>
+      </div>
     </div>
-    <div class='grey-box' ng-show="vm.healthData.iinjury==true">
-      <div class="additional-question text-left">
-        <div class="row">
-          <label>Bila kecelakaan menyangkut alat gerak,</br> bagaimana fungsi alat gerak tersebut saat ini?</label>
+    <!--end-item ieye-->
+    <div class="item iear">
+      <div class="icon" ng-class="{'completed': vm.healthData.iear != null}"></div>
+      <h1 class="text-center description">Telinga, Hidung & Kondisi Tenggorokan</h1>
+      <p class="item_description">Telinga, Hidung, Tenggorokan (THT), Sinus, Gangguan Berbicara.</p>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.iear">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.iear">Tidak</a>
+      </div>
+    </div>
+    <!--end-item iear-->
+    <div class="item irespiratory">
+      <div class="icon" ng-class="{'completed': vm.objectValidate(vm.healthData.respiratoryPu)||vm.healthData.irespiratory==false}"></div>
+      <h1 class="text-center description">Kondisi Pernafasan</h1>
+      <p class="item_description" ng-class="{'red': vm.respiratoryPopupTouched&&!vm.objectValidate(vm.healthData.respiratoryPu)}"
+        ng-click='vm.respiratoryPopupTouched&&!vm.objectValidate(vm.healthData.respiratoryPu)&&vm.showPopupRespiratory()'>Gangguan Pernafasan*, Batuk Berkepanjangan*, Sesak Nafas*, Bronkitis, Asma*, Tuberkulosis (TBC)*, Sesak Nafas yang
+        disebabkan karena kelainan/penyakit jantung</p>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.irespiratory" ng-click='vm.showPopupRespiratory()'>Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.irespiratory" ng-click="vm.resetRespiratory()">Tidak</a>
+      </div>
+    </div>
+    <!--end-item irespiratory-->
+    <div class="item iheart">
+      <div class="icon" ng-class="{'completed': vm.healthData.iheart != null}"></div>
+      <h1 class="text-center description">Kondisi Jantung, Pembuluh Darah atau Darah</h1>
+      <p class="item_description">Wasir (Haemorrhoid), Varises atau Kelainan Pembuluh Darah lainnya. Kelainan Darah* (seperti Thalassemia / Hemofilia
+        / Leukemia / Anemia atau Kelainan Darah Lainnya), Menerima transfusi darah</p>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.iheart">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.iheart">Tidak</a>
+      </div>
+    </div>
+    <!--end-item iheart-->
+    <div class="item idigestive">
+      <div class="icon" ng-class="{'completed': vm.objectValidate(vm.healthData.digesPu)||vm.healthData.idigestive==false}"></div>
+      <h1 class="text-center description">Kondisi Sistem Saluran Pencernaan</h1>
+      <p class="item_description" ng-class="{'red': vm.digestivePopupTouched&&!vm.objectValidate(vm.healthData.digesPu)}" ng-click='vm.digestivePopupTouched&&!vm.objectValidate(vm.healthData.digesPu)&&vm.showPopupDigestive()'>Maag*/Gastritis*, Usus* / Hernia / Pankreas / Organ Pencernaan lainnya</p>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.idigestive" ng-click='vm.showPopupDigestive()'>Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.idigestive" ng-click='vm.resetDigestive()'>Tidak</a>
+      </div>
+    </div>
+    <!--end-item idigestive-->
+    <div class="item ikidney">
+      <div class="icon" ng-class="{'completed': vm.healthData.ikidney != null}"></div>
+      <h1 class="text-center description">Kondisi Hati, Ginjal & Saluran Kemih</h1>
+      <p class="item_description">Hepatitis A, Hepatitis B, Hepatitis C, Penyakit/Gangguan Hati (Selain Hepatitis) atau Kandung Empedu, Ginjal, Saluran
+        Kemih (termasuk Batu), Cuci Darah</p>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ikidney">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ikidney">Tidak</a>
+      </div>
+    </div>
+    <!--end-item ikidney-->
+    <div class="item iface">
+      <div class="icon" ng-class="{'completed': vm.healthData.iface != null}"></div>
+      <h1 class="text-center description">Kulit, Kelamin & Alergi</h1>
+      <p class="item_description">Alergi / Penyakit Kulit atau Kelamin</p>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.iface">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.iface">Tidak</a>
+      </div>
+    </div>
+    <!--end-item iface-->
+    <div class="item ibone">
+      <div class="icon" ng-class="{'completed': vm.healthData.ibone != null}"></div>
+      <h1 class="text-center description">Kondisi Tulang, Sendi & Otot</h1>
+      <p class="item_description">Gangguan Persendian*/ Rematik*/Kelainan pada Otot*/Sendi* atau Tulang*/ Gangguan Tulang Belakang*/ Polio*/Multiple
+        Sclerosis/Asam Urat</p>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ibone">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ibone">Tidak</a>
+      </div>
+    </div>
+    <!--end-item ibone-->
+    <div class="item itumors">
+      <div class="icon" ng-class="{'completed': vm.healthData.itumors != null}"></div>
+      <h1 class="text-center description">Tumor & Pertumbuhan</h1>
+      <p class="item_description">Pernahkah Anda mengalami Benjolan / Tumor / Kista / Kanker / Nodul / Pembengkakan / Pertumbuhan / Pembesaran lainnya</p>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.itumors">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.itumors">Tidak</a>
+      </div>
+    </div>
+    <!--end-item itumors-->
+    <div class="item iill">
+      <div class="icon" ng-class="{'completed': vm.healthData.iill==false||(vm.healthData.iill==true&&(vm.healthData.iill_rabun||vm.healthData.iill_katarak))}"></div>
+      <h1 class="text-center description">Penyakit Infeksi, Penyakit Menular Seksual & AIDS</h1>
+      <p class="item_description">Penyakit Infeksi seperti Malaria, Penyakit Menular Seksual, AIDS atau kondisi yang berkaitan dengan AIDS (Demam / kelelahan
+        / Diare Kronis / penurunan berat badan / Pembesaran Kelenjar Getah Bening / luka di kulit berulang dan berkepanjangan
+        yang tidak diketahui penyebabnya)</p>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.iill">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.iill">Tidak</a>
+      </div>
+      <div class='grey-box' ng-show="vm.healthData.iill==true">
+        <div class="text-left">
+          <ion-list>
+            <ion-checkbox ng-model='vm.healthData.iill_rabun'>Rabun jauh dengan menggunakan kacamata softlens (lensa kontak) melebihi -6,0 pada satu atau kedua mata</ion-checkbox>
+            <ion-checkbox ng-model='vm.healthData.iill_katarak'>Katarak atau kelainan mata lainnya</ion-checkbox>
+          </ion-list>
         </div>
-        <md-input-container class="md-block md-input" flex-gt-sm>
-          <label>Kaki kanan</label>
-          <input type="text" ng-model="vm.healthData.personalAccidentPopupData.function_name">
-        </md-input-container>
-        <div class="row">
-          <label>Apakah saat ini terpasang pen pada tubuh Anda?</label>
-        </div>
-        <div class="row">
-          <div class="button-bar">
-            <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.personalAccidentPopupData.is_pen_installed">Iya</a>
-            <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.personalAccidentPopupData.is_pen_installed">Tidak</a>
+        <button class="button button-full button-done" ng-click='vm.showPopup()'>Done</button>
+      </div>
+    </div>
+    <!--end-item iill-->
+    <div class="item iinjury">
+      <div class="icon" ng-class="{'completed': vm.healthData.iinjury != null && (vm.healthData.iinjury == false || vm.healthData.personalAccidentPopupData.function_name != null || vm.healthData.personalAccidentPopupData.is_pen_installed != null)}"></div>
+      <h1 class="text-center description">Kecelakaan Pribadi / Cedera jangka panjang</h1>
+      <p class="item_description">Kecelakaan / Cidera Berat Berkepanjangan / Kelumpuhan / Kelainan Syaraf lainnya, Bila kecelakaan menyangkut alat gerak,
+        bagaimana fungsi alat gerak tersebut saat ini? </p>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.iinjury">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.iinjury">Tidak</a>
+      </div>
+      <div class='grey-box' ng-show="vm.healthData.iinjury==true">
+        <div class="additional-question text-left">
+          <div class="row">
+            <label>Bila kecelakaan menyangkut alat gerak,</br> bagaimana fungsi alat gerak tersebut saat ini?</label>
+          </div>
+          <md-input-container class="md-block md-input" flex-gt-sm>
+            <label>Kaki kanan</label>
+            <input type="text" ng-model="vm.healthData.personalAccidentPopupData.function_name">
+          </md-input-container>
+          <div class="row">
+            <label>Apakah saat ini terpasang pen pada tubuh Anda?</label>
+          </div>
+          <div class="row">
+            <div class="button-bar">
+              <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.personalAccidentPopupData.is_pen_installed">Iya</a>
+              <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.personalAccidentPopupData.is_pen_installed">Tidak</a>
+            </div>
           </div>
         </div>
+        <button class="button button-full button-done" ng-click=''>Done</button>
       </div>
-      <button class="button button-full button-done" ng-click=''>Done</button>
     </div>
-  </div>
-  <!--end-item iinjury-->
-  <div class="item idisease" >
-    <div class="icon" ng-class="{'completed': vm.healthData.idisease != null && (vm.healthData.idisease == false || vm.healthData.idisea_others != null)}"></div>
-    <h1 class="text-center description">Penyakit lain yang belum disebutkan?</h1>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.idisease">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.idisease">Tidak</a>
-    </div>
-    <div class='grey-box' ng-show="vm.healthData.idisease==true">
-      <div class="additional-question text-left">
-        <div class="row">
-          <label>Sebutkan</label>
+    <!--end-item iinjury-->
+    <div class="item idisease">
+      <div class="icon" ng-class="{'completed': vm.healthData.idisease != null && (vm.healthData.idisease == false || vm.healthData.idisea_others != null)}"></div>
+      <h1 class="text-center description">Penyakit lain yang belum disebutkan?</h1>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.idisease">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.idisease">Tidak</a>
+      </div>
+      <div class='grey-box' ng-show="vm.healthData.idisease==true">
+        <div class="additional-question text-left">
+          <div class="row">
+            <label>Sebutkan</label>
+          </div>
+          <md-input-container class="md-block md-input" md-no-float flex-gt-sm>
+            <input type="text" ng-model="vm.healthData.idisea_others" placeholder="Enter">
+          </md-input-container>
         </div>
-        <md-input-container class="md-block md-input" md-no-float flex-gt-sm>
-          <input type="text" ng-model="vm.healthData.idisea_others" placeholder="Enter">
-        </md-input-container>
+        <button class="button button-full button-done" ng-click=''>Done</button>
       </div>
-      <button class="button button-full button-done" ng-click=''>Done</button>
     </div>
-  </div>
-  <!--end-item idisease-->
-  <div class="item idisorder" >
-    <div class="icon" ng-class="{'completed': vm.healthData.idisorder != null}"></div>
-    <h1 class="text-center description">Apakah Calon Tertanggung mempunyai keluhan/kelainan/gangguan pada Payudara atau Prostat?</h1>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.idisorder">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.idisorder">Tidak</a>
+    <!--end-item idisease-->
+    <div class="item idisorder">
+      <div class="icon" ng-class="{'completed': vm.healthData.idisorder != null}"></div>
+      <h1 class="text-center description">Apakah Calon Tertanggung mempunyai keluhan/kelainan/gangguan pada Payudara atau Prostat?</h1>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.idisorder">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.idisorder">Tidak</a>
+      </div>
     </div>
-  </div>
-  <!--end-item idisorder -->
-  <div class="item iabnormality" >
-    <div class="icon" ng-class="{'completed': vm.healthData.iabnormality != null}"></div>
-    <h1 class="text-center description">Apakah Anda memiliki kelainan pada, Payudara*, Kandungan*, Indung Telur/Ovarium*</h1>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.iabnormality">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.iabnormality">Tidak</a>
+    <!--end-item idisorder -->
+    <div class="item iabnormality">
+      <div class="icon" ng-class="{'completed': vm.healthData.iabnormality != null}"></div>
+      <h1 class="text-center description">Apakah Anda memiliki kelainan pada, Payudara*, Kandungan*, Indung Telur/Ovarium*</h1>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.iabnormality">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.iabnormality">Tidak</a>
+      </div>
     </div>
-  </div>
-  <!--end-item iabnormality-->
-  <div class="item ipapsmear" >
-    <div class="icon" ng-class="{'completed': vm.healthData.ipapsmear != null}"></div>
-    <h1 class="text-center description">Apakah Anda pernah melakukan papsmear dengan hasil abnormal</h1>
+    <!--end-item iabnormality-->
+    <div class="item ipapsmear">
+      <div class="icon" ng-class="{'completed': vm.healthData.ipapsmear != null}"></div>
+      <h1 class="text-center description">Apakah Anda pernah melakukan papsmear dengan hasil abnormal</h1>
 
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ipapsmear">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ipapsmear">Tidak</a>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ipapsmear">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ipapsmear">Tidak</a>
+      </div>
     </div>
-  </div>
-  <!--end-item ipapsmear-->
-  <div class="item ipregnant" >
-    <div class="icon" ng-class="{'completed': vm.healthData.ipregnant != null}"></div>
-    <h1 class="text-center description">Apakah saat ini Anda sedang hamil?</h1>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ipregnant">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ipregnant">Tidak</a>
+    <!--end-item ipapsmear-->
+    <div class="item ipregnant">
+      <div class="icon" ng-class="{'completed': vm.healthData.ipregnant != null}"></div>
+      <h1 class="text-center description">Apakah saat ini Anda sedang hamil?</h1>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ipregnant">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ipregnant">Tidak</a>
+      </div>
     </div>
-  </div>
-  <!--end-item ipregnant-->
-  <div class="item isurgery " >
-    <div class="icon" ng-class="{'completed': vm.healthData.isurgery != null}"></div>
-    <h1 class="text-center description">Apakah Calon Tertanggung pernah melahirkan dengan cara operasi/Sectio Caesaria karena alasan kesehatan?</h1>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.isurgery">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.isurgery">Tidak</a>
+    <!--end-item ipregnant-->
+    <div class="item isurgery ">
+      <div class="icon" ng-class="{'completed': vm.healthData.isurgery != null}"></div>
+      <h1 class="text-center description">Apakah Calon Tertanggung pernah melahirkan dengan cara operasi/Sectio Caesaria karena alasan kesehatan?</h1>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.isurgery">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.isurgery">Tidak</a>
+      </div>
     </div>
-  </div>
-  <!--end-item isurgery -->
-  <div class="item icomplication" >
-    <div class="icon" ng-class="{'completed': vm.healthData.icomplication != null}"></div>
-    <h1 class="text-center description">Apakah Calon Tertanggung pernah mengalami kesulitan/komplikasi pada saat hamil atau melahirkan?</h1>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.icomplication">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.icomplication">Tidak</a>
+    <!--end-item isurgery -->
+    <div class="item icomplication">
+      <div class="icon" ng-class="{'completed': vm.healthData.icomplication != null}"></div>
+      <h1 class="text-center description">Apakah Calon Tertanggung pernah mengalami kesulitan/komplikasi pada saat hamil atau melahirkan?</h1>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.icomplication">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.icomplication">Tidak</a>
+      </div>
     </div>
-  </div>
-  <!--end-item icomplication-->
-  <div class="item ilostweight" >
-    <div class="icon" ng-class="{'completed': vm.healthData.ilostweight != null}"></div>
-    <h1 class="text-center description">Berat Badan waktu Lahir kurang dari atau sama dengan 2500 gram?</h1>
-    <div class="button-bar">
-      <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ilostweight">Ya</a>
-      <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ilostweight">Tidak</a>
+    <!--end-item icomplication-->
+    <div class="item ilostweight">
+      <div class="icon" ng-class="{'completed': vm.healthData.ilostweight != null}"></div>
+      <h1 class="text-center description">Berat Badan waktu Lahir kurang dari atau sama dengan 2500 gram?</h1>
+      <div class="button-bar">
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ilostweight">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ilostweight">Tidak</a>
+      </div>
     </div>
-  </div>
   </form>
   <!--end-item ilostweight-->
 </div>

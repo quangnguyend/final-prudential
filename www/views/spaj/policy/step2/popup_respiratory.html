@@ -1,343 +1,338 @@
-
-<md-dialog aria-label="Mango (Fruit)" class="_md md-transition-in md-content-overflow" role="dialog"  id="digestive-popup" >
-  <form >
+<md-dialog aria-label="Mango (Fruit)" class="_md md-transition-in md-content-overflow" role="dialog" id="digestive-popup">
+  <form>
     <md-toolbar class="_md _md-toolbar-transitions">
       <div class="md-toolbar-tools">
         <h2>Kuesioner Gangguan Pernapasan</h2>
         <span flex="" class="flex"></span>
-        <button class="md-icon-button md-button md-ink-ripple" type="button"  ng-click="vm.closeDialog()">
+        <button class="md-icon-button md-button md-ink-ripple" type="button" ng-click="vm.closeDialog()">
           <i class="icon ion-android-close"></i>
         </button>
       </div>
     </md-toolbar>
-    <md-dialog-content class="popup-prudential" >
-      <ion-content>
+    <md-dialog-content class="popup-prudential">
+      <ion-content delegate-handle="puScroll">
         <div class="md-dialog-content">
-    <div id="policy_info_ph_info" class="list list-inset no-lines">
-      <div class='item'>
-        <div class="row-no-padding">
-          <div class="row">
-            <label class="item-stacked-label">
+          <div id="policy_info_ph_info" class="list list-inset no-lines">
+            <div class='item'>
+              <div class="row-no-padding">
+                <div class="row">
+                  <label class="item-stacked-label">
               <span class="input-label">Gangguan pernafasan yang diderita</span>
             </label>
-          </div>
-          <div class="row">
-            <div class="col-33">
-              <ion-checkbox ng-model='vm.healthData.respiratoryPu.gangguan.asma'>Asma</ion-checkbox>
-            </div>
-            <div class="col-33">
-              <ion-checkbox ng-model='vm.healthData.respiratoryPu.gangguan.tbc'>TBC</ion-checkbox>
-            </div>
-            <div class="col-33">
-              <ion-checkbox ng-model='vm.healthData.respiratoryPu.gangguan.bronkhitis'>Bronkhitis</ion-checkbox>
-            </div>
-          </div>
-          <div class="row">
-            <ion-checkbox ng-model='vm.healthData.respiratoryPu.lainnya_option1'>Lainnya</ion-checkbox>
-          </div>
-          <div class="option_other" ng-show='vm.healthData.respiratoryPu.lainnya_option1'>
-            <div class="row">
-              <input type="text" placeholder="Enter" ng-model='vm.healthData.respiratoryPu.gangguan.lainnya'>
-            </div>
-          </div>
-        </div>
-        <div class="row-no-padding">
-          <div class="row">
-            <md-input-container class="md-block">
-              <md-select ng-model='vm.healthData.respiratoryPu.kapan_pertama' placeholder="Kapan pertama kali gejala dirasakan">
-                <md-option ng-repeat="n in vm.fakeoption" value="{{n.type}}">{{n.value}}</md-option>
-              </md-select>
-            </md-input-container>
-          </div>
-        </div>
-        <div class="row-no-padding">
-          <div class="row">
-            <label class="item-stacked-label">
+                </div>
+                <div class="row">
+                  <div class="col-33">
+                    <ion-checkbox ng-model='vm.healthData.respiratoryPu.gangguan.asma'>Asma</ion-checkbox>
+                  </div>
+                  <div class="col-33">
+                    <ion-checkbox ng-model='vm.healthData.respiratoryPu.gangguan.tbc'>TBC</ion-checkbox>
+                  </div>
+                  <div class="col-33">
+                    <ion-checkbox ng-model='vm.healthData.respiratoryPu.gangguan.bronkhitis'>Bronkhitis</ion-checkbox>
+                  </div>
+                </div>
+                <div class="row">
+                  <ion-checkbox ng-model='vm.healthData.respiratoryPu.lainnya_option1'>Lainnya</ion-checkbox>
+                </div>
+                <div class="option_other" ng-show='vm.healthData.respiratoryPu.lainnya_option1'>
+                  <div class="row">
+                    <input type="text" placeholder="Enter" ng-model='vm.healthData.respiratoryPu.gangguan.lainnya'>
+                  </div>
+                </div>
+              </div>
+              <div class="row-no-padding">
+                <div class="row">
+                  <md-input-container class="md-block">
+                    <md-select ng-model='vm.healthData.respiratoryPu.kapan_pertama' placeholder="Kapan pertama kali gejala dirasakan">
+                      <md-option ng-repeat="n in vm.fakeoption" value="{{n.type}}">{{n.value}}</md-option>
+                    </md-select>
+                  </md-input-container>
+                </div>
+              </div>
+              <div class="row-no-padding">
+                <div class="row">
+                  <label class="item-stacked-label">
               <span class="input-label">Keluhan yang dirasakan</span>
             </label>
-          </div>
-          <div class="row">
-            <div class="col-33">
-              <ion-checkbox ng-model='vm.healthData.respiratoryPu.yang.sesak'>Sesak Nafas</ion-checkbox>
-            </div>
-            <div class="col-33">
-              <ion-checkbox ng-model='vm.healthData.respiratoryPu.yang.batuk'>Batuk lama</ion-checkbox>
-            </div>
-            <div class="col-33">
-              <ion-checkbox ng-model='vm.healthData.respiratoryPu.yang.nafas'>Nafas Berbunyi</ion-checkbox>
-            </div>
-          </div>
-          <div class="row">
-            <ion-checkbox ng-model='vm.healthData.respiratoryPu.lainnya_option2'>Lainnya</ion-checkbox>
-          </div>
-          <div class="option_other" ng-show='vm.healthData.respiratoryPu.lainnya_option2'>
-            <div class="row">
-              <input type="text" placeholder="Enter" ng-model='vm.healthData.respiratoryPu.yang.lainnya'>
-            </div>
-          </div>
-        </div>
-        <div class="row-no-padding">
+                </div>
+                <div class="row">
+                  <div class="col-33">
+                    <ion-checkbox ng-model='vm.healthData.respiratoryPu.yang.sesak'>Sesak Nafas</ion-checkbox>
+                  </div>
+                  <div class="col-33">
+                    <ion-checkbox ng-model='vm.healthData.respiratoryPu.yang.batuk'>Batuk lama</ion-checkbox>
+                  </div>
+                  <div class="col-33">
+                    <ion-checkbox ng-model='vm.healthData.respiratoryPu.yang.nafas'>Nafas Berbunyi</ion-checkbox>
+                  </div>
+                </div>
+                <div class="row">
+                  <ion-checkbox ng-model='vm.healthData.respiratoryPu.lainnya_option2'>Lainnya</ion-checkbox>
+                </div>
+                <div class="option_other" ng-show='vm.healthData.respiratoryPu.lainnya_option2'>
+                  <div class="row">
+                    <input type="text" placeholder="Enter" ng-model='vm.healthData.respiratoryPu.yang.lainnya'>
+                  </div>
+                </div>
+              </div>
+              <div class="row-no-padding">
 
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>Faktor pemicu terhadap keluhan yang dirasakan </label>
-            <input type="text" ng-model='vm.healthData.respiratoryPu.faktor' />
-          </md-input-container>
-        </div>
-        <div class="row-no-padding">
-          <div class="row">
-            <label class="item-stacked-label">
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>Faktor pemicu terhadap keluhan yang dirasakan </label>
+                  <input type="text" ng-model='vm.healthData.respiratoryPu.faktor' />
+                </md-input-container>
+              </div>
+              <div class="row-no-padding">
+                <div class="row">
+                  <label class="item-stacked-label">
                 <div class="input-label">Apakah membatasi aktivitas pekerjaan ?</div>
               </label>
-          </div>
-          <div class="row">
-            <div class="row indent_row">
-              <div class="button-bar">
-                <a class="button col col-50" grouped-radio="'Ya'" ng-model="vm.healthData.respiratoryPu.apakah">Ya</a>
-                <a class="button col col-50" grouped-radio="'Tidak'" ng-model="vm.healthData.respiratoryPu.apakah">Tidak</a>
+                </div>
+                <div class="row">
+                  <div class="row indent_row">
+                    <div class="button-bar">
+                      <a class="button col col-50" grouped-radio="'Ya'" ng-model="vm.healthData.respiratoryPu.apakah">Ya</a>
+                      <a class="button col col-50" grouped-radio="'Tidak'" ng-model="vm.healthData.respiratoryPu.apakah">Tidak</a>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-         <div class="row-no-padding">
-          <div class="row">
-            <button class="button button-full"
-              ng-class="{'button-dark': (vm.healthData.respiratoryPu.gangguan.asma||vm.healthData.respiratoryPu.gangguan.tbc||vm.healthData.respiratoryPu.gangguan.bronkhitis||vm.healthData.respiratoryPu.gangguan.lainnya)
-              &&vm.healthData.respiratoryPu.kapan_pertama&&(vm.healthData.respiratoryPu.yang.sesak||vm.healthData.respiratoryPu.yang.batuk||vm.healthData.respiratoryPu.yang.nafas||vm.healthData.respiratoryPu.yang.lainnya)&&vm.healthData.respiratoryPu.faktor&&vm.healthData.respiratoryPu.apakah!=null}" 
-              ng-disabled="(vm.healthData.respiratoryPu.gangguan.asma==null&&vm.healthData.respiratoryPu.gangguan.tbc==null&&vm.healthData.respiratoryPu.gangguan.bronkhitis==null&&vm.healthData.respiratoryPu.gangguan.lainnya==null)||
+              <div class="row-no-padding">
+                <div class="row">
+                  <button class="button button-full" ng-class="{'button-dark': (vm.healthData.respiratoryPu.gangguan.asma||vm.healthData.respiratoryPu.gangguan.tbc||vm.healthData.respiratoryPu.gangguan.bronkhitis||vm.healthData.respiratoryPu.gangguan.lainnya)
+              &&vm.healthData.respiratoryPu.kapan_pertama&&(vm.healthData.respiratoryPu.yang.sesak||vm.healthData.respiratoryPu.yang.batuk||vm.healthData.respiratoryPu.yang.nafas||vm.healthData.respiratoryPu.yang.lainnya)&&vm.healthData.respiratoryPu.faktor&&vm.healthData.respiratoryPu.apakah!=null}"
+                    ng-disabled="(vm.healthData.respiratoryPu.gangguan.asma==null&&vm.healthData.respiratoryPu.gangguan.tbc==null&&vm.healthData.respiratoryPu.gangguan.bronkhitis==null&&vm.healthData.respiratoryPu.gangguan.lainnya==null)||
               vm.healthData.respiratoryPu.kapan_pertama==null||(vm.healthData.respiratoryPu.yang.sesak==null&&vm.healthData.respiratoryPu.yang.batuk==null&&vm.healthData.respiratoryPu.yang.nafas==null&&vm.healthData.respiratoryPu.yang.lainnya)||vm.healthData.respiratoryPu.apakah==null"
-              ng-click="vm.puNextStep('respiratory_2')">
+                    ng-click="vm.puNextStep('respiratory_2')">
               <span>Berikutnya</span>
             </button>
-          </div>
-        </div>
-      </div>
-     
-      
-      <div class='item' id="respiratory_2">
-        <div class="row-no-padding">
-          <div class="row">
-            <md-input-container class="md-block">
-              <md-select ng-model="vm.healthData.respiratoryPu.kapan_keluhan" placeholder='Kapan keluhan terakhir'>
-                <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
-              </md-select>
-            </md-input-container>
-          </div>
-        </div>
-        <div class="row-no-padding">
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>Nama Dokter / Rumah Sakit</label>
-            <input type="text" ng-model="vm.healthData.respiratoryPu.nama_dokter" />
-          </md-input-container>
-        </div>
-        <div class="row-no-padding">
-          <div class="row">
-            <div class="col-40">
-              <div class="row">
-                <md-input-container class="md-block">
-                  <md-select ng-model="vm.healthData.respiratoryPu.berapa_select" placeholder='Berapa kali konsultasi'>
-                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
-                  </md-select>
+                </div>
+              </div>
+            </div>
+
+
+            <div class='item' id="respiratory_2">
+              <div class="row-no-padding">
+                <div class="row">
+                  <md-input-container class="md-block">
+                    <md-select ng-model="vm.healthData.respiratoryPu.kapan_keluhan" placeholder='Kapan keluhan terakhir'>
+                      <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                    </md-select>
+                  </md-input-container>
+                </div>
+              </div>
+              <div class="row-no-padding">
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>Nama Dokter / Rumah Sakit</label>
+                  <input type="text" ng-model="vm.healthData.respiratoryPu.nama_dokter" />
                 </md-input-container>
-
               </div>
-            </div>
-            <div class="col-20"></div>
-            <div class="col-40">
-              <div class="row">
-                <div class="col-50">
-                  <md-input-container class="md-block">
-                    <md-select ng-model="vm.healthData.respiratoryPu.terakhir_select" placeholder='Terakhir konsultasi'>
-                      <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
-                    </md-select>
-                  </md-input-container>
-                </div>
+              <div class="row-no-padding">
+                <div class="row">
+                  <div class="col-40">
+                    <div class="row">
+                      <md-input-container class="md-block">
+                        <md-select ng-model="vm.healthData.respiratoryPu.berapa_select" placeholder='Berapa kali konsultasi'>
+                          <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                        </md-select>
+                      </md-input-container>
 
-                <div class="col-50">
-                  <md-input-container class="md-block">
-                    <md-select ng-model="vm.healthData.respiratoryPu.terakhir_year" placeholder='2011'>
-                      <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
-                    </md-select>
-                  </md-input-container>
+                    </div>
+                  </div>
+                  <div class="col-20"></div>
+                  <div class="col-40">
+                    <div class="row">
+                      <div class="col-50">
+                        <md-input-container class="md-block">
+                          <md-select ng-model="vm.healthData.respiratoryPu.terakhir_select" placeholder='Terakhir konsultasi'>
+                            <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                          </md-select>
+                        </md-input-container>
+                      </div>
+
+                      <div class="col-50">
+                        <md-input-container class="md-block">
+                          <md-select ng-model="vm.healthData.respiratoryPu.terakhir_year" placeholder='2011'>
+                            <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                          </md-select>
+                        </md-input-container>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="row-no-padding">
-          <div class="row">
-            <button class="button button-full"
-              ng-class="{'button-dark': vm.healthData.respiratoryPu.kapan_keluhan&&vm.healthData.respiratoryPu.nama_dokter&&vm.healthData.respiratoryPu.berapa_select&&vm.healthData.respiratoryPu.terakhir_select&&vm.healthData.respiratoryPu.terakhir_year}"
-              ng-disabled="vm.healthData.respiratoryPu.kapan_keluhan==null||vm.healthData.respiratoryPu.nama_dokter==null||vm.healthData.respiratoryPu.berapa_select==null||vm.healthData.respiratoryPu.terakhir_select==null||vm.healthData.respiratoryPu.terakhir_year==null"
-              ng-click="vm.puNextStep('respiratory_3')">
+              <div class="row-no-padding">
+                <div class="row">
+                  <button class="button button-full" ng-class="{'button-dark': vm.healthData.respiratoryPu.kapan_keluhan&&vm.healthData.respiratoryPu.nama_dokter&&vm.healthData.respiratoryPu.berapa_select&&vm.healthData.respiratoryPu.terakhir_select&&vm.healthData.respiratoryPu.terakhir_year}"
+                    ng-disabled="vm.healthData.respiratoryPu.kapan_keluhan==null||vm.healthData.respiratoryPu.nama_dokter==null||vm.healthData.respiratoryPu.berapa_select==null||vm.healthData.respiratoryPu.terakhir_select==null||vm.healthData.respiratoryPu.terakhir_year==null"
+                    ng-click="vm.puNextStep('respiratory_3')">
               <span>Berikutnya</span>
             </button>
-          </div>
-        </div>
-      </div>
-      <!--end item-->
-      
-    
-      <div class='item' id='respiratory_3'>
-        <div class="row-no-padding">
-          <div class="row">
-            <label class="item-stacked-label">
+                </div>
+              </div>
+            </div>
+            <!--end item-->
+
+
+            <div class='item' id='respiratory_3'>
+              <div class="row-no-padding">
+                <div class="row">
+                  <label class="item-stacked-label">
               <div class="input-label">Apakah pernah dirawat inap di Rumah Sakit ?</div>
             </label>
-          </div>
-          <div class="row">
-            <div class="button-bar">
-              <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.respiratoryPu.apakah_pernah">Ya</a>
-              <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.respiratoryPu.apakah_pernah">Tidak</a>
-            </div>
+                </div>
+                <div class="row">
+                  <div class="button-bar">
+                    <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.respiratoryPu.apakah_pernah">Ya</a>
+                    <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.respiratoryPu.apakah_pernah">Tidak</a>
+                  </div>
 
-          </div>
-        </div>
-        <div class="row-no-padding">
-          <div class="row">
-            <div class="col-40">
-              <div class="row">
-                <md-input-container class="md-block">
-                  <md-select ng-model="vm.healthData.respiratoryPu.kapan_select" placeholder='Kapan'>
-                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
-                  </md-select>
+                </div>
+              </div>
+              <div class="row-no-padding">
+                <div class="row">
+                  <div class="col-40">
+                    <div class="row">
+                      <md-input-container class="md-block">
+                        <md-select ng-model="vm.healthData.respiratoryPu.kapan_select" placeholder='Kapan'>
+                          <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                        </md-select>
+                      </md-input-container>
+                    </div>
+                  </div>
+                  <div class="col-20"></div>
+                  <div class="col-40">
+
+                    <div class="row">
+                      <md-input-container class="md-block">
+                        <md-select ng-model="vm.healthData.respiratoryPu.lama_select" placeholder='Lama di Rumah Sakit'>
+                          <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                        </md-select>
+                      </md-input-container>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row-no-padding">
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>Nama Dokter / Rumah Sakit</label>
+                  <input type="text" ng-model="vm.healthData.respiratoryPu.lama2" />
                 </md-input-container>
               </div>
-            </div>
-            <div class="col-20"></div>
-            <div class="col-40">
-
-              <div class="row">
-                <md-input-container class="md-block">
-                  <md-select ng-model="vm.healthData.respiratoryPu.lama_select" placeholder='Lama di Rumah Sakit'>
-                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
-                  </md-select>
-                </md-input-container>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row-no-padding">
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>Nama Dokter / Rumah Sakit</label>
-            <input type="text" ng-model="vm.healthData.respiratoryPu.lama2" />
-          </md-input-container>
-        </div>
-        <div class="row-no-padding">
-          <div class="row">
-              <button class="button button-full"
-              ng-class="{'button-dark': vm.healthData.respiratoryPu.apakah_pernah!=null&&vm.healthData.respiratoryPu.kapan_select&&vm.healthData.respiratoryPu.lama_select&&vm.healthData.respiratoryPu.lama2}"
-              ng-disabled="vm.healthData.respiratoryPu.apakah_pernah==null||vm.healthData.respiratoryPu.kapan_select==null||vm.healthData.respiratoryPu.lama_select==null||vm.healthData.respiratoryPu.lama2==null"
-              ng-click="vm.puNextStep('respiratory_4')">
+              <div class="row-no-padding">
+                <div class="row">
+                  <button class="button button-full" ng-class="{'button-dark': vm.healthData.respiratoryPu.apakah_pernah!=null&&vm.healthData.respiratoryPu.kapan_select&&vm.healthData.respiratoryPu.lama_select&&vm.healthData.respiratoryPu.lama2}"
+                    ng-disabled="vm.healthData.respiratoryPu.apakah_pernah==null||vm.healthData.respiratoryPu.kapan_select==null||vm.healthData.respiratoryPu.lama_select==null||vm.healthData.respiratoryPu.lama2==null"
+                    ng-click="vm.puNextStep('respiratory_4')">
               <span>Berikutnya</span>
             </button>
-          </div>
-        </div>
-      </div>
-       <!--end item-->
-    
-     
-      <div class='item'  id='respiratory_4'>
-        <div class="row-no-padding">
-          <div class="row">
-            <label class="item-stacked-label">
+                </div>
+              </div>
+            </div>
+            <!--end item-->
+
+
+            <div class='item' id='respiratory_4'>
+              <div class="row-no-padding">
+                <div class="row">
+                  <label class="item-stacked-label">
                 <span class="input-label">Pengobatan / Terapi</span>
               </label>
-          </div>
-          <div class="row">
-            <ion-checkbox ng-model="vm.healthData.respiratoryPu.pengo.inhalasi">Inhalasi</ion-checkbox>
-          </div>
-          <div class="row">
-            <ion-checkbox ng-model="vm.healthData.respiratoryPu.suntikan">Suntikan</ion-checkbox>
-          </div>
-          <div class="option_other" ng-class="vm.healthData.respiratoryPu.suntikan ? 'active':'disable'">
-            <md-input-container class="md-block" flex-gt-sm>
-              <label>Nama Obat</label>
-              <input type="text" ng-model="vm.healthData.respiratoryPu.pengo.suntikan_nama" />
-            </md-input-container>
-          </div>
-          <div class="row">
-            <ion-checkbox ng-model="vm.healthData.respiratoryPu.pengo.obat_minum">Obat minum</ion-checkbox>
-          </div>
-          <div class="row">
-            <ion-checkbox ng-model="vm.healthData.respiratoryPu.pengo.operasi">Operasi</ion-checkbox>
-          </div>
-          <div class="row">
-            <ion-checkbox ng-model="vm.healthData.respiratoryPu.pengo.lainnya_option">Lainnya</ion-checkbox>
-          </div>
-          <div class="option_other" ng-class="vm.healthData.respiratoryPu.pengo.lainnya_option ? 'active':'disable'">
-            <md-input-container class="md-block" flex-gt-sm>
-              <label>Nama Obat</label>
-              <input type="text" ng-model="vm.healthData.respiratoryPu.pengo.lainnya" />
-            </md-input-container>
-          </div>
+                </div>
+                <div class="row">
+                  <ion-checkbox ng-model="vm.healthData.respiratoryPu.pengo.inhalasi">Inhalasi</ion-checkbox>
+                </div>
+                <div class="row">
+                  <ion-checkbox ng-model="vm.healthData.respiratoryPu.suntikan">Suntikan</ion-checkbox>
+                </div>
+                <div class="option_other" ng-class="vm.healthData.respiratoryPu.suntikan ? 'active':'disable'">
+                  <md-input-container class="md-block" flex-gt-sm>
+                    <label>Nama Obat</label>
+                    <input type="text" ng-model="vm.healthData.respiratoryPu.pengo.suntikan_nama" />
+                  </md-input-container>
+                </div>
+                <div class="row">
+                  <ion-checkbox ng-model="vm.healthData.respiratoryPu.pengo.obat_minum">Obat minum</ion-checkbox>
+                </div>
+                <div class="row">
+                  <ion-checkbox ng-model="vm.healthData.respiratoryPu.pengo.operasi">Operasi</ion-checkbox>
+                </div>
+                <div class="row">
+                  <ion-checkbox ng-model="vm.healthData.respiratoryPu.pengo.lainnya_option">Lainnya</ion-checkbox>
+                </div>
+                <div class="option_other" ng-class="vm.healthData.respiratoryPu.pengo.lainnya_option ? 'active':'disable'">
+                  <md-input-container class="md-block" flex-gt-sm>
+                    <label>Nama Obat</label>
+                    <input type="text" ng-model="vm.healthData.respiratoryPu.pengo.lainnya" />
+                  </md-input-container>
+                </div>
 
-        </div>
-        <div class="row-no-padding">
-          <div class="row">
-            <button class="button button-full"
-              ng-class="{'button-dark': vm.healthData.respiratoryPu.pengo.inhalasi||vm.healthData.respiratoryPu.pengo.suntikan_nama||vm.healthData.respiratoryPu.pengo.obat_minum||vm.healthData.respiratoryPu.pengo.operasi||healthData.respiratoryPu.pengobatan_lainnya }"
-              ng-disabled="vm.healthData.respiratoryPu.pengo.inhalasi==null&&vm.healthData.respiratoryPu.pengo.suntikan_nama==null&&vm.healthData.respiratoryPu.pengo.obat_minum==null&&vm.healthData.respiratoryPu.pengo.operasi==null&&healthData.respiratoryPu.pengobatan_lainnya==null"
-              ng-click="vm.puNextStep('respiratory_5')">
+              </div>
+              <div class="row-no-padding">
+                <div class="row">
+                  <button class="button button-full" ng-class="{'button-dark': vm.healthData.respiratoryPu.pengo.inhalasi||vm.healthData.respiratoryPu.pengo.suntikan_nama||vm.healthData.respiratoryPu.pengo.obat_minum||vm.healthData.respiratoryPu.pengo.operasi||healthData.respiratoryPu.pengobatan_lainnya }"
+                    ng-disabled="vm.healthData.respiratoryPu.pengo.inhalasi==null&&vm.healthData.respiratoryPu.pengo.suntikan_nama==null&&vm.healthData.respiratoryPu.pengo.obat_minum==null&&vm.healthData.respiratoryPu.pengo.operasi==null&&healthData.respiratoryPu.pengobatan_lainnya==null"
+                    ng-click="vm.puNextStep('respiratory_5')">
               <span>Berikutnya</span>
             </button>
-          </div>
-        </div>
-      </div>
-       <!--end item-->
-      <div class='item'   id='respiratory_5'>
-        <div class="row-no-padding">
-          <div class="row">
-            <label class="item-stacked-label">
+                </div>
+              </div>
+            </div>
+            <!--end item-->
+            <div class='item' id='respiratory_5'>
+              <div class="row-no-padding">
+                <div class="row">
+                  <label class="item-stacked-label">
                 <span class="input-label">Pemeriksaan</span>
               </label>
-          </div>
-          <div class="row">
-            <ion-checkbox ng-model="vm.healthData.respiratoryPu.pemer.rontgen">Rontgen Dada</ion-checkbox>
-          </div>
-          <div class="row">
-            <ion-checkbox ng-model="vm.healthData.respiratoryPu.pemer.tes">Tes Fungsi Paru / Spirometri</ion-checkbox>
-          </div>
-          <div class="option_other" ng-disabled="!vm.healthData.respiratoryPu.pemer.tes">
+                </div>
+                <div class="row">
+                  <ion-checkbox ng-model="vm.healthData.respiratoryPu.pemer.rontgen">Rontgen Dada</ion-checkbox>
+                </div>
+                <div class="row">
+                  <ion-checkbox ng-model="vm.healthData.respiratoryPu.pemer.tes">Tes Fungsi Paru / Spirometri</ion-checkbox>
+                </div>
+                <div class="option_other" ng-disabled="!vm.healthData.respiratoryPu.pemer.tes">
 
-            <div class="row">
-              <div class="col-40">
-                <md-input-container class="md-block">
-                  <md-select ng-model="vm.healthData.respiratoryPu.kapan_select2" placeholder='Kapan'>
-                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
-                  </md-select>
-                </md-input-container>
+                  <div class="row">
+                    <div class="col-40">
+                      <md-input-container class="md-block">
+                        <md-select ng-model="vm.healthData.respiratoryPu.kapan_select2" placeholder='Kapan'>
+                          <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                        </md-select>
+                      </md-input-container>
+                    </div>
+                    <div class="col-20"></div>
+                    <div class="col-40">
+                      <md-input-container class="md-block">
+                        <md-select ng-model="vm.healthData.respiratoryPu.hasil_select" placeholder='Hasil'>
+                          <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                        </md-select>
+                      </md-input-container>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <ion-checkbox ng-model="vm.healthData.respiratoryPu.pemer.ekg">EKG</ion-checkbox>
+                </div>
+                <div class="row">
+                  <ion-checkbox ng-model="vm.healthData.respiratoryPu.pemer.lainnya_option">Lainnya</ion-checkbox>
+                </div>
+                <div class="option_other">
+                  <div class="row">
+                    <input type="text" placeholder="Enter" ng-model="vm.healthData.respiratoryPu.pemer.lainnya" ng-show="vm.healthData.respiratoryPu.pemer.lainnya_option">
+                  </div>
+                </div>
               </div>
-              <div class="col-20"></div>
-              <div class="col-40">
-                <md-input-container class="md-block">
-                  <md-select ng-model="vm.healthData.respiratoryPu.hasil_select" placeholder='Hasil'>
-                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
-                  </md-select>
-                </md-input-container>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <ion-checkbox ng-model="vm.healthData.respiratoryPu.pemer.ekg">EKG</ion-checkbox>
-          </div>
-          <div class="row">
-            <ion-checkbox ng-model="vm.healthData.respiratoryPu.pemer.lainnya_option">Lainnya</ion-checkbox>
-          </div>
-          <div class="option_other">
-            <div class="row">
-              <input type="text" placeholder="Enter" ng-model="vm.healthData.respiratoryPu.pemer.lainnya" ng-show="vm.healthData.respiratoryPu.pemer.lainnya_option">
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    </div>
-     <ion-content>
+        <ion-content>
     </md-dialog-content>
 
     <md-dialog-actions layout="row" class="layout-row">
-      <button class="md-button button-full" type="button"  ng-click="vm.closeDialog()">
+      <button class="md-button button-full" type="button" ng-click="vm.closeDialog()">
         <span class="ng-scope">Selesai</span>
       </button>
     </md-dialog-actions>

@@ -20,7 +20,7 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
       medicine: null
     }],
     digesPu: {
-      keluhan:{
+      keluhan: {
         sakit: null,
         muntah: null,
         nveri: null,
@@ -37,26 +37,26 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
       kapan_month_select: null,
       kapan_year_select: null,
       nama_dokter: null,
-      tindakan:{
+      tindakan: {
         operasi: null,
         suntikan: null,
-        obat:null,
-        lainnya:null
+        obat: null,
+        lainnya: null
       },
-      pemer:{
-        endoskopi:null,
-        lainnya:null
+      pemer: {
+        endoskopi: null,
+        lainnya: null
       }
     },
     respiratoryPu: {
-      gangguan:{
+      gangguan: {
         asma: null,
         tbc: null,
         bronkhitis: null,
         lainnya: null
       },
       kapan_pertama: null,
-      yang:{
+      yang: {
         sesak: null,
         batuk: null,
         nafas: null,
@@ -73,18 +73,18 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
       kapan_select: null,
       lama_select: null,
       lama2: null,
-      pengo:{
+      pengo: {
         inhalasi: null,
         suntikan_nama: null,
         obat_minum: null,
         operasi: null,
         lainnya: null,
       },
-      pemer:{
-        rontgen:null,
-        tes:null,
-        ekg:null,
-        lainnya:null
+      pemer: {
+        rontgen: null,
+        tes: null,
+        ekg: null,
+        lainnya: null
       }
     },
     tumorPu: {
@@ -105,17 +105,17 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
       kapan_month_select: null,
       kapan_year_select: null,
       nama_dokter: null,
-      jenis_operasi:{
-        rahim:null,
-        payudara:null,
-        lainnya:null
+      jenis_operasi: {
+        rahim: null,
+        payudara: null,
+        lainnya: null
       },
-      pengo:{
-        obat_option:null,
-        radiography_option:null,
-        chemography_option:null,
-        lainnya_option:null
-      } 
+      pengo: {
+        obat_option: null,
+        radiography_option: null,
+        chemography_option: null,
+        lainnya_option: null
+      }
     },
     height: null,
     weight: null,
@@ -218,22 +218,22 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
 
   // Main Health step
 
-  vm.objectValidate=function(obj){ 
-    var obvalid=0
-    if(obj.constructor==Object){
-      for(var key in obj){
-        if(obj[key]===null) return false
-        if(obj[key]!=null&&obj[key].constructor==Object){
-          var count=0
-          for(var childkey in (obj[key])){
-            if(obj[key][childkey]!=null) {
+  vm.objectValidate = function (obj) {
+    var obvalid = 0
+    if (obj.constructor == Object) {
+      for (var key in obj) {
+        if (obj[key] === null) return false
+        if (obj[key] != null && obj[key].constructor == Object) {
+          var count = 0
+          for (var childkey in (obj[key])) {
+            if (obj[key][childkey] != null) {
               count++
-            };  
+            };
           }
-          if(count==0) {return false ;}else{ obvalid++; }
+          if (count == 0) { return false; } else { obvalid++; }
         }
       }
-    }else if(obj.constructor==Array){
+    } else if (obj.constructor == Array) {
       for (i = 0; i < obj.length; i++) {
         for (var key in obj[i]) {
           if (obj[i][key] == null) return false
@@ -242,14 +242,14 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
     }
     return true
   }
-  vm.resetObject=function(obj){
-    for(var key in obj){
-      if(obj[key]!=null&&obj[key].constructor==Object){
-        for(var childkey in (obj[key])){
-          obj[key][childkey]=null
+  vm.resetObject = function (obj) {
+    for (var key in obj) {
+      if (obj[key] != null && obj[key].constructor == Object) {
+        for (var childkey in (obj[key])) {
+          obj[key][childkey] = null
         }
-      }else{
-        obj[key] =null
+      } else {
+        obj[key] = null
       }
     }
   }
@@ -268,16 +268,20 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
   vm.puNextStep = function (id) {
     $('#' + id).addClass('_active');
     var distance = $('#' + id) && $('#' + id).position().top || 0;
-    $ionicScrollDelegate.scrollTo(0, distance, true)
+    //$ionicScrollDelegate.scrollTo(0, distance, true)
+    $ionicScrollDelegate.$getByHandle('puScroll').scrollTo(0, distance, true)
   }
 
 
-  
- 
+
+
   // ======================== PopupEye ======================== //
   vm.showPopupEye = function () {
     if (vm.healthData.eye_contact_lenses && vm.healthData.eye_disorders && vm.healthData.eyePopup.length < 2) { // if choose both option
       vm.addPopupEyeItem()
+    }
+    if (vm.healthData.eye_contact_lenses == !vm.healthData.eye_disorders && vm.healthData.eyePopup.length == 2) { // if choose both option
+      vm.removePopupEyeItem()
     }
     $mdDialog.show({
       scope: $scope.$new(),
@@ -297,7 +301,12 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
       medicine: null
     })
   }
+  vm.removePopupEyeItem = function () {
+    vm.healthData.eyePopup.pop()
+  }
   vm.resetEye = function () {
+    vm.healthData.eye_contact_lenses = false;
+    vm.healthData.eye_disorders = false;
     vm.eyePopupTouched = false;
     vm.resetObject(vm.healthData.eyePopup)
   }
@@ -310,9 +319,9 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
       templateUrl: 'views/spaj/policy/step2/popup-digestive.html',
       clickOutsideToClose: true
     })
-    .then(function (res) {
-      vm.digestivePopupTouched = true
-    })
+      .then(function (res) {
+        vm.digestivePopupTouched = true
+      })
   }
   vm.digest_addObat = function () {
     vm.healthData.digesPu.tindakan_obat.push({
@@ -335,9 +344,9 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
       templateUrl: 'views/spaj/policy/step2/popup_respiratory.html',
       clickOutsideToClose: true
     })
-    .then(function (res) {
-      vm.respiratoryPopupTouched = true
-    })
+      .then(function (res) {
+        vm.respiratoryPopupTouched = true
+      })
   }
   vm.resetRespiratory = function () {
     vm.respiratoryPopupTouched = false;
@@ -351,9 +360,9 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
       templateUrl: 'views/spaj/policy/step2/popup_tumor.html',
       clickOutsideToClose: true
     })
-    .then(function (res) {
-      vm.tumorPopupTouched = true
-    })
+      .then(function (res) {
+        vm.tumorPopupTouched = true
+      })
   }
   vm.resetTumor = function () {
     vm.tumorPopupTouched = false;
