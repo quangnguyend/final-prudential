@@ -26,11 +26,16 @@ function eSignDeclarationCtrl (
   ]
 
   function getNumberOfAdditional () {
-    var spajData = SpajService.getData()
+    var spajData = SpajService.getData('start') || {}
     var list = []
-    if (spajData['ADDITIONAL_0']) { list.push('ADDITIONAL_0') }
-    if (spajData['ADDITIONAL_1']) { list.push('ADDITIONAL_1') }
+    if (spajData['ADDITIONAL_0']) { list.push({id:'ADDITIONAL_0', age: getAge()}) }
+    if (spajData['ADDITIONAL_1']) { list.push({id:'ADDITIONAL_1', age: getAge()}) }
     return list
+  }
+
+  function getAge(){
+    //TODO: Calculate insured age
+    return 19
   }
 
   function signatureHandler (idCanvas) {

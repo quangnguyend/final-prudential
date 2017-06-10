@@ -4,18 +4,6 @@
       <!--id='declaration'-->
       <form>
         <div class="list list-inset no-lines">
-          <div class='item'>
-            <div class="row-no-padding">
-              <div class="row">
-                <label class="item-stacked-label">
-                  <div class="input-label">Amendment / Keterangan lain</div>
-                </label>
-              </div>
-              <div class="row">
-                <input type="text" placeholder="Enter">
-              </div>
-            </div>
-          </div>
           <div class='item three-input'>
             <div class="row-no-padding">
               <div class="row">
@@ -303,33 +291,35 @@
               </div>
             </div>
           </div>
-
-          <div class='item '>
-            <div class="signature">
+          
+          <div class='item ibox'>
+            <span class="input-label">Tenaga Pemasar</span>
+            <div class="ibox-content">
               <canvas class='signature-pad' id='agent-signature-canvas'></canvas>
             </div>
           </div>
+
           <div class='item three-input '>
             <div class="row-no-padding">
               <div class="row">
-                <span>Pernyataan tenaga pemasar</span>
+                <span>Pernyataan Calon Pemegang Polis</span>
               </div>
               <div class="row extra-space">
                 <div class="col">
                   <label class="item-stacked-label">
-                    <div class="input-label">Nama Tenaga Pemasar</div>
+                    <div class="input-label">Nama Calon Pemegang Polis</div>
                   </label>
                   <input type="text" placeholder="Calvin Widjaya">
                 </div>
                 <div class="col">
                   <label class="item-stacked-label">
-                    <div class="input-label">Unit Tenaga Pemasar</div>
+                    <div class="input-label">Referensi Polis</div>
                   </label>
                   <input type="text" placeholder="GA Power">
                 </div>
                 <div class="col">
                   <label class="item-stacked-label">
-                    <div class="input-label">Kode Tenaga Pemasar</div>
+                    <div class="input-label">No. Telepon</div>
                   </label>
                   <input type="text" placeholder="1002334557">
                 </div>
@@ -348,19 +338,19 @@
             </div>
           </div>
           <div class='item ibox '>
-            <span class="input-label">Pernyataan tenaga pemasar</span>
+            <span class="input-label">Calon Pemegang Polis</span>
             <div class="ibox-content">
               <canvas class='signature-pad' id='policyholder-signature-canvas'></canvas>
             </div>
           </div>
           <div ng-repeat="(index, i) in numberOfAdditional">
-            <div class='item ibox '>
+            <div class='item ibox'>
               <span class="input-label">Tertanggung Utama {{index + 1}}</span>
               <div class="ibox-content">
                 <canvas class='signature-pad' id='mainlife-signature-canvas-{{index}}'></canvas>
               </div>
             </div>
-            <div class='item ibox '>
+            <div class='item ibox'>
               <span class="input-label">Orang tua (bila tertanggung berusia dibawah 21 thn) {{index + 1}}</span>
               <div class="ibox-content">
                 <canvas class='signature-pad' id='parent-signature-canvas-{{index}}'></canvas>
