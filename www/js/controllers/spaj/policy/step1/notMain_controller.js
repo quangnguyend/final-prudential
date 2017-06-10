@@ -2,6 +2,7 @@ function phNotMainCtrl($scope, $state, $rootScope, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = false
   $rootScope.showMenu = true
+
   var MAIN_INSURED_TAB = 'MAIN_INSURED',
     ACTIVE_INSURED = 'ACTIVE_INSURED', POCICY_HOLDER_TAB = 'POLICY_HOLDER'
   var vm = this
@@ -49,19 +50,7 @@ function phNotMainCtrl($scope, $state, $rootScope, SpajService) {
     vm.currentTab = 'ADDITIONAL_' + numberTab
   }
 
-  vm.nextClickHandle = function () {
-    var tabs = vm.additionalList
-    SpajService.setData('start', { tabs: tabs })
-    validator(function (rs) {
-      if (rs.indexOf(false) >= 0) {
-        SpajService.stepComplete('start', false)
-      } else {
-        SpajService.stepComplete('start', true)
-      }
-    })
 
-    $rootScope.nextStep()
-  }
 
   vm.handleMainTabSwipe = function () {
     vm.switchTab('ADDITIONAL_0', 0)
@@ -111,5 +100,18 @@ function phNotMainCtrl($scope, $state, $rootScope, SpajService) {
     }, 1500)
   }
 
+  vm.nextClickHandle = function () {
+    var tabs = vm.additionalList
+    SpajService.setData('start', { tabs: tabs })
+    validator(function (rs) {
+      if (rs.indexOf(false) >= 0) {
+        SpajService.stepComplete('start', false)
+      } else {
+        SpajService.stepComplete('start', true)
+      }
+    })
+
+    $rootScope.nextStep()
+  }
   initPage(rootSpajData)
 }

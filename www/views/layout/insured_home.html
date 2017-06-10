@@ -1,10 +1,10 @@
-<form id="policy_info_ph_info">
+<form id="policy_info_ph_info" name="insured" novalidate>
     <div class="list list-inset no-lines">
         <div class='item'>
             <div class="row-no-padding">
                 <md-input-container class="md-block" flex-gt-sm>
                     <label class='asterisk'>Nama Lengkap</label>
-                    <input ng-model='data.name' />
+                    <input ng-model='data.name'  />
                 </md-input-container>
             </div>
         </div>
@@ -13,8 +13,8 @@
                 <div class="col">
                     <md-input-container class="md-block">
                         <label class="input-label asterisk">Tempat</label>
-                        <md-select ng-model="data.address" required>
-                            <md-option value="None"><em>None</em></md-option>
+                        <md-select ng-model="data.address" >
+                            <md-option value=""><em>None</em></md-option>
                             <md-option value="Red"><em>Red</em></md-option>
                             <md-option value="Green"><em>Green</em></md-option>
                             <md-option value="Blue"><em>Blue</em></md-option>
@@ -53,7 +53,7 @@
         <div class="row-no-padding">
             <md-input-container class="md-block">
                 <label class="input-label">Status Pernikahan</label>
-                <md-select ng-model="data.occupation" required>
+                <md-select ng-model="data.occupation" required="">
                     <md-option value="None"><em>None</em></md-option>
                     <md-option value="Red"><em>Red</em></md-option>
                     <md-option value="Green"><em>Green</em></md-option>
@@ -78,7 +78,6 @@
     <div class='item'>
         <div class="row-no-padding">
             <md-autocomplete
-                required
                 md-selected-item="selectedItem"
                 md-search-text="searchText"
                 md-items="item in querySearch(searchText)"
@@ -98,7 +97,7 @@
         <div class="row-no-padding">
             <md-input-container class="md-block">
                 <label class="input-label">Kewarganegaraan </label>
-                <md-select ng-model="data.kewarganegaraan" required>
+                <md-select ng-model="data.kewarganegaraan" >
                     <md-option value="None"><em>None</em></md-option>
                     <md-option value="Red"><em>Red</em></md-option>
                     <md-option value="Green"><em>Green</em></md-option>
@@ -111,7 +110,7 @@
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label class='asterisk'>No Identitas </label>
-                <input ng-model='data.identitas'>
+                <input ng-model='data.identitas' >
             </md-input-container>
         </div>
     </div>
@@ -175,7 +174,7 @@
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label class='asterisk'>No NPWP </label>
-                <input ng-model='data.npwp'>
+                <input ng-model='data.npwp' >
             </md-input-container>
         </div>
     </div>
@@ -191,7 +190,7 @@
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label class='asterisk'>Alamat Kantor</label>
-                <input ng-model='data.alamat_kantor'>
+                <input ng-model='data.alamat_kantor' >
             </md-input-container>
         </div>
     </div>
@@ -199,7 +198,7 @@
         <div class="row-no-padding">
             <div class="row">
                 <label class="item-stacked-label">
-                <div class="input-label asterisk">Alamat Tempat Tinggal</div>
+                <div class="input-label">Alamat Tempat Tinggal</div>
               </label>
             </div>
             <div class="row">
@@ -220,7 +219,7 @@
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label class='asterisk'>Alamat</label>
-                <input ng-model='data.alamat'>
+                <input ng-model='data.alamat' >
             </md-input-container>
         </div>
     </div>
@@ -242,13 +241,13 @@
                 <div class="col-50">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label class='asterisk'>Provinsi</label>
-                        <input ng-model='data.provinsi'>
+                        <input ng-model='data.provinsi' >
                     </md-input-container>
                 </div>
                 <div class="col-50">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label class='asterisk'>Kabupaten / Kota </label>
-                        <input ng-model='data.kabupaten'>
+                        <input ng-model='data.kabupaten' >
                     </md-input-container>
                 </div>
             </div>
@@ -304,7 +303,7 @@
                 <div class="col-33">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label class='asterisk'>No.Tel.Rumah </label>
-                        <input type="tel" ng-model='vm.insuredData.address[index].rumah_tel' ng-model='contact.tel.home'>
+                        <input type="tel" ng-model='vm.insuredData.address[index].rumah_tel' ng-model='contact.tel.home' >
                     </md-input-container>
                 </div>
                 <div class="col-33">
@@ -316,7 +315,7 @@
                 <div class="col-33">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label class='asterisk'>No. HP /GSM </label>
-                        <input type="tel" ng-model='vm.insuredData.address[index].hp_gsm_tel' ng-model='contact.tel.gsm'>
+                        <input type="tel" ng-model='vm.insuredData.address[index].hp_gsm_tel' ng-model='contact.tel.gsm' >
                     </md-input-container>
                 </div>
             </div>
