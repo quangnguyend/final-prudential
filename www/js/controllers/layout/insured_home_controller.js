@@ -15,7 +15,6 @@ function insuredHomeCtrl ($scope, $rootScope, $attrs, $timeout, SpajService) {
   }
   // ********
   $scope.$watchCollection('data', function(newVal) {
-    console.log(newVal);
     if(newVal.name != '' && newVal.address != '' && newVal.date_of_birth != '' && newVal.gender != ''
       && newVal.occupation != ''  && newVal.identitas != '' && newVal.alamat_kantor != ''
       && newVal.provinsi != '' && newVal.kabupaten != ''){

@@ -2,7 +2,6 @@ function phNotMainCtrl($scope, $state, $rootScope, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = false
   $rootScope.showMenu = true
-
   var MAIN_INSURED_TAB = 'MAIN_INSURED',
     ACTIVE_INSURED = 'ACTIVE_INSURED', POCICY_HOLDER_TAB = 'POLICY_HOLDER'
   var vm = this
