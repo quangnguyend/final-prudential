@@ -48,6 +48,7 @@ function topupCtrl ($state, $scope, $rootScope, SpajService) {
   };
 
   vm.next = function () {
+    SpajService.setData('topup', {topup_amount: vm.data.top_up_amount});
     SpajService.setData('topup', {isComplete: validator()});
     if(vm.data.is_additional_funds == false){
       $state.go('app.beneficiaries')

@@ -1,8 +1,14 @@
-function topupPayorCtrl ($state, $scope, $rootScope, $filter) {
+function topupPayorCtrl ($state, $scope, $rootScope, $filter, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
   var vm = this;
+  var topup_data = SpajService.getData('topup');
+  if(typeof topup_data != 'undefined'){
+    vm.topup_amount = topup_data.topup_amount;
+  }else {
+    vm.topup_amount = 0;
+  }
 
   vm.data = {
     type_of_abnormality_suffered: 1,
@@ -13,7 +19,10 @@ function topupPayorCtrl ($state, $scope, $rootScope, $filter) {
     total_non_routine_income_per_month: 0,
     purpose_of_top_up_submission: [],
     non_routine_income_source_per_month: [],
-    source_of_regular_income_per_month: []
+    source_of_regular_income_per_month: [],
+    business_name: 'PT. ABC',
+    business_fields: 'Bisnis Online',
+    place_of_business: 'Jl. ABC'
   };
   vm.works = [
     {
@@ -96,6 +105,7 @@ function topupPayorCtrl ($state, $scope, $rootScope, $filter) {
 
   vm.next = function () {
     // console.log(vm.data);
-    $state.go('app.topup_payor_detail');
+    // $state.go('app.topup_payor_detail');
+    $rootScope.nextStep()
   }
 }
