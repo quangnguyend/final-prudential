@@ -7,14 +7,15 @@
 angular
   .module('prudential', [
     'ionic',
-    'prudential.controllers',
-    'prudential.services',
-    'prudential.components',
     'ngAnimate',
     'ui.router',
     'ngCordova',
     'ngFileUpload',
-    'ngMaterial'
+    'ngMaterial',
+    'prudential.configs',
+    'prudential.controllers',
+    'prudential.services',
+    'prudential.components',
   ])
   .run(function ($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function () {
