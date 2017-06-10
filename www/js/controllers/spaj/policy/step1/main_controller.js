@@ -1,4 +1,4 @@
-function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, DataService, SpajService, $ionicSideMenuDelegate) {
+function phMainCtrl ($scope, $rootScope, $state, $stateParams, CommonService,  UserService, DataService, SpajService, $ionicSideMenuDelegate) {
   $rootScope.showBar = true
   $rootScope.showBack = false
   $rootScope.showMenu = true
@@ -97,6 +97,11 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, UserService, Data
   // }, true)
 
   $scope.getValueButton = function (value) {
+    var data = SpajService.getData('start')
+    if(data[vm.currentTab] && !data[vm.currentTab].email && value===1){
+      CommonService.showAlert('Alert', 'Email is invalid!')
+      return null
+    }
     $scope.option = value
     $scope.isactive = value
   }

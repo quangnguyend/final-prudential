@@ -7,14 +7,15 @@
 angular
   .module('prudential', [
     'ionic',
-    'prudential.controllers',
-    'prudential.services',
-    'prudential.components',
     'ngAnimate',
     'ui.router',
     'ngCordova',
     'ngFileUpload',
-    'ngMaterial'
+    'ngMaterial',
+    'prudential.configs',
+    'prudential.controllers',
+    'prudential.services',
+    'prudential.components',
   ])
   .run(function ($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function () {
@@ -312,3 +313,19 @@ angular
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/spaj_start')
   })
+  .directive('name', function() {
+  return {
+    require: 'ngModel',
+    link: function (scope, element, attr, ngModelCtrl) {
+      function fromUser(text) {
+        var transformedInput = text.replace(/[^A-Za-z ]/g, '');
+        if(transformedInput !== text) {
+            ngModelCtrl.$setViewValue(transformedInput);
+            ngModelCtrl.$render();
+        }
+        return transformedInput;
+      }
+      ngModelCtrl.$parsers.push(fromUser);
+    }
+  }; 
+});

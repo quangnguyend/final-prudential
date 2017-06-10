@@ -4,7 +4,7 @@
             <div class="row-no-padding">
                 <md-input-container class="md-block" flex-gt-sm>
                     <label class='asterisk'>Nama Lengkap</label>
-                    <input ng-model='data.name' />
+                    <input ng-model='data.name' name />
                 </md-input-container>
             </div>
         </div>
@@ -24,7 +24,7 @@
                 <div class="col">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label class='asterisk'>Tanggal Lahir </label>
-                        <input type="date" ng-model="data.date_of_birth" />
+                        <md-datepicker ng-model="data.date_of_birth" md-placeholder="Enter date" md-open-on-focus></md-datepicker>
                     </md-input-container>
                 </div>
             </div>
@@ -111,7 +111,7 @@
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label class='asterisk'>No Identitas </label>
-                <input ng-model='data.identitas'>
+                <input type="number" ng-model='data.identitas'>
             </md-input-container>
         </div>
     </div>
@@ -166,16 +166,16 @@
                     <ion-checkbox>Pembayar pajak AS</ion-checkbox>
                 </div>
                 <div class="col-33">
-                    <ion-checkbox>Lainya</ion-checkbox>
+                    <ion-checkbox ng-model="data.Lainya">Lainnya</ion-checkbox>
                 </div>
             </div>
         </div>
     </div>
-    <div class='item'>
+    <div class='item' ng-show="data.Lainya===true">
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label class='asterisk'>No NPWP </label>
-                <input ng-model='data.npwp'>
+                <input type="number" ng-model='data.npwp'>
             </md-input-container>
         </div>
     </div>
@@ -259,7 +259,7 @@
             <div class="row responsive-sm">
                 <div class="col-50">
                     <md-input-container class="md-block" flex-gt-sm>
-                        <label>Kecamata</label>
+                        <label>Kecamatan</label>
                         <input ng-model='data.kecamata'>
                     </md-input-container>
                 </div>
@@ -366,7 +366,7 @@
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label>Email</label>
-                <input type="email" ng-model='data.hp_gsm_tel'>
+                <input type="email" ng-model='data.email'>
             </md-input-container>
         </div>
     </div>
