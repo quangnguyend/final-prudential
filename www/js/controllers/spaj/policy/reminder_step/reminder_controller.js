@@ -1,4 +1,4 @@
-function reminderCtrl ($scope, $rootScope, $state, SpajService) {
+function reminderCtrl ($scope, $rootScope, $state, SpajService,CommonService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
@@ -156,7 +156,8 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService) {
     }
   }
   vm.review = function () {
-    $state.go('app.health_data')
+    CommonService.getConfirm('Confirm', 'Send email?')
+    //$state.go('app.health_data')
   }
 
   function checkMissingData () {
