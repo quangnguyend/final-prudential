@@ -1,12 +1,16 @@
-function termsCtrl ($state, $scope, $rootScope, $ionicScrollDelegate, SpajService) {
+
+function termsCtrl($state, $scope, $rootScope, $ionicScrollDelegate, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
   var vm = this
-  var step1Validation = SpajService.getData('step1_valid')? SpajService.getData('step1_valid') : false;
+  var step1Validation = SpajService.getData('step1_valid') ? SpajService.getData('step1_valid') : false;
   vm.permission = false
   vm.titleFooter = 'Mohon lengkapi data yang wajib diisi (*) sebelum Anda melanjutkan e-sign'
+  var data = SpajService.getData('start')
+  //alert(data.toString())
   vm.checkScroll = function () {
+
     var currentTop = $ionicScrollDelegate.$getByHandle('scroller').getScrollPosition().top
     var maxTop = $ionicScrollDelegate.$getByHandle('scroller').getScrollView().__maxScrollTop
 

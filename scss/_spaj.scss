@@ -1347,9 +1347,21 @@ th {
   border: none;
 }
 
-#add_child .item {
-  button, .description {
-    margin: 0;
+#add_child  {
+  .item{
+    button, .description {
+      margin: 0;
+    }
+  }
+  .popup-header{
+    position: relative; background: #da291c; height:50px;
+    h3{position: absolute; top:0px; left:0px; right:0px; bottom:0px; text-align: center; color: #FFF !important;
+    height:100%; display: -webkit-box; -webkit-box-align: center; -webkit-box-pack: center; padding:0 60px; line-height: 100%}
+    a{
+      right:5px; position: absolute; width: 50px; height: 50px; 
+      color:#FFF; text-align: center; line-height: 60px; font-size: 30px;
+      cursor: pointer;
+    }
   }
 }
 

@@ -10,9 +10,9 @@
       </div>
     </md-toolbar>
     <md-dialog-content class="popup-prudential">
-      <ion-content>
+      <ion-content delegate-handle="puScroll">
         <div class="md-dialog-content">
-                       <div>validate{{vm.objectValidate(vm.healthData.digesPu)}}</div>
+          <div>validate{{vm.objectValidate(vm.healthData.digesPu)}}</div>
           <div class='item'>
             <div class="row-no-padding">
               <h1 class="description">Keluhan yang dirasakan</h1>
@@ -64,14 +64,14 @@
                 </li>
               </ul>
             </div>
-             <div class="row-no-padding">
+            <div class="row-no-padding">
               <md-input-container class="md-block">
                 <md-select ng-model='vm.healthData.digesPu.pertamas_select' placeholder='Pertama kali keluhan muncul'>
                   <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                 </md-select>
               </md-input-container>
             </div>
-             <div class="row row-no-padding">
+            <div class="row row-no-padding">
               <div class="col col-50">
                 <md-input-container>
                   <md-select ng-model='vm.healthData.digesPu.frekuensi_select' placeholder='Frekuensi timbulnya keluhan'>
@@ -86,59 +86,58 @@
                 </div>
               </div>
             </div>
-             <div class="row-no-padding">
+            <div class="row-no-padding">
               <md-input-container class="md-block">
                 <md-select ng-model='vm.healthData.digesPu.kapan_keluhan_select' placeholder='Kapan keluhan terakhir'>
                   <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
                 </md-select>
               </md-input-container>
             </div>
-            <button class="button next" id="digest_part1"
-              ng-class="{'button-dark': (vm.healthData.digesPu.keluhan.sakit||vm.healthData.digesPu.keluhan.muntah||vm.healthData.digesPu.keluhan.nveri||vm.healthData.digesPu.keluhan.mual||vm.healthData.digesPu.keluhan.darah||vm.healthData.digesPu.keluhan.lainnya)&&vm.healthData.digesPu.pertamas_select&&vm.healthData.digesPu.frekuensi_select&&vm.healthData.digesPu.frekuensi_option!=null&&vm.healthData.digesPu.kapan_keluhan_select}" 
+            <button class="button next" id="digest_part1" ng-class="{'button-dark': (vm.healthData.digesPu.keluhan.sakit||vm.healthData.digesPu.keluhan.muntah||vm.healthData.digesPu.keluhan.nveri||vm.healthData.digesPu.keluhan.mual||vm.healthData.digesPu.keluhan.darah||vm.healthData.digesPu.keluhan.lainnya)&&vm.healthData.digesPu.pertamas_select&&vm.healthData.digesPu.frekuensi_select&&vm.healthData.digesPu.frekuensi_option!=null&&vm.healthData.digesPu.kapan_keluhan_select}"
               ng-disabled="(vm.healthData.digesPu.keluhan.sakit==null&&vm.healthData.digesPu.keluhan.muntah==null&&vm.healthData.digesPu.keluhan.nveri==null&&vm.healthData.digesPu.keluhan.mual==null&&vm.healthData.digesPu.keluhan.darah==null&&vm.healthData.digesPu.keluhan.lainnya)||vm.healthData.digesPu.pertamas_select==null||vm.healthData.digesPu.frekuensi_select==null||vm.healthData.digesPu.frekuensi_option==null||vm.healthData.digesPu.kapan_keluhan_select==null"
               ng-click="vm.puNextStep('digest_2')">
             Berikutnya</button>
           </div>
           <!--end item-->
-          
+
           <div class="item" id='digest_2'>
             <div class="row-no-padding">
-            <h1 class="description">Apakah pernah dirawat (inap/jalan) di RS atau pernah dioperasi/ disarankan operasi</h1>
-            <div class="button-bar">
-              <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.digesPu.apakah_pernah">Ya</a>
-              <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.digesPu.apakah_pernah">Tidak</a>
-            </div>
+              <h1 class="description">Apakah pernah dirawat (inap/jalan) di RS atau pernah dioperasi/ disarankan operasi</h1>
+              <div class="button-bar">
+                <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.digesPu.apakah_pernah">Ya</a>
+                <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.digesPu.apakah_pernah">Tidak</a>
+              </div>
             </div>
             <div class="row-no-padding">
-                 <div class="row">
-              <label class="item-stacked-label">
+              <div class="row">
+                <label class="item-stacked-label">
                 <div class="input-label">Kapan</div>
               </label>
-            </div>
-            <div class="row">
-              <div class="col">
-                <md-input-container class="md-block">
-                  <md-select ng-model="vm.healthData.digesPu.kapan_month_select" placeholder='Januari'>
-                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
-                  </md-select>
-                </md-input-container>
               </div>
-              <div class="col">
-                <md-input-container class="md-block">
-                  <md-select ng-model="vm.healthData.digesPu.kapan_year_select" placeholder='YYYY'>
-                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
-                  </md-select>
-                </md-input-container>
+              <div class="row">
+                <div class="col">
+                  <md-input-container class="md-block">
+                    <md-select ng-model="vm.healthData.digesPu.kapan_month_select" placeholder='Januari'>
+                      <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                    </md-select>
+                  </md-input-container>
+                </div>
+                <div class="col">
+                  <md-input-container class="md-block">
+                    <md-select ng-model="vm.healthData.digesPu.kapan_year_select" placeholder='YYYY'>
+                      <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                    </md-select>
+                  </md-input-container>
+                </div>
               </div>
             </div>
+
+            <div class="row-no-padding">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>Nama Dokter / Rumah Sakit </label>
+                <input type="text" ng-model="vm.healthData.digesPu.nama_dokter" />
+              </md-input-container>
             </div>
-            
-              <div class="row-no-padding">
-                <md-input-container class="md-block" flex-gt-sm>
-                  <label>Nama Dokter / Rumah Sakit </label>
-                  <input type="text" ng-model="vm.healthData.digesPu.nama_dokter" />
-                </md-input-container>
-              </div>
             <div class="row-no-padding">
               <h1 class="description">Tindakan / terapi yang diberikan</h1>
               <ul>
@@ -225,15 +224,14 @@
               </ul>
             </div>
 
-            <button class="button next" 
-            ng-class="{'button-dark': vm.healthData.digesPu.apakah_pernah&&vm.healthData.digesPu.kapan_month_select&&vm.healthData.digesPu.kapan_year_select&&vm.healthData.digesPu.nama_dokter&&(vm.healthData.digesPu.tindakan.operasi||vm.healthData.digesPu.tindakan.suntikan||vm.healthData.digesPu.tindakan.obat||vm.healthData.digesPu.tindakan.lainnya)}" 
-            ng-disabled="vm.healthData.digesPu.apakah_pernah==null||vm.healthData.digesPu.kapan_month_select==null||vm.healthData.digesPu.kapan_year_select==null||vm.healthData.digesPu.nama_dokter==null||(vm.healthData.digesPu.tindakan.operasi==null&&vm.healthData.digesPu.tindakan.suntikan==null&&vm.healthData.digesPu.tindakan.obat==null&&vm.healthData.digesPu.tindakan.lainnya==null)" 
-            ng-click="vm.puNextStep('digest_3')">
+            <button class="button next" ng-class="{'button-dark': vm.healthData.digesPu.apakah_pernah&&vm.healthData.digesPu.kapan_month_select&&vm.healthData.digesPu.kapan_year_select&&vm.healthData.digesPu.nama_dokter&&(vm.healthData.digesPu.tindakan.operasi||vm.healthData.digesPu.tindakan.suntikan||vm.healthData.digesPu.tindakan.obat||vm.healthData.digesPu.tindakan.lainnya)}"
+              ng-disabled="vm.healthData.digesPu.apakah_pernah==null||vm.healthData.digesPu.kapan_month_select==null||vm.healthData.digesPu.kapan_year_select==null||vm.healthData.digesPu.nama_dokter==null||(vm.healthData.digesPu.tindakan.operasi==null&&vm.healthData.digesPu.tindakan.suntikan==null&&vm.healthData.digesPu.tindakan.obat==null&&vm.healthData.digesPu.tindakan.lainnya==null)"
+              ng-click="vm.puNextStep('digest_3')">
             Berikutnya</button>
           </div>
           <!--end item-->
 
-          
+
           <!--end item-->
           <div class="item" id='digest_3'>
             <div class="row">
