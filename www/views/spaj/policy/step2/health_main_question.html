@@ -5,15 +5,18 @@
       <h1 class='text-center description description'>Tinggi dan berat badan saya</h1>
       <div class="row">
         <div class="col col-50">
-          <input type="number" placeholder="155.5" name='height' ng-model='vm.healthData.height' ng-pattern="/^\d+\.\d{0,3}$/">
-          <span class="item-note">cm</span>
-          <p class="message" ng-show="step2.height.$touched && step2.height.$invalid"><i class="icon ion-alert"></i> Silakan memasukkan angka non-desimal</p>
+          <div class="col-80 col-offset-10">
+            <input type="number" placeholder="155.5" name='height' ng-model='vm.healthData.height' ng-pattern="/^\d+\.\d{0,3}$/">
+            <span class="item-note">cm</span>
+            <p class="message" ng-show="step2.height.$touched && step2.height.$invalid"><i class="icon ion-alert"></i> Silakan memasukkan angka non-desimal</p>
+          </div>
         </div>
         <div class="col col-50">
-          <input type="number" placeholder="Berat" name='weight' ng-model='vm.healthData.weight' ng-pattern="/^\d+\.\d{0,3}$/">
-          <span class="item-note">kg</span>
-          <p class="message" ng-show="step2.weight.$touched && step2.weight.$invalid"><i class="icon ion-alert"></i> Silakan memasukkan angka non-desimal</p>
-
+          <div class="col-80 col-offset-10">
+            <input type="number" placeholder="Berat" name='weight' ng-model='vm.healthData.weight' ng-pattern="/^\d+\.\d{0,3}$/">
+            <span class="item-note">kg</span>
+            <p class="message" ng-show="step2.weight.$touched && step2.weight.$invalid"><i class="icon ion-alert"></i> Silakan memasukkan angka non-desimal</p>
+          </div>
         </div>
       </div>
       <button class="button next" ng-class="{'button-dark': vm.healthData.height && vm.healthData.weight}" ng-disabled="!vm.healthData.height || !vm.healthData.weight"
