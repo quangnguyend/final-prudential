@@ -181,6 +181,20 @@
     <div class='item'>
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
+                <label>Pekerjaan</label>
+                <md-select ng-init="work={}" ng-model='gender' ng-model-options="{trackBy: '$value.id'}"  class='blur-text' md-on-close="row.gender=gender.name; vm.validateRow(row,$index)" required >
+                    <!--<md-option ng-repeat='value in vm.genderData' ng-value='{{value}}'>
+                        {{value.name}}
+                    </md-option>-->
+                    <md-option >Pekerjaan A</md-option>
+                    <md-option >Pekerjaan B</md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <md-input-container class="md-block" flex-gt-sm>
                 <label>Nama Perusahaan Tempat Bekerja</label>
                 <input ng-model='data.npwp'>
             </md-input-container>
@@ -352,6 +366,64 @@
                         <label class='' for="{{insuredName}}-alamatLain">Alamat Lain</label>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <div class="row">
+                <label class="item-stacked-label">
+                <div class="input-label asterisk">Sumber penghasilan rutin per butan</div>
+              </label>
+            </div>
+            <div>
+                <div class="row responsive-sm">
+                    <div class="col-50">
+                        <ion-checkbox>Gaji</ion-checkbox>
+                    </div>
+                    <div class="col-50">
+                        <ion-checkbox>Komisi</ion-checkbox>
+                    </div>
+                </div>
+                <div class="row responsive-sm">
+                    <div class="col-50">
+                        <ion-checkbox>Orang Tua</ion-checkbox>
+                    </div>
+                    <div class="col-50">
+                        <ion-checkbox>Laba Perusahaan</ion-checkbox>
+                    </div>
+                </div>
+                <div class="row responsive-sm">
+                    <div class="col-50">
+                        <ion-checkbox >Investasi</ion-checkbox>
+                    </div>
+                    <div class="col-50">
+                        <ion-checkbox>Bonus</ion-checkbox>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-30">
+                <ion-checkbox>Bisnis Sendiri</ion-checkbox>
+                <ion-checkbox>Lainnya</ion-checkbox>
+                <ion-checkbox>Tidak Berpenghasilan</ion-checkbox>
+            </div>
+        </div>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <div class="row">
+                <label class="item-stacked-label">
+                <div class="input-label asterisk">Total penghasilan rutin per butan</div>
+              </label>
+            </div>
+            <div class="">
+                <md-input-container class="md-block">
+                    <md-select ng-init="total_income={}" ng-model='total_income' ng-model-options="{trackBy:1}"  class='blur-text'>
+                        <md-option ng-value='1'>
+                            >IDR 5 Juta - IDR 7,5 Juta
+                        </md-option>
+                    </md-select>
+                </md-input-container>
             </div>
         </div>
     </div>

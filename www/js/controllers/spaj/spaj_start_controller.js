@@ -31,6 +31,10 @@ function spajStartCtrl ($state, $scope, $rootScope, SpajService) {
     policyRadio: '',
     sessionRadio: '',
     policyOtherText: '',
+    beforeProceed: {
+      title: 'Usia Anda setidaknya 21 tahun dan setidaknya 18 tahun dan sudah menikah?',
+      value: false
+    },
     beforeProceed_1: {
       title: 'Apakah Anda sebelumnya telah memiliki Polis Asuransi PT Prudential Life Assurance dengan Tertanggung yang sama dalam kondisi Polis tidak aktif (lapsed)/telah dilakukan Penebusan Polis ( Surrendered), atau telah melakukan penurunan Premi lebih dari 25% dari nilai Premi sebelumnya (“Polis Lama”) dalam periode yang kurang dari 365 hari terhitung sejak tanggal SPAJ yang Anda tanda tangani ini?',
       value: false
