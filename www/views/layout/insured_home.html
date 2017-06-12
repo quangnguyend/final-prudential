@@ -4,7 +4,7 @@
             <div class="row-no-padding">
                 <md-input-container class="md-block" flex-gt-sm>
                     <label class='asterisk'>Nama Lengkap</label>
-                    <input ng-model='data.name'  />
+                    <input ng-model='data.name' name/>
                 </md-input-container>
             </div>
         </div>
@@ -110,7 +110,7 @@
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label class='asterisk'>No Identitas </label>
-                <input ng-model='data.identitas' >
+                <input type="number" ng-model='data.identitas' >
             </md-input-container>
         </div>
     </div>
@@ -174,7 +174,7 @@
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label class='asterisk'>No NPWP </label>
-                <input ng-model='data.npwp' >
+                <input type="number" ng-model='data.npwp' >
             </md-input-container>
         </div>
     </div>
@@ -303,19 +303,19 @@
                 <div class="col-33">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label class='asterisk'>No.Tel.Rumah </label>
-                        <input type="tel" ng-model='vm.insuredData.address[index].rumah_tel' ng-model='contact.tel.home' >
+                        <input type="number" ng-model='vm.insuredData.address[index].rumah_tel' ng-model='contact.tel.home' >
                     </md-input-container>
                 </div>
                 <div class="col-33">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>No.Tel.Kantor</label>
-                        <input type="tel" ng-model='vm.insuredData.address[index].kantor_tel' ng-model='contact.tel.office'>
+                        <input type="number" ng-model='vm.insuredData.address[index].kantor_tel' ng-model='contact.tel.office'>
                     </md-input-container>
                 </div>
                 <div class="col-33">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label class='asterisk'>No. HP /GSM </label>
-                        <input type="tel" ng-model='vm.insuredData.address[index].hp_gsm_tel' ng-model='contact.tel.gsm' >
+                        <input type="number" ng-model='vm.insuredData.address[index].hp_gsm_tel' ng-model='contact.tel.gsm' >
                     </md-input-container>
                 </div>
             </div>
