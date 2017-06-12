@@ -1,6 +1,7 @@
 #spaj-start {
   .general-text {
     @extend .standard-body;
+    white-space: initial;
   }
   .checkbox input {
     &:checked {
