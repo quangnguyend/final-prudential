@@ -261,7 +261,9 @@
         
     }
   }
-  
+  .align_column{
+    flex-direction: column;
+  }
   .item2 {
     margin: 20px 0;
     .label {
@@ -270,6 +272,9 @@
   }
   .md-block {
     width: 100%;
+    &+.message{
+      color:#F00; margin-top:-30px;
+    }
   }
   .button{
     &.button-dark{
@@ -428,7 +433,10 @@
     }
   }
   .additional-question {
-    padding: 40px 40px 70px 40px;
+    padding: 40px ;
+    .margin_extra{
+      margin-bottom:20px;
+    }
     .md-input input {
       color: #F5F2F2 !important;
       &:focus {

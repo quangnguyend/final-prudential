@@ -12,42 +12,53 @@
     <md-dialog-content class="popup-prudential">
       <ion-content delegate-handle="puScroll">
         <div class="md-dialog-content">
-          <form name="eye-popup">
+          <ng-form name="vm.eyePu">
+            <div class="item">Tinh toan: {{vm.eyePu}}</div>
             <div class="item no-lines" ng-repeat="(index, item) in vm.healthData.eyePopup track by $index">
               <span class="number">{{index + 1}}</span>
-              <div class="row">
+              <div class="row align_column">
                 <md-input-container class="md-block" flex-gt-sm>
                   <label>Nama Keadaan/Penyakit</label>
-                  <input ng-model="item.name_of_illness" required>
+                  <input name="name{{$index}}" ng-model="item.name_of_illness" ng-pattern="vm.pattern.textOnly" required>
                 </md-input-container>
+                <p class="message" ng-show='vm.eyePu.name{{$index}}.$touched && vm.eyePu.name{{$index}}.$invalid || vm.eyePu.name{{$index}}.$viewValue.length>100'><i class="icon ion-alert"></i> Input salah, silakan masukkan huruf</p>
               </div>
               <div class="row responsive-sm">
-                <md-input-container class="md-block" flex-gt-sm>
-                  <label>Kapan kondisi ditemukan</label>
-                  <input ng-model="item.when_the_condition_found">
+                <div class="col">
+                <md-input-container class="md-block">
+                 <input type="date" placeholder="Kapan kondisi ditemukan" 
+                  ng-model='item.when_the_condition_found' name='time_return{{$index}}' required>
                 </md-input-container>
-                <md-input-container class="md-block" flex-gt-sm>
-                  <label>Tanggal Konsultasi/Perawatan terakhir</label>
-                  <input ng-model="item.last_care_date">
+                <p class="message" ng-show='vm.eyePu.time_return{{$index}}.$touched && vm.eyePu.time_return{{$index}}.$invalid'><i class="icon ion-alert"></i> Silakan masukkan DDMMYYYY</p>
+                 </div>
+                  <div class="col">
+                 <md-input-container class="md-block">
+                 <input type="date" placeholder="Tanggal Konsultasi/Perawatan terakhir" 
+                  ng-model='item.last_care_date'  name='care_date{{$index}}' required>
                 </md-input-container>
+                <p class="message" ng-show='vm.eyePu.care_date{{$index}}.$touched && vm.eyePu.care_date{{$index}}.$invalid'><i class="icon ion-alert"></i> Silakan masukkan DDMMYYYY</p>
+                  </div>
               </div>
-              <div class="row">
+              <div class="row align_column">
                 <md-input-container class="md-block" flex-gt-sm>
                   <label>Nama Rumah sakit yang dikunjungi</label>
-                  <input ng-model="item.hospoital_name">
+                  <input ng-model="item.hospoital_name" name='hospoital_name{{$index}}' ng-pattern="vm.pattern.alphanumeric"   required>
                 </md-input-container>
+                <p class="message" ng-show='vm.eyePu.hospoital_name{{$index}}.$touched && vm.eyePu.hospoital_name{{$index}}.$invalid'><i class="icon ion-alert"></i> ! Input salah, silakan masukkan angka/ huruf</p>
               </div>
-              <div class="row">
+              <div class="row align_column">
                 <md-input-container class="md-block" flex-gt-sm>
                   <label>Alamat Rumah sakit yang dikunjungi</label>
-                  <input ng-model="item.hospital_address">
+                  <input ng-model="item.hospital_address" name='hospital_address{{$index}}'  ng-pattern="vm.pattern.textOnly"  required>
                 </md-input-container>
+                 <p class="message" ng-show='vm.eyePu.hospital_address{{$index}}.$touched && vm.eyePu.hospital_address{{$index}}.$invalid'><i class="icon ion-alert"></i> ! Input salah, silakan masukkan huruf</p>
               </div>
-              <div class="row">
+              <div class="row align_column">
                 <md-input-container class="md-block" flex-gt-sm>
                   <label>Tindakan Medis</label>
-                  <input ng-model="item.medicine">
+                  <input ng-model="item.medicine" name='medicine{{$index}}' ng-pattern="vm.pattern.alphanumeric"  required>
                 </md-input-container>
+                 <p class="message" ng-show='vm.eyePu.medicine{{$index}}.$touched && vm.eyePu.medicine{{$index}}.$invalid'><i class="icon ion-alert"></i> ! Input salah, silakan masukkan angka/ huruf</p>
               </div>
             </div>
             <div class="row">
@@ -55,7 +66,7 @@
         + Tambah detail kondisi 
       </button>
             </div>
-          </form>
+          </ng-form>
         </div>
       </ion-content>
     </md-dialog-content>
