@@ -4,7 +4,11 @@
             <div class="row-no-padding">
                 <md-input-container class="md-block" flex-gt-sm>
                     <label class='asterisk'>Nama Lengkap</label>
-                    <input ng-model='data.name' name/>
+                    <input ng-model='data.name' name="name" ng-pattern="/^[a-zA-Z\s]*$/" required/>
+                    <div ng-messages="insured.name.$error" role="alert" ng-show="insured.name.$touched">
+                        <div ng-show="insured.name.$error.required">Pertanyaan ini wajib diisi</div>
+                        <div ng-show="insured.name.$error.pattern">! Input salah, silakan masukkan huruf</div>
+                    </div>
                 </md-input-container>
             </div>
         </div>
@@ -13,12 +17,12 @@
                 <div class="col">
                     <md-input-container class="md-block">
                         <label class="input-label asterisk">Tempat</label>
-                        <md-select ng-model="data.address" >
-                            <md-option value=""><em>None</em></md-option>
-                            <md-option value="Red"><em>Red</em></md-option>
-                            <md-option value="Green"><em>Green</em></md-option>
-                            <md-option value="Blue"><em>Blue</em></md-option>
+                        <md-select ng-model="data.address" name="address" required>
+                            <md-option ng-repeat="country in vm.countries" value="{{country.code}}"><em>{{country.name}}</em></md-option>
                         </md-select>
+                        <div ng-messages="insured.address.$error" ng-show="insured.address.$touched">
+                            <div ng-show="insured.address.$error.required">Pertanyaan ini wajib diisi</div>
+                        </div>
                     </md-input-container>
                 </div>
                 <div class="col">
@@ -53,12 +57,15 @@
         <div class="row-no-padding">
             <md-input-container class="md-block">
                 <label class="input-label">Status Pernikahan</label>
-                <md-select ng-model="data.occupation" required="">
-                    <md-option value="None"><em>None</em></md-option>
-                    <md-option value="Red"><em>Red</em></md-option>
-                    <md-option value="Green"><em>Green</em></md-option>
-                    <md-option value="Blue"><em>Blue</em></md-option>
+                <md-select ng-model="data.occupation" name="occupation" required>
+                    <md-option value="Belum Menikah"><em>Belum Menikah</em></md-option>
+                    <md-option value="Menikah"><em>Menikah</em></md-option>
+                    <md-option value="Duda"><em>Duda</em></md-option>
+                    <md-option value="Janda"><em>Janda</em></md-option>
                 </md-select>
+                <div ng-messages="insured.occupation.$error" ng-show="insured.occupation.$touched">
+                    <div ng-show="insured.occupation.$error.required">Pertanyaan ini wajib diisi</div>
+                </div>
             </md-input-container>
         </div>
     </div>
@@ -66,42 +73,38 @@
         <div class="row-no-padding">
             <md-input-container class="md-block">
                 <label class="input-label">Agama</label>
-                <md-select ng-model="data.agama">
-                    <md-option value="None"><em>None</em></md-option>
-                    <md-option value="Red"><em>Red</em></md-option>
-                    <md-option value="Green"><em>Green</em></md-option>
-                    <md-option value="Blue"><em>Blue</em></md-option>
+                <md-select ng-model="data.agama" name="agama" required>
+                    <md-option value="Islam"><em>Islam</em></md-option>
+                    <md-option value="Kristen"><em>Kristen</em></md-option>
+                    <md-option value="Katolik"><em>Katolik</em></md-option>
+                    <md-option value="Hindu"><em>Hindu</em></md-option>
+                    <md-option value="Budha"><em>Budha</em></md-option>
+                    <md-option value="Lainnya"><em>Lainnya</em></md-option>
+                </md-select>
+                <div ng-messages="insured.agama.$error" ng-show="insured.agama.$touched">
+                    <div ng-show="insured.agama.$error.required">Pertanyaan ini wajib diisi</div>
+                </div>
+            </md-input-container>
+        </div>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <md-input-container class="md-block">
+                <label class="input-label">Negara Kelahiran </label>
+                <md-select ng-model="data.negaraKelahiran">
+                    <md-option value="indo" selected><em>Indonesia</em></md-option>
+                    <md-option value="lainnya"><em>Lainnya</em></md-option>
                 </md-select>
             </md-input-container>
         </div>
     </div>
     <div class='item'>
         <div class="row-no-padding">
-            <md-autocomplete
-                md-selected-item="selectedItem"
-                md-search-text="searchText"
-                md-items="item in querySearch(searchText)"
-                md-item-text="item.name"
-                md-min-length="0"
-                md-floating-label="Negara Kelahiran">
-                <md-item-template>
-                    <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.name}}</span>
-                </md-item-template>
-                <md-not-found>
-                    No countries were found.
-                </md-not-found>
-            </md-autocomplete>
-        </div>
-    </div>
-    <div class='item'>
-        <div class="row-no-padding">
             <md-input-container class="md-block">
                 <label class="input-label">Kewarganegaraan </label>
-                <md-select ng-model="data.kewarganegaraan" >
-                    <md-option value="None"><em>None</em></md-option>
-                    <md-option value="Red"><em>Red</em></md-option>
-                    <md-option value="Green"><em>Green</em></md-option>
-                    <md-option value="Blue"><em>Blue</em></md-option>
+                <md-select ng-model="data.kewarganegaraan">
+                    <md-option value="indo" selected><em>Indonesia</em></md-option>
+                    <md-option value="lainnya"><em>Lainnya</em></md-option>
                 </md-select>
             </md-input-container>
         </div>
@@ -110,7 +113,11 @@
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label class='asterisk'>No Identitas </label>
-                <input type="number" ng-model='data.identitas' >
+                <input ng-model='data.identitas' name="identitas" ng-pattern="/^[0-9]*$/" required>
+                <div ng-messages="insured.identitas.$error" ng-show="insured.identitas.$touched">
+                    <div ng-show="insured.identitas.$error.required">Pertanyaan ini wajib diisi</div>
+                    <div ng-show="insured.identitas.$error.pattern">! Input salah, silakan masukkan angka</div>
+                </div>
             </md-input-container>
         </div>
     </div>
@@ -124,18 +131,20 @@
             <div class="row">
                 <div class="row indent_row responsive-sm">
                     <div class="col-50">
-                        <input id='{{insuredName}}-seumurHidup' class='custom_radio' type="radio" name='kadaluwarasa' />
+                        <input id='{{insuredName}}-seumurHidup' class='custom_radio' value="lifetime" ng-model="data.expires" type="radio" name='kadaluwarasa'
+                        />
                         <label class='' for="{{insuredName}}-seumurHidup">Seumur hidup</label>
                     </div>
                     <div class="col-50">
-                        <input id='{{insuredName}}-tidak' class='custom_radio' type="radio" name='kadaluwarasa' />
+                        <input id='{{insuredName}}-tidak' class='custom_radio' value="limited" ng-model="data.expires" type="radio" name='kadaluwarasa'
+                        />
                         <label class='' for="{{insuredName}}-tidak">Tidak</label>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class='item'>
+    <div class='item' ng-show="data.expires === 'limited'">
         <div class="row-no-padding">
             <div class="row">
                 <label class="item-stacked-label">
@@ -143,10 +152,7 @@
               </label>
             </div>
             <div class="row left_input_date input_full_width">
-                <input type="date" placeholder="Enter">
-                <span class="icon-calendar">
-                <i class="icon ion-android-calendar"></i>
-              </span>
+                <md-datepicker ng-model="" md-placeholder="Enter date" md-open-on-focus></md-datepicker>
             </div>
         </div>
     </div>
@@ -159,44 +165,46 @@
             </div>
             <div class="row responsive-sm">
                 <div class="col-33">
-                    <ion-checkbox>Wajib Pajak Indonesia</ion-checkbox>
+                    <ion-checkbox ng-model="data.taxstatus.indo" value="indo">Wajib Pajak Indonesia</ion-checkbox>
                 </div>
                 <div class="col-33">
-                    <ion-checkbox>Pembayar pajak AS</ion-checkbox>
+                    <ion-checkbox ng-model="data.taxstatus.usa" value="usa">Pembayar pajak AS</ion-checkbox>
                 </div>
                 <div class="col-33">
-                    <ion-checkbox ng-model="data.Lainya">Lainnya</ion-checkbox>
+                    <ion-checkbox ng-model="data.taxstatus.other" value="other">Lainnya</ion-checkbox>
                 </div>
             </div>
         </div>
     </div>
-    <div class='item' ng-show="data.Lainya===true">
+    <div class="item" ng-show="data.taxstatus.other === true">
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
-                <label class='asterisk'>No NPWP </label>
-                <input type="number" ng-model='data.npwp' >
+                <label>Enter </label>
+                <input type="text" ng-model=''>
             </md-input-container>
         </div>
     </div>
     <div class='item'>
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
-                <label>Pekerjaan</label>
-                <md-select ng-init="work={}" ng-model='gender' ng-model-options="{trackBy: '$value.id'}"  class='blur-text' md-on-close="row.gender=gender.name; vm.validateRow(row,$index)" required >
-                    <!--<md-option ng-repeat='value in vm.genderData' ng-value='{{value}}'>
-                        {{value.name}}
-                    </md-option>-->
-                    <md-option >Pekerjaan A</md-option>
-                    <md-option >Pekerjaan B</md-option>
-                </md-select>
+                <label class='asterisk'>No NPWP </label>
+                <input ng-model='data.npwp' name="npwp" ng-pattern="/^[0-9]*$/" required>
+                <div ng-messages="insured.npwp.$error" ng-show="insured.npwp.$touched">
+                    <div ng-show="insured.npwp.$error.required">Pertanyaan ini wajib diisi</div>
+                    <div ng-show="insured.npwp.$error.pattern">! Input salah, silakan masukkan angka</div>
+                </div>
             </md-input-container>
+
         </div>
     </div>
     <div class='item'>
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label>Nama Perusahaan Tempat Bekerja</label>
-                <input ng-model='data.npwp'>
+                <input ng-model='data.comName' name="comName" ng-pattern="/^[a-zA-Z0-9]*$/">
+                <div ng-messages="insured.comName.$error" role="alert" ng-show="insured.comName.$touched">
+                    <div ng-show="insured.comName.$error.pattern">! Input salah, silakan masukkan angka/ huruf</div>
+                </div>
             </md-input-container>
         </div>
     </div>
@@ -204,7 +212,10 @@
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label class='asterisk'>Alamat Kantor</label>
-                <input ng-model='data.alamat_kantor' >
+                <input ng-model='data.comAddress' name="comAddress" ng-pattern="/^[a-zA-Z0-9]*$/">
+                <div ng-messages="insured.comAddress.$error" role="alert" ng-show="insured.comAddress.$touched">
+                    <div ng-show="insured.comAddress.$error.pattern">! Input salah, silakan masukkan angka/ huruf</div>
+                </div>
             </md-input-container>
         </div>
     </div>
@@ -233,7 +244,11 @@
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label class='asterisk'>Alamat</label>
-                <input ng-model='data.alamat' >
+                <input ng-model='data.alamat' name="alamat" ng-pattern="/^[a-zA-Z0-9]*$/" required>
+                <div ng-messages="insured.alamat.$error" role="alert" ng-show="insured.alamat.$touched">
+                    <div ng-show="insured.alamat.$error.required">Pertanyaan ini wajib diisi</div>
+                    <div ng-show="insured.alamat.$error.pattern">! Input salah, silakan masukkan angka/ huruf</div>
+                </div>
             </md-input-container>
         </div>
     </div>
@@ -243,7 +258,10 @@
                 <div class="col-50">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Kode Pos</label>
-                        <input ng-model='data.kodepos'>
+                        <input type="number" ng-model='data.kodepos' name="kodepos">
+                        <div ng-messages="insured.kodepos.$invalid" ng-show="insured.kodepos.$dirty">
+                            <div ng-show="insured.kodepos.$invalid">! Input salah, silakan masukkan angka</div>
+                        </div>
                     </md-input-container>
                 </div>
             </div>
@@ -255,31 +273,45 @@
                 <div class="col-50">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label class='asterisk'>Provinsi</label>
-                        <input ng-model='data.provinsi' >
+                        <input ng-model='data.provinsi' name="provinsi" ng-pattern="/^[a-zA-Z]*$/" required>
+                        <div ng-messages="insured.provinsi.$error" role="alert" ng-show="insured.provinsi.$touched">
+                            <div ng-show="insured.provinsi.$error.required">Pertanyaan ini wajib diisi</div>
+                            <div ng-show="insured.provinsi.$error.pattern">! Input salah, silakan masukkan huruf</div>
+                        </div>
                     </md-input-container>
                 </div>
                 <div class="col-50">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label class='asterisk'>Kabupaten / Kota </label>
-                        <input ng-model='data.kabupaten' >
+                        <input ng-model='data.kabupaten' name="kabupaten" ng-pattern="/^[a-zA-Z]*$/" required>
+                        <div ng-messages="insured.kabupaten.$error" role="alert" ng-show="insured.kabupaten.$touched">
+                            <div ng-show="insured.kabupaten.$error.required">Pertanyaan ini wajib diisi</div>
+                            <div ng-show="insured.kabupaten.$error.pattern">! Input salah, silakan masukkan huruf</div>
+                        </div>
                     </md-input-container>
                 </div>
             </div>
         </div>
     </div>
-     <div class='item'>
+    <div class='item'>
         <div class="row-no-padding">
             <div class="row responsive-sm">
                 <div class="col-50">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Kecamatan</label>
-                        <input ng-model='data.kecamata'>
+                        <input ng-model='data.kecamata' name="kecamata" ng-pattern="/^[a-zA-Z]*$/">
+                        <div ng-messages="insured.kecamata.$error" role="alert" ng-show="insured.kecamata.$touched">
+                            <div ng-show="insured.kecamata.$error.pattern">! Input salah, silakan masukkan huruf</div>
+                        </div>
                     </md-input-container>
                 </div>
                 <div class="col-50">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Kelurahan</label>
-                        <input ng-model='data.kelurahan'>
+                        <input ng-model='data.kelurahan' name="kelurahan" ng-pattern="/^[a-zA-Z]*$/">
+                        <div ng-messages="insured.kelurahan.$error" role="alert" ng-show="insured.kelurahan.$touched">
+                            <div ng-show="insured.kelurahan.$error.pattern">! Input salah, silakan masukkan huruf</div>
+                        </div>
                     </md-input-container>
                 </div>
             </div>
@@ -291,45 +323,86 @@
                 <div class="col-33">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>RT</label>
-                        <input ng-model='data.RT'>
+                        <input ng-model='data.RT' name="rt" ng-pattern="/^[0-9]*$/">
+                        <div ng-messages="insured.rt.$error" role="alert" ng-show="insured.rt.$touched">
+                            <div ng-show="insured.rt.$error.pattern">! Input salah, silakan masukkan angka</div>
+                        </div>
                     </md-input-container>
                 </div>
                 <div class="col-33">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>RW</label>
-                        <input ng-model='data.RW'>
+                        <input ng-model='data.RW' name="rw" ng-pattern="/^[0-9]*$/">
+                        <div ng-messages="insured.rw.$error" role="alert" ng-show="insured.rw.$touched">
+                            <div ng-show="insured.rw.$error.pattern">! Input salah, silakan masukkan angka</div>
+                        </div>
                     </md-input-container>
                 </div>
                 <div class="col-33">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>KM</label>
-                        <input ng-model='data.KM'>
+                        <input ng-model='data.KM' name="km" ng-pattern="/^[0-9]*$/">
+                        <div ng-messages="insured.rw.$error" role="alert" ng-show="insured.rw.$touched">
+                            <div ng-show="insured.rw.$error.pattern">! Input salah, silakan masukkan angka</div>
+                        </div>
                     </md-input-container>
                 </div>
             </div>
         </div>
     </div>
-   
-    
+
+
     <div class='item' ng-repeat="(index, row) in vm.insuredData.address">
         <div class="row-no-padding">
             <div class="row responsive-sm">
                 <div class="col-33">
+                    <md-input-container>
+                        <md-select ng-model="data.Rumah" placeholder="Select area code">
+                            <md-option value="opt" selected><em>Indonesia (+62)</em></md-option>
+                            <md-option value="opt1"><em>Vietnam (+84)</em></md-option>
+                        </md-select>
+                    </md-input-container>
                     <md-input-container class="md-block" flex-gt-sm>
                         <label class='asterisk'>No.Tel.Rumah </label>
-                        <input type="number" ng-model='vm.insuredData.address[index].rumah_tel' ng-model='contact.tel.home' >
+                        <input ng-model='vm.insuredData.address[index].rumah_tel' ng-model='contact.tel.home' name="telHome" ng-pattern="/^[0-9]*$/"
+                            required>
+                        <div ng-messages="insured.telHome.$error" role="alert" ng-show="insured.telHome.$touched">
+                            <div ng-show="insured.telHome.$error.required">Pertanyaan ini wajib diisi</div>
+                            <div ng-show="insured.telHome.$error.pattern">! Input salah, silakan masukkan angka</div>
+                        </div>
                     </md-input-container>
                 </div>
                 <div class="col-33">
+                    <md-input-container>
+                        <md-select ng-model="data.Kantor" placeholder="Select area code">
+                            <md-option value="opt" selected><em>Indonesia (+62)</em></md-option>
+                            <md-option value="opt1"><em>Vietnam (+84)</em></md-option>
+                        </md-select>
+                    </md-input-container>
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>No.Tel.Kantor</label>
-                        <input type="number" ng-model='vm.insuredData.address[index].kantor_tel' ng-model='contact.tel.office'>
+                        <input ng-model='vm.insuredData.address[index].kantor_tel' ng-model='contact.tel.office' name="telOffice" ng-pattern="/^[0-9]*$/">
+                        <div ng-messages="insured.telOffice.$error" role="alert" ng-show="insured.telOffice.$touched">
+                            <div ng-show="insured.telOffice.$error.required">Pertanyaan ini wajib diisi</div>
+                            <div ng-show="insured.telOffice.$error.pattern">! Input salah, silakan masukkan angka</div>
+                        </div>
                     </md-input-container>
                 </div>
                 <div class="col-33">
+                    <md-input-container>
+                        <md-select ng-model="data.hp_gsm" placeholder="Select area code">
+                            <md-option value="opt" selected><em>Indonesia (+62)</em></md-option>
+                            <md-option value="opt1"><em>Vietnam (+84)</em></md-option>
+                        </md-select>
+                    </md-input-container>
                     <md-input-container class="md-block" flex-gt-sm>
                         <label class='asterisk'>No. HP /GSM </label>
-                        <input type="number" ng-model='vm.insuredData.address[index].hp_gsm_tel' ng-model='contact.tel.gsm' >
+                        <input ng-model='vm.insuredData.address[index].hp_gsm_tel' ng-model='contact.tel.gsm' name="telGsm" ng-pattern="/^[0-9]*$/"
+                            required>
+                        <div ng-messages="insured.telGsm.$error" role="alert" ng-show="insured.telGsm.$touched">
+                            <div ng-show="insured.telGsm.$error.required">Pertanyaan ini wajib diisi</div>
+                            <div ng-show="insured.telGsm.$error.pattern">! Input salah, silakan masukkan angka</div>
+                        </div>
                     </md-input-container>
                 </div>
             </div>
@@ -354,76 +427,21 @@
             <div class="row">
                 <div class="row indent_row responsive-sm">
                     <div class="col-33">
-                        <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatTempatTingal' class='custom_radio' type="radio" ng-click="changeAddress('Alamat Tempat Tingal')" />
+                        <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatTempatTingal' class='custom_radio' type="radio" ng-click="changeAddress('Alamat Tempat Tingal')"
+                            checked />
                         <label class='' for="{{insuredName}}-alamatTempatTingal">Alamat Tempat Tingal</label>
                     </div>
                     <div class="col-33">
-                        <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatKantor' class='custom_radio' type="radio" ng-click="changeAddress('Alamat Kantor')" />
+                        <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatKantor' class='custom_radio' type="radio" ng-click="changeAddress('Alamat Kantor')"
+                        />
                         <label class='' for="{{insuredName}}-alamatKantor">Alamat Kantor</label>
                     </div>
                     <div class="col-33">
-                        <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatLain' ng-click="changeAddress('Alamat Lain')" class='custom_radio' type="radio" />
+                        <input name='alamatSuratMenyurat' id='{{insuredName}}-alamatLain' ng-click="changeAddress('Alamat Lain')" class='custom_radio'
+                            type="radio" />
                         <label class='' for="{{insuredName}}-alamatLain">Alamat Lain</label>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class='item'>
-        <div class="row-no-padding">
-            <div class="row">
-                <label class="item-stacked-label">
-                <div class="input-label asterisk">Sumber penghasilan rutin per butan</div>
-              </label>
-            </div>
-            <div>
-                <div class="row responsive-sm">
-                    <div class="col-50">
-                        <ion-checkbox>Gaji</ion-checkbox>
-                    </div>
-                    <div class="col-50">
-                        <ion-checkbox>Komisi</ion-checkbox>
-                    </div>
-                </div>
-                <div class="row responsive-sm">
-                    <div class="col-50">
-                        <ion-checkbox>Orang Tua</ion-checkbox>
-                    </div>
-                    <div class="col-50">
-                        <ion-checkbox>Laba Perusahaan</ion-checkbox>
-                    </div>
-                </div>
-                <div class="row responsive-sm">
-                    <div class="col-50">
-                        <ion-checkbox >Investasi</ion-checkbox>
-                    </div>
-                    <div class="col-50">
-                        <ion-checkbox>Bonus</ion-checkbox>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-30">
-                <ion-checkbox>Bisnis Sendiri</ion-checkbox>
-                <ion-checkbox>Lainnya</ion-checkbox>
-                <ion-checkbox>Tidak Berpenghasilan</ion-checkbox>
-            </div>
-        </div>
-    </div>
-    <div class='item'>
-        <div class="row-no-padding">
-            <div class="row">
-                <label class="item-stacked-label">
-                <div class="input-label asterisk">Total penghasilan rutin per butan</div>
-              </label>
-            </div>
-            <div class="">
-                <md-input-container class="md-block">
-                    <md-select ng-init="total_income={}" ng-model='total_income' ng-model-options="{trackBy:1}"  class='blur-text'>
-                        <md-option ng-value='1'>
-                            >IDR 5 Juta - IDR 7,5 Juta
-                        </md-option>
-                    </md-select>
-                </md-input-container>
             </div>
         </div>
     </div>
@@ -437,7 +455,10 @@
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label>Email</label>
-                <input type="email" ng-model='data.email'>
+                <input type="email" ng-model='data.email' name="email" required>
+                <div ng-messages="insured.email.$error" role="alert" ng-show="insured.email.$touched">
+                    <div ng-show="insured.email.$error.required">Pertanyaan ini wajib diisi</div>
+                </div>
             </md-input-container>
         </div>
     </div>

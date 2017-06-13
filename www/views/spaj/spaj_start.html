@@ -1,141 +1,127 @@
 <ion-view cache-view="false" view-title="Sebelum Anda melanjutkan" id="spaj-start">
 
-<!--<ion-nav-buttons side="left">
+  <!--<ion-nav-buttons side="left">
     <button class="button back-button buttons button-clear header-item">
       <i class="icon ion-ios-arrow-back"></i> 
     </button>
   </ion-nav-buttons>-->
 
   <ion-content>
-    <div class="container text-center">
-      <div class="list">
-        <div class="item gray-block" ng-init="vm.data.sessionRadio='Utama'">
-          <span class='general-text'>Saya, pemegang polis mengkonfirmasi bahwa saya ...</span>
-          <div class="row responsive-sm mini-center-container radio-block">
-            <div class="col-50">
-              <input ng-model="vm.data.sessionRadio" class='custom_radio' type="radio" value="Utama" name="utama" id="utama"/>
-              <label class='' for="utama">Tertanggung Utama</label>
+    <form name="spaj_start">
+      <div class="container text-center">
+        <div class="list">
+          <div class="item gray-block" ng-init="vm.data.sessionRadio='Utama'">
+            <span class='general-text'>Saya, pemegang polis mengkonfirmasi bahwa saya ...</span>
+            <div class="row responsive-sm mini-center-container radio-block">
+              <div class="col-50">
+                <input ng-model="vm.data.sessionRadio" class='custom_radio' type="radio" value="Utama" name="utama" id="utama" />
+                <label class='' for="utama">Tertanggung Utama</label>
+              </div>
+              <div class="col-50">
+                <input ng-model="vm.data.sessionRadio" class='custom_radio' type="radio" value="1" name="tambahan_1" id="tambahan_1" />
+                <label class='' for="tambahan_1">Tertanggung Tambahan 1</label>
+              </div>
             </div>
-            <div class="col-50">
-              <input ng-model="vm.data.sessionRadio" class='custom_radio' type="radio" value="1" name="tambahan_1" id="tambahan_1"
-              />
-              <label class='' for="tambahan_1">Tertanggung Tambahan 1</label>
-            </div>
-          </div>
-          <div class="row responsive-sm mini-center-container radio-block">
-            <div class="col-50">
-              <input ng-model="vm.data.sessionRadio" class='custom_radio' type="radio" value="2" name="tambahan_2" id="tambahan_2"
-              />
-              <label class='' for="tambahan_2">Tertanggung Tambahan 2</label>
-            </div>
-            <div class="col-50">
-              <input ng-model="vm.data.sessionRadio" class='custom_radio' type="radio" value="Bukan" name="bukan" id="bukan"
-              />
-              <label class='' for="bukan">Bukan Tertanggung</label>
-            </div>
-          </div>
-        </div>
-        <div class="item gray-block mt-30" ng-init="vm.data.policyRadio='Lainnya'">
-          <span class='general-text'>Pembayar premi adalah...</span>
-          <div class="row responsive-sm mini-center-container radio-block">
-            <div class="col-50">
-              <input ng-model="vm.data.policyRadio" class='custom_radio' type="radio" value="PemegangPolis" name="pemegang_polis" id="pemegang_polis"
-              />
-              <label class='' for="pemegang_polis">Pemegang Polis</label>
-            </div>
-            <div class="col-50">
-              <input ng-model="vm.data.policyRadio" class='custom_radio' type="radio" value="TertanggungUtama" name="tertanggung_utama"
-                id="tertanggung_utama" />
-              <label class='' for="tertanggung_utama">Tertanggung Utama</label>
+            <div class="row responsive-sm mini-center-container radio-block">
+              <div class="col-50">
+                <input ng-model="vm.data.sessionRadio" class='custom_radio' type="radio" value="2" name="tambahan_2" id="tambahan_2" />
+                <label class='' for="tambahan_2">Tertanggung Tambahan 2</label>
+              </div>
+              <div class="col-50">
+                <input ng-model="vm.data.sessionRadio" class='custom_radio' type="radio" value="Bukan" name="bukan" id="bukan" />
+                <label class='' for="bukan">Bukan Tertanggung</label>
+              </div>
             </div>
           </div>
-          <div class="row responsive-sm mini-center-container radio-block">
-            <div class="col-50">
-              <input ng-model="vm.data.policyRadio" class='custom_radio' type="radio" value="TertanggungUtama1" name="tertanggung_tambahan_1"
-                id="tertanggung_tambahan_1" />
-              <label class='' for="tertanggung_tambahan_1">Tertanggung Utama 1</label>
+          <div class="item gray-block mt-30" ng-init="vm.data.policyRadio='Lainnya'">
+            <span class='general-text'>Pembayar premi adalah...</span>
+            <div class="row responsive-sm mini-center-container radio-block">
+              <div class="col-50">
+                <input ng-model="vm.data.policyRadio" class='custom_radio' type="radio" value="PemegangPolis" name="pemegang_polis" id="pemegang_polis"
+                />
+                <label class='' for="pemegang_polis">Pemegang Polis</label>
+              </div>
+              <div class="col-50">
+                <input ng-model="vm.data.policyRadio" class='custom_radio' type="radio" value="TertanggungUtama" name="tertanggung_utama"
+                  id="tertanggung_utama" />
+                <label class='' for="tertanggung_utama">Tertanggung Utama</label>
+              </div>
             </div>
-            <div class="col-50">
-              <input ng-model="vm.data.policyRadio" class='custom_radio' type="radio" value="TertanggungUtama2" name="tertanggung_tambahan_2"
-                id="tertanggung_tambahan_2" />
-              <label class='' for="tertanggung_tambahan_2">Tertanggung Utama 2</label>
+            <div class="row responsive-sm mini-center-container radio-block">
+              <div class="col-50">
+                <input ng-model="vm.data.policyRadio" class='custom_radio' type="radio" value="TertanggungUtama1" name="tertanggung_tambahan_1"
+                  id="tertanggung_tambahan_1" />
+                <label class='' for="tertanggung_tambahan_1">Tertanggung Utama 1</label>
+              </div>
+              <div class="col-50">
+                <input ng-model="vm.data.policyRadio" class='custom_radio' type="radio" value="TertanggungUtama2" name="tertanggung_tambahan_2"
+                  id="tertanggung_tambahan_2" />
+                <label class='' for="tertanggung_tambahan_2">Tertanggung Utama 2</label>
+              </div>
+            </div>
+            <div class="row responsive-sm mini-center-container radio-block">
+              <div class="col">
+                <input ng-model="vm.data.policyRadio" class='custom_radio' type="radio" value="Lainnya" name="lainnya" id="lainnya" />
+                <label class='' for="lainnya">Lainnya</label>
+              </div>
+            </div>
+            <div ng-show="vm.data.policyRadio === 'Lainnya'" class="row responsive-sm mini-center-container radio-block">
+              <div class="col">
+                <input class="other-policy-input" name="policyOtherText" ng-model="policyOtherText" type="text" placeholder="Enter" ng-pattern="/^[a-zA-Z\s]*$/">
+                <span ng-show="spaj_start.policyOtherText.$error.pattern" class="err-message">! Input salah, silakan masukkan huruf</span>
+              </div>
             </div>
           </div>
-          <div class="row responsive-sm mini-center-container radio-block">
-            <div class="col">
-              <input ng-model="vm.data.policyRadio" class='custom_radio' type="radio" value="Lainnya" name="lainnya" id="lainnya" />
-              <label class='' for="lainnya">Lainnya</label>
-            </div>
-          </div>
-          <div ng-show="vm.data.policyRadio === 'Lainnya'" class="row responsive-sm mini-center-container radio-block">
-            <div class="col">
-              <input class="other-policy-input" ng-model="policyOtherText" type="text" placeholder="Enter">
-            </div>
-          </div>
-        </div>
 
-        <div class="item break-line general-text">Sebelum Anda melanjutkan pengisian SPAJ, mohon informasikan kepemilikan polis Anda sebelumnya</div>
-        <div class="item mt-30">
-          <div class='general-text'>
-            {{vm.data.beforeProceed.title}}
-          </div>
-          <div class="row">
-            <div class="col col-50">
-              <button class="button value-btn" ng-class="{selected: vm.data.beforeProceed.value}" ng-click="vm.data.beforeProceed.value = true">Ya</button>
+          <div class="item break-line general-text">Sebelum Anda melanjutkan pengisian SPAJ, mohon informasikan kepemilikan polis Anda sebelumnya</div>
+          <div class="item">
+            <div class='general-text small-question'>
+              {{vm.data.beforeProceed_1.title}}
             </div>
-            <div class="col col-50">
-              <button class="button value-btn" ng-class="{selected: !vm.data.beforeProceed.value}" ng-click="vm.data.beforeProceed.value = false">Tidak</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class='general-text small-question'>
-            {{vm.data.beforeProceed_1.title}}
-          </div>
-          <div class="row">
-            <div class="col col-50">
-              <button class="button value-btn" ng-class="{selected: vm.data.beforeProceed_1.value}" ng-click="vm.data.beforeProceed_1.value = true">Ya</button>
-            </div>
-            <div class="col col-50">
-              <button class="button value-btn" ng-class="{selected: !vm.data.beforeProceed_1.value}" ng-click="vm.data.beforeProceed_1.value = false">Tidak</button>
+            <div class="row">
+              <div class="col col-50">
+                <button class="button value-btn" ng-class="{selected: vm.data.beforeProceed_1.value}" ng-click="vm.data.beforeProceed_1.value = true">Ya</button>
+              </div>
+              <div class="col col-50">
+                <button class="button value-btn" ng-class="{selected: !vm.data.beforeProceed_1.value}" ng-click="vm.data.beforeProceed_1.value = false">Tidak</button>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="item" ng-show='vm.data.beforeProceed_1.value'>
-          <div class='general-text small-question'>
-            {{vm.data.beforeProceed_2.title}}
-          </div>
-          <div class="row">
-            <div class="col col-50">
-              <button class="button value-btn" ng-class="{selected: vm.data.beforeProceed_2.value}" ng-click="vm.data.beforeProceed_2.value = true">Ya</button>
+          <div class="item" ng-show='vm.data.beforeProceed_1.value'>
+            <div class='general-text small-question'>
+              {{vm.data.beforeProceed_2.title}}
             </div>
-            <div class="col col-50">
-              <button class="button value-btn" ng-class="{selected: !vm.data.beforeProceed_2.value}" ng-click="vm.data.beforeProceed_2.value = false">Tidak</button>
-            </div>
-          </div>
-        </div>
-        <div class="item" ng-show='vm.data.beforeProceed_1.value'>
-          <div class='general-text small-question'>
-            {{vm.data.beforeProceed_3.title}}
-          </div>
-          <div class="row pb-0">
-            <div class="col col-50 pb-0">
-              <button class="button value-btn pb-0" ng-class="{selected: vm.data.beforeProceed_3.value}" ng-click="vm.data.beforeProceed_3.value = true">Ya</button>
-            </div>
-            <div class="col col-50">
-              <button class="button value-btn pb-0" ng-class="{selected: !vm.data.beforeProceed_3.value}" ng-click="vm.data.beforeProceed_3.value = false">Tidak</button>
+            <div class="row">
+              <div class="col col-50">
+                <button class="button value-btn" ng-class="{selected: vm.data.beforeProceed_2.value}" ng-click="vm.data.beforeProceed_2.value = true">Ya</button>
+              </div>
+              <div class="col col-50">
+                <button class="button value-btn" ng-class="{selected: !vm.data.beforeProceed_2.value}" ng-click="vm.data.beforeProceed_2.value = false">Tidak</button>
+              </div>
             </div>
           </div>
-          <div class="before-proceed-3 text-left" ng-show="vm.data.beforeProceed_3.value == true" class="row">
-            <md-input-container class="md-input-container">
-              <label>No. SPAJ Sebelumnya</label>
-              <input ng-model="vm.data.beforeProceed_3.otherValue">
-            </md-input-container>
+          <div class="item" ng-show='vm.data.beforeProceed_1.value'>
+            <div class='general-text small-question'>
+              {{vm.data.beforeProceed_3.title}}
+            </div>
+            <div class="row pb-0">
+              <div class="col col-50 pb-0">
+                <button class="button value-btn pb-0" ng-class="{selected: vm.data.beforeProceed_3.value}" ng-click="vm.data.beforeProceed_3.value = true">Ya</button>
+              </div>
+              <div class="col col-50">
+                <button class="button value-btn pb-0" ng-class="{selected: !vm.data.beforeProceed_3.value}" ng-click="vm.data.beforeProceed_3.value = false">Tidak</button>
+              </div>
+            </div>
+            <div class="before-proceed-3 text-left" ng-show="vm.data.beforeProceed_3.value == true" class="row">
+              <md-input-container class="md-input-container">
+                <label>No. SPAJ Sebelumnya</label>
+                <input ng-model="vm.data.beforeProceed_3.otherValue">
+              </md-input-container>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </form>
   </ion-content>
   <ion-footer-bar class="bar bar-footer bar-assertive">
     <div ng-click="vm.saveSpaj()" title="Lanjutkan" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></div>
