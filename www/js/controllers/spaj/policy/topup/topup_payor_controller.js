@@ -1,12 +1,12 @@
-function topupPayorCtrl ($state, $scope, $rootScope, $filter, SpajService) {
+function topupPayorCtrl($state, $scope, $rootScope, $filter, SpajService) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
   var vm = this;
   var topup_data = SpajService.getData('topup');
-  if(typeof topup_data != 'undefined'){
+  if (typeof topup_data != 'undefined') {
     vm.topup_amount = topup_data.topup_amount;
-  }else {
+  } else {
     vm.topup_amount = 0;
   }
 
@@ -52,9 +52,14 @@ function topupPayorCtrl ($state, $scope, $rootScope, $filter, SpajService) {
     }
   ];
   vm.earningRanks = [
-    {
-      name: '> IDR 5 Juta - IDR 7,5 Juta', value: '> IDR 5 Juta - IDR 7,5 Juta'
-    }
+    {name: 'Kurang dari 5 juta', value: 'Kurangdari5 juta'},
+      {name: 'Rp 5 juta s/d < Rp 10 juta', value: 'Rp 5 juta s/d < Rp 10 juta'},
+      {name: 'Rp 10 juta s/d < Rp 25 juta', value: 'Rp 10 juta s/d < Rp 25 juta'},
+      {name: 'Rp 25 juta s/d < Rp 50 juta', value: 'Rp 25 juta s/d < Rp 50 juta'},
+      {name: 'Rp 50 juta s/d < Rp 100 juta', value: 'Rp 50 juta s/d < Rp 100 juta'},
+      {name: 'Rp 100 juta s/d < Rp 500 juta', value: 'Rp 100 juta s/d < Rp 500 juta'},
+      {name: 'Rp 500 juta s/d < Rp 2 milliar', value: 'Rp 500 juta s/d < Rp 2 milliar'},
+      {name: 'Rp 2 milliar atau lebih ', value: 'Rp 2 milliar atau lebih'}
   ];
   vm.regular_income = [
     { name: 'Gaji', selected: false },
@@ -80,25 +85,25 @@ function topupPayorCtrl ($state, $scope, $rootScope, $filter, SpajService) {
   ];
 
   $scope.$watch('vm.regular_income', function (newVal) {
-    var regularIncomeArr = $filter('filter')(newVal, {selected: true});
+    var regularIncomeArr = $filter('filter')(newVal, { selected: true });
     vm.data.source_of_regular_income_per_month = [];
-    angular.forEach(regularIncomeArr, function(k) {
+    angular.forEach(regularIncomeArr, function (k) {
       this.push(k.name);
     }, vm.data.source_of_regular_income_per_month);
   }, true);
 
   $scope.$watch('vm.non_routine_income', function (newVal) {
-    var nonRoutineIncomeArr = $filter('filter')(newVal, {selected: true});
+    var nonRoutineIncomeArr = $filter('filter')(newVal, { selected: true });
     vm.data.non_routine_income_source_per_month = [];
-    angular.forEach(nonRoutineIncomeArr, function(k) {
+    angular.forEach(nonRoutineIncomeArr, function (k) {
       this.push(k.name);
     }, vm.data.non_routine_income_source_per_month);
   }, true);
 
   $scope.$watch('vm.purpose_of_top_up_submissions', function (newVal) {
-    var purposeArr = $filter('filter')(newVal, {selected: true});
+    var purposeArr = $filter('filter')(newVal, { selected: true });
     vm.data.purpose_of_top_up_submission = [];
-    angular.forEach(purposeArr, function(k) {
+    angular.forEach(purposeArr, function (k) {
       this.push(k.name);
     }, vm.data.purpose_of_top_up_submission);
   }, true);
