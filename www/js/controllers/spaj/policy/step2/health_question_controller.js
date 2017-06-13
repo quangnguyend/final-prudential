@@ -1,4 +1,4 @@
-function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicScrollDelegate, SpajService, $ionicSideMenuDelegate) {
+function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog, $ionicScrollDelegate, SpajService, $ionicSideMenuDelegate) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
@@ -213,9 +213,21 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
   }
 
   function validator() {
-    return true
+    var mainScreen_valid = vm.hqns.$valid;
+    var tumorPu_valid = vm.healthData.inodule==false || vm.healthData.inodule==true&&vm.objectValidate(vm.healthData.tumorPu);
+    var tumorEye_valid = vm.healthData.ieye==false ||  vm.healthData.ieye==true&&vm.objectValidate(vm.healthData.eyePopup)
+    var digesPu_valid = vm.healthData.idigestive==false || vm.healthData.idigestive==true&&vm.objectValidate(vm.healthData.digesPu);
+    var respiratoryPu_valid = vm.healthData.irespiratory==false || vm.healthData.irespiratory==true&&vm.objectValidate(vm.healthData.respiratoryPu);
+    var iill_valid= (vm.healthData.iill==false) || vm.healthData.iill==true&&(vm.healthData.iill_rabun||vm.healthData.iill_katarak)
+
+    return mainScreen_valid && tumorPu_valid && tumorEye_valid && digesPu_valid && respiratoryPu_valid && iill_valid
   }
 
+  vm.pattern={
+    textOnly: new RegExp(/^[a-zA-Z\s]*$/),
+    nonDesimal: new RegExp(/^\d+\.\d{0,3}$/),
+    alphanumeric: new RegExp(/^[a-z0-9 ]+$/)
+  }
   // Main Health step
 
   vm.objectValidate = function (obj) {
