@@ -1573,6 +1573,9 @@ th {
     border-bottom: none;
     padding-bottom: 0px;
   }
+  .md-errors-spacer{
+    min-height: 0;
+  }
 }
 button.btn-actived{
   background: #f00;
@@ -1588,4 +1591,9 @@ button.btn-actived{
   z-index: 4;
   width: 100%;
   height: 100%;
+}
+#declaration{
+  .md-errors-spacer{
+    min-height: 0!important;
+  }
 }
