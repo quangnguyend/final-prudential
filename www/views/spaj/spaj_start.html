@@ -128,7 +128,7 @@
             <div class="before-proceed-3 text-left" ng-show="vm.data.beforeProceed_3.value == true" class="row">
               <md-input-container class="md-input-container">
                 <label>No. SPAJ Sebelumnya</label>
-                <input ng-model="vm.data.beforeProceed_3.otherValue">
+                <input ng-model="vm.data.beforeProceed_3.otherValue" required>
               </md-input-container>
             </div>
           </div>
@@ -137,6 +137,6 @@
     </form>
   </ion-content>
   <ion-footer-bar class="bar bar-footer bar-assertive">
-    <div ng-click="vm.saveSpaj()" title="Lanjutkan" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></div>
+    <div ng-click="vm.data.beforeProceed.value == false?'':vm.saveSpaj()" class="btn">Lanjutkan<button class="button button-clear" ng-disabled="vm.data.beforeProceed.value == false"><i class="icon ion-ios-arrow-forward"></i></button></div>
   </ion-footer-bar>
 </ion-view>

@@ -165,7 +165,7 @@
             <div class="">
               <md-input-container class="md-block mt-0">
                 <md-select ng-model="vm.data.total_earnings_per_month">
-                  <md-option ng-repeat="e in vm.earningRanks" value="{{e.value}}" ng-selected="$first">{{e.name}}</md-option>
+                  <md-option ng-repeat="e in vm.earningRanks" value="{{e.value}}" ng-selected="$first"><em>{{e.name}}</em></md-option>
                 </md-select>
               </md-input-container>
             </div>
