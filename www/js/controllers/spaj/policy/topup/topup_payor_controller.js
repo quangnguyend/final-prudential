@@ -104,7 +104,6 @@ function topupPayorCtrl ($state, $scope, $rootScope, $filter, SpajService) {
   }, true);
 
   vm.next = function () {
-    // console.log(vm.data);
     // $state.go('app.topup_payor_detail');
     $rootScope.nextStep()
   }

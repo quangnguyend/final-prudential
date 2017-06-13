@@ -74,6 +74,19 @@
           </div>
 
           <div class="item break-line general-text">Sebelum Anda melanjutkan pengisian SPAJ, mohon informasikan kepemilikan polis Anda sebelumnya</div>
+          <div class="item mt-30">
+            <div class='general-text'>
+              {{vm.data.beforeProceed.title}}
+            </div>
+            <div class="row">
+              <div class="col col-50">
+                <button class="button value-btn" ng-class="{selected: vm.data.beforeProceed.value}" ng-click="vm.data.beforeProceed.value = true">Ya</button>
+              </div>
+              <div class="col col-50">
+                <button class="button value-btn" ng-class="{selected: !vm.data.beforeProceed.value}" ng-click="vm.data.beforeProceed.value = false">Tidak</button>
+              </div>
+            </div>
+          </div>
           <div class="item">
             <div class='general-text small-question'>
               {{vm.data.beforeProceed_1.title}}
