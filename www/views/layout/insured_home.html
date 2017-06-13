@@ -18,7 +18,7 @@
                     <md-input-container class="md-block">
                         <label class="input-label asterisk">Tempat</label>
                         <md-select ng-model="data.address" name="address" required>
-                            <md-option ng-repeat="country in vm.countries" value="{{country.code}}"><em>{{country.name}}</em></md-option>
+                            <md-option ng-repeat="birthplace in vm.birthplaces" value="{{birthplace.code}}"><em>{{birthplace.name}}</em></md-option>
                         </md-select>
                         <div ng-messages="insured.address.$error" ng-show="insured.address.$touched">
                             <div ng-show="insured.address.$error.required">Pertanyaan ini wajib diisi</div>
