@@ -5,7 +5,7 @@
 
   <ion-content>
     <step-process></step-process>
-    <form id="health_respiratory">
+    <form id="health_respiratory" name="topupForm">
       <div id="policy_info_ph_info" class="list list-inset no-lines">
         <div class="center_txt_end left_text">(Calon) Pembayar Premi / Kontributor adalah Perorangan, dan hubungan dengan ( Calon ) Pemegang Polis adalah</div>
         <div class='item'>
@@ -231,21 +231,24 @@
                 <div class="indent_payor">
                   <p class="sm-font">Nama perusahaan/usaha/bisnis:</p>
                   <div>
-                    <input type="text" class="input-light" ng-model="vm.data.business_name" >
+                    <input type="text" class="input-light" name="business_name" ng-pattern="/^[0-9a-zA-Z]+$/" ng-model="vm.data.business_name" required >
                   </div>
+                  <div ng-show="topupForm.business_name.$touched && topupForm.business_name.$invalid" class="sm-font error">! Input salah, silakan masukkan huruf</div>
                   <br>
                 </div>
                 <div class="indent_payor">
                   <p class="sm-font">Bidang usaha</p>
                   <div>
-                    <input type="text" class="input-light" ng-model="vm.data.business_fields" >
+                    <input type="text" class="input-light" name="business_fields" ng-model="vm.data.business_fields" required>
                   </div>
+                  <div ng-show="topupForm.business_fields.$touched && topupForm.business_fields.$invalid" class="sm-font error">! Input salah, silakan masukkan huruf</div>
                 </div>
                 <div class="indent_payor">
                   <p class="sm-font">Alamat perusahaan/tempat usaha</p>
                   <div>
-                    <input type="text" class="input-light" ng-model="vm.data.place_of_business">
+                    <input type="text" class="input-light" name="place_of_business" ng-model="vm.data.place_of_business" required>
                   </div>
+                  <div ng-show="topupForm.place_of_business.$touched && topupForm.place_of_business.$invalid" class="sm-font error">! Input salah, silakan masukkan huruf</div>
                 </div>
               </ion-list>
             </div>

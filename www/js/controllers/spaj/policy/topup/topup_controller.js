@@ -47,9 +47,27 @@ function topupCtrl ($state, $scope, $rootScope, SpajService) {
     }
   };
 
+  vm.valid = true;
+  vm.validAdditionalFunds = true;
+  vm.changeAdditionValue = function (val) {
+    vm.validAdditionalFunds = val;
+  }
   vm.next = function () {
     SpajService.setData('topup', {topup_amount: vm.data.top_up_amount});
     SpajService.setData('topup', {isComplete: validator()});
+    vm.valid = validator();
+    if(vm.data.is_additional_funds == null){
+      vm.validAdditionalFunds = false;
+    }else{
+      vm.validAdditionalFunds = true;
+    }
+    /*if(vm.valid){
+      if(vm.data.is_additional_funds == false){
+        $state.go('app.beneficiaries')
+      }else{
+        $state.go('app.topup_payor')
+      }
+    }*/
     if(vm.data.is_additional_funds == false){
       $state.go('app.beneficiaries')
     }else{
@@ -58,6 +76,32 @@ function topupCtrl ($state, $scope, $rootScope, SpajService) {
   }
 
   function validator () {
-    return true
+    if(vm.data.is_additional_funds == null &&  vm.data.top_up_amount <0){
+      return false;
+    }else if(vm.data.is_additional_funds == true && vm.data.top_up_amount <= 250000000){
+      if(!angular.isNumber(vm.data.spaj_number) ||
+        !alphanumeric(vm.data.name_of_policy) ||
+        !angular.isNumber(vm.data.policy_number) ||
+        !alphanumeric(vm.data.name_of_referral_giver) ||
+        !angular.isNumber(vm.data.referral_code_number) ||
+        !angular.isNumber(vm.data.top_up_amount)
+      ){
+        return false;
+      }else{
+        return true;
+      }
+    }else{
+      return true;
+    }
   }
+
+  function alphanumeric(inputtxt) {
+    var letterNumber = /^[0-9a-zA-Z]+$/;
+    if(inputtxt.match(letterNumber)){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 }
