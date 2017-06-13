@@ -121,6 +121,6 @@ function eSignDeclarationCtrl (
   */
 
   vm.handleSubmit= function () {
-   $state.go('app.payment_topup')
+    $state.go('app.payment_topup')
   }
 }
