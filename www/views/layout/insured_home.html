@@ -26,8 +26,10 @@
                     </md-input-container>
                 </div>
                 <div class="col">
-                    <label class='asterisk'>Tanggal Lahir </label>
-                    <input type="date" ng-model="data.date_of_birth" ng-click="vm.valiForm()" md-placeholder="Enter date"></input>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label class='asterisk'>Tanggal Lahir </label>
+                        <input type="date" ng-model="data.date_of_birth" ng-click="vm.valiForm()" md-placeholder="Enter date"></input>
+                    </md-input-container>
                 </div>
             </div>
         </div>
