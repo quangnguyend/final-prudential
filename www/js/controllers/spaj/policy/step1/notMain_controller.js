@@ -110,7 +110,8 @@ function phNotMainCtrl($scope, $state, $rootScope, SpajService) {
       }
     })
 
-    $rootScope.nextStep()
+    $state.go('app.active_policy')
+    //$rootScope.nextStep()
   }
   initPage(rootSpajData)
 }

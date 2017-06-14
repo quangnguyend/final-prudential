@@ -18,7 +18,7 @@
                     <md-input-container class="md-block">
                         <label class="input-label asterisk">Tempat</label>
                         <md-select ng-model="data.address" name="address" required>
-                            <md-option ng-repeat="birthplace in vm.birthplaces" value="{{birthplace.code}}"><em>{{birthplace.name}}</em></md-option>
+                            <md-option ng-repeat="birthplace in vm.birthplaces" ng-value="{{birthplace.code}}"><em>{{birthplace.name}}</em></md-option>
                         </md-select>
                         <div ng-messages="insured.address.$error" ng-show="insured.address.$touched">
                             <div ng-show="insured.address.$error.required">Pertanyaan ini wajib diisi</div>
@@ -146,13 +146,18 @@
     </div>
     <div class='item' ng-show="data.expires === 'limited'">
         <div class="row-no-padding">
-            <div class="row">
+            <!--<div class="row">
                 <label class="item-stacked-label">
                 <div class="input-label">Tanggal Kadalauwarsa</div>
               </label>
-            </div>
-            <div class="row left_input_date input_full_width">
-                <md-datepicker ng-model="" md-placeholder="Enter date" md-open-on-focus></md-datepicker>
+            </div>-->
+           <div class="row left_input_date input_full_width">
+               <md-input-container class="md-block" flex-gt-sm>
+                   <label class='asterisk'>Tanggal Kadalauwarsa</label>
+                   <md-datepicker ng-model="data.date_of_birth" md-placeholder="Enter date" md-open-on-focus></md-datepicker>
+               </md-input-container>
+
+                <!--<md-datepicker md-placeholder="Enter date" md-open-on-focus></md-datepicker>-->
             </div>
         </div>
     </div>
@@ -180,7 +185,7 @@
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label>Enter </label>
-                <input type="text" ng-model=''>
+                <input type="text" >
             </md-input-container>
         </div>
     </div>

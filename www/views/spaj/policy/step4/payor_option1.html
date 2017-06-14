@@ -140,6 +140,27 @@
             </div>
           </div>
           <div class='item '>
+            <div class="row-no-padding">
+              <div class="row">
+                <label class="item-stacked-label">
+                  <div class="input-label">Pekerjaan</div>
+                </label>
+              </div>
+              <div class="row">
+                <md-autocomplete class="md-block"
+                    md-selected-item="selectedItem"
+                    md-search-text="searchText"
+                    md-items="item in querySearch(searchText)"
+                    md-item-text="item.name"
+                    md-min-length="0">
+                  <md-item-template>
+                    <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.name}}</span>
+                  </md-item-template>
+                </md-autocomplete>
+              </div>
+            </div>
+          </div>
+          <div class='item '>
             <div class="row-no-padding">         
                <md-input-container class="md-block"  md-no-float >
                 <label class="item-stacked-label">
@@ -258,7 +279,6 @@
               </div>
             </div>
           </div>
-
           <div class='item '>
             <div class="row-no-padding">
               <div class="row">
@@ -408,13 +428,13 @@
             </div>
           </div>
           <div class="item">
-            <di class="row-no-padding">
+            <div class="row-no-padding">
               <div class="row">
                 <div class="button-block add_icon">
                   <a class="button" ng-click="vm.addPhone()"><i class="icon ion-ios-plus-empty"></i> <span>Tampah Kontak</span></a>
                 </div>
               </div>
-            </di>
+            </div>
           </div>
           <div class="item">
             <h1 class="text-center description bold">Apakah (Calon) Pembayar Premi/Kontributor memiliki pekerjaan/usaha/bisnis lain di luar pekerjaan utama?</h1>
@@ -434,7 +454,6 @@
             <label>
               Sumber Penghasilan Rutin per bulan
             </label>
-            </div>
             <div class="row responsive-sm">
               <div class="col-50">
                 <ion-checkbox class="policy-checkbox" ng-model="data.policyHolder.main_primary_insured">Gaji</ion-checkbox>
