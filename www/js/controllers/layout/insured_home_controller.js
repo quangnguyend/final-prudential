@@ -20,14 +20,22 @@ function insuredHomeCtrl($scope, $rootScope, $attrs, $timeout, SpajService) {
   }
   // ********
   $scope.$watchCollection('data', function (newVal) {
-    if (newVal.name != '' && newVal.address != '' && newVal.date_of_birth != '' && newVal.gender != ''
-      && newVal.occupation != '' && newVal.identitas != '' && newVal.alamat_kantor != ''
-      && newVal.provinsi != '' && newVal.kabupaten != '') {
-      SpajService.setData('step1_valid', { isValid: true });
-    } else {
-      SpajService.setData('step1_valid', { isValid: false });
-    }
+    SpajService.setData('step1_valid', { isValid: vm.valiForm() });
   });
+
+  vm.valiForm = function () {
+    if ($scope.insured.$error && $scope.insured.$invalid) {
+      return false;
+    }
+    else {
+      if ($scope.data.taxstatus.other === false && $scope.data.taxstatus.usa === false && $scope.data.taxstatus.indo === false)
+      {
+        return false;
+      }
+      return true;
+    }
+  }
+
   vm.insuredData = {
     address: [{
       rumah_tel: null,
@@ -440,18 +448,7 @@ function insuredHomeCtrl($scope, $rootScope, $attrs, $timeout, SpajService) {
     { name: 'Zimbabwe', code: 'ZW' }
   ]
 
-  vm.valiForm = function () {
-    if ($scope.insured.$error && $scope.insured.$invalid) {
-      return false;
-    }
-    else {
-      if ($scope.data.taxstatus.other === false && $scope.data.taxstatus.usa === false && $scope.data.taxstatus.indo === false)
-      {
-        return false;
-      }
-      return true;
-    }
-  }
+
   /**
    * Search for countries... use $timeout to simulate
    * remote dataservice call.

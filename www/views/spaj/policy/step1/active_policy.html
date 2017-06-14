@@ -1,83 +1,105 @@
-<div id="" class="has-bottom-bar active-insurance-page">
-  <form>
-    <div class="list">
-      <div class="item">
-        <h1 class="text-center description">Apakah Calon Tertanggung juga sebagai Tertanggung pada Polis lain di Prudential dan/atau Perusahaan Asuransi Jiwa
-          lain?</h1>
-        <div class="clearfix">
-          <div class="float-left col-5">&nbsp;</div>
-          <div class="float-left col-95">
-            <div class="row">
-              <div class="button-bar">
-                <a class="button col col-50" grouped-radio="true" ng-model="vm.policy.apaka">Ya</a>
-                <a class="button col col-50" grouped-radio="false" ng-model="vm.policy.apaka">Tidak</a>
+<ion-view cache-view="false" id="spaj-start">
+  <ion-nav-title>
+    <custom-header title='Polis asuransi aktif'></custom-header>
+  </ion-nav-title>
+  <ion-nav-buttons side="left">
+    <button class="button back-button buttons button-clear header-item" ng-click="$root.goSpajStart()">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <step-process></step-process>
+    <div id="SPAJ">
+      <div class='row tab-menu'>
+        <div class='col' ng-click='vm.switchTab(vm.policy_holder_tab)' ng-class='vm.currentTab===vm.policy_holder_tab?"active":""'><span class="d-table"><span class="d-table-cell">Pemegang Polis</span></span>
+        </div>
+        <div class='col' ng-click='vm.switchTab(vm.main_insured_tab)' ng-class='vm.currentTab===vm.main_insured_tab?"active":""'><span class="d-table"><span class="d-table-cell">Tertanggung Utama</span></span>
+        </div>
+        <div class='col' ng-repeat='tab in vm.additionalList track by $index' ng-click='vm.switchTab(tab.id, tab.index)' ng-class='vm.currentTab===tab.id?"active":""'><span class="d-table"><span class="d-table-cell">{{tab.name}}</span></span>
+        </div>
+        <div ng-if='vm.additionalList.length<2 && vm.currentPage != "app.active_policy"' class='col blur-text' ng-click='vm.addAdditionalTab()'><span class="d-table"><span class="d-table-cell">+ Tertanggung Tambahan</span></span>
+        </div>
+      </div>
+    </div>
+    <div id="" class="has-bottom-bar active-insurance-page">
+      <form name="activePolicyForm">
+        <div class="list">
+          <div class="item">
+            <h1 class="text-center description">Apakah Calon Tertanggung juga sebagai Tertanggung pada Polis lain di Prudential dan/atau Perusahaan Asuransi Jiwa
+              lain?</h1>
+            <div class="clearfix">
+              <div class="float-left col-5">&nbsp;</div>
+              <div class="float-left col-95">
+                <div class="row">
+                  <div class="button-bar">
+                    <a class="button col col-50" grouped-radio="true" ng-model="vm.policy.apaka">Ya</a>
+                    <a class="button col col-50" grouped-radio="false" ng-model="vm.policy.apaka">Tidak</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="m-gap-30" ng-show="vm.policy.apaka">
-          <ul>
-            <li class="clearfix m-gap-30" ng-repeat="n in vm.policy.items[insuredName]">
-              <div class="float-left col-5 col-padding"><span class="row-number">{{$index + 1}}</span></div>
-              <div class="float-left col-95">
-                <div class="row row-no-padding">
-                  <div class="col col-25 col-padding">
-                    <md-input-container class="md-block">
-                      <label class="input-label">Tipe Asuransi</label>
-                      <md-select ng-model="n.type">
-                        <md-option ng-repeat="type in vm.policy.options.tipe" value="{{type.value}}">{{type.name}}</md-option>
-                      </md-select>
-                    </md-input-container>
-                  </div>
-                  <div class="col col-25 col-padding">
-                    <md-input-container class="md-block" flex-gt-sm>
-                      <label>Perusahaan</label>
-                      <input ng-model="n.company" required />
-                    </md-input-container>
-                  </div>
-                  <div class="col col-30 col-padding">
+          <div class="item">
+            <div class="m-gap-30" ng-show="vm.policy.apaka">
+              <ul>
+                <li class="clearfix m-gap-30" ng-repeat="n in vm.policy.items[insuredName]">
+                  <div class="float-left col-5 col-padding"><span class="row-number">{{$index + 1}}</span></div>
+                  <div class="float-left col-95">
                     <div class="row row-no-padding">
-                      <div class="col col-60">
-                        <md-input-container class="md-block" flex-gt-sm>
-                          <label>Uang Pertanggungan</label>
-                          <input ng-model="n.sum" required />
+                      <div class="col col-33 col-padding">
+                        <md-input-container class="md-block">
+                          <label class="input-label">Tipe Asuransi</label>
+                          <md-select ng-model="n.type" name="insurance_type_{{$index}}">
+                            <md-option ng-repeat="type in vm.policy.options.tipe" ng-value="{{type.value}}">{{type.name}}</md-option>
+                          </md-select>
                         </md-input-container>
                       </div>
-                      <div class="col  col-40">
+                      <div class="col col-33 col-padding">
+                        <md-input-container class="md-block" flex-gt-sm>
+                          <label>Perusahaan</label>
+                          <input name="company_{{$index}}" ng-model="n.company" required />
+                        </md-input-container>
+                        <div ng-show="activePolicyForm['company_' + $index].$touched && activePolicyForm['company_' + $index].$invalid" class="error sm-font">! Input salah, silakan </div>
+                      </div>
+                      <div class="col col-33 col-padding">
+                        <md-input-container class="md-block" flex-gt-sm>
+                          <label>Uang Pertanggungan</label>
+                          <input name="sum_{{$index}}" ng-model="n.sum" required />
+                        </md-input-container>
+                        <div ng-show="activePolicyForm['sum_' + $index].$touched && activePolicyForm['sum_' + $index].$invalid" class="error sm-font">! Input salah, silakan </div>
+                      </div>
+                    </div>
+                    <div class="row row-no-padding">
+                      <div class="col col-33 col-padding">
                         <md-input-container class="md-block">
                           <label>IDR</label>
                           <md-select ng-model="n.idr">
                             <md-option ng-repeat="currency in vm.policy.options.tipe" value="{{currency.value}}">{{currency.name}}</md-option>
                           </md-select>
                         </md-input-container>
-
+                      </div>
+                      <div class="col col-padding">
+                        <md-input-container class="md-block">
+                          <label class="input-label">Substandard</label>
+                          <md-select name="substandard_{{$index}}" ng-model="n.substandard">
+                            <md-option ng-repeat="type in vm.policy.options.substandard" value="{{type.value}}">{{type.name}}</md-option>
+                          </md-select>
+                        </md-input-container>
                       </div>
                     </div>
-
                   </div>
-                  <div class="col col-20 col-padding">
-                    <div class="row row-no-padding">
-                      <md-input-container class="md-block">
-                        <label class="input-label">Substandard</label>
-                        <md-select ng-model="n.substandard">
-                          <md-option ng-repeat="type in vm.policy.options.substandard" value="{{type.value}}">{{type.name}}</md-option>
-                        </md-select>
-                      </md-input-container>
-                    </div>
-
-                  </div>
-                </div>
-
-              </div>
-            </li>
-          </ul>
-          <div class="clearfix"></div>
-          <div class="m-gap-30"><button class="button button-stable button-block float-right col-95" ng-click="vm.policy.addActivePolicy()">  <i class="ion-ios-plus-empty"></i> <span class="txt-add-policy"> Tambah Polis</span></button></div>
-          <div class="clearfix"></div>
+                </li>
+              </ul>
+              <div class="clearfix"></div>
+              <div class="m-gap-30"><button class="button button-stable button-block float-right col-95" ng-click="vm.policy.addActivePolicy()">  <i class="ion-ios-plus-empty"></i> <span class="txt-add-policy"> Tambah Polis</span></button></div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
-  </form>
-</div>
+  </ion-content>
+  <ion-footer-bar class="bar bar-footer bar-assertive">
+    <div class="btn" ng-click="vm.nextClickHandle()">Lanjutkan</div><button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button>
+  </ion-footer-bar>
+</ion-view>
