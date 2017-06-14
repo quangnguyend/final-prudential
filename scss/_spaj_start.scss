@@ -95,7 +95,23 @@
   .no-padding-top {
     padding-top: 0px;
   }
-
+  .md-block{
+    &+.message{
+      margin-top:-30px;
+      &.no-margin{
+         margin-top:0px;
+      }
+    }
+  }
+  .align_column{
+    flex-direction: column;
+  }
+  .message{
+    color: $pru_red; 
+  }
+  .other_option{
+    margin-left:60px
+  }
   .list .item .small-question{
     @extend .standard-body-small;
     white-space: normal;

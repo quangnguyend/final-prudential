@@ -639,7 +639,12 @@ select {
     height: 300px;
   }
 }
-#health_question1 .message{color:#DA291C}
+#health_question1 .message{
+  color:$pru_red;
+  &.space_top{
+    margin-top:10px;
+  }
+}
 
 @media only screen and (min-width: 768px) {
   .body, body *, label.item-stacked-label, body label, label.item, .item select, #step-header select {

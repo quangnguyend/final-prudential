@@ -71,7 +71,7 @@ function otherHealthCtrl ($scope, $rootScope, $state, $ionicScrollDelegate, $loc
   }
 
   vm.scrollTo = function (id) {
-   var STEP_HEIGHT = $('.multi-step').height() + 140
+    var STEP_HEIGHT = $('.multi-step').height() + 140
     var distance = $('#' + id) && $('#' + id).position().top + STEP_HEIGHT
     $('#' + id).addClass('_active');
     $ionicScrollDelegate.scrollTo(0, distance, true)

@@ -365,7 +365,7 @@ function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog,
       }
     ],
     frekuensi:[
-       {
+      {
         value:1, name:'1 kali'
       },
       {
@@ -485,7 +485,7 @@ function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog,
     vm.resetObject(vm.healthData.respiratoryPu)
   }
   vm.respiPuOption={
-     kapan:[
+    kapan:[
       {
         value:1, name:'< 1 tahun lalu'
       },
@@ -550,7 +550,7 @@ function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog,
       }
     ],
     kategori:[
-       {
+      {
         value:1, name:'Jinak'
       },
       {

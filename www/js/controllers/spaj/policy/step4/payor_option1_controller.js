@@ -31,6 +31,11 @@ function payorOption1Ctrl ($scope, $rootScope, $state, DataService, $ionicScroll
       phone_gsm : ''
     });
   };
+  vm.pattern={
+    textOnly: new RegExp(/^[a-zA-Z\s]*$/),
+    nonDesimal: new RegExp(/^\d+\.\d{0,3}$/),
+    alphanumeric: new RegExp(/^[a-zA-Z0-9 ]+$/)
+  }
   // TODO
   SpajService.setData('payor_premium', {isComplete: validator()})
   function validator () {
