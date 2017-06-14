@@ -11,7 +11,12 @@ function insuredHomeCtrl($scope, $rootScope, $attrs, $timeout, SpajService) {
     identitas: '',
     alamat_kantor: '',
     provinsi: '',
-    kabupaten: ''
+    kabupaten: '',
+    taxstatus:{
+      other:false,
+      usa:false,
+      indo:false
+    }
   }
   // ********
   $scope.$watchCollection('data', function (newVal) {
@@ -69,6 +74,7 @@ function insuredHomeCtrl($scope, $rootScope, $attrs, $timeout, SpajService) {
 
   $scope.showAddress = false
   $scope.changeAddress = function (v) {
+    vm.valiForm();
     if (v == 'Alamat Lain') {
       $scope.showAddress = true
     } else {
@@ -433,6 +439,19 @@ function insuredHomeCtrl($scope, $rootScope, $attrs, $timeout, SpajService) {
     { name: 'Zambia', code: 'ZM' },
     { name: 'Zimbabwe', code: 'ZW' }
   ]
+
+  vm.valiForm = function () {
+    if ($scope.insured.$error && $scope.insured.$invalid) {
+      return false;
+    }
+    else {
+      if ($scope.data.taxstatus.other === false && $scope.data.taxstatus.usa === false && $scope.data.taxstatus.indo === false)
+      {
+        return false;
+      }
+      return true;
+    }
+  }
   /**
    * Search for countries... use $timeout to simulate
    * remote dataservice call.
@@ -456,4 +475,5 @@ function insuredHomeCtrl($scope, $rootScope, $attrs, $timeout, SpajService) {
       return (country.name.toLowerCase().indexOf(query.toLowerCase()) === 0)
     }
   }
+
 }
