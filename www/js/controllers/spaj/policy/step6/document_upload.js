@@ -8,6 +8,8 @@ function documentUploadCtrl ($ionicPlatform, $scope, $rootScope, $state, SpajSer
   var step1 = SpajService.getData('start')
 
   vm.tabs = []
+  vm.tabs = [{name: 'Pembayar premi', id: 'premium_payers'},
+    {name: 'Tertanggung utama', id: 'main_issue'}]
 
   if (typeof spajData !== 'undefined') {
     if (typeof spajData.session2 !== 'undefined' && spajData.session2 === 'lainnya') {
@@ -30,7 +32,7 @@ function documentUploadCtrl ($ionicPlatform, $scope, $rootScope, $state, SpajSer
   vm.tabs.forEach(function (tab) {
     var tabKey = tab.id
     vm.data[tabKey] = [{
-      'document_name': '<Nama dokumen>',
+      'document_name': '',
       'document_type': '',
       'document_image': ''
     }]
@@ -53,7 +55,7 @@ function documentUploadCtrl ($ionicPlatform, $scope, $rootScope, $state, SpajSer
 
   vm.addDocument = function () {
     vm.data[vm.currentTab].push({
-      'document_name': '<Nama dokumen>',
+      'document_name': '',
       'document_type': '',
       'document_image': ''
     })

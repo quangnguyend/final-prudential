@@ -5,7 +5,7 @@
   <ion-content>
     <step-process></step-process>
     <div class="list list-inset" id='policy_beneficiary'>
-      <form name="myForm">
+      <form name="beneficiaries">
         <ul>
           <li class="m-gap-30" ng-repeat="(index, row) in vm.dataBeneficiary" ng-init="vm.isValidated[$index]=true">
             <div class="clearfix">
@@ -15,28 +15,31 @@
                   <div class="col col-33 col-padding">
                     <md-input-container class="md-block" flex-gt-sm>
                       <label>Nama</label>
-                      <input  ng-model="row.name" required ng-blur="vm.validateRow(row,$index)" />
+                      <input name="name_{{$index}}" ng-model="row.name" required ng-blur="vm.validateRow(row,$index)" ng-pattern="/^[0-9a-zA-Z]+$/" />
                     </md-input-container>
+                    <div ng-show="beneficiaries['name_' + $index].$touched && beneficiaries['name_' + $index].$invalid" class="error sm-font">pertanyaan ini wajib diisi</div>
                   </div>
                   <div class="col col-33 col-padding">
                     <md-input-container class="md-block">
                       <label>Hubungan </label>
-                      <md-select ng-init="gender={}" ng-model='gender' ng-model-options="{trackBy: '$value.id'}"  class='blur-text' md-on-close="row.gender=gender.name; vm.validateRow(row,$index)" required >
+                      <md-select ng-init="gender={}" name="gender_{{$index}}" ng-model='gender' ng-model-options="{trackBy: '$value.id'}"  class='blur-text' md-on-close="row.gender=gender.name; vm.validateRow(row,$index)" required >
                         <md-option ng-repeat='value in vm.genderData' ng-value='{{value}}'>
                           {{value.name}}
                         </md-option>
                       </md-select>
                     </md-input-container>
+                    <div ng-show="beneficiaries['gender_' + $index].$touched && beneficiaries['gender_' + $index].$invalid" class="error sm-font">pertanyaan ini wajib diisi</div>
                   </div>
                   <div class="col col-33 col-padding">
                     <md-input-container class="md-block">
                       <label>Jenis Kelamin</label>
-                      <md-select ng-init="relationship={}" ng-model='relationship' class='blur-text' md-on-close="row.relationship = relationship.name; vm.validateRow(row,$index)" required>
+                      <md-select ng-init="relationship={}" name="relationship_{{$index}}"  ng-model='relationship' class='blur-text' md-on-close="row.relationship = relationship.name; vm.validateRow(row,$index)" required>
                         <md-option ng-repeat='value in vm.relationshipData' ng-value='{{value}}' >
                           {{value.name}}
                         </md-option>
                       </md-select>
                     </md-input-container>
+                    <div ng-show="beneficiaries['relationship_' + $index].$touched && beneficiaries['relationship_' + $index].$invalid" class="error sm-font">pertanyaan ini wajib diisi</div>
                   </div>
                 </div>
                 <div class="row row-no-padding">
@@ -50,8 +53,9 @@
                   <div class="col col-33 col-padding">
                     <md-input-container class="md-block" flex-gt-sm>
                       <label>%</label>
-                      <input ng-model="row.share" ng-blur="vm.validateRow(row, $index)" required/>
+                      <input name="share_{{$index}}" ng-model="row.share" ng-blur="vm.validateRow(row, $index)" required ng-pattern="/^[0-9]*$/" />
                     </md-input-container>
+                    <div ng-show="beneficiaries['share_' + $index].$touched && beneficiaries['share_' + $index].$invalid" class="error sm-font">pertanyaan ini wajib diisi</div>
                   </div>
                 </div>
               </div>

@@ -2,7 +2,7 @@
   <ion-content>
     <div id="declaration">
       <!--id='declaration'-->
-      <form>
+      <form name="esignForm">
         <div class="list list-inset no-lines">
           <div class='item three-input'>
             <div class="row-no-padding">
@@ -10,23 +10,26 @@
                 <span>Pernyataan tenaga pemasar</span>
               </div>
               <div class="row extra-space">
-                <div class="col">
+                <div class="col col-33">
                   <label class="item-stacked-label">
                     <div class="input-label">Nama Tenaga Pemasar</div>
                   </label>
-                  <input type="text" placeholder="Calvin Widjaya">
+                  <input type="text" name="name_of_marketer" ng-model="vm.data.name_of_marketer" placeholder="Calvin Widjaya" required ng-pattern="/^[0-9a-zA-Z]+$/">
+                  <div ng-show="esignForm.name_of_marketer.$touched && esignForm.name_of_marketer.$invalid" class="error">! Input salah, silakan masukkan huruf</div>
                 </div>
-                <div class="col">
+                <div class="col col-33">
                   <label class="item-stacked-label">
                     <div class="input-label">Unit Tenaga Pemasar</div>
                   </label>
-                  <input type="text" placeholder="GA Power">
+                  <input type="text" placeholder="GA Power" name="marketing_unit" ng-model="vm.data.marketing_unit" ng-pattern="/^[0-9a-zA-Z]+$/" required>
+                  <div ng-show="esignForm.marketing_unit.$touched && esignForm.marketing_unit.$invalid" class="error">! Input salah, silakan masukkan huruf</div>
                 </div>
-                <div class="col">
+                <div class="col col-33">
                   <label class="item-stacked-label">
                     <div class="input-label">Kode Tenaga Pemasar</div>
                   </label>
-                  <input type="text" placeholder="1002334557">
+                  <input type="text" placeholder="1002334557" name="marketing_unit_code" ng-model="vm.data.marketing_unit_code" ng-pattern="/^[0-9]*$/" required>
+                  <div ng-show="esignForm.marketing_unit_code.$touched && esignForm.marketing_unit_code.$invalid" class="error">! Input salah, silakan masukkan huruf</div>
                 </div>
               </div>
             </div>
@@ -42,40 +45,34 @@
                   <label for="option1"></label>
                 </div>
                 <div class="col" ng-class="data.option1? ' active ': 'disable'">
-                  <div class="row">Calon Pemegang Polis </div>
+                  <div class="row">Calon Pemegang Polis  </div>
                   <div class="row">
-                    <div class="col">
-                      <label class="item-stacked-label">
-                        <div class="input-label">Selama</div>
-                      </label>
-                      <select class="form_select" ng-model='data.selama '>
-                        <option selected value>Select</option>
-                        <option>Blue</option>
-                        <option>Green</option>
-                        <option>Red</option>
-                      </select>
+                    <div class="col col-33">
+                      <md-input-container class="md-block mt-0">
+                        <label>Selama</label>
+                        <md-select name="policyholder_duration" ng-model="vm.data.policyholder.duration" required>
+                          <md-option value="Option 1">5-10 tahun</md-option>
+                        </md-select>
+                      </md-input-container>
+                      <div ng-show="esignForm.policyholder_duration.$touched && esignForm.policyholder_duration.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
-                    <div class="col">
-                      <label class="item-stacked-label">
-                        <div class="input-label">Sebagai</div>
-                      </label>
-                      <select class="form_select" ng-model='data.selama2 '>
-                        <option selected value>Select</option>
-                        <option>Blue</option>
-                        <option>Green</option>
-                        <option>Red</option>
-                       </select>
+                    <div class="col col-33">
+                      <md-input-container class="md-block mt-0">
+                        <label>Sebagai</label>
+                        <md-select name="policyholder_known_as" ng-model="vm.data.policyholder.known_as" required>
+                          <md-option value="Option 1">Keluarga</md-option>
+                        </md-select>
+                      </md-input-container>
+                      <div ng-show="esignForm.policyholder_known_as.$touched && esignForm.policyholder_known_as.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
-                    <div class="col">
-                      <label class="item-stacked-label">
-                        <div class="input-label">Jelaskan</div>
-                      </label>
-                      <select class="form_select" ng-model='data.selama3 '>
-                        <option selected value>Select</option>
-                        <option>Blue</option>
-                        <option>Green</option>
-                        <option>Red</option>
-                      </select>
+                    <div class="col col-33">
+                      <div>
+                        <md-input-container flex-gt-sm>
+                          <label>Jelaskan</label>
+                          <input type="text" name="policyholder_explain" ng-pattern="/^[0-9a-zA-Z]+$/" ng-model="vm.data.policyholder.explain" required />
+                        </md-input-container>
+                      </div>
+                      <div ng-show="esignForm.policyholder_explain.$touched && esignForm.policyholder_explain.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
                   </div>
                 </div>
@@ -86,40 +83,34 @@
                   <label for="option2"></label>
                 </div>
                 <div class="col" ng-class="data.option2? ' active ': 'disable'">
-                  <div class="row">Calon Pemegang Polis </div>
+                  <div class="row">Calon Tertanggung Utama</div>
                   <div class="row">
-                    <div class="col">
-                      <label class="item-stacked-label">
-                        <div class="input-label">Selama</div>
-                      </label>
-                      <select class="form_select" ng-model='data.selama '>
-                        <option selected value>Select</option>
-                        <option>Blue</option>
-                        <option>Green</option>
-                        <option>Red</option>
-                      </select>
+                    <div class="col col-33">
+                      <md-input-container class="md-block mt-0">
+                        <label>Selama</label>
+                        <md-select name="main_insured_duration" ng-model="vm.data.main_insured.duration" required>
+                          <md-option value="Option 1">5-10 tahun</md-option>
+                        </md-select>
+                      </md-input-container>
+                      <div ng-show="esignForm.main_insured_duration.$touched && esignForm.main_insured_duration.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
-                    <div class="col">
-                      <label class="item-stacked-label">
-                        <div class="input-label">Sebagai</div>
-                      </label>
-                      <select class="form_select" ng-model='data.selama2 '>
-                        <option selected value>Select</option>
-                        <option>Blue</option>
-                        <option>Green</option>
-                        <option>Red</option>
-                      </select>
+                    <div class="col col-33">
+                      <md-input-container class="md-block mt-0">
+                        <label>Sebagai</label>
+                        <md-select name="main_insured_known_as" ng-model="vm.data.main_insured.known_as" required>
+                          <md-option value="Option 1">Keluarga</md-option>
+                        </md-select>
+                      </md-input-container>
+                      <div ng-show="esignForm.main_insured_known_as.$touched && esignForm.main_insured_known_as.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
-                    <div class="col">
-                      <label class="item-stacked-label">
-                        <div class="input-label">Jelaskan</div>
-                      </label>
-                      <select class="form_select" ng-model='data.selama3 '>
-                        <option selected value>Select</option>
-                        <option>Blue</option>
-                        <option>Green</option>
-                        <option>Red</option>
-                      </select>
+                    <div class="col col-33">
+                      <div>
+                        <md-input-container flex-gt-sm>
+                          <label>Jelaskan</label>
+                          <input type="text" name="main_insured_explain" ng-pattern="/^[0-9a-zA-Z]+$/" ng-model="vm.data.main_insured.explain" required />
+                        </md-input-container>
+                      </div>
+                      <div ng-show="esignForm.main_insured_explain.$touched && esignForm.main_insured_explain.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
                   </div>
                 </div>
@@ -130,128 +121,72 @@
                   <label for="option3"></label>
                 </div>
                 <div class="col" ng-class="data.option3? ' active ': 'disable'">
-                  <div class="row">Calon Pemegang Polis </div>
+                  <div class="row">Calon Tertanggung Tambahan 1</div>
                   <div class="row">
-                    <div class="col">
-                      <label class="item-stacked-label">
-                        <div class="input-label">Selama</div>
-                      </label>
-                      <select class="form_select" ng-model='data.selama '>
-                        <option selected value>Select</option>
-                        <option>Blue</option>
-                        <option>Green</option>
-                        <option>Red</option>
-                      </select>
+                    <div class="col col-33">
+                      <md-input-container class="md-block mt-0">
+                        <label>Selama</label>
+                        <md-select name="additional_insured_1_duration" ng-model="vm.data.additional_insured_1.duration" required>
+                          <md-option value="Option 1">5-10 tahun</md-option>
+                        </md-select>
+                      </md-input-container>
+                      <div ng-show="esignForm.additional_insured_1_duration.$touched && esignForm.additional_insured_1_duration.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
-                    <div class="col">
-                      <label class="item-stacked-label">
-                        <div class="input-label">Sebagai</div>
-                      </label>
-                      <select class="form_select" ng-model='data.selama2 '>
-                        <option selected value>Select</option>
-                        <option>Blue</option>
-                        <option>Green</option>
-                        <option>Red</option>
-                      </select>
+                    <div class="col col-33">
+                      <md-input-container class="md-block mt-0">
+                        <label>Sebagai</label>
+                        <md-select name="additional_insured_1_known_as" ng-model="vm.data.additional_insured_1.known_as" required>
+                          <md-option value="Option 1">Keluarga</md-option>
+                        </md-select>
+                      </md-input-container>
+                      <div ng-show="esignForm.additional_insured_1_known_as.$touched && esignForm.additional_insured_1_known_as.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
-                    <div class="col">
-                      <label class="item-stacked-label">
-                        <div class="input-label">Jelaskan</div>
-                      </label>
-                      <select class="form_select" ng-model='data.selama3 '>
-                        <option selected value>Select</option>
-                        <option>Blue</option>
-                        <option>Green</option>
-                        <option>Red</option>
-                      </select>
+                    <div class="col col-33">
+                      <div>
+                        <md-input-container flex-gt-sm>
+                          <label>Jelaskan</label>
+                          <input type="text" name="additional_insured_1_explain" ng-pattern="/^[0-9a-zA-Z]+$/" ng-model="vm.data.additional_insured_1.explain" required />
+                        </md-input-container>
+                      </div>
+                      <div ng-show="esignForm.additional_insured_1_explain.$touched && esignForm.additional_insured_1_explain.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="row extra-space">
                 <div class="col col-10">
-                  <input name='checkbox' class='custom_checkbox' type="checkbox" id='option4' ng-model='data.option4' />
-                  <label for="option4"></label>
+                  <input name='checkbox' class='custom_checkbox' type="checkbox" id='option3' ng-model='data.option3' />
+                  <label for="option3"></label>
                 </div>
-                <div class="col" ng-class="data.option4? ' active ': 'disable'">
-                  <div class="row">Calon Pemegang Polis </div>
+                <div class="col" ng-class="data.option3? ' active ': 'disable'">
+                  <div class="row">Calon Tertanggung Tambahan 2</div>
                   <div class="row">
-                    <div class="col">
-                      <label class="item-stacked-label">
-                        <div class="input-label">Selama</div>
-                      </label>
-                      <select class="form_select" ng-model='data.selama '>
-                        <option selected value>Select</option>
-                        <option>Blue</option>
-                        <option>Green</option>
-                        <option>Red</option>
-                       </select>
+                    <div class="col col-33">
+                      <md-input-container class="md-block mt-0">
+                        <label>Selama</label>
+                        <md-select name="additional_insured_2_duration" ng-model="vm.data.additional_insured_2.duration" required>
+                          <md-option value="Option 1">5-10 tahun</md-option>
+                        </md-select>
+                      </md-input-container>
+                      <div ng-show="esignForm.additional_insured_2_duration.$touched && esignForm.additional_insured_2_duration.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
-                    <div class="col">
-                      <label class="item-stacked-label">
-                        <div class="input-label">Sebagai</div>
-                      </label>
-                      <select class="form_select" ng-model='data.selama2 '>
-                        <option selected value>Select</option>
-                        <option>Blue</option>
-                        <option>Green</option>
-                        <option>Red</option>
-                      </select>
+                    <div class="col col-33">
+                      <md-input-container class="md-block mt-0">
+                        <label>Sebagai</label>
+                        <md-select name="additional_insured_2_known_as" ng-model="vm.data.additional_insured_2.known_as" required>
+                          <md-option value="Option 1">Keluarga</md-option>
+                        </md-select>
+                      </md-input-container>
+                      <div ng-show="esignForm.additional_insured_2_known_as.$touched && esignForm.additional_insured_2_known_as.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
-                    <div class="col">
-                      <label class="item-stacked-label">
-                        <div class="input-label">Jelaskan</div>
-                      </label>
-                      <select class="form_select" ng-model='data.selama3 '>
-                        <option selected value>Select</option>
-                        <option>Blue</option>
-                        <option>Green</option>
-                        <option>Red</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row extra-space">
-                <div class="col col-10">
-                  <input name='checkbox' class='custom_checkbox' type="checkbox" id='option5' ng-model='data.option5' />
-                  <label for="option5"></label>
-                </div>
-                <div class="col" ng-class="data.option5? ' active ': 'disable'">
-                  <div class="row">Calon Pemegang Polis </div>
-                  <div class="row">
-                    <div class="col">
-                      <label class="item-stacked-label">
-                        <div class="input-label">Selama</div>
-                      </label>
-                      <select class="form_select" ng-model='data.selama '>
-                        <option selected value>Select</option>
-                        <option>Blue</option>
-                        <option>Green</option>
-                        <option>Red</option>
-                      </select>
-                    </div>
-                    <div class="col">
-                      <label class="item-stacked-label">
-                        <div class="input-label">Sebagai</div>
-                      </label>
-                      <select class="form_select" ng-model='data.selama2 '>
-                        <option selected value>Select</option>
-                        <option>Blue</option>
-                        <option>Green</option>
-                        <option>Red</option>
-                      </select>
-                    </div>
-                    <div class="col">
-                      <label class="item-stacked-label">
-                        <div class="input-label">Jelaskan</div>
-                      </label>
-                      <select class="form_select" ng-model='data.selama3 '>
-                        <option selected value>Select</option>
-                        <option>Blue</option>
-                        <option>Green</option>
-                        <option>Red</option>
-                      </select>
+                    <div class="col col-33">
+                      <div>
+                        <md-input-container flex-gt-sm>
+                          <label>Jelaskan</label>
+                          <input type="text" name="additional_insured_2_explain" ng-pattern="/^[0-9a-zA-Z]+$/" ng-model="vm.data.additional_insured_2.explain" required />
+                        </md-input-container>
+                      </div>
+                      <div ng-show="esignForm.additional_insured_2_explain.$touched && esignForm.additional_insured_2_explain.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
                   </div>
                 </div>
@@ -262,32 +197,37 @@
           <div class='item no-wp '>
             <div class="row-no-padding">
               <div class="">
-                <ion-checkbox>Semua keterangan yang terdapat di SPAJ ini adalah semata-mata keterangan yang diberikan oleh Calon Pemegang
+                <ion-checkbox name="confirm_all_declaration" ng-model="vm.data.confirm_all_declaration">Semua keterangan yang terdapat di SPAJ ini adalah semata-mata keterangan yang diberikan oleh Calon Pemegang
                   Polis dan/atau Calon Tertanggung Utama dan/atau Calon Tertanggung Tambahan 1 dan/atau Calon Pembayar Premi,
                   SAYA tidak menyembunyikan informasi atau keterangan apapun yang telah diberikan oleh Calon Pemegang Polis
                   dan/atau Calon Tertanggung Utama dan/atau Calon Tertanggung Tambahan 1 dan/atau Calon Pembayar Premi yang
                   dapat memengaruhi penerimaan SPAJ ini.</ion-checkbox>
+                <div ng-show="vm.data.confirm_all_declaration == false" class="error">Silakan periksa kotak ini jika Anda ingin melanjutkan</div>
               </div>
               <div class="">
-                <ion-checkbox>SAYA telah menerangkan semua isi butir pernyataan di SPAJ dengan jelas dan menjelaskan informasi / keterangan
+                <ion-checkbox name="explained_all_questions" ng-model="vm.data.explained_all_questions">SAYA telah menerangkan semua isi butir pernyataan di SPAJ dengan jelas dan menjelaskan informasi / keterangan
                   mengenai produk asuransi dan manfaatnya sesuai dengan Ketentuan Umum dan Ketentuan Khusus Polis.</ion-checkbox>
+                <div ng-show="vm.data.explained_all_questions == false" class="error">Silakan periksa kotak ini jika Anda ingin melanjutkan</div>
               </div>
               <div class="">
-                <ion-checkbox>SAYA telah bertemu dan melihat secara langsung kondisi terakhir Calon Tertanggung Utama dan/atau Calon Tertanggung
+                <ion-checkbox name="witness_latest_conditions" ng-model="vm.data.witness_latest_conditions">SAYA telah bertemu dan melihat secara langsung kondisi terakhir Calon Tertanggung Utama dan/atau Calon Tertanggung
                   Tambahan 1 pada saat SPAJ ini diisi dan ditandatangani di hadapan SAYA oleh Calon Pemegang Polis dan/atau
                   Calon Tertanggung Utama dan/atau Calon Tertanggung Tambahan 1.
                 </ion-checkbox>
+                <div ng-show="vm.data.witness_latest_conditions == false" class="error">Silakan periksa kotak ini jika Anda ingin melanjutkan</div>
               </div>
               <div class="">
-                <ion-checkbox>SAYA bersedia menerima sanksi dari PT Prudential Life Assurance sebagaimana diatur dalam Perjanjian Keagenan
+                <ion-checkbox name="receive_sanctions" ng-model="vm.data.receive_sanctions">SAYA bersedia menerima sanksi dari PT Prudential Life Assurance sebagaimana diatur dalam Perjanjian Keagenan
                   dan/atau Perjanjian Manajer Keagenan bilamana salah satu atau lebih pernyataan di atas tidak benar atau
                   salah
                 </ion-checkbox>
+                <div ng-show="vm.data.receive_sanctions == false" class="error">Silakan periksa kotak ini jika Anda ingin melanjutkan</div>
               </div>
               <div class="">
-                <ion-checkbox>SAYA telah menerangkan dan memberikan penjelasan mengenai Ringkasan Informasi Produk dan/atau Layanan PRUlink
+                <ion-checkbox name="gave_explaination" ng-model="vm.data.gave_explaination">SAYA telah menerangkan dan memberikan penjelasan mengenai Ringkasan Informasi Produk dan/atau Layanan PRUlink
                   assurance account kepada Calon Pemegang Polis dan/atau Calon Tertanggung Utama dan/atau Calon Tertanggung
                   Tambahan 1.</ion-checkbox>
+                <div ng-show="vm.data.gave_explaination == false" class="error">Silakan periksa kotak ini jika Anda ingin melanjutkan</div>
               </div>
             </div>
           </div>
@@ -297,6 +237,7 @@
             <div class="ibox-content">
               <canvas class='signature-pad' id='agent-signature-canvas'></canvas>
             </div>
+            <div ng-show="vm.data.signature[0].esignatureObj.isEmpty()" class="error">Silakan tanda tangan</div>
           </div>
 
           <div class='item three-input '>
@@ -329,11 +270,13 @@
           <div class='item no-wp '>
             <div class="row-no-padding">
               <div class="">
-                <ion-checkbox>Menyelesaikan dan menerima saran agen saya melalui tujuan keuangan dan penilaian risiko saya</ion-checkbox>
+                <ion-checkbox ng-model="vm.data.accepted_agency">Menyelesaikan dan menerima saran agen saya melalui tujuan keuangan dan penilaian risiko saya</ion-checkbox>
+                <div ng-show="vm.data.accepted_agency == false" class="error">Silakan periksa kotak ini jika Anda ingin melanjutkan</div>
               </div>
               <div class="">
-                <ion-checkbox>Selesaikan formulir SPAJ sesuai pengetahuan saya, jika sebaliknya aplikasi ini akan dianggap batal.
+                <ion-checkbox ng-model="vm.data.complete_spaj">Selesaikan formulir SPAJ sesuai pengetahuan saya, jika sebaliknya aplikasi ini akan dianggap batal.
                 </ion-checkbox>
+                <div ng-show="vm.data.complete_spaj == false" class="error">Silakan periksa kotak ini jika Anda ingin melanjutkan</div>
               </div>
             </div>
           </div>
@@ -342,6 +285,7 @@
             <div class="ibox-content">
               <canvas class='signature-pad' id='policyholder-signature-canvas'></canvas>
             </div>
+            <div ng-show="vm.data.signature[1].esignatureObj.isEmpty()" class="error">Silakan tanda tangan</div>
           </div>
           <div ng-repeat="(index, i) in numberOfAdditional">
             <div class='item ibox'>
@@ -363,7 +307,7 @@
   </ion-content>
   <ion-footer-bar class="bar bar-footer bar-assertive no-padding no-lines">
     <a title="Continue" class="btn gray-btn">Email PDF<button class="button button-clear"></button></a>
-    <a href="#/app/payment_topup" class="btn">Lanjuktan<button class="button button-clear"></button></a>
+    <a ng-click="vm.handleSubmit()" class="btn">Lanjuktan<button class="button button-clear"></button></a>
   </ion-footer-bar>
 
 </ion-view>

@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="wrapper has-bottom-bar upload-document-page mt-30" ng-show="vm.tabs.length > 0">
-      <form>
+      <form name="uploadForm">
         <div class="list list-inset">
           <div class='item'>
             <h1 class="text-center description">Kami membutuhkan beberapa dokumen dalam mengajukan polis ini</h1>
@@ -22,13 +22,14 @@
                   <div class="row row-no-padding">
                     <div class="col col-67 col-padding">
                       <md-input-container class="select-box md-block" md-no-float>
-                        <label class="input-label">{{item.document_name}}</label>
-                        <md-select ng-model="item.document_type">
-                          <md-option ng-repeat="type in vm.documentType" value="{{type.value}}">
+                        <label class="input-label">Nama dokumen</label>
+                        <md-select name="document_type_{{$index}}" ng-model="item.document_type" ng-model-options="{trackBy: '$value.id'}" ng-init="document_type={}" md-on-close="item.document_type = document_type.name;" required>
+                          <md-option ng-repeat="type in vm.documentType" value="{{type}}">
                             {{type.name}}
                           </md-option>
                         </md-select>
                       </md-input-container>
+                      <div ng-show="uploadForm['document_type_' + $index].$touched && uploadForm['document_type_' + $index].$invalid" class="error sm-font">Harap upload dokumen yang sudah ditentukan</div>
                     </div>
                     <div class="col col-33 col-padding">
                       <div class="img-options" ng-if="item.document_image != ''">
