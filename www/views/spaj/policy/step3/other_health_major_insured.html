@@ -1,4 +1,5 @@
  <div class="list list-inset">
+   <ng-form name='vm.otMjInsured'>
   <div class="item">
     <h1 class="description">{{vm.questions.question_1.title}}</h4>
     <md-input-container class="md-block">
@@ -8,27 +9,30 @@
          </md-option>
       </md-select>
     </md-input-container>
-    <md-input-container class="md-block"  md-no-float >
-      <input  placeholder="Enter" ng-model="vm.questions.question_1.other_answer" />
+    <md-input-container class="md-block"  md-no-float ng-show="vm.questions.question_1.heath_check=='value7'" >'
+      <input name='question1_other'  placeholder="Enter" ng-model="vm.questions.question_1.other_answer" ng-maxlength="100" ng-pattern='vm.pattern.textOnly'  />
     </md-input-container>
+    <p class="message" ng-show='vm.otMjInsured.question1_other.$invalid'>! Input salah, silakan masukkan huruf</p>
     <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_2')">Berikutnya</button>
   </div>
-  <div  class="item" ng-class="vm.questions.question_2.active == false? 'disabled': ''" class="mt-50" id="question_2">
+  <div  class="item"  class="mt-50" id="question_2">
     <h1 class="description">{{vm.questions.question_2.title}}</h4>
     <md-input-container  class="md-block"   md-no-float >
-      <input type="date" placeholder="DD/MM/YYYY" onblur="(this.type='date')" ng-model="vm.questions.question_2.date_inspection">
+      <input type="date" name='kapan' placeholder="DD/MM/YYYY" onblur="(this.type='date')" ng-model="vm.questions.question_2.date_inspection">
     </md-input-container>
+    <p class="message"  ng-show='vm.otMjInsured.kapan.$invalid'>Silakan masukkan DDMMYYYY</p>
     
     <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_3')">Berikutnya</button>
   </div>
-  <div  class="item" ng-class="vm.questions.question_3.active == false? 'disabled': ''" class="mt-50" id="question_3">
+  <div  class="item"  class="mt-50" id="question_3">
     <h1 class="description">{{vm.questions.question_3.title}}</h4>
     <md-input-container class="md-block" md-no-float >
-      <input placeholder="Enter" ng-model="vm.questions.question_3.examination_reason" />
+      <input name='question_3' placeholder="Enter" ng-model="vm.questions.question_3.examination_reason" ng-maxlength="100" ng-pattern='vm.pattern.textOnly' />
     </md-input-container>
+     <p class="message"  ng-show='vm.otMjInsured.question_3.$invalid'>! Input salah, silakan masukkan huruf</p>
     <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_4')">Berikutnya</button>
   </div>
-  <div  class="item" ng-class="vm.questions.question_4.active == false? 'disabled': ''" class="mt-50" id="question_4">
+  <div  class="item"  class="mt-50" id="question_4">
     <h1 class="description">{{vm.questions.question_4.title}}</h4>
     <div ng-repeat="item in vm.questions.question_4.results">
       <p class="text-right">200 karakter</p>
@@ -39,7 +43,7 @@
     <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_5')">Berikutnya</button>
     <button class="button button-stable button-block mt-30" ng-click="vm.addQuestion4()">+ Tambah tes kesehatan </button>
   </div>
-  <div  class="item" ng-class="vm.questions.question_5.active == false? 'disabled': ''" class="mt-50" id="question_5">
+  <div  class="item" class="mt-50" id="question_5">
     <h1 class="description">{{vm.questions.question_5.title}}</h4>
     <div class="row">
       <div class="col col-padding">
@@ -65,4 +69,5 @@
       </div>
     </div>
   </div>
+  </ng-form>
 </div>

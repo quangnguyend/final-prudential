@@ -273,9 +273,10 @@
   .md-block {
     width: 100%;
     &+.message{
-      color:#F00; margin-top:-30px;
+      margin-top:-30px;
     }
   }
+  .message{color:$pru_red; font-size:14px !important;}
   .button{
     &.button-dark{
       background-color:#5B6770;

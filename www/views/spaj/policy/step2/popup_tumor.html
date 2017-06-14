@@ -14,6 +14,7 @@
       <ion-content delegate-handle="puScroll">
         <div class="md-dialog-content">
           <div id="policy_info_ph_info" class="list list-inset no-lines">
+            <ng-form name='vm.tumorPu'>
             <div class='item _active' id='tumor_1'>
               <div class="row-no-padding">
                 <div class="row">
@@ -37,8 +38,9 @@
                 </div>
                 <div class="option_other" ng-show='vm.healthData.tumorPu.janes_kainnya_option'>
                   <div class="row">
-                    <input type="text" placeholder="Enter" ng-model='vm.healthData.tumorPu.janes.kainnya'>
+                    <input type="text" name='jenis_other' placeholder="Enter" ng-model='vm.healthData.tumorPu.janes.kainnya'  ng-maxlength="100" ng-pattern='vm.pattern.textOnly'>
                   </div>
+                  <p class="message" ng-show='vm.tumorPu.jenis_other.$invalid'>! Input salah, silakan masukkan huruf</p>
                 </div>
               </div>
               <div class="row-no-padding">
@@ -63,8 +65,9 @@
                 </div>
                 <div class="option_other" ng-show='vm.healthData.tumorPu.lokasi_lainnya_option'>
                   <div class="row">
-                    <input type="text" placeholder="Enter" ng-model='vm.healthData.tumorPu.lokasi.lainnya'>
+                    <input type="text" name='lokasi_other' placeholder="Enter" ng-model='vm.healthData.tumorPu.lokasi.lainnya'  ng-maxlength="100" ng-pattern='vm.pattern.textOnly'>
                   </div>
+                  <p class="message" ng-show='vm.tumorPu.lokasi_other.$invalid'>! Input salah, silakan masukkan huruf</p>
                 </div>
               </div>
               <md-input-container class="md-block">
@@ -103,7 +106,7 @@
                   <div class="col-40">
                     <md-input-container class="md-block">
                       <md-select ng-model="vm.healthData.tumorPu.kapan_month_select" placeholder='Kapan'>
-                        <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                        <md-option ng-repeat="m in vm.digestPuOption.month" value="{{m.value}}">{{m.name}}</md-option>
                       </md-select>
                     </md-input-container>
                   </div>
@@ -111,7 +114,7 @@
                   <div class="col-40">
                     <md-input-container class="md-block">
                       <md-select ng-model="vm.healthData.tumorPu.kapan_year_select" placeholder='Year'>
-                        <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                        <md-option ng-repeat="m in vm.digestPuOption.year" value="{{m.value}}">{{m.name}}</md-option>
                       </md-select>
                     </md-input-container>
                   </div>
@@ -120,8 +123,9 @@
               <div class="row-no-padding">
                 <md-input-container class="md-block" flex-gt-sm>
                   <label>Nama Dokter / Rumah Sakit</label>
-                  <input type="text" ng-model="vm.healthData.tumorPu.nama_dokter" />
+                  <input type="text" name='nama_dokter' ng-model="vm.healthData.tumorPu.nama_dokter"  ng-maxlength="100" ng-pattern='vm.pattern.textOnly'/>
                 </md-input-container>
+                <p class="message" ng-show='vm.tumorPu.nama_dokter.$invalid'>! Input salah, silakan masukkan huruf</p>
               </div>
               <div class="row-no-padding">
                 <h1 class="description">Jenis Operasi</h1>
@@ -136,7 +140,7 @@
                         <div class="row">
                           <md-input-container class="md-block">
                             <md-select ng-model='tumor.angkat_tipe' placeholder='Tipe'>
-                              <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                              <md-option ng-repeat="m in vm.tumorPuOption.tipe" value="{{m.value}}">{{m.name}}</md-option>
                             </md-select>
                           </md-input-container>
                         </div>
@@ -144,14 +148,14 @@
                           <div class="col">
                             <md-input-container class="md-block">
                               <md-select ng-model='tumor.angkat_kapan' placeholder='Kapan'>
-                                <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                                 <md-option ng-repeat="m in vm.digestPuOption.month" value="{{m.value}}">{{m.name}}</md-option>
                               </md-select>
                             </md-input-container>
                           </div>
                           <div class="col">
                             <md-input-container class="md-block">
                               <md-select ng-model='tumor.angkat_year' placeholder='Year'>
-                                <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                                 <md-option ng-repeat="m in vm.digestPuOption.year" value="{{m.value}}">{{m.name}}</md-option>
                               </md-select>
                             </md-input-container>
                           </div>
@@ -170,15 +174,15 @@
                         <div class="row">
                           <div class="col">
                             <md-input-container class="md-block">
-                              <md-select ng-model='tumor.payudara_lama_select' placeholder='Lama di Rumah Sakit'>
-                                <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                              <md-select ng-model='tumor.payudara_lama_select' placeholder='kapan'>
+                                  <md-option ng-repeat="m in vm.digestPuOption.month" value="{{m.value}}">{{m.name}}</md-option>
                               </md-select>
                             </md-input-container>
                           </div>
                           <div class="col">
                             <md-input-container class="md-block">
-                              <md-select ng-model='tumor.payudara_lama_select2' placeholder='Lama di Rumah Sakit'>
-                                <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                              <md-select ng-model='tumor.payudara_lama_select2' placeholder='Year'>
+                                <md-option ng-repeat="m in vm.digestPuOption.year" value="{{m.value}}">{{m.name}}</md-option>
                               </md-select>
                             </md-input-container>
                           </div>
@@ -186,7 +190,7 @@
                         <div class="row">
                           <md-input-container class="md-block">
                             <md-select ng-model='tumor.payudara_hasil_select' placeholder='Hasil USG/Mamografi terbaru'>
-                              <md-option ng-repeat="m in fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                              <md-option ng-repeat="m in vm.tumorPuOption.hasil" value="{{m.value}}">{{m.name}}</md-option>
                             </md-select>
                           </md-input-container>
                         </div>
@@ -198,17 +202,21 @@
                   <li class="item item-checkbox">
                     <p>Lainnya</p>
                     <label class="checkbox">
-                <input type="checkbox" ng-model='vm.healthData.tumorPu.jenis_operasi.lainnya'>
-              </label>
-                    <input class="vertical-space" type="text" placeholder="Enter" ng-class="vm.healthData.tumorPu.jenis_operasi.lainnya ? 'active':'disable'"
-                      ng-model='vm.healthData.tumorPu.lainnya_value'>
+                      <input type="checkbox" ng-model='vm.healthData.tumorPu.jenis_operasi.lainnya'>
+                    </label>
                   </li>
                 </ul>
+                <div class="option_other" ng-class="vm.healthData.tumorPu.jenis_operasi.lainnya ? 'active':'disable'">
+                  <div class="row row-no-padding">
+                    <input class="vertical-space" name='jenis_operasi_other' type="text" placeholder="Enter" ng-model='vm.healthData.tumorPu.lainnya_value'  ng-maxlength="100" ng-pattern='vm.pattern.textOnly'>
+                  </div>
+                  <p class="message" ng-show='vm.tumorPu.jenis_operasi_other.$invalid'>! Input salah, silakan masukkan huruf</p>
+                </div>
               </div>
               <div class="row-no-padding">
                 <md-input-container class="md-block">
                   <md-select ng-model='vm.healthData.tumorPu.kategori_select' placeholder='Kategori Tumor'>
-                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                    <md-option ng-repeat="m in vm.tumorPuOption.kategori" value="{{m.value}}">{{m.name}}</md-option>
                   </md-select>
                 </md-input-container>
               </div>
@@ -239,8 +247,9 @@
                         <div class="row">
                           <md-input-container class="md-block" flex-gt-sm>
                             <label>Nama Obat</label>
-                            <input type="text" />
+                            <input type="text"  name='obat_nama' ng-model='vm.healthData.tumorPu.pengo.obat_nama'  ng-maxlength="100" ng-pattern='vm.pattern.textOnly'/>
                           </md-input-container>
+                          <p class="message" ng-show='vm.tumorPu.obat_nama.$invalid'>! Input salah, silakan masukkan huruf</p>
                         </div>
                         <div class="row">
                           <h3 class="input-label description">Masih memakai obat ini</h3>
@@ -259,8 +268,8 @@
                   <li class="item  item-checkbox">
                     <p>Radiography</p>
                     <label class="checkbox">
-                <input type="checkbox"  ng-model='vm.healthData.tumorPu.pengo.radiography_option'>
-              </label>
+                      <input type="checkbox"  ng-model='vm.healthData.tumorPu.pengo.radiography_option'>
+                    </label>
                     <ul ng-class="vm.healthData.tumorPu.pengo.radiography_option ? 'active':'disable'">
                       <li>
                         <div class="row">
@@ -276,8 +285,9 @@
                         <div class="row">
                           <md-input-container class="md-block" flex-gt-sm>
                             <label>Nama Obat</label>
-                            <input type="text" />
+                            <input type="text" name='radiography_nama' ng-model='vm.healthData.tumorPu.pengo.radiography_nama' ng-maxlength="100" ng-pattern='vm.pattern.textOnly' />
                           </md-input-container>
+                           <p class="message" ng-show='vm.tumorPu.radiography_nama.$invalid'>! Input salah, silakan masukkan huruf</p>
                         </div>
                       </li>
                       <!--end li-->
@@ -286,8 +296,8 @@
                   <li class="item  item-checkbox">
                     <p>Chemography</p>
                     <label class="checkbox">
-                <input type="checkbox"   ng-model='vm.healthData.tumorPu.pengo.chemography_option'>
-              </label>
+                      <input type="checkbox"   ng-model='vm.healthData.tumorPu.pengo.chemography_option'>
+                    </label>
                     <ul ng-class="vm.healthData.tumorPu.pengo.chemography_option ? 'active':'disable'">
                       <li>
                         <div class="row">
@@ -315,15 +325,20 @@
                   <li class="item item-checkbox">
                     <p>Lainnya</p>
                     <label class="checkbox">
-                <input type="checkbox" ng-model='vm.healthData.tumorPu.pengo.lainnya_option'>
-              </label>
-                    <input class="vertical-space" type="text" placeholder="Enter" ng-class="vm.healthData.tumorPu.pengo.lainnya_option ? 'active':'disable'">
+                      <input type="checkbox" ng-model='vm.healthData.tumorPu.pengo.lainnya_option'>
+                    </label>
+                    <input class="vertical-space" type="text" name='pengobatan_other' 
+                    ng-model="vm.healthData.tumorPu.pengo.pengobatan_other" 
+                    placeholder="Enter" 
+                    ng-class="vm.healthData.tumorPu.pengo.lainnya_option ? 'active':'disable'"
+                    ng-maxlength="100" ng-pattern='vm.pattern.textOnly'>
+                    <p class="message" ng-show='vm.tumorPu.pengobatan_other.$invalid'>! Input salah, silakan masukkan huruf</p>
                   </li>
                 </ul>
               </div>
 
             </div>
-
+            </ng-form>
           </div>
         </div>
 

@@ -12,7 +12,7 @@
     <md-dialog-content class="popup-prudential">
       <ion-content delegate-handle="puScroll">
         <div class="md-dialog-content">
-          <div>validate{{vm.objectValidate(vm.healthData.digesPu)}}</div>
+          <ng-form name="vm.digestPu">
           <div class='item'>
             <div class="row-no-padding">
               <h1 class="description">Keluhan yang dirasakan</h1>
@@ -54,20 +54,21 @@
                 <li class="item item-checkbox">
                   <p>Lainnya</p>
                   <label class="checkbox">
-                                    <input type="checkbox" ng-model='vm.healthData.digesPu.keluhan.lainnya_option'>
-                                </label>
+                    <input type="checkbox" ng-model='vm.healthData.digesPu.keluhan.lainnya_option'>
+                  </label>
                 </li>
               </ul>
               <ul class="row option_other" ng-show='vm.healthData.digesPu.keluhan.lainnya_option'>
                 <li class="item item-checkbox">
-                  <input type="text" placeholder="Enter" ng-model='vm.healthData.digesPu.keluhan.lainnya'>
+                  <input type="text" placeholder="Enter" name='keluhan_other' ng-model='vm.healthData.digesPu.keluhan.lainnya' ng-pattern='vm.pattern.textOnly' ng-required="vm.healthData.digesPu.keluhan.lainnya_option">
+                  <p class="message" ng-show="vm.digestPu.keluhan_other.$touched&&vm.digestPu.keluhan_other.$invalid">! Input salah, silakan masukkan huruf</p>
                 </li>
               </ul>
             </div>
             <div class="row-no-padding">
               <md-input-container class="md-block">
                 <md-select ng-model='vm.healthData.digesPu.pertamas_select' placeholder='Pertama kali keluhan muncul'>
-                  <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                  <md-option ng-repeat="m in vm.digestPuOption.pertama" value="{{m.value}}">{{m.name}}</md-option>
                 </md-select>
               </md-input-container>
             </div>
@@ -75,7 +76,7 @@
               <div class="col col-50">
                 <md-input-container>
                   <md-select ng-model='vm.healthData.digesPu.frekuensi_select' placeholder='Frekuensi timbulnya keluhan'>
-                    <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                    <md-option ng-repeat="m in vm.digestPuOption.frekuensi" value="{{m.value}}">{{m.name}}</md-option>
                   </md-select>
                 </md-input-container>
               </div>
@@ -89,7 +90,7 @@
             <div class="row-no-padding">
               <md-input-container class="md-block">
                 <md-select ng-model='vm.healthData.digesPu.kapan_keluhan_select' placeholder='Kapan keluhan terakhir'>
-                  <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                  <md-option ng-repeat="m in vm.digestPuOption.kapan" value="{{m.value}}">{{m.name}}</md-option>
                 </md-select>
               </md-input-container>
             </div>
@@ -118,14 +119,14 @@
                 <div class="col">
                   <md-input-container class="md-block">
                     <md-select ng-model="vm.healthData.digesPu.kapan_month_select" placeholder='Januari'>
-                      <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                      <md-option ng-repeat="m in vm.digestPuOption.month" value="{{m.value}}">{{m.name}}</md-option>
                     </md-select>
                   </md-input-container>
                 </div>
                 <div class="col">
                   <md-input-container class="md-block">
                     <md-select ng-model="vm.healthData.digesPu.kapan_year_select" placeholder='YYYY'>
-                      <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                       <md-option ng-repeat="m in vm.digestPuOption.year" value="{{m.value}}">{{m.name}}</md-option>
                     </md-select>
                   </md-input-container>
                 </div>
@@ -135,8 +136,9 @@
             <div class="row-no-padding">
               <md-input-container class="md-block" flex-gt-sm>
                 <label>Nama Dokter / Rumah Sakit </label>
-                <input type="text" ng-model="vm.healthData.digesPu.nama_dokter" />
+                <input type="text" name='nama_dokter' ng-model="vm.healthData.digesPu.nama_dokter"  ng-pattern='vm.pattern.textOnly'/>
               </md-input-container>
+              <p class="message" ng-show="vm.digestPu.nama_dokter.$touched&&vm.digestPu.nama_dokter.$invalid">! Input salah, silakan masukkan huruf</p>
             </div>
             <div class="row-no-padding">
               <h1 class="description">Tindakan / terapi yang diberikan</h1>
@@ -163,11 +165,12 @@
                       <div ng-repeat="(index, row) in vm.healthData.digesPu.tindakan_obat">
                         <div class='obat-item'>
                           <div class="obat-index">{{index+1}}</div>
-                          <div class="row">
+                          <div class="row align_column">
                             <md-input-container class="md-block" flex-gt-sm>
                               <label>Obat yang pernah dikonsumsi</label>
-                              <input type="text" ng-model="digestive.tindakan_obat[index].yang" />
+                              <input type="text" name='obat_yang{{$index}}' ng-model="digestive.tindakan_obat[index].yang" ng-pattern='vm.pattern.textOnly'/>
                             </md-input-container>
+                            <p class="message"  ng-show="vm.digestPu.obat_yang{{$index}}.$touched&&vm.digestPu.obat_yang{{$index}}.$invalid">! Input salah, silakan masukkan huruf</p>
                           </div>
                           <div class="row">
                             <h4 class="input-label description">Diperoleh dari</h3>
@@ -187,7 +190,7 @@
                             <div class="col col-50">
                               <md-input-container>
                                 <md-select ng-model="digestive.tindakan_obat[index].timbulnya_select" placeholder='Frekuensi timbulnya keluhan'>
-                                  <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                                  <md-option ng-repeat="m in vm.digestPuOption.frekuensi| limitTo:6" value="{{m.value}}">{{m.name}}</md-option>
                                 </md-select>
                               </md-input-container>
                             </div>
@@ -249,14 +252,14 @@
                   <div class="col">
                     <md-input-container>
                       <md-select ng-model='vm.healthData.digesPu.pemeriksaan_waktu' placeholder='Waktu Pemeriksaan'>
-                        <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                         <md-option ng-repeat="m in  vm.digestPuOption.year" value="{{m.value}}">{{m.name}}</md-option>
                       </md-select>
                     </md-input-container>
                   </div>
                   <div class="col">
                     <md-input-container>
                       <md-select ng-model='vm.healthData.digesPu.pemeriksaan_hasil' placeholder='Hasil Pemeriksaan'>
-                        <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                        <md-option ng-repeat="m in vm.digestPuOption.hasil" value="{{m.value}}">{{m.name}}</md-option>
                       </md-select>
                     </md-input-container>
                   </div>
@@ -271,25 +274,26 @@
                             </label>
                 <div ng-class="vm.healthData.digesPu.pemer.lainnya ? 'active':'disable'">
 
-                  <div class="row row-no-padding">
+                  <div class="row row-no-padding align_column">
                     <md-input-container class="md-block" flex-gt-sm>
                       <label>Nama Pemeriksaan </label>
-                      <input type="text" ng-model="vm.healthData.digesPu.lainnya_input" />
+                      <input type="text" name='nama_pemeriksaan' ng-model="vm.healthData.digesPu.lainnya_input"   ng-pattern='vm.pattern.textOnly'/>
                     </md-input-container>
+                    <p class="message" ng-show='vm.digestPu.nama_pemeriksaan.$touched&&vm.digestPu.nama_pemeriksaan.$invalid'>! Input salah, silakan masukkan huruf</p>
                   </div>
 
                   <div class="row row-no-padding">
                     <div class="col">
                       <md-input-container>
                         <md-select ng-model='vm.healthData.digesPu.lainnya_waktu' placeholder='Waktu Pemeriksaan'>
-                          <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                          <md-option ng-repeat="m in  vm.digestPuOption.year" value="{{m.value}}">{{m.name}}</md-option>
                         </md-select>
                       </md-input-container>
                     </div>
                     <div class="col">
                       <md-input-container>
                         <md-select ng-model='vm.healthData.digesPu.lainnya_hasil' placeholder='Hasil Pemeriksaan'>
-                          <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                           <md-option ng-repeat="m in vm.digestPuOption.hasil" value="{{m.value}}">{{m.name}}</md-option>
                         </md-select>
                       </md-input-container>
                     </div>
@@ -299,6 +303,7 @@
               </li>
             </div>
           </div>
+          </ng-form>
         </div>
       </ion-content>
     </md-dialog-content>
