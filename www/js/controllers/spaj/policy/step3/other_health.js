@@ -19,7 +19,11 @@ function otherHealthCtrl ($scope, $rootScope, $state, $ionicScrollDelegate, $loc
     vm.currentTab = tab
     vm.currentTabIndex = index
   }
-
+  vm.pattern={
+    textOnly: new RegExp(/^[a-zA-Z\s]*$/),
+    nonDesimal: new RegExp(/^\d+\.\d{0,3}$/),
+    alphanumeric: new RegExp(/^[a-z0-9 ]+$/)
+  }
   vm.questions = {
     question_1: {
       active: true,
@@ -27,8 +31,14 @@ function otherHealthCtrl ($scope, $rootScope, $state, $ionicScrollDelegate, $loc
       heath_check: '',
       other_answer: '',
       option: [
-        {'value': 'value1', 'type': 'Lainnya'},
-        {'value': 'value2', 'type': 'Lainnya2'}
+        {'value': 'value1', 'type': 'Pemeriksaan Jantung'},
+        {'value': 'value2', 'type': 'Pemeriksaan Darah'},
+        {'value': 'value2', 'type': 'Pemeriksaan Air Seni'},
+        {'value': 'value3', 'type': 'Rontgen'},
+        {'value': 'value4', 'type': 'Ultrasonography / USG'},
+        {'value': 'value5', 'type': 'CT scan'},
+        {'value': 'value6', 'type': 'Biopsi'},
+        {'value': 'value7', 'type': 'Lainnya'},
       ]
     },
     question_2: {
@@ -61,8 +71,10 @@ function otherHealthCtrl ($scope, $rootScope, $state, $ionicScrollDelegate, $loc
   }
 
   vm.scrollTo = function (id) {
-    var element = document.getElementById(id)
-    $ionicScrollDelegate.scrollTo(0, element.offsetTop - 50, true)
+   var STEP_HEIGHT = $('.multi-step').height() + 140
+    var distance = $('#' + id) && $('#' + id).position().top + STEP_HEIGHT
+    $('#' + id).addClass('_active');
+    $ionicScrollDelegate.scrollTo(0, distance, true)
   }
 
   vm.nextQuestion = function (question) {

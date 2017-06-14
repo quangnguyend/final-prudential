@@ -13,22 +13,17 @@
                 <label class="item-stacked-label">
                   <div class="input-label">Nama Lengkap <span class="input_red">(*)</span></div>
                 </label>
-                <input  placeholder="Enter" ng-model="vm.questions.question_1.other_answer" name/>
+                <input   ng-model="vm.questions.question_1.other_answer" name/>
               </md-input-container>
             </div>
           </div>
           <div class='item '>
             <div class="row-no-padding">
               <div class="row">
-                <label class="item-stacked-label">
-                  <div class="input-label">Tempat dan Tanggal Lahir<span class="input_red">(*)</span></div>
-                </label>
-              </div>
-              <div class="row">
                 <div class="col-40">
                   <md-input-container class="md-block">
-                    <md-select ng-model="vm.questions.question_1.heath_check">
-                      <md-option ng-repeat="c in vm.questions.birplace" ng-value="c" ng-selected="$index === 0">
+                    <md-select ng-model="vm.questions.question_1" placeholder='Tempat dan Tanggal Lahir(*)'>
+                      <md-option ng-repeat="c in vm.questions.birplace" ng-value="c">
                           {{c}}
                       </md-option>
                     </md-select>
@@ -69,15 +64,11 @@
           </div>
           <div class='item '>
             <div class="row-no-padding">
-              <div class="row">
-                <label class="item-stacked-label">
-                  <div class="input-label">Status Pernikahan<span class="input_red">(*)</span></div>
-                </label>
-              </div>
+             
               <div class="row">
                 <md-input-container class="md-block">
-                    <md-select ng-model="vm.questions.question_1.heath_check">
-                      <md-option ng-repeat="c in vm.questions.pernikahan" ng-value="c" ng-selected="$index === 0">
+                    <md-select ng-model="vm.questions.question_1.heath_check" placeholder='Status Pernikahan'>
+                      <md-option ng-repeat="c in vm.questions.pernikahan" ng-value="c"  >
                           {{c}}
                       </md-option>
                     </md-select>
@@ -88,13 +79,8 @@
           <div class='item '>
             <div class="row-no-padding">
               <div class="row">
-                <label class="item-stacked-label">
-                  <div class="input-label">Agama<span class="input_red">(*)</span></div>
-                </label>
-              </div>
-              <div class="row">
                 <md-input-container class="md-block">
-                    <md-select ng-model="vm.questions.question_1.heath_check">
+                    <md-select ng-model="vm.questions.question_1.heath_check" placeholder='Agama(*)'>
                       <md-option ng-repeat="c in vm.questions.agama" ng-value="c" ng-selected="$index === 0">
                           {{c}}
                       </md-option>
@@ -105,14 +91,10 @@
           </div>
           <div class='item '>
             <div class="row-no-padding">
-              <div class="row">
-                <label class="item-stacked-label">
-                  <div class="input-label">Negara Kelahiran<span class="input_red">(*)</span></div>
-                </label>
-              </div>
+            
               <div class="row">
                  <md-input-container class="md-block">
-                    <md-select ng-model="vm.questions.question_1.heath_check">
+                    <md-select ng-model="vm.questions.question_1.heath_check" placeholder='Negara Kelahiran(*)'>
                       <md-option ng-repeat="c in vm.questions.homeaddress" ng-value="c" ng-selected="$index === 0">
                           {{c}}
                       </md-option>
@@ -124,13 +106,8 @@
           <div class='item '>
             <div class="row-no-padding">
               <div class="row">
-                <label class="item-stacked-label">
-                  <div class="input-label">Kawarganegaraan<span class="input_red">(*)</span></div>
-                </label>
-              </div>
-              <div class="row">
                 <md-input-container class="md-block">
-                    <md-select ng-model="vm.questions.question_1.heath_check">
+                    <md-select ng-model="vm.questions.question_1.heath_check"  placeholder='Kawarganegaraan(*)'>
                       <md-option ng-repeat="c in vm.questions.kadaluwarsa" ng-value="c" ng-selected="$index === 0">
                           {{c}}
                       </md-option>
@@ -145,7 +122,7 @@
                 <label class="item-stacked-label">
                    <div class="input-label">No Identitas<span class="input_red">(*)</span></div>
                 </label>
-                <input type="number"  placeholder="Enter" ng-model="vm.questions.question_1.other_answer" />
+                <input type="number" ng-model="vm.questions.question_1.other_answer" />
               </md-input-container>
             </div>
           </div>
@@ -193,7 +170,7 @@
                 <label class="item-stacked-label">
                    No NPWP
                 </label>
-                <input type="number"  placeholder="Enter" ng-model="vm.questions.question_1.other_answer" />
+                <input type="number"   ng-model="vm.questions.question_1.other_answer" />
               </md-input-container>
             </div>
           </div>

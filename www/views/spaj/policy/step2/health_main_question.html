@@ -1,7 +1,7 @@
 <div class="list list-inset no-lines">
 
   <ng-form name='vm.hqns' ng-submit="validator(step2)">
-    <div class="item" ng-click='vm.showPopupEye()'>Show oupup</div>
+    <div class="item" ng-click='vm.showPopupTumor()'>Show oupup</div>
     <div class='item' id="health1_step1">
       <h1 class='text-center description description'>Tinggi dan berat badan saya</h1>
       <div class="row">
@@ -55,7 +55,6 @@
       <div class='add_question' ng-show="vm.healthData.medication==true">
         <h1 class='text-center description'>Sebutkan jenis dan alasan penggunaannya</h1>
         <div class="row">
-          {{vm.pattern.textOnly}}
           <input type="text" placeholder="Enter" name='reason_consumption' ng-model="vm.healthData.medication_detail"  ng-required="vm.healthData.medication == true"  ng-pattern="vm.pattern.textOnly" />
         </div>
         <p class="message" ng-show='vm.hqns.reason_consumption.$touched && vm.hqns.reason_consumption.$invalid||vm.hqns.reason_consumption.$viewValue.length>100'>Maksimal 100 karakter</p>
@@ -354,7 +353,7 @@
           </div>
           <md-input-container class="md-block md-input" flex-gt-sm>
             <label>Kaki kanan</label>
-            <input type="text" name='accident_name' ng-model="vm.healthData.personalAccidentPopupData.function_name" ng-required="vm.healthData.iinjury==true"  ng-pattern=vm.pattern.textOnly>
+            <input type="text" name='accident_name' ng-model="vm.healthData.personalAccidentPopupData.function_name" ng-required="vm.healthData.iinjury==true"  ng-pattern='vm.pattern.textOnly'>
           </md-input-container>
           <p class="message margin_extra" ng-show='vm.hqns.accident_name.$touched && vm.hqns.accident_name.$invalid'>! Input salah, silakan masukkan huruf</p>
           <div class="row">
@@ -376,7 +375,7 @@
       <h1 class="text-center description">Penyakit lain yang belum disebutkan?</h1>
       <div class="button-bar">
         <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.idisease" required>Ya</a>
-        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.idisease" required>Tidak</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.idisease" required ng-click="vm.healthData.idisea_others=null">Tidak</a>
       </div>
       <div class='grey-box' ng-show="vm.healthData.idisease==true">
         <div class="additional-question text-left">
