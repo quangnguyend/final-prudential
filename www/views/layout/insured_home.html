@@ -26,10 +26,8 @@
                     </md-input-container>
                 </div>
                 <div class="col">
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label class='asterisk'>Tanggal Lahir </label>
-                        <md-datepicker ng-model="data.date_of_birth" ng-click="vm.valiForm()" md-placeholder="Enter date" md-open-on-focus></md-datepicker>
-                    </md-input-container>
+                    <label class='asterisk'>Tanggal Lahir </label>
+                    <input type="date" ng-model="data.date_of_birth" ng-click="vm.valiForm()" md-placeholder="Enter date"></input>
                 </div>
             </div>
         </div>
@@ -73,7 +71,7 @@
         <div class="row-no-padding">
             <md-input-container class="md-block">
                 <label class="input-label">Agama</label>
-                <md-select ng-model="data.agama" name="agama">  
+                <md-select ng-model="data.agama" name="agama">
                     <md-option value=""><em>None</em></md-option>
                     <md-option value="Islam"><em>Islam</em></md-option>
                     <md-option value="Kristen"><em>Kristen</em></md-option>
@@ -87,7 +85,7 @@
     </div>
     <div class='item'>
         <div class="row-no-padding">
-            <md-input-container class="md-block">
+            <md-input-container class="md-block no-underline">
                 <label class="input-label">Negara Kelahiran </label>
                 <md-select ng-model="data.negaraKelahiran" ng-click="vm.valiForm()" required>
                     <md-option value="indo" selected><em>Indonesia</em></md-option>
@@ -150,7 +148,7 @@
               </label>
             </div>
             <div class="row left_input_date input_full_width">
-                <md-datepicker ng-model="" md-placeholder="Enter date" md-open-on-focus></md-datepicker>
+                <input type="date" ng-model="" md-placeholder="Enter date" md-open-on-focus></input>
             </div>
         </div>
     </div>
@@ -182,7 +180,7 @@
             </md-input-container>
         </div>
     </div>
-    <div class='item'>
+    <div class='item' ng-show="data.taxstatus.indo === true">
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label class='asterisk'>No NPWP </label>
@@ -227,11 +225,13 @@
             <div class="row">
                 <div class="row indent_row responsive-sm">
                     <div class="col-50">
-                        <input name='alamattempattinggal' id='{{insuredName}}-alamatIndonesia' class='custom_radio' type="radio" ng-click="vm.valiForm()"/>
+                        <input name='alamattempattinggal' id='{{insuredName}}-alamatIndonesia' class='custom_radio' type="radio" ng-click="vm.valiForm()"
+                        />
                         <label for="{{insuredName}}-alamatIndonesia">Indonesia</label>
                     </div>
                     <div class="col-50">
-                        <input name='alamattempattinggal' id='{{insuredName}}-alamatDiluarIndonesia' class='custom_radio' type="radio" ng-click="vm.valiForm()"/>
+                        <input name='alamattempattinggal' id='{{insuredName}}-alamatDiluarIndonesia' class='custom_radio' type="radio" ng-click="vm.valiForm()"
+                        />
                         <label for="{{insuredName}}-alamatDiluarIndonesia">Diluar Indonesia</label>
                     </div>
                 </div>
@@ -253,12 +253,54 @@
     <div class='item'>
         <div class="row-no-padding">
             <div class="row responsive-sm">
+                <div class="col-33">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>RT</label>
+                        <input ng-model='data.RT' name="rt" ng-pattern="/^[0-9]*$/">
+                        <div ng-messages="insured.rt.$error" role="alert" ng-show="insured.rt.$touched">
+                            <div ng-show="insured.rt.$error.pattern">! Input salah, silakan masukkan angka</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div class="col-33">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>RW</label>
+                        <input ng-model='data.RW' name="rw" ng-pattern="/^[0-9]*$/">
+                        <div ng-messages="insured.rw.$error" role="alert" ng-show="insured.rw.$touched">
+                            <div ng-show="insured.rw.$error.pattern">! Input salah, silakan masukkan angka</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div class="col-33">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>KM</label>
+                        <input ng-model='data.KM' name="km" ng-pattern="/^[0-9]*$/">
+                        <div ng-messages="insured.rw.$error" role="alert" ng-show="insured.rw.$touched">
+                            <div ng-show="insured.rw.$error.pattern">! Input salah, silakan masukkan angka</div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='item'>
+        <div class="row-no-padding">
+            <div class="row responsive-sm">
                 <div class="col-50">
                     <md-input-container class="md-block" flex-gt-sm>
-                        <label>Kode Pos</label>
-                        <input type="number" ng-model='data.kodepos' name="kodepos">
-                        <div ng-messages="insured.kodepos.$invalid" ng-show="insured.kodepos.$dirty">
-                            <div ng-show="insured.kodepos.$invalid">! Input salah, silakan masukkan angka</div>
+                        <label>Kecamatan</label>
+                        <input ng-model='data.kecamata' name="kecamata" ng-pattern="/^[a-zA-Z]*$/">
+                        <div ng-messages="insured.kecamata.$error" role="alert" ng-show="insured.kecamata.$touched">
+                            <div ng-show="insured.kecamata.$error.pattern">! Input salah, silakan masukkan huruf</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div class="col-50">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Kelurahan</label>
+                        <input ng-model='data.kelurahan' name="kelurahan" ng-pattern="/^[a-zA-Z]*$/">
+                        <div ng-messages="insured.kelurahan.$error" role="alert" ng-show="insured.kelurahan.$touched">
+                            <div ng-show="insured.kelurahan.$error.pattern">! Input salah, silakan masukkan huruf</div>
                         </div>
                     </md-input-container>
                 </div>
@@ -296,60 +338,16 @@
             <div class="row responsive-sm">
                 <div class="col-50">
                     <md-input-container class="md-block" flex-gt-sm>
-                        <label>Kecamatan</label>
-                        <input ng-model='data.kecamata' name="kecamata" ng-pattern="/^[a-zA-Z]*$/">
-                        <div ng-messages="insured.kecamata.$error" role="alert" ng-show="insured.kecamata.$touched">
-                            <div ng-show="insured.kecamata.$error.pattern">! Input salah, silakan masukkan huruf</div>
-                        </div>
-                    </md-input-container>
-                </div>
-                <div class="col-50">
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>Kelurahan</label>
-                        <input ng-model='data.kelurahan' name="kelurahan" ng-pattern="/^[a-zA-Z]*$/">
-                        <div ng-messages="insured.kelurahan.$error" role="alert" ng-show="insured.kelurahan.$touched">
-                            <div ng-show="insured.kelurahan.$error.pattern">! Input salah, silakan masukkan huruf</div>
+                        <label>Kode Pos</label>
+                        <input ng-model='data.kodepos' name="kodepos" ng-pattern="/^[0-9]*$/">
+                        <div ng-messages="insured.kodepos.$error" ng-show="insured.kodepos.$dirty">
+                            <div ng-show="insured.kodepos.$error.pattern">! Input salah, silakan masukkan angka</div>
                         </div>
                     </md-input-container>
                 </div>
             </div>
         </div>
     </div>
-    <div class='item'>
-        <div class="row-no-padding">
-            <div class="row responsive-sm">
-                <div class="col-33">
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>RT</label>
-                        <input ng-model='data.RT' name="rt" ng-pattern="/^[0-9]*$/">
-                        <div ng-messages="insured.rt.$error" role="alert" ng-show="insured.rt.$touched">
-                            <div ng-show="insured.rt.$error.pattern">! Input salah, silakan masukkan angka</div>
-                        </div>
-                    </md-input-container>
-                </div>
-                <div class="col-33">
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>RW</label>
-                        <input ng-model='data.RW' name="rw" ng-pattern="/^[0-9]*$/">
-                        <div ng-messages="insured.rw.$error" role="alert" ng-show="insured.rw.$touched">
-                            <div ng-show="insured.rw.$error.pattern">! Input salah, silakan masukkan angka</div>
-                        </div>
-                    </md-input-container>
-                </div>
-                <div class="col-33">
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>KM</label>
-                        <input ng-model='data.KM' name="km" ng-pattern="/^[0-9]*$/">
-                        <div ng-messages="insured.rw.$error" role="alert" ng-show="insured.rw.$touched">
-                            <div ng-show="insured.rw.$error.pattern">! Input salah, silakan masukkan angka</div>
-                        </div>
-                    </md-input-container>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
     <div class='item' ng-repeat="(index, row) in vm.insuredData.address">
         <div class="row-no-padding">
             <div class="row responsive-sm">
@@ -363,8 +361,8 @@
                             </md-select>
                         </md-input-container>
                         <md-input-container class="md-block col-85" flex-gt-sm>
-                            <input ng-model='vm.insuredData.address[index].rumah_tel' ng-click="vm.valiForm()" name="telHome" placeholder="XXX  XXXXXXXX" ng-pattern="/^[0-9]*$/"
-                                required>
+                            <input ng-model='vm.insuredData.address[index].rumah_tel' ng-click="vm.valiForm()" name="telHome" placeholder="XXX  XXXXXXXX"
+                                ng-pattern="/^[0-9]*$/" required>
                             <div ng-messages="insured.telHome.$error" role="alert" ng-show="insured.telHome.$touched">
                                 <div ng-show="insured.telHome.$error.required">Pertanyaan ini wajib diisi</div>
                                 <div ng-show="insured.telHome.$error.pattern">! Input salah, silakan masukkan angka</div>
@@ -400,8 +398,8 @@
                             </md-select>
                         </md-input-container>
                         <md-input-container class="md-block col-85" flex-gt-sm>
-                            <input ng-model='vm.insuredData.address[index].hp_gsm_tel' ng-click="vm.valiForm()" placeholder="XXX  XXXXXXXX" name="telGsm" ng-pattern="/^[0-9]*$/"
-                                required>
+                            <input ng-model='vm.insuredData.address[index].hp_gsm_tel' ng-click="vm.valiForm()" placeholder="XXX  XXXXXXXX" name="telGsm"
+                                ng-pattern="/^[0-9]*$/" required>
                             <div ng-messages="insured.telGsm.$error" role="alert" ng-show="insured.telGsm.$touched">
                                 <div ng-show="insured.telGsm.$error.required">Pertanyaan ini wajib diisi</div>
                                 <div ng-show="insured.telGsm.$error.pattern">! Input salah, silakan masukkan angka</div>

@@ -697,4 +697,9 @@ h1.description{
 .error{
   color: #f00;
 }
+.no-underline{
+  .md-select-value{
+    border-bottom-style: none;
+}
+}
 /* ================ END COMMON CSS ================ */
