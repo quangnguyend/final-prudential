@@ -74,7 +74,7 @@ function insuredHomeCtrl($scope, $rootScope, $attrs, $timeout, SpajService) {
 
   $scope.showAddress = false
   $scope.changeAddress = function (v) {
-    vm.formChange();
+    vm.valiForm();
     if (v == 'Alamat Lain') {
       $scope.showAddress = true
     } else {
