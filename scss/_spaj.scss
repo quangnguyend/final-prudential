@@ -1606,3 +1606,25 @@ button.btn-actived{
     min-height: 0!important;
   }
 }
+.md-block{
+  width: 100%!important;
+}
+.md-whiteframe-1dp, .md-whiteframe-z1{
+  box-shadow: none;
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+.active-insurance-page{
+  .row-number{
+    margin-top: 23px;
+    display: inline-block;
+  }
+  .md-errors-spacer{
+    min-height: 0!important;
+  }
+  .sm-font{
+    font-size: 12px;
+  }
+  md-input-container.md-block {
+    margin-bottom: 0px;
+  }
+}

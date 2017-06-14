@@ -703,4 +703,9 @@ h1.description{
   color: #f00;
   white-space: initial;
 }
+.no-underline{
+  .md-select-value{
+    border-bottom-style: none;
+}
+}
 /* ================ END COMMON CSS ================ */

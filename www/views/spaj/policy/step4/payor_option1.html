@@ -143,6 +143,27 @@
             </div>
           </div>
           <div class='item '>
+            <div class="row-no-padding">
+              <div class="row">
+                <label class="item-stacked-label">
+                  <div class="input-label">Pekerjaan</div>
+                </label>
+              </div>
+              <div class="row">
+                <md-autocomplete class="md-block"
+                    md-selected-item="selectedItem"
+                    md-search-text="searchText"
+                    md-items="item in querySearch(searchText)"
+                    md-item-text="item.name"
+                    md-min-length="0">
+                  <md-item-template>
+                    <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.name}}</span>
+                  </md-item-template>
+                </md-autocomplete>
+              </div>
+            </div>
+          </div>
+          <div class='item '>
             <div class="row-no-padding">         
                <md-input-container class="md-block"  md-no-float >
                 <label class="item-stacked-label">
@@ -268,7 +289,6 @@
               </div>
             </div>
           </div>
-
           <div class='item '>
             <div class="row-no-padding">
               <div class="row">
@@ -518,11 +538,19 @@
           </div>
           <div class="item">
             <div class="row-no-padding">
+<<<<<<< HEAD
              
                 <button class="button button-full button-block button-light" ng-click="vm.addPhone()">
                  <i class="icon ion-ios-plus-empty"></i> <span>Tampah Kontak</span>
                 </button>
               
+=======
+              <div class="row">
+                <div class="button-block add_icon">
+                  <a class="button" ng-click="vm.addPhone()"><i class="icon ion-ios-plus-empty"></i> <span>Tampah Kontak</span></a>
+                </div>
+              </div>
+>>>>>>> b00ea4ed11783968b1575463a15e37271997dd76
             </div>
           </div>
           <div class="item">
@@ -539,7 +567,6 @@
             <label>
               Sumber penghasilan rutin per bulan
             </label>
-            </div>
             <div class="row responsive-sm">
               <div class="col-50">
                 <ion-checkbox class="policy-checkbox" ng-model="vm.payorDetail.penghasilan_gaji">Gaji</ion-checkbox>
