@@ -4,9 +4,10 @@
   </ion-nav-title>
   <ion-content>
     <step-process></step-process>
-    <div id="" class="wrapper has-bottom-bar payor-page">
+    <div class="wrapper has-bottom-bar payor-page">
       <ng-form name='vm.payorDform'>
         <div class="list list-inset no-lines" id='payor-option1'>
+          <!--start item-->
           <div class='item'>
             <div class="row-no-padding">
               <md-input-container class="md-block"  md-no-float >
@@ -18,6 +19,7 @@
               <p class="message" ng-show='vm.payorDform.nama.$invalid'>! Input salah, silakan masukkan huruf</p>
             </div>
           </div>
+          <!--end item-->
           <div class='item '>
             <div class="row-no-padding">
               <div class="row">
@@ -32,9 +34,9 @@
                     <i class="icon ion-android-calendar"></i>
                 </div>
               </div>
-              
             </div>
           </div>
+          <!--end item-->
           <div class='item '>
             <div class="row-no-padding">
               <div class="row">
@@ -56,6 +58,7 @@
               </div>
             </div>
           </div>
+          <!--end item-->
           <div class='item '>
             <div class="row-no-padding">
               <div class="row align_column">
@@ -65,15 +68,14 @@
                           {{c}}
                       </md-option>
                     </md-select>
-                  </md-input-container>
-                  <p class="message no-margin" ng-show='vm.payorDform.pernikahan.$touched&&vm.payorDform.pernikahan.$invalid'> Pertanyaan ini wajib diisi</p>
+                </md-input-container>
+                <p class="message small-margin" ng-show='vm.payorDform.pernikahan.$touched&&vm.payorDform.pernikahan.$invalid'> Pertanyaan ini wajib diisi</p>
               </div>
             </div>
           </div>
-          
+          <!--end item-->
           <div class='item '>
             <div class="row-no-padding">
-            
               <div class="row  align_column">
                  <md-input-container class="md-block">
                     <md-select name='kelahiran' ng-model="vm.payorDetail.negara_kelahiran" placeholder='Negara Kelahiran' required>
@@ -82,13 +84,14 @@
                       </md-option>
                     </md-select>
                   </md-input-container>
-                  <p class="message no-margin" ng-show='vm.payorDform.kelahiran.$touched&&vm.payorDform.kelahiran.$invalid'> Pertanyaan ini wajib diisi</p>
+                  <p class="message small-margin" ng-show='vm.payorDform.kelahiran.$touched&&vm.payorDform.kelahiran.$invalid'> Pertanyaan ini wajib diisi</p>
               </div>
             </div>
           </div>
+          <!--end item-->
           <div class='item '>
             <div class="row-no-padding">
-              <div class="row">
+              <div class="row align_column">
                 <md-input-container class="md-block">
                     <md-select name='kawarganegaraan' ng-model="vm.payorDetail.kawarganegaraan"  placeholder='Kawarganegaraan' required>
                       <md-option ng-repeat="c in vm.questions.kadaluwarsa" ng-value="c" >
@@ -96,13 +99,14 @@
                       </md-option>
                     </md-select>
                   </md-input-container>
-                  <p class="message no-margin" ng-show='vm.payorDform.kawarganegaraan.$touched&&vm.payorDform.kawarganegaraan.$invalid'> Pertanyaan ini wajib diisi</p>
+                  <p class="message small-margin" ng-show='vm.payorDform.kawarganegaraan.$touched&&vm.payorDform.kawarganegaraan.$invalid'> Pertanyaan ini wajib diisi</p>
               </div>
             </div>
           </div>
+          <!--end item-->
           <div class='item '>
             <div class="row-no-padding">
-              <div class="row">
+              <div class="row align_column">
                 <md-input-container class="md-block">
                     <md-select name='pekerjaan' ng-model="vm.payorDetail.pekerjaan"  placeholder='Pekerjaan' required>
                       <md-option ng-repeat="c in vm.questions.kadaluwarsa" ng-value="c" >
@@ -110,13 +114,14 @@
                       </md-option>
                     </md-select>
                   </md-input-container>
-                  <p class="message no-margin" ng-show='vm.payorDform.pekerjaan.$touched&&vm.payorDform.pekerjaan.$invalid'> Pertanyaan ini wajib diisi</p>
+                  <p class="message small-margin" ng-show='vm.payorDform.pekerjaan.$touched&&vm.payorDform.pekerjaan.$invalid'> Pertanyaan ini wajib diisi</p>
               </div>
             </div>
           </div>
+          <!--end item-->
           <div class='item '>
             <div class="row-no-padding">
-              <div class="row">
+              <div class="row align_column">
                 <md-input-container class="md-block">
                     <md-select name='department' ng-model="vm.payorDetail.department"  placeholder='Department' required>
                       <md-option ng-repeat="c in vm.questions.kadaluwarsa" ng-value="c" >
@@ -124,13 +129,14 @@
                       </md-option>
                     </md-select>
                   </md-input-container>
-                  <p class="message no-margin" ng-show='vm.payorDform.department.$touched&&vm.payorDform.department.$invalid'> Pertanyaan ini wajib diisi</p>
+                  <p class="message small-margin" ng-show='vm.payorDform.department.$touched&&vm.payorDform.department.$invalid'> Pertanyaan ini wajib diisi</p>
               </div>
             </div>
           </div>
+          <!--end item-->
           <div class='item '>
             <div class="row-no-padding">
-              <div class="row">
+              <div class="row align_column">
                 <md-input-container class="md-block">
                     <md-select name='jabatan' ng-model="vm.payorDetail.jabatan"  placeholder='Jabatan/ Pangkat / Golongan' required>
                       <md-option ng-repeat="c in vm.questions.kadaluwarsa" ng-value="c" >
@@ -138,10 +144,11 @@
                       </md-option>
                     </md-select>
                   </md-input-container>
-                  <p class="message no-margin" ng-show='vm.payorDform.jabatan.$touched&&vm.payorDform.jabatan.$invalid'> Pertanyaan ini wajib diisi</p>
+                  <p class="message small-margin" ng-show='vm.payorDform.jabatan.$touched&&vm.payorDform.jabatan.$invalid'> Pertanyaan ini wajib diisi</p>
               </div>
             </div>
           </div>
+          <!--end item-->
           <div class='item '>
             <div class="row-no-padding">
               <div class="row">
@@ -163,17 +170,19 @@
               </div>
             </div>
           </div>
+          <!--end item-->
           <div class='item '>
             <div class="row-no-padding">         
                <md-input-container class="md-block"  md-no-float >
                 <label class="item-stacked-label">
-                   <div class="input-label">No Identitas<span class="input_red"></span></div>
+                   No Identitas
                 </label>
                 <input name='no_identitas' type="number" ng-model="vm.payorDetail.no_identitas" required/>
               </md-input-container>
                <p class="message" ng-show='vm.payorDform.no_identitas.$touched&&vm.payorDform.no_identitas.$invalid'> Pertanyaan ini wajib diisi (Numbers only)</p>
             </div>
           </div>
+          <!--end item-->
           <div class='item '>
             <div class="row-no-padding">
               <div class="row">
@@ -195,6 +204,7 @@
               </div>
             </div>
           </div>
+          <!--end item-->
           <div class='item '>
             <div class="row-no-padding">
               <div class="row">
@@ -202,7 +212,7 @@
                   <div class="input-label">Kadaluwarsa Identitas</div>
                 </label>
               </div>
-              <div class="row left_input_date input_full_width">
+              <div class="row left_input_date input_full_width row-no-padding">
                 <div class="col col-90">
                 <md-input-container  class="md-block"   md-no-float >
                   <input name='kadaluwarsa' type="date" placeholder="DD/MM/YYYY"  ng-model="vm.payorDetail.kadaluwarsa_select" required>
@@ -215,6 +225,7 @@
               </div>
             </div>
           </div>
+          <!--end item-->
           <div class='item '>
             <div class="row-no-padding">
               <md-input-container class="md-block"  md-no-float >
@@ -226,14 +237,14 @@
               <p class="message" ng-show='vm.payorDform.no_npwp.$touched&&vm.payorDform.no_npwp.$invalid'> Pertanyaan ini wajib diisi (Numbers only)</p>
             </div>
           </div>
+          <!--end item-->
           <div class='item '>
             <div class="row-no-padding">
               <div class="row">
                 <label class="item-stacked-label">
-                  <span class="input-label">Status Alamat Tempat Tinggal *</span>
+                  <span class="input-label">Status Tempat Tinggal *</span>
                 </label>
               </div>
-              
               <div class="row">
                 <div class="col col-30">
                   <input name='home_status' ng-model="vm.payorDetail.homeStatus" class='custom_radio' type="radio" value="milik_sendiri" id="milik_sendiri"   required/>
@@ -259,14 +270,21 @@
                   <input name='home_status' ng-model="vm.payorDetail.homeStatus" class='custom_radio' type="radio" value="sewa" name="sewa" id="sewa"  required/>
                   <label class='' for="sewa">Sewa</label>
                 </div>
-                <div class="col col-30">
+                 <div class="col col-30"></div>
+              </div>
+              <div class="row align_column" >
+                <div class="row">
                   <input ng-model="vm.payorDetail.homeStatus" class='custom_radio' type="radio" value="lainnya" name="lainnya" id="lainnya"  required/>
                   <label class='' for="lainnya">Lainnya</label>
                 </div>
+                <div class="row  align_column"  style="margin-left: 35px;" ng-show="vm.payorDetail.homeStatus=='lainnya'">
+                  <input type="text" placeholder="Enter" name='lainnya_other' ng-model='vm.payorDetail.homeStatus2' ng-pattern='vm.pattern.textOnly' ng-required="vm.payorDetail.homeStatus=='lainnya'">
+                  <p class="message" ng-show="vm.payorDform.lainnya_other.$touched&&vm.payorDform.lainnya_other.$invalid">! Input salah, silakan masukkan huruf</p>
+                </div>
               </div>
-             
             </div>
           </div>
+          <!--end item-->
           <div class='item '>
             <div class="row-no-padding">
               <div class="row">
@@ -289,9 +307,10 @@
               </div>
             </div>
           </div>
+          <!--end item-->
           <div class='item '>
             <div class="row-no-padding">
-              <div class="row">
+              <div class="row align_column">
                 <md-input-container class="md-block"  md-no-float >
                   <label class="item-stacked-label">
                    Alamat Tempat Tinggal 
@@ -303,7 +322,6 @@
               </div>
               <div class="row">
                 <div class="col-33">
-                
                    <md-input-container class="md-block"  md-no-float >
                     <label class="item-stacked-label">
                       <div class="input-label">RW</div>
@@ -351,7 +369,7 @@
                 <div class="col-50">
                    <md-input-container class="md-block"  md-no-float >
                     <label class="item-stacked-label">
-                      <div class="input-label">Provinsi</div>
+                      Provinsi
                     </label>
                     <input name='provinsi'  ng-model="vm.payorDetail.provinsi" ng-pattern='vm.pattern.textOnly' required/>
                   </md-input-container>
@@ -361,7 +379,7 @@
                 <div class="col-50">
                   <md-input-container class="md-block"  md-no-float >
                     <label class="item-stacked-label">
-                      <div class="input-label">Kabupaten / Kota</div>
+                      Kabupaten / Kota
                     </label>
                     <input name='kabupaten_kota'  ng-model="vm.payorDetail.kabupaten_kota"  ng-pattern='vm.pattern.textOnly' required/>
                   </md-input-container>
@@ -372,7 +390,7 @@
               <div class="row">
                 <md-input-container class="md-block"  md-no-float >
                   <label class="item-stacked-label">
-                    <div class="input-label">Kode Pos</div>
+                    Kode Pos
                   </label>
                   <input   ng-model="vm.payorDetail.kode_pos" name/>
                 </md-input-container>
@@ -380,7 +398,7 @@
               <div class="row align_column">
                 <md-input-container class="md-block"  md-no-float >
                   <label class="item-stacked-label">
-                    <div class="input-label">Nama Perusahaan Tempat Bekerja </div>
+                    Nama Perusahaan Tempat Bekerja 
                   </label>
                   <input  name='nama_perusahaan'  ng-model="vm.payorDetail.nama_perusahaan"  ng-pattern='vm.pattern.alphanumeric' required/>
                 </md-input-container>
@@ -467,7 +485,7 @@
               </div>
             </div>
           </div>
-         
+          <!--end item-->
           <div class='item ' ng-repeat="(index, phone) in vm.phones">
             <div class="row-no-padding">
               <div class="row">
@@ -527,7 +545,6 @@
                       </select>
                     </div>
                     <div class="col-70"><input type="number" name='no_hp{{$index}}' placeholder="XXX  XXXXXXXX" ng-model='phone.phone_gsm' required></div>
-                    
                   </div>
                    <div class="row"> 
                     <p class="message" ng-show='vm.payorDform.no_hp{{$index}}.$touched&&vm.payorDform.no_hp{{$index}}.$invalid'>! Input salah, silakan masukkan angka</p>
@@ -536,37 +553,17 @@
               </div>
             </div>
           </div>
+          <!--end item-->
           <div class="item">
             <div class="row-no-padding">
-<<<<<<< HEAD
-             
-                <button class="button button-full button-block button-light" ng-click="vm.addPhone()">
-                 <i class="icon ion-ios-plus-empty"></i> <span>Tampah Kontak</span>
-                </button>
-              
-=======
-              <div class="row">
-                <div class="button-block add_icon">
-                  <a class="button" ng-click="vm.addPhone()"><i class="icon ion-ios-plus-empty"></i> <span>Tampah Kontak</span></a>
-                </div>
-              </div>
->>>>>>> b00ea4ed11783968b1575463a15e37271997dd76
+              <button class="button button-full button-block button-light" ng-click="vm.addPhone()">
+                <i class="icon ion-ios-plus-empty"></i> <span>Tambah kontak</span>
+              </button>
             </div>
           </div>
+          <!--end item-->
           <div class="item">
-            <h1 class="text-center description bold">Apakah (Calon) Pembayar Premi/Kontributor memiliki pekerjaan/usaha/bisnis lain di luar pekerjaan utama?</h1>
-            <div class="button-bar">
-              <a class="button col col-50" grouped-radio="'Hari'"  ng-model="vm.payorDetail.utama">Hari</a>
-              <a class="button col col-50" grouped-radio="'Minggu'" ng-model="vm.payorDetail.utama">Minggu</a>
-            </div>
-            <div class="mt-30" ng-show="vm.payorDetail.utama=='Hari'">
-              <input type="text" placeholder="Enter">
-            </div>
-          </div>
-          <div class="item">
-            <label>
-              Sumber penghasilan rutin per bulan
-            </label>
+            <label>Sumber penghasilan rutin per bulan</label>
             <div class="row responsive-sm">
               <div class="col-50">
                 <ion-checkbox class="policy-checkbox" ng-model="vm.payorDetail.penghasilan_gaji">Gaji</ion-checkbox>
@@ -606,25 +603,36 @@
             <div class="row">
               <input class="other_option" type="text" ng-show='vm.payorDetail.penghasilan_lainnya' placeholder="Enter">
             </div>
-              <div class="row responsive-sm">
-                <ion-checkbox class="policy-checkbox" ng-model="vm.payorDetail.penghasilan_tidak">Tidak Berpenghasilan</ion-checkbox>
-             </div>
+            <div class="row responsive-sm">
+              <ion-checkbox class="policy-checkbox" ng-model="vm.payorDetail.penghasilan_tidak">Tidak Berpenghasilan</ion-checkbox>
+            </div>
           </div>
+          <!--end item-->
           <div class='item '>
             <div class="row-no-padding">
-             
               <div class="row">
               <md-input-container class="md-block">
-                    <md-select name='pernikahan' ng-model="vm.payorDetail.status_pernikahan" placeholder='Total penghasilan rutin per bulan' required>
-                      <md-option ng-repeat="c in vm.questions.pernikahan" ng-value="c"  >
-                          {{c}}
-                      </md-option>
-                    </md-select>
+                <md-select name='total_penghasilan' ng-model="vm.payorDetail.total_penghasilan" placeholder='Total penghasilan rutin per bulan' required>
+                  <md-option ng-repeat="c in vm.questions.pernikahan" ng-value="c"  >
+                    {{c}}
+                  </md-option>
+                </md-select>
               </md-input-container>
               </div>
             </div>
           </div>
-          
+          <!--end item-->
+          <div class="item">
+            <h1 class="text-center description bold">Apakah (Calon) Pembayar Premi/Kontributor memiliki pekerjaan/usaha/bisnis lain di luar pekerjaan utama?</h1>
+            <div class="button-bar">
+              <a class="button col col-50" grouped-radio="true"  ng-model="vm.payorDetail.utama">Ya</a>
+              <a class="button col col-50" grouped-radio="false" ng-model="vm.payorDetail.utama">Tidak</a>
+            </div>
+            <div class="mt-30" ng-show="vm.payorDetail.utama==true">
+              <input type="text" placeholder="Enter">
+            </div>
+          </div>
+          <!--end item-->
         </div>
       </ng-form>
     </div>
