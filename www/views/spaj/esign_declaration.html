@@ -1,8 +1,9 @@
 <ion-view cache-view="false" view-title="Sebelum Anda melanjutkan" id="spaj-start">
-  <ion-content>
+  <ion-content >
+    
     <div id="declaration">
       <!--id='declaration'-->
-      <form name="esignForm">
+      <form name="vm.esignForm">
         <div class="list list-inset no-lines">
           <div class='item three-input'>
             <div class="row-no-padding">
@@ -15,21 +16,21 @@
                     <div class="input-label">Nama Tenaga Pemasar</div>
                   </label>
                   <input type="text" name="name_of_marketer" ng-model="vm.data.name_of_marketer" placeholder="Calvin Widjaya" required ng-pattern="/^[0-9a-zA-Z]+$/">
-                  <div ng-show="esignForm.name_of_marketer.$touched && esignForm.name_of_marketer.$invalid" class="error">! Input salah, silakan masukkan huruf</div>
+                  <div ng-show="vm.esignForm.name_of_marketer.$touched && vm.esignForm.name_of_marketer.$invalid" class="error">! Input salah, silakan masukkan huruf</div>
                 </div>
                 <div class="col col-33">
                   <label class="item-stacked-label">
                     <div class="input-label">Unit Tenaga Pemasar</div>
                   </label>
                   <input type="text" placeholder="GA Power" name="marketing_unit" ng-model="vm.data.marketing_unit" ng-pattern="/^[0-9a-zA-Z]+$/" required>
-                  <div ng-show="esignForm.marketing_unit.$touched && esignForm.marketing_unit.$invalid" class="error">! Input salah, silakan masukkan huruf</div>
+                  <div ng-show="vm.esignForm.marketing_unit.$touched && vm.esignForm.marketing_unit.$invalid" class="error">! Input salah, silakan masukkan huruf</div>
                 </div>
                 <div class="col col-33">
                   <label class="item-stacked-label">
                     <div class="input-label">Kode Tenaga Pemasar</div>
                   </label>
                   <input type="text" placeholder="1002334557" name="marketing_unit_code" ng-model="vm.data.marketing_unit_code" ng-pattern="/^[0-9]*$/" required>
-                  <div ng-show="esignForm.marketing_unit_code.$touched && esignForm.marketing_unit_code.$invalid" class="error">! Input salah, silakan masukkan huruf</div>
+                  <div ng-show="vm.esignForm.marketing_unit_code.$touched && vm.esignForm.marketing_unit_code.$invalid" class="error">! Input salah, silakan masukkan huruf</div>
                 </div>
               </div>
             </div>
@@ -54,7 +55,7 @@
                           <md-option value="Option 1">5-10 tahun</md-option>
                         </md-select>
                       </md-input-container>
-                      <div ng-show="esignForm.policyholder_duration.$touched && esignForm.policyholder_duration.$invalid" class="error">pertanyaan ini wajib diisi</div>
+                      <div ng-show="vm.esignForm.policyholder_duration.$touched && vm.esignForm.policyholder_duration.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
                     <div class="col col-33">
                       <md-input-container class="md-block mt-0">
@@ -63,7 +64,7 @@
                           <md-option value="Option 1">Keluarga</md-option>
                         </md-select>
                       </md-input-container>
-                      <div ng-show="esignForm.policyholder_known_as.$touched && esignForm.policyholder_known_as.$invalid" class="error">pertanyaan ini wajib diisi</div>
+                      <div ng-show="vm.esignForm.policyholder_known_as.$touched && vm.esignForm.policyholder_known_as.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
                     <div class="col col-33">
                       <div>
@@ -72,7 +73,7 @@
                           <input type="text" name="policyholder_explain" ng-pattern="/^[0-9a-zA-Z]+$/" ng-model="vm.data.policyholder.explain" required />
                         </md-input-container>
                       </div>
-                      <div ng-show="esignForm.policyholder_explain.$touched && esignForm.policyholder_explain.$invalid" class="error">pertanyaan ini wajib diisi</div>
+                      <div ng-show="vm.esignForm.policyholder_explain.$touched && vm.esignForm.policyholder_explain.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
                   </div>
                 </div>
@@ -92,7 +93,7 @@
                           <md-option value="Option 1">5-10 tahun</md-option>
                         </md-select>
                       </md-input-container>
-                      <div ng-show="esignForm.main_insured_duration.$touched && esignForm.main_insured_duration.$invalid" class="error">pertanyaan ini wajib diisi</div>
+                      <div ng-show="vm.esignForm.main_insured_duration.$touched && vm.esignForm.main_insured_duration.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
                     <div class="col col-33">
                       <md-input-container class="md-block mt-0">
@@ -101,7 +102,7 @@
                           <md-option value="Option 1">Keluarga</md-option>
                         </md-select>
                       </md-input-container>
-                      <div ng-show="esignForm.main_insured_known_as.$touched && esignForm.main_insured_known_as.$invalid" class="error">pertanyaan ini wajib diisi</div>
+                      <div ng-show="vm.esignForm.main_insured_known_as.$touched && vm.esignForm.main_insured_known_as.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
                     <div class="col col-33">
                       <div>
@@ -110,7 +111,7 @@
                           <input type="text" name="main_insured_explain" ng-pattern="/^[0-9a-zA-Z]+$/" ng-model="vm.data.main_insured.explain" required />
                         </md-input-container>
                       </div>
-                      <div ng-show="esignForm.main_insured_explain.$touched && esignForm.main_insured_explain.$invalid" class="error">pertanyaan ini wajib diisi</div>
+                      <div ng-show="vm.esignForm.main_insured_explain.$touched && vm.esignForm.main_insured_explain.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
                   </div>
                 </div>
@@ -130,7 +131,7 @@
                           <md-option value="Option 1">5-10 tahun</md-option>
                         </md-select>
                       </md-input-container>
-                      <div ng-show="esignForm.additional_insured_1_duration.$touched && esignForm.additional_insured_1_duration.$invalid" class="error">pertanyaan ini wajib diisi</div>
+                      <div ng-show="vm.esignForm.additional_insured_1_duration.$touched && vm.esignForm.additional_insured_1_duration.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
                     <div class="col col-33">
                       <md-input-container class="md-block mt-0">
@@ -139,7 +140,7 @@
                           <md-option value="Option 1">Keluarga</md-option>
                         </md-select>
                       </md-input-container>
-                      <div ng-show="esignForm.additional_insured_1_known_as.$touched && esignForm.additional_insured_1_known_as.$invalid" class="error">pertanyaan ini wajib diisi</div>
+                      <div ng-show="vm.esignForm.additional_insured_1_known_as.$touched && vm.esignForm.additional_insured_1_known_as.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
                     <div class="col col-33">
                       <div>
@@ -148,7 +149,7 @@
                           <input type="text" name="additional_insured_1_explain" ng-pattern="/^[0-9a-zA-Z]+$/" ng-model="vm.data.additional_insured_1.explain" required />
                         </md-input-container>
                       </div>
-                      <div ng-show="esignForm.additional_insured_1_explain.$touched && esignForm.additional_insured_1_explain.$invalid" class="error">pertanyaan ini wajib diisi</div>
+                      <div ng-show="vm.esignForm.additional_insured_1_explain.$touched && vm.esignForm.additional_insured_1_explain.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
                   </div>
                 </div>
@@ -168,7 +169,7 @@
                           <md-option value="Option 1">5-10 tahun</md-option>
                         </md-select>
                       </md-input-container>
-                      <div ng-show="esignForm.additional_insured_2_duration.$touched && esignForm.additional_insured_2_duration.$invalid" class="error">pertanyaan ini wajib diisi</div>
+                      <div ng-show="vm.esignForm.additional_insured_2_duration.$touched && vm.esignForm.additional_insured_2_duration.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
                     <div class="col col-33">
                       <md-input-container class="md-block mt-0">
@@ -177,7 +178,7 @@
                           <md-option value="Option 1">Keluarga</md-option>
                         </md-select>
                       </md-input-container>
-                      <div ng-show="esignForm.additional_insured_2_known_as.$touched && esignForm.additional_insured_2_known_as.$invalid" class="error">pertanyaan ini wajib diisi</div>
+                      <div ng-show="vm.esignForm.additional_insured_2_known_as.$touched && vm.esignForm.additional_insured_2_known_as.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
                     <div class="col col-33">
                       <div>
@@ -186,7 +187,7 @@
                           <input type="text" name="additional_insured_2_explain" ng-pattern="/^[0-9a-zA-Z]+$/" ng-model="vm.data.additional_insured_2.explain" required />
                         </md-input-container>
                       </div>
-                      <div ng-show="esignForm.additional_insured_2_explain.$touched && esignForm.additional_insured_2_explain.$invalid" class="error">pertanyaan ini wajib diisi</div>
+                      <div ng-show="vm.esignForm.additional_insured_2_explain.$touched && vm.esignForm.additional_insured_2_explain.$invalid" class="error">pertanyaan ini wajib diisi</div>
                     </div>
                   </div>
                 </div>
@@ -234,8 +235,9 @@
           
           <div class='item ibox'>
             <span class="input-label">Tenaga Pemasar</span>
-            <div class="ibox-content">
-              <canvas class='signature-pad' id='agent-signature-canvas'></canvas>
+           
+            <div class="ibox-content"   >
+              <canvas class='signature-pad' id='agent-signature-canvas' ></canvas>
             </div>
             <div ng-show="vm.data.signature[0].esignatureObj.isEmpty()" class="error">Silakan tanda tangan</div>
           </div>
@@ -302,12 +304,14 @@
             </div>
           </div>
         </div>
+        
       </form>
     </div>
   </ion-content>
+  
   <ion-footer-bar class="bar bar-footer bar-assertive no-padding no-lines">
     <a title="Continue" class="btn gray-btn">Email PDF<button class="button button-clear"></button></a>
-    <a ng-click="vm.handleSubmit()" class="btn">Lanjuktan<button class="button button-clear"></button></a>
+    <a ng-click="vm.esignForm.$valid&&vm.handleSubmit()" class="btn" ng-class="vm.esignForm.$valid ? '_active' : 'gray-btn'">Lanjuktan<button class="button button-clear"></button></a>
   </ion-footer-bar>
 
 </ion-view>
