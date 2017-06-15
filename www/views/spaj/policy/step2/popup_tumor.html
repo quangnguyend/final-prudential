@@ -98,7 +98,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row-no-padding">
+              <div class="row-no-padding" ng-show="vm.healthData.tumorPu.sudah">
                 <div class="row">
                   <div class="col-40">
                     <md-input-container class="md-block">
@@ -120,7 +120,7 @@
               <div class="row-no-padding">
                 <md-input-container class="md-block" flex-gt-sm>
                   <label>Nama Dokter / Rumah Sakit</label>
-                  <input type="text" ng-model="vm.healthData.tumorPu.nama_dokter" />
+                  <input style="border-bottom-style:none;" type="text" ng-model="vm.healthData.tumorPu.nama_dokter" />
                 </md-input-container>
               </div>
               <div class="row-no-padding">
@@ -234,6 +234,8 @@
                     <label class="checkbox">
                 <input type="checkbox" ng-model='vm.healthData.tumorPu.pengo.obat_option'>
               </label>
+
+              
                     <ul ng-class="vm.healthData.tumorPu.pengo.obat_option ? 'active':'disable'">
                       <li>
                         <div class="row">

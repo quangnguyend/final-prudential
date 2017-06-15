@@ -209,7 +209,7 @@
       <div class="icon" ng-class="{'completed': vm.eyePopupTouched &&vm.objectValidate(vm.healthData.eyePopup)||vm.healthData.ieye==false}"></div>
 
       <h1 class="text-center description">Kondisi mata</h1>
-      <p class="item_description">Rabun jauh dengan menggunakan kacamata/softlens (lensa kontak) melebihi -6,0 pada satu atau kedua mata,
+      <p class="item_description"><span ng-class="{'red': vm.eyePopupTouched&&!vm.objectValidate(vm.healthData.eyePopup)}" ng-click='vm.eyePopupTouched&&!vm.objectValidate(vm.healthData.eyePopup)&&vm.showPopupEye()'>Rabun jauh dengan menggunakan kacamata/softlens (lensa kontak) melebihi -6,0 pada satu atau kedua mata,</span>
         <span ng-class="{'red': vm.eyePopupTouched&&!vm.objectValidate(vm.healthData.eyePopup)}" ng-click='vm.eyePopupTouched&&!vm.objectValidate(vm.healthData.eyePopup)&&vm.showPopupEye()'>Katarak atau kelainan mata lainnya</span></p>
       <div class="button-bar">
         <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ieye">Ya</a>
@@ -406,7 +406,7 @@
       </div>
     </div>
     <!--end-item iabnormality-->
-    <div class="item ipapsmear">
+    <div class="item ipapsmear" ng-show="gender.data.gender == 'WANITA'">
       <div class="icon" ng-class="{'completed': vm.healthData.ipapsmear != null}"></div>
       <h1 class="text-center description">Apakah Anda pernah melakukan papsmear dengan hasil abnormal</h1>
 
@@ -416,7 +416,7 @@
       </div>
     </div>
     <!--end-item ipapsmear-->
-    <div class="item ipregnant">
+    <div class="item ipregnant" ng-show="gender.data.gender == 'WANITA'">
       <div class="icon" ng-class="{'completed': vm.healthData.ipregnant != null}"></div>
       <h1 class="text-center description">Apakah saat ini Anda sedang hamil?</h1>
       <div class="button-bar">
@@ -425,7 +425,7 @@
       </div>
     </div>
     <!--end-item ipregnant-->
-    <div class="item isurgery ">
+    <div class="item isurgery " ng-show="gender.data.gender == 'WANITA'">
       <div class="icon" ng-class="{'completed': vm.healthData.isurgery != null}"></div>
       <h1 class="text-center description">Apakah Calon Tertanggung pernah melahirkan dengan cara operasi/Sectio Caesaria karena alasan kesehatan?</h1>
       <div class="button-bar">
@@ -434,7 +434,7 @@
       </div>
     </div>
     <!--end-item isurgery -->
-    <div class="item icomplication">
+    <div class="item icomplication" ng-show="gender.data.gender == 'WANITA'">
       <div class="icon" ng-class="{'completed': vm.healthData.icomplication != null}"></div>
       <h1 class="text-center description">Apakah Calon Tertanggung pernah mengalami kesulitan/komplikasi pada saat hamil atau melahirkan?</h1>
       <div class="button-bar">

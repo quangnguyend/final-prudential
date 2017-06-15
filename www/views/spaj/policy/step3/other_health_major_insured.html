@@ -15,10 +15,7 @@
   </div>
   <div  class="item" ng-class="vm.questions.question_2.active == false? 'disabled': ''" class="mt-50" id="question_2">
     <h1 class="description">{{vm.questions.question_2.title}}</h4>
-    <md-input-container  class="md-block"   md-no-float >
-      <input type="date" placeholder="DD/MM/YYYY" onblur="(this.type='date')" ng-model="vm.questions.question_2.date_inspection">
-    </md-input-container>
-    
+      <md-datepicker md-placeholder="DD-MM-YYY" ng-model="vm.questions.question_2.date_inspection"></md-datepicker>
     <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_3')">Berikutnya</button>
   </div>
   <div  class="item" ng-class="vm.questions.question_3.active == false? 'disabled': ''" class="mt-50" id="question_3">
@@ -33,7 +30,7 @@
     <div ng-repeat="item in vm.questions.question_4.results">
       <p class="text-right">200 karakter</p>
       <md-input-container class="md-block" md-no-float >
-        <input  ng-model="item.result" placeholder="Enter"/>
+        <textarea  ng-model="item.result" placeholder="Enter"></textarea>
       </md-input-container>
     </div>
     <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_5')">Berikutnya</button>
