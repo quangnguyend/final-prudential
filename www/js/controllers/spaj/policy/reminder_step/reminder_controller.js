@@ -12,6 +12,7 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService,CommonService) {
     }
   var idListToCheck = Object.keys(listToCheck)
   vm.healthData = SpajService.getData('health_data')
+  console.log(vm.healthData)
   vm.healthFormValidStatus = {
     is_checked: false,
     null_properties: []
@@ -30,24 +31,26 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService,CommonService) {
     null_properties: []
   }
 
-  var validateHealthData = function (obj, returnObj) {
-    if (!obj) { return }
+  var validateHealthData = function (object, returnObj) {
+    var gender= SpajService.getData('gender');
+    var obj=Object.assign({}, object);
+    if (!obj)  return
+    if(obj.smoker==false) {delete obj.sticks_cigarettes}
+    if(obj.medication==false) {delete obj.medication_detail}
+    if(obj.idisease==false) {delete obj.idisea_others}
+    if(obj.iill==false) {delete obj.iill_katarak; delete obj.iill_rabun}
+    if(!gender || gender != 'WANITA'){
+      delete obj.ipapsmear
+      delete obj.ipregnant
+      delete obj.isurgery
+      delete obj.icomplication
+    }
     for (let prop in obj) {
-      if (prop === 'personalAccidentPopupData') {
-        if (obj['ieye'] === true) {
-          validateHealthData(obj[prop], returnObj)
-        }
-      }
-      if (prop === 'eyePopupData') {
-        if (obj['iinjury'] === true) {
-          validateHealthData(obj[prop], returnObj)
-        }
-      } else if (prop !== 'personalAccidentPopupData' && prop !== 'eyePopupData' && typeof obj[prop] === 'object' && obj[prop]) {
-        validateHealthData(obj[prop], returnObj)
-      } else if (obj[prop] === null || obj[prop] === '') {
+      if (obj[prop] === null || obj[prop] === '') {
         returnObj.null_properties.push(prop)
       }
     }
+    console.log('reobj',  returnObj)
     returnObj.is_checked = true
   }
 
@@ -202,6 +205,7 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService,CommonService) {
   vm.inCompleteData = checkMissingData()
   vm.inCompleteList = Object.keys(vm.inCompleteData).map(function (key) {
     if (idListToCheck.indexOf(key) >= 0) {
+      console.log(vm.inCompleteData[key])
       return {id: key, name: listToCheck[key], data: vm.inCompleteData[key]}
     }
   })

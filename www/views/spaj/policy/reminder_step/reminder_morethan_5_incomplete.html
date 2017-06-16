@@ -15,9 +15,12 @@
             <div class="no-lines half-width-center text-left">
                 <div ng-repeat='list in vm.inCompleteList' class='missing-reminder'>
                     <span class='missing-title' ng-click='vm.toggle(list.id)' ng-class='vm.showData[list.id]?"close":"open"'>{{list.name}}</span>
-                    <div class='missing-content' ng-show='vm.showData[list.id]'>
-                        <span ng-repeat="(index, item) in list.data">{{index+1}}. {{item}}</br></span>
-                    </div>
+                    <ul class='missing-content' ng-show='vm.showData[list.id]'>
+                        <li ng-repeat="(index, item) in list.data">
+                            <p>{{index+1}}.</p>
+                            <p>{{item}}<p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

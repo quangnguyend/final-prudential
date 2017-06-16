@@ -236,6 +236,7 @@ function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog,
   // Main Health step
 
   vm.objectValidate = function (obj) {
+    console.log(obj)
     var obvalid = 0
     if (obj.constructor == Object) {
       for (var key in obj) {
@@ -339,24 +340,6 @@ function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog,
       .then(function (res) {
         vm.digestivePopupTouched = true
       })
-  }
-  vm.healthData.digesPu = {
-    tindakan_obat:[{
-      yang: null,
-      diperoleh_dari: null,
-      timbulnya_select: null,
-      timbulnya_option: null,
-      mashit: null
-    }]
-  }
-  vm.healthData.digesPu={
-    tindakan_obat:[{
-      yang: null,
-      diperoleh_dari: null,
-      timbulnya_select: null,
-      timbulnya_option: null,
-      mashit: null
-    }]
   }
   vm.digest_addObat = function () {
     var newtindakan_obat = {
