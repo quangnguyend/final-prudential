@@ -20,6 +20,11 @@
   .item {
     border: none;
   }
+  input[type='text'],
+  input[type='number']
+  {
+    border-bottom:1px solid #DDD
+  }
 
   .break-line{
     @extend .font-size-huge;
@@ -95,7 +100,21 @@
   .no-padding-top {
     padding-top: 0px;
   }
-
+  .md-block{
+    &+.message{
+      margin-top:-30px;
+      &.small-margin{
+         margin-top:-10px;
+      }
+    }
+  }
+  
+  .message{
+    color: $pru_red; 
+  }
+  .other_option{
+    margin-left:60px
+  }
   .list .item .small-question{
     @extend .standard-body-small;
     white-space: normal;

@@ -89,7 +89,9 @@ ion-footer-bar.bar.bar-assertive {
   right: 10px;
   top: 15px;
 }
-
+.align_column{
+  flex-direction: column;
+}
 .bar.bar-assertive.bar-footer.btn-disable {
   background: #9B9B9B !important;
   border: none !important;
@@ -104,6 +106,12 @@ ion-footer-bar.bar.bar-assertive {
     text-align: center;
     text-decoration: none;
     width: 100%;
+    &._active{
+      background: $pru_red
+    }
+    &:last-child{
+      border-left:1px solid #FFF
+    }
   }
   .wrapper {
     width: 100%;
@@ -639,7 +647,12 @@ select {
     height: 300px;
   }
 }
-#health_question1 .message{color:#DA291C}
+#health_question1 .message{
+  color:$pru_red;
+  &.space_top{
+    margin-top:10px;
+  }
+}
 
 @media only screen and (min-width: 768px) {
   .body, body *, label.item-stacked-label, body label, label.item, .item select, #step-header select {
@@ -696,6 +709,7 @@ h1.description{
 }
 .error{
   color: #f00;
+  white-space: initial;
 }
 .no-underline{
   .md-select-value{

@@ -1,4 +1,4 @@
-function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicScrollDelegate, SpajService, $ionicSideMenuDelegate) {
+function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog, $ionicScrollDelegate, SpajService, $ionicSideMenuDelegate) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
@@ -43,6 +43,10 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
         obat: null,
         lainnya: null
       },
+      //for obat
+      tindakan_obat:[{
+
+      }],
       pemer: {
         endoskopi: null,
         lainnya: null
@@ -215,9 +219,21 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
   }
 
   function validator() {
-    return true
+    var mainScreen_valid = vm.hqns.$valid;
+    var tumorPu_valid = vm.healthData.inodule==false || vm.healthData.inodule==true&&vm.objectValidate(vm.healthData.tumorPu);
+    var tumorEye_valid = vm.healthData.ieye==false ||  vm.healthData.ieye==true&&vm.objectValidate(vm.healthData.eyePopup)
+    var digesPu_valid = vm.healthData.idigestive==false || vm.healthData.idigestive==true&&vm.objectValidate(vm.healthData.digesPu);
+    var respiratoryPu_valid = vm.healthData.irespiratory==false || vm.healthData.irespiratory==true&&vm.objectValidate(vm.healthData.respiratoryPu);
+    var iill_valid= (vm.healthData.iill==false) || vm.healthData.iill==true&&(vm.healthData.iill_rabun||vm.healthData.iill_katarak)
+
+    return mainScreen_valid && tumorPu_valid && tumorEye_valid && digesPu_valid && respiratoryPu_valid && iill_valid
   }
 
+  vm.pattern={
+    textOnly: new RegExp(/^[a-zA-Z\s]*$/),
+    nonDesimal: new RegExp(/^\d+\.\d{0,3}$/),
+    alphanumeric: new RegExp(/^[a-z0-9 ]+$/)
+  }
   // Main Health step
 
   vm.objectValidate = function (obj) {
@@ -313,7 +329,7 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
     vm.resetObject(vm.healthData.eyePopup)
   }
 
-  // ======================== PopupDigestive ======================== //
+  // *======================== PopupDigestive ========================* //
 
   vm.showPopupDigestive = function () {
     $mdDialog.show({
@@ -348,6 +364,122 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
     vm.digestivePopupTouched = false;
     vm.resetObject(vm.healthData.digesPu)
   }
+  vm.digestPuOption={
+    pertama:[
+      {
+        value:1, name:'0-1 tahun lalu'
+      },
+      {
+        value:2, name:'1-3 tahun lalu'
+      },
+      {
+        value:3, name:'>3 tahun lalu'
+      }
+    ],
+    frekuensi:[
+      {
+        value:1, name:'1 kali'
+      },
+      {
+        value:2, name:'2 kali'
+      },
+      {
+        value:3, name:'3 kali'
+      },
+      {
+        value:4, name:'4 kali'
+      },
+      {
+        value:5, name:'5 kali'
+      },
+      {
+        value:6, name:'6 kali'
+      },
+      {
+        value:7, name:'7 kali'
+      },
+      {
+        value:8, name:'8 kali'
+      },
+      {
+        value:9, name:'9 kali'
+      },
+      {
+        value:10, name:'10 kali'
+      }
+    ],
+    kapan:[
+      {
+        value:1, name:'< 2 tahun lalu'
+      },
+      {
+        value:2, name:'2-4 tahun lalu'
+      },
+      {
+        value:3, name:'> 4 tahun lalu'
+      }
+    ],
+    hasil:[
+      {
+        value:1, name:'Baik'
+      },
+      {
+        value:2, name:'Kurang Baik'
+      },
+      {
+        value:3, name:'Tidak Tahu'
+      }
+    ],
+    year:[
+      {
+        value:1, name:'2015'
+      },
+      {
+        value:2, name:'2016'
+      },
+      {
+        value:3, name:'2017'
+      }
+    ],
+    month:[
+      {
+        value:1, name:'Januari'
+      },
+      {
+        value:2, name:'Februar'
+      },
+      {
+        value:3, name:'Maret'
+      },
+      {
+        value:4, name:'April'
+      },
+      {
+        value:5, name:'Mei'
+      },
+      {
+        value:6, name:'Juni'
+      },
+      {
+        value:7, name:'Juli'
+      },
+      {
+        value:8, name:'Agustus'
+      },
+      {
+        value:9, name:'September'
+      },
+      {
+        value:10, name:'Oktober'
+      },
+      {
+        value:11, name:'November'
+      },
+      {
+        value:12, name:'Desember'
+      }
+    ]
+  }
   // ======================== PopupRespiratory ======================== //
 
   vm.showPopupRespiratory = function () {
@@ -364,7 +496,36 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
     vm.respiratoryPopupTouched = false;
     vm.resetObject(vm.healthData.respiratoryPu)
   }
-
+  vm.respiPuOption={
+    kapan:[
+      {
+        value:1, name:'< 1 tahun lalu'
+      },
+      {
+        value:2, name:'1- <2 tahun lalu'
+      },
+      {
+        value:3, name:'2- < 4 tahun lalu'
+      },
+      {
+        value:4, name:'>= 4 years ago'
+      }
+    ],
+    days:[
+      {
+        value:1, name:'1-2 days'
+      },
+      {
+        value:2, name:'3-5 days'
+      },
+      {
+        value:3, name:'5-7 days'
+      },
+      {
+        value:4, name:'> 10 days'
+      }
+    ]
+  }
   // ======================== PopupTumor ======================== //
   vm.showPopupTumor = function () {
     $mdDialog.show({
@@ -379,6 +540,38 @@ function step2Ctrl($state, $scope, $rootScope, $stateParams, $mdDialog, $ionicSc
   vm.resetTumor = function () {
     vm.tumorPopupTouched = false;
     vm.resetObject(vm.healthData.tumorPu)
+  }
+  vm.tumorPuOption={
+    tipe:[
+      {
+        value:1, name:'Angkat Seluruh Rahim'
+      },
+      {
+        value:2, name:'Angkat Sebagian Rahim'
+      }
+    ],
+    hasil:[
+      {
+        value:1, name:'Baik'
+      },
+      {
+        value:2, name:'Tidak Baik'
+      },
+      {
+        value:3, name:'Tidak Tahu'
+      }
+    ],
+    kategori:[
+      {
+        value:1, name:'Jinak'
+      },
+      {
+        value:2, name:'Ganas'
+      },
+      {
+        value:3, name:'Tidak Tahu'
+      }
+    ]
   }
   // ======================== End PopupTumor ======================== //
 

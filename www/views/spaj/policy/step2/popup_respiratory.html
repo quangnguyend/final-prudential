@@ -13,12 +13,13 @@
       <ion-content delegate-handle="puScroll">
         <div class="md-dialog-content">
           <div id="policy_info_ph_info" class="list list-inset no-lines">
+            <ng-form name='vm.respiPu' >
             <div class='item'>
               <div class="row-no-padding">
                 <div class="row">
                   <label class="item-stacked-label">
-              <span class="input-label">Gangguan pernafasan yang diderita</span>
-            </label>
+                    <span class="input-label">Gangguan pernafasan yang diderita</span>
+                  </label>
                 </div>
                 <div class="row">
                   <div class="col-33">
@@ -44,7 +45,7 @@
                 <div class="row">
                   <md-input-container class="md-block">
                     <md-select ng-model='vm.healthData.respiratoryPu.kapan_pertama' placeholder="Kapan pertama kali gejala dirasakan">
-                      <md-option ng-repeat="n in vm.fakeoption" value="{{n.type}}">{{n.value}}</md-option>
+                      <md-option ng-repeat="n in vm.respiPuOption.kapan" value="{{n.value}}">{{n.name}}</md-option>
                     </md-select>
                   </md-input-container>
                 </div>
@@ -79,8 +80,9 @@
 
                 <md-input-container class="md-block" flex-gt-sm>
                   <label>Faktor pemicu terhadap keluhan yang dirasakan </label>
-                  <input type="text" ng-model='vm.healthData.respiratoryPu.faktor' />
+                  <input type="text" name='faktor' ng-model='vm.healthData.respiratoryPu.faktor'  ng-pattern="vm.pattern.textOnly"/>
                 </md-input-container>
+                <p class="message" ng-show='vm.respiPu.faktor.$invalid'>! Input salah, silakan masukkan huruf</p>
               </div>
               <div class="row-no-padding">
                 <div class="row">
@@ -116,7 +118,7 @@
                 <div class="row">
                   <md-input-container class="md-block">
                     <md-select ng-model="vm.healthData.respiratoryPu.kapan_keluhan" placeholder='Kapan keluhan terakhir'>
-                      <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                      <md-option ng-repeat="n in vm.respiPuOption.kapan" value="{{n.value}}">{{n.name}}</md-option>
                     </md-select>
                   </md-input-container>
                 </div>
@@ -124,8 +126,9 @@
               <div class="row-no-padding">
                 <md-input-container class="md-block" flex-gt-sm>
                   <label>Nama Dokter / Rumah Sakit</label>
-                  <input type="text" ng-model="vm.healthData.respiratoryPu.nama_dokter" />
+                  <input type="text" name='nama_dokter' ng-model="vm.healthData.respiratoryPu.nama_dokter"  ng-pattern="vm.pattern.textOnly"/>
                 </md-input-container>
+                <p class="message" ng-show='vm.respiPu.nama_dokter.$invalid'>! Input salah, silakan masukkan huruf</p>
               </div>
               <div class="row-no-padding">
                 <div class="row">
@@ -133,7 +136,7 @@
                     <div class="row">
                       <md-input-container class="md-block">
                         <md-select ng-model="vm.healthData.respiratoryPu.berapa_select" placeholder='Berapa kali konsultasi'>
-                          <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                          <md-option ng-repeat="m in vm.digestPuOption.frekuensi" value="{{m.value}}">{{m.name}}</md-option>
                         </md-select>
                       </md-input-container>
 
@@ -145,7 +148,7 @@
                       <div class="col-50">
                         <md-input-container class="md-block">
                           <md-select ng-model="vm.healthData.respiratoryPu.terakhir_select" placeholder='Terakhir konsultasi'>
-                            <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                            <md-option ng-repeat="m in vm.digestPuOption.month" value="{{m.value}}">{{m.name}}</md-option>
                           </md-select>
                         </md-input-container>
                       </div>
@@ -153,7 +156,7 @@
                       <div class="col-50">
                         <md-input-container class="md-block">
                           <md-select ng-model="vm.healthData.respiratoryPu.terakhir_year" placeholder='2011'>
-                            <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                            <md-option ng-repeat="m in vm.digestPuOption.year" value="{{m.value}}">{{m.name}}</md-option>
                           </md-select>
                         </md-input-container>
                       </div>
@@ -195,7 +198,7 @@
                     <div class="row">
                       <md-input-container class="md-block">
                         <md-select ng-model="vm.healthData.respiratoryPu.kapan_select" placeholder='Kapan'>
-                          <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                          <md-option ng-repeat="m in vm.digestPuOption.year" value="{{m.value}}">{{m.name}}</md-option>
                         </md-select>
                       </md-input-container>
                     </div>
@@ -206,7 +209,7 @@
                     <div class="row">
                       <md-input-container class="md-block">
                         <md-select ng-model="vm.healthData.respiratoryPu.lama_select" placeholder='Lama di Rumah Sakit'>
-                          <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                          <md-option ng-repeat="m in vm.respiPuOption.days" value="{{m.value}}">{{m.name}}</md-option>
                         </md-select>
                       </md-input-container>
 
@@ -217,8 +220,9 @@
               <div class="row-no-padding" ng-show="vm.healthData.respiratoryPu.apakah_pernah">
                 <md-input-container class="md-block" flex-gt-sm>
                   <label>Nama Dokter / Rumah Sakit</label>
-                  <input type="text" ng-model="vm.healthData.respiratoryPu.lama2" />
+                  <input type="text" name='lama2' ng-model="vm.healthData.respiratoryPu.lama2" ng-maxlength="100" ng-pattern='vm.pattern.textOnly'/>
                 </md-input-container>
+                <p class="message" ng-show='vm.respiPu.lama2.$invalid'>! Input salah, silakan masukkan huruf</p>
               </div>
               <div class="row-no-padding">
                 <div class="row">
@@ -249,8 +253,9 @@
                 <div class="option_other" ng-class="vm.healthData.respiratoryPu.suntikan ? 'active':'disable'">
                   <md-input-container class="md-block" flex-gt-sm>
                     <label>Nama Obat</label>
-                    <input type="text" ng-model="vm.healthData.respiratoryPu.pengo.suntikan_nama" />
+                    <input type="text" name='option_obat_nama' ng-model="vm.healthData.respiratoryPu.pengo.suntikan_nama"  ng-maxlength="100" ng-pattern='vm.pattern.textOnly'/>
                   </md-input-container>
+                   <p class="message" ng-show='vm.respiPu.option_obat_nama.$invalid'>! Input salah, silakan masukkan huruf</p>
                 </div>
                 <div class="row">
                   <ion-checkbox ng-model="vm.healthData.respiratoryPu.pengo.obat_minum">Obat minum</ion-checkbox>
@@ -264,8 +269,9 @@
                 <div class="option_other" ng-class="vm.healthData.respiratoryPu.pengo.lainnya_option ? 'active':'disable'">
                   <md-input-container class="md-block" flex-gt-sm>
                     <label>Nama Obat</label>
-                    <input type="text" ng-model="vm.healthData.respiratoryPu.pengo.lainnya" />
+                    <input type="text" name='pengo_lainnya' ng-model="vm.healthData.respiratoryPu.pengo.lainnya" ng-maxlength="100" ng-pattern='vm.pattern.textOnly' />
                   </md-input-container>
+                  <p class="message" ng-show='vm.respiPu.pengo_lainnya.$invalid'>! Input salah, silakan masukkan huruf</p>
                 </div>
 
               </div>
@@ -299,7 +305,7 @@
                     <div class="col-40">
                       <md-input-container class="md-block">
                         <md-select ng-model="vm.healthData.respiratoryPu.kapan_select2" placeholder='Kapan'>
-                          <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                          <md-option ng-repeat="m in vm.digestPuOption.year" value="{{m.value}}">{{m.name}}</md-option>
                         </md-select>
                       </md-input-container>
                     </div>
@@ -307,7 +313,7 @@
                     <div class="col-40">
                       <md-input-container class="md-block">
                         <md-select ng-model="vm.healthData.respiratoryPu.hasil_select" placeholder='Hasil'>
-                          <md-option ng-repeat="m in vm.fakeoption" value="{{m.type}}">{{m.value}}</md-option>
+                          <md-option ng-repeat="m in vm.digestPuOption.hasil" value="{{m.value}}">{{m.name}}</md-option>
                         </md-select>
                       </md-input-container>
                     </div>
@@ -321,11 +327,13 @@
                 </div>
                 <div class="option_other">
                   <div class="row">
-                    <input type="text" placeholder="Enter" ng-model="vm.healthData.respiratoryPu.pemer.lainnya" ng-show="vm.healthData.respiratoryPu.pemer.lainnya_option">
+                    <input type="text" name='pemer_other' placeholder="Enter" ng-model="vm.healthData.respiratoryPu.pemer.lainnya" ng-show="vm.healthData.respiratoryPu.pemer.lainnya_option" ng-maxlength="100" ng-pattern='vm.pattern.textOnly' >
                   </div>
+                  <p class="message" ng-show='vm.respiPu.pemer_other.$invalid'>! Input salah, silakan masukkan huruf</p>
                 </div>
               </div>
             </div>
+            </ng-form>
           </div>
         </div>
         <ion-content>

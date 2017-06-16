@@ -11,18 +11,17 @@
       </a>
     </div>
     <div class="wrapper text-center has-bottom-bar padding-bottom">
+      <ng-form>
       <div class="list list-no-border">
         <div class="item">
           <h1 class="text-center description">Apakah anak Anda tidak divaksinasi sesuai standar usia ?</h1>
           <div class="row no-padding-top">
-            <div class="col col-50">
-              <button class="button button-block" ng-class="vm.dataAddChild.question1.value == true? 'selected': ''" ng-click="vm.dataAddChild.question1.value = true">Ya</button>
-            </div>
-            <div class="col col-50">
-              <button class="button button-block" ng-class="vm.dataAddChild.question1.value == false? 'selected': ''" ng-click="vm.dataAddChild.question1.value = false">Tidak</button>
-            </div>
+           <div class="button-bar">
+            <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.addChild.vaccinated" required>Ya</a>
+            <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.addChild.vaccinated" required">Tidak</a>
           </div>
-          <div ng-if="vm.dataAddChild.question1.value == true">
+          </div>
+          <div ng-if="vm.healthData.addChild.vaccinated == true">
             <h1 class="text-center description">Jelaskan</h1>
             <div class="row">
               <div><input type="text" placeholder="Enter" ng-model="vm.dataAddChildAddChild.question1.answer"></div>
@@ -106,6 +105,7 @@
           </div>
         </div>
       </div>
+      </ng-form>
     </div>
   </ion-content>
   <ion-footer-bar ng-show="true" class="bar bar-footer bar-assertive">

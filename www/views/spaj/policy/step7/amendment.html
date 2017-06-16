@@ -5,14 +5,15 @@
   <ion-content>
     <step-process></step-process>
     <div class="wrapper has-bottom-bar amendment-page mt-30">
-      <form>
+      <form name="amendmentForm">
         <div class="list list-inset">
           <div class='item'>
             <div class="col col-padding">
-              <md-input-container class="md-block" flex-gt-sm>
+              <md-input-container class="md-block" flex-gt-sm style="margin-bottom: 0px">
                 <label class='asterisk'>Amendment / Keterangan lain</label>
-                <input ng-model="amendment" type="text" class="form-input" />
+                <input name="amendment" ng-model="amendment" type="text" class="form-input" required ng-pattern="/^[0-9a-zA-Z]+$/" />
               </md-input-container>
+              <div ng-show="amendmentForm.amendment.$touched && amendmentForm.amendment.$invalid" class="error sm-font">! Input salah, silakan masukkan huruf</div>
             </div>
           </div>
         </div>

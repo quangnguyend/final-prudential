@@ -134,7 +134,7 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService,CommonService) {
   }
 
   vm.addPolicy = function () {
-    let newPolicy = {
+    var newPolicy = {
       insurance_type: null,
       company: null,
       sum_insured: null,

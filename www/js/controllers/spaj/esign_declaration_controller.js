@@ -1,5 +1,6 @@
 function eSignDeclarationCtrl (
   $scope,
+  $state,
   $rootScope,
   $ionicPopup,
   UserService,
@@ -7,7 +8,41 @@ function eSignDeclarationCtrl (
   SpajService,
   $ionicScrollDelegate
 ) {
-  $scope.data = {
+  var vm = this
+  vm.data = {
+    name_of_marketer: '',
+    marketing_unit: '',
+    marketing_unit_code: '',
+    policyholder: {
+      duration: '',
+      known_as: '',
+      explain: ''
+    },
+    main_insured: {
+      duration: '',
+      known_as: '',
+      explain: ''
+    },
+    additional_Insured_1: {
+      duration: '',
+      known_as: '',
+      explain: ''
+    },
+    additional_Insured_2: {
+      duration: '',
+      known_as: '',
+      explain: ''
+    },
+    confirm_all_declaration: null,
+    explained_all_questions: null,
+    witness_latest_conditions: null,
+    receive_sanctions : null,
+    gave_explaination : null,
+    signature: [],
+    accepted_agency: null,
+    complete_spaj: null
+  };
+  /*$scope.data = {
     option1: false,
     option2: false,
     option3: false,
@@ -16,7 +51,8 @@ function eSignDeclarationCtrl (
     radioChanged (model) {
       $scope[model] = -$scope[model]
     }
-  }
+  }*/
+
   $scope.numberOfAdditional = getNumberOfAdditional()
 
   // list id of canvas DOM for esignature, default will have 2 ids
@@ -40,6 +76,7 @@ function eSignDeclarationCtrl (
 
   function signatureHandler (idCanvas) {
     var canvas = document.getElementById(idCanvas)
+   
     if (!canvas) return
     var signaturePad = new SignaturePad(canvas)
     // When zoomed out to less than 100%, for some very strange reason,
@@ -60,13 +97,17 @@ function eSignDeclarationCtrl (
   // it's problem when signatureHandler func read getElementById value, need make sure
   // for all of DOM (these DOM were created by ng-repeat) was mounted
   angular.element(document).ready(function () {
+   
     var esignature = []
     esignature = listEsignature.map(function (item) {
+
       return {
         id: item,
         esignatureObj: signatureHandler(item)
       }
     })
+
+    vm.data.signature = esignature;
   })
   /* TODO: Clear signature
   agentSignature.clear()
@@ -81,4 +122,9 @@ function eSignDeclarationCtrl (
       console.log(parentSignature.toDataURL())
   }, 10000)
   */
+
+  vm.handleSubmit= function () {
+    $state.go('app.payment_topup')
+  }
+  
 }
