@@ -236,7 +236,6 @@ function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog,
   // Main Health step
 
   vm.objectValidate = function (obj) {
-    console.log(obj)
     var obvalid = 0
     if (obj.constructor == Object) {
       for (var key in obj) {

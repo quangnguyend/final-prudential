@@ -12,7 +12,6 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService,CommonService) {
     }
   var idListToCheck = Object.keys(listToCheck)
   vm.healthData = SpajService.getData('health_data')
-  console.log(vm.healthData)
   vm.healthFormValidStatus = {
     is_checked: false,
     null_properties: []
@@ -50,7 +49,6 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService,CommonService) {
         returnObj.null_properties.push(prop)
       }
     }
-    console.log('reobj',  returnObj)
     returnObj.is_checked = true
   }
 
@@ -205,7 +203,6 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService,CommonService) {
   vm.inCompleteData = checkMissingData()
   vm.inCompleteList = Object.keys(vm.inCompleteData).map(function (key) {
     if (idListToCheck.indexOf(key) >= 0) {
-      console.log(vm.inCompleteData[key])
       return {id: key, name: listToCheck[key], data: vm.inCompleteData[key]}
     }
   })
