@@ -76,6 +76,7 @@ function eSignDeclarationCtrl (
 
   function signatureHandler (idCanvas) {
     var canvas = document.getElementById(idCanvas)
+   
     if (!canvas) return
     var signaturePad = new SignaturePad(canvas)
     // When zoomed out to less than 100%, for some very strange reason,
@@ -96,8 +97,10 @@ function eSignDeclarationCtrl (
   // it's problem when signatureHandler func read getElementById value, need make sure
   // for all of DOM (these DOM were created by ng-repeat) was mounted
   angular.element(document).ready(function () {
+   
     var esignature = []
     esignature = listEsignature.map(function (item) {
+
       return {
         id: item,
         esignatureObj: signatureHandler(item)
@@ -123,4 +126,5 @@ function eSignDeclarationCtrl (
   vm.handleSubmit= function () {
     $state.go('app.payment_topup')
   }
+  
 }

@@ -1,8 +1,11 @@
 <div class='wrapper-multi-step'>
+ 
   <ul class="row text-center multi-step">
     <li ng-repeat="page in vm.pageList track by $index" name='{{"step-"+page.step}}' class='col' ng-class='{"complete":page.complete, "incomplete":!page.complete, "active":vm.policyStep === page.step}'>
+      
       <span><a href="" ng-click="vm.changeStep(page)">{{page.step}}</a></span>
       <div ng-show='vm.policyStep === page.step'>{{page.title}}</div>
+      
     </li>
   </ul>
 </div>

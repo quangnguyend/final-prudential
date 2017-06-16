@@ -89,7 +89,9 @@ ion-footer-bar.bar.bar-assertive {
   right: 10px;
   top: 15px;
 }
-
+.align_column{
+  flex-direction: column;
+}
 .bar.bar-assertive.bar-footer.btn-disable {
   background: #9B9B9B !important;
   border: none !important;
@@ -104,6 +106,12 @@ ion-footer-bar.bar.bar-assertive {
     text-align: center;
     text-decoration: none;
     width: 100%;
+    &._active{
+      background: $pru_red
+    }
+    &:last-child{
+      border-left:1px solid #FFF
+    }
   }
   .wrapper {
     width: 100%;
@@ -708,6 +716,8 @@ h1.description{
     border-bottom-style: none;
   }
 }
+.button.button-dark{
+      background-color: #5B6770;
 /* ================ END COMMON CSS ================ */
 /*overide styl of material */
 md-input-container.md-input-focused label:not(.md-no-float),

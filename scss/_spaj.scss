@@ -257,12 +257,8 @@
         &._active{
           opacity: 1
         }
-        //opacity: 0.4
         
     }
-  }
-  .align_column{
-    flex-direction: column;
   }
   .item2 {
     margin: 20px 0;
@@ -1322,6 +1318,7 @@ th {
     font-size: 40px;
     display: -webkit-box;
     -webkit-box-align: center;
+    -webkit-box-pack: end;
   }
 }
 

@@ -14,4 +14,5 @@ function customHeaderCtrl ($state, $scope, $rootScope, $attrs, $timeout) {
       }
     }
   }
+  
 }
