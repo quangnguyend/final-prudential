@@ -14,7 +14,6 @@ function spajStartCtrl ($state, $scope, $rootScope, SpajService) {
       session1: session1,
       session2: session2
     }
-
     SpajService.setData('spaj', objSpaj)
 
     if (session2 === 'pemegangpolis') { $rootScope.typeOfStep = 1 }
