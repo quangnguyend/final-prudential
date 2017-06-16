@@ -10,7 +10,7 @@ function activePolicyCtrl($state, $scope, $rootScope, SpajService) {
   vm.main_insured_tab = MAIN_INSURED_TAB
   vm.policy_holder_tab = POCICY_HOLDER_TAB
   vm.currentPage = $state.current.name;
-  vm.currentTab = MAIN_INSURED_TAB
+  vm.currentTab = vm.main_insured_tab
   vm.additionalList = []
   var insuredName = ''
   $scope.insuredName = insuredName
