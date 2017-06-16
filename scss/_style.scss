@@ -109,7 +109,7 @@ ion-footer-bar.bar.bar-assertive {
     &._active{
       background: $pru_red
     }
-    &:last-child{
+    &a:last-child{
       border-left:1px solid #FFF
     }
   }

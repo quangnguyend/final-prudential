@@ -23,6 +23,6 @@ function termsCtrl($state, $scope, $rootScope, $ionicScrollDelegate, SpajService
 
   vm.nextToSignature = function () {
     vm.permission && $state.go('app.esign_declaration')
-     //$state.go('app.esign_declaration')
+    //$state.go('app.esign_declaration')
   }
 }

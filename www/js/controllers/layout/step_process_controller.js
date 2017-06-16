@@ -23,7 +23,9 @@ function stepProcessCtr ($scope, $rootScope, $state, $timeout, SpajService) {
   $rootScope.policyStep = $rootScope.policyStep ? $rootScope.policyStep : { steps: vm.pageList }
 
   $rootScope.setCurrentPolicyStep = $rootScope.setCurrentPolicyStep || function (step) {
+    //console.log('cr step',$rootScope.policyStep.currentStep)
     $rootScope.policyStep.currentStep = step
+    //console.log('cr step later',$rootScope.policyStep.currentStep)
   }
 
   $rootScope.getCurrentPolicyStep = $rootScope.getCurrentPolicyStep || function () {
@@ -49,6 +51,55 @@ function stepProcessCtr ($scope, $rootScope, $state, $timeout, SpajService) {
     }
   }
 
+  $rootScope.prevStep=function(){
+    //alert('ewe')
+    var stateName=$state.current.name
+    if($rootScope.typeOfStep === 1){
+      switch(stateName){
+        case 'app.health_data':
+          $rootScope.setCurrentPolicyStep(1)
+          break;
+        case 'app.other_health':
+        case 'app.family_history':
+        case 'app.risk_hobby':
+        case 'app.beneficiaries':
+          $rootScope.setCurrentPolicyStep(2)
+          break;
+        case 'app.document_upload':
+          $rootScope.setCurrentPolicyStep(3)
+          break;
+        case 'app.amendment':
+          $rootScope.setCurrentPolicyStep(4)
+          break;
+      }
+    }else{
+      switch(stateName){
+        case 'app.health_data':
+          $rootScope.setCurrentPolicyStep(1)
+          break;
+        case 'app.other_health':
+        case 'app.family_history':
+        case 'app.risk_hobby':
+        case 'app.payor_premium':
+          $rootScope.setCurrentPolicyStep(2)
+          break;
+        case 'app.payor_premium_detail':
+        case 'app.topup':
+          $rootScope.setCurrentPolicyStep(3)
+          break;
+        case 'app.topup_payor':
+        case 'app.beneficiaries':
+          $rootScope.setCurrentPolicyStep(4)
+          break;
+        case 'app.document_upload':
+          $rootScope.setCurrentPolicyStep(5)
+          break;
+        case 'app.amendment':
+          $rootScope.setCurrentPolicyStep(6)
+          break;
+      }
+    }
+  }
   $rootScope.goSpajStart = function () {
     $state.go('app.spaj_start')
   }
@@ -90,5 +141,11 @@ function stepProcessCtr ($scope, $rootScope, $state, $timeout, SpajService) {
       }
     }
     return state
+  }
+ 
+  var oldSoftBack = $rootScope.$ionicGoBack;
+  $rootScope.$ionicGoBack = function() {
+    $rootScope.prevStep()
+    oldSoftBack();
   }
 }
