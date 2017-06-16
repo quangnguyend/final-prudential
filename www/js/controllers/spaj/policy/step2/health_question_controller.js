@@ -350,6 +350,15 @@ function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog,
       mashit: null
     }]
   }
+  vm.healthData.digesPu={
+    tindakan_obat:[{
+      yang: null,
+      diperoleh_dari: null,
+      timbulnya_select: null,
+      timbulnya_option: null,
+      mashit: null
+    }]
+  }
   vm.digest_addObat = function () {
     var newtindakan_obat = {
       yang: null,
