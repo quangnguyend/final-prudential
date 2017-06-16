@@ -166,7 +166,6 @@ function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog,
   vm.respiratoryPopupTouched = false
 
   vm.fakeoption = [
-
     {
       type: 'a',
       value: 'Red2'
