@@ -4,7 +4,6 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, CommonService,  U
   $rootScope.showMenu = true
 
   $ionicSideMenuDelegate.canDragContent(false)
-
   var vm = this
 
   var POCICY_HOLDER_TAB = 'POLICY_HOLDER'
@@ -117,7 +116,7 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, CommonService,  U
   // console.log( SpajService.getData('spaj1'));
 
   function initPage (rootSpajData) {
-    if (!rootSpajData) {
+    /*if (!rootSpajData) {
       $state.go('app.spaj_start')
     } else {
       var typeOfSession = Number.parseInt(rootSpajData.session1)
@@ -125,7 +124,7 @@ function phMainCtrl ($scope, $rootScope, $state, $stateParams, CommonService,  U
         vm.PH = ''
         vm.addAdditionalTab(typeOfSession - 1)
       }
-    }
+    }*/
   }
 
   function validator (callback) {

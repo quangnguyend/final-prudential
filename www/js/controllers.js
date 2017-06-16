@@ -89,7 +89,6 @@ angular
                 return element.attr('class');
             },  styleChangedCallBack,
             true);
-            console.log(scope)
             function styleChangedCallBack(newValue, oldValue) {
                 if (newValue !== oldValue) {
                   console.log(newValue)

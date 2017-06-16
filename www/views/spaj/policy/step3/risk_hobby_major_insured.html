@@ -7,19 +7,19 @@
       </div>
   </div>
 </div>
-<div class="item mt-50">
+<div class="item mt-50" ng-show="vm.risk_hobby.question">
   <ul>
     <li class="m-gap-30" >
-      <button class="button button-stable button-block">Menyelam / Olahraga Air selain Menyelam</button>
+      <button class="button button-stable button-block" ng-class="{'active':btn1==true,'':btn1==false}" ng-model="btn1" ng-click="btn1=true?!btn1:btn1=false">Menyelam / Olahraga Air selain Menyelam</button>
     </li>
     <li class="m-gap-20" >
-      <button class="button button-stable button-block">Caving & Potholing / Panjat Tebing / Mendaki Gunung</button>
+      <button class="button button-stable button-block" ng-class="{'active':btn2==true,'':btn2==false}" ng-model="btn2" ng-click="btn2=true?!btn2:btn2=false">Caving & Potholing / Panjat Tebing / Mendaki Gunung</button>
     </li>
     <li class="m-gap-20" >
-      <button class="button button-stable button-block">Terjun Payung / Paralayang / Microlighting</button>
+      <button class="button button-stable button-block" ng-class="{'active':btn3==true,'':btn3==false}" ng-model="btn3" ng-click="btn3=true?!btn3:btn3=false">Terjun Payung / Paralayang / Microlighting</button>
     </li>
     <li class="m-gap-20" >
-      <button class="button button-stable button-block">Balap Motor / Mobil</button>
+      <button class="button button-stable button-block" ng-class="{'active':btn4==true,'':btn4==false}" ng-model="btn4" ng-click="btn4=true?!btn4:btn4=false">Balap Motor / Mobil</button>
     </li>
   </ul>
 </div>

@@ -166,7 +166,6 @@ function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog,
   vm.respiratoryPopupTouched = false
 
   vm.fakeoption = [
-
     {
       type: 'a',
       value: 'Red2'
@@ -186,8 +185,10 @@ function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog,
     SpajService.setData('health_data', vm.healthData)
     $state.go('app.other_health')
   }
-
-
+  $scope.gender = null
+  $scope.gender = {
+    data: SpajService.getData('gender')
+  }
 
   vm.tabs = [
     { title: 'Tertanggung Utama', value: 'main_question' },
@@ -339,14 +340,33 @@ function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog,
         vm.digestivePopupTouched = true
       })
   }
-  vm.digest_addObat = function () {
-    vm.healthData.digesPu.tindakan_obat.push({
+  vm.healthData.digesPu = {
+    tindakan_obat:[{
       yang: null,
       diperoleh_dari: null,
       timbulnya_select: null,
       timbulnya_option: null,
       mashit: null
-    })
+    }]
+  }
+  vm.healthData.digesPu={
+    tindakan_obat:[{
+      yang: null,
+      diperoleh_dari: null,
+      timbulnya_select: null,
+      timbulnya_option: null,
+      mashit: null
+    }]
+  }
+  vm.digest_addObat = function () {
+    var newtindakan_obat = {
+      yang: null,
+      diperoleh_dari: null,
+      timbulnya_select: null,
+      timbulnya_option: null,
+      mashit: null
+    }
+    vm.healthData.digesPu.tindakan_obat.push(newtindakan_obat);
   }
   vm.resetDigestive = function () {
     vm.digestivePopupTouched = false;
