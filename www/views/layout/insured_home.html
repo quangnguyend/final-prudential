@@ -150,7 +150,7 @@
               </label>
             </div>
             <div class="row left_input_date input_full_width">
-                <input type="date" ng-model="" md-placeholder="Enter date" ></input>
+                <input type="date" ng-model="" md-placeholder="Enter date"></input>
             </div>
         </div>
     </div>
@@ -178,7 +178,7 @@
         <div class="row-no-padding">
             <md-input-container class="md-block" flex-gt-sm>
                 <label>Enter </label>
-                <input type="text" >
+                <input type="text">
             </md-input-container>
         </div>
     </div>
@@ -358,8 +358,8 @@
                     <div class="row">
                         <md-input-container class="col-15">
                             <md-select ng-model="data.Rumah" placeholder="Select area code">
-                                <md-option value="opt" selected><em>+62</em></md-option>
-                                <md-option value="opt1"><em>+84</em></md-option>
+                                <md-option value="+62" selected><em>+62</em></md-option>
+                                <md-option ng-repeat="code in vm.phone_area_code" ng-value="code.code"><em>{{code.code}}</em></md-option>
                             </md-select>
                         </md-input-container>
                         <md-input-container class="md-block col-85" flex-gt-sm>
@@ -377,8 +377,8 @@
                     <div class="row">
                         <md-input-container class="col-15">
                             <md-select ng-model="data.Kantor" placeholder="Select area code">
-                                <md-option value="opt" selected><em>+62</em></md-option>
-                                <md-option value="opt1"><em>+84</em></md-option>
+                                <md-option value="+62" selected><em>+62</em></md-option>
+                                <md-option ng-repeat="code in vm.phone_area_code" ng-value="code.code"><em>{{code.code}}</em></md-option>
                             </md-select>
                         </md-input-container>
                         <md-input-container class="md-block col-85" flex-gt-sm>
@@ -395,8 +395,8 @@
                     <div class="row">
                         <md-input-container class="col-15">
                             <md-select ng-model="data.hp_gsm" placeholder="Select area code">
-                                <md-option value="opt" selected><em>+62</em></md-option>
-                                <md-option value="opt1"><em>+84</em></md-option>
+                                <md-option value="+62" selected><em>+62</em></md-option>
+                                <md-option ng-repeat="code in vm.phone_area_code" ng-value="code.code"><em>{{code.code}}</em></md-option>
                             </md-select>
                         </md-input-container>
                         <md-input-container class="md-block col-85" flex-gt-sm>
