@@ -2,7 +2,10 @@
 
 function familyHistoryCtrl ($scope, $rootScope, $state, $ionicPopup, $ionicScrollDelegate, $location) {
   var vm = this
-
+  $rootScope.customeStep = {
+    title: 'RIWAYAT KESEHATAN KELUARGA',
+    step: 2
+  }
   vm.tabs = [
     {title: 'Tertanggung Utama', value: 'major_insured'},
     {title: 'Tertanggung Tambahan 1', value: 'additional_insured_1'},

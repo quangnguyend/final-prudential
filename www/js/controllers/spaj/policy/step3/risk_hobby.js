@@ -4,7 +4,10 @@ function riskHobbyCtrl ($scope, $rootScope, $ionicPopup, UserService, DataServic
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
-
+  $rootScope.customeStep = {
+    title: 'KEGIATAM/AKTIVITAS BERESIKO',
+    step: 2
+  }
   var vm = this
 
   vm.tabs = [
