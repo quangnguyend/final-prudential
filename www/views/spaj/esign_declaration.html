@@ -236,7 +236,7 @@
           <div class='item ibox'>
             <span class="input-label">Tenaga Pemasar</span>
            
-            <div class="ibox-content"   >
+            <div class="ibox-content" ng-mousedown='vm.lockScroll()' ng-mouseup='vm.enableScroll()' >
               <canvas class='signature-pad' id='agent-signature-canvas' ></canvas>
             </div>
             <div ng-show="vm.data.signature[0].esignatureObj.isEmpty()" class="error">Silakan tanda tangan</div>
@@ -284,7 +284,7 @@
           </div>
           <div class='item ibox '>
             <span class="input-label">Calon Pemegang Polis</span>
-            <div class="ibox-content">
+            <div class="ibox-content"  ng-mousedown='vm.lockScroll()' ng-mouseup='vm.enableScroll()'>
               <canvas class='signature-pad' id='policyholder-signature-canvas'></canvas>
             </div>
             <div ng-show="vm.data.signature[1].esignatureObj.isEmpty()" class="error">Silakan tanda tangan</div>
@@ -292,13 +292,13 @@
           <div ng-repeat="(index, i) in numberOfAdditional">
             <div class='item ibox'>
               <span class="input-label">Tertanggung Utama {{index + 1}}</span>
-              <div class="ibox-content">
+              <div class="ibox-content"  ng-mousedown='vm.lockScroll()' ng-mouseup='vm.enableScroll()'>
                 <canvas class='signature-pad' id='mainlife-signature-canvas-{{index}}'></canvas>
               </div>
             </div>
             <div class='item ibox'>
               <span class="input-label">Orang tua (bila tertanggung berusia dibawah 21 thn) {{index + 1}}</span>
-              <div class="ibox-content">
+              <div class="ibox-content"  ng-mousedown='vm.lockScroll()' ng-mouseup='vm.enableScroll()'>
                 <canvas class='signature-pad' id='parent-signature-canvas-{{index}}'></canvas>
               </div>
             </div>

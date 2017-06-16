@@ -126,5 +126,10 @@ function eSignDeclarationCtrl (
   vm.handleSubmit= function () {
     $state.go('app.payment_topup')
   }
-  
+  vm.lockScroll = function () {
+    $ionicScrollDelegate.freezeScroll(true)
+  }
+  vm.enableScroll = function () {
+    $ionicScrollDelegate.freezeScroll(false)
+  }
 }

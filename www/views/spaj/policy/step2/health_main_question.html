@@ -237,7 +237,7 @@
     </div>
     <!--end-item iear-->
     <div class="item irespiratory">
-
+     
       <div class="icon" ng-class="{'completed': vm.objectValidate(vm.healthData.respiratoryPu)||vm.healthData.irespiratory==false}"></div>
       <h1 class="text-center description">Kondisi Pernafasan</h1>
       <p class="item_description" ng-class="{'red': vm.respiratoryPopupTouched&&!vm.objectValidate(vm.healthData.respiratoryPu)}"
@@ -412,8 +412,8 @@
       <h1 class="text-center description">Apakah Anda pernah melakukan papsmear dengan hasil abnormal</h1>
 
       <div class="button-bar">
-        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ipapsmear" required>Ya</a>
-        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ipapsmear" required>Tidak</a>
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ipapsmear" ng-required="gender.data.gender == 'WANITA'">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ipapsmear"  ng-required="gender.data.gender == 'WANITA'">Tidak</a>
       </div>
     </div>
     <!--end-item ipapsmear-->
@@ -421,8 +421,8 @@
       <div class="icon" ng-class="{'completed': vm.healthData.ipregnant != null}"></div>
       <h1 class="text-center description">Apakah saat ini Anda sedang hamil?</h1>
       <div class="button-bar">
-        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ipregnant" required>Ya</a>
-        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ipregnant" required>Tidak</a>
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.ipregnant"  ng-required="gender.data.gender == 'WANITA'">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.ipregnant" ng-required="gender.data.gender == 'WANITA'">Tidak</a>
       </div>
     </div>
     <!--end-item ipregnant-->
@@ -430,8 +430,8 @@
       <div class="icon" ng-class="{'completed': vm.healthData.isurgery != null}"></div>
       <h1 class="text-center description">Apakah Calon Tertanggung pernah melahirkan dengan cara operasi/Sectio Caesaria karena alasan kesehatan?</h1>
       <div class="button-bar">
-        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.isurgery" required>Ya</a>
-        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.isurgery" required>Tidak</a>
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.isurgery" ng-required="gender.data.gender == 'WANITA'">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.isurgery" ng-required="gender.data.gender == 'WANITA'">Tidak</a>
       </div>
     </div>
     <!--end-item isurgery -->
@@ -439,8 +439,8 @@
       <div class="icon" ng-class="{'completed': vm.healthData.icomplication != null}"></div>
       <h1 class="text-center description">Apakah Calon Tertanggung pernah mengalami kesulitan/komplikasi pada saat hamil atau melahirkan?</h1>
       <div class="button-bar">
-        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.icomplication" required>Ya</a>
-        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.icomplication" required>Tidak</a>
+        <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.icomplication" ng-required="gender.data.gender == 'WANITA'">Ya</a>
+        <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.icomplication" ng-required="gender.data.gender == 'WANITA'">Tidak</a>
       </div>
     </div>
     <!--end-item icomplication-->

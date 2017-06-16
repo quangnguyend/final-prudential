@@ -30,21 +30,22 @@ function reminderCtrl ($scope, $rootScope, $state, SpajService,CommonService) {
     null_properties: []
   }
 
-  var validateHealthData = function (obj, returnObj) {
-    if (!obj) { return }
+  var validateHealthData = function (object, returnObj) {
+    var gender= SpajService.getData('gender');
+    var obj=Object.assign({}, object);
+    if (!obj)  return
+    if(obj.smoker==false) {delete obj.sticks_cigarettes}
+    if(obj.medication==false) {delete obj.medication_detail}
+    if(obj.idisease==false) {delete obj.idisea_others}
+    if(obj.iill==false) {delete obj.iill_katarak; delete obj.iill_rabun}
+    if(!gender || gender != 'WANITA'){
+      delete obj.ipapsmear
+      delete obj.ipregnant
+      delete obj.isurgery
+      delete obj.icomplication
+    }
     for (let prop in obj) {
-      if (prop === 'personalAccidentPopupData') {
-        if (obj['ieye'] === true) {
-          validateHealthData(obj[prop], returnObj)
-        }
-      }
-      if (prop === 'eyePopupData') {
-        if (obj['iinjury'] === true) {
-          validateHealthData(obj[prop], returnObj)
-        }
-      } else if (prop !== 'personalAccidentPopupData' && prop !== 'eyePopupData' && typeof obj[prop] === 'object' && obj[prop]) {
-        validateHealthData(obj[prop], returnObj)
-      } else if (obj[prop] === null || obj[prop] === '') {
+      if (obj[prop] === null || obj[prop] === '') {
         returnObj.null_properties.push(prop)
       }
     }
