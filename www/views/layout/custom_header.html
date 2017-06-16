@@ -1,7 +1,7 @@
 <div class="bar bar-header bar-light">
   <div id="step-header">
     <md-select ng-model='vm.selectStep' ng-change="vm.changeStep()">
-        <md-option ng-repeat="step in vm.steps" value='{{step.step}}'>Step {{step.step}}: {{step.title}}</md-option>
+        <md-option ng-repeat="step in vm.steps" value='{{step.step}}'>Step {{step.step}}: {{(vm.customeStep != '' && vm.customeStep.step == step.step) ? vm.customeStep.title: step.title}}</md-option>
       </md-select>
   </div>
 </div>
