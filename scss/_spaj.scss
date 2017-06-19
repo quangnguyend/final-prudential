@@ -888,6 +888,7 @@ th {
   .clearfix {
     clear: both;
   }
+  
 }
 
 .lst-insurance-policy .input-label {
@@ -1197,6 +1198,17 @@ th {
 
 .mt-30 {
   margin-top: 30px;
+}
+.btn_removeMember{
+   position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 30px;
+    line-height: 60px;
+    width: 80px;
+    height: 60px;
+    text-align: center;
+    cursor: pointer
 }
 
 #other-health {

@@ -115,7 +115,13 @@ function step2Ctrl($state, $scope, $rootScope, $timeout, $stateParams, $mdDialog
         lainnya: null
       },
       pengo: {
-        obat_option: null,
+        obat: {
+          option: null,
+          add: [{
+            nama: null,
+            masih: null
+          }]
+        },
         radiography_option: null,
         chemography_option: null,
         lainnya_option: null
@@ -319,7 +325,7 @@ function step2Ctrl($state, $scope, $rootScope, $timeout, $stateParams, $mdDialog
         medicine: null
       })
     }
-    else{
+    else {
       vm.removePopupEyeItem();
     }
   }
