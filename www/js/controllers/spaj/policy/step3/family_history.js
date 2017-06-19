@@ -48,6 +48,9 @@ function familyHistoryCtrl ($scope, $rootScope, $state, $ionicPopup, $ionicScrol
     }
     vm.family_history.membersInfo.push(item)
   }
+  vm.removeMember=function(){
+    vm.family_history.membersInfo.pop()
+  }
 
   // save and redirect to another page
   vm.save = function () {
