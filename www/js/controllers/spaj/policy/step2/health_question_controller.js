@@ -537,8 +537,15 @@ function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog,
     vm.tumorPopupTouched = false;
     vm.resetObject(vm.healthData.tumorPu)
   }
-  vm.addObat=function(){
-    
+  vm.tumorAddObat=function(){
+    var newObat={
+      nama:null,
+      masih:null
+    }
+    vm.healthData.tumorPu.pengo.obat.add.push(newObat)
+  }
+  vm.tumorRemoveObat=function(){
+    vm.healthData.tumorPu.pengo.obat.add.pop();
   }
   vm.tumorPuOption={
     tipe:[

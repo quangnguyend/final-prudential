@@ -235,27 +235,36 @@
                       <input type="checkbox" ng-model='vm.healthData.tumorPu.pengo.obat.option'>
                     </label>
                     <ul ng-class="vm.healthData.tumorPu.pengo.obat.option ? 'active':'disable'">
-                      <li ng-repeat="(index, item) in vm.healthData.tumorPu.pengo.obat.add">
+                      <li ng-repeat="(index, item) in vm.healthData.tumorPu.pengo.obat.add track by $index">
                         <div class="row">
-                          <md-input-container class="md-block" flex-gt-sm>
-                            <label>Nama Obat</label>
-                            <input type="text" />
-                          </md-input-container>
-                        </div>
-                        <div class="row">
-                          <h3 class="input-label description">Masih memakai obat ini</h3>
-                        </div>
-                        <div class="row">
-                          <div class="button-bar">
-                            <a class="button col col-50" grouped-radio="true" ng-model="tumor.obat_masih">Ya</a>
-                            <a class="button col col-50" grouped-radio="false" ng-model="tumor.obat_masih">Tidak</a>
+                          <div  style="width:40px">
+                            <p class="index">{{$index+1}}</p>
                           </div>
+                          <div style="width:calc(100% - 40px)">
+                            <div class="row">
+                              <md-input-container class="md-block" flex-gt-sm>
+                                <label>Nama Obat</label>
+                                <input type="text" />
+                              </md-input-container>
+                            </div>
+                            <div class="row">
+                              <h3 class="input-label description">Masih memakai obat ini</h3>
+                            </div>
+                            <div class="row">
+                              <div class="button-bar">
+                                <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.tumorPu.pengo.obat.add._alo[index]">Ya</a>
+                                <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.tumorPu.pengo.obat.add._alo[index]">Tidak</a>
+                              </div>
+                            </div>
+                            </div>
                         </div>
-                        <div class="row"> 
-                          <button class="button button-stable button-block float-right col-95" ng-click="vm.addMember()">  
+                      </li>
+                      <li>
+                        <div class="row row-no-padding" style="position:relative"> 
+                          <button class="button button-stable button-block float-right col-95" ng-click="vm.tumorAddObat()">  
                             <i class="ion-ios-plus-empty"></i> <span class="txt-add-policy">  Tambah Jenis Operasi Lainnya</span>
                           </button>
-                          <div class="btn_removeMember" ng-if="vm.healthData.tumorPu.pengo.obat.add.length>1" ng-click='vm.removeMember()'><i class="icon ion-ios-trash-outline"></i></div>
+                          <button class="button btn_removeMember" ng-if="vm.healthData.tumorPu.pengo.obat.add.length>1" ng-click='vm.tumorRemoveObat()'><i class="icon ion-ios-trash-outline"></i></button>
                         </div>
                       </li>
                       <!--end li-->

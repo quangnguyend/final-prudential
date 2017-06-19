@@ -1,42 +1,57 @@
  <div class="list list-inset">
-  <div class="item">
-    <h1 class="description">{{vm.questions.question_1.title}}</h4>
-    <md-input-container class="md-block">
-      <md-select ng-model="vm.questions.question_1.heath_check">
-        <md-option ng-repeat="c in vm.questions.question_1.option" ng-value="c.value" ng-selected="$index === 0">
-             {{c.type}}
-         </md-option>
-      </md-select>
-    </md-input-container>
-    <md-input-container class="md-block"  md-no-float >
-      <input  placeholder="Enter" ng-model="vm.questions.question_1.other_answer" />
-    </md-input-container>
-    <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_2')">Berikutnya</button>
-  </div>
-  <div  class="item" ng-class="vm.questions.question_2.active == false? 'disabled': ''" class="mt-50" id="question_2">
-    <h1 class="description">{{vm.questions.question_2.title}}</h4>
-      <md-datepicker md-placeholder="DD-MM-YYY" ng-model="vm.questions.question_2.date_inspection"></md-datepicker>
-    <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_3')">Berikutnya</button>
-  </div>
-  <div  class="item" ng-class="vm.questions.question_3.active == false? 'disabled': ''" class="mt-50" id="question_3">
-    <h1 class="description">{{vm.questions.question_3.title}}</h4>
-    <md-input-container class="md-block" md-no-float >
-      <input placeholder="Enter" ng-model="vm.questions.question_3.examination_reason" />
-    </md-input-container>
-    <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_4')">Berikutnya</button>
-  </div>
-  <div  class="item" ng-class="vm.questions.question_4.active == false? 'disabled': ''" class="mt-50" id="question_4">
-    <h1 class="description">{{vm.questions.question_4.title}}</h4>
-    <div ng-repeat="item in vm.questions.question_4.results">
-      <p class="text-right">200 karakter</p>
-      <md-input-container class="md-block" md-no-float >
-        <textarea  ng-model="item.result" placeholder="Enter"></textarea>
+  <div class="item" id="question_1" >
+    <div ng-repeat='(index, item) in vm.questions.question_1'>
+      <div class="item">
+      <h1 class="description">Pemeriksaan kesehatan, tes diagnostik medis yang pernah Anda lakukan?</h4>
+      <md-input-container class="md-block">
+        <md-select ng-model="vm.questions.question_1[index].part_1.heath_check">
+          <md-option ng-repeat="c in vm.part1_option" ng-value="c.value" ng-selected="$index === 0">
+              {{c.type}}
+          </md-option>
+        </md-select>
       </md-input-container>
+      <md-input-container class="md-block"  md-no-float >
+        <input  placeholder="Enter" ng-model="vm.questions.question_1[index].part_1.other_answer" />
+      </md-input-container>
+      <button class="button button-stable button-block" ng-click="vm.nextQuestion('part_2{{$index}}')">Berikutnya</button>
     </div>
-    <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_5')">Berikutnya</button>
-    <button class="button button-stable button-block mt-30" ng-click="vm.addQuestion4()">+ Tambah tes kesehatan </button>
+    <!--end part1-->
+    <div  class="item" class="mt-50" id="part_2{{$index}}">
+      <h1 class="description">Kapan dilakukan pemeriksaan tersebut?</h4>
+        <md-datepicker md-placeholder="DD-MM-YYY" ng-model="vm.questions.question_1[index].part_2.date_inspection"></md-datepicker>
+      <button class="button button-stable button-block" ng-click="vm.nextQuestion('part_3{{$index}}')">Berikutnya</button>
+    </div>
+    <!--end part2-->
+    <div  class="item"  class="mt-50" id="part_3{{$index}}">
+      <h1 class="description">Apa alasan dilakukan pemeriksaan tersebut?</h4>
+      <md-input-container class="md-block" md-no-float >
+        <input placeholder="Enter" ng-model="vm.questions.question_1[index].part_3.examination_reason" />
+      </md-input-container>
+      <button class="button button-stable button-block" ng-click="vm.nextQuestion('part_4{{$index}}')">Berikutnya</button>
+    </div>
+    <!--end part3-->
+    <div  class="item"  class="mt-50" id="part_4{{$index}}">
+      <h1 class="description">Bagaimana hasilnya?</h4>
+      <div>
+        <p class="text-right">200 karakter</p>
+        <md-input-container class="md-block" md-no-float >
+          <textarea  ng-model="vm.questions.question_1[index].part_4.result" placeholder="Enter"></textarea>
+        </md-input-container>
+      </div>
+      <button class="button button-stable button-block" ng-click="vm.nextQuestion('question_5')">Berikutnya</button>
+     
+    </div>
+    <!--end part4-->
+    </div>
+    
   </div>
-  <div  class="item" ng-class="vm.questions.question_5.active == false? 'disabled': ''" class="mt-50" id="question_5">
+
+  <div class="item" style="position:relative; padding-top:0px; overflow:hidden"> 
+    <button class="button button-stable button-block mt-30" ng-click="vm.addQuestion1()">+ Tambah tes kesehatan </button>
+    <button class="button btn_removeMember" ng-if="vm.questions.question_1.length>1" ng-click='vm.removeQuestion1()'><i class="icon ion-ios-trash-outline"></i></button>
+  </div>
+
+  <div  class="item"  class="mt-50" id="question_5">
     <h1 class="description">{{vm.questions.question_5.title}}</h4>
     <div class="row">
       <div class="col col-padding">
@@ -49,7 +64,7 @@
       </div>
     </div>
   </div>
-  <div  class="item" ng-class="vm.questions.question_6.active == false? 'disabled': ''" class="mt-50" id="question_6">
+  <div  class="item"  class="mt-50" id="question_6">
     <h1 class="description">{{vm.questions.question_6.title}}</h4>
     <div class="row">
       <div class="col col-padding">

@@ -1186,15 +1186,24 @@ th {
 }
 .btn_removeMember{
    position: absolute;
+   z-index: 10;
     top: 0px;
     right: 0px;
     font-size: 30px;
-    line-height: 60px;
+    background:RGBA(255,255,255,0);
     width: 80px;
-    height: 60px;
     text-align: center;
-    cursor: pointer
+    cursor: pointer;
+    -webkit-transform:translate3D(0,0,1px);
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack:center;
+    .icon{
+     font-size: 30px;
+     vertical-align: middle
+    }
 }
+
 
 #other-health {
   .item {
@@ -1215,13 +1224,7 @@ th {
       font-size: 16px;
     }
   }
-  .disabled {
-    opacity: .5;
-    input, button {
-      cursor: not-allowed;
-      pointer-events: none;
-    }
-  }
+  
 }
 
 #family-history {

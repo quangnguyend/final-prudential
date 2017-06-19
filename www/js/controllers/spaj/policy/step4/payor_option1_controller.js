@@ -17,19 +17,38 @@ function payorOption1Ctrl ($scope, $rootScope, $state, DataService, $ionicScroll
   vm.save = function () {
     $rootScope.nextStep()
   }
-  vm.phones = [
-    {
-      phone_home : '',
-      phone_office : '',
-      phone_gsm : ''
-    }
-  ];
-  vm.addPhone = function () {
-    vm.phones.push({
-      phone_home : '',
-      phone_office : '',
-      phone_gsm : ''
-    });
+  vm.phones = {
+    office:[{}],
+    home:[{}],
+    gsm:[{}]
+     
+  };
+  vm.addPhone = function (kind) {
+    switch(kind){
+      case 'office':
+        vm.phones.office.push({});
+        break;
+      case 'home':
+        vm.phones.home.push({});
+        break;
+      case 'gsm':
+        vm.phones.gsm.push({});
+        break;
+    }  
+  };
+
+  vm.removePhone = function (kind) {
+    switch(kind){
+      case 'office':
+        vm.phones.office.pop();
+        break;
+      case 'home':
+        vm.phones.home.pop();
+        break;
+      case 'gsm':
+        vm.phones.gsm.pop();
+        break;
+    }  
   };
   
   vm.pattern={
