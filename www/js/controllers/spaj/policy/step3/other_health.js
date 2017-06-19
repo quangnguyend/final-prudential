@@ -24,40 +24,34 @@ function otherHealthCtrl ($scope, $rootScope, $state, $ionicScrollDelegate, $loc
     nonDesimal: new RegExp(/^\d+\.\d{0,3}$/),
     alphanumeric: new RegExp(/^[a-z0-9 ]+$/)
   }
+  vm.part1_option=[
+    {'value': 'value1', 'type': 'Pemeriksaan Jantung'},
+    {'value': 'value2', 'type': 'Pemeriksaan Darah'},
+    {'value': 'value2', 'type': 'Pemeriksaan Air Seni'},
+    {'value': 'value3', 'type': 'Rontgen'},
+    {'value': 'value4', 'type': 'Ultrasonography / USG'},
+    {'value': 'value5', 'type': 'CT scan'},
+    {'value': 'value6', 'type': 'Biopsi'},
+    {'value': 'value7', 'type': 'Lainnya'},
+  ];
   vm.questions = {
-    question_1: {
-      active: true,
-      title: 'Pemeriksaan kesehatan, tes diagnostik medis yang pernah Anda lakukan?',
-      heath_check: '',
-      other_answer: '',
-      option: [
-        {'value': 'value1', 'type': 'Pemeriksaan Jantung'},
-        {'value': 'value2', 'type': 'Pemeriksaan Darah'},
-        {'value': 'value2', 'type': 'Pemeriksaan Air Seni'},
-        {'value': 'value3', 'type': 'Rontgen'},
-        {'value': 'value4', 'type': 'Ultrasonography / USG'},
-        {'value': 'value5', 'type': 'CT scan'},
-        {'value': 'value6', 'type': 'Biopsi'},
-        {'value': 'value7', 'type': 'Lainnya'},
-      ]
-    },
-    question_2: {
-      active: false,
-      title: 'Kapan dilakukan pemeriksaan tersebut?',
-      date_inspection: ''
-    },
-    question_3: {
-      active: false,
-      title: 'Apa alasan dilakukan pemeriksaan tersebut?',
-      examination_reason: ''
-    },
-    question_4: {
-      active: false,
-      title: 'Bagaimana hasilnya?',
-      results: [
-        { result: '' }
-      ]
-    },
+    question_1: [
+      {
+        part_1:{
+          heath_check: null,
+          other_answer: null
+        },
+        part_2: {
+          date_inspection: null
+        },
+        part_3: {
+          examination_reason: null
+        },
+        part_4: {
+          result: null 
+        }
+      }
+    ],
     question_5: {
       active: false,
       title: 'Apakah Calon Tertanggung meminum minuman beralkohol lebih dari 750 cc per minggu?',
@@ -72,18 +66,34 @@ function otherHealthCtrl ($scope, $rootScope, $state, $ionicScrollDelegate, $loc
 
   vm.scrollTo = function (id) {
     var STEP_HEIGHT = $('.multi-step').height() + 140
-    var distance = $('#' + id) && $('#' + id).position().top + STEP_HEIGHT
-    $('#' + id).addClass('_active');
+    var distance = $('#' + id) && $('#' + id).position().top + STEP_HEIGHT;
     $ionicScrollDelegate.scrollTo(0, distance, true)
   }
 
   vm.nextQuestion = function (question) {
-    vm.questions[question].active = true
     vm.scrollTo(question)
   }
 
-  vm.addQuestion4 = function () {
-    vm.questions.question_4.results.push({ result: '' })
+  vm.addQuestion1 = function () {
+    var newQ1={
+      part_1:{
+        heath_check: null,
+        other_answer: null
+      },
+      part_2: {
+        date_inspection: null
+      },
+      part_3: {
+        examination_reason: null
+      },
+      part_4: {
+        result: null 
+      }
+    }
+    vm.questions.question_1.push(newQ1)
+  }
+  vm.removeQuestion1 = function () {
+    vm.questions.question_1.pop()
   }
 
   vm.setValueQuestion5 = function (value) {
