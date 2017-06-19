@@ -47,11 +47,79 @@
                     </div>
                 </div>
                 <div class='item'>
-                    <div class="row-no-padding">
+                    <div class="row-no-padding text-left">
+                        <label>Jenis Kelamin</label>
                         <div class="row">
                             <div class="button-bar">
-                                <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.darah" required>Pria</a>
-                                <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.darah" required>Wanita</a>
+                                <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.Jenis" required>Pria</a>
+                                <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.Jenis" required>Wanita</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='item'>
+                    <div class="row-no-padding text-left">
+                        <h1 class="text-center description description">Ceritakan mengenai Tertanggung</h1>
+                        <label>Jenis Kelamin</label>
+                        <div class="row">
+                            <div class="button-bar">
+                                <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.Kelamin" required>Pria</a>
+                                <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.Kelamin" required>Wanita</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='item'>
+                    <div class="row-no-padding text-left">
+                        <label>Perokok?</label>
+                        <div class="row">
+                            <div class="button-bar">
+                                <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.Kelamin" required>Ya</a>
+                                <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.Kelamin" required>Tidak</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='item'>
+                    <div class="row-no-padding">
+                        <md-input-container class="md-block" md-no-float>
+                            <label class="item-stacked-label text-left">
+                                <div class="input-label">Tanggal Lahir<span class="input_red"></span></div>
+                                </label>
+                            <input ng-model="vm.payorDetail.nama" name='nama' ng-pattern="vm.pattern.textOnly" />
+                        </md-input-container>
+                        <p class="message" ng-show='vm.payorDform.nama.$invalid'>! Input salah, silakan masukkan huruf</p>
+                    </div>
+                </div>
+                <div class='item'>
+                    <div class="row-no-padding">
+                        <md-input-container class="md-block" md-no-float>
+                            <label class="item-stacked-label text-left">
+                                <div class="input-label">Pekerjaan<span class="input_red"></span></div>
+                                </label>
+                            <input ng-model="vm.payorDetail.nama" name='nama' ng-pattern="vm.pattern.textOnly" />
+                        </md-input-container>
+                        <p class="message" ng-show='vm.payorDform.nama.$invalid'>! Input salah, silakan masukkan huruf</p>
+                    </div>
+                </div>
+                <div class='item'>
+                    <div class="row-no-padding">
+                        <h1 class='text-center description description'>Berapa anggaran Anda untuk Polis ini? </h1>
+                        <div class="row row-no-padding">
+                            <div class="col-60">
+                                <md-input-container class="md-block" md-no-float>
+                                    <label class="item-stacked-label text-left">
+                                <div class="input-label">Pekerjaan<span class="input_red"></span></div>
+                                </label>
+                                    <input ng-model="vm.payorDetail.nama" name='nama' ng-pattern="vm.pattern.textOnly" />
+                                </md-input-container>
+                                <p class="message" ng-show='vm.payorDform.nama.$invalid'>! Input salah, silakan masukkan huruf</p>
+                            </div>
+                            <div class="col-40">
+                                <div class="button-bar">
+                                    <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.Kelamin" required>Ya</a>
+                                    <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.Kelamin" required>Tidak</a>
+                                </div>
                             </div>
                         </div>
                     </div>
