@@ -1,4 +1,4 @@
-<ion-view cache-view="false"  id="upload-page">
+<ion-view cache-view="false" id="upload-page">
   <ion-nav-title>
     <custom-header title='Kelengkapan dokumen' step='6'></custom-header>
   </ion-nav-title>
@@ -23,7 +23,8 @@
                     <div class="col col-67 col-padding">
                       <md-input-container class="select-box md-block" md-no-float>
                         <label class="input-label">Nama dokumen</label>
-                        <md-select name="document_type_{{$index}}" ng-model="item.document_type" ng-model-options="{trackBy: '$value.id'}" ng-init="document_type={}" md-on-close="item.document_type = document_type.name;" required>
+                        <md-select name="document_type_{{$index}}" ng-model="item.document_type" ng-model-options="{trackBy: '$value.id'}" ng-init="document_type={}"
+                          md-on-close="item.document_type = document_type.name;" required>
                           <md-option ng-repeat="type in vm.documentType" value="{{type}}">
                             {{type.name}}
                           </md-option>
@@ -33,7 +34,7 @@
                     </div>
                     <div class="col col-33 col-padding">
                       <div class="img-options" ng-if="item.document_image != ''">
-                        <button class="button button-stable" ><i class="ion-checkmark " ng-class="item.document_image!=''?'green-color':''"></i></button>
+                        <button class="button button-stable"><i class="ion-checkmark " ng-class="item.document_image!=''?'green-color':''"></i></button>
                         <button class="button button-stable" ng-click="vm.viewImage(item)"><i class="ion-eye"></i></button>
                         <button class="button button-stable" ng-click="vm.deleteImage(item)"><i class="ion-trash-b"></i></button>
                       </div>
@@ -45,7 +46,12 @@
                 </li>
               </ul>
               <div class="clearfix"></div>
-              <button class="button button-stable button-block" ng-click="vm.addDocument()">+ Tambah Dokumen</button>
+              <div class="row relative mt-20">
+                <div class="button-block add_icon full-width">
+                  <a class="button full-width" ng-click='vm.addDocument()'><span>+ Tambah Dokumen</span></a>
+                </div>
+                <div class="btn_remove_inline" ng-if="vm.data[vm.currentTab].length>1" ng-click='vm.removeDocument()' role="button" tabindex="0"><i class="icon ion-ios-trash-outline"></i></div>
+              </div>
             </div>
           </div>
         </div>

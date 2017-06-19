@@ -21,6 +21,9 @@ function beneficiariesCtrl ($scope, $rootScope, $state, SpajService) {
       gender: ''
     })
   }
+  vm.removeRow = function () {
+    vm.dataBeneficiary.pop()
+  }
 
   function validator () {
     // TODO
