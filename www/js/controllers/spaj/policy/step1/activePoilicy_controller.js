@@ -27,6 +27,9 @@ function activePolicyCtrl($state, $scope, $rootScope, SpajService) {
         substandard: false
       }
       vm.policy.items[insuredName].push(newPolicy)
+    },
+    removeActivePolicy: function () {
+      vm.policy.items[insuredName].pop()
     }
   }
   vm.policy.options = {
