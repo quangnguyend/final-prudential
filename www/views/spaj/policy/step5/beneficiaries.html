@@ -15,14 +15,16 @@
                   <div class="col col-33 col-padding">
                     <md-input-container class="md-block" flex-gt-sm>
                       <label>Nama</label>
-                      <input name="name_{{$index}}" ng-model="row.name" required ng-blur="vm.validateRow(row,$index)" ng-pattern="/^[0-9a-zA-Z]+$/" />
+                      <input name="name_{{$index}}" ng-model="row.name" required ng-blur="vm.validateRow(row,$index)" ng-pattern="/^[0-9a-zA-Z]+$/"
+                      />
                     </md-input-container>
                     <div ng-show="beneficiaries['name_' + $index].$touched && beneficiaries['name_' + $index].$invalid" class="error sm-font">pertanyaan ini wajib diisi</div>
                   </div>
                   <div class="col col-33 col-padding">
                     <md-input-container class="md-block">
                       <label>Hubungan </label>
-                      <md-select ng-init="gender={}" name="gender_{{$index}}" ng-model='gender' ng-model-options="{trackBy: '$value.id'}"  class='blur-text' md-on-close="row.gender=gender.name; vm.validateRow(row,$index)" required >
+                      <md-select ng-init="gender={}" name="gender_{{$index}}" ng-model='gender' ng-model-options="{trackBy: '$value.id'}" class='blur-text'
+                        md-on-close="row.gender=gender.name; vm.validateRow(row,$index)" required>
                         <md-option ng-repeat='value in vm.genderData' ng-value='{{value}}'>
                           {{value.name}}
                         </md-option>
@@ -33,8 +35,9 @@
                   <div class="col col-33 col-padding">
                     <md-input-container class="md-block">
                       <label>Jenis Kelamin</label>
-                      <md-select ng-init="relationship={}" name="relationship_{{$index}}"  ng-model='relationship' class='blur-text' md-on-close="row.relationship = relationship.name; vm.validateRow(row,$index)" required>
-                        <md-option ng-repeat='value in vm.relationshipData' ng-value='{{value}}' >
+                      <md-select ng-init="relationship={}" name="relationship_{{$index}}" ng-model='relationship' class='blur-text' md-on-close="row.relationship = relationship.name; vm.validateRow(row,$index)"
+                        required>
+                        <md-option ng-repeat='value in vm.relationshipData' ng-value='{{value}}'>
                           {{value.name}}
                         </md-option>
                       </md-select>
@@ -53,20 +56,25 @@
                   <div class="col col-33 col-padding">
                     <md-input-container class="md-block" flex-gt-sm>
                       <label>%</label>
-                      <input name="share_{{$index}}" ng-model="row.share" ng-blur="vm.validateRow(row, $index)" required ng-pattern="/^[0-9]*$/" />
+                      <input name="share_{{$index}}" ng-model="row.share" ng-blur="vm.validateRow(row, $index)" required ng-pattern="/^[0-9]*$/"
+                      />
                     </md-input-container>
                     <div ng-show="beneficiaries['share_' + $index].$touched && beneficiaries['share_' + $index].$invalid" class="error sm-font">pertanyaan ini wajib diisi</div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="errors" ng-if="!vm.isValidated[$index]" >
+            <div class="errors" ng-if="!vm.isValidated[$index]">
               <div><span class="error-message">! Input salah, silakan masukkan huruf, Silakan memasukkan angka kelipatan 5 i.e: 5,10,15..100 </span></div>
             </div>
           </li>
         </ul>
-        <div class="item">
-          <button class="button button-stable button-block float-right col-95" ng-click="vm.addRow()">+ Tambah Penerima Manfaat Asuransi</button>
+        <div class="clearfix"></div>
+        <div class="row relative mt-20">
+          <div class="button-block add_icon full-width">
+            <a class="button full-width" ng-click='vm.addRow()'><span>+ Tambah Penerima Manfaat Asuransi</span></a>
+          </div>
+          <div class="btn_remove_inline" ng-if="vm.dataBeneficiary.length>1" ng-click='vm.removeRow()' role="button" tabindex="0"><i class="icon ion-ios-trash-outline"></i></div>
         </div>
       </form>
     </div>
