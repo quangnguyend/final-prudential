@@ -37,6 +37,9 @@ function topupCtrl ($state, $scope, $rootScope, SpajService) {
       type_of_investment_fund: '', investment_fund_percent: ''
     })
   };
+  vm.removeTopUpDestinationFund = function () {
+    vm.data.top_up_destination_fund_allocation.pop();
+  };
   vm.isShowForm = true;
   vm.checkShowForm = function () {
     if(vm.data.top_up_amount > 250000000){

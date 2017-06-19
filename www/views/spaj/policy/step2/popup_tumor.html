@@ -232,12 +232,10 @@
                   <li class="item  item-checkbox">
                     <p>Obat</p>
                     <label class="checkbox">
-                <input type="checkbox" ng-model='vm.healthData.tumorPu.pengo.obat_option'>
-              </label>
-
-              
-                    <ul ng-class="vm.healthData.tumorPu.pengo.obat_option ? 'active':'disable'">
-                      <li>
+                      <input type="checkbox" ng-model='vm.healthData.tumorPu.pengo.obat.option'>
+                    </label>
+                    <ul ng-class="vm.healthData.tumorPu.pengo.obat.option ? 'active':'disable'">
+                      <li ng-repeat="(index, item) in vm.healthData.tumorPu.pengo.obat.add">
                         <div class="row">
                           <md-input-container class="md-block" flex-gt-sm>
                             <label>Nama Obat</label>
@@ -248,11 +246,16 @@
                           <h3 class="input-label description">Masih memakai obat ini</h3>
                         </div>
                         <div class="row">
-
                           <div class="button-bar">
                             <a class="button col col-50" grouped-radio="true" ng-model="tumor.obat_masih">Ya</a>
                             <a class="button col col-50" grouped-radio="false" ng-model="tumor.obat_masih">Tidak</a>
                           </div>
+                        </div>
+                        <div class="row"> 
+                          <button class="button button-stable button-block float-right col-95" ng-click="vm.addMember()">  
+                            <i class="ion-ios-plus-empty"></i> <span class="txt-add-policy">  Tambah Jenis Operasi Lainnya</span>
+                          </button>
+                          <div class="btn_removeMember" ng-if="vm.healthData.tumorPu.pengo.obat.add.length>1" ng-click='vm.removeMember()'><i class="icon ion-ios-trash-outline"></i></div>
                         </div>
                       </li>
                       <!--end li-->

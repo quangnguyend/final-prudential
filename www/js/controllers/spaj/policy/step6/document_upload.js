@@ -58,6 +58,11 @@ function documentUploadCtrl ($ionicPlatform, $scope, $rootScope, $state, SpajSer
       'document_image': ''
     })
   }
+
+  vm.removeDocument = function () {
+    vm.data[vm.currentTab].pop();
+  }
+
   $ionicPlatform.ready(function () {
     vm.isOpeningCamera = false
     vm.takePhoto = function (item) {

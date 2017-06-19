@@ -415,8 +415,23 @@
     -webkit-background-size: 100%;
     background-size: 100%;
   }
-  .iinjury .icon:before, .idisease .icon:before, .idisorder .icon:before, .iabnormality .icon:before, .ipapsmear .icon:before, .ipregnant .icon:before, .isurgery .icon:before, .icomplication .icon:before, .ilostweight .icon:before {
+  .iinjury .icon:before, .idisease .icon:before, .ipapsmear .icon:before, .ipregnant .icon:before, .isurgery .icon:before, .icomplication .icon:before {
     background: url('../img/health-question17.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .ilostweight .icon:before{
+    background: url('../img/health-question20.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .iabnormality .icon:before{
+    background: url('../img/health-question19.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .idisorder .icon:before{
+    background: url('../img/health-question18.png') no-repeat;
     -webkit-background-size: 100%;
     background-size: 100%;
   }
@@ -874,6 +889,7 @@ th {
   .clearfix {
     clear: both;
   }
+  
 }
 
 .lst-insurance-policy .input-label {
@@ -1183,6 +1199,17 @@ th {
 
 .mt-30 {
   margin-top: 30px;
+}
+.btn_removeMember{
+   position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 30px;
+    line-height: 60px;
+    width: 80px;
+    height: 60px;
+    text-align: center;
+    cursor: pointer
 }
 
 #other-health {
