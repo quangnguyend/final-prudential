@@ -8,8 +8,6 @@ function documentUploadCtrl ($ionicPlatform, $scope, $rootScope, $state, SpajSer
   var step1 = SpajService.getData('start')
 
   vm.tabs = []
-  vm.tabs = [{name: 'Pembayar premi', id: 'premium_payers'},
-    {name: 'Tertanggung utama', id: 'main_issue'}]
 
   if (typeof spajData !== 'undefined') {
     if (typeof spajData.session2 !== 'undefined' && spajData.session2 === 'lainnya') {
