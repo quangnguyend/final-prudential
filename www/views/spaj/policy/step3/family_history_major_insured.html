@@ -59,7 +59,12 @@
     </li>
   </ul>
   <div class="clearfix"></div>
-  <div class="mt-30"><button class="button button-stable button-block float-right col-95" ng-click="vm.addMember()">  <i class="ion-ios-plus-empty"></i> <span class="txt-add-policy"> Tambah Anggota Keluarga</span></button></div>
+  <div class="mt-30" style="position:relative">
+    <button class="button button-stable button-block float-right col-95" ng-click="vm.addMember()">  
+      <i class="ion-ios-plus-empty"></i> <span class="txt-add-policy"> Tambah Anggota Keluarga</span>
+    </button>
+    <div class="btn_removeMember" ng-if="vm.family_history.membersInfo.length>1" ng-click='vm.removeMember()'><i class="icon ion-ios-trash-outline"></i></div>
+  </div>
   <div class="clearfix"></div>
 </div>
 </div>
