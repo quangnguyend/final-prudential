@@ -346,8 +346,7 @@ input {
 }
 
 input[type="date"] {
-  border-bottom: 10px solid #D8D8D8;
-  padding-bottom: 4px;
+  border-bottom: 1px solid #D8D8D8;
   //font-size: 16px;
   color: #49545D;
 }
@@ -718,6 +717,9 @@ h1.description{
 }
 .button.button-dark{
       background-color: #5B6770;
+}
+.general-text{
+  white-space: initial;
 }
 /* ================ END COMMON CSS ================ */
 /*overide styl of material */
