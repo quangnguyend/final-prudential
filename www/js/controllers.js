@@ -45,6 +45,8 @@ angular
       })
     }
   })
+
+  //spaj controllers
   .controller('StepProcessCtr', stepProcessCtr)
   .controller('SpajStartCtrl', spajStartCtrl)
   .controller('insuredHomeCtrl', insuredHomeCtrl)
@@ -76,6 +78,11 @@ angular
   .controller('DigestiveController', digestiveController)
   .controller('RespiratoryController', respiratoryController)
   .controller('PaymentTopupCtrl', paymentTopupCtrl)
+
+  //sqs controllers
+  .controller('SQSStartInsuredOtherCtrl', sqsStartInsuredOtherCtrl)
+  .controller('SQSStartPhInsuredCtrl', sqsStartPhInsuredCtrl)
+  .controller('SQSStartGoalCtrl', sqsStartGoalCtrl)
 
   .directive('dataService', dataService)
   .directive('groupedRadio', groupedRadio)

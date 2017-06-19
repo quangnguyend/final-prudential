@@ -48,3 +48,9 @@
 .mt-20{
     margin-top: 20px;
 }
+
+.list.no-lines{
+    .item{
+        border: none;
+    }
+}

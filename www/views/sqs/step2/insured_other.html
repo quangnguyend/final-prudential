@@ -1,0 +1,65 @@
+<ion-view cache-view="false" view-title="Tentang nasabah" id="insured_other">
+    <ion-content overflow-scroll='false'>
+        <div class="wrapper text-center has-bottom-bar padding-bottom" on-swipe='vm.handleSwipe($event)'>
+            <div class="list list-inset no-lines">
+                <div class="item">
+                    <h1 class='text-center description description'>Siapakah Tertanggung Utama atas Polis ini?</h1>
+                    <div class="row">
+                        <div class="button-bar">
+                            <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.darah" required>Pemegang Polis adalah
+                            Tertanggung Utama</a>
+                            <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.darah" required>Orang Lain</a>
+                        </div>
+                    </div>
+                </div>
+                <div class='item'>
+                    <div class="row-no-padding">
+                        <h1 class='text-center description description'>Data Pemegang Polis</h1>
+                        <md-input-container class="md-block" md-no-float>
+                            <label class="item-stacked-label text-left">
+                                <div class="input-label">Nama<span class="input_red"></span></div>
+                                </label>
+                            <input ng-model="vm.payorDetail.nama" name='nama' ng-pattern="vm.pattern.textOnly" />
+                        </md-input-container>
+                        <p class="message" ng-show='vm.payorDform.nama.$invalid'>! Input salah, silakan masukkan huruf</p>
+                    </div>
+                </div>
+                <div class='item'>
+                    <div class="row-no-padding">
+                        <md-input-container class="md-block" md-no-float>
+                            <label class="item-stacked-label text-left">
+                                <div class="input-label">No yang bisa dihubungi<span class="input_red"></span></div>
+                                </label>
+                            <input ng-model="vm.payorDetail.nama" name='nama' ng-pattern="vm.pattern.textOnly" />
+                        </md-input-container>
+                        <p class="message" ng-show='vm.payorDform.nama.$invalid'>! Input salah, silakan masukkan huruf</p>
+                    </div>
+                </div>
+                <div class='item'>
+                    <div class="row-no-padding">
+                        <md-input-container class="md-block" md-no-float>
+                            <label class="item-stacked-label text-left">
+                                <div class="input-label">Tanggal Lahir<span class="input_red"></span></div>
+                                </label>
+                            <input ng-model="vm.payorDetail.nama" name='nama' ng-pattern="vm.pattern.textOnly" />
+                        </md-input-container>
+                        <p class="message" ng-show='vm.payorDform.nama.$invalid'>! Input salah, silakan masukkan huruf</p>
+                    </div>
+                </div>
+                <div class='item'>
+                    <div class="row-no-padding">
+                        <div class="row">
+                            <div class="button-bar">
+                                <a class="button col col-50" grouped-radio="true" ng-model="vm.healthData.darah" required>Pria</a>
+                                <a class="button col col-50" grouped-radio="false" ng-model="vm.healthData.darah" required>Wanita</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar ng-show="true" class="bar bar-footer bar-assertive">
+        <a ng-click="vm.nextStep()" title="Lanjutkan" class="btn">Lanjutkan<button class="button button-clear"><i class="icon ion-ios-arrow-forward"></i></button></a>
+    </ion-footer-bar>
+</ion-view>

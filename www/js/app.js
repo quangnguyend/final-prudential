@@ -299,13 +299,48 @@ angular
             controllerAs: 'vm'
           }
         }
-      }).state('app.payment_topup', {
+      })
+      .state('app.payment_topup', {
         cache: false,
         url: '/payment_topup',
         views: {
           menuContent: {
             templateUrl: 'views/spaj/policy/step3/payment_topup_cc.html',
             controller: 'PaymentTopupCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      //SQS pages
+      .state('app.insured_other', {
+        cache: false,
+        url: '/insured_other',
+        views: {
+          menuContent: {
+            templateUrl: 'views/sqs/step2/insured_other.html',
+            controller: 'SQSStartInsuredOtherCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.ph_insured', {
+        cache: false,
+        url: '/ph_insured',
+        views: {
+          menuContent: {
+            templateUrl: 'views/sqs/step2/ph_insured.html',
+            controller: 'SQSStartPhInsuredCtrl',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('app.goals', {
+        cache: false,
+        url: '/goals',
+        views: {
+          menuContent: {
+            templateUrl: 'views/sqs/step3/goals.html',
+            controller: 'SQSStartGoalCtrl',
             controllerAs: 'vm'
           }
         }
