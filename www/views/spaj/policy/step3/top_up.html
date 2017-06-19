@@ -199,10 +199,11 @@
             </div>
             <div class="item">
               <div class="row-no-padding">
-                <div class="row">
-                  <div class="button-block add_icon" ng-click='vm.addTopUpDestinationFund()'>
-                    <a class="button" ><i class="icon ion-ios-plus-empty"></i> <span>Tambah Dana Investasi</span></a>
+                <div class="row relative">
+                  <div class="button-block add_icon">
+                    <a class="button" ng-click='vm.addTopUpDestinationFund()'><span>+ Tambah Dana Investasi</span></a>
                   </div>
+                  <div class="btn_remove_inline" ng-if="vm.data.top_up_destination_fund_allocation.length>1" ng-click='vm.removeTopUpDestinationFund()' role="button" tabindex="0"><i class="icon ion-ios-trash-outline"></i></div>
                 </div>
               </div>
             </div>

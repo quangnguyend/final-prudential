@@ -83,6 +83,7 @@
     span a {
       color: white;
       text-decoration: none;
+      display: block;
     }
   }
 }
@@ -414,8 +415,23 @@
     -webkit-background-size: 100%;
     background-size: 100%;
   }
-  .iinjury .icon:before, .idisease .icon:before, .idisorder .icon:before, .iabnormality .icon:before, .ipapsmear .icon:before, .ipregnant .icon:before, .isurgery .icon:before, .icomplication .icon:before, .ilostweight .icon:before {
+  .iinjury .icon:before, .idisease .icon:before, .ipapsmear .icon:before, .ipregnant .icon:before, .isurgery .icon:before, .icomplication .icon:before {
     background: url('../img/health-question17.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .ilostweight .icon:before{
+    background: url('../img/health-question20.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .iabnormality .icon:before{
+    background: url('../img/health-question19.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .idisorder .icon:before{
+    background: url('../img/health-question18.png') no-repeat;
     -webkit-background-size: 100%;
     background-size: 100%;
   }
@@ -1657,4 +1673,11 @@ button.btn-actived{
   md-input-container.md-block {
     margin-bottom: 0px;
   }
+}
+.remove-phone{
+  color: #ccc;
+  margin: 18px 0 0 0;
+  display: block;
+  text-align: center;
+  font-size: 25px;
 }
