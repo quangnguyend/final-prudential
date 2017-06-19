@@ -1,4 +1,4 @@
-function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog, $ionicScrollDelegate, SpajService, $ionicSideMenuDelegate) {
+function step2Ctrl($state, $scope, $rootScope, $timeout, $stateParams, $mdDialog, $ionicScrollDelegate, SpajService, $ionicSideMenuDelegate) {
   $rootScope.showBar = true
   $rootScope.showBack = true
   $rootScope.showMenu = true
@@ -44,7 +44,7 @@ function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog,
         lainnya: null
       },
       //for obat
-      tindakan_obat:[{
+      tindakan_obat: [{
 
       }],
       pemer: {
@@ -115,11 +115,11 @@ function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog,
         lainnya: null
       },
       pengo: {
-        obat:{
-          option:null,
-          add:[{
-            nama:null,
-            masih:null
+        obat: {
+          option: null,
+          add: [{
+            nama: null,
+            masih: null
           }]
         },
         radiography_option: null,
@@ -225,16 +225,16 @@ function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog,
 
   function validator() {
     var mainScreen_valid = vm.hqns.$valid;
-    var tumorPu_valid = vm.healthData.inodule==false || vm.healthData.inodule==true&&vm.objectValidate(vm.healthData.tumorPu);
-    var tumorEye_valid = vm.healthData.ieye==false ||  vm.healthData.ieye==true&&vm.objectValidate(vm.healthData.eyePopup)
-    var digesPu_valid = vm.healthData.idigestive==false || vm.healthData.idigestive==true&&vm.objectValidate(vm.healthData.digesPu);
-    var respiratoryPu_valid = vm.healthData.irespiratory==false || vm.healthData.irespiratory==true&&vm.objectValidate(vm.healthData.respiratoryPu);
-    var iill_valid= (vm.healthData.iill==false) || vm.healthData.iill==true&&(vm.healthData.iill_rabun||vm.healthData.iill_katarak)
+    var tumorPu_valid = vm.healthData.inodule == false || vm.healthData.inodule == true && vm.objectValidate(vm.healthData.tumorPu);
+    var tumorEye_valid = vm.healthData.ieye == false || vm.healthData.ieye == true && vm.objectValidate(vm.healthData.eyePopup)
+    var digesPu_valid = vm.healthData.idigestive == false || vm.healthData.idigestive == true && vm.objectValidate(vm.healthData.digesPu);
+    var respiratoryPu_valid = vm.healthData.irespiratory == false || vm.healthData.irespiratory == true && vm.objectValidate(vm.healthData.respiratoryPu);
+    var iill_valid = (vm.healthData.iill == false) || vm.healthData.iill == true && (vm.healthData.iill_rabun || vm.healthData.iill_katarak)
 
     return mainScreen_valid && tumorPu_valid && tumorEye_valid && digesPu_valid && respiratoryPu_valid && iill_valid
   }
 
-  vm.pattern={
+  vm.pattern = {
     textOnly: new RegExp(/^[a-zA-Z\s]*$/),
     nonDesimal: new RegExp(/^\d+\.\d{0,3}$/),
     alphanumeric: new RegExp(/^[a-z0-9 ]+$/)
@@ -315,14 +315,19 @@ function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog,
     })
   }
   vm.addPopupEyeItem = function () {
-    vm.healthData.eyePopup.push({
-      name_of_illness: null,
-      when_the_condition_found: null,
-      last_care_date: null,
-      hospoital_name: null,
-      hospital_address: null,
-      medicine: null
-    })
+    if (vm.healthData.eyePopup.length < 2) {
+      vm.healthData.eyePopup.push({
+        name_of_illness: null,
+        when_the_condition_found: null,
+        last_care_date: null,
+        hospoital_name: null,
+        hospital_address: null,
+        medicine: null
+      })
+    }
+    else {
+      vm.removePopupEyeItem();
+    }
   }
   vm.removePopupEyeItem = function () {
     vm.healthData.eyePopup.pop()
@@ -347,132 +352,140 @@ function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog,
       })
   }
   vm.digest_addObat = function () {
-    var newtindakan_obat = {
-      yang: null,
-      diperoleh_dari: null,
-      timbulnya_select: null,
-      timbulnya_option: null,
-      mashit: null
+    if (vm.healthData.digesPu.tindakan_obat.length < 2) {
+      var newtindakan_obat = {
+        yang: null,
+        diperoleh_dari: null,
+        timbulnya_select: null,
+        timbulnya_option: null,
+        mashit: null
+      }
+      vm.healthData.digesPu.tindakan_obat.push(newtindakan_obat);
     }
-    vm.healthData.digesPu.tindakan_obat.push(newtindakan_obat);
+    else {
+      vm.digest_delObat();
+    }
+  }
+  vm.digest_delObat = function () {
+    vm.healthData.digesPu.tindakan_obat.pop();
   }
   vm.resetDigestive = function () {
     vm.digestivePopupTouched = false;
     vm.resetObject(vm.healthData.digesPu)
   }
-  vm.digestPuOption={
-    pertama:[
+  vm.digestPuOption = {
+    pertama: [
       {
-        value:1, name:'0-1 tahun lalu'
+        value: 1, name: '0-1 tahun lalu'
       },
       {
-        value:2, name:'1-3 tahun lalu'
+        value: 2, name: '1-3 tahun lalu'
       },
       {
-        value:3, name:'>3 tahun lalu'
+        value: 3, name: '>3 tahun lalu'
       }
     ],
-    frekuensi:[
+    frekuensi: [
       {
-        value:1, name:'1 kali'
+        value: 1, name: '1 kali'
       },
       {
-        value:2, name:'2 kali'
+        value: 2, name: '2 kali'
       },
       {
-        value:3, name:'3 kali'
+        value: 3, name: '3 kali'
       },
       {
-        value:4, name:'4 kali'
+        value: 4, name: '4 kali'
       },
       {
-        value:5, name:'5 kali'
+        value: 5, name: '5 kali'
       },
       {
-        value:6, name:'6 kali'
+        value: 6, name: '6 kali'
       },
       {
-        value:7, name:'7 kali'
+        value: 7, name: '7 kali'
       },
       {
-        value:8, name:'8 kali'
+        value: 8, name: '8 kali'
       },
       {
-        value:9, name:'9 kali'
+        value: 9, name: '9 kali'
       },
       {
-        value:10, name:'10 kali'
+        value: 10, name: '10 kali'
       }
     ],
-    kapan:[
+    kapan: [
       {
-        value:1, name:'< 2 tahun lalu'
+        value: 1, name: '< 2 tahun lalu'
       },
       {
-        value:2, name:'2-4 tahun lalu'
+        value: 2, name: '2-4 tahun lalu'
       },
       {
-        value:3, name:'> 4 tahun lalu'
+        value: 3, name: '> 4 tahun lalu'
       }
     ],
-    hasil:[
+    hasil: [
       {
-        value:1, name:'Baik'
+        value: 1, name: 'Baik'
       },
       {
-        value:2, name:'Kurang Baik'
+        value: 2, name: 'Kurang Baik'
       },
       {
-        value:3, name:'Tidak Tahu'
+        value: 3, name: 'Tidak Tahu'
       }
     ],
-    year:[
+    year: [
       {
-        value:1, name:'2015'
+        value: 1, name: '2015'
       },
       {
-        value:2, name:'2016'
+        value: 2, name: '2016'
       },
       {
-        value:3, name:'2017'
+        value: 3, name: '2017'
       }
     ],
-    month:[
+    month: [
       {
-        value:1, name:'Januari'
+        value: 1, name: 'Januari'
       },
       {
-        value:2, name:'Februar'
+        value: 2, name: 'Februar'
       },
       {
-        value:3, name:'Maret'
+        value: 3, name: 'Maret'
       },
       {
-        value:4, name:'April'
+        value: 4, name: 'April'
       },
       {
-        value:5, name:'Mei'
+        value: 5, name: 'Mei'
       },
       {
-        value:6, name:'Juni'
+        value: 6, name: 'Juni'
       },
       {
-        value:7, name:'Juli'
+        value: 7, name: 'Juli'
       },
       {
-        value:8, name:'Agustus'
+        value: 8, name: 'Agustus'
       },
       {
-        value:9, name:'September'
+        value: 9, name: 'September'
       },
       {
-        value:10, name:'Oktober'
+        value: 10, name: 'Oktober'
       },
       {
-        value:11, name:'November'
+        value: 11, name: 'November'
       },
       {
-        value:12, name:'Desember'
+        value: 12, name: 'Desember'
       }
     ]
   }
@@ -492,33 +505,33 @@ function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog,
     vm.respiratoryPopupTouched = false;
     vm.resetObject(vm.healthData.respiratoryPu)
   }
-  vm.respiPuOption={
-    kapan:[
+  vm.respiPuOption = {
+    kapan: [
       {
-        value:1, name:'< 1 tahun lalu'
+        value: 1, name: '< 1 tahun lalu'
       },
       {
-        value:2, name:'1- <2 tahun lalu'
+        value: 2, name: '1- <2 tahun lalu'
       },
       {
-        value:3, name:'2- < 4 tahun lalu'
+        value: 3, name: '2- < 4 tahun lalu'
       },
       {
-        value:4, name:'>= 4 years ago'
+        value: 4, name: '>= 4 years ago'
       }
     ],
-    days:[
+    days: [
       {
-        value:1, name:'1-2 days'
+        value: 1, name: '1-2 days'
       },
       {
-        value:2, name:'3-5 days'
+        value: 2, name: '3-5 days'
       },
       {
-        value:3, name:'5-7 days'
+        value: 3, name: '5-7 days'
       },
       {
-        value:4, name:'> 10 days'
+        value: 4, name: '> 10 days'
       }
     ]
   }
@@ -537,38 +550,35 @@ function step2Ctrl($state, $scope, $rootScope,$timeout, $stateParams, $mdDialog,
     vm.tumorPopupTouched = false;
     vm.resetObject(vm.healthData.tumorPu)
   }
-  vm.addObat=function(){
-    
-  }
-  vm.tumorPuOption={
-    tipe:[
+  vm.tumorPuOption = {
+    tipe: [
       {
-        value:1, name:'Angkat Seluruh Rahim'
+        value: 1, name: 'Angkat Seluruh Rahim'
       },
       {
-        value:2, name:'Angkat Sebagian Rahim'
+        value: 2, name: 'Angkat Sebagian Rahim'
       }
     ],
-    hasil:[
+    hasil: [
       {
-        value:1, name:'Baik'
+        value: 1, name: 'Baik'
       },
       {
-        value:2, name:'Tidak Baik'
+        value: 2, name: 'Tidak Baik'
       },
       {
-        value:3, name:'Tidak Tahu'
+        value: 3, name: 'Tidak Tahu'
       }
     ],
-    kategori:[
+    kategori: [
       {
-        value:1, name:'Jinak'
+        value: 1, name: 'Jinak'
       },
       {
-        value:2, name:'Ganas'
+        value: 2, name: 'Ganas'
       },
       {
-        value:3, name:'Tidak Tahu'
+        value: 3, name: 'Tidak Tahu'
       }
     ]
   }
